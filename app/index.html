@@ -48,10 +48,11 @@ const FILTER_CATS = {
   'food': '🍔 Food', 'meals': '🍽️ Meals', 'shelter': '🏠 Shelter',
   'health': '🏥 Health', 'mental': '🧠 Mental Health',
   'recovery': '💪 Recovery', 'benefits': '💰 Benefits',
-  'bathroom': '🚻 Bathroom', 'laundry': '👕 Laundry',
-  'wifi': '📶 WiFi', 'charge': '🔌 Charging',
+  'bathroom': '🚻 Bathroom', 'laundry': '👕 Laundry', 'day': '☀️ Day Centers',
+  'water': '💧 Water', 'wifi': '📶 WiFi', 'charge': '🔌 Charging',
   'bus': '🚌 Transit', 'youth': '👦 Youth', 'pets': '🐾 Pets',
-  'freeclothes': '👔 Clothes', 'thrift': '🛒 Thrift'
+  'freeclothes': '👔 Clothes', 'thrift': '🛒 Thrift',
+  'cash': '💵 Cash Aid', 'vouchers': '🎟️ Vouchers'
 };
 
 function loadData(attempt) {
@@ -124,7 +125,11 @@ function render(cat, q) {
     mental: '🧠', recovery: '💪', benefits: '💰',
     bathroom: '🚻', laundry: '👕', wifi: '📶', charge: '🔌',
     bus: '🚌', youth: '👦', pets: '🐾',
-    freeclothes: '👔', thrift: '🛒'
+    freeclothes: '👔', thrift: '🛒', day: '☀️',
+    water: '💧', cash: '💵', vouchers: '🎟️',
+    bank: '🏦', babybox: '📦', bikeair: '🚲',
+    freebike: '🚲', hangout: '🛋️', lgbtq: '🏳️‍🌈',
+    narcan: '💊'
   };
   list.slice(0, 200).forEach(r => {
     const cat = (r.cats || [])[0] || '';
