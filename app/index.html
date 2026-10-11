@@ -208,9 +208,11 @@ function renderGuides() {
     '<h2 style="color:#fff;margin-bottom:12px;">📖 Benefit Guides</h2>' +
     GUIDES.map(g => `
     <div class="card">
-      <h3>${g.name || g.title}</h3>
-      <p>${(g.desc || '').substring(0, 200)}...</p>
+      <h3>${g.icon || ''} ${g.title || g.name}</h3>
+      <p>${g.intro || (g.desc || '').substring(0, 200)}</p>
+      ${g.where ? `<p style="margin-top:8px">📍 ${g.where}</p>` : ''}
       ${g.steps ? `<p style="margin-top:8px"><b>${g.steps.length} steps</b></p>` : ''}
+      ${g.bring ? `<p style="margin-top:4px;color:#7c8aff">Bring: ${g.bring.slice(0,2).join(', ')}...</p>` : ''}
     </div>`).join('');
 }
 
@@ -228,49 +230,51 @@ function renderJobs() {
 
 function renderEvents() {
   if (typeof EVENTS === 'undefined') return;
+  const fw = EVENTS.filter(e => !e.area || e.area === 'fort-wayne');
   document.getElementById('events-list').innerHTML =
     '<h2 style="color:#fff;margin-bottom:12px;">📅 Events</h2>' +
-    EVENTS.slice(0, 30).map(e => `
+    fw.slice(0, 30).map(e => `
     <div class="card">
-      <h3>${e.name || e.title}</h3>
-      <p>${e.date || ''} ${e.time || ''}</p>
-      <p>${e.addr || ''}</p>
+      <h3>${e.title || e.name}</h3>
+      <p>📅 ${e.date || ''} ${e.time || ''}</p>
+      <p>📍 ${e.venue || ''} ${e.addr || ''}</p>
       <p>${(e.desc || '').substring(0, 150)}...</p>
-    </div>`).join('');
+    </div>`).join('') || '<p style="color:#888">No upcoming events.</p>';
 }
 
 function renderPlan() {
-  const steps = typeof PLAN !== 'undefined' ? PLAN : [
-    'Get ID documents', 'Apply for SNAP', 'Apply for Medicaid',
-    'Find shelter', 'Connect with case manager'
-  ];
+  const steps = typeof PLAN !== 'undefined' ? PLAN : [];
   const done = JSON.parse(localStorage.getItem('haven_plan') || '[]');
   document.getElementById('plan-list').innerHTML = steps.map((s, i) => {
-    const name = typeof s === 'string' ? s : (s.name || s.title);
-    return `<div class="check ${done.includes(i) ? 'done' : ''}" onclick="togglePlan(${i})">
-      <span style="font-size:20px">${done.includes(i) ? '✅' : '⬜'}</span>
-      <span class="ct">${name}</span></div>`;
-  }).join('');
+    const name = typeof s === 'string' ? s : (s.t || s.title || s.name);
+    const desc = typeof s === 'string' ? '' : (s.d || s.desc || '');
+    const id = typeof s === 'string' ? i : (s.id || i);
+    return `<div class="check ${done.includes(id) ? 'done' : ''}" onclick="togglePlan('${id}')">
+      <span style="font-size:20px">${done.includes(id) ? '✅' : '⬜'}</span>
+      <span><span class="ct">${name}</span>${desc ? `<br><small style="color:#888">${desc.substring(0,80)}...</small>` : ''}</span></div>`;
+  }).join('') || '<p style="color:#888">No plan steps.</p>';
 }
 
-function togglePlan(i) {
+function togglePlan(id) {
   let done = JSON.parse(localStorage.getItem('haven_plan') || '[]');
-  done = done.includes(i) ? done.filter(x => x !== i) : [...done, i];
+  done = done.includes(id) ? done.filter(x => x !== id) : [...done, id];
   localStorage.setItem('haven_plan', JSON.stringify(done));
   renderPlan();
 }
 
 function renderHotlines() {
-  const h = typeof HOTLINES !== 'undefined' ? HOTLINES : [
-    {name: '211 — Indiana', phone: '211', desc: 'Food, shelter, bills, crisis help'},
-    {name: '988 Crisis Line', phone: '988', desc: 'Suicide & crisis, call or text'},
-    {name: 'Crisis Text Line', phone: '741741', desc: 'Text HOME to 741741'}
+  const h = typeof HOTLINES !== 'undefined' ? HOTLINES.filter(x => !x.area || x.area === 'fort-wayne') : [
+    {name: 'Indiana 211', href: 'tel:211', desc: 'Food, shelter, bills, crisis help'},
+    {name: '988 Crisis Line', href: 'tel:988', desc: 'Suicide & crisis, call or text'}
   ];
-  document.getElementById('hotlines').innerHTML = h.map(x => `
+  document.getElementById('hotlines').innerHTML = h.map(x => {
+    const phone = (x.href || '').replace('tel:', '');
+    return `
     <div class="hotline">
-      <h3>${x.name}</h3><p>${x.desc || ''}</p>
-      <a href="tel:${x.phone}">📞 ${x.phone}</a>
-    </div>`).join('');
+      <h3>${x.icon || ''} ${x.name}</h3><p>${x.desc || ''}</p>
+      <a href="${x.href}">📞 ${phone}</a>
+    </div>`;
+  }).join('');
 }
 
 window.addEventListener('DOMContentLoaded', () => loadData(1));
