@@ -296,21 +296,7 @@
 <button id="voiceStop" style="display:none">⏹ <span data-i18n="voice_stop">Stop voice mode</span></button>
 
 
-<script>
-window._errors = [];
-window.onerror = function(msg, src, line) {
-  window._errors.push(msg + ' @' + line);
-  var d = document.getElementById('errbox');
-  if (!d) {
-    d = document.createElement('div');
-    d.id = 'errbox';
-    d.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:#c00;color:#fff;padding:8px;font-size:12px;z-index:99999;max-height:100px;overflow:auto;';
-    document.body.appendChild(d);
-  }
-  d.innerHTML += msg + '<br>';
-  return false;
-};
-</script>
+
 <script>
 setTimeout(function() {
   var s = document.getElementById('splash');
