@@ -606,14 +606,15 @@ function init() {
 let userMarker = null, userCircle = null;
 function showUserLocation(center) {
   const btn = document.querySelector('button[onclick*="showUserLocation"]');
-  if (btn && center) btn.textContent = '⏳ Locating...';
+  const origText = btn ? btn.textContent : '📍';
+  if (btn && center) btn.textContent = '⏳';
   if (!navigator.geolocation || !map) {
-    if (btn) btn.textContent = '📍 Find me';
+    if (btn) btn.textContent = origText;
     if (center) alert('Location not available. Try Chrome instead of Opera.');
     return;
   }
   navigator.geolocation.getCurrentPosition(pos => {
-    if (btn) btn.textContent = '📍 Find me';
+    if (btn) btn.textContent = origText;
     const lat = pos.coords.latitude, lng = pos.coords.longitude;
     if (userMarker) map.removeLayer(userMarker);
     if (userCircle) map.removeLayer(userCircle);
@@ -629,7 +630,7 @@ function showUserLocation(center) {
     }
     map.setView([lat, lng], 14);
   }, err => {
-    if (btn) btn.textContent = '📍 Find me';
+    if (btn) btn.textContent = origText;
     let msg = 'Could not get location. ';
     if (err.code === 1) msg += 'Permission denied — allow location in browser settings.';
     else if (err.code === 2) msg += 'Position unavailable.';
