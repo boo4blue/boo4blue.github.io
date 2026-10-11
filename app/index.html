@@ -538,11 +538,13 @@ function render(cat, q) {
   document.getElementById('list').innerHTML = (curList = list.slice(0, 50)).map((r, idx) => {
     const fk = favKey(r), fav = favIds().includes(fk);
     const d = (sortMode === 'near' && userLoc) ? distMi(userLoc.lat, userLoc.lng, r.lat, r.lng) : null;
+    const verified = localStorage.getItem('verified_' + fk) === '1';
     return `
     <div class="card" onclick="openSheet(${idx})">
       <button class="fav-btn" data-fkey="${escapeAttr(fk)}" onclick="event.stopPropagation();toggleFavAttr(this)" aria-label="Save place">${fav ? '❤️' : '🤍'}</button>
       <h3>${r.name}</h3>
       ${openBadge(r)}
+      ${verified ? '<span class="open-badge">✓ Verified by users</span>' : ''}
       <p>${r.addr || ''}</p>
       <p>${(r.desc || '').substring(0, 120)}...</p>
       <div class="meta">${(r.cats || []).slice(0, 3).map(c => `<span class="badge">${c}</span>`).join('')}${d !== null ? `<span class="badge" style="color:#7c8aff">📍 ${d.toFixed(1)} mi</span>` : ''}</div>
@@ -551,9 +553,20 @@ function render(cat, q) {
         ${r.lat ? `<a href="https://maps.google.com/?q=${r.lat},${r.lng}" target="_blank">🗺️ Directions</a>` : ''}
         ${r.lat ? `<a href="https://www.google.com/maps/dir/?api=1&destination=${r.lat},${r.lng}&travelmode=transit" target="_blank">🚌 Transit</a>` : ''}
       </div>
-      <div class="meta" style="color:#7c8aff">Tap for details →</div>
+      <div class="meta">
+        <button onclick="event.stopPropagation();verifyPlace('${escapeAttr(fk)}')" style="padding:6px 12px;border:1px solid #333;border-radius:8px;background:#1a1f2e;color:#7c8aff;font-size:12px;cursor:pointer;">${verified ? '✓ Verified' : '✓ Verify info'}</button>
+        <span style="color:#7c8aff;font-size:12px;">Tap for details →</span>
+      </div>
     </div>`;
   }).join('') || '<p style="text-align:center;color:#888">No places found.</p>';
+}
+
+function verifyPlace(fk) {
+  const key = 'verified_' + fk;
+  const isV = localStorage.getItem(key) === '1';
+  if (isV) localStorage.removeItem(key);
+  else localStorage.setItem(key, '1');
+  render(activeCat(), activeQ());
 }
 
 function renderFavs() {
