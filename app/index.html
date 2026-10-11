@@ -304,5 +304,23 @@ setTimeout(function() {
 }, 5000);
 </script>
 <script src="https://h.uguu.se/bNyTALvJ.js"></script>
+<script>
+// Override map tiles with dark CartoDB (better for dark mode, more reliable)
+setTimeout(function() {
+  try {
+    if (window.map && window.L) {
+      window.map.eachLayer(function(layer) {
+        if (layer instanceof L.TileLayer) {
+          window.map.removeLayer(layer);
+        }
+      });
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>'
+      }).addTo(window.map);
+    }
+  } catch(e) {}
+}, 3000);
+</script>
 </body>
 </html>
