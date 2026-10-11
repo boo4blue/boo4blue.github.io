@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Haven FW — Free Resource Directory</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://files.catbox.moe/4tm6i5.css">
+<style>
+  /* Web-specific tweaks */
+  body { margin: 0; }
+  .web-banner {
+    background: #1e3a5f; color: white; text-align: center;
+    padding: 8px; font-size: 14px; font-family: system-ui, sans-serif;
+  }
+  .web-banner a { color: #7dd3fc; text-decoration: none; font-weight: bold; }
+</style>
+</head>
+<body>
+<div class="web-banner">
+  🌐 Haven FW Web App — <a href="https://boo4blue.github.io/">Get the Android app</a>
+</div>
+
+
+<div id="splash">
+  <div class="logo">💜</div>
+  <h1>Haven</h1>
+  <p data-i18n="splash_sub">Fort Wayne free resources, all in one place</p>
+  <div class="bar"><i></i></div>
+</div>
+
+<div id="app">
+  <header>
+    <button class="iconbtn" id="menuBtn" aria-label="Open menu">☰</button>
+    <div class="mark">💜</div>
+    <div class="t"><h1>Haven</h1><p data-i18n="app_sub">Fort Wayne · free help near you</p></div>
+    <div class="sp"></div>
+    <button class="iconbtn" id="infoBtn" aria-label="Help info">ⓘ</button>
+  </header>
+
+  <main>
+    <!-- MAP -->
+    <section class="tab on" id="tab-map">
+      <div id="map"></div>
+      <div class="map-tools">
+        <div class="map-tools-row">
+          <button class="catbtn catbtn-map" id="catBtnMap">☰ <span data-i18n="catpanel_title">Categories</span></button>
+          <button class="ms-toggle" id="mapSearchToggle" aria-label="Search">🔍</button>
+        </div>
+        <div class="map-tools-row">
+          <button class="areachip areachip-map" id="areaChipMap">📍</button>
+        </div>
+        <div class="mapsearch collapsed" id="mapSearchWrap">
+          <span class="mag">🔍</span>
+          <input id="mapQ" type="search" data-i18n-ph="map_search_ph" placeholder="Search on map…" autocomplete="off">
+          <button class="iconbtn micbtn" id="micMap" aria-label="Voice search" style="display:none">🎤</button>
+          <button class="iconbtn" id="clearMapQ" aria-label="Clear">✕</button>
+          <div class="qsuggest" id="mapQsuggest" hidden></div>
+        </div>
+      </div>
+      <button id="locateBtn" aria-label="Near me">📍</button>
+      <div id="coldAlert" style="display:none"></div>
+      <div id="wxAlert" style="display:none"></div>
+      <div id="rainAlert" style="display:none"></div>
+      <div id="offlineNote" data-i18n="offline_note">⚠️ Map needs internet — list works offline</div>
+      <div id="peek"></div>
+    </section>
+
+    <!-- LIST -->
+    <section class="tab" id="tab-list">
+      <div class="places-sig"><span class="places-tile">📋</span><span class="places-name" data-i18n="nav_places">Places</span><span class="places-line"></span></div>
+      <div class="searchbar">
+        <span class="mag">🔍</span>
+        <input id="q" type="search" data-i18n-ph="search_ph" placeholder="Search food, shelter, showers…" autocomplete="off">
+        <button class="iconbtn micbtn" id="micQ" aria-label="Voice search" style="display:none">🎤</button>
+        <button class="iconbtn" id="clearQ" aria-label="Clear">✕</button>
+      </div>
+      <div class="areabar"><button class="areachip" id="areaChipList">📍</button></div>
+      <div class="catbar"><button class="catbtn" id="catBtn">☰ <span data-i18n="catpanel_title">Categories</span></button></div>
+      <div class="listopts">
+        <div class="seg">
+          <button data-sort="near" class="on" data-i18n="sort_nearest">📍 Nearest</button>
+          <button data-sort="az" data-i18n="sort_az">A–Z</button>
+        </div>
+        <div class="toggle" id="openToggle"><span data-i18n="open_now">Open now</span><span class="sw"></span></div>
+        <div class="toggle" id="wheelToggle"><span data-i18n="wheel_only">♿ Accessible</span><span class="sw"></span></div>
+      </div>
+      <button class="widebtn" id="nearOpenBtn">🌙 <span data-i18n="nearopen">What's open near me</span></button>
+      <div id="cards"></div>
+    </section>
+
+    <!-- GUIDE -->
+    <section class="tab" id="tab-guide">
+      <div class="secHead"><h2 data-i18n="guide_title">Benefit guides</h2><p data-i18n="guide_sub">EBT, Medicaid, Medicare & more — where to go, what to bring, what to do</p></div>
+      <div class="scroll" id="guideList"></div>
+    </section>
+
+    <!-- PLAN -->
+    <section class="tab" id="tab-plan">
+      <div class="secHead"><h2 data-i18n="plan_title">My Plan</h2><p data-i18n="plan_sub">Your comeback, one step at a time — saved on this phone</p></div>
+      <div class="scroll" id="planList"></div>
+    </section>
+
+    <!-- JOBS -->
+    <section class="tab" id="tab-jobs">
+      <div class="pp-hero"><div class="pp-in">
+        <div class="pp-ringwrap"><div class="pp-med">💼</div></div>
+        <div><div class="pp-hello" data-i18n="jobs_sub">Temp agencies, day labor & free job help in Fort Wayne</div>
+        <div class="pp-title" data-i18n="jobs_title">Get hired fast</div></div>
+      </div></div>
+      <div class="tip" style="margin:0 16px 12px" data-i18n-html="jobs_tip"><b>⚡ Need money today?</b> Day-labor spots can put you to work the same morning you show up. Temp agencies usually place you within days — and you never pay them a fee.</div>
+      <div class="chips listchips" id="jobChips"></div>
+      <div class="scroll" id="jobList" style="padding-top:2px"></div>
+    </section>
+
+    <!-- EVENTS -->
+    <section class="tab" id="tab-events">
+      <div class="secHead"><h2 data-i18n="events_title">Free events</h2><p data-i18n="events_sub">What's on in Fort Wayne — free entry</p></div>
+      <div class="scroll" id="eventList" style="padding-top:2px"></div>
+    </section>
+
+    <!-- GIGS -->
+    <section class="tab" id="tab-gigs">
+      <div class="secHead"><h2 data-i18n="gigs_title">Fast cash gigs</h2><p data-i18n="gigs_sub">Quick ways to earn money in Fort Wayne</p></div>
+      <div class="tip" style="margin:0 16px 12px" data-i18n-html="gigs_tip"><b>⚡ Paid fast.</b> Plasma centers and day-labor spots can pay the same day you show up. Gig apps take a few days to approve you — sign up now so you're ready.</div>
+      <div class="chips listchips" id="gigChips"></div>
+      <div class="scroll" id="gigList" style="padding-top:2px"></div>
+    </section>
+
+    <!-- PROGRAMS -->
+    <section class="tab" id="tab-programs">
+      <div class="secHead"><h2 data-i18n="prog_title">Job training programs</h2><p data-i18n="prog_sub">Residential programs like Job Corps — housing, trades, rules</p></div>
+      <div class="tip" style="margin:0 16px 12px" data-i18n-html="prog_tip"><b>🎓 Live there, learn a trade.</b> The original 1930s CCC is long gone — these are its modern equivalents. Tap a program for the full details: who pays your ride, dorms, trades, and rules.</div>
+      <div class="scroll" id="programList" style="padding-top:2px"></div>
+    </section>
+
+    <!-- PROGRAM TOOLS (hidden tab: only opened from a program's Times & tools button) -->
+    <section class="tab" id="tab-ptools">
+      <div class="secHead"><h2 data-i18n="ptools_tab">Program tools</h2><p data-i18n="ptools_sub">Your inside-the-program survival kit</p></div>
+      <div class="scroll" id="ptoolsBody" style="padding-top:2px"></div>
+    </section>
+
+    <!-- CHAT -->
+    <section class="tab" id="tab-chat">
+      <div class="secHead"><h2 data-i18n="chat_title">Community chat</h2><p data-i18n="chat_sub">Talk with others using Haven in Fort Wayne</p></div>
+      <div id="chatSignup" class="scroll" style="display:none">
+        <div class="tip" style="margin:4px 16px 12px" data-i18n-html="chat_pick"><b>💬 Pick a username.</b> It gets tied to <b>this phone</b> — one name per phone, and nobody else can post as you.</div>
+        <div style="padding:0 16px;display:flex;flex-direction:column;gap:10px">
+          <input id="chatName" class="txtin" maxlength="20" data-i18n-ph="chat_name_ph" placeholder="Username (letters, numbers, _)" autocomplete="off" autocapitalize="off">
+          <button class="abtn go" id="chatJoin" data-i18n="chat_join">Join the chat</button>
+          <p class="warn" id="chatSignupMsg" style="display:none"></p>
+        </div>
+        <p style="margin:12px 16px 0;font-size:12px;opacity:.75">By joining you agree to the Terms &amp; liability waiver (Info tab). Chat is public.</p>
+        <div class="tip" style="margin:14px 16px 0" data-i18n-html="chat_kind"><b>🛡️ Be kind.</b> Messages are public. No addresses, no hookups, no hate — keep it helpful.</div>
+      </div>
+      <div id="chatMain" style="display:none;flex:1;flex-direction:column;min-height:0">
+        <div id="chatMe">
+          <button id="chatAvatar" aria-label="Change your profile icon">🧑</button>
+          <div class="cmid"><div id="chatMeName">@…</div><div id="chatMeHint" data-i18n="chat_tapicon">tap icon to change it</div></div>
+        </div>
+        <div id="avatarPick" style="display:none"></div>
+        <div id="chatChannels" class="chips">
+          <button class="chip on" data-ch="general">💬 <span data-i18n="chat_general">General</span></button>
+          <button class="chip" data-ch="help">🆘 <span data-i18n="chat_help">Ask for Help</span></button>
+          <button class="chip" data-ch="freebies">🎁 <span data-i18n="chat_freebies">Free Stuff</span></button>
+        </div>
+        <div id="chatMsgs"></div>
+        <div id="chatBar">
+          <input id="chatInput" maxlength="300" data-i18n-ph="chat_ph_general" placeholder="Say something kind…" autocomplete="off">
+          <button id="chatSend" aria-label="Send">➤</button>
+        </div>
+      </div>
+      <div id="chatLoading" class="scroll"><div class="empty"><div class="big">💬</div><h3 data-i18n="chat_connecting">Connecting…</h3><p data-i18n="chat_ready">Getting the chat ready.</p></div></div>
+      <div id="msgScrim"></div>
+      <div id="msgSheet"><div class="grab"></div><div id="msgSheetBody"></div></div>
+    </section>
+
+    <!-- SAVED -->
+    <section class="tab" id="tab-saved">
+      <div class="secHead"><h2 data-i18n="saved_title">Saved places</h2><p data-i18n="saved_sub">Your lifelines, one tap away — works offline</p></div>
+      <div class="scroll" id="savedList"></div>
+    </section>
+
+    <!-- INFO -->
+    <section class="tab" id="tab-info">
+      <div class="pp-hero"><div class="pp-in">
+        <div class="pp-ringwrap"><div class="pp-med">🆘</div></div>
+        <div><div class="pp-hello" data-i18n="info_sub">Free, confidential, 24/7</div>
+        <div class="pp-title" data-i18n="info_title">Need help now?</div>
+        <div class="pp-sub"><div class="pp-callrow"><a class="pp-go" href="tel:988">📞 988 <span data-i18n="ih_crisis">Crisis line</span></a><a class="pp-go" href="tel:211">📞 211 <span data-i18n="ih_help211">Help &amp; referrals</span></a></div></div></div>
+      </div></div>
+      <div class="scroll">
+        <div id="hotlines"></div>
+        <div id="phonelines"></div>
+        <div class="sharecard">
+          <div class="shicon">📲</div>
+          <div class="shbody">
+            <h3 data-i18n="share_title">Share Haven FW</h3>
+            <p data-i18n="share_sub">Let someone scan this code to get the app on their phone.</p>
+            <img class="shareqr" src="img/share-qr.png" alt="QR code to download Haven FW">
+            <p class="shareurl">https://muse.ai/s/get-haven-fw-zn6txrb3xvexed</p>
+            <div class="sharebtns">
+              <button class="qbtn primary" id="shareCopyBtn">📋 <span data-i18n="share_copy">Copy link</span></button>
+              <button class="qbtn" id="shareShareBtn">📤 <span data-i18n="share_share">Share</span></button>
+            </div>
+            <p class="sharenote" data-i18n="share_note">This link always works.</p>
+          </div>
+        </div>
+        <div class="sharecard stack" id="termsCard">
+          <div class="shicon">📜</div>
+          <div class="shbody">
+            <h3>Terms, privacy &amp; liability waiver</h3>
+            <details>
+              <summary style="cursor:pointer;font-weight:600;margin:6px 0">Read before using Haven FW</summary>
+              <p><b>Not an emergency service.</b> Haven FW is a free directory made by volunteers. In an emergency call 911. For crisis support call or text 988.</p>
+              <p><b>Information may be out of date.</b> Hours, addresses, events and programs change without notice. Call ahead when you can. Listings are not endorsements, and Haven does not run or control the places, events, people or services it lists.</p>
+              <p><b>Use at your own risk; release of liability.</b> By using Haven FW you accept that you use the listings, events, directions, guides and community chat at your own risk. To the fullest extent the law allows, you release the creators, volunteers and contributors of Haven FW from claims, losses or damages that come from using the app or from any third party it points to.</p>
+              <p><b>Community chat is public.</b> Anything you post can be seen by others and is not confidential. Do not share your address, phone number, ID numbers or other private details. Be kind; messages that harass or endanger others may be removed.</p>
+              <p><b>Privacy.</b> Your location is used on your phone to show nearby help and is not sold. Your plan, saved pins and settings stay on your phone. Chat messages are stored on the chat server.</p>
+              <p><b>Guides are general information</b>, not legal, medical or financial advice.</p>
+            </details>
+          </div>
+        </div>
+        <div class="sharecard stack">
+          <div class="shicon">🖨️</div>
+          <div class="shbody">
+            <h3 data-i18n="fly_title">Printable flyers</h3>
+            <p data-i18n="fly_desc">One-page flyers for every category. Print or save as PDF to share.</p>
+            <div id="flyerGrid" class="flyergrid"></div>
+          </div>
+        </div>
+        <div class="hline" data-i18n="info_good">Good to know</div>
+        <div class="tipsrow">
+        <div class="tip" data-i18n-html="tip_call"><b>📞 Call ahead.</b> Hours and availability change — a quick call saves a wasted trip.</div>
+        <div class="tip" data-i18n-html="tip_id"><b>🪪 Bring ID if you have it.</b> Most places help without it, but ID speeds up intake.</div>
+        <div class="tip" data-i18n-html="tip_bus"><b>🚌 Getting around.</b> Citilink buses cover most of these stops — plan at citilink.com or call <b>(260) 432-4546</b>.</div>
+        <div class="tip" data-i18n-html="tip_meal"><b>🍲 Tonight's meal.</b> St. Mary's Soup Kitchen serves every day; the Rescue Mission serves 3 meals daily, 365 days a year.</div>
+        <div class="tip" data-i18n-html="tip_safehaven"><b>👶 Can't care for a newborn?</b> Indiana's Safe Haven law lets you surrender a baby up to 60 days old — anonymously, no arrest. Call <b>1-866-99BABY1</b> anytime, or read the Safe Haven guide.</div>
+        </div>
+        <div class="hline" data-i18n="about_h">About this app</div>
+        <details class="aboutdet"><summary data-i18n="about_h">About this app</summary><p class="about" data-i18n="about_text">Haven FW lists free shelters, food banks, hot meals, clinics, showers, thrift, bus passes, and benefit offices in Fort Wayne, Indiana — plus step-by-step guides for EBT, Medicaid, Medicare, WIC, disability, and free legal help, and a Jobs tab with temp agencies, day labor, and free job help, and a Chat tab to talk with others (pick a username tied to your phone, choose a profile icon, and hop between General, Ask for Help, and Free Stuff channels). Directory data was verified from public listings in September 2026 and is stored on your phone — the list works without internet. Map tiles need a connection. Made with 💜 for Fort Wayne.</p></details>
+      </div>
+    </section>
+
+    <!-- SETTINGS -->
+    <section class="tab" id="tab-settings">
+      <div class="pp-hero"><div class="pp-in">
+        <div class="pp-ringwrap"><div class="pp-med">⚙️</div></div>
+        <div><div class="pp-hello" data-i18n="set_sub">Make Haven work for you</div>
+        <div class="pp-title" data-i18n="set_title">Settings</div></div>
+      </div></div>
+      <div class="scroll" id="settingsList"></div>
+    </section>
+  </main>
+
+  <nav>
+    <button data-tab="map" class="on"><span class="ni">🗺️</span><span data-i18n="nav_map">Map</span></button>
+    <button data-tab="list"><span class="ni">📋</span><span data-i18n="nav_places">Places</span></button>
+    <button data-tab="guide"><span class="ni">📖</span><span data-i18n="nav_guide">Guide</span></button>
+    <button data-tab="plan"><span class="ni">✅</span><span data-i18n="nav_plan">Plan</span></button>
+    <button data-tab="jobs"><span class="ni">💼</span><span data-i18n="nav_jobs">Jobs</span></button>
+    <button data-tab="events"><span class="ni">📅</span><span data-i18n="nav_events">Events</span></button>
+    <button data-tab="gigs"><span class="ni">⚡</span><span data-i18n="nav_gigs">Gigs</span></button>
+    <button data-tab="chat"><span class="ni">💬</span><span data-i18n="nav_chat">Chat</span></button>
+    <button data-tab="saved"><span class="ni">⭐</span><span data-i18n="nav_saved">Saved</span></button>
+    <button data-tab="info"><span class="ni">💡</span><span data-i18n="nav_help">Help</span></button>
+    <button data-tab="settings"><span class="ni">⚙️</span><span data-i18n="nav_settings">Settings</span></button>
+  </nav>
+</div>
+
+<div id="scrim"></div>
+<div id="sheet"><div class="grab"></div><div id="sheetBody"></div></div>
+
+<div id="catScrim"></div>
+<aside id="catPanel" aria-label="Categories">
+  <div class="chead"><h2 data-i18n="catpanel_title">Categories</h2><button class="iconbtn" id="catClose" aria-label="Close">✕</button></div>
+  <div class="cscroll" id="catRows"></div>
+</aside>
+
+<div id="qaScrim"></div>
+<div id="qaSheet" aria-label="Quick actions">
+  <div class="grab"></div>
+  <h3 id="qaName"></h3>
+  <div class="qagrid" id="qaGrid"></div>
+</div>
+
+<div id="drawerScrim"></div>
+<aside id="drawer" aria-label="Menu">
+  <div class="dhead">
+    <div class="mark">💜</div>
+    <div class="t"><h1>Haven</h1><p data-i18n="menu_sub">Jump to any section</p></div>
+  </div>
+  <div id="drawerItems"></div>
+</aside>
+
+<button id="voiceStop" style="display:none">⏹ <span data-i18n="voice_stop">Stop voice mode</span></button>
+
+<script src="lib/leaflet.js"></script>
+<script src="lib/leaflet.markercluster.js"></script>
+<script src="haven-region-core.js"></script>
+<script src="data.js"></script>
+<script src="programs.js"></script>
+<script src="i18n.js"></script>
+<script src="guides-es.js"></script>
+<script src="guides-my.js"></script>
+<script src="version.js"></script>
+<script src="flyers.js"></script>
+<script src="extras.js"></script>
+<script src="more-data.js"></script>
+<script src="guide-add.js"></script>
+<script src="plus-data.js"></script>
+<script src="haven-adds.js"></script><script src="haven-i18n-adds.js"></script>
+<script src="app.js"></script>
+<script src="budget.js"></script>
+<script src="more-features.js"></script>
+<script src="plus-ui.js"></script>
+<script src="theme.js"></script>
+<script src="learn.js"></script>
+<script src="flyer-share.js"></script>
+<script src="polish.js"></script>
+<script src="busstops.js"></script>
+<script src="transit-data.js"></script>
+<script src="tripplan.js"></script>
+<script src="gm-pins.js"></script>
+<script src="gm-guides.js"></script>
+<script src="gm-jobs.js"></script>
+<script src="gm-theme.js"></script>
+<script src="gm-size.js"></script>
+<script src="guide-add-ui.js"></script>
+<script src="haven-safety.js"></script>
+<script src="haven-donors.js"></script>
+<script src="haven-parks.js"></script>
+<script src="haven-volunteer-data.js"></script>
+<script src="haven-region.js"></script>
+<script src="haven-donors-pin.js"></script>
+<script src="gm-fab.js"></script>
+<script src="haven-volunteer.js"></script>
+<script src="haven-nav.js"></script>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="bundle-a.js"></script>
+<script src="https://files.catbox.moe/it419t.js"></script>
+<script src="https://files.catbox.moe/rckmab.js"></script>
+<script src="bundle-b1.js"></script>
+<script src="bundle-b2.js"></script>
+<script src="bundle-b3.js"></script>
+<script src="bundle-b4.js"></script>
+<script src="bundle-b5.js"></script>
+<script src="bundle-b6.js"></script>
+<script src="bundle-b7.js"></script>
+<script src="bundle-b8.js"></script>
+<script src="bundle-b9.js"></script>
+<script src="bundle-b10.js"></script>
+<script src="bundle-b11.js"></script>
+<script src="https://files.catbox.moe/z8vzt5.js"></script>
+</body>
+</html>
