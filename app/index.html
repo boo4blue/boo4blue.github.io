@@ -37,17 +37,39 @@ header p { color: #888; font-size: 14px; }
 <div id="list"><div id="loading">Loading resources...</div></div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="https://files.catbox.moe/k7d0uc.js"></script>
 <script>
 let allPlaces = [];
 let map, markers;
 
-const CATS = {
+const DATA_URL = 'https://files.catbox.moe/k7d0uc.js';
+const DATA_RETRIES = 3;
+
+const FILTER_CATS = {
   'food': '🍔 Food', 'shelter': '🏠 Shelter', 'health': '🏥 Health',
   'shower': '🚿 Showers', 'laundry': '👕 Laundry', 'wifi': '📶 WiFi',
   'jobs': '💼 Jobs', 'benefits': '💰 Benefits', 'mental': '🧠 Mental Health',
   'youth': '👦 Youth', 'pets': '🐾 Pets', 'transport': '🚌 Transport'
 };
+
+function loadData(attempt) {
+  const loadingEl = document.getElementById('loading');
+  loadingEl.textContent = attempt > 1
+    ? 'Loading resources... (retry ' + (attempt - 1) + ' of ' + (DATA_RETRIES - 1) + ')'
+    : 'Loading resources...';
+  const s = document.createElement('script');
+  s.src = DATA_URL;
+  s.onload = init;
+  s.onerror = () => {
+    s.remove();
+    if (attempt < DATA_RETRIES) {
+      setTimeout(() => loadData(attempt + 1), 2000);
+    } else {
+      loadingEl.innerHTML = 'Could not load resource data. <button class="filter-btn" id="retry-btn">Try again</button>';
+      document.getElementById('retry-btn').addEventListener('click', () => loadData(1));
+    }
+  };
+  document.head.appendChild(s);
+}
 
 function init() {
   if (typeof RESOURCES === 'undefined') {
@@ -66,7 +88,7 @@ function init() {
   // Filters
   const fc = document.getElementById('filters');
   fc.innerHTML = '<button class="filter-btn active" data-cat="">All</button>' +
-    Object.entries(CATS).map(([k,v]) => `<button class="filter-btn" data-cat="${k}">${v}</button>`).join('');
+    Object.entries(FILTER_CATS).map(([k,v]) => `<button class="filter-btn" data-cat="${k}">${v}</button>`).join('');
   fc.addEventListener('click', e => {
     if (e.target.dataset.cat !== undefined) {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -117,7 +139,7 @@ function render(cat, q) {
   `).join('') || '<p style="text-align:center;color:#888">No places found.</p>';
 }
 
-window.addEventListener('DOMContentLoaded', init);
+window.addEventListener('DOMContentLoaded', () => loadData(1));
 </script>
 </body>
 </html>
