@@ -59,11 +59,16 @@ nav button .ico { font-size: 20px; display: block; margin-bottom: 2px; }
 .todo-hint { color: #666; font-size: 12px; margin: -6px 0 12px; }
 .emoji-pin { background: none; border: none; }
 .app-pin { width: 38px; height: 38px; position: relative; }
-.app-pin .pin-body { width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,.95); border: 3px solid; display: flex; align-items: center; justify-content: center; font-size: 20px; box-shadow: 0 2px 8px rgba(0,0,0,.4); }
+.app-pin .pin-body { width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,.95); border: 3px solid; display: flex; align-items: center; justify-content: center; font-size: 21px; box-shadow: 0 1px 4px rgba(0,0,0,.4); }
 .app-pin .status-dot { position: absolute; top: -2px; right: -2px; width: 12px; height: 12px; border-radius: 50%; border: 2px solid #fff; }
 .app-pin .status-dot.open { background: #22c55e; }
 .app-pin .status-dot.closed { background: #9ca3af; }
-.pin-label { background: rgba(0,0,0,.7); color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 4px; white-space: nowrap; margin-top: 2px; text-align: center; }
+.pin-label { position: absolute; top: 50%; left: 100%; transform: translateY(-50%); margin-left: 4px; max-width: 110px; font-size: 11px; font-weight: 600; color: #fff; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; pointer-events: none; }
+body.zoom-far .app-pin .pin-body { width: 22px; height: 22px; font-size: 12px; border-width: 2px; }
+body.zoom-far .app-pin { width: 22px; height: 22px; }
+body.zoom-far .pin-label { display: none; }
+body.zoom-mid .app-pin .pin-body { width: 30px; height: 30px; font-size: 17px; }
+body.zoom-mid .app-pin { width: 30px; height: 30px; }
 #sheet-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.65); z-index: 2000; display: none; }
 #sheet-overlay.open { display: block; }
 #sheet { position: absolute; left: 0; right: 0; bottom: 0; max-height: 82vh; overflow-y: auto; background: #1a1f2e; border-radius: 18px 18px 0 0; padding: 20px 20px 30px; border-top: 1px solid #2a3040; }
@@ -97,13 +102,14 @@ nav button .ico { font-size: 20px; display: block; margin-bottom: 2px; }
 <header style="display:flex;align-items:center;gap:12px;">
 <button onclick="toggleSidebar()" style="background:none;border:none;color:#7c8aff;font-size:24px;cursor:pointer;padding:8px;">☰</button>
 <div><h1>💜 Haven FW</h1>
-<p>Fort Wayne free resources — <span id="count">loading...</span></p></div>
+<p><span id="area-sub">Fort Wayne</span> free resources — <span id="count">loading...</span></p></div>
+<button id="area-chip" onclick="cycleArea()" aria-label="Switch city" style="margin-left:auto;background:#1a1f2e;border:1px solid #333;color:#fff;border-radius:20px;padding:8px 14px;font-size:14px;cursor:pointer;white-space:nowrap;">📍 Fort Wayne, IN</button>
 </header>
 
 <div id="sidebar" style="position:fixed;top:0;left:-280px;width:280px;height:100%;background:#1a1f2e;z-index:1000;transition:left 0.3s;overflow-y:auto;padding:20px 0;box-shadow:2px 0 10px rgba(0,0,0,0.5);">
   <div style="padding:0 20px 16px;border-bottom:1px solid #333;margin-bottom:12px;">
     <h2 style="color:#7c8aff;margin:0;">💜 Haven FW</h2>
-    <p style="color:#888;font-size:12px;margin:4px 0 0;">Fort Wayne free resources</p>
+    <p style="color:#888;font-size:12px;margin:4px 0 0;"><span id="area-sub2">Fort Wayne</span> free resources</p>
   </div>
   <div id="sidebar-tabs">
     <button onclick="goTab('map')" style="display:flex;align-items:center;gap:12px;width:100%;padding:14px 20px;background:none;border:none;border-left:3px solid transparent;color:#e0e0e0;font-size:16px;cursor:pointer;text-align:left;"><span style="font-size:20px;">🗺️</span>Map</button>
@@ -617,12 +623,59 @@ function loadData(attempt) {
   document.head.appendChild(s);
 }
 
+// ---- Area support: Fort Wayne <-> Portland ----
+const AREAS = {
+  'fort-wayne': { name: 'Fort Wayne, IN', short: 'Fort Wayne', lat: 41.0793, lon: -85.1394, zoom: 12, tz: 'America/Indiana/Indianapolis' },
+  'portland':   { name: 'Portland, OR',   short: 'Portland',   lat: 45.5152, lon: -122.6784, zoom: 12, tz: 'America/Los_Angeles' }
+};
+function areaOf(r) { return (r && r.area) || 'fort-wayne'; }
+function getArea() {
+  try { const a = localStorage.getItem('haven_area'); if (a && AREAS[a]) return a; } catch (e) {}
+  return 'fort-wayne';
+}
+function areaCenter() { return AREAS[getArea()]; }
+function placesInArea() { return allPlaces.filter(r => areaOf(r) === getArea()); }
+function setArea(a) {
+  if (!AREAS[a] || a === getArea()) return;
+  try { localStorage.setItem('haven_area', a); } catch (e) {}
+  applyArea();
+  miniToast('📍 ' + AREAS[a].name);
+}
+function cycleArea() { setArea(getArea() === 'fort-wayne' ? 'portland' : 'fort-wayne'); }
+function applyArea() {
+  const A = areaCenter();
+  const chip = document.getElementById('area-chip');
+  if (chip) chip.textContent = '📍 ' + A.name;
+  const sub = document.getElementById('area-sub');
+  if (sub) sub.textContent = A.short;
+  const sub2 = document.getElementById('area-sub2');
+  if (sub2) sub2.textContent = A.short;
+  const cnt = document.getElementById('count');
+  if (cnt && typeof allPlaces !== 'undefined') cnt.textContent = placesInArea().length + ' places';
+  if (typeof map !== 'undefined' && map) map.setView([A.lat, A.lon], A.zoom);
+  renderHotlines(); renderJobs(); renderGigs(); renderEvents(); renderGuides();
+  loadWeather();
+  if (typeof RESOURCES !== 'undefined') render(activeCats(), activeQ());
+}
+// One-shot geolocation: on first visit (no saved area), pick the nearer covered city.
+function detectAreaGeo() {
+  if (!navigator.geolocation) return;
+  try { if (localStorage.getItem('haven_area')) return; } catch (e) { return; }
+  navigator.geolocation.getCurrentPosition(pos => {
+    try { if (localStorage.getItem('haven_area')) return; } catch (e) { return; }
+    const dFW = distMi(pos.coords.latitude, pos.coords.longitude, 41.0793, -85.1394);
+    const dPDX = distMi(pos.coords.latitude, pos.coords.longitude, 45.5152, -122.6784);
+    setArea(dPDX < dFW ? 'portland' : 'fort-wayne');
+  }, () => {}, { timeout: 8000, maximumAge: 900000 });
+}
+
 function init() {
   if (typeof RESOURCES === 'undefined') return;
   allPlaces = RESOURCES.filter(r => r.lat && r.lng);
-  document.getElementById('count').textContent = allPlaces.length + ' places';
+  document.getElementById('count').textContent = placesInArea().length + ' places';
 
-  map = L.map('map').setView([41.079, -85.139], 12);
+  const AC0 = areaCenter();
+  map = L.map('map').setView([AC0.lat, AC0.lon], AC0.zoom);
   L.tileLayer('https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png?key=cb1_4h9q_1_84dc6afd4f5c6cd3901f9e35', {
     maxZoom: 19, attribution: '© OSM © CARTO'
   }).addTo(map);
@@ -714,6 +767,8 @@ function init() {
   applySettings();
   renderRecent();
   buildSidebar();
+  applyArea();
+  detectAreaGeo();
 
   // Learn tab controls
   document.getElementById('learn-chips').addEventListener('click', e => {
@@ -784,7 +839,7 @@ function showUserLocation(center) {
 function render(cats, q) {
   q = (q || '').toLowerCase();
   if (!Array.isArray(cats)) cats = cats ? [cats] : [];
-  let list = allPlaces;
+  let list = placesInArea();
   if (cats.length) list = list.filter(r => (r.cats || []).some(c => cats.includes(c)));
   if (q) list = list.filter(r =>
     (r.name + ' ' + (r.desc||'') + ' ' + (r.addr||'')).toLowerCase().includes(q));
@@ -816,16 +871,47 @@ function render(cats, q) {
     zoomToBoundsOnClick: true
   });
   const zoom = map ? map.getZoom() : 12;
-  const maxPins = zoom >= 15 ? 500 : zoom >= 13 ? 200 : 100;
-  list.slice(0, maxPins).forEach(r => {
+  // App-exact: priority-based decluttering (gmLOD from gm-pins.js)
+  const PRI = {shelter:9, meals:9, health:8, mental:8, recovery:7, benefits:7, food:6, cash:6, bathroom:5, water:5, youth:5, hangout:3, thrift:3};
+  const favs = favIds();
+  const score = r => (favs.includes(favKey(r)) ? 100 : 0) + Math.max(...(r.cats || []).map(c => PRI[c] || 4)) * 10 + Math.min(((r.desc || '').length) / 120, 6);
+  // Spatial decluttering: minimum pixel distance between pins
+  const minD = zoom >= 17 ? 30 : zoom >= 15 ? 40 : zoom >= 13 ? 52 : 64;
+  const sorted = [...list].sort((a, b) => score(b) - score(a));
+  const keep = [], pts = [];
+  // Jitter: pull pins at exact same spot slightly apart
+  const seen = {};
+  sorted.forEach(r => {
+    const k = r.lat.toFixed(5) + ',' + r.lng.toFixed(5);
+    const n = seen[k] = (seen[k] || 0) + 1;
+    if (n > 1) {
+      const ang = n * 2.4;
+      r._jx = Math.sin(ang) * 0.00004 * n;
+      r._jy = Math.cos(ang) * 0.00005 * n;
+    }
+  });
+  sorted.forEach(r => {
+    const lat = r.lat + (r._jx || 0), lng = r.lng + (r._jy || 0);
+    const pt = map.latLngToContainerPoint([lat, lng]);
+    const isFav = favs.includes(favKey(r));
+    if (isFav || !pts.some(q => Math.abs(q.x - pt.x) < minD && Math.abs(q.y - pt.y) < minD)) {
+      keep.push(r); pts.push(pt);
+    }
+    if (keep.length >= 500) return;
+  });
+  // Zoom-based pin sizing classes
+  document.body.classList.toggle('zoom-far', zoom < 14);
+  document.body.classList.toggle('zoom-mid', zoom >= 14 && zoom < 16);
+  keep.forEach(r => {
     let emoji = '💜', color = '#7c8aff';
     for (const c of (r.cats || [])) {
       if (PIN_EMOJI[c]) { emoji = PIN_EMOJI[c]; color = PIN_COLOR[c] || '#7c8aff'; break; }
     }
-    const marker = L.marker([r.lat, r.lng], {
+    const lat = r.lat + (r._jx || 0), lng = r.lng + (r._jy || 0);
+    const marker = L.marker([lat, lng], {
       cats: r.cats || [],
       icon: L.divIcon({
-        html: `<div class="app-pin"><div class="pin-body" style="border-color:${color}">${emoji}</div><div class="status-dot ${isOpenNow(r) ? 'open' : 'closed'}"></div></div>`,
+        html: `<div style="position:relative;"><div class="app-pin"><div class="pin-body" style="border-color:${color}">${emoji}</div><div class="status-dot ${isOpenNow(r) ? 'open' : 'closed'}"></div></div><div class="pin-label">${escapeHtml((r.name || '').substring(0, 25))}</div></div>`,
         className: 'emoji-pin', iconSize: [38, 38], iconAnchor: [19, 19]
       })
     });
@@ -1068,7 +1154,7 @@ function renderGuides() {
   if (typeof GUIDES === 'undefined') return;
   document.getElementById('guide-list').innerHTML =
     '<h2 style="color:#fff;margin-bottom:12px;">📖 Benefit Guides</h2>' +
-    GUIDES.map((g, i) => `
+    GUIDES.filter(g => areaOf(g) === getArea()).map((g, i) => `
     <div class="card" onclick="toggleGuide(this, ${i})">
       <h3>${g.icon || ''} ${g.title || g.name}</h3>
       <p>${g.intro || (g.desc || '').substring(0, 200)}</p>
@@ -1108,7 +1194,7 @@ function toggleGuide(el, i) {
 }
 
 function renderJobs() {
-  const jobs = (typeof JOBS !== 'undefined' ? JOBS : []);
+  const jobs = (typeof JOBS !== 'undefined' ? JOBS : []).filter(j => areaOf(j) === getArea());
   document.getElementById('jobs-list').innerHTML =
     '<h2 style="color:#fff;margin-bottom:12px;">💼 Jobs</h2>' +
     (jobs.map(j => `
@@ -1121,7 +1207,7 @@ function renderJobs() {
 
 function renderEvents() {
   if (typeof EVENTS === 'undefined') return;
-  const fw = EVENTS.filter(e => !e.area || e.area === 'fort-wayne');
+  const fw = EVENTS.filter(e => areaOf(e) === getArea());
   document.getElementById('events-list').innerHTML =
     '<h2 style="color:#fff;margin-bottom:12px;">📅 Events</h2>' +
     fw.slice(0, 30).map(e => `
@@ -1143,13 +1229,13 @@ function gigIsNew(g) {
 }
 function gigsFiltered() {
   const all = typeof GIGS !== 'undefined' ? GIGS : [];
-  return all.filter(g => (!g.area || g.area === 'fort-wayne') && (gigFilter === 'all' || g.kind === gigFilter));
+  return all.filter(g => areaOf(g) === getArea() && (gigFilter === 'all' || g.kind === gigFilter));
 }
 function renderGigs() {
   const chipsEl = document.getElementById('gig-chips');
   if (chipsEl) {
     const all = typeof GIGS !== 'undefined' ? GIGS : [];
-    const fw = all.filter(g => !g.area || g.area === 'fort-wayne');
+    const fw = all.filter(g => areaOf(g) === getArea());
     const kinds = Object.keys(GIG_KINDS).filter(k => fw.some(g => g.kind === k));
     chipsEl.innerHTML = `<button class="filter-btn${gigFilter === 'all' ? ' active' : ''}" data-gf="all">All</button>` +
       kinds.map(k => `<button class="filter-btn${gigFilter === k ? ' active' : ''}" data-gf="${k}">${GIG_KINDS[k][0]} ${GIG_KINDS[k][1]}</button>`).join('');
@@ -1196,8 +1282,9 @@ function togglePlan(id) {
 }
 
 function renderHotlines() {
-  const h = typeof HOTLINES !== 'undefined' ? HOTLINES.filter(x => !x.area || x.area === 'fort-wayne') : [
-    {name: 'Indiana 211', href: 'tel:211', desc: 'Food, shelter, bills, crisis help'},
+  const h = typeof HOTLINES !== 'undefined' ? HOTLINES.filter(x => areaOf(x) === getArea()) : [
+    {name: 'Indiana 211', area: 'fort-wayne', href: 'tel:211', desc: 'Food, shelter, bills, crisis help'},
+    {name: 'Oregon 211', area: 'portland', href: 'tel:211', desc: 'Food, shelter, bills, crisis help'},
     {name: '988 Crisis Line', href: 'tel:988', desc: 'Suicide & crisis, call or text', crisis: true}
   ];
   document.getElementById('hotlines').innerHTML = h.map(x => {
@@ -1453,7 +1540,6 @@ function renderPrograms() {
 }
 
 // --- Weather banner (feature #7): Open-Meteo, no key needed ---
-const WX_LAT = 41.0793, WX_LON = -85.1394; // Fort Wayne
 function wxIcon(code) {
   if (code === 0) return '☀️';
   if (code <= 3) return '⛅';
@@ -1475,7 +1561,7 @@ function renderWeather(wx) {
     el.innerHTML = `<div class="wx-cold">🥶 <b>Cold alert:</b> it feels like ${f}°F out there. ` +
       `<a href="#" onclick="wxShelter();return false;">🏠 Find a warm place →</a></div>`;
   } else {
-    el.innerHTML = `<div class="wx-bar">${icon} <span>Fort Wayne: <b>${t}°F</b> (feels like ${f}°F)</span></div>`;
+    el.innerHTML = `<div class="wx-bar">${icon} <span>${areaCenter().short}: <b>${t}°F</b> (feels like ${f}°F)</span></div>`;
   }
 }
 function wxShelter() {
@@ -1486,8 +1572,9 @@ function wxShelter() {
   if (b) b.click(); else alert('Places are still loading — try again in a moment.');
 }
 function loadWeather() {
-  const url = 'https://api.open-meteo.com/v1/forecast?latitude=' + WX_LAT + '&longitude=' + WX_LON +
-    '&current=temperature_2m,apparent_temperature,weather_code&temperature_unit=fahrenheit&timezone=America%2FIndiana%2FIndianapolis';
+  const A = areaCenter();
+  const url = 'https://api.open-meteo.com/v1/forecast?latitude=' + A.lat + '&longitude=' + A.lon +
+    '&current=temperature_2m,apparent_temperature,weather_code&temperature_unit=fahrenheit&timezone=' + encodeURIComponent(A.tz);
   const ctl = typeof AbortController !== 'undefined' ? new AbortController() : null;
   const timer = setTimeout(() => { if (ctl) ctl.abort(); }, 8000);
   fetch(url, ctl ? { signal: ctl.signal } : {})
