@@ -1,0 +1,42 @@
+/* Google-Maps-style pins: small dot + side label; selected = red teardrop, no pulse */
+.mk .pin{width:28px!important;height:28px!important;font-size:calc(15px*var(--ts,1))!important;transform:none!important;box-shadow:0 1px 4px rgba(0,0,0,.4)!important;border-width:2px!important}
+.mk .pulse{display:none!important}
+.mk .pname{top:50%!important;left:100%!important;transform:translateY(-50%)!important;margin-left:4px;max-width:110px;text-align:left;font-size:calc(11px*var(--ts,1))!important;font-weight:600!important;color:#3c4043!important;background:none!important;box-shadow:none!important;padding:0!important;text-shadow:-1px -1px #fff,1px -1px #fff,-1px 1px #fff,1px 1px #fff,0 0 3px #fff}
+.mk.sel .pin{background:#ea4335!important;border:2px solid #b3261e!important;color:#fff!important;width:34px!important;height:34px!important;transform:translateY(-22px)!important;box-shadow:0 3px 8px rgba(0,0,0,.45)!important;animation:gmdrop .28s cubic-bezier(.2,.9,.3,1.3)}
+.mk.sel .pin::after{content:"";position:absolute;left:50%;bottom:-9px;margin-left:-7px;border:7px solid transparent;border-top:11px solid #ea4335;border-bottom:0}
+.mk.sel .pname{display:block!important;top:calc(50% - 22px)!important;font-size:calc(12px*var(--ts,1))!important;font-weight:700!important;max-width:150px!important}
+@keyframes gmdrop{from{transform:translateY(-60px);opacity:.2}to{transform:translateY(-22px);opacity:1}}
+#peek{position:fixed;left:0!important;right:0!important;bottom:0!important;border-radius:20px 20px 0 0!important;padding:8px 16px 14px!important;touch-action:none}
+#peek .gm-grab{width:36px;height:4px;border-radius:2px;background:#bdc1c6;margin:0 auto 10px}
+#peek .gm-t{font-size:calc(18px*var(--ts,1));font-weight:600;line-height:1.25}
+#peek .gm-s{margin-top:3px;font-size:calc(13px*var(--ts,1));color:var(--mut,#5f6368);display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+#peek .gm-a{display:flex;gap:8px;margin-top:12px;overflow-x:auto;scrollbar-width:none}
+#peek .gm-a a,#peek .gm-a button{flex:none;display:flex;align-items:center;gap:6px;padding:9px 16px;border-radius:20px;border:1px solid #dadce0;background:transparent;color:#1a73e8;font:600 calc(13px*var(--ts,1)) system-ui;text-decoration:none}
+#peek .gm-a .p{background:#1a73e8;color:#fff;border-color:#1a73e8}
+/* simple for older eyes: plain numbered cluster bubbles, no captions, bigger pins/text */
+.hv-cl .t{display:none!important}
+.hv-cl .b{font-size:0!important;background:#1a73e8!important;border:3px solid #fff!important;display:flex;align-items:center;justify-content:center;min-width:var(--s)!important;line-height:1!important}
+.hv-cl .n{position:static!important;background:none!important;border:0!important;box-shadow:none!important;color:#fff!important;font:800 calc(21px*var(--ts,1))/1 system-ui,sans-serif!important;min-width:0!important;height:auto!important;padding:0!important}
+.mk .pin{width:38px!important;height:38px!important;font-size:calc(21px*var(--ts,1))!important;border-width:3px!important}
+.mk.sel .pin{width:44px!important;height:44px!important;font-size:calc(24px*var(--ts,1))!important}
+.mk .pname{font-size:calc(14px*var(--ts,1))!important;max-width:150px!important}
+#peek .gm-t{font-size:calc(22px*var(--ts,1))!important}
+#peek .gm-s{font-size:calc(16px*var(--ts,1))!important}
+#peek .gm-a a,#peek .gm-a button{font-size:calc(16px*var(--ts,1))!important;padding:12px 18px!important}
+/* Google-style: dots when zoomed out, bigger as you zoom in */
+body.gs .mk .pin{width:22px!important;height:22px!important;font-size:calc(12px*var(--ts,1))!important;border-width:2px!important}
+body.gm .mk .pin{width:30px!important;height:30px!important;font-size:calc(17px*var(--ts,1))!important}
+body.gs .mk .pname{display:none!important}
+/* one sheet, like Google Maps: essentials visible immediately, swipe up for the rest */
+#peek{touch-action:auto!important;max-height:46vh;overflow-y:auto;transition:max-height .25s ease;-webkit-overflow-scrolling:touch}
+#peek.full{max-height:90vh}
+#peek .gm-head{touch-action:none;padding-bottom:2px}
+#peek .gm-row{font-size:calc(16px*var(--ts,1));padding:9px 0;border-bottom:1px solid rgba(128,128,128,.25);line-height:1.35}
+#peek .gm-row a{color:#1a73e8;text-decoration:none;font-weight:600}
+#peek .gm-desc{font-size:calc(15px*var(--ts,1));line-height:1.5;margin:12px 0}
+#peek .gm-more{display:none}#peek.full .gm-more{display:block}
+#peek .gm-all{width:100%;margin:12px 0 4px;padding:13px;border-radius:12px;border:1px solid #dadce0;background:transparent;color:#1a73e8;font:700 calc(16px*var(--ts,1)) system-ui}
+
+/* solid card, above the nav bar */
+#peek{background:var(--card,#141b2e)!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;z-index:2500!important;box-shadow:0 -4px 18px rgba(0,0,0,.45)!important;border:1px solid var(--line,rgba(255,255,255,.12));border-bottom:0;max-height:calc(46vh)!important}
+#peek.full{max-height:calc(82vh)!important}
