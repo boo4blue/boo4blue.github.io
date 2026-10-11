@@ -28,6 +28,7 @@ header p { color: #888; font-size: 14px; }
 .card .meta { display: flex; gap: 12px; margin-top: 8px; font-size: 13px; flex-wrap: wrap; }
 .card a { color: #7c8aff; text-decoration: none; }
 .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 12px; background: #2a3040; color: #aaa; margin-right: 6px; margin-bottom: 4px; }
+.open-badge { display: inline-block; background: #1d3a26; color: #4ade80; border: 1px solid #2d5a3d; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: bold; margin-bottom: 4px; }
 #loading { text-align: center; padding: 40px; color: #888; }
 nav { position: fixed; bottom: 0; left: 0; right: 0; background: #1a1f2e; display: flex; z-index: 1000; border-top: 1px solid #2a3040; }
 nav button { flex: 1; padding: 10px 4px; background: none; border: none; color: #888; font-size: 11px; cursor: pointer; }
@@ -200,6 +201,38 @@ function favIds() {
 }
 function favKey(r) { return r.id || r.name; }
 function escapeAttr(s) { return String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;'); }
+
+// Open-now badge: uses the structured r.hours dict { day: [openMin, closeMin] }.
+// Days are 0=Sun..6=Sat (a few entries use 7 for Sunday); values are minutes since midnight.
+// A few entries encode HH:MM as HHMM (e.g. 1500-2000 = 3pm-8pm); detected by value > 1440.
+// Returns true/false when the dict covers today, null when hours are unknown (no badge).
+function isOpenNow(r) {
+  const h = r && r.hours;
+  if (!h || typeof h !== 'object') return null;
+  const d = new Date();
+  const day = d.getDay();
+  let v = h[day];
+  if (v === undefined && day === 0) v = h[7]; // some entries use 7 for Sunday
+  if (Array.isArray(v) && v.length === 0) return false; // explicit "closed today" marker
+  if (!Array.isArray(v) || v.length !== 2 || typeof v[0] !== 'number' || typeof v[1] !== 'number') return null;
+  let o = v[0], c = v[1];
+  if (o > 1440 || c > 1440) { // HHMM-encoded entries
+    const conv = x => Math.floor(x / 100) * 60 + (x % 100);
+    o = conv(o); c = conv(c);
+  }
+  if (!(o >= 0 && c > o && c <= 1440)) return null;
+  const now = d.getHours() * 60 + d.getMinutes();
+  return now >= o && now < c;
+}
+function openBadge(r) {
+  return isOpenNow(r) === true ? '<div class="open-badge">🟢 Open now</div>' : '';
+}
+function openStatusLine(r) {
+  const s = isOpenNow(r);
+  if (s === true) return ' <b style="color:#4ade80">🟢 Open now</b>';
+  if (s === false) return ' <span style="color:#e74c3c">🔴 Closed now</span>';
+  return '';
+}
 function toggleFavAttr(btn) { toggleFav(btn.dataset.fkey); }
 function toggleFav(key) {
   let ids = favIds();
@@ -299,6 +332,7 @@ function render(cat, q) {
     <div class="card" onclick="openSheet(${idx})">
       <button class="fav-btn" data-fkey="${escapeAttr(fk)}" onclick="event.stopPropagation();toggleFavAttr(this)" aria-label="Save place">${fav ? '❤️' : '🤍'}</button>
       <h3>${r.name}</h3>
+      ${openBadge(r)}
       <p>${r.addr || ''}</p>
       <p>${(r.desc || '').substring(0, 120)}...</p>
       <div class="meta">${(r.cats || []).slice(0, 3).map(c => `<span class="badge">${c}</span>`).join('')}${d !== null ? `<span class="badge" style="color:#7c8aff">📍 ${d.toFixed(1)} mi</span>` : ''}</div>
@@ -323,6 +357,7 @@ function renderFavs() {
     <div class="card" data-fkey="${escapeAttr(fk)}" onclick="openSheetByKey(this.dataset.fkey)">
       <button class="fav-btn" data-fkey="${escapeAttr(fk)}" onclick="event.stopPropagation();toggleFavAttr(this)" aria-label="Remove from saved">❤️</button>
       <h3>${r.name}</h3>
+      ${openBadge(r)}
       <p>${r.addr || ''}</p>
       <p>${(r.desc || '').substring(0, 120)}...</p>
       <div class="meta">${(r.cats || []).slice(0, 3).map(c => `<span class="badge">${c}</span>`).join('')}</div>
@@ -349,7 +384,7 @@ function showSheet(r) {
     ${r.addr ? `<div class="row">📍 ${r.addr}${r.zip ? ' ' + r.zip : ''}</div>` : ''}
     ${(r.cats || []).length ? `<div class="row">${(r.cats || []).map(c => `<span class="badge">${c}</span>`).join('')}</div>` : ''}
     ${r.desc ? `<div class="sec">About</div><div class="row">${r.desc}</div>` : ''}
-    ${r.hoursText ? `<div class="sec">⏱ Hours</div><div class="row">${r.hoursText}</div>` : ''}
+    ${r.hoursText ? `<div class="sec">⏱ Hours</div><div class="row">${r.hoursText}${openStatusLine(r)}</div>` : ''}
     ${(r.tags || []).length ? `<div class="sec">Services</div><div class="row">${(r.tags || []).map(t => `<span class="badge">${t}</span>`).join('')}</div>` : ''}
     <div class="sec">Contact</div>
     <div class="row">
