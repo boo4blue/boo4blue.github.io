@@ -1,0 +1,39 @@
+/* Settings → Text size / Pin size.  --ts = text factor, --ps = pin factor (both default 1) */
+:root{--ts:1;--ps:1}
+
+/* ---- pins: every size below is the original size × --ps ---- */
+.mk .pin{width:calc(38px*var(--ps))!important;height:calc(38px*var(--ps))!important;font-size:calc(21px*var(--ps))!important;border-width:calc(3px*var(--ps))!important}
+body.gm .mk .pin{width:calc(30px*var(--ps))!important;height:calc(30px*var(--ps))!important;font-size:calc(17px*var(--ps))!important}
+body.gs .mk .pin{width:calc(22px*var(--ps))!important;height:calc(22px*var(--ps))!important;font-size:calc(12px*var(--ps))!important;border-width:calc(2px*var(--ps))!important}
+.mk.sel .pin{width:calc(44px*var(--ps))!important;height:calc(44px*var(--ps))!important;font-size:calc(24px*var(--ps))!important;transform:translateY(calc(-22px*var(--ps)))!important}
+body.gs .mk.sel .pin{width:calc(22px*var(--ps))!important;height:calc(22px*var(--ps))!important}
+.mk.sel .pin::after{bottom:calc(-9px*var(--ps));margin-left:calc(-7px*var(--ps));border-left-width:calc(7px*var(--ps));border-right-width:calc(7px*var(--ps));border-top-width:calc(11px*var(--ps))}
+@keyframes gmdrop{from{transform:translateY(calc(-60px*var(--ps)));opacity:.2}to{transform:translateY(calc(-22px*var(--ps)));opacity:1}}
+.mk .pname{font-size:calc(14px*var(--ps))!important;max-width:calc(150px*var(--ps))!important;margin-left:calc(4px*var(--ps))!important}
+.mk.sel .pname{font-size:calc(15px*var(--ps))!important;max-width:calc(190px*var(--ps))!important;top:calc(50% - 22px*var(--ps))!important}
+.sdot{width:calc(13px*var(--ps))!important;height:calc(13px*var(--ps))!important;top:calc(-4px*var(--ps))!important;right:calc(-4px*var(--ps))!important}
+.hv-cl .n{font-size:calc(21px*var(--ps))!important}
+.mk .bstop,.hv-bsc{transform:scale(var(--ps));transform-origin:center center}
+
+/* ---- Settings sliders ---- */
+.szrow .shead{width:100%}
+.sz-val{margin-left:auto;flex:none;min-width:64px;text-align:center;padding:7px 12px;border-radius:999px;font-weight:800;font-size:15px;font-variant-numeric:tabular-nums;color:var(--txt);background:color-mix(in srgb,var(--acc,#1a73e8) 18%,transparent);border:1px solid color-mix(in srgb,var(--acc,#1a73e8) 40%,transparent)}
+.sz-ctl{display:flex;align-items:center;gap:10px;margin-top:14px}
+.sz-step{flex:none;width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:var(--card2);color:var(--txt);font-size:24px;font-weight:700;line-height:1;display:grid;place-items:center;-webkit-tap-highlight-color:transparent;transition:transform .12s,background .15s}
+.sz-step:active{transform:scale(.92);background:color-mix(in srgb,var(--acc,#1a73e8) 22%,var(--card2))}
+input.sz{-webkit-appearance:none;appearance:none;flex:1;min-width:0;height:48px;margin:0;background:transparent;-webkit-tap-highlight-color:transparent}
+input.sz:focus{outline:none}
+input.sz::-webkit-slider-runnable-track{height:10px;border-radius:99px;background:linear-gradient(to right,var(--acc,#1a73e8) var(--fill,50%),var(--line,rgba(128,128,128,.35)) var(--fill,50%))}
+input.sz::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:30px;height:30px;margin-top:-10px;border-radius:50%;background:#fff;border:3px solid var(--acc,#1a73e8);box-shadow:0 2px 8px rgba(0,0,0,.4);transition:transform .12s}
+input.sz:active::-webkit-slider-thumb{transform:scale(1.18)}
+.sz-ends{display:flex;align-items:center;justify-content:space-between;margin:2px 6px 0 6px;color:var(--mut);font-weight:700}
+.sz-ends .s{font-size:12px}.sz-ends .b{font-size:22px}
+.sz-reset{padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--txt);font-size:13px;font-weight:700;-webkit-tap-highlight-color:transparent}
+.sz-reset:disabled{opacity:.4}
+.sz-prev{margin-top:12px;padding:14px 16px;border-radius:16px;background:var(--card2);border:1px dashed var(--line);color:var(--txt);line-height:1.5;overflow:hidden;word-break:break-word}
+.sz-prev b{display:block;font-weight:800}
+.sz-prev span{display:block;color:var(--mut);margin-top:2px}
+.sz-pinbox{margin-top:12px;display:flex;align-items:center;gap:14px;padding:12px 16px;border-radius:16px;background:var(--card2);border:1px dashed var(--line);overflow:hidden}
+.sz-pinbox .szp{flex:none;border-radius:50%;background:#dde3ec;border:3px solid #22c55e;display:grid;place-items:center;box-sizing:border-box;box-shadow:0 4px 14px rgba(0,0,0,.4);line-height:1}
+.sz-pinbox .szp.b{border-color:#8b5cf6}
+.sz-pinbox small{color:var(--mut);font-size:12.5px;line-height:1.4}
