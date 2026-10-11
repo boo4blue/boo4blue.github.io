@@ -132,8 +132,12 @@ function render(cat, q) {
     narcan: '💊'
   };
   list.slice(0, 200).forEach(r => {
-    const cat = (r.cats || [])[0] || '';
-    const emoji = PIN_EMOJI[cat] || '📍';
+    const cats = r.cats || [];
+    // Find first cat with an emoji mapping
+    let emoji = '💜';
+    for (const c of cats) {
+      if (PIN_EMOJI[c]) { emoji = PIN_EMOJI[c]; break; }
+    }
     const pin = L.marker([r.lat, r.lng], {
       icon: L.divIcon({
         html: `<div style="font-size:24px;text-align:center;line-height:1;filter:drop-shadow(0 2px 3px rgba(0,0,0,0.5))">${emoji}</div>`,
