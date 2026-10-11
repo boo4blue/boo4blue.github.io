@@ -288,7 +288,7 @@ function render(cat, q) {
         html: `<div style="font-size:24px;text-align:center;filter:drop-shadow(0 2px 3px rgba(0,0,0,0.5))">${emoji}</div>`,
         className: 'emoji-pin', iconSize: [28, 28], iconAnchor: [14, 14]
       })
-    }).bindPopup(`<b>${r.name}</b><br>${r.addr||''}<br><a href="https://maps.google.com/?q=${r.lat},${r.lng}" target="_blank">Directions</a>`).addTo(markers);
+    }).bindPopup(`<b>${r.name}</b><br>${r.addr||''}<br><a href="https://maps.google.com/?q=${r.lat},${r.lng}" target="_blank">Directions</a> · <a href="https://www.google.com/maps/dir/?api=1&destination=${r.lat},${r.lng}&travelmode=transit" target="_blank">🚌 Transit</a>`).addTo(markers);
   });
   markers.addTo(map);
 
@@ -305,6 +305,7 @@ function render(cat, q) {
       <div class="meta">
         ${r.phone ? `<a href="tel:${r.phone}">📞 ${r.phone}</a>` : ''}
         ${r.lat ? `<a href="https://maps.google.com/?q=${r.lat},${r.lng}" target="_blank">🗺️ Directions</a>` : ''}
+        ${r.lat ? `<a href="https://www.google.com/maps/dir/?api=1&destination=${r.lat},${r.lng}&travelmode=transit" target="_blank">🚌 Transit</a>` : ''}
       </div>
       <div class="meta" style="color:#7c8aff">Tap for details →</div>
     </div>`;
@@ -354,6 +355,7 @@ function showSheet(r) {
     <div class="row">
       ${telHref ? `<a class="sheet-btn" href="${telHref}">📞 ${r.phone || 'Call'}</a>` : ''}
       ${r.lat ? `<a class="sheet-btn" href="https://maps.google.com/?q=${r.lat},${r.lng}" target="_blank">🗺️ Directions</a>` : ''}
+      ${r.lat ? `<a class="sheet-btn" href="https://www.google.com/maps/dir/?api=1&destination=${r.lat},${r.lng}&travelmode=transit" target="_blank">🚌 Transit</a>` : ''}
       ${r.web ? `<a class="sheet-btn" href="${r.web}" target="_blank">🌐 Website</a>` : ''}
     </div>`;
   document.getElementById('sheet-overlay').classList.add('open');
