@@ -476,6 +476,8 @@ function goTab(name) {
 function openPlacePanel(r) {
   const panel = document.getElementById('place-panel');
   const content = document.getElementById('place-panel-content');
+  // Hide the Places button when panel is open
+  document.querySelector('button[onclick="togglePlacesSheet()"]').style.display = 'none';
   const fk = favKey(r);
   const vv = migrateVerify(fk);
   const fav = favIds().includes(fk);
@@ -484,35 +486,50 @@ function openPlacePanel(r) {
     if (PIN_EMOJI[c]) { emoji = PIN_EMOJI[c]; color = PIN_COLOR[c] || '#7c8aff'; break; }
   }
   content.innerHTML = `
-    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
-      <div style="width:56px;height:56px;border-radius:50%;background:${color};display:flex;align-items:center;justify-content:center;font-size:28px;border:2.5px solid rgba(255,255,255,.9);">${emoji}</div>
-      <div><h2 style="margin:0;color:#fff;">${escapeHtml(r.name)}</h2>${openBadge(r)}</div>
+    <h2 style="margin:0 0 4px;color:#fff;font-size:22px;">${escapeHtml(r.name)}</h2>
+    <div style="color:#888;font-size:14px;margin-bottom:16px;">${(r.cats || []).map(c => escapeHtml(c)).join(' · ')} ${openBadge(r)}</div>
+    <div style="display:flex;gap:8px;margin-bottom:20px;overflow-x:auto;">
+      ${r.lat ? `<a href="https://maps.google.com/?q=${r.lat},${r.lng}" target="_blank" style="flex:1;min-width:80px;text-align:center;padding:12px;background:#1a73e8;color:#fff;border-radius:8px;text-decoration:none;font-weight:bold;">Directions</a>` : ''}
+      ${r.phone ? `<a href="tel:${escapeAttr(r.phone)}" style="flex:1;min-width:80px;text-align:center;padding:12px;background:#2a2f3e;color:#fff;border-radius:8px;text-decoration:none;">Call</a>` : ''}
+      <button onclick="toggleFavByKey('${escapeAttr(fk)}')" style="flex:1;min-width:80px;padding:12px;background:#2a2f3e;color:#fff;border:none;border-radius:8px;cursor:pointer;">${fav ? '★ Saved' : '☆ Save'}</button>
+      <button onclick="sharePlace('${escapeAttr(fk)}')" style="flex:1;min-width:80px;padding:12px;background:#2a2f3e;color:#fff;border:none;border-radius:8px;cursor:pointer;">Share</button>
     </div>
-    ${verifyBadgeHtml(vv)}
-    ${r.addr ? `<p style="color:#aaa;">📍 ${escapeHtml(r.addr)}</p>` : ''}
-    ${r.phone ? `<p><a href="tel:${escapeAttr(r.phone)}" style="color:#7c8aff;">📞 ${escapeHtml(r.phone)}</a></p>` : ''}
-    ${r.hours ? `<p style="color:#aaa;">🕐 ${escapeHtml(typeof r.hours === 'string' ? r.hours : JSON.stringify(r.hours))}</p>` : ''}
-    ${r.desc ? `<p style="margin:16px 0;">${escapeHtml(r.desc)}</p>` : ''}
-    ${(r.cats || []).length ? `<div class="meta" style="margin-bottom:16px;">${r.cats.map(c => `<span class="badge">${escapeHtml(c)}</span>`).join('')}</div>` : ''}
-    <div class="meta" style="margin-bottom:16px;">
-      ${r.lat ? `<a class="sheet-btn" href="https://maps.google.com/?q=${r.lat},${r.lng}" target="_blank">🗺️ Directions</a>` : ''}
-      ${r.lat ? `<a class="sheet-btn" href="https://www.google.com/maps/dir/?api=1&destination=${r.lat},${r.lng}&travelmode=transit" target="_blank">🚌 Transit</a>` : ''}
-      ${r.web ? `<a class="sheet-btn" href="${escapeAttr(r.web)}" target="_blank">🌐 Website</a>` : ''}
+    ${r.addr ? `<div style="padding:12px 0;border-bottom:1px solid #333;"><span style="color:#888;">📍</span> <span style="color:#ddd;">${escapeHtml(r.addr)}</span></div>` : ''}
+    ${r.phone ? `<div style="padding:12px 0;border-bottom:1px solid #333;"><span style="color:#888;">📞</span> <a href="tel:${escapeAttr(r.phone)}" style="color:#7c8aff;text-decoration:none;">${escapeHtml(r.phone)}</a></div>` : ''}
+    ${r.hours ? `<div style="padding:12px 0;border-bottom:1px solid #333;"><div style="color:#888;font-size:12px;margin-bottom:8px;">HOURS</div><div style="color:#ddd;font-size:14px;line-height:1.8;">${formatHours(r.hours)}</div></div>` : ''}
+    ${r.web ? `<div style="padding:12px 0;border-bottom:1px solid #333;"><span style="color:#888;">🌐</span> <a href="${escapeAttr(r.web)}" target="_blank" style="color:#7c8aff;text-decoration:none;">Website</a></div>` : ''}
+    ${r.desc ? `<div style="padding:16px 0;border-bottom:1px solid #333;"><div style="color:#888;font-size:12px;margin-bottom:8px;">ABOUT</div><p style="color:#ddd;line-height:1.6;margin:0;">${escapeHtml(r.desc)}</p></div>` : ''}
+    <div style="padding:16px 0;">
+      <button onclick="verifyPlace('${escapeAttr(fk)}');openPlacePanel(byId('${escapeAttr(r.id || '')}'))" style="width:100%;padding:12px;background:#2a2f3e;color:#fff;border:1px solid #444;border-radius:8px;cursor:pointer;">${vv.mine ? '✓ Verified by you' : '✓ Verify this info'}</button>
+      ${verifyBadgeHtml(vv)}
     </div>
-    <div class="meta">
-      <button class="sheet-btn" onclick="toggleFavByKey('${escapeAttr(fk)}')">${fav ? '❤️ Saved' : '🤍 Save'}</button>
-      <button class="sheet-btn" onclick="verifyPlace('${escapeAttr(fk)}');openPlacePanel(byId('${escapeAttr(r.id || '')}'))">${vv.mine ? '✓ Verified' : '✓ Verify info'}</button>
-      <button class="sheet-btn" onclick="sharePlace('${escapeAttr(fk)}')">📤 Share</button>
-    </div>
-    ${r.tags && r.tags.length ? `<div style="margin-top:16px;"><h4 style="color:#888;">Tags</h4><div class="meta">${r.tags.map(t => `<span class="badge">✓ ${escapeHtml(t)}</span>`).join('')}</div></div>` : ''}
+    ${r.tags && r.tags.length ? `<div style="padding:16px 0;"><div style="color:#888;font-size:12px;margin-bottom:8px;">TAGS</div><div style="display:flex;flex-wrap:wrap;gap:8px;">${r.tags.map(t => `<span style="background:#2a2f3e;padding:6px 12px;border-radius:16px;font-size:13px;color:#aaa;">✓ ${escapeHtml(t)}</span>`).join('')}</div></div>` : ''}
   `;
   panel.style.right = '0';
 }
 function closePlacePanel() {
   document.getElementById('place-panel').style.right = '-400px';
+  document.querySelector('button[onclick="togglePlacesSheet()"]').style.display = 'block';
 }
-function byId(id) {
-  return (typeof RESOURCES !== 'undefined' ? RESOURCES : []).find(r => r.id === id) || {};
+function formatHours(h) {
+  if (!h) return '';
+  if (typeof h === 'string') {
+    try { h = JSON.parse(h); } catch(e) { return h; }
+  }
+  if (typeof h !== 'object') return String(h);
+  const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const fmt = m => {
+    const hh = Math.floor(m / 60), mm = m % 60;
+    const ap = hh >= 12 ? 'PM' : 'AM';
+    const h12 = hh % 12 || 12;
+    return `${h12}:${String(mm).padStart(2, '0')} ${ap}`;
+  };
+  return days.map((d, i) => {
+    const v = h[String(i)] || h[i];
+    if (!v) return `${d}: Closed`;
+    if (Array.isArray(v)) return `${d}: ${fmt(v[0])} – ${fmt(v[1])}`;
+    return `${d}: ${v}`;
+  }).join('<br>');
 }
 function toggleFavByKey(fk) {
   let favs = favIds();
@@ -920,7 +937,7 @@ function render(cats, q) {
   });
   markers.addTo(map);
 
-  document.getElementById('list').innerHTML = (curList = list.slice(0, 50)).map((r, idx) => {
+  document.getElementById('list').innerHTML = (curList = list).map((r, idx) => {
     const fk = favKey(r), fav = favIds().includes(fk);
     const d = (sortMode === 'near' && userLoc) ? distMi(userLoc.lat, userLoc.lng, r.lat, r.lng) : null;
     return `
@@ -1282,7 +1299,8 @@ function togglePlan(id) {
 }
 
 function renderHotlines() {
-  const h = typeof HOTLINES !== 'undefined' ? HOTLINES.filter(x => areaOf(x) === getArea()) : [
+  // Hotlines: entries without an area are national — shown in every area.
+  const h = typeof HOTLINES !== 'undefined' ? HOTLINES.filter(x => !x.area || x.area === getArea()) : [
     {name: 'Indiana 211', area: 'fort-wayne', href: 'tel:211', desc: 'Food, shelter, bills, crisis help'},
     {name: 'Oregon 211', area: 'portland', href: 'tel:211', desc: 'Food, shelter, bills, crisis help'},
     {name: '988 Crisis Line', href: 'tel:988', desc: 'Suicide & crisis, call or text', crisis: true}
