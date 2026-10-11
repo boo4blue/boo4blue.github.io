@@ -471,8 +471,8 @@ function openPlacePanel(r) {
   const panel = document.getElementById('place-panel');
   const content = document.getElementById('place-panel-content');
   const fk = favKey(r);
+  const vv = migrateVerify(fk);
   const fav = favIds().includes(fk);
-  const verified = localStorage.getItem('verified_' + fk) === '1';
   let emoji = '💜', color = '#7c8aff';
   for (const c of (r.cats || [])) {
     if (PIN_EMOJI[c]) { emoji = PIN_EMOJI[c]; color = PIN_COLOR[c] || '#7c8aff'; break; }
@@ -482,7 +482,7 @@ function openPlacePanel(r) {
       <div style="width:56px;height:56px;border-radius:50%;background:${color};display:flex;align-items:center;justify-content:center;font-size:28px;border:2.5px solid rgba(255,255,255,.9);">${emoji}</div>
       <div><h2 style="margin:0;color:#fff;">${escapeHtml(r.name)}</h2>${openBadge(r)}</div>
     </div>
-    ${verified ? '<p><span class="open-badge">✓ Verified by users</span></p>' : ''}
+    ${verifyBadgeHtml(vv)}
     ${r.addr ? `<p style="color:#aaa;">📍 ${escapeHtml(r.addr)}</p>` : ''}
     ${r.phone ? `<p><a href="tel:${escapeAttr(r.phone)}" style="color:#7c8aff;">📞 ${escapeHtml(r.phone)}</a></p>` : ''}
     ${r.hours ? `<p style="color:#aaa;">🕐 ${escapeHtml(typeof r.hours === 'string' ? r.hours : JSON.stringify(r.hours))}</p>` : ''}
@@ -495,7 +495,7 @@ function openPlacePanel(r) {
     </div>
     <div class="meta">
       <button class="sheet-btn" onclick="toggleFavByKey('${escapeAttr(fk)}')">${fav ? '❤️ Saved' : '🤍 Save'}</button>
-      <button class="sheet-btn" onclick="verifyPlace('${escapeAttr(fk)}');openPlacePanel(byId('${escapeAttr(r.id || '')}'))">${verified ? '✓ Verified' : '✓ Verify info'}</button>
+      <button class="sheet-btn" onclick="verifyPlace('${escapeAttr(fk)}');openPlacePanel(byId('${escapeAttr(r.id || '')}'))">${vv.mine ? '✓ Verified' : '✓ Verify info'}</button>
       <button class="sheet-btn" onclick="sharePlace('${escapeAttr(fk)}')">📤 Share</button>
     </div>
     ${r.tags && r.tags.length ? `<div style="margin-top:16px;"><h4 style="color:#888;">Tags</h4><div class="meta">${r.tags.map(t => `<span class="badge">✓ ${escapeHtml(t)}</span>`).join('')}</div></div>` : ''}
@@ -520,6 +520,49 @@ function sharePlace(fk) {
   if (navigator.share) navigator.share({ title: r.name, text });
   else if (navigator.clipboard) { navigator.clipboard.writeText(text); alert('Copied!'); }
   else prompt('Copy:', text);
+}
+
+// --- Crowd-verify (feature #19): ported from the app's on-device votes ---
+// Same localStorage schema as the app: haven_verify = { placeKey: { ok, bad, mine } }
+function getVerify(fk) {
+  try {
+    const all = JSON.parse(localStorage.getItem('haven_verify') || '{}');
+    const v = all[fk];
+    return (v && typeof v === 'object')
+      ? { ok: v.ok | 0, bad: v.bad | 0, mine: v.mine || null }
+      : { ok: 0, bad: 0, mine: null };
+  } catch (e) { return { ok: 0, bad: 0, mine: null }; }
+}
+function saveVerify(fk, v) {
+  let all = {};
+  try { all = JSON.parse(localStorage.getItem('haven_verify') || '{}'); } catch (e) {}
+  all[fk] = v;
+  try { localStorage.setItem('haven_verify', JSON.stringify(all)); } catch (e) {}
+}
+// One-time migration: earlier website builds stored a bare boolean flag per place.
+function migrateVerify(fk) {
+  const v = getVerify(fk);
+  let legacy = false;
+  try { legacy = localStorage.getItem('verified_' + fk) === '1'; } catch (e) {}
+  if (legacy && !v.mine) {
+    v.ok += 1; v.mine = 'ok';
+    saveVerify(fk, v);
+    try { localStorage.removeItem('verified_' + fk); } catch (e) {}
+  }
+  return v;
+}
+// Called by the place panel's "✓ Verify info" button. One vote per device per place (like the app).
+function verifyPlace(fk) {
+  const v = getVerify(fk);
+  if (v.mine) { miniToast('Already verified ✓'); return; }
+  v.ok += 1; v.mine = 'ok';
+  saveVerify(fk, v);
+  miniToast('Thanks — marked as verified ✓');
+}
+function verifyBadgeHtml(v) {
+  const n = (v && v.ok) | 0;
+  if (n <= 0) return '';
+  return '<p><span class="open-badge">✓ Verified by users' + (n > 1 ? ' (' + n + ')' : '') + '</span></p>';
 }
 
 // Open-now badge: uses the structured r.hours dict { day: [openMin, closeMin] }.
