@@ -99,7 +99,7 @@ nav button .ico { font-size: 20px; display: block; margin-bottom: 2px; }
     <div id="map" style="height:65vh;border-radius:12px;"></div>
     <div style="position:absolute;top:10px;left:10px;right:10px;z-index:500;display:flex;gap:8px;">
       <input type="search" id="search" placeholder="Search food, shelter, showers..." style="flex:1;padding:12px;border:1px solid #333;border-radius:12px;background:rgba(26,31,46,0.95);color:#fff;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);">
-      <button onclick="voiceSearch()" style="padding:12px 14px;border:1px solid #333;border-radius:12px;background:rgba(26,31,46,0.95);color:#7c8aff;font-size:18px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);">🎤</button>
+      <button id="voice-btn" onclick="voiceSearch()" style="display:none;padding:12px 14px;border:1px solid #333;border-radius:12px;background:rgba(26,31,46,0.95);color:#7c8aff;font-size:18px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);">🎤</button>
       <button onclick="showUserLocation(true)" style="padding:12px 14px;border:1px solid #333;border-radius:12px;background:rgba(26,31,46,0.95);color:#7c8aff;font-size:18px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);">📍</button>
     </div>
   </div>
@@ -415,6 +415,12 @@ function init() {
   });
   document.getElementById('search').addEventListener('input', e => {
     render(document.querySelector('.filter-btn.active').dataset.cat, e.target.value);
+  });
+  document.getElementById('search').addEventListener('focus', () => {
+    document.getElementById('voice-btn').style.display = 'block';
+  });
+  document.getElementById('search').addEventListener('blur', () => {
+    setTimeout(() => { document.getElementById('voice-btn').style.display = 'none'; }, 200);
   });
   document.getElementById('search').addEventListener('change', e => {
     const q = e.target.value.trim();
