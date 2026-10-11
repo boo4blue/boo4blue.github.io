@@ -80,6 +80,7 @@ nav button .ico { font-size: 20px; display: block; margin-bottom: 2px; }
 <div id="tab-map" class="tab active">
   <div id="wx-banner"></div>
   <input type="search" id="search" placeholder="Search food, shelter, showers...">
+  <div style="padding:0 16px 8px;"><button onclick="showUserLocation(true)" style="padding:8px 16px;border:1px solid #333;border-radius:20px;background:#1a1f2e;color:#7c8aff;cursor:pointer;font-size:14px;">📍 Find me</button></div>
   <div id="filters"></div>
   <div id="sortrow"><label for="sort">Sort:</label>
     <select id="sort">
@@ -333,21 +334,30 @@ function init() {
   showUserLocation();
 }
 
-function showUserLocation() {
-  if (!navigator.geolocation || !map) return;
+let userMarker = null, userCircle = null;
+function showUserLocation(center) {
+  if (!navigator.geolocation || !map) {
+    if (center) alert('Location not available on this device/browser.');
+    return;
+  }
   navigator.geolocation.getCurrentPosition(pos => {
     const lat = pos.coords.latitude, lng = pos.coords.longitude;
-    L.circleMarker([lat, lng], {
+    if (userMarker) map.removeLayer(userMarker);
+    if (userCircle) map.removeLayer(userCircle);
+    userMarker = L.circleMarker([lat, lng], {
       radius: 10, fillColor: '#1a73e8', color: '#fff',
       weight: 3, opacity: 1, fillOpacity: 1
     }).addTo(map).bindPopup('📍 You are here');
     if (pos.coords.accuracy) {
-      L.circle([lat, lng], {
+      userCircle = L.circle([lat, lng], {
         radius: pos.coords.accuracy, fillColor: '#1a73e8',
         fillOpacity: 0.15, color: '#1a73e8', weight: 1, opacity: 0.3
       }).addTo(map);
     }
-  }, () => {}, { enableHighAccuracy: true, timeout: 10000 });
+    if (center) map.setView([lat, lng], 14);
+  }, err => {
+    if (center) alert('Could not get your location. Check browser permissions.');
+  }, { enableHighAccuracy: true, timeout: 10000 });
 }
 
   // Learn tab controls
