@@ -45,10 +45,13 @@ const DATA_URL = 'https://files.catbox.moe/k7d0uc.js';
 const DATA_RETRIES = 3;
 
 const FILTER_CATS = {
-  'food': '🍔 Food', 'shelter': '🏠 Shelter', 'health': '🏥 Health',
-  'shower': '🚿 Showers', 'laundry': '👕 Laundry', 'wifi': '📶 WiFi',
-  'jobs': '💼 Jobs', 'benefits': '💰 Benefits', 'mental': '🧠 Mental Health',
-  'youth': '👦 Youth', 'pets': '🐾 Pets', 'transport': '🚌 Transport'
+  'food': '🍔 Food', 'meals': '🍽️ Meals', 'shelter': '🏠 Shelter',
+  'health': '🏥 Health', 'mental': '🧠 Mental Health',
+  'recovery': '💪 Recovery', 'benefits': '💰 Benefits',
+  'bathroom': '🚻 Bathroom', 'laundry': '👕 Laundry',
+  'wifi': '📶 WiFi', 'charge': '🔌 Charging',
+  'bus': '🚌 Transit', 'youth': '👦 Youth', 'pets': '🐾 Pets',
+  'freeclothes': '👔 Clothes', 'thrift': '🛒 Thrift'
 };
 
 function loadData(attempt) {
@@ -117,10 +120,11 @@ function render(cat, q) {
   if (markers) map.removeLayer(markers);
   markers = L.layerGroup();
   const PIN_EMOJI = {
-    food: '🍔', shelter: '🏠', health: '🏥',
-    shower: '🚿', laundry: '👕', wifi: '📶',
-    jobs: '💼', benefits: '💰', mental: '🧠',
-    youth: '👦', pets: '🐾', transport: '🚌'
+    food: '🍔', meals: '🍽️', shelter: '🏠', health: '🏥',
+    mental: '🧠', recovery: '💪', benefits: '💰',
+    bathroom: '🚻', laundry: '👕', wifi: '📶', charge: '🔌',
+    bus: '🚌', youth: '👦', pets: '🐾',
+    freeclothes: '👔', thrift: '🛒'
   };
   list.slice(0, 200).forEach(r => {
     const cat = (r.cats || [])[0] || '';
