@@ -41,6 +41,12 @@ nav button .ico { font-size: 20px; display: block; margin-bottom: 2px; }
 .check { display: flex; align-items: center; gap: 12px; padding: 12px; background: #1a1f2e; border-radius: 8px; margin-bottom: 8px; cursor: pointer; }
 .check.done { opacity: 0.6; }
 .check.done .ct { text-decoration: line-through; }
+.check.done .todo-del { opacity: 1; }
+.todo-del { margin-left: auto; background: none; border: none; color: #e74c3c; font-size: 16px; cursor: pointer; padding: 4px 8px; }
+.todo-add { display: flex; gap: 8px; margin-bottom: 12px; }
+#todo-input { flex: 1; padding: 12px; border: 1px solid #333; border-radius: 8px; background: #1a1f2e; color: #fff; font-size: 16px; }
+#todo-add { background: #7c8aff; color: #fff; border: none; border-radius: 8px; padding: 0 20px; font-size: 15px; font-weight: bold; cursor: pointer; }
+.todo-hint { color: #666; font-size: 12px; margin: -6px 0 12px; }
 .emoji-pin { background: none; border: none; }
 #sheet-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.65); z-index: 2000; display: none; }
 #sheet-overlay.open { display: block; }
@@ -95,7 +101,16 @@ nav button .ico { font-size: 20px; display: block; margin-bottom: 2px; }
 </div>
 
 <div id="tab-saved" class="tab">
-  <div class="content" id="saved-list"></div>
+  <div class="content">
+    <div id="saved-list"></div>
+    <h2 style="color:#fff;margin:20px 0 4px;">✅ My To-dos</h2>
+    <p class="todo-hint">Saved on this device. e.g. "Call the shelter", "Bring ID to intake".</p>
+    <div class="todo-add">
+      <input type="text" id="todo-input" placeholder="Add a to-do…" maxlength="140">
+      <button id="todo-add">Add</button>
+    </div>
+    <div id="todo-list"></div>
+  </div>
 </div>
 
 <div id="tab-guide" class="tab">
@@ -318,7 +333,7 @@ function init() {
       document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
       b.classList.add('active');
       document.getElementById('tab-' + b.dataset.tab).classList.add('active');
-      if (b.dataset.tab === 'saved') renderFavs();
+      if (b.dataset.tab === 'saved') { renderFavs(); renderTodos(); }
       if (b.dataset.tab === 'learn') renderLearn();
       if (b.dataset.tab === 'map' && map) setTimeout(() => map.invalidateSize(), 100);
     });
@@ -331,6 +346,7 @@ function init() {
   renderPlan();
   renderHotlines();
   renderLearn();
+  renderTodos();
   showUserLocation();
 
   // Learn tab controls
@@ -343,6 +359,12 @@ function init() {
   });
   document.getElementById('learn-free').addEventListener('change', e => {
     learnFree = e.target.checked; renderLearn();
+  });
+
+  // To-do input: Enter adds
+  document.getElementById('todo-add').addEventListener('click', addTodo);
+  document.getElementById('todo-input').addEventListener('keydown', e => {
+    if (e.key === 'Enter') addTodo();
   });
 }
 
@@ -438,6 +460,47 @@ function renderFavs() {
 function openSheetByKey(fkey) {
   const r = allPlaces.find(x => favKey(x) === fkey);
   if (r) showSheet(r);
+}
+
+// ---- My To-dos (persisted in localStorage) ----
+function todoItems() {
+  try { const t = JSON.parse(localStorage.getItem('haven_todos') || '[]'); return Array.isArray(t) ? t : []; }
+  catch (e) { return []; }
+}
+function saveTodos(t) { localStorage.setItem('haven_todos', JSON.stringify(t)); }
+function renderTodos() {
+  const t = todoItems();
+  document.getElementById('todo-list').innerHTML = t.map((x, i) => `
+    <div class="check${x.d ? ' done' : ''}" onclick="toggleTodo(${i})">
+      <input type="checkbox"${x.d ? ' checked' : ''} onclick="event.stopPropagation();toggleTodo(${i})" aria-label="Mark done">
+      <span class="ct">${escapeAttr(x.t)}</span>
+      <button class="todo-del" onclick="event.stopPropagation();delTodo(${i})" aria-label="Delete to-do">✕</button>
+    </div>`).join('') || '<p style="color:#888">No to-dos yet — add one above.</p>';
+}
+function addTodo() {
+  const inp = document.getElementById('todo-input');
+  const v = inp.value.trim();
+  if (!v) return;
+  const t = todoItems();
+  t.push({ t: v, d: false });
+  saveTodos(t);
+  inp.value = '';
+  renderTodos();
+  miniToast('To-do added ✅');
+}
+function toggleTodo(i) {
+  const t = todoItems();
+  if (!t[i]) return;
+  t[i].d = !t[i].d;
+  saveTodos(t);
+  renderTodos();
+}
+function delTodo(i) {
+  const t = todoItems();
+  if (!t[i]) return;
+  t.splice(i, 1);
+  saveTodos(t);
+  renderTodos();
 }
 
 function openSheet(i) {
