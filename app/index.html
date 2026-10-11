@@ -19,8 +19,9 @@ header p { color: #888; font-size: 14px; }
 .filter-btn.active { background: #7c8aff; color: #fff; border-color: #7c8aff; }
 #map { height: 300px; margin: 0 16px; border-radius: 12px; z-index: 1; }
 #list, .content { padding: 16px; }
-.card { background: #1a1f2e; border-radius: 12px; padding: 16px; margin-bottom: 12px; cursor: pointer; }
-.card h3 { color: #fff; margin-bottom: 8px; font-size: 17px; }
+.card { background: #1a1f2e; border-radius: 12px; padding: 16px; margin-bottom: 12px; cursor: pointer; position: relative; }
+.card h3 { color: #fff; margin-bottom: 8px; font-size: 17px; padding-right: 36px; }
+.fav-btn { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.35); border: none; border-radius: 50%; width: 36px; height: 36px; font-size: 18px; cursor: pointer; z-index: 2; }
 .card p { color: #aaa; font-size: 14px; margin-bottom: 4px; line-height: 1.4; }
 .card .meta { display: flex; gap: 12px; margin-top: 8px; font-size: 13px; flex-wrap: wrap; }
 .card a { color: #7c8aff; text-decoration: none; }
@@ -62,6 +63,10 @@ nav button .ico { font-size: 20px; display: block; margin-bottom: 2px; }
   <div id="list"><div id="loading">Loading resources...</div></div>
 </div>
 
+<div id="tab-saved" class="tab">
+  <div class="content" id="saved-list"></div>
+</div>
+
 <div id="tab-guide" class="tab">
   <div class="content" id="guide-list"><div id="loading">Loading guides...</div></div>
 </div>
@@ -90,6 +95,7 @@ nav button .ico { font-size: 20px; display: block; margin-bottom: 2px; }
 
 <nav>
   <button class="active" data-tab="map"><span class="ico">🗺️</span>Map</button>
+  <button data-tab="saved"><span class="ico">💾</span>Saved</button>
   <button data-tab="guide"><span class="ico">📖</span>Guide</button>
   <button data-tab="jobs"><span class="ico">💼</span>Jobs</button>
   <button data-tab="events"><span class="ico">📅</span>Events</button>
@@ -130,6 +136,22 @@ const PIN_EMOJI = {
   vouchers: '🎟️', bank: '🏦', babybox: '📦', bikeair: '🚲',
   freebike: '🚲', hangout: '🛋️', lgbtq: '🏳️‍🌈', narcan: '💊'
 };
+
+// Saved / Favorites (localStorage)
+function favIds() {
+  try { return JSON.parse(localStorage.getItem('haven_favs') || '[]'); }
+  catch (e) { return []; }
+}
+function favKey(r) { return r.id || r.name; }
+function escapeAttr(s) { return String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;'); }
+function toggleFavAttr(btn) { toggleFav(btn.dataset.fkey); }
+function toggleFav(key) {
+  let ids = favIds();
+  ids = ids.includes(key) ? ids.filter(x => x !== key) : [...ids, key];
+  try { localStorage.setItem('haven_favs', JSON.stringify(ids)); } catch (e) {}
+  render(document.querySelector('.filter-btn.active').dataset.cat, document.getElementById('search').value);
+  renderFavs();
+}
 
 function loadData(attempt) {
   const s = document.createElement('script');
@@ -174,6 +196,7 @@ function init() {
       document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
       b.classList.add('active');
       document.getElementById('tab-' + b.dataset.tab).classList.add('active');
+      if (b.dataset.tab === 'saved') renderFavs();
       if (b.dataset.tab === 'map' && map) setTimeout(() => map.invalidateSize(), 100);
     });
   });
@@ -207,8 +230,11 @@ function render(cat, q) {
   });
   markers.addTo(map);
 
-  document.getElementById('list').innerHTML = (curList = list.slice(0, 50)).map((r, idx) => `
+  document.getElementById('list').innerHTML = (curList = list.slice(0, 50)).map((r, idx) => {
+    const fk = favKey(r), fav = favIds().includes(fk);
+    return `
     <div class="card" onclick="openSheet(${idx})">
+      <button class="fav-btn" data-fkey="${escapeAttr(fk)}" onclick="event.stopPropagation();toggleFavAttr(this)" aria-label="Save place">${fav ? '❤️' : '🤍'}</button>
       <h3>${r.name}</h3>
       <p>${r.addr || ''}</p>
       <p>${(r.desc || '').substring(0, 120)}...</p>
@@ -218,12 +244,40 @@ function render(cat, q) {
         ${r.lat ? `<a href="https://maps.google.com/?q=${r.lat},${r.lng}" target="_blank">🗺️ Directions</a>` : ''}
       </div>
       <div class="meta" style="color:#7c8aff">Tap for details →</div>
-    </div>`).join('') || '<p style="text-align:center;color:#888">No places found.</p>';
+    </div>`;
+  }).join('') || '<p style="text-align:center;color:#888">No places found.</p>';
+}
+
+function renderFavs() {
+  const ids = favIds();
+  const list = allPlaces.filter(r => ids.includes(favKey(r)));
+  document.getElementById('saved-list').innerHTML =
+    '<h2 style="color:#fff;margin-bottom:12px;">💾 Saved Places</h2>' +
+    (list.map(r => {
+      const fk = favKey(r);
+      return `
+    <div class="card" data-fkey="${escapeAttr(fk)}" onclick="openSheetByKey(this.dataset.fkey)">
+      <button class="fav-btn" data-fkey="${escapeAttr(fk)}" onclick="event.stopPropagation();toggleFavAttr(this)" aria-label="Remove from saved">❤️</button>
+      <h3>${r.name}</h3>
+      <p>${r.addr || ''}</p>
+      <p>${(r.desc || '').substring(0, 120)}...</p>
+      <div class="meta">${(r.cats || []).slice(0, 3).map(c => `<span class="badge">${c}</span>`).join('')}</div>
+      <div class="meta" style="color:#7c8aff">Tap for details →</div>
+    </div>`;
+    }).join('') || '<p style="color:#888">No saved places yet.<br>Tap the 🤍 on any place to save it here.</p>');
+}
+
+function openSheetByKey(fkey) {
+  const r = allPlaces.find(x => favKey(x) === fkey);
+  if (r) showSheet(r);
 }
 
 function openSheet(i) {
   const r = curList[i];
-  if (!r) return;
+  if (r) showSheet(r);
+}
+
+function showSheet(r) {
   const telHref = r.phoneHref ? 'tel:+' + String(r.phoneHref).replace(/^\+/, '')
     : (r.phone ? 'tel:' + String(r.phone).replace(/[^0-9+]/g, '') : '');
   document.getElementById('sheet-body').innerHTML = `
