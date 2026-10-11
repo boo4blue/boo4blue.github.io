@@ -326,11 +326,14 @@ function applySort(list) {
   return list;
 }
 
-function activeCat() { return document.querySelector('.filter-btn.active').dataset.cat; }
+function activeCats() {
+  return [...document.querySelectorAll('#sidebar-filters .filter-btn.active')].map(b => b.dataset.cat).filter(c => c);
+}
+function activeCat() { return activeCats()[0] || ''; }
 function activeQ() { return document.getElementById('search').value; }
 
 function requestNear(sel) {
-  if (userLoc) { sortMode = 'near'; render(activeCat(), activeQ()); return; }
+  if (userLoc) { sortMode = 'near'; render(activeCats(), activeQ()); return; }
   if (!navigator.geolocation) { alert('Location is not supported on this device.'); sel.value = sortMode; return; }
   document.getElementById('loc-note').textContent = 'getting location…';
   navigator.geolocation.getCurrentPosition(
@@ -338,7 +341,7 @@ function requestNear(sel) {
       userLoc = { lat: p.coords.latitude, lng: p.coords.longitude };
       sortMode = 'near';
       document.getElementById('loc-note').textContent = '';
-      render(activeCat(), activeQ());
+      render(activeCats(), activeQ());
     },
     () => {
       document.getElementById('loc-note').textContent = '';
@@ -405,7 +408,7 @@ function renderRecent() {
 }
 function doRecent(q) {
   document.getElementById('search').value = q;
-  render(document.querySelector('.filter-btn.active').dataset.cat, q);
+  render(activeCats(), q);
 }
 function toggleSidebar() {
   const sb = document.getElementById('sidebar');
@@ -492,7 +495,7 @@ function toggleFavByKey(fk) {
   let favs = favIds();
   favs = favs.includes(fk) ? favs.filter(x => x !== fk) : [...favs, fk];
   localStorage.setItem('haven_favs', JSON.stringify(favs));
-  render(activeCat(), activeQ());
+  render(activeCats(), activeQ());
 }
 function sharePlace(fk) {
   const r = (typeof RESOURCES !== 'undefined' ? RESOURCES : []).find(x => favKey(x) === fk) || {};
@@ -538,7 +541,7 @@ function toggleFav(key) {
   let ids = favIds();
   ids = ids.includes(key) ? ids.filter(x => x !== key) : [...ids, key];
   try { localStorage.setItem('haven_favs', JSON.stringify(ids)); } catch (e) {}
-  render(document.querySelector('.filter-btn.active').dataset.cat, document.getElementById('search').value);
+  render(activeCats(), document.getElementById('search').value);
   renderFavs();
 }
 
@@ -572,13 +575,24 @@ function init() {
     sfc.innerHTML = '<button class="filter-btn active" data-cat="" style="display:block;width:100%;text-align:left;margin-bottom:4px;">All</button>' +
       Object.entries(FILTER_CATS).map(([k,v]) => `<button class="filter-btn" data-cat="${k}" style="display:block;width:100%;text-align:left;margin-bottom:4px;">${v}</button>`).join('');
     sfc.addEventListener('click', e => {
-      if (e.target.dataset.cat !== undefined) {
+      const btn = e.target.closest('.filter-btn');
+      if (!btn || btn.dataset.cat === undefined) return;
+      const cat = btn.dataset.cat;
+      if (cat === '') {
+        // "All" clears all selections
         document.querySelectorAll('#sidebar-filters .filter-btn').forEach(b => b.classList.remove('active'));
-        e.target.classList.add('active');
-        document.querySelectorAll('#filters .filter-btn').forEach(b => b.classList.toggle('active', b.dataset.cat === e.target.dataset.cat));
-        render(e.target.dataset.cat, document.getElementById('search').value);
-        toggleFilterPanel();
+        btn.classList.add('active');
+      } else {
+        document.querySelector('#sidebar-filters .filter-btn[data-cat=""]').classList.remove('active');
+        btn.classList.toggle('active');
+        // If none selected, select All
+        if (!document.querySelector('#sidebar-filters .filter-btn.active')) {
+          document.querySelector('#sidebar-filters .filter-btn[data-cat=""]').classList.add('active');
+        }
       }
+      const cats = activeCats();
+      document.querySelectorAll('#filters .filter-btn').forEach(b => b.classList.toggle('active', cats.includes(b.dataset.cat) || (cats.length === 0 && b.dataset.cat === '')));
+      render(cats, document.getElementById('search').value);
     });
   }
   fc.addEventListener('click', e => {
@@ -589,7 +603,7 @@ function init() {
     }
   });
   document.getElementById('search').addEventListener('input', e => {
-    render(document.querySelector('.filter-btn.active').dataset.cat, e.target.value);
+    render(activeCats(), e.target.value);
   });
   document.getElementById('search').addEventListener('focus', () => {
     const vb = document.getElementById('voice-btn');
@@ -605,7 +619,7 @@ function init() {
   document.getElementById('sort').addEventListener('change', e => {
     const v = e.target.value;
     if (v === 'near') requestNear(e.target);
-    else { sortMode = v; render(activeCat(), activeQ()); }
+    else { sortMode = v; render(activeCats(), activeQ()); }
   });
 
   // Tab navigation
@@ -706,10 +720,11 @@ function showUserLocation(center) {
   }, { enableHighAccuracy: false, timeout: 15000, maximumAge: 60000 });
 }
 
-function render(cat, q) {
+function render(cats, q) {
   q = (q || '').toLowerCase();
+  if (!Array.isArray(cats)) cats = cats ? [cats] : [];
   let list = allPlaces;
-  if (cat) list = list.filter(r => (r.cats || []).includes(cat));
+  if (cats.length) list = list.filter(r => (r.cats || []).some(c => cats.includes(c)));
   if (q) list = list.filter(r =>
     (r.name + ' ' + (r.desc||'') + ' ' + (r.addr||'')).toLowerCase().includes(q));
   list = applySort(list);
@@ -1160,7 +1175,7 @@ function voiceSearch() {
   r.onresult = e => {
     const q = e.results[0][0].transcript;
     document.getElementById('search').value = q;
-    render(document.querySelector('.filter-btn.active').dataset.cat, q);
+    render(activeCats(), q);
   };
   r.start();
 }
