@@ -103,6 +103,16 @@ nav button .ico { font-size: 20px; display: block; margin-bottom: 2px; }
     <p style="color:#888;font-size:12px;margin:4px 0 0;">Fort Wayne free resources</p>
   </div>
   <div id="sidebar-tabs"></div>
+  <div style="padding:16px 20px;border-top:1px solid #333;margin-top:12px;">
+    <h3 style="color:#888;font-size:12px;margin:0 0 8px;">FILTERS</h3>
+    <div id="sidebar-filters"></div>
+    <h3 style="color:#888;font-size:12px;margin:16px 0 8px;">SORT</h3>
+    <select id="sort-sidebar" onchange="document.getElementById('sort').value=this.value;document.getElementById('sort').dispatchEvent(new Event('change'))" style="width:100%;padding:10px;background:#1a1f2e;color:#fff;border:1px solid #333;border-radius:8px;">
+      <option value="def">Default</option>
+      <option value="az">A–Z</option>
+      <option value="near">📍 Nearest me</option>
+    </select>
+  </div>
 </div>
 <div id="sidebar-overlay" onclick="toggleSidebar()" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:999;display:none;"></div>
 
@@ -118,15 +128,15 @@ nav button .ico { font-size: 20px; display: block; margin-bottom: 2px; }
   <div id="wx-banner"></div>
   <div id="map-wrap" style="position:relative;margin:0 16px;">
     <div id="map" style="height:65vh;border-radius:12px;"></div>
-    <div style="position:absolute;top:10px;left:10px;right:10px;z-index:500;display:flex;gap:8px;">
+    <div style="position:absolute;top:50px;left:10px;right:10px;z-index:500;display:flex;gap:8px;">
       <input type="search" id="search" placeholder="Search food, shelter, showers..." style="flex:1;padding:12px;border:1px solid #333;border-radius:12px;background:rgba(26,31,46,0.95);color:#fff;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);">
       <button id="voice-btn" onclick="voiceSearch()" style="display:none;padding:12px 14px;border:1px solid #333;border-radius:12px;background:rgba(26,31,46,0.95);color:#7c8aff;font-size:18px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);">🎤</button>
-      <button onclick="showUserLocation(true)" style="padding:12px 14px;border:1px solid #333;border-radius:12px;background:rgba(26,31,46,0.95);color:#7c8aff;font-size:18px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);">📍</button>
+      <button onclick="showUserLocation(true)" style="width:44px;height:44px;border:1px solid #333;border-radius:50%;background:rgba(26,31,46,0.95);color:#7c8aff;font-size:16px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;">📍</button>
     </div>
   </div>
-  <div id="filters"></div>
+  <div id="filters" style="display:none;"></div>
   <div id="recent-searches"></div>
-  <div id="sortrow"><label for="sort">Sort:</label>
+  <div id="sortrow" style="display:none;"><label for="sort">Sort:</label>
     <select id="sort">
       <option value="def" selected>Default</option>
       <option value="az">A–Z</option>
@@ -520,6 +530,20 @@ function init() {
   const fc = document.getElementById('filters');
   fc.innerHTML = '<button class="filter-btn active" data-cat="">All</button>' +
     Object.entries(FILTER_CATS).map(([k,v]) => `<button class="filter-btn" data-cat="${k}">${v}</button>`).join('');
+  const sfc = document.getElementById('sidebar-filters');
+  if (sfc) {
+    sfc.innerHTML = '<button class="filter-btn active" data-cat="" style="display:block;width:100%;text-align:left;margin-bottom:4px;">All</button>' +
+      Object.entries(FILTER_CATS).map(([k,v]) => `<button class="filter-btn" data-cat="${k}" style="display:block;width:100%;text-align:left;margin-bottom:4px;">${v}</button>`).join('');
+    sfc.addEventListener('click', e => {
+      if (e.target.dataset.cat !== undefined) {
+        document.querySelectorAll('#sidebar-filters .filter-btn').forEach(b => b.classList.remove('active'));
+        e.target.classList.add('active');
+        document.querySelectorAll('#filters .filter-btn').forEach(b => b.classList.toggle('active', b.dataset.cat === e.target.dataset.cat));
+        render(e.target.dataset.cat, document.getElementById('search').value);
+        toggleSidebar();
+      }
+    });
+  }
   fc.addEventListener('click', e => {
     if (e.target.dataset.cat !== undefined) {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
