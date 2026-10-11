@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get Haven FW</title>
+<meta name="haven-fw-version-code" content="3660">
+<meta name="haven-fw-version-name" content="1.0.3660">
+<meta name="haven-fw-apk-url" content="HavenFW.apk">
+<link rel="alternate" type="application/vnd.android.package-archive" href="HavenFW.apk">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, sans-serif; background: #0f172a; color: #e2e8f0;
+         min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
+  .card { background: #1e293b; border-radius: 20px; padding: 32px 28px; max-width: 420px; width: 100%;
+          text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,.5); }
+  .icon { font-size: 56px; margin-bottom: 12px; }
+  h1 { font-size: 28px; margin-bottom: 6px; }
+  .ver { color: #94a3b8; font-size: 14px; margin-bottom: 20px; }
+  p.desc { color: #cbd5e1; font-size: 15px; line-height: 1.5; margin-bottom: 24px; }
+  .dl { display: block; background: #22c55e; color: #052e16; font-weight: 700; font-size: 18px;
+        padding: 16px; border-radius: 14px; text-decoration: none; margin-bottom: 12px; }
+  .dl:active { transform: scale(.98); }
+  .copybtn { display: block; width: 100%; background: #334155; color: #e2e8f0; border: none;
+             font-size: 15px; padding: 13px; border-radius: 12px; margin-bottom: 20px; cursor: pointer; }
+  .qr { background: #fff; padding: 12px; border-radius: 14px; display: inline-block; margin-bottom: 8px; }
+  .qr img { width: 180px; height: 180px; display: block; }
+  .qrcap { color: #94a3b8; font-size: 13px; margin-bottom: 16px; }
+  .note { color: #64748b; font-size: 12px; line-height: 1.6; }
+  .note b { color: #94a3b8; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="icon">🏠</div>
+  <h1>Haven FW</h1>
+  <div class="ver">Version 1.0.3660 · October 2026</div>
+  <p class="desc">Free offline-first directory of shelters, food, showers, clinics, jobs &amp; more — for Fort Wayne, IN and Portland, OR.</p>
+  <a class="dl" id="dlBtn" href="HavenFW.apk" download="HavenFW.apk">⬇ Download HavenFW.apk</a>
+  <button class="copybtn" id="copyBtn">📋 Copy download link</button>
+  <div class="qr"><img id="qrImg" src="" alt="QR code for this page"></div>
+  <div class="qrcap">Scan to open this page on another phone</div>
+  <p class="note"><b>Install:</b> tap Download, then open the file. If Android asks, allow <b>“Install unknown apps”</b> for your browser.<br>
+  <b>Update:</b> the app checks this page on launch and offers new versions automatically.</p>
+</div>
+<script>
+  // QR always encodes this page's own URL, so it stays correct on any host.
+  document.getElementById("qrImg").src =
+    "https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=10&data=" +
+    encodeURIComponent(location.href);
+  document.getElementById("copyBtn").addEventListener("click", async () => {
+    const url = new URL("HavenFW.apk", location.href).href;
+    try { await navigator.clipboard.writeText(url); }
+    catch (e) {
+      const t = document.createElement("textarea");
+      t.value = url; document.body.appendChild(t); t.select();
+      document.execCommand("copy"); t.remove();
+    }
+    const b = document.getElementById("copyBtn");
+    b.textContent = "✅ Link copied — paste it in your browser";
+    setTimeout(() => b.textContent = "📋 Copy download link", 2500);
+  });
+</script>
+</body>
+</html>
