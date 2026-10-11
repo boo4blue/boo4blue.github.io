@@ -166,9 +166,16 @@ nav button .ico { font-size: 20px; display: block; margin-bottom: 2px; }
     </select>
     <span id="loc-note"></span>
   </div>
-  <div id="map"></div>
-  <div id="list"><div id="loading">Loading resources...</div></div>
 </div>
+
+<div id="places-sheet" style="position:fixed;bottom:-70vh;left:0;right:0;height:70vh;background:#1a1f2e;z-index:1002;transition:bottom 0.3s;border-radius:16px 16px 0 0;box-shadow:0 -4px 20px rgba(0,0,0,0.5);display:flex;flex-direction:column;">
+  <div onclick="togglePlacesSheet()" style="padding:12px;text-align:center;cursor:pointer;border-bottom:1px solid #333;">
+    <div style="width:40px;height:4px;background:#555;border-radius:2px;margin:0 auto 8px;"></div>
+    <span style="color:#7c8aff;font-weight:bold;">Places <span id="places-count"></span></span>
+  </div>
+  <div id="list" style="flex:1;overflow-y:auto;padding:0 16px 16px;"><div id="loading">Loading resources...</div></div>
+</div>
+<button onclick="togglePlacesSheet()" style="position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:1001;padding:12px 24px;background:#7c8aff;color:#fff;border:none;border-radius:24px;font-size:16px;font-weight:bold;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.4);">📋 Places</button>
 
 <div id="tab-saved" class="tab">
   <div class="content">
@@ -424,6 +431,13 @@ function toggleFilterPanel() {
   fp.style.right = open ? '-280px' : '0px';
   ov.style.display = open ? 'none' : 'block';
   ov.onclick = () => { fp.style.right = '-280px'; ov.style.display = 'none'; ov.onclick = () => toggleSidebar(); };
+}
+function togglePlacesSheet() {
+  const sh = document.getElementById('places-sheet');
+  const open = sh.style.bottom === '0px';
+  sh.style.bottom = open ? '-70vh' : '0px';
+  const cnt = document.getElementById('places-count');
+  if (cnt && curList) cnt.textContent = `(${curList.length})`;
 }
 function toggleFilterCollapse() {
   const f = document.getElementById('sidebar-filters');
