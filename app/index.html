@@ -143,6 +143,15 @@ nav button .ico { font-size: 20px; display: block; margin-bottom: 2px; }
   </div>
 </div>
 
+<div id="tab-programs" class="tab">
+  <div class="content">
+    <h2 style="color:#fff;margin-bottom:4px;">🏕️ Programs</h2>
+    <p style="color:#888;font-size:14px;margin-bottom:12px;">Live-on-site job training &amp; recovery programs — free room, meals, and a trade</p>
+    <div id="program-list"></div>
+    <p class="learn-note">Programs change — call to confirm before you travel. Links need internet.</p>
+  </div>
+</div>
+
 <div id="tab-help" class="tab">
   <div class="content">
     <button class="sos" onclick="location.href='tel:911'">🆘 SOS — Call 911</button>
@@ -158,6 +167,7 @@ nav button .ico { font-size: 20px; display: block; margin-bottom: 2px; }
   <button data-tab="events"><span class="ico">📅</span>Events</button>
   <button data-tab="plan"><span class="ico">📋</span>Plan</button>
   <button data-tab="learn"><span class="ico">🎓</span>Learn</button>
+  <button data-tab="programs"><span class="ico">🏕️</span>Programs</button>
   <button data-tab="help"><span class="ico">🆘</span>Help</button>
 </nav>
 
@@ -335,6 +345,7 @@ function init() {
       document.getElementById('tab-' + b.dataset.tab).classList.add('active');
       if (b.dataset.tab === 'saved') { renderFavs(); renderTodos(); }
       if (b.dataset.tab === 'learn') renderLearn();
+      if (b.dataset.tab === 'programs') renderPrograms();
       if (b.dataset.tab === 'map' && map) setTimeout(() => map.invalidateSize(), 100);
     });
   });
@@ -346,6 +357,7 @@ function init() {
   renderPlan();
   renderHotlines();
   renderLearn();
+  renderPrograms();
   renderTodos();
   showUserLocation();
 
@@ -370,28 +382,37 @@ function init() {
 
 let userMarker = null, userCircle = null;
 function showUserLocation(center) {
+  const btn = document.querySelector('button[onclick*="showUserLocation"]');
+  if (btn && center) btn.textContent = '⏳ Locating...';
   if (!navigator.geolocation || !map) {
-    if (center) alert('Location not available on this device/browser.');
+    if (btn) btn.textContent = '📍 Find me';
+    if (center) alert('Location not available. Try Chrome instead of Opera.');
     return;
   }
   navigator.geolocation.getCurrentPosition(pos => {
+    if (btn) btn.textContent = '📍 Find me';
     const lat = pos.coords.latitude, lng = pos.coords.longitude;
     if (userMarker) map.removeLayer(userMarker);
     if (userCircle) map.removeLayer(userCircle);
     userMarker = L.circleMarker([lat, lng], {
-      radius: 10, fillColor: '#1a73e8', color: '#fff',
+      radius: 12, fillColor: '#1a73e8', color: '#fff',
       weight: 3, opacity: 1, fillOpacity: 1
-    }).addTo(map).bindPopup('📍 You are here');
-    if (pos.coords.accuracy) {
+    }).addTo(map).bindPopup('📍 You are here').openPopup();
+    if (pos.coords.accuracy && pos.coords.accuracy < 10000) {
       userCircle = L.circle([lat, lng], {
         radius: pos.coords.accuracy, fillColor: '#1a73e8',
         fillOpacity: 0.15, color: '#1a73e8', weight: 1, opacity: 0.3
       }).addTo(map);
     }
-    if (center) map.setView([lat, lng], 14);
+    map.setView([lat, lng], 14);
   }, err => {
-    if (center) alert('Could not get your location. Check browser permissions.');
-  }, { enableHighAccuracy: true, timeout: 10000 });
+    if (btn) btn.textContent = '📍 Find me';
+    let msg = 'Could not get location. ';
+    if (err.code === 1) msg += 'Permission denied — allow location in browser settings.';
+    else if (err.code === 2) msg += 'Position unavailable.';
+    else if (err.code === 3) msg += 'Timed out. Try again.';
+    if (center) alert(msg);
+  }, { enableHighAccuracy: false, timeout: 15000, maximumAge: 60000 });
 }
 
 function render(cat, q) {
@@ -739,6 +760,9 @@ const LEARN_STEPS = [
 ];
 let learnCat = 'all', learnQ = '', learnFree = false;
 
+// --- 🏕️ Programs tab (feature #15): the app’s Job Corps-style residential programs (app programs.js, verified 2026-09-27; Fort Wayne-area 7) ---
+const PROGRAMS = [{"id":"atterbury-jobcorps","name":"Atterbury Job Corps Center","type":"Job Corps","ages":"16–24","cost":"Free","addr":"3129 E Edinburgh St","city":"Edinburgh, IN","zip":"46124","lat":39.36404,"lng":-86.02558,"phone":"(812) 314-6002","phoneHref":"+18123146002","web":"https://atterbury.jobcorps.gov","ridePaid":true,"rideText":"Yes — Job Corps arranges and pays for your travel to the center when you're accepted. Transportation help is part of the program — ask about the trip home when you call.","housingText":"Free dorm-style housing on campus — you live there full-time while enrolled (up to 3 years). Ask about the current dorm setup when you call.","mealsText":"Free meals in the campus cafeteria — breakfast, lunch, and dinner.","payText":"A small living allowance paid every two weeks while you're enrolled, plus basic health care.","programText":"The nation's largest free residential job-training program, run by the U.S. Department of Labor. Earn your high school diploma or equivalent, train hands-on in a trade, take community college classes while living on center, and get job-placement help for up to 21 months after you graduate.","requirements":["Age 16–24 when you enroll","U.S. citizen or legal resident","Low income — on public assistance, below the poverty line, homeless, foster youth, or on free/reduced school lunch","A barrier to school or work (no diploma, behind on basic skills, etc.)","Drug-free","No active probation/parole or disqualifying court case (reviewed case by case)","If you have kids, suitable childcare must be arranged"],"trades":["Welding","Office Administration","Certified Nurse Assistant (CNA)","Heavy Equipment Mechanic","Security & Protective Services","Bricklaying (pre-apprentice)","Building Construction Technology (pre-apprentice)","Carpentry (pre-apprentice)","Cement Masonry","Electrical","Glazing (pre-apprentice)","Heavy Equipment Operations (pre-apprentice)","Painting (pre-apprentice)","Culinary Arts"],"workText":"Full-time structured days: breakfast around 7 AM, career training and academic classes in the morning, lunch, more training in the afternoon, dinner around 4:30 PM, then study or free time. You must attend every class, keep your grades up, join campus activities, and keep your dorm area clean.","dormRules":["Dorm housing on campus (ask about the current dorm setup when you call)","Set lights-out and curfew times — confirm the current schedule when you call","Zero tolerance: no drugs, alcohol, weapons, or violence — drug testing","Visitors only during set visiting hours","Keep your room clean and inspection-ready","Sign in and out when leaving campus"],"rules":["Follow the daily schedule — attendance is mandatory","Dress code and uniforms in the trade shops","No smoking inside buildings","Discipline system: major violations can get you sent home","Under 18 needs a parent or guardian to sign enrollment papers"],"statusText":"Heads-up: in 2025 the federal government tried to close all Job Corps centers. Courts blocked it and Congress funded the program through June 2027 — Atterbury is open and enrolling now. Still, call (812) 314-6002 or (800) 733-5627 to confirm before you travel.","distNote":"Edinburgh, IN — south of Indianapolis","dayPlan":[{"t":"7:00 AM","what":"Breakfast — campus cafeteria"},{"t":"Morning","what":"Career training + academic classes"},{"t":"Midday","what":"Lunch — campus cafeteria"},{"t":"Afternoon","what":"Career training continues"},{"t":"4:30 PM","what":"Dinner — campus cafeteria"},{"t":"Evening","what":"Study hall / free time"}],"timesNote":"Daily flow from the center’s published info — exact times can shift, confirm when you call.","bring":["Ask your admissions counselor for the full paperwork list when you call","If you have kids: suitable childcare must be arranged before you enroll","Show up drug-free — you will be tested"],"noGo":["Drugs, alcohol, weapons, or violence — zero tolerance, you are out","Skipping class — attendance is mandatory and tracked","Fighting, stealing, or other major violations","Failing drug tests"]},{"id":"americorps-nccc","name":"AmeriCorps NCCC","type":"AmeriCorps NCCC","ages":"18–26","cost":"Free","addr":"Campus assigned by region — North Central campus is in Vinton, IA","city":"Vinton, IA","zip":"","lat":42.16987,"lng":-92.02346,"phone":"","phoneHref":"","web":"https://americorps.gov/serve/fit-finder/americorps-nccc","ridePaid":true,"rideText":"Yes — NCCC covers your travel to campus at the start, travel between project rounds, and teams travel together to every service site.","housingText":"Team-based housing is provided for the whole 10 months — campus dorms during training and between projects. On project rounds the sponsor arranges housing (dorms, bunkhouses, churches, etc.).","mealsText":"Meals provided during campus training; a food allowance is provided on project rounds.","payText":"A small living stipend paid through the term, plus an education award you can use for college or trade school after you finish (amount varies by year).","programText":"A 10-month, full-time residential national service program for ages 18–26 — the modern program most directly modeled on the 1930s Civilian Conservation Corps. You live and work on teams of 10–12 doing disaster response, environmental conservation, infrastructure, and community projects across the country.","requirements":["Age 18–26","U.S. citizen, U.S. national, or lawful permanent resident","Pass a background check","Able to do full-time physical team service","Willing to live and travel with your team for the full 10 months"],"trades":[],"workText":"Full-time service — roughly 40+ hours a week of hands-on project work such as disaster cleanup, trail building, and home repairs — plus team chores like cooking and cleaning. Strict team schedule.","dormRules":["Team housing with shared rooms","Curfews and quiet hours","Shared cooking and cleaning duties","No alcohol or drugs — violations mean dismissal"],"rules":["10-month commitment — you finish what you start","You serve wherever your team is assigned; you don't pick projects","Wear the NCCC uniform while on duty","Follow the member code of conduct"],"statusText":"Heads-up: NCCC members were sent home in April 2025 during federal cuts, so the program's future is uncertain — some 2026 activity has been posted since. Check americorps.gov for the current status before applying.","distNote":"North Central campus in Vinton, IA","dayPlan":[{"t":"Training weeks","what":"First weeks on campus — team training, PT, service skills"},{"t":"Project rounds","what":"6–8 week rounds — your team leader sets the daily schedule"},{"t":"Between rounds","what":"Back on campus — training and team time"}],"timesNote":"There is no fixed daily timetable — it changes with each project round. Your team leader sets the hours.","bring":["A valid ID and Social Security card for the background check","Ask your recruiter for the packing list — what to bring and what not to bring"],"noGo":["Not passing the background check","Drug or alcohol violations","Refusing team assignments — the program IS the team","Quitting early — the education award requires finishing the full term"]},{"id":"fwha-youthbuild","name":"Fort Wayne Housing Authority YouthBuild","type":"YouthBuild","ages":"16–24","cost":"Free","addr":"7315 Hanna St","city":"Fort Wayne, IN","zip":"46816","lat":41.01762,"lng":-85.12633,"phone":"(260) 409-5050","phoneHref":"+12604095050","web":"https://fwha.org/youthbuild-program/","ridePaid":"partial","rideText":"No dorms and no relocation — it's a local Fort Wayne program, you keep living at home. Members earn money while training; ask at (260) 409-5050 about help with bus passes or travel costs.","housingText":"No housing — this is a non-residential local program. You live where you are now and commute to training.","mealsText":"Not published — ask when you apply.","payText":"You earn money while you train (paid training plus stipends).","programText":"Free 6-month program (plus a full year of follow-up and case management) run by the Fort Wayne Housing Authority. Earn your high school diploma, get certified in construction and/or healthcare, and build real affordable housing in Fort Wayne neighborhoods.","requirements":["Age 16–24","Low-income family (includes youth experiencing housing instability)","Plus at least one of: foster care or aging out, justice-involved, a disability, child of an incarcerated parent, or migrant youth","Left high school before graduating (or re-enrolled after leaving)","Most members must live in 46805, 46815, 46803, 46774, 46806, 46807, 46816, 46745, or 46819","Bring: state ID, Social Security card, high-school withdrawal proof, transcripts, proof of address"],"trades":["Construction (NCCER certification)","Construction Plus: logistics & material moving","Commercial Driver's License (CDL)","Healthcare certifications"],"workText":"Daily attendance for 6 months: GED/diploma classes, hands-on construction work building affordable housing, community service, leadership development, mentorship and internships.","dormRules":[],"rules":["Show up every day — attendance counts","Follow program behavior standards"],"statusText":"","distNote":"Right here in Fort Wayne","dayPlan":[{"t":"Weekdays","what":"GED / high-school diploma classes"},{"t":"Weekdays","what":"Hands-on construction training on real Fort Wayne housing sites"},{"t":"Weekly","what":"Community service, mentoring, and leadership sessions"}],"timesNote":"It is a weekday program for 6 months — exact daily hours are not published. Ask when you apply.","bring":["State ID","Social Security card","High-school withdrawal proof","School transcripts","Proof of address"],"noGo":["Missing days — daily attendance counts","Breaking program behavior standards","Not participating in classes and worksite training"]},{"id":"michigan-youth-challenge","name":"Michigan Youth ChalleNGe Academy","type":"Youth ChalleNGe","ages":"16–18","cost":"Free","addr":"5500 Armstrong Rd","city":"Battle Creek, MI","zip":"49037","lat":42.343566,"lng":-85.287696,"phone":"(800) 372-0523","phoneHref":"+18003720523","web":"http://miycp.org/","ridePaid":false,"rideText":"Not published — ask the academy whether any travel help is available when you apply.","housingText":"Free dorms on the academy campus for the full 5½ months — you live there, barracks-style, separated by gender.","mealsText":"Meals provided on campus.","payText":"No pay — it's a free education program, not a job. You earn high school credit and a path to a diploma or GED.","programText":"Free 22-week residential program run with the Michigan National Guard for teens who are struggling in or out of school. Military-style structure and discipline, physical training, classes for high school credit, community service, and mentoring — plus a full year of mentoring after you graduate. Rated 4.7 stars across 650+ reviews.","requirements":["Age 16–18","Behind in school, dropped out, or at risk of dropping out","No felony convictions","Drug-free (you'll be tested)","You volunteer — nobody can force you in","Mentally and physically able to handle a demanding program","Ask about out-of-state eligibility when you call"],"trades":["High school credit / diploma track","GED preparation","Job readiness & employability skills","Physical fitness training","Community service projects","Leadership development"],"workText":"Highly structured days: early wake-up, physical training, classes, drill, community service projects, study hall, lights out. You earn privileges through good conduct and effort.","dormRules":["Barracks-style dorms, separated by gender","Strict daily schedule — no leaving campus without permission","Zero tolerance for drugs, alcohol, or contraband","Limited phone calls and visits, especially early on","Uniforms and grooming standards","Respect the chain of command"],"rules":["Volunteer only — you must want to be there","No felony convictions","Drug test on arrival","Follow the cadet code of conduct","A mentor is assigned to you for the year after graduation"],"statusText":"Active — parent and cadet reviews from 2025–2026 confirm the program is running. Classes fill up, so apply early.","distNote":"Battle Creek, MI — about 2 hours north","dayPlan":[{"t":"Early morning","what":"Wake-up + physical training"},{"t":"Morning","what":"Classes (high school credit)"},{"t":"Midday","what":"Lunch + drill"},{"t":"Afternoon","what":"Community service projects"},{"t":"Evening","what":"Study hall, lights out"}],"timesNote":"Exact times are not published — this is the usual daily flow. Ask for the current schedule when you call.","bring":["Ask the academy what to bring — a packing list is sent after you are accepted","Show up drug-free — you will be tested on arrival"],"noGo":["Failing the drug test on arrival","Contraband — drugs, alcohol, weapons","Walking away — it is voluntary, but leaving means you are out","Serious disrespect or rule-breaking toward cadre and other cadets"]},{"id":"bluegrass-challenge","name":"Bluegrass ChalleNGe Academy","type":"Youth ChalleNGe","ages":"15½–18","cost":"Free","addr":"114 Conroy Ave, Bldg 5549","city":"Fort Knox, KY","zip":"40121","lat":37.900206,"lng":-85.982234,"phone":"(877) 599-6884","phoneHref":"+18775996884","web":"https://www.bcachallenge.com/","ridePaid":false,"rideText":"Not published — ask the academy about travel help when you apply.","housingText":"Free residential dorms on Fort Knox — you live on a real Army post for the whole program.","mealsText":"Meals provided.","payText":"No pay — free education and training program.","programText":"Free residential program run by the Kentucky National Guard for teens 15½–18 who are failing school, have dropped out, or need a new direction. Military-style structure with classes toward a high school diploma or GED, physical fitness, community service, mentoring, and job skills. New classes start every January and July.","requirements":["Age 15½–18 (at least 16 by graduation day)","Failing in school, dropped out, no diploma or GED yet","No felony convictions","Drug-free (you'll be tested)","You volunteer to attend","Unemployed or underemployed","Mentally and physically able to complete the program"],"trades":["High school diploma / GED track","Job readiness & career skills","Physical fitness","Community service","Leadership & life skills"],"workText":"Quasi-military daily routine: physical training, classes, drill, service projects, study time. Starts with a 2-week acclimation phase, then the full residential phase — followed by a year of mentoring after graduation.","dormRules":["Barracks dorms on post","No leaving post without permission","Zero tolerance: drugs, alcohol, contraband","Uniforms, haircut and grooming standards","Restricted phone calls and visits early in the program"],"rules":["You must volunteer — nobody can force you in","Applications are first come, first served — classes fill fast","Interview with an admissions coordinator (with a notary)","Drug test required","Follow the cadet creed and code of conduct"],"statusText":"Open and enrolling — classes start every January and July. Heads-up for Indiana teens: the program is for Kentucky residents, and out-of-state applicants need prior approval — call (877) 599-6884 first.","distNote":"Fort Knox, KY — about 3 hours south","dayPlan":[{"t":"Early morning","what":"Wake-up + physical training"},{"t":"Morning","what":"Classes (high school credit)"},{"t":"Midday","what":"Lunch + drill"},{"t":"Afternoon","what":"Community service projects"},{"t":"Evening","what":"Study hall, lights out"}],"timesNote":"Exact times are not published — this is the usual daily flow. Ask for the current schedule when you call.","bring":["A packing list and directions are forwarded after you are accepted — ask at (877) 599-6884","Show up drug-free — you will be tested on arrival"],"noGo":["Failing the drug test on arrival","Contraband — drugs, alcohol, weapons","Walking away — it is voluntary, but leaving means you are out","Serious disrespect or rule-breaking toward cadre and other cadets"]},{"id":"dayton-jobcorps","name":"Dayton Job Corps Center","type":"Job Corps","ages":"16–24","cost":"Free","addr":"3849 Germantown Pike","city":"Dayton, OH","zip":"45417","lat":39.733957,"lng":-84.256077,"phone":"(937) 268-6571","phoneHref":"+19372686571","web":"https://dayton.jobcorps.gov/","ridePaid":true,"rideText":"Yes — Job Corps arranges and pays for your travel to the center when you're accepted. Transportation help is part of the program — ask about the trip home when you call.","housingText":"Free dorm-style housing on campus — you live there full-time while enrolled. (A limited number of nonresidential spots also exist.)","mealsText":"Free meals in the campus cafeteria — breakfast, lunch, and dinner.","payText":"A small living allowance paid every two weeks while you're enrolled, plus basic health care.","programText":"The same free federal Job Corps program as Atterbury, on a smaller residential campus in Dayton, Ohio (about 170 students). Earn your high school diploma or equivalent, train hands-on in a trade, and get job-placement help for up to 21 months after you graduate.","requirements":["Age 16–24 when you enroll","U.S. citizen or legal resident","Low income — on public assistance, below the poverty line, homeless, foster youth, or on free/reduced school lunch","A barrier to school or work (no diploma, behind on basic skills, etc.)","Drug-free","No active probation/parole or disqualifying court case (reviewed case by case)","If you have kids, suitable childcare must be arranged"],"trades":["Patient Care Technician (leads into the LPN advanced-training program)","Healthcare trades","Construction trades","Information Technology"],"workText":"Full-time structured days: career training and academic classes, meals in the cafeteria, study and recreation time. You must attend every class, keep your grades up, and follow the campus schedule.","dormRules":["Dorm housing on campus (ask about the current dorm setup when you call)","Set lights-out and curfew times — confirm the current schedule when you call","Zero tolerance: no drugs, alcohol, weapons, or violence — drug testing","Visitors only during set visiting hours","Keep your living area clean"],"rules":["Follow the daily schedule — attendance is mandatory","Dress code and uniforms in the trade shops","No smoking inside buildings","Discipline system: major violations can end your enrollment","Under 18 needs a parent or guardian to sign enrollment papers"],"statusText":"Same federal situation as every Job Corps center: the 2025 closure attempt was blocked by courts and Congress funded the program through June 2027. Call (937) 268-6571 to confirm Dayton is enrolling and which trades are currently offered — the trade lineup changes.","distNote":"Dayton, OH — about 1½ hours southeast","dayPlan":[{"t":"7:00 AM","what":"Breakfast — campus cafeteria"},{"t":"Morning","what":"Career training + academic classes"},{"t":"Midday","what":"Lunch — campus cafeteria"},{"t":"Afternoon","what":"Career training continues"},{"t":"4:30 PM","what":"Dinner — campus cafeteria"},{"t":"Evening","what":"Study hall / free time"}],"timesNote":"Dayton runs the standard Job Corps daily flow — exact times are not published, confirm when you call.","bring":["Ask your admissions counselor for the full paperwork list when you call","If you have kids: suitable childcare must be arranged before you enroll","Show up drug-free — you will be tested"],"noGo":["Drugs, alcohol, weapons, or violence — zero tolerance, you are out","Skipping class — attendance is mandatory and tracked","Fighting, stealing, or other major violations","Failing drug tests"]},{"id":"teen-challenge-northern-indiana","name":"Adult & Teen Challenge Northern Indiana","type":"Faith-based recovery","ages":"18+","cost":"Free","addr":"1111 W Bristol St","city":"Elkhart, IN","zip":"46514","lat":41.702454,"lng":-85.990448,"phone":"(574) 226-0789","phoneHref":"+15742260789","web":"http://www.adultandteenchallenge.com/","ridePaid":false,"rideText":"Not published — ask the center about travel help when you call.","housingText":"Residential — you live at the center for the full program, separated men's and women's homes.","mealsText":"Meals provided at the center.","payText":"No pay — it's a free recovery program. The final reentry phase can include getting outside employment while still living on campus.","programText":"Free 12-month Christian residential recovery program for adults stuck in addiction or other life-controlling issues. Bible-based curriculum, mentoring, life-skills training, work therapy, and recreation — no government funding, so it stays faith-centered. Rated 4.6 stars.","requirements":["Adult (18+)","Struggling with addiction or a life-controlling issue","Willing to commit to the full 12-month program","Complete a phone interview before acceptance","Detoxed and medically stable enough for residential life (ask about medical needs)"],"trades":["Work therapy (daily job-skills routine)","Life-skills training","Bible-based recovery curriculum","Mentoring","Optional reentry phase: outside employment while living on campus"],"workText":"Highly structured days built around the recovery curriculum, chapel, classes, assigned work duties (work therapy), mentoring, and recreation. Minimum 12 months — the induction and training phases are required to complete.","dormRules":["Live on campus the entire program — no coming and going","No phone calls or letters for at least the first 21 days; after that, only approved contacts","Zero tolerance for drugs, alcohol, or contraband","Daily schedule and dress standards","Separated men's and women's homes"],"rules":["Christian faith-based program — chapel and Bible study are part of it","12-month minimum commitment","Phone interview required before acceptance","Follow the student code of conduct","Reentry phase (optional): get a job but keep living on campus under program rules"],"statusText":"Active — 4.6-star rating with recent reviews. This is the nearest Teen Challenge center to Fort Wayne (about an hour away in Elkhart).","distNote":"Elkhart, IN — about 1 hour northwest","dayPlan":[{"t":"Daily","what":"Chapel + recovery classes"},{"t":"Daily","what":"Work therapy — assigned jobs around the center"},{"t":"Daily","what":"Mentoring, recreation, and study time"}],"timesNote":"Days are fully scheduled — exact times are not published. Ask when you call.","bring":["Call (574) 226-0789 for the what-to-bring list — it is sent before you arrive"],"noGo":["Drugs or alcohol — zero tolerance","Leaving campus without permission","Contacting unapproved people during the restricted-communication period","Refusing the daily program routine"]}];
+
 function learnCatName(c) {
   const f = LEARN_CATS.find(x => x[0] === c);
   return f ? f[1] + ' ' + f[2] : c;
@@ -809,6 +833,64 @@ function learnGoMap(q) {
   } else {
     alert('Places are still loading — try again in a moment.');
   }
+}
+
+// --- 🏕️ Programs tab (feature #15): expandable Job Corps-style program cards ---
+function progRideBadge(p) {
+  if (p.ridePaid === true) return '<span class="badge">✈️ Ride paid</span>';
+  if (p.ridePaid === 'partial') return '<span class="badge">🚌 Ride help</span>';
+  return '<span class="badge">🚗 Get yourself there</span>';
+}
+function progDetail(p) {
+  const ul = a => '<ul class="gsteps">' + a.map(x => `<li>${escapeAttr(x)}</li>`).join('') + '</ul>';
+  const chips = a => '<div class="meta">' + a.map(x => `<span class="badge">${escapeAttr(x)}</span>`).join('') + '</div>';
+  let h = '';
+  if (p.statusText) h += `<div class="gsec">⚠️ Heads-up</div><p class="gdim">${escapeAttr(p.statusText)}</p>`;
+  h += `<div class="gsec">✈️ Getting there</div><p class="gdim">${escapeAttr(p.rideText)}</p>`;
+  h += `<div class="gsec">🛏️ Housing</div><p class="gdim">${escapeAttr(p.housingText)}</p>`;
+  h += `<div class="gsec">🍽️ Meals &amp; pay</div><p class="gdim">${escapeAttr(p.mealsText)} ${escapeAttr(p.payText)}</p>`;
+  h += `<div class="gsec">✅ Requirements</div>` + ul(p.requirements);
+  if (p.trades && p.trades.length) h += `<div class="gsec">🔨 Trades &amp; training</div>` + chips(p.trades);
+  h += `<div class="gsec">💪 Typical day</div><p class="gdim">${escapeAttr(p.workText)}</p>`;
+  if (p.dormRules && p.dormRules.length) h += `<div class="gsec">🌙 Dorm rules</div>` + ul(p.dormRules);
+  h += `<div class="gsec">📏 Rules</div>` + ul(p.rules);
+  if (p.dayPlan && p.dayPlan.length) {
+    h += `<div class="gsec">⏱️ Daily schedule</div><ul class="gsteps">` +
+      p.dayPlan.map(s => `<li><b>${escapeAttr(s.t)}</b> — ${escapeAttr(s.what)}</li>`).join('') + `</ul>`;
+    if (p.timesNote) h += `<p class="gdim">${escapeAttr(p.timesNote)}</p>`;
+  }
+  if (p.bring && p.bring.length) h += `<div class="gsec">🎒 Bring</div>` + ul(p.bring);
+  if (p.noGo && p.noGo.length) h += `<div class="gsec">🚫 Not allowed</div>` + ul(p.noGo);
+  h += `<div class="meta" style="margin-top:10px">` +
+    (p.phoneHref ? `<a class="sheet-btn" href="tel:${escapeAttr(p.phoneHref)}" onclick="event.stopPropagation()">📞 ${escapeAttr(p.phone)}</a>` : '') +
+    (p.web ? `<a class="sheet-btn" href="${escapeAttr(p.web)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">🌐 Website</a>` : '') +
+    (typeof p.lat === 'number' ? `<a class="sheet-btn" href="https://maps.google.com/?q=${p.lat},${p.lng}" target="_blank" onclick="event.stopPropagation()">🗺️ Directions</a>` : '') +
+    (typeof p.lat === 'number' ? `<a class="sheet-btn" href="https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lng}&travelmode=transit" target="_blank" onclick="event.stopPropagation()">🚌 Transit</a>` : '') +
+    `</div>`;
+  return h;
+}
+function progCard(p) {
+  return `<div class="card" onclick="toggleProg(this,'${p.id}')">` +
+    `<h3>🏕️ ${escapeAttr(p.name)}</h3>` +
+    `<div class="meta"><span class="badge">${escapeAttr(p.type)}</span><span class="badge">Ages ${escapeAttr(p.ages)}</span><span class="badge">Free</span>${progRideBadge(p)}` +
+    (p.dormRules && p.dormRules.length ? '<span class="badge">🛏️ Dorms</span>' : '<span class="badge">🏠 No dorms</span>') + `</div>` +
+    `<div class="meta"><span class="badge">📍 ${escapeAttr(p.city)}</span></div>` +
+    `<p>${escapeAttr(p.programText)}</p>` +
+    `<p style="color:#7c8aff">Tap for details ›</p></div>`;
+}
+function toggleProg(el, id) {
+  const old = el.querySelector('.guide-detail');
+  if (old) { old.remove(); return; }
+  const p = PROGRAMS.find(x => x.id === id);
+  if (!p) return;
+  const div = document.createElement('div');
+  div.className = 'guide-detail';
+  div.innerHTML = progDetail(p);
+  el.appendChild(div);
+}
+function renderPrograms() {
+  const el = document.getElementById('program-list');
+  if (el) el.innerHTML = PROGRAMS.map(progCard).join('');
 }
 
 // --- Weather banner (feature #7): Open-Meteo, no key needed ---
