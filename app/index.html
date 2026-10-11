@@ -29,6 +29,9 @@ header p { color: #888; font-size: 14px; }
 .card a { color: #7c8aff; text-decoration: none; }
 .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 12px; background: #2a3040; color: #aaa; margin-right: 6px; margin-bottom: 4px; }
 .open-badge { display: inline-block; background: #1d3a26; color: #4ade80; border: 1px solid #2d5a3d; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: bold; margin-bottom: 4px; }
+.paypill { display: inline-block; background: #1d3a26; color: #4ade80; border: 1px solid #2d5a3d; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: bold; margin: 0 6px 4px 0; }
+.newpill { display: inline-block; background: #3a2a1d; color: #fbbf24; border: 1px solid #8a6d2d; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: bold; margin-bottom: 4px; }
+#gig-chips { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 12px; }
 #loading { text-align: center; padding: 40px; color: #888; }
 nav { position: fixed; bottom: 0; left: 0; right: 0; background: #1a1f2e; display: flex; z-index: 1000; border-top: 1px solid #2a3040; }
 nav button { flex: 1; padding: 10px 4px; background: none; border: none; color: #888; font-size: 11px; cursor: pointer; }
@@ -48,6 +51,7 @@ nav button .ico { font-size: 20px; display: block; margin-bottom: 2px; }
 #todo-add { background: #7c8aff; color: #fff; border: none; border-radius: 8px; padding: 0 20px; font-size: 15px; font-weight: bold; cursor: pointer; }
 .todo-hint { color: #666; font-size: 12px; margin: -6px 0 12px; }
 .emoji-pin { background: none; border: none; }
+.app-pin { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 19px; border: 2.5px solid rgba(255,255,255,.9); box-shadow: 0 4px 12px rgba(0,0,0,.5); }
 #sheet-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.65); z-index: 2000; display: none; }
 #sheet-overlay.open { display: block; }
 #sheet { position: absolute; left: 0; right: 0; bottom: 0; max-height: 82vh; overflow-y: auto; background: #1a1f2e; border-radius: 18px 18px 0 0; padding: 20px 20px 30px; border-top: 1px solid #2a3040; }
@@ -142,6 +146,16 @@ nav button .ico { font-size: 20px; display: block; margin-bottom: 2px; }
   <div class="content" id="events-list"></div>
 </div>
 
+<div id="tab-gigs" class="tab">
+  <div class="content">
+    <h2 style="color:#fff;margin-bottom:4px;">⚡ Fast-Cash Gigs</h2>
+    <p style="color:#888;font-size:14px;margin-bottom:12px;">Quick ways to earn money — plasma, day labor, gig apps</p>
+    <p class="learn-note" style="margin:0 0 12px;"><b>⚡ Paid fast.</b> Plasma centers and day-labor spots can pay the same day you show up. Gig apps take a few days to approve you — sign up now so you're ready.</p>
+    <div id="gig-chips"></div>
+    <div id="gig-list"></div>
+  </div>
+</div>
+
 <div id="tab-plan" class="tab">
   <div class="content">
     <h2 style="color:#fff;margin-bottom:12px;">📋 My Plan</h2>
@@ -208,6 +222,7 @@ nav button .ico { font-size: 20px; display: block; margin-bottom: 2px; }
   <button data-tab="guide"><span class="ico">📖</span>Guide</button>
   <button data-tab="jobs"><span class="ico">💼</span>Jobs</button>
   <button data-tab="events"><span class="ico">📅</span>Events</button>
+  <button data-tab="gigs"><span class="ico">⚡</span>Gigs</button>
   <button data-tab="plan"><span class="ico">📋</span>Plan</button>
   <button data-tab="learn"><span class="ico">🎓</span>Learn</button>
   <button data-tab="programs"><span class="ico">🏕️</span>Programs</button>
@@ -292,6 +307,15 @@ const PIN_EMOJI = {
   thrift: '🛒', day: '☀️', water: '💧', cash: '💵',
   vouchers: '🎟️', bank: '🏦', babybox: '📦', bikeair: '🚲',
   freebike: '🚲', hangout: '🛋️', lgbtq: '🏳️‍🌈', narcan: '💊'
+};
+const PIN_COLOR = {
+  food: '#f59e0b', meals: '#f97316', shelter: '#3b82f6', health: '#ef4444',
+  mental: '#8b5cf6', recovery: '#10b981', benefits: '#eab308',
+  bathroom: '#06b6d4', laundry: '#6366f1', wifi: '#0ea5e9', charge: '#facc15',
+  bus: '#14b8a6', youth: '#ec4899', pets: '#a855f7', freeclothes: '#64748b',
+  thrift: '#78716c', day: '#fbbf24', water: '#38bdf8', cash: '#22c55e',
+  vouchers: '#d946ef', bank: '#475569', babybox: '#f472b6', bikeair: '#84cc16',
+  freebike: '#65a30d', hangout: '#a78bfa', lgbtq: '#f472b6', narcan: '#dc2626'
 };
 
 // Saved / Favorites (localStorage)
@@ -453,6 +477,7 @@ function init() {
   renderGuides();
   renderJobs();
   renderEvents();
+  renderGigs();
   renderPlan();
   renderHotlines();
   renderLearn();
@@ -472,6 +497,12 @@ function init() {
   });
   document.getElementById('learn-free').addEventListener('change', e => {
     learnFree = e.target.checked; renderLearn();
+  });
+
+  // Gigs tab kind chips
+  document.getElementById('gig-chips').addEventListener('click', e => {
+    const c = e.target.closest ? e.target.closest('[data-gf]') : null;
+    if (c) { gigFilter = c.dataset.gf; renderGigs(); }
   });
 
   // To-do input: Enter adds
@@ -527,12 +558,14 @@ function render(cat, q) {
   if (markers) map.removeLayer(markers);
   markers = L.layerGroup();
   list.slice(0, 200).forEach(r => {
-    let emoji = '💜';
-    for (const c of (r.cats || [])) { if (PIN_EMOJI[c]) { emoji = PIN_EMOJI[c]; break; } }
+    let emoji = '💜', color = '#7c8aff';
+    for (const c of (r.cats || [])) {
+      if (PIN_EMOJI[c]) { emoji = PIN_EMOJI[c]; color = PIN_COLOR[c] || '#7c8aff'; break; }
+    }
     L.marker([r.lat, r.lng], {
       icon: L.divIcon({
-        html: `<div style="font-size:24px;text-align:center;filter:drop-shadow(0 2px 3px rgba(0,0,0,0.5))">${emoji}</div>`,
-        className: 'emoji-pin', iconSize: [28, 28], iconAnchor: [14, 14]
+        html: `<div class="app-pin" style="background:${color}">${emoji}</div>`,
+        className: 'emoji-pin', iconSize: [38, 38], iconAnchor: [19, 19]
       })
     }).bindPopup(`<b>${r.name}</b><br>${r.addr||''}<br><a href="https://maps.google.com/?q=${r.lat},${r.lng}" target="_blank">Directions</a> · <a href="https://www.google.com/maps/dir/?api=1&destination=${r.lat},${r.lng}&travelmode=transit" target="_blank">🚌 Transit</a>`).addTo(markers);
   });
@@ -725,9 +758,9 @@ function toggleGuide(el, i) {
 }
 
 function renderJobs() {
-  const jobs = (typeof JOBS !== 'undefined' ? JOBS : []).concat(typeof GIGS !== 'undefined' ? GIGS : []);
+  const jobs = (typeof JOBS !== 'undefined' ? JOBS : []);
   document.getElementById('jobs-list').innerHTML =
-    '<h2 style="color:#fff;margin-bottom:12px;">💼 Jobs & Gigs</h2>' +
+    '<h2 style="color:#fff;margin-bottom:12px;">💼 Jobs</h2>' +
     (jobs.map(j => `
     <div class="card">
       <h3>${j.name || j.title}</h3>
@@ -748,6 +781,47 @@ function renderEvents() {
       <p>📍 ${e.venue || ''} ${e.addr || ''}</p>
       <p>${(e.desc || '').substring(0, 150)}...</p>
     </div>`).join('') || '<p style="color:#888">No upcoming events.</p>';
+}
+
+/* ---------- Fast-cash gigs tab (app's ⚡ Gigs tab) ---------- */
+const GIG_KINDS = { plasma: ['🩸', 'Plasma'], daylabor: ['👷', 'Day labor'], app: ['📱', 'Gig apps'], task: ['🧰', 'Odd jobs'], survey: ['📝', 'Surveys'], study: ['🧪', 'Studies'] };
+let gigFilter = 'all';
+function gigIsNew(g) {
+  if (!g.added) return false;
+  const a = new Date(g.added + 'T12:00:00');
+  return !isNaN(a) && (Date.now() - a.getTime()) < 7 * 864e5;
+}
+function gigsFiltered() {
+  const all = typeof GIGS !== 'undefined' ? GIGS : [];
+  return all.filter(g => (!g.area || g.area === 'fort-wayne') && (gigFilter === 'all' || g.kind === gigFilter));
+}
+function renderGigs() {
+  const chipsEl = document.getElementById('gig-chips');
+  if (chipsEl) {
+    const all = typeof GIGS !== 'undefined' ? GIGS : [];
+    const fw = all.filter(g => !g.area || g.area === 'fort-wayne');
+    const kinds = Object.keys(GIG_KINDS).filter(k => fw.some(g => g.kind === k));
+    chipsEl.innerHTML = `<button class="filter-btn${gigFilter === 'all' ? ' active' : ''}" data-gf="all">All</button>` +
+      kinds.map(k => `<button class="filter-btn${gigFilter === k ? ' active' : ''}" data-gf="${k}">${GIG_KINDS[k][0]} ${GIG_KINDS[k][1]}</button>`).join('');
+  }
+  const el = document.getElementById('gig-list');
+  if (!el) return;
+  const list = gigsFiltered();
+  el.innerHTML = list.length ? list.map(g => {
+    const icon = (GIG_KINDS[g.kind] || ['⚡'])[0];
+    return `<div class="card">
+      <h3>${icon} ${escapeHtml(g.title || '')}</h3>
+      <p>📍 ${escapeHtml(g.venue || '')}${g.addr ? ' — ' + escapeHtml(g.addr) : ''}</p>
+      <div class="meta"><span class="paypill">💵 ${escapeHtml(g.pay || 'Paid gig')}</span>${gigIsNew(g) ? '<span class="newpill">NEW</span>' : ''}</div>
+      <p>${escapeHtml(g.desc || '')}</p>
+      ${g.needs ? `<p>🎒 <b>Needs:</b> ${escapeHtml(g.needs)}</p>` : ''}
+      <div class="meta">
+        ${g.url ? `<a class="sheet-btn" href="${escapeAttr(g.url)}" target="_blank" rel="noopener">Apply ↗</a>` : ''}
+        ${g.phoneHref ? `<a class="sheet-btn" href="tel:${escapeAttr(g.phoneHref)}">📞 ${escapeHtml(g.phone || 'Call')}</a>` : ''}
+        ${g.lat ? `<a class="sheet-btn" href="https://maps.google.com/?q=${g.lat},${g.lng}" target="_blank" rel="noopener">🗺️ Directions</a>` : ''}
+      </div>
+    </div>`;
+  }).join('') : '<p style="color:#888">No gigs found.</p>';
 }
 
 function renderPlan() {
