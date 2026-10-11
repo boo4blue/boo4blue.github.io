@@ -51,7 +51,9 @@ nav button .ico { font-size: 20px; display: block; margin-bottom: 2px; }
 #todo-add { background: #7c8aff; color: #fff; border: none; border-radius: 8px; padding: 0 20px; font-size: 15px; font-weight: bold; cursor: pointer; }
 .todo-hint { color: #666; font-size: 12px; margin: -6px 0 12px; }
 .emoji-pin { background: none; border: none; }
-.app-pin { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 19px; border: 2.5px solid rgba(255,255,255,.9); box-shadow: 0 4px 12px rgba(0,0,0,.5); }
+.app-pin { width: 32px; height: 42px; position: relative; display: flex; align-items: flex-start; justify-content: center; }
+.app-pin .pin-body { width: 32px; height: 32px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); border: 2.5px solid rgba(255,255,255,.9); box-shadow: 0 4px 12px rgba(0,0,0,.5); display: flex; align-items: center; justify-content: center; }
+.app-pin .pin-emoji { transform: rotate(45deg); font-size: 16px; line-height: 1; }
 #sheet-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.65); z-index: 2000; display: none; }
 #sheet-overlay.open { display: block; }
 #sheet { position: absolute; left: 0; right: 0; bottom: 0; max-height: 82vh; overflow-y: auto; background: #1a1f2e; border-radius: 18px 18px 0 0; padding: 20px 20px 30px; border-top: 1px solid #2a3040; }
@@ -588,8 +590,8 @@ function render(cat, q) {
     }
     L.marker([r.lat, r.lng], {
       icon: L.divIcon({
-        html: `<div class="app-pin" style="background:${color}">${emoji}</div>`,
-        className: 'emoji-pin', iconSize: [38, 38], iconAnchor: [19, 19]
+        html: `<div class="app-pin"><div class="pin-body" style="background:${color}"><span class="pin-emoji">${emoji}</span></div></div>`,
+        className: 'emoji-pin', iconSize: [32, 42], iconAnchor: [16, 42]
       })
     }).bindPopup(`<b>${r.name}</b><br>${r.addr||''}<br><a href="https://maps.google.com/?q=${r.lat},${r.lng}" target="_blank">Directions</a> · <a href="https://www.google.com/maps/dir/?api=1&destination=${r.lat},${r.lng}&travelmode=transit" target="_blank">🚌 Transit</a>`).addTo(markers);
   });
