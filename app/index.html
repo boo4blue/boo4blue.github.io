@@ -81,8 +81,8 @@ function init() {
   
   // Map
   map = L.map('map').setView([41.079, -85.139], 12);
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19, attribution: '© OpenStreetMap'
+  L.tileLayer('https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png?key=cb1_4h9q_1_84dc6afd4f5c6cd3901f9e35', {
+    maxZoom: 19, attribution: '© OpenStreetMap © CARTO'
   }).addTo(map);
   
   // Filters
