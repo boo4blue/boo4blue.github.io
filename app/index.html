@@ -101,6 +101,14 @@ nav button .ico { font-size: 20px; display: block; margin-bottom: 2px; }
 </div>
 <div id="sidebar-overlay" onclick="toggleSidebar()" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:999;display:none;"></div>
 
+<div id="place-panel" style="position:fixed;top:0;right:-400px;width:380px;max-width:90vw;height:100%;background:#1a1f2e;z-index:1001;transition:right 0.3s;overflow-y:auto;box-shadow:-2px 0 10px rgba(0,0,0,0.5);">
+  <div style="position:sticky;top:0;background:#1a1f2e;padding:16px;border-bottom:1px solid #333;display:flex;justify-content:space-between;align-items:center;">
+    <h2 style="margin:0;color:#fff;font-size:18px;">Place Details</h2>
+    <button onclick="closePlacePanel()" style="background:none;border:none;color:#888;font-size:24px;cursor:pointer;">×</button>
+  </div>
+  <div id="place-panel-content" style="padding:16px;"></div>
+</div>
+
 <div id="tab-map" class="tab active">
   <div id="wx-banner"></div>
   <div id="map-wrap" style="position:relative;margin:0 16px;">
@@ -387,6 +395,60 @@ function goTab(name) {
   toggleSidebar();
   document.querySelector(`nav button[data-tab="${name}"]`).click();
 }
+function openPlacePanel(r) {
+  const panel = document.getElementById('place-panel');
+  const content = document.getElementById('place-panel-content');
+  const fk = favKey(r);
+  const fav = favIds().includes(fk);
+  const verified = localStorage.getItem('verified_' + fk) === '1';
+  let emoji = '💜', color = '#7c8aff';
+  for (const c of (r.cats || [])) {
+    if (PIN_EMOJI[c]) { emoji = PIN_EMOJI[c]; color = PIN_COLOR[c] || '#7c8aff'; break; }
+  }
+  content.innerHTML = `
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+      <div style="width:56px;height:56px;border-radius:50%;background:${color};display:flex;align-items:center;justify-content:center;font-size:28px;border:2.5px solid rgba(255,255,255,.9);">${emoji}</div>
+      <div><h2 style="margin:0;color:#fff;">${escapeHtml(r.name)}</h2>${openBadge(r)}</div>
+    </div>
+    ${verified ? '<p><span class="open-badge">✓ Verified by users</span></p>' : ''}
+    ${r.addr ? `<p style="color:#aaa;">📍 ${escapeHtml(r.addr)}</p>` : ''}
+    ${r.phone ? `<p><a href="tel:${escapeAttr(r.phone)}" style="color:#7c8aff;">📞 ${escapeHtml(r.phone)}</a></p>` : ''}
+    ${r.hours ? `<p style="color:#aaa;">🕐 ${escapeHtml(typeof r.hours === 'string' ? r.hours : JSON.stringify(r.hours))}</p>` : ''}
+    ${r.desc ? `<p style="margin:16px 0;">${escapeHtml(r.desc)}</p>` : ''}
+    ${(r.cats || []).length ? `<div class="meta" style="margin-bottom:16px;">${r.cats.map(c => `<span class="badge">${escapeHtml(c)}</span>`).join('')}</div>` : ''}
+    <div class="meta" style="margin-bottom:16px;">
+      ${r.lat ? `<a class="sheet-btn" href="https://maps.google.com/?q=${r.lat},${r.lng}" target="_blank">🗺️ Directions</a>` : ''}
+      ${r.lat ? `<a class="sheet-btn" href="https://www.google.com/maps/dir/?api=1&destination=${r.lat},${r.lng}&travelmode=transit" target="_blank">🚌 Transit</a>` : ''}
+      ${r.web ? `<a class="sheet-btn" href="${escapeAttr(r.web)}" target="_blank">🌐 Website</a>` : ''}
+    </div>
+    <div class="meta">
+      <button class="sheet-btn" onclick="toggleFavByKey('${escapeAttr(fk)}')">${fav ? '❤️ Saved' : '🤍 Save'}</button>
+      <button class="sheet-btn" onclick="verifyPlace('${escapeAttr(fk)}');openPlacePanel(byId('${escapeAttr(r.id || '')}'))">${verified ? '✓ Verified' : '✓ Verify info'}</button>
+      <button class="sheet-btn" onclick="sharePlace('${escapeAttr(fk)}')">📤 Share</button>
+    </div>
+    ${r.tags && r.tags.length ? `<div style="margin-top:16px;"><h4 style="color:#888;">Tags</h4><div class="meta">${r.tags.map(t => `<span class="badge">✓ ${escapeHtml(t)}</span>`).join('')}</div></div>` : ''}
+  `;
+  panel.style.right = '0';
+}
+function closePlacePanel() {
+  document.getElementById('place-panel').style.right = '-400px';
+}
+function byId(id) {
+  return (typeof RESOURCES !== 'undefined' ? RESOURCES : []).find(r => r.id === id) || {};
+}
+function toggleFavByKey(fk) {
+  let favs = favIds();
+  favs = favs.includes(fk) ? favs.filter(x => x !== fk) : [...favs, fk];
+  localStorage.setItem('haven_favs', JSON.stringify(favs));
+  render(activeCat(), activeQ());
+}
+function sharePlace(fk) {
+  const r = (typeof RESOURCES !== 'undefined' ? RESOURCES : []).find(x => favKey(x) === fk) || {};
+  const text = `${r.name}\n${r.addr || ''}\n${r.phone || ''}`;
+  if (navigator.share) navigator.share({ title: r.name, text });
+  else if (navigator.clipboard) { navigator.clipboard.writeText(text); alert('Copied!'); }
+  else prompt('Copy:', text);
+}
 
 // Open-now badge: uses the structured r.hours dict { day: [openMin, closeMin] }.
 // Days are 0=Sun..6=Sat (a few entries use 7 for Sunday); values are minutes since midnight.
@@ -614,13 +676,15 @@ function render(cat, q) {
     for (const c of (r.cats || [])) {
       if (PIN_EMOJI[c]) { emoji = PIN_EMOJI[c]; color = PIN_COLOR[c] || '#7c8aff'; break; }
     }
-    L.marker([r.lat, r.lng], {
+    const marker = L.marker([r.lat, r.lng], {
       cats: r.cats || [],
       icon: L.divIcon({
         html: `<div class="app-pin"><div class="pin-body" style="background:${color}"><span class="pin-emoji">${emoji}</span></div></div>`,
         className: 'emoji-pin', iconSize: [32, 42], iconAnchor: [16, 42]
       })
-    }).bindPopup(`<b>${r.name}</b><br>${r.addr||''}<br><a href="https://maps.google.com/?q=${r.lat},${r.lng}" target="_blank">Directions</a> · <a href="https://www.google.com/maps/dir/?api=1&destination=${r.lat},${r.lng}&travelmode=transit" target="_blank">🚌 Transit</a>`).addTo(markers);
+    });
+    marker.on('click', () => openPlacePanel(r));
+    marker.addTo(markers);
   });
   markers.addTo(map);
 
