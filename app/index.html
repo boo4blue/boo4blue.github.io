@@ -305,5 +305,19 @@ window.addEventListener('error', function(e) {
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://n.uguu.se/GxwHYyFH.js"></script>
-</body>
+<script>
+setTimeout(function() {
+  var errs = [];
+  if (typeof L === 'undefined') errs.push('L undefined');
+  else if (!L.FeatureGroup) errs.push('L.FeatureGroup undefined');
+  if (typeof RESOURCES === 'undefined') errs.push('RESOURCES undefined');
+  if (typeof goTab === 'undefined') errs.push('goTab undefined');
+  if (errs.length > 0) {
+    var d = document.createElement('div');
+    d.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:#f59e0b;color:black;padding:10px;z-index:99999;font-family:monospace;font-size:12px;';
+    d.textContent = 'DIAG: ' + errs.join(', ');
+    document.body.appendChild(d);
+  }
+}, 3000);
+</script></body>
 </html>
