@@ -116,18 +116,20 @@ function render(cat, q) {
   // Update map
   if (markers) map.removeLayer(markers);
   markers = L.layerGroup();
-  const PIN_COLORS = {
-    food: '#ff9f43', shelter: '#7c8aff', health: '#2ed573',
-    shower: '#1e90ff', laundry: '#a55eea', wifi: '#00d2d3',
-    jobs: '#ff6b81', benefits: '#f9ca24', mental: '#6c5ce7',
-    youth: '#fd79a8', pets: '#e17055', transport: '#00b894'
+  const PIN_EMOJI = {
+    food: '🍔', shelter: '🏠', health: '🏥',
+    shower: '🚿', laundry: '👕', wifi: '📶',
+    jobs: '💼', benefits: '💰', mental: '🧠',
+    youth: '👦', pets: '🐾', transport: '🚌'
   };
   list.slice(0, 200).forEach(r => {
     const cat = (r.cats || [])[0] || '';
-    const color = PIN_COLORS[cat] || '#7c8aff';
-    const pin = L.circleMarker([r.lat, r.lng], {
-      radius: 8, fillColor: color, color: '#fff',
-      weight: 2, opacity: 1, fillOpacity: 0.9
+    const emoji = PIN_EMOJI[cat] || '📍';
+    const pin = L.marker([r.lat, r.lng], {
+      icon: L.divIcon({
+        html: `<div style="font-size:24px;text-align:center;line-height:1;filter:drop-shadow(0 2px 3px rgba(0,0,0,0.5))">${emoji}</div>`,
+        className: 'emoji-pin', iconSize: [28, 28], iconAnchor: [14, 14]
+      })
     }).bindPopup(`<b>${r.name}</b><br>${r.addr||''}<br><a href="https://maps.google.com/?q=${r.lat},${r.lng}" target="_blank">Directions</a>`);
     pin.addTo(markers);
   });
