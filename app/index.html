@@ -50,6 +50,8 @@ nav button .ico { font-size: 20px; display: block; margin-bottom: 2px; }
 #sheet .row a { color: #7c8aff; text-decoration: none; }
 #sheet .sec { color: #7c8aff; font-weight: bold; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; margin: 14px 0 6px; }
 #sheet-close { position: absolute; top: 12px; right: 12px; background: #2a3040; color: #fff; border: none; border-radius: 50%; width: 36px; height: 36px; font-size: 18px; cursor: pointer; }
+#mini-toast { position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%) translateY(20px); background: #2a3040; color: #fff; padding: 10px 18px; border-radius: 20px; font-size: 14px; z-index: 3000; opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s; border: 1px solid #7c8aff; white-space: nowrap; }
+#mini-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 .sheet-btn { display: inline-block; background: #7c8aff; color: #fff; padding: 10px 20px; border-radius: 10px; text-decoration: none; font-weight: bold; margin: 4px 8px 4px 0; }
 .guide-detail { margin-top: 10px; border-top: 1px solid #2a3040; padding-top: 6px; }
 .gsec { color: #7c8aff; font-weight: bold; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; margin: 14px 0 6px; }
@@ -144,6 +146,7 @@ nav button .ico { font-size: 20px; display: block; margin-bottom: 2px; }
 </nav>
 
 <!-- Place detail sheet -->
+<div id="mini-toast"></div>
 <div id="sheet-overlay" onclick="if(event.target===this)closeSheet()">
   <div id="sheet">
     <button id="sheet-close" onclick="closeSheet()">✕</button>
@@ -158,6 +161,7 @@ let curList = [];
 let map, markers;
 let sortMode = 'def'; // def | az | near
 let userLoc = null;   // {lat, lng} when granted
+let sheetPlace = null; // place currently shown in the detail sheet
 
 // Haversine distance in miles
 function distMi(aLat, aLng, bLat, bLng) {
@@ -414,6 +418,7 @@ function openSheet(i) {
 }
 
 function showSheet(r) {
+  sheetPlace = r;
   const telHref = r.phoneHref ? 'tel:+' + String(r.phoneHref).replace(/^\+/, '')
     : (r.phone ? 'tel:' + String(r.phone).replace(/[^0-9+]/g, '') : '');
   document.getElementById('sheet-body').innerHTML = `
@@ -429,6 +434,7 @@ function showSheet(r) {
       ${r.lat ? `<a class="sheet-btn" href="https://maps.google.com/?q=${r.lat},${r.lng}" target="_blank">🗺️ Directions</a>` : ''}
       ${r.lat ? `<a class="sheet-btn" href="https://www.google.com/maps/dir/?api=1&destination=${r.lat},${r.lng}&travelmode=transit" target="_blank">🚌 Transit</a>` : ''}
       ${r.web ? `<a class="sheet-btn" href="${r.web}" target="_blank">🌐 Website</a>` : ''}
+      <a class="sheet-btn" href="#" onclick="shareSheetPlace();return false;">📤 Share</a>
     </div>`;
   document.getElementById('sheet-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -437,6 +443,29 @@ function showSheet(r) {
 function closeSheet() {
   document.getElementById('sheet-overlay').classList.remove('open');
   document.body.style.overflow = '';
+}
+
+// --- Share place (feature #13): navigator.share, clipboard fallback, prompt fallback ---
+function shareSheetPlace() {
+  const r = sheetPlace;
+  if (!r) return;
+  const loc = (r.lat && r.lng) ? `https://maps.google.com/?q=${r.lat},${r.lng}` : 'https://boo4blue.github.io/app/';
+  const text = `📍 ${r.name}${r.addr ? '\n' + r.addr : ''}${r.phone ? '\n' + r.phone : ''}\n${loc}`;
+  if (typeof navigator !== 'undefined' && navigator.share) {
+    navigator.share({ title: r.name, text }).catch(() => {});
+  } else if (typeof navigator !== 'undefined' && navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(() => miniToast('✓ Copied to clipboard')).catch(() => miniToast('Copy failed'));
+  } else if (typeof prompt !== 'undefined') {
+    prompt('Copy to share:', text);
+  }
+}
+function miniToast(msg) {
+  const t = document.getElementById('mini-toast');
+  if (!t) return;
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._h);
+  t._h = setTimeout(() => t.classList.remove('show'), 1800);
 }
 
 function renderGuides() {
@@ -627,7 +656,7 @@ function learnCard(i) {
   const extra = i[9] || {};
   const costCls = i[6] === 'Free' ? 'open-badge' : 'badge';
   const btns = [];
-  if (i[5]) btns.push(`<a class="sheet-btn" href="${i[5]}" target="_blank" rel="noopener">Open ↗</a>`);
+  if (i[5] && i[5].trim()) btns.push(`<a class="sheet-btn" href="${i[5]}" target="_blank" rel="noopener">Open ↗</a>`);
   if (extra.q) btns.push(`<button class="sheet-btn" onclick="learnGoMap('${extra.q}')">🔍 ${extra.label || 'See places'}</button>`);
   if (extra.learn) btns.push(`<button class="sheet-btn" onclick="learnFilter('${extra.learn}')">${extra.label || 'View'}</button>`);
   return `
