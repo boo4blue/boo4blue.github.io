@@ -94,6 +94,7 @@ nav button .ico { font-size: 20px; display: block; margin-bottom: 2px; }
     </div>
   </div>
   <div id="filters"></div>
+  <div id="recent-searches"></div>
   <div id="sortrow"><label for="sort">Sort:</label>
     <select id="sort">
       <option value="def" selected>Default</option>
@@ -287,6 +288,24 @@ function favIds() {
 }
 function favKey(r) { return r.id || r.name; }
 function escapeAttr(s) { return String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;'); }
+function escapeHtml(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function saveRecentSearch(q) {
+  let r = JSON.parse(localStorage.getItem('haven_recent') || '[]');
+  r = [q, ...r.filter(x => x !== q)].slice(0, 5);
+  localStorage.setItem('haven_recent', JSON.stringify(r));
+  renderRecent();
+}
+function renderRecent() {
+  const r = JSON.parse(localStorage.getItem('haven_recent') || '[]');
+  const el = document.getElementById('recent-searches');
+  if (!el) return;
+  el.innerHTML = r.length ? '<div style="padding:0 16px 8px;"><small style="color:#888">Recent: </small>' +
+    r.map(q => `<button onclick="doRecent('${escapeAttr(q)}')" style="margin:2px;padding:4px 10px;border:1px solid #333;border-radius:12px;background:#1a1f2e;color:#aaa;font-size:12px;cursor:pointer;">${escapeHtml(q)}</button>`).join('') + '</div>' : '';
+}
+function doRecent(q) {
+  document.getElementById('search').value = q;
+  render(document.querySelector('.filter-btn.active').dataset.cat, q);
+}
 
 // Open-now badge: uses the structured r.hours dict { day: [openMin, closeMin] }.
 // Days are 0=Sun..6=Sat (a few entries use 7 for Sunday); values are minutes since midnight.
@@ -363,6 +382,10 @@ function init() {
   document.getElementById('search').addEventListener('input', e => {
     render(document.querySelector('.filter-btn.active').dataset.cat, e.target.value);
   });
+  document.getElementById('search').addEventListener('change', e => {
+    const q = e.target.value.trim();
+    if (q.length > 2) saveRecentSearch(q);
+  });
   document.getElementById('sort').addEventListener('change', e => {
     const v = e.target.value;
     if (v === 'near') requestNear(e.target);
@@ -394,6 +417,7 @@ function init() {
   renderTodos();
   showUserLocation();
   applySettings();
+  renderRecent();
 
   // Learn tab controls
   document.getElementById('learn-chips').addEventListener('click', e => {
