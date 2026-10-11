@@ -57,6 +57,11 @@ nav button .ico { font-size: 20px; display: block; margin-bottom: 2px; }
 .gsteps li { margin-bottom: 8px; }
 .gdim { color: #aaa; font-size: 14px; }
 .guide-detail a { color: #7c8aff; text-decoration: none; }
+#wx-banner { margin: 0 16px; padding-top: 8px; }
+.wx-bar { display: flex; align-items: center; gap: 8px; background: #1a1f2e; border: 1px solid #2a3040; border-radius: 10px; padding: 8px 12px; font-size: 14px; color: #ccc; }
+.wx-cold { background: #3a1420; border: 1px solid #7c2d3a; border-radius: 10px; padding: 10px 12px; font-size: 14px; color: #ffd7dd; line-height: 1.45; }
+.wx-cold b { color: #fff; }
+.wx-cold a { color: #9db4ff; font-weight: bold; }
 </style>
 </head>
 <body>
@@ -66,6 +71,7 @@ nav button .ico { font-size: 20px; display: block; margin-bottom: 2px; }
 </header>
 
 <div id="tab-map" class="tab active">
+  <div id="wx-banner"></div>
   <input type="search" id="search" placeholder="Search food, shelter, showers...">
   <div id="filters"></div>
   <div id="sortrow"><label for="sort">Sort:</label>
@@ -506,7 +512,51 @@ function renderHotlines() {
   }).join('');
 }
 
-window.addEventListener('DOMContentLoaded', () => loadData(1));
+// --- Weather banner (feature #7): Open-Meteo, no key needed ---
+const WX_LAT = 41.0793, WX_LON = -85.1394; // Fort Wayne
+function wxIcon(code) {
+  if (code === 0) return '☀️';
+  if (code <= 3) return '⛅';
+  if (code <= 48) return '🌫️';
+  if (code <= 57) return '🌦️';
+  if (code <= 67) return '🌧️';
+  if (code <= 77) return '🌨️';
+  if (code <= 82) return '🌧️';
+  if (code <= 86) return '❄️';
+  return '⛈️';
+}
+function renderWeather(wx) {
+  const el = document.getElementById('wx-banner');
+  if (!el || !wx || !wx.current) return;
+  const t = Math.round(wx.current.temperature_2m);
+  const f = Math.round(wx.current.apparent_temperature);
+  const icon = wxIcon(wx.current.weather_code);
+  if (f <= 32) {
+    el.innerHTML = `<div class="wx-cold">🥶 <b>Cold alert:</b> it feels like ${f}°F out there. ` +
+      `<a href="#" onclick="wxShelter();return false;">🏠 Find a warm place →</a></div>`;
+  } else {
+    el.innerHTML = `<div class="wx-bar">${icon} <span>Fort Wayne: <b>${t}°F</b> (feels like ${f}°F)</span></div>`;
+  }
+}
+function wxShelter() {
+  document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+  document.getElementById('tab-map').classList.add('active');
+  document.querySelectorAll('nav button').forEach(x => x.classList.toggle('active', x.dataset.tab === 'map'));
+  const b = document.querySelector('.filter-btn[data-cat="shelter"]');
+  if (b) b.click(); else alert('Places are still loading — try again in a moment.');
+}
+function loadWeather() {
+  const url = 'https://api.open-meteo.com/v1/forecast?latitude=' + WX_LAT + '&longitude=' + WX_LON +
+    '&current=temperature_2m,apparent_temperature,weather_code&temperature_unit=fahrenheit&timezone=America%2FIndiana%2FIndianapolis';
+  const ctl = typeof AbortController !== 'undefined' ? new AbortController() : null;
+  const timer = setTimeout(() => { if (ctl) ctl.abort(); }, 8000);
+  fetch(url, ctl ? { signal: ctl.signal } : {})
+    .then(r => { clearTimeout(timer); if (!r.ok) throw new Error('wx'); return r.json(); })
+    .then(renderWeather)
+    .catch(() => { clearTimeout(timer); /* banner stays hidden on failure */ });
+}
+
+window.addEventListener('DOMContentLoaded', () => { loadData(1); loadWeather(); });
 </script>
 </body>
 </html>
