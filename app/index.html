@@ -367,12 +367,14 @@ function toggleSidebar() {
 function buildSidebar() {
   const tabs = [
     ['map','🗺️','Map'], ['saved','💾','Saved'], ['guide','📖','Guide'],
-    ['jobs','💼','Jobs'], ['events','📅','Events'], ['plan','📋','Plan'],
-    ['learn','🎓','Learn'], ['programs','🏕️','Programs'],
+    ['jobs','💼','Jobs'], ['events','📅','Events'], ['gigs','⚡','Gigs'],
+    ['plan','📋','Plan'], ['learn','🎓','Learn'], ['programs','🏕️','Programs'],
     ['help','🆘','Help'], ['settings','⚙️','Settings'], ['chat','💬','Chat']
   ];
+  const active = document.querySelector('nav button.active');
+  const activeTab = active ? active.dataset.tab : 'map';
   document.getElementById('sidebar-tabs').innerHTML = tabs.map(t =>
-    `<button onclick="goTab('${t[0]}')" style="display:flex;align-items:center;gap:12px;width:100%;padding:14px 20px;background:none;border:none;color:#e0e0e0;font-size:16px;cursor:pointer;text-align:left;">` +
+    `<button onclick="goTab('${t[0]}')" style="display:flex;align-items:center;gap:12px;width:100%;padding:14px 20px;background:${t[0]===activeTab?'#2a3040':'none'};border:none;border-left:3px solid ${t[0]===activeTab?'#7c8aff':'transparent'};color:#e0e0e0;font-size:16px;cursor:pointer;text-align:left;">` +
     `<span style="font-size:20px;">${t[1]}</span>${t[2]}</button>`
   ).join('');
 }
@@ -480,9 +482,11 @@ function init() {
       b.classList.add('active');
       document.getElementById('tab-' + b.dataset.tab).classList.add('active');
       if (b.dataset.tab === 'saved') { renderFavs(); renderTodos(); }
+      if (b.dataset.tab === 'chat') renderChat();
       if (b.dataset.tab === 'learn') renderLearn();
       if (b.dataset.tab === 'programs') renderPrograms();
       if (b.dataset.tab === 'map' && map) setTimeout(() => map.invalidateSize(), 100);
+      buildSidebar();
     });
   });
 
@@ -496,9 +500,11 @@ function init() {
   renderLearn();
   renderPrograms();
   renderTodos();
+  renderChat();
   showUserLocation();
   applySettings();
   renderRecent();
+  buildSidebar();
 
   // Learn tab controls
   document.getElementById('learn-chips').addEventListener('click', e => {
@@ -522,6 +528,11 @@ function init() {
   document.getElementById('todo-add').addEventListener('click', addTodo);
   document.getElementById('todo-input').addEventListener('keydown', e => {
     if (e.key === 'Enter') addTodo();
+  });
+
+  // Chat input: Enter sends
+  document.getElementById('chat-input').addEventListener('keydown', e => {
+    if (e.key === 'Enter') sendChat();
   });
 }
 
@@ -669,6 +680,45 @@ function delTodo(i) {
   t.splice(i, 1);
   saveTodos(t);
   renderTodos();
+}
+
+// ---- Local chat (persisted in localStorage) ----
+function chatItems() {
+  try { const c = JSON.parse(localStorage.getItem('haven_chat') || '[]'); return Array.isArray(c) ? c : []; }
+  catch (e) { return []; }
+}
+function saveChat(c) { try { localStorage.setItem('haven_chat', JSON.stringify(c)); } catch (e) {} }
+function chatName() {
+  let n = null;
+  try { n = localStorage.getItem('haven_chatname'); } catch (e) {}
+  if (!n) {
+    n = 'Guest' + Math.floor(1000 + Math.random() * 9000);
+    try { localStorage.setItem('haven_chatname', n); } catch (e) {}
+  }
+  return n;
+}
+function renderChat() {
+  const box = document.getElementById('chat-msgs');
+  if (!box) return;
+  const c = chatItems();
+  box.innerHTML = c.map(m => `<div style="margin-bottom:10px;padding:8px 10px;background:#232a3d;border-radius:8px;">
+    <b style="color:#7c8aff;font-size:13px">${escapeHtml(m.n)}</b>
+    <span style="color:#666;font-size:11px;margin-left:6px">${escapeHtml(m.t)}</span>
+    <div style="color:#e0e0e0;word-wrap:break-word;margin-top:2px">${escapeHtml(m.x)}</div>
+  </div>`).join('') || '<p style="color:#888">No messages yet — say hi. 👋</p>';
+  box.scrollTop = box.scrollHeight;
+}
+function sendChat() {
+  const inp = document.getElementById('chat-input');
+  if (!inp) return;
+  const v = inp.value.trim();
+  if (!v) return;
+  const c = chatItems();
+  c.push({ n: chatName(), x: v.slice(0, 300), t: new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }) });
+  saveChat(c.slice(-100));
+  inp.value = '';
+  renderChat();
+  miniToast('Message sent 💬');
 }
 
 function openSheet(i) {
