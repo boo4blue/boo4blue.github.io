@@ -1,0 +1,67 @@
+/* Jobs tab — premium refresh: hero, segmented chips, animated cards */
+#tab-jobs .pp-hero{margin-top:14px}
+#tab-jobs .tip{background:linear-gradient(160deg,var(--card),var(--card2));box-shadow:var(--sh1);border-radius:16px}
+
+/* search */
+.gj-search{padding:2px 16px 10px;position:relative}
+.gj-search::before{content:"🔍";position:absolute;left:30px;top:50%;transform:translateY(-58%);font-size:calc(15px*var(--ts,1));opacity:.7;pointer-events:none;z-index:1}
+.gj-search .txtin{width:100%;box-sizing:border-box;font-size:calc(15px*var(--ts,1));padding:12px 14px 12px 42px;border-radius:16px;
+  background:var(--card);border:1.5px solid var(--line);box-shadow:var(--sh1);transition:border-color .18s,box-shadow .18s}
+.gj-search .txtin:focus{border-color:var(--acc);box-shadow:0 0 0 3px var(--ring)}
+
+/* segmented chips */
+#tab-jobs .listchips{display:flex;gap:8px;padding:0 16px 12px;overflow:visible}
+#tab-jobs .listchips .chip{flex:1;min-width:0;text-align:center;font-size:calc(13px*var(--ts,1));font-weight:800;padding:11px 6px;
+  border-radius:14px;border:1.5px solid var(--line);background:var(--card);color:var(--txt);cursor:pointer;
+  transition:transform .12s ease,background .18s,border-color .18s,box-shadow .18s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#tab-jobs .listchips .chip:active{transform:scale(.95)}
+#tab-jobs .listchips .chip.on{background:var(--grad);border-color:transparent;color:#fff;box-shadow:var(--glow)}
+
+/* summary pill */
+.gj-sum{display:inline-flex;align-items:center;gap:6px;font:700 calc(12.5px*var(--ts,1)) system-ui;color:var(--txt);
+  background:rgba(52,211,153,.14);border:1px solid rgba(52,211,153,.4);padding:7px 13px;border-radius:999px;margin:0 0 10px 2px}
+
+/* cards */
+@keyframes gjIn{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
+.gj-card{border-radius:18px!important;margin-bottom:12px!important;padding:14px!important;position:relative;overflow:hidden;
+  border:1px solid var(--line)!important;border-top:3px solid var(--cc)!important;box-shadow:var(--sh1)!important;
+  animation:gjIn .38s cubic-bezier(.2,.7,.3,1) both;animation-delay:var(--d,0s);transition:transform .15s ease,box-shadow .2s ease}
+.gj-card:active{transform:scale(.985)}
+#jobList.typing .gj-card{animation:none}
+.gj-card.is-open{border-top-color:#34d399!important;box-shadow:0 8px 24px rgba(52,211,153,.16),var(--sh1)!important}
+.gj-top{display:flex;gap:12px;align-items:center}
+.gj-ic{width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:calc(23px*var(--ts,1));flex:none;
+  background:linear-gradient(135deg,var(--cc),color-mix(in srgb,var(--cc) 55%,#000))!important;color:#fff;box-shadow:0 4px 12px color-mix(in srgb,var(--cc) 40%,transparent)}
+.gj-main{flex:1;min-width:0}.gj-main h3{font-size:calc(16px*var(--ts,1));line-height:1.3;margin:0;letter-spacing:-.2px}
+.gj-meta{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin-top:5px;font-size:calc(12px*var(--ts,1))}
+.gj-type{font-weight:800;padding:3px 9px;border-radius:999px;background:color-mix(in srgb,var(--cc) 16%,transparent)}
+.gj-dist{color:var(--mut);font-weight:600}
+.gj-addr{margin-top:9px;font-size:calc(12.5px*var(--ts,1));color:var(--mut)}
+.gj-desc{margin:7px 0 0;font-size:calc(13.5px*var(--ts,1));line-height:1.55;max-height:3.4em;overflow:hidden;
+  transition:max-height .32s ease;cursor:pointer;color:var(--txt)}
+.gj-desc.open{max-height:320px}
+.gj-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}
+.gj-tags span{padding:5px 11px;border-radius:999px;background:rgba(128,128,128,.14);border:1px solid var(--line);
+  font-size:calc(12px*var(--ts,1));font-weight:700}
+.gj-act{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.gj-b{padding:11px 14px;border-radius:13px;border:1.5px solid var(--line);background:var(--card2);color:var(--acc);
+  font:700 calc(13.5px*var(--ts,1)) system-ui;text-decoration:none;cursor:pointer;transition:transform .12s ease,box-shadow .18s}
+.gj-b:active{transform:scale(.95)}
+.gj-b.call{background:linear-gradient(135deg,#22c55e,#16a34a);border-color:transparent;color:#fff;flex:1 1 100%;text-align:center;
+  font-size:calc(15.5px*var(--ts,1));padding:13px;box-shadow:0 6px 18px rgba(34,197,94,.35)}
+.gg-empty{text-align:center;padding:40px 20px;color:var(--mut);font-size:calc(14px*var(--ts,1));line-height:1.6}
+
+/* compact header: hero shrinks so job cards show without scrolling */
+#tab-jobs .pp-hero{padding:12px 14px;margin:10px 16px 8px}
+#tab-jobs .pp-in{gap:12px}
+#tab-jobs .pp-ringwrap{width:54px;height:54px}
+#tab-jobs .pp-med{width:54px;height:54px;font-size:calc(27px*var(--ts,1))}
+#tab-jobs .pp-title{font-size:calc(17px*var(--ts,1))}
+#tab-jobs .pp-hello{font-size:calc(12px*var(--ts,1))}
+#tab-jobs .tip{position:relative;font-size:calc(12.5px*var(--ts,1));padding:10px 38px 10px 12px;margin:0 16px 8px!important}
+.tipx{position:absolute;top:8px;right:8px;width:24px;height:24px;border-radius:50%;border:none;
+  background:rgba(127,127,127,.25);color:var(--mut);font-size:calc(12px*var(--ts,1));cursor:pointer;line-height:1}
+#jobTools{display:flex!important;gap:8px;margin:0 16px 8px!important}
+#jobTools .langbtn{flex:1;padding:9px 6px!important;font-size:calc(12.5px*var(--ts,1))!important}
+.gj-search{padding:2px 16px 8px}
+#tab-jobs .listchips{padding:0 16px 10px}
