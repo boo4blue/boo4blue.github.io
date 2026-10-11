@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0e17; color: #e0e0e0; padding-bottom: 70px; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0e17; color: #e0e0e0; padding-bottom: 20px; }
 header { background: #1a1f2e; padding: 16px; position: sticky; top: 0; z-index: 100; }
 header h1 { font-size: 24px; color: #7c8aff; }
 header p { color: #888; font-size: 14px; }
@@ -33,7 +33,7 @@ header p { color: #888; font-size: 14px; }
 .newpill { display: inline-block; background: #3a2a1d; color: #fbbf24; border: 1px solid #8a6d2d; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: bold; margin-bottom: 4px; }
 #gig-chips { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 12px; }
 #loading { text-align: center; padding: 40px; color: #888; }
-nav { position: fixed; bottom: 0; left: 0; right: 0; background: #1a1f2e; display: flex; z-index: 1000; border-top: 1px solid #2a3040; }
+nav { display: none; }
 nav button { flex: 1; padding: 10px 4px; background: none; border: none; color: #888; font-size: 11px; cursor: pointer; }
 nav button.active { color: #7c8aff; }
 nav button .ico { font-size: 20px; display: block; margin-bottom: 2px; }
@@ -216,6 +216,18 @@ nav button .ico { font-size: 20px; display: block; margin-bottom: 2px; }
   </div>
 </div>
 
+<div id="tab-chat" class="tab">
+  <div class="content">
+    <h2 style="color:#fff;margin-bottom:12px;">💬 Chat</h2>
+    <div id="chat-msgs" style="max-height:50vh;overflow-y:auto;margin-bottom:12px;"></div>
+    <div style="display:flex;gap:8px;">
+      <input type="text" id="chat-input" placeholder="Type a message..." style="flex:1;padding:12px;border:1px solid #333;border-radius:8px;background:#1a1f2e;color:#fff;">
+      <button onclick="sendChat()" style="padding:12px 20px;background:#7c8aff;color:#fff;border:none;border-radius:8px;cursor:pointer;">Send</button>
+    </div>
+    <p style="color:#888;font-size:12px;margin-top:8px;">Web chat is local-only. For the full community chat, use the Haven FW app.</p>
+  </div>
+</div>
+
 <nav>
   <button class="active" data-tab="map"><span class="ico">🗺️</span>Map</button>
   <button data-tab="saved"><span class="ico">💾</span>Saved</button>
@@ -228,6 +240,7 @@ nav button .ico { font-size: 20px; display: block; margin-bottom: 2px; }
   <button data-tab="programs"><span class="ico">🏕️</span>Programs</button>
   <button data-tab="help"><span class="ico">🆘</span>Help</button>
   <button data-tab="settings"><span class="ico">⚙️</span>Settings</button>
+  <button data-tab="chat"><span class="ico">💬</span>Chat</button>
 </nav>
 
 <!-- Place detail sheet -->
@@ -809,17 +822,18 @@ function renderGigs() {
   const list = gigsFiltered();
   el.innerHTML = list.length ? list.map(g => {
     const icon = (GIG_KINDS[g.kind] || ['⚡'])[0];
+    const btns = [];
+    if (g.url && g.url.trim()) btns.push(`<a class="sheet-btn" href="${escapeAttr(g.url)}" target="_blank" rel="noopener">Apply ↗</a>`);
+    if (g.phoneHref && g.phoneHref.trim()) btns.push(`<a class="sheet-btn" href="tel:${escapeAttr(g.phoneHref)}">📞 Call</a>`);
+    else if (g.phone && g.phone.trim()) btns.push(`<a class="sheet-btn" href="tel:${escapeAttr(g.phone)}">📞 Call</a>`);
+    if (g.lat) btns.push(`<a class="sheet-btn" href="https://maps.google.com/?q=${g.lat},${g.lng}" target="_blank" rel="noopener">🗺️ Directions</a>`);
     return `<div class="card">
       <h3>${icon} ${escapeHtml(g.title || '')}</h3>
       <p>📍 ${escapeHtml(g.venue || '')}${g.addr ? ' — ' + escapeHtml(g.addr) : ''}</p>
       <div class="meta"><span class="paypill">💵 ${escapeHtml(g.pay || 'Paid gig')}</span>${gigIsNew(g) ? '<span class="newpill">NEW</span>' : ''}</div>
       <p>${escapeHtml(g.desc || '')}</p>
       ${g.needs ? `<p>🎒 <b>Needs:</b> ${escapeHtml(g.needs)}</p>` : ''}
-      <div class="meta">
-        ${g.url ? `<a class="sheet-btn" href="${escapeAttr(g.url)}" target="_blank" rel="noopener">Apply ↗</a>` : ''}
-        ${g.phoneHref ? `<a class="sheet-btn" href="tel:${escapeAttr(g.phoneHref)}">📞 ${escapeHtml(g.phone || 'Call')}</a>` : ''}
-        ${g.lat ? `<a class="sheet-btn" href="https://maps.google.com/?q=${g.lat},${g.lng}" target="_blank" rel="noopener">🗺️ Directions</a>` : ''}
-      </div>
+      ${btns.length ? `<div class="meta">${btns.join('')}</div>` : ''}
     </div>`;
   }).join('') : '<p style="color:#888">No gigs found.</p>';
 }
