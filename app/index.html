@@ -102,7 +102,20 @@ nav button .ico { font-size: 20px; display: block; margin-bottom: 2px; }
     <h2 style="color:#7c8aff;margin:0;">💜 Haven FW</h2>
     <p style="color:#888;font-size:12px;margin:4px 0 0;">Fort Wayne free resources</p>
   </div>
-  <div id="sidebar-tabs"></div>
+  <div id="sidebar-tabs">
+    <button onclick="goTab('map')" style="display:flex;align-items:center;gap:12px;width:100%;padding:14px 20px;background:none;border:none;border-left:3px solid transparent;color:#e0e0e0;font-size:16px;cursor:pointer;text-align:left;"><span style="font-size:20px;">🗺️</span>Map</button>
+    <button onclick="goTab('saved')" style="display:flex;align-items:center;gap:12px;width:100%;padding:14px 20px;background:none;border:none;border-left:3px solid transparent;color:#e0e0e0;font-size:16px;cursor:pointer;text-align:left;"><span style="font-size:20px;">💾</span>Saved</button>
+    <button onclick="goTab('guide')" style="display:flex;align-items:center;gap:12px;width:100%;padding:14px 20px;background:none;border:none;border-left:3px solid transparent;color:#e0e0e0;font-size:16px;cursor:pointer;text-align:left;"><span style="font-size:20px;">📖</span>Guide</button>
+    <button onclick="goTab('jobs')" style="display:flex;align-items:center;gap:12px;width:100%;padding:14px 20px;background:none;border:none;border-left:3px solid transparent;color:#e0e0e0;font-size:16px;cursor:pointer;text-align:left;"><span style="font-size:20px;">💼</span>Jobs</button>
+    <button onclick="goTab('events')" style="display:flex;align-items:center;gap:12px;width:100%;padding:14px 20px;background:none;border:none;border-left:3px solid transparent;color:#e0e0e0;font-size:16px;cursor:pointer;text-align:left;"><span style="font-size:20px;">📅</span>Events</button>
+    <button onclick="goTab('gigs')" style="display:flex;align-items:center;gap:12px;width:100%;padding:14px 20px;background:none;border:none;border-left:3px solid transparent;color:#e0e0e0;font-size:16px;cursor:pointer;text-align:left;"><span style="font-size:20px;">⚡</span>Gigs</button>
+    <button onclick="goTab('plan')" style="display:flex;align-items:center;gap:12px;width:100%;padding:14px 20px;background:none;border:none;border-left:3px solid transparent;color:#e0e0e0;font-size:16px;cursor:pointer;text-align:left;"><span style="font-size:20px;">📋</span>Plan</button>
+    <button onclick="goTab('learn')" style="display:flex;align-items:center;gap:12px;width:100%;padding:14px 20px;background:none;border:none;border-left:3px solid transparent;color:#e0e0e0;font-size:16px;cursor:pointer;text-align:left;"><span style="font-size:20px;">🎓</span>Learn</button>
+    <button onclick="goTab('programs')" style="display:flex;align-items:center;gap:12px;width:100%;padding:14px 20px;background:none;border:none;border-left:3px solid transparent;color:#e0e0e0;font-size:16px;cursor:pointer;text-align:left;"><span style="font-size:20px;">🏕️</span>Programs</button>
+    <button onclick="goTab('help')" style="display:flex;align-items:center;gap:12px;width:100%;padding:14px 20px;background:none;border:none;border-left:3px solid transparent;color:#e0e0e0;font-size:16px;cursor:pointer;text-align:left;"><span style="font-size:20px;">🆘</span>Help</button>
+    <button onclick="goTab('settings')" style="display:flex;align-items:center;gap:12px;width:100%;padding:14px 20px;background:none;border:none;border-left:3px solid transparent;color:#e0e0e0;font-size:16px;cursor:pointer;text-align:left;"><span style="font-size:20px;">⚙️</span>Settings</button>
+    <button onclick="goTab('chat')" style="display:flex;align-items:center;gap:12px;width:100%;padding:14px 20px;background:none;border:none;border-left:3px solid transparent;color:#e0e0e0;font-size:16px;cursor:pointer;text-align:left;"><span style="font-size:20px;">💬</span>Chat</button>
+  </div>
   <div style="padding:16px 20px;border-top:1px solid #333;margin-top:12px;">
     <h3 onclick="toggleFilterCollapse()" style="color:#888;font-size:12px;margin:0 0 8px;cursor:pointer;user-select:none;">FILTERS <span id="filter-arrow">▼</span></h3>
     <div id="sidebar-filters"></div>
@@ -128,11 +141,11 @@ nav button .ico { font-size: 20px; display: block; margin-bottom: 2px; }
   <div id="wx-banner"></div>
   <div id="map-wrap" style="position:relative;margin:0 16px;">
     <div id="map" style="height:65vh;border-radius:12px;"></div>
-    <div style="position:absolute;top:50px;left:10px;right:10px;z-index:500;display:flex;gap:8px;">
-      <button onclick="toggleSidebar()" style="padding:12px 14px;border:1px solid #333;border-radius:12px;background:rgba(26,31,46,0.95);color:#7c8aff;font-size:18px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);">☰</button>
-      <input type="search" id="search" placeholder="Search food, shelter, showers..." style="flex:1;padding:12px;border:1px solid #333;border-radius:12px;background:rgba(26,31,46,0.95);color:#fff;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);">
-      <button id="voice-btn" onclick="voiceSearch()" style="display:none;padding:12px 14px;border:1px solid #333;border-radius:12px;background:rgba(26,31,46,0.95);color:#7c8aff;font-size:18px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);">🎤</button>
-      <button onclick="showUserLocation(true)" style="width:44px;height:44px;border:1px solid #333;border-radius:50%;background:rgba(26,31,46,0.95);color:#7c8aff;font-size:16px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;">📍</button>
+    <div style="position:absolute;top:50px;left:10px;right:10px;z-index:500;display:flex;gap:8px;align-items:center;">
+      <button onclick="toggleSidebar()" style="width:44px;height:44px;flex:none;border:1px solid #333;border-radius:12px;background:rgba(26,31,46,0.95);color:#7c8aff;font-size:18px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;">☰</button>
+      <input type="search" id="search" placeholder="Search food, shelter, showers..." style="flex:1;min-width:0;height:44px;padding:0 12px;border:1px solid #333;border-radius:12px;background:rgba(26,31,46,0.95);color:#fff;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.3);">
+      <button id="voice-btn" onclick="voiceSearch()" style="display:none;width:44px;height:44px;flex:none;border:1px solid #333;border-radius:12px;background:rgba(26,31,46,0.95);color:#7c8aff;font-size:18px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);align-items:center;justify-content:center;">🎤</button>
+      <button onclick="showUserLocation(true)" style="width:44px;height:44px;flex:none;border:1px solid #333;border-radius:50%;background:rgba(26,31,46,0.95);color:#7c8aff;font-size:16px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;">📍</button>
     </div>
   </div>
   <div id="filters" style="display:none;"></div>
@@ -563,7 +576,8 @@ function init() {
     render(document.querySelector('.filter-btn.active').dataset.cat, e.target.value);
   });
   document.getElementById('search').addEventListener('focus', () => {
-    document.getElementById('voice-btn').style.display = 'block';
+    const vb = document.getElementById('voice-btn');
+    vb.style.display = 'flex';
   });
   document.getElementById('search').addEventListener('blur', () => {
     setTimeout(() => { document.getElementById('voice-btn').style.display = 'none'; }, 200);
