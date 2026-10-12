@@ -337,7 +337,7 @@ const GUIDES = [
       "Plan your trip: use the Transit Royale app, or call Citilink at (260) 432-4546 for personal trip planning",
       "Track your bus live in the DoubleMap app so you're not waiting out in the cold",
       "New to buses? Free travel training \u2014 in person or virtual \u2014 at fwcitilink.com/travel-training or (260) 432-4546",
-      "Tap the \U0001F68C Bus button on any place in this app for turn-by-turn bus directions",
+      "Tap the 🚌 Bus button on any place in this app for turn-by-turn bus directions",
     ],
     tips: "No transfers \u2014 each boarding is a new fare. An all-day pass pays for itself after 3 rides.",
   },
@@ -590,5 +590,128 @@ const GUIDES = [
     ],
     tips: "Severe-weather shelters open only when thresholds are met — always call 211 first instead of walking to last year's site. For the latest openings bookmark multco.us/cold.",
     audited: "2026-10-10",
+  },
+  {
+    id: "lost-id", title: "Replacing Lost ID & Papers", icon: "🪪", area: "fort-wayne",
+    intro: "No ID makes everything harder. Here is the usual order to get your papers back.",
+    where: "Inasmuch Ministry — help with ID and birth certificates", whereId: "inasmuch-ministry",
+    bring: ["Any ID or paper you still have, even expired", "A letter from a shelter or mission saying you stay there, if you can get one"],
+    steps: [
+      "Start with your birth certificate. Order it from the Indiana Department of Health or the health department where you were born. There is a fee, so ask Inasmuch Ministry whether they can help pay.",
+      "Next, get a replacement Social Security card. It is free at ssa.gov or any Social Security office. There is a limit on replacements per year, so only ask when you need it.",
+      "Then get a state ID at the BMV. Ask the BMV what proof of address they take and whether any fee waiver applies to you.",
+      "Need a mailing address? Ask your shelter or mission, or ask any post office about General Delivery, where they hold mail for you."
+    ],
+    tips: "Take a photo of every paper once you have it and keep it safe. Fees and rules change, so call before you go.",
+    audited: "2026-10-12",
+  },
+  {
+    id: "rights-police", title: "If Police Tell You to Move", icon: "⚖️", area: "fort-wayne",
+    intro: "General information, not legal advice. Staying calm keeps you safest.",
+    where: "Indiana Legal Help (indianalegalhelp.org) or call 211",
+    steps: [
+      "Stay calm, keep your hands where they can be seen, and don't run or argue.",
+      "Ask: \"Am I free to go?\" If yes, you can leave. If they say you are being detained, ask why.",
+      "You can stay silent. You can say \"I don't consent to a search.\" Do not physically resist.",
+      "Ask for the officer's name and badge number. Write down what happened, the time, and the place as soon as you can.",
+      "If you think something was unfair, call 211 or visit Indiana Legal Help to find free legal aid."
+    ],
+    tips: "Having your ID and a charged phone helps. Ask a shelter or day center where it is okay to rest during the day.",
+    audited: "2026-10-12",
+  },
+  {
+    id: "veterans", title: "Veterans: Where to Start", icon: "🎖\uFE0F", area: "fort-wayne",
+    intro: "Veterans have extra help for housing, health care and benefits.",
+    where: "Call 211 and ask for the Allen County Veterans Service Office",
+    bring: ["DD-214 or any discharge papers if you have them", "Photo ID"],
+    steps: [
+      "In crisis? Call 988 then press 1, or text 838255.",
+      "Need housing? Call the Homeless Veterans Hotline at 1-877-424-3838.",
+      "Ask the county Veterans Service Officer to help you file for benefits and get your discharge papers.",
+      "Ask any VA clinic about health care and mental health help."
+    ],
+    tips: "Veterans' phone menus are long. Stay on the line and say \"homeless veteran\" to reach a person faster.",
+    audited: "2026-10-12",
+  },
+  {
+    id: "reentry", title: "After Prison or a Record", icon: "🔓", area: "fort-wayne",
+    intro: "A record does not end your options. Many people get housing, work and a clean record back.",
+    where: "Call 211 and ask for reentry help",
+    steps: [
+      "Ask 211 for local reentry programs. They can help with ID, housing leads, and work.",
+      "Look for jobs marked fair-chance in the Jobs tab. Be honest, and say what you've done since.",
+      "Ask Indiana Legal Help about expungement. Indiana law lets many people seal an old record after a waiting period.",
+      "In the Places tab, use the filters to find shelters and programs that accept people with a record."
+    ],
+    tips: "Keep copies of every court paper. They are needed for expungement and for some housing applications.",
+    audited: "2026-10-12",
+  },
+  {
+    id: "quit-nicotine", title: "Quit Smoking or Vaping (Free)", icon: "🌬\uFE0F", area: "fort-wayne",
+    intro: "Free coaching and often free patches or gum.",
+    where: "Indiana Quitline: 1-800-QUIT-NOW (1-800-784-8669)",
+    steps: [
+      "Call 1-800-784-8669. It is free and open every day.",
+      "Ask about free nicotine patches or gum. Eligible Hoosiers can often get them by mail.",
+      "Tell them if you live in a shelter or have no fixed address."
+    ],
+    tips: "Cravings are strongest in the first few days. Keep gum or candy in your pocket.",
+    audited: "2026-10-12",
+  },
+  {
+    id: "call-script", title: "What to Say When You Call", icon: "☎️", area: "fort-wayne",
+    intro: "A short script for calling a shelter, pantry or agency.",
+    where: "Any shelter, pantry or agency in the Places tab",
+    steps: [
+      "Say: \"Hi, my name is ___. I need help with ___ (a bed / food / a bus pass).\"",
+      "Ask: \"Do you have room tonight?\" or \"When are you open?\"",
+      "Ask: \"What do I need to bring? Do I need an ID?\"",
+      "Ask: \"Can I bring my pet, my partner or my kids?\"",
+      "Write down the name of who you spoke to and the time."
+    ],
+    tips: "If you're not sure, say so. Staff hear this every day and want to help.",
+    audited: "2026-10-12",
+  },
+  {
+    id: "storms", title: "Tornado, Flood & Power Outage", icon: "🌪\uFE0F", area: "fort-wayne",
+    intro: "What to do when severe weather hits and you don't have a home to shelter in.",
+    where: "Call 211 to find open emergency shelters",
+    steps: [
+      "Tornado warning: go inside the nearest sturdy building (library, store, church, shelter) and ask staff to let you in. Go to the lowest floor, in a room without windows.",
+      "No building nearby? Get as low as you can, away from trees and cars, and cover your head. Don't shelter under an overpass.",
+      "Flooding: move to higher ground. Never walk or drive through floodwater.",
+      "Power out: look for charging spots in the Places tab and keep your phone on low-power mode.",
+      "Call 211 afterward to find shelter, food and supplies."
+    ],
+    tips: "Turn on phone alerts for your area. Haven also shows a banner when a warning is active.",
+    audited: "2026-10-12",
+  },
+  {
+    id: "heat", title: "Staying Cool in Summer", icon: "🥵", area: "fort-wayne",
+    intro: "Heat can be dangerous. Plan your day around shade, water and air conditioning.",
+    where: "Libraries, day centers and water spots on the map",
+    steps: [
+      "Drink water before you feel thirsty. Use the water category on the map to find refill spots.",
+      "Rest in air conditioning during the hottest hours (noon to 5 pm): libraries, day centers, stores.",
+      "Wear light clothes and a hat. Wet a shirt or towel to cool your neck.",
+      "Warning signs: dizziness, confusion, nausea, hot dry skin or no sweating. Move to cool shade and call 911.",
+      "Never stay in a parked car. Check on others who look unwell."
+    ],
+    tips: "Alcohol and some medicines make heat worse. Drink extra water.",
+    audited: "2026-10-12",
+  },
+  {
+    id: "scams", title: "Scams to Watch For", icon: "🚨", area: "fort-wayne",
+    intro: "People in tough spots are often targeted. These are common signs of a scam.",
+    where: "Not sure? Call 211 to check before you pay or share anything",
+    steps: [
+      "Real benefit offices never ask you to pay to apply for food stamps, housing or Medicaid.",
+      "Anyone asking for gift cards, Cash App, Zelle or wire money is a scam.",
+      "Never give your Social Security number by text or to an unexpected caller.",
+      "Be careful with jobs that charge for training or promise big pay for little work.",
+      "Payday and title loans can trap you in debt. Ask a mission about other options first."
+    ],
+    tips: "If it feels rushed or too good to be true, stop and ask someone you trust.",
+    audited: "2026-10-12",
   },
 ];
