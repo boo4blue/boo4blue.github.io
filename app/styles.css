@@ -114,3 +114,8 @@
 .ck-mid small{display:block;color:#888;font-size:12px;margin-top:2px;line-height:1.4}
 .ck-btn{border:0;border-radius:14px;padding:11px 18px;font-weight:800;font-size:13.5px;background:linear-gradient(135deg,#fb923c,#ef4444);color:#fff;cursor:pointer;flex:none}
 .ck-done{width:38px;height:38px;flex:none;border-radius:50%;background:linear-gradient(135deg,#34d399,#10b981);color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800}
+/* back-to-top FAB for the places list (#list) — parity with the Android app's #topBtn */
+#topBtnW{position:absolute;right:16px;bottom:24px;z-index:50;width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.14);background:linear-gradient(135deg,#7c8aff,#9b5de5);color:#fff;font-size:24px;font-weight:700;line-height:1;display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;box-shadow:0 10px 26px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.25);-webkit-tap-highlight-color:transparent;opacity:0;transform:translateY(12px) scale(.9);pointer-events:none;transition:opacity .22s ease,transform .28s cubic-bezier(.2,.9,.3,1.3);}
+#topBtnW.show{opacity:1;transform:none;pointer-events:auto;}
+#topBtnW:active{transform:scale(.92);}
+@media(prefers-reduced-motion:reduce){#topBtnW{transition:none;}}
