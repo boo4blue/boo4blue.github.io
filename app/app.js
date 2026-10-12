@@ -82,6 +82,77 @@ function printFlyer(cat,icon){
 
 
 
+/* ===== Flyer share sheet (feature #25) =====
+   Ported from the app's flyer-share.js: tapping a Help-tab flyer button now
+   opens a share sheet (Share / Text / Email / Copy / Print) instead of
+   printing directly. The recipient does NOT need Haven FW: the flyer goes
+   out as plain text. */
+function flyerShareList(cat){
+  var list=(allPlaces||[]).filter(function(r){return (r.cats||[]).indexOf(cat)>=0;}).slice(0,20);
+  return list;
+}
+function flyerPlainText(cat,compact){
+  var list=flyerShareList(cat);
+  var lines=list.map(function(r){
+    var bits=[r.name||''];
+    if(!compact){
+      if(r.addr)bits.push(r.addr+(r.zip?' '+r.zip:''));
+      if(r.phone)bits.push(r.phone);
+    }
+    return '• '+bits.join(' — ');
+  });
+  return cat.charAt(0).toUpperCase()+cat.slice(1)+' — free resources (Haven FW)\n\n'+lines.join('\n')+'\n\nShared from Haven FW: https://boo4blue.github.io/app/';
+}
+function copyFlyerText(cat){
+  var txt=flyerPlainText(cat);
+  function ok(){miniToast('Copied — paste it anywhere');}
+  function old(){
+    var ta=document.createElement('textarea');
+    ta.value=txt;ta.style.cssText='position:fixed;opacity:0;top:0;left:0';
+    document.body.appendChild(ta);ta.focus();ta.select();
+    try{document.execCommand('copy');ok();}catch(e){}
+    ta.remove();
+  }
+  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(ok,old);else old();
+}
+function shareFlyerAny(cat,icon){
+  var title=icon+' '+cat.charAt(0).toUpperCase()+cat.slice(1)+' · Haven FW';
+  if(navigator.share){navigator.share({title:title,text:flyerPlainText(cat)}).catch(function(){});}
+}
+function openFlyerSheet(cat,icon){
+  var title=icon+' '+cat.charAt(0).toUpperCase()+cat.slice(1);
+  var canShare=!!(typeof navigator!=='undefined'&&navigator.share);
+  function row(ic,label,sub,act){
+    return '<button class="fs-btn'+(act==='share'?' fs-pri':'')+'" data-fact="'+act+'"><span class="fi">'+ic+'</span><span>'+escapeHtml(label)+(sub?'<small>'+escapeHtml(sub)+'</small>':'')+'</span></button>';
+  }
+  var h='<h2>'+escapeHtml(title)+'</h2><p class="row" style="color:#888;font-size:13px;">Share this flyer — the recipient does not need the app.</p>';
+  if(canShare)h+=row('📤','Share…','Messages, email, social…','share');
+  h+=row('💬','Text message','','sms');
+  h+=row('✉️','Email','','mail');
+  h+=row('📋','Copy text','Paste anywhere','copy');
+  h+=row('🖨️','Print','','print');
+  h+=row('✖️','Close','','close');
+  var bodyEl=document.getElementById('sheet-body');
+  bodyEl.innerHTML=h;
+  bodyEl.dataset.flyerCat=cat;
+  bodyEl.dataset.flyerIcon=icon;
+  var btns=bodyEl.querySelectorAll('[data-fact]');
+  for(var i=0;i<btns.length;i++)(function(b){
+    b.addEventListener('click',function(){
+      var a=b.getAttribute('data-fact');
+      var c=bodyEl.dataset.flyerCat,ic=bodyEl.dataset.flyerIcon;
+      if(a==='close')closeSheet();
+      else if(a==='share'){shareFlyerAny(c,ic);}
+      else if(a==='sms'){window.location.href='sms:?&body='+encodeURIComponent(flyerPlainText(c,true));}
+      else if(a==='mail'){window.location.href='mailto:?subject='+encodeURIComponent(ic+' '+c.charAt(0).toUpperCase()+c.slice(1)+' · Haven FW')+'&body='+encodeURIComponent(flyerPlainText(c));}
+      else if(a==='copy'){copyFlyerText(c);}
+      else if(a==='print'){closeSheet();printFlyer(c,ic);}
+    });
+  })(btns[i]);
+  document.getElementById('sheet-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
 function getFavs(){try{return JSON.parse(localStorage.getItem('haven_favs')||'[]');}catch(e){return[];}}
 function isFav(id){return getFavs().indexOf(id)>=0;}
 function toggleFav(id){var f=getFavs();var i=f.indexOf(id);if(i>=0)f.splice(i,1);else f.push(id);localStorage.setItem('haven_favs',JSON.stringify(f));try{renderSaved();}catch(e){}return i<0;}
