@@ -19,3 +19,8 @@
 .bringrow{display:flex;align-items:center;gap:10px;padding:10px 12px;background:#1a1f2e;border-radius:8px;margin-bottom:8px;cursor:pointer;font-size:14px;color:#ddd;}
 .bringrow input{width:18px;height:18px;accent-color:#7c8aff;flex:none;cursor:pointer;}
 .txtin{width:100%;min-height:90px;background:#0f1420;color:#e0e0e0;border:1px solid #2a3040;border-radius:10px;padding:10px;font-size:14px;font-family:inherit;box-sizing:border-box;resize:vertical;}
+
+/* Chat channels (chat.js): General / Ask for Help / Free Stuff */
+#chat-channels{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap;}
+.chat-chip{padding:8px 14px;border:1px solid #333;border-radius:16px;background:#1a1f2e;color:#ccc;font-size:13px;cursor:pointer;}
+.chat-chip.on{background:#7c8aff;border-color:#7c8aff;color:#fff;font-weight:bold;}
