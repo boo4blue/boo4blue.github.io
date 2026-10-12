@@ -1,11 +1,58 @@
 /* Haven FW trip planner: pick resources from a menu, see bus ride times like Google Maps.
-   Works offline from the built-in Citilink schedule (transit-data.js). Weekday + Saturday service only.
-   Times are from the published schedule, not live bus locations, so buses can run late. */
+   Works offline from the built-in Citilink schedule (tripdata.js + triptrips1/2.js). Weekday + Saturday service only.
+   Times are from the published schedule, not live bus locations, so buses can run late.
+   Website port of the Android app's tripplan.js: waits for the async data load, maps the
+   app globals (state/locate/toast/catIcon/openStatus/CATS) onto the site's, and styles the
+   entry button for the site's map toolbar. Like the app, tapping a Transit link anywhere
+   on the site opens this planner instead of Google Maps. */
 "use strict";
 (function () {
-  var T = window.HAVEN_TRANSIT;
-  if (!T || typeof L === "undefined" || typeof RESOURCES === "undefined") return;
-
+  /* The site fetches RESOURCES asynchronously and builds the map during init,
+     so poll until the planner's prerequisites exist, then run once. */
+  function boot() {
+    if (!window.HAVEN_TRANSIT || !window.HAVEN_TRANSIT.trips || !window.HAVEN_TRANSIT.trips.length ||
+        typeof L === "undefined" || typeof RESOURCES === "undefined") { setTimeout(boot, 300); return; }
+    try { main(window.HAVEN_TRANSIT); } catch (e) { /* planner stays dormant */ }
+  }
+  function main(T) {
+  /* ----- website shims: the app's globals mapped onto the site's ----- */
+  /* app `state.loc` ([lat,lng]) <-> site `userLoc` ({lat,lng}) */
+  var state = {
+    get loc() { try { return (typeof userLoc !== "undefined" && userLoc) ? [userLoc.lat, userLoc.lng] : null; } catch (e) { return null; } },
+    set loc(v) { try { if (v && typeof userLoc !== "undefined") userLoc = { lat: v[0], lng: v[1] }; } catch (e) {} }
+  };
+  /* app `locate(true)` -> site showUserLocation */
+  var locate = function () { try { if (typeof showUserLocation === "function") showUserLocation(true); } catch (e) {} };
+  /* app `toast(msg)` -> site miniToast */
+  var toast = function (m) { try { if (typeof miniToast === "function") miniToast(m); } catch (e) {} };
+  /* app `catIcon(r)` -> site PIN_EMOJI */
+  var catIcon = function (r) {
+    try {
+      var cs = (r && r.cats) || [], i;
+      for (i = 0; i < cs.length; i++) { if (typeof PIN_EMOJI !== "undefined" && PIN_EMOJI[cs[i]]) return PIN_EMOJI[cs[i]]; }
+    } catch (e) {}
+    return "📍";
+  };
+  /* app `openStatus(r).state` -> site isOpenNow(r) */
+  var openStatus = function (r) {
+    try {
+      var v = (typeof isOpenNow === "function") ? isOpenNow(r) : null;
+      return { state: v === true ? "open" : (v === false ? "closed" : "unknown") };
+    } catch (e) { return { state: "unknown" }; }
+  };
+  /* app `CATS[k].icon/.label`; the site's data file declares const CATS asynchronously,
+     so resolve it lazily (FILTER_CATS fallback keeps the menu working regardless) */
+  var tpCats = function () {
+    try { if (typeof CATS !== "undefined" && CATS && CATS.food && CATS.food.icon) return CATS; } catch (e) {}
+    try {
+      if (typeof FILTER_CATS !== "undefined") {
+        var o = {}, ks = Object.keys(FILTER_CATS), i, p;
+        for (i = 0; i < ks.length; i++) { p = String(FILTER_CATS[ks[i]]).split(" "); o[ks[i]] = { icon: p[0] || "📍", label: p.slice(1).join(" ") || ks[i] }; }
+        return o;
+      }
+    } catch (e2) {}
+    return {};
+  };
   var S = T.stops, RT = T.routes, INF = 1e9, MAXSEL = 12, KEY_SEL = "haven_tp_sel";
   var WALK_M_PER_MIN = 75, DETOUR = 1.25, MAX_ACCESS = 1500, XFER_M = 250;
   var CAR_M_PER_MIN = 560, CAR_DETOUR = 1.3; /* ~21 mph city average, used only when the routing server cannot be reached */
@@ -193,7 +240,8 @@
   function css() {
     var c = document.createElement("style");
     c.textContent =
-      "#tpBtn{position:absolute;right:14px;bottom:292px;z-index:500;width:48px;height:48px;border-radius:16px;font-size:calc(21px*var(--ts,1));border:1px solid var(--line,#334);background:var(--glass2,rgba(20,26,40,.9));box-shadow:var(--sh1,0 6px 18px rgba(0,0,0,.35));cursor:pointer}" +
+      "#tab-map{position:relative}" +
+      "#tpBtn{position:absolute;top:226px;right:10px;z-index:500;width:44px;height:44px;border-radius:12px;font-size:20px;border:1px solid #333;background:rgba(26,31,46,.95);color:#7c8aff;box-shadow:0 2px 8px rgba(0,0,0,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}" +
       "#tpSheet{position:absolute;left:0;right:0;bottom:0;z-index:950;max-height:80%;display:none;flex-direction:column;border-radius:18px 18px 0 0;background:var(--glass2,rgba(20,27,46,.98));color:var(--txt,#fff);border-top:1px solid var(--line,#334);box-shadow:0 -8px 28px rgba(0,0,0,.5);font-size:calc(13px*var(--ts,1));backdrop-filter:blur(24px) saturate(1.3);-webkit-backdrop-filter:blur(24px) saturate(1.3)}" +
       "#tpSheet.det{max-height:88%}" +
       "#tpSheet .tp-h{display:flex;align-items:center;gap:8px;padding:12px 14px 6px}#tpSheet .tp-h b{flex:1;font-size:calc(15px*var(--ts,1));line-height:1.2}" +
@@ -242,7 +290,9 @@
     sheet = document.createElement("div"); sheet.id = "tpSheet";
     ["click", "dblclick", "mousedown", "touchstart", "wheel"].forEach(function (ev) { sheet.addEventListener(ev, function (e) { e.stopPropagation(); }); });
     if (L.DomEvent) { L.DomEvent.disableClickPropagation(sheet); L.DomEvent.disableScrollPropagation(sheet); }
-    tab.appendChild(btn); tab.appendChild(sheet);
+    btn.title = tx("Plan bus trip", "Planear viaje en autob\u00fas");
+    var mw = document.getElementById("map-wrap");
+    (mw || tab).appendChild(btn); tab.appendChild(sheet);
   }
 
   function open() { view = results.length && view !== "pick" ? view : "pick"; if (nav) navBars(false); sheet.style.display = "flex"; render(); }
@@ -377,8 +427,9 @@
     return list;
   }
   function renderPick() {
-    var cats = "<option value=\"all\">" + tx("All categories", "Todas las categorías") + "</option>" + Object.keys(CATS).map(function (k) {
-      return '<option value="' + k + '"' + (filt.cat === k ? " selected" : "") + ">" + esc(CATS[k].icon + " " + CATS[k].label) + "</option>";
+    var CC = tpCats();
+    var cats = "<option value=\"all\">" + tx("All categories", "Todas las categorías") + "</option>" + Object.keys(CC).map(function (k) {
+      return '<option value="' + k + '"' + (filt.cat === k ? " selected" : "") + ">" + esc(CC[k].icon + " " + CC[k].label) + "</option>";
     }).join("");
     sheet.innerHTML = head("🧭 " + tx("Where do you want to go?", "¿A dónde quieres ir?")) +
       '<div class="tp-body"><div class="tp-from" id="tpFromNote">' + tx("Pick up to " + MAXSEL + " places. You'll see the bus ride time to each one from where you are.", "Elige hasta " + MAXSEL + " lugares. Verás el tiempo en autobús desde donde estás.") + "</div>" +
@@ -973,4 +1024,6 @@
     build();
   }
   if (document.readyState === "loading") window.addEventListener("DOMContentLoaded", start); else start();
+  }
+  boot();
 })();
