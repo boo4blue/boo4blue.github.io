@@ -213,3 +213,9 @@
 .vol-banner span{flex:1;display:flex;flex-direction:column;}
 .vol-banner b{font-size:15px;}
 .vol-banner small{font-size:12.5px;color:#aaa;font-weight:500;}
+
+/* App parity (Android v1.0.3706): living pulse on the open-now badge so it reads as an active status.
+   Scoped to .open-now so the "Verified" badge and "Free" cost pill stay still. */
+.open-badge.open-now{animation:badgePulse 2.2s ease-in-out infinite}
+@keyframes badgePulse{0%,100%{box-shadow:0 0 6px #4ade80,0 0 0 0 #4ade80;opacity:1}50%{box-shadow:0 0 10px #4ade80,0 0 0 4px transparent;opacity:.85}}
+@media(prefers-reduced-motion:reduce){.open-badge.open-now{animation:none}}
