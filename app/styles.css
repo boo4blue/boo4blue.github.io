@@ -12,3 +12,4 @@
 .finder-row .fb{flex:1;min-width:0;}
 .finder-row .fb b{display:block;font-size:15px;}
 .finder-row .fb small{color:#888;font-size:12px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+#rain-banner{margin:0 16px;}#rain-banner:empty{display:none;}.wx-rain{display:flex;align-items:center;gap:8px;background:#16283a;border:1px solid #2d5a7c;border-radius:10px;padding:10px 12px;font-size:14px;color:#cfe8ff;line-height:1.45;margin-top:8px;}.wx-rain b{color:#fff;}.wx-dismiss{margin-left:auto;background:none;border:1px solid #2d5a7c;color:#9db4ff;border-radius:8px;padding:4px 10px;font-size:13px;cursor:pointer;flex:none;}
