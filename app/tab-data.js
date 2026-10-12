@@ -11,6 +11,13 @@ const HOTLINES = [
   { name: "Trans Lifeline", desc: "Peer support hotline run by & for trans people", href: "tel:+18775658860", icon: "💙", crisis: true },
   { name: "HART Recovery Line", area: "fort-wayne", desc: "City team linking you to recovery help — treatment, MAT & syringe services", href: "tel:+12604275801", icon: "🤝" },
   { name: "Safe Haven Hotline", desc: "24/7 confidential help for parents in crisis \u2014 surrender options for newborns 30 days or younger", href: "tel:+18669922291", icon: "👶" },
+  { name: "Veterans Crisis Line", desc: "24/7 for veterans \u2014 call 988 then press 1", href: "tel:+18002738255", icon: "🎖\uFE0F", crisis: true },
+  { name: "Homeless Veterans Hotline", desc: "VA help with housing and services for veterans", href: "tel:+18774243838", icon: "🏠" },
+  { name: "Indiana Quitline", area: "fort-wayne", desc: "Free coaching to quit smoking or vaping \u2014 often free patches or gum", href: "tel:+18007848669", icon: "🌬\uFE0F" },
+  { name: "National DV Hotline", desc: "24/7 safe, confidential help leaving an abusive situation", href: "tel:+18007997233", icon: "🛡\uFE0F", crisis: true },
+  { name: "Indiana DCS Hotline", area: "fort-wayne", desc: "Report child abuse or neglect, 24/7", href: "tel:+18008005556", icon: "🧒" },
+  { name: "Adult Protective Services (IN)", area: "fort-wayne", desc: "Report abuse or neglect of an adult who can't protect themselves", href: "tel:+18009926978", icon: "🧓" },
+
 ]
 
 const PLAN = [
