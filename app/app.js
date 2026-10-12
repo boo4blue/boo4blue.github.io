@@ -389,3 +389,23 @@ try{
   applyArea.__donorsWrapped=true;
  }
 }catch(e){}
+
+/* website parity 2026-10-12 16:06 EDT: back-to-top FAB for the places list (#list), mirroring the Android app v22 polish (#topBtn). Fades in after ~600px of #list scrolling, tap jumps to top; appended to #places-sheet so list re-renders do not destroy it. */
+(function(){
+var list=document.getElementById("list");
+var sheet=document.getElementById("places-sheet");
+if(!list||!sheet||document.getElementById("topBtnW"))return;
+var btn=document.createElement("button");
+btn.id="topBtnW";btn.type="button";btn.innerHTML="\\u2191";
+btn.setAttribute("aria-label","Back to top");
+sheet.appendChild(btn);
+var ticking=false;
+list.addEventListener("scroll",function(){
+ if(ticking)return;ticking=true;
+ requestAnimationFrame(function(){btn.classList.toggle("show",list.scrollTop>600);ticking=false;});
+},{passive:true});
+var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)");
+btn.addEventListener("click",function(){
+ try{list.scrollTo({top:0,behavior:(reduce&&reduce.matches)?"auto":"smooth"});}catch(_){list.scrollTop=0;}
+});
+})();
