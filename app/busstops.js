@@ -50,19 +50,19 @@
 
   /* ---------- UI ---------- */
   function build() {
-    var tab = document.getElementById("tab-map"); if (!tab) return;
+    var tab = document.getElementById("map-wrap") || document.getElementById("tab-map"); if (!tab) return;
     var css = document.createElement("style");
     css.textContent =
-      "#busBtn{position:absolute;right:14px;bottom:234px;z-index:500;width:48px;height:48px;border-radius:16px;font-size:calc(20px*var(--ts,1));border:1px solid var(--line,#334);background:var(--glass2,rgba(20,26,40,.9));box-shadow:var(--sh1,0 6px 18px rgba(0,0,0,.35));cursor:pointer}" +
+      "#busBtn{position:absolute;right:10px;top:172px;z-index:500;width:48px;height:48px;border-radius:16px;font-size:calc(20px*var(--ts,1));border:1px solid var(--line,#334);background:var(--glass2,rgba(20,26,40,.9));box-shadow:var(--sh1,0 6px 18px rgba(0,0,0,.35));cursor:pointer}" +
       "#busBtn.on{background:#22d3ee;border-color:#fff}" +
-      "#busNote{position:absolute;left:50%;transform:translateX(-50%);bottom:292px;z-index:700;max-width:86%;padding:8px 14px;border-radius:14px;font-size:calc(13px*var(--ts,1));background:rgba(10,14,23,.92);color:#fff;display:none;text-align:center}" +
+      "#busNote{position:absolute;left:50%;transform:translateX(-50%);top:228px;z-index:700;max-width:86%;padding:8px 14px;border-radius:14px;font-size:calc(13px*var(--ts,1));background:rgba(10,14,23,.92);color:#fff;display:none;text-align:center}" +
       ".bstop{width:22px;height:22px;border-radius:50%;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;font-size:calc(12px*var(--ts,1));line-height:1}" +
       ".bstop-cl.marker-cluster div{background:#0e7490;color:#fff;font-weight:700}" +
       ".bstop-cl.marker-cluster{background:rgba(34,211,238,.45)}" +
       ".brt{display:inline-block;padding:1px 8px;border-radius:9px;color:#fff;font-size:calc(12px*var(--ts,1));font-weight:800;white-space:nowrap}" +
       ".barrow{font-size:calc(15px*var(--ts,1));line-height:15px;text-align:center;color:#fff;text-shadow:0 0 3px #000,0 0 3px #000;pointer-events:none}" +
       ".bflag{font-size:calc(22px*var(--ts,1));line-height:22px;text-shadow:0 1px 3px #000;pointer-events:none}" +
-      "#busCard{position:absolute;left:10px;right:70px;bottom:10px;z-index:800;padding:10px 12px;border-radius:16px;background:var(--glass2,rgba(20,27,46,.97));color:var(--txt,#fff);border:1px solid var(--line,#334);box-shadow:0 8px 24px rgba(0,0,0,.45);display:none;font-size:calc(13px*var(--ts,1))}" +
+      "#busCard{position:absolute;left:10px;right:10px;bottom:10px;z-index:800;padding:10px 12px;border-radius:16px;background:var(--glass2,rgba(20,27,46,.97));color:var(--txt,#fff);border:1px solid var(--line,#334);box-shadow:0 8px 24px rgba(0,0,0,.45);display:none;font-size:calc(13px*var(--ts,1))}" +
       "#busCard .bc-h{display:flex;align-items:center;gap:8px}#busCard .bc-h b{flex:1;font-size:calc(14px*var(--ts,1));line-height:1.2}" +
       "#busCard .bc-x{border:0;background:rgba(127,127,127,.25);color:inherit;border-radius:50%;width:28px;height:28px;font-size:calc(14px*var(--ts,1))}" +
       "#busCard .bc-rows{margin-top:6px;max-height:112px;overflow:auto}" +
@@ -170,11 +170,29 @@
     if (announce) say("🚏 " + DATA.stops.length + (es() ? " paradas. Toca una para ver su ruta" : " Citilink stops. Tap one to see its route"), 3000);
   }
 
+  /* ---------- website: Citilink stops are Fort Wayne-only; hide in Portland ---------- */
+  function busAreaSync() {
+    var fw = true;
+    try { fw = !(typeof getArea === "function") || getArea() !== "portland"; } catch (e) {}
+    if (btn) btn.style.display = fw ? "" : "none";
+    if (!fw && on) {
+      try { if (layer) map.removeLayer(layer); } catch (e) {}
+      on = false; if (btn) btn.classList.remove("on"); clearRoute();
+    }
+  }
+  try {
+    if (typeof applyArea === "function" && !applyArea.__busWrapped) {
+      var _aaBus = applyArea;
+      applyArea = function () { _aaBus(); try { busAreaSync(); } catch (e) {} };
+      applyArea.__busWrapped = true;
+    }
+  } catch (e) {}
   function start() {
     if (typeof map === "undefined" || !map) { setTimeout(start, 200); return; }
     build();
     map.on("click", function () { if (cur) clearRoute(); });
     if (getOn()) setOn(true, false);
+    try { busAreaSync(); } catch (e) {}
   }
   if (document.readyState === "loading") window.addEventListener("DOMContentLoaded", start); else start();
 })();
