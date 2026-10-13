@@ -143,6 +143,31 @@ async function runConnectorCommand(content) {
   }
   throw new Error('Unknown GitHub command. Try /github help.');
 }
+function autoToolCommand(content, build) {
+  const text = String(content).trim();
+  const lower = text.toLowerCase();
+  if (/^\/github(?:\s|$)/i.test(text) || /^\/(?:files|read|write|run)(?:\s|$)/i.test(text)) return text;
+  const github = githubConfig();
+  const defaultRepo = github?.owner && github?.repo ? `${github.owner}/${github.repo}` : '';
+  const repoMatch = text.match(/\b([A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+)\b/);
+  const repo = repoMatch?.[1] || defaultRepo;
+  if (github?.enabled && githubToken()) {
+    if (/\b(list|show|see|what(?:'s| is)?|which)\b.*\b(repos?|repositories)\b|\bmy repos?\b/i.test(text)) return '/github repos';
+    if (repo && /\b(issue|issues|bugs?|tickets?)\b/i.test(lower) && /\b(list|show|find|check|open|what)\b/i.test(lower)) return `/github issues ${repo}`;
+    if (repo && /\b(read|open|show|display|inspect|look at|check)\b/i.test(lower) && /\b(readme|file|source|code|package\.json|license)\b/i.test(lower)) {
+      const path = /package\.json/i.test(lower) ? 'package.json' : /license/i.test(lower) ? 'LICENSE' : /readme/i.test(lower) ? 'README.md' : (text.match(/(?:file|source|code)\s+[`'\"]?([^`'\"\s]+)[`'\"]?/i)?.[1] || 'README.md');
+      return `/github file ${repo} ${path}`;
+    }
+    if (repo && /\b(inspect|details|information|info|about|describe)\b/i.test(lower) && /\b(repo|repository|project)\b/i.test(lower)) return `/github repo ${repo}`;
+  }
+  const harness = build?.agentConfig || {};
+  if (harness.bridgeUrl && harness.filesystem && /\b(list|show|see)\b.*\b(files?|folders?|workspace)\b/i.test(lower)) return '/files';
+  if (harness.bridgeUrl && harness.filesystem && /\b(read|open|show)\b.*\bfile\b/i.test(lower)) {
+    const path = text.match(/\bfile\s+[`'\"]?([^`'\"\s]+)[`'\"]?/i)?.[1];
+    if (path) return `/read ${path}`;
+  }
+  return null;
+}
 let state = readState();
 let currentPage = 'home';
 let chatMessages = [];
@@ -629,7 +654,8 @@ async function sendChat(form) {
   const content = input.value.trim();
   if (!content || isSending) return;
   const build = activeBuild();
-  if (!runtimeReady(build)) { toast(runtimeMode(build) === 'local' ? 'Set up the local model before chatting.' : 'Connect a cloud model before chatting.', true); return; }
+  const autoCommand = autoToolCommand(content, build);
+  if (!runtimeReady(build) && !autoCommand) { toast(runtimeMode(build) === 'local' ? 'Set up the local model before chatting.' : 'Connect a cloud model before chatting.', true); return; }
   const runtime = runtimeFor(build);
   const agent = assignedAgent(build, content);
   chatMessages.push({ role: 'user', content, time: new Date().toISOString() });
@@ -639,7 +665,7 @@ async function sendChat(form) {
   const agentInstructions = agent ? `\n\nFor this request, act as the specialist agent “${agent.name}”, focused on ${agent.focus}.${agent.instructions ? ` Follow these agent instructions: ${agent.instructions}` : ''} Use your specialty to answer the user's request directly.` : '';
   const harness = build.agentConfig || {};
   const toolSummary = capabilitiesFor(build).filter((entry) => entry.enabled !== false).map((entry) => `${entry.name} (${entry.type})`).slice(0, 12).join(', ');
-  const connectedTools = githubConfig()?.enabled && githubToken() ? ' GitHub read tools are connected. The user can invoke /github help, /github repos, /github repo owner/name, /github issues owner/name, or /github file owner/name path.' : '';
+  const connectedTools = githubConfig()?.enabled && githubToken() ? ' GitHub read tools are connected. Select them automatically when the user asks about their repositories, issues, projects, README, or files. Supported commands are /github help, /github repos, /github repo owner/name, /github issues owner/name, and /github file owner/name path.' : '';
   const harnessInstructions = `\n\nAgent harness: use a ${harness.reasoning === 'deep' ? 'deep, deliberate' : harness.reasoning === 'fast' ? 'fast' : 'balanced'} workflow, up to ${Number(harness.maxSteps || 8)} tool steps. ${harness.approval === 'trusted' ? 'Trusted tools may run automatically.' : 'Ask before making writes or running commands.'} ${harness.filesystem && harness.bridgeUrl ? `A local filesystem bridge is configured at ${harness.bridgeUrl}.` : 'No local filesystem bridge is active.'} ${harness.terminal && harness.bridgeUrl ? 'Terminal tools are enabled through that bridge.' : 'Terminal tools are disabled.'}${toolSummary ? ` Available attached capabilities: ${toolSummary}.` : ''}${connectedTools}`;
   const system = `${build.systemPrompt || `You are ${build.name}, ${build.role}.`}${memories ? `\n\nThe user has chosen to share these saved memories with you:\n${memories}` : ''}${agentInstructions}${harnessInstructions}`;
   const messages = [{ role: 'system', content: system }, ...chatMessages.slice(-20).map(({ role, content: text }) => ({ role, content: text }))];
@@ -652,15 +678,15 @@ async function sendChat(form) {
   chatMessages.push(assistantMessage); isSending = true; render();
   try {
     let answer;
-    const bridgeAnswer = await runBridgeCommand(content, build);
+    const bridgeAnswer = await runBridgeCommand(autoCommand || content, build);
     if (bridgeAnswer !== null) {
       answer = bridgeAnswer;
-      assistantMessage.activityRouting = 'Executed an explicitly requested local bridge tool.';
+      assistantMessage.activityRouting = autoCommand && autoCommand !== content ? `Automatically selected the local tool ${autoCommand}.` : 'Executed an explicitly requested local bridge tool.';
     } else {
-      const connectorAnswer = await runConnectorCommand(content);
+      const connectorAnswer = await runConnectorCommand(autoCommand || content);
       if (connectorAnswer !== null) {
         answer = connectorAnswer;
-        assistantMessage.activityRouting = 'Executed an explicitly requested connected service tool.';
+        assistantMessage.activityRouting = autoCommand && autoCommand !== content ? `Automatically selected the connected tool ${autoCommand}.` : 'Executed an explicitly requested connected service tool.';
       } else if (runtimeMode(build) === 'local') {
         answer = await generateLocalReply(messages, Number(build.temperature ?? 0.7));
       } else {
