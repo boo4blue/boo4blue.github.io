@@ -153,6 +153,8 @@ function autoToolCommand(content, build) {
   const defaultRepo = github?.owner && github?.repo ? `${github.owner}/${github.repo}` : '';
   const repoMatch = text.match(/\b([A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+)\b/);
   const repo = repoMatch?.[1] || defaultRepo;
+  const generatedRoute = runGeneratedToolRoute(text, build);
+  if (generatedRoute) return generatedRoute;
   if (github?.enabled && githubToken()) {
     if (/\b(list|show|see|what(?:'s| is)?|which)\b.*\b(repos?|repositories)\b|\bmy repos?\b/i.test(text)) return '/github repos';
     if (repo && /\b(issue|issues|bugs?|tickets?)\b/i.test(lower) && /\b(list|show|find|check|open|what)\b/i.test(lower)) return `/github issues ${repo}`;
@@ -169,6 +171,75 @@ function autoToolCommand(content, build) {
     if (path) return `/read ${path}`;
   }
   return null;
+}
+function capabilityRequestFromText(content) {
+  const text = String(content).trim();
+  if (!/\b(skill|tool|plugin|mcp server|api integration)\b/i.test(text)) return null;
+  if (!/\b(create|make|build|design|write|invent|add|give yourself|make yourself)\b/i.test(text)) return null;
+  const kind = /\b(plugin|mcp server)\b/i.test(text) ? 'plugin' : /\btool\b/i.test(text) ? 'tool' : 'skill';
+  return { kind, prompt: text };
+}
+function runGeneratedToolRoute(text, build) {
+  const lower = String(text).toLowerCase();
+  const entries = capabilitiesFor(build).filter((entry) => entry.enabled !== false && entry.type === 'tool' && entry.toolDefinition);
+  for (const entry of entries) {
+    const definition = entry.toolDefinition;
+    const triggers = (definition.triggers || []).filter((trigger) => String(trigger).trim());
+    if (!triggers.some((trigger) => lower.includes(String(trigger).toLowerCase()))) continue;
+    const repoMatch = String(text).match(/\b([A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+)\b/);
+    const github = githubConfig();
+    const repo = repoMatch?.[1] || (github?.owner && github?.repo ? `${github.owner}/${github.repo}` : '');
+    const operation = definition.operation;
+    if (operation === 'github.repos' && github?.enabled && githubToken()) return '/github repos';
+    if (operation === 'github.repo' && repo && github?.enabled && githubToken()) return `/github repo ${repo}`;
+    if (operation === 'github.issues' && repo && github?.enabled && githubToken()) return `/github issues ${repo}`;
+    if (operation === 'github.file' && repo && github?.enabled && githubToken()) return `/github file ${repo} ${String(definition.path || 'README.md').replace(/^\/+/, '')}`;
+    const harness = build?.agentConfig || {};
+    if (operation === 'workspace.list' && harness.bridgeUrl && harness.filesystem) return `/files ${definition.path || '.'}`;
+    if (operation === 'workspace.read' && harness.bridgeUrl && harness.filesystem && definition.path) return `/read ${definition.path}`;
+  }
+  return null;
+}
+function parseCapabilityOutput(text, kind, prompt) {
+  let data = null;
+  const candidate = String(text).match(/\{[\s\S]*\}/)?.[0];
+  if (candidate) { try { data = JSON.parse(candidate); } catch { /* keep a readable draft when the model misses JSON */ } }
+  const title = String(data?.name || prompt.match(/(?:called|named)\s+["'“]?([^"'”.,]+)["'”]?/i)?.[1] || `${kind[0].toUpperCase()}${kind.slice(1)} for ${activeBuild().name}`).trim().slice(0, 70);
+  const instructions = String(data?.instructions || text).trim();
+  const allowedOperations = new Set(['github.repos', 'github.repo', 'github.issues', 'github.file', 'workspace.list', 'workspace.read', 'none']);
+  const toolDefinition = kind === 'tool' && data?.tool && allowedOperations.has(data.tool.operation) ? {
+    operation: data.tool.operation,
+    triggers: Array.isArray(data.tool.triggers) ? data.tool.triggers.map((value) => String(value).slice(0, 60)).slice(0, 8) : [],
+    path: String(data.tool.path || '').slice(0, 200)
+  } : null;
+  return {
+    name: title,
+    description: String(data?.description || `AI-generated ${kind} based on: ${prompt}`).trim().slice(0, 500),
+    instructions: instructions.slice(0, 12000),
+    manifest: data?.manifest ? (typeof data.manifest === 'string' ? data.manifest : JSON.stringify(data.manifest, null, 2)).slice(0, 16000) : toolDefinition ? JSON.stringify(toolDefinition, null, 2) : '',
+    toolDefinition,
+    type: kind
+  };
+}
+async function generateCapabilityArtifact(prompt, kind, build = activeBuild()) {
+  if (!runtimeReady(build)) throw new Error('Load a local model or connect a cloud model before asking the AI to create a capability.');
+  const kindRules = kind === 'skill'
+    ? 'Write a useful reusable skill instruction with when-to-use guidance, a concise workflow, output expectations, and safety boundaries. Leave no placeholders unless required.'
+    : kind === 'tool'
+      ? 'Design a reusable tool. Return a tool object with operation (choose only from github.repos, github.repo, github.issues, github.file, workspace.list, workspace.read, or none), triggers (an array of short phrases that should invoke it), and optional path. Kin can execute only these safe built-in read operations when their connection is enabled. Include input schema, result shape, and instructions. Never generate executable code or request writes.'
+      : 'Create an MCP/plugin package draft. Include a portable manifest, tool names and JSON input schemas, setup requirements, and instructions. Do not invent credentials or imply the plugin is connected or executable yet.';
+  const instruction = `You create reusable AI capabilities for Kin. The user requests: ${prompt}\n\n${kindRules}\n\nReturn only one valid JSON object with exactly these fields: name (string), description (string), instructions (string), manifest (object or string; use an empty string for a skill), and tool (object for a tool; include operation, triggers, and optional path). Keep it practical, specific, and under 12000 characters total. Do not wrap it in markdown fences.`;
+  const messages = [{ role: 'system', content: instruction }, { role: 'user', content: `Create this ${kind} for ${build.name}.` }];
+  let output;
+  if (runtimeMode(build) === 'local') output = await generateLocalReply(messages, 0.4);
+  else output = (await generateCloudReply(runtimeFor(build), messages, 0.4, build)).answer;
+  if (!String(output || '').trim()) throw new Error('The model returned an empty capability draft.');
+  const artifact = parseCapabilityOutput(output, kind, prompt);
+  const saved = { id: id(), buildId: build.id, ...artifact, content: artifact.instructions, encoding: 'text', enabled: true, generated: true, createdAt: new Date().toISOString() };
+  state.capabilities.unshift(saved);
+  build.updatedAt = new Date().toISOString();
+  saveState();
+  return saved;
 }
 let state = readState();
 let currentPage = 'home';
@@ -336,7 +407,7 @@ function toolPlanLabel(command) {
   return 'Use an enabled connection to complete the requested task.';
 }
 function capabilityInstructions(build) {
-  return capabilitiesFor(build).filter((entry) => entry.enabled !== false && entry.type === 'skill' && entry.content).slice(0, 4).map((entry) => {
+  return capabilitiesFor(build).filter((entry) => entry.enabled !== false && ['skill', 'tool', 'plugin'].includes(entry.type) && entry.content).slice(0, 6).map((entry) => {
     let content = String(entry.content);
     if (entry.encoding === 'data-url' && content.includes(',')) {
       try { content = new TextDecoder().decode(Uint8Array.from(atob(content.split(',')[1]), (char) => char.charCodeAt(0))); } catch { content = ''; }
@@ -525,9 +596,9 @@ function renderMemory() {
 function renderCapabilities() {
   const build = activeBuild();
   const items = capabilitiesFor();
-  const list = items.length ? `<div class="cap-list">${items.map((item) => `<article class="cap-item"><div class="cap-icon">${icon(item.type === 'mcp' ? 'plug' : item.type === 'ide' ? 'cpu' : item.type === 'api' ? 'bolt' : 'book')}</div><div class="cap-body"><div class="cap-name">${escapeHTML(item.name)} <span class="cap-type">${escapeHTML(item.type)}</span></div><div class="cap-desc">${escapeHTML(item.description || item.fileName || item.endpoint || 'Personal capability package')}</div>${item.fileName ? `<div class="cap-desc mono">${escapeHTML(item.fileName)} · ${(item.size / 1024).toFixed(1)} KB</div>` : ''}</div><div class="cap-buttons"><button class="text-action" data-action="toggle-capability" data-id="${escapeHTML(item.id)}" aria-label="${item.enabled ? 'Disable' : 'Enable'} ${escapeHTML(item.name)}">${icon(item.enabled ? 'check' : 'eye')}</button><button class="text-action" data-action="delete-capability" data-id="${escapeHTML(item.id)}" aria-label="Remove ${escapeHTML(item.name)}">${icon('trash')}</button></div></article>`).join('')}</div>` : `<div class="empty-state"><div class="empty-icon">${icon('plug')}</div><div class="empty-title">Your capability shelf is empty</div><p class="empty-copy">Import your own skill, MCP manifest, OpenAPI file, IDE instructions, or other text-based package to keep it with your build.</p></div>`;
-  shell(`${pageHeading(`Capabilities for ${escapeHTML(build.name)}`, 'Capabilities', 'Give this AI its own shelf of tools, skills, MCP manifests, API specs, IDE files, and other packages.', `<button class="btn btn-dark btn-small" data-action="add-package">${icon('plus')} Add package</button>`)}
-    <div class="two-col content-space"><section class="panel"><div class="section-head"><div><h2>${escapeHTML(build.name)}’s packages <span class="badge">${items.length}</span></h2><p>Each AI build keeps its own capability package shelf.</p></div><button class="btn btn-light btn-small" data-action="add-package">${icon('plus')} Add</button></div>${list}</section><aside class="panel"><div class="drop-zone" id="drop-zone"><div class="drop-icon">${icon('upload')}</div><div class="drop-title">Bring your own files</div><div class="drop-copy">Any file type up to 512 KB. Skills, MCPs, APIs, IDE files, and more.</div><button class="btn btn-light btn-small" data-action="browse-files">Choose files</button><input class="sr-only" type="file" id="package-files" multiple /></div><div class="callout" style="margin-top:13px"><strong>Packages are stored, not executed.</strong> Kin does not run uploaded code or connect to MCP servers automatically. Review files for private keys before exporting or using them with a trusted runtime.</div><button class="btn btn-light btn-small" style="margin-top:12px" data-route="library">Export this AI with packages ${icon('arrow')}</button></aside></div>`);
+  const list = items.length ? `<div class="cap-list">${items.map((item) => `<article class="cap-item"><div class="cap-icon">${icon(['mcp', 'plugin'].includes(item.type) ? 'plug' : ['ide', 'tool'].includes(item.type) ? 'cpu' : item.type === 'api' ? 'bolt' : 'book')}</div><div class="cap-body"><div class="cap-name">${escapeHTML(item.name)} <span class="cap-type">${escapeHTML(item.type)}</span>${item.generated ? ' <span class="cap-type">AI made</span>' : ''}</div><div class="cap-desc">${escapeHTML(item.description || item.fileName || item.endpoint || 'Personal capability package')}</div>${item.fileName ? `<div class="cap-desc mono">${escapeHTML(item.fileName)} · ${(item.size / 1024).toFixed(1)} KB</div>` : ''}${item.content || item.manifest ? `<details class="cap-preview"><summary>Preview ${item.manifest ? 'instructions and manifest' : 'instructions'}</summary>${item.content ? `<pre>${escapeHTML(item.content.slice(0, 5000))}</pre>` : ''}${item.manifest ? `<pre>${escapeHTML(item.manifest.slice(0, 5000))}</pre>` : ''}</details>` : ''}</div><div class="cap-buttons"><button class="text-action" data-action="toggle-capability" data-id="${escapeHTML(item.id)}" aria-label="${item.enabled ? 'Disable' : 'Enable'} ${escapeHTML(item.name)}">${icon(item.enabled ? 'check' : 'eye')}</button><button class="text-action" data-action="delete-capability" data-id="${escapeHTML(item.id)}" aria-label="Remove ${escapeHTML(item.name)}">${icon('trash')}</button></div></article>`).join('')}</div>` : `<div class="empty-state"><div class="empty-icon">${icon('plug')}</div><div class="empty-title">Your capability shelf is empty</div><p class="empty-copy">Import your own skill, MCP manifest, OpenAPI file, IDE instructions, or other text-based package to keep it with your build.</p></div>`;
+  shell(`${pageHeading(`Capabilities for ${escapeHTML(build.name)}`, 'Capabilities', 'Ask your AI to make a skill, reusable tool spec, or plugin manifest. Saved skills become part of future prompts.', `<button class="btn btn-dark btn-small" data-action="create-capability">${icon('spark')} Make with AI</button>`)}
+    <div class="two-col content-space"><section class="panel"><div class="section-head"><div><h2>${escapeHTML(build.name)}’s packages <span class="badge">${items.length}</span></h2><p>Each AI build keeps its own capability package shelf.</p></div><button class="btn btn-light btn-small" data-action="add-package">${icon('plus')} Add</button></div>${list}</section><aside class="panel"><div class="drop-zone" id="drop-zone"><div class="drop-icon">${icon('upload')}</div><div class="drop-title">Bring your own files</div><div class="drop-copy">Any file type up to 512 KB. Skills, MCPs, APIs, IDE files, and more.</div><button class="btn btn-light btn-small" data-action="browse-files">Choose files</button><input class="sr-only" type="file" id="package-files" multiple /></div><div class="callout" style="margin-top:13px"><strong>Generated packages are drafts.</strong> Skills are added to future AI instructions. Tool code and plugin manifests are saved for review and export; Kin does not execute generated code.</div><button class="btn btn-light btn-small" style="margin-top:12px" data-route="library">Export this AI with packages ${icon('arrow')}</button></aside></div>`);
 }
 function renderConnections() {
   const github = githubConfig() || { owner: '', repo: '', enabled: false, permissions: ['repos', 'issues', 'files'] };
@@ -624,7 +695,8 @@ function renderLibrary() {
 function renderModal() {
   if (modalType === 'agent') return `<div class="modal-backdrop" data-action="close-modal"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-head"><h2 class="modal-title" id="modal-title">Create a specialist agent</h2><button class="modal-close" data-action="close-modal" aria-label="Close">${icon('close')}</button></div><p class="panel-copy" style="margin-top:7px">Give this agent a clear specialty. Kin will choose it when a message matches its focus or keywords.</p><form id="agent-form"><div class="field"><label for="agent-name">Agent name</label><input id="agent-name" class="input" name="name" maxlength="40" required placeholder="e.g. Code Coach" /></div><div class="field"><label for="agent-focus">Specialty</label><input id="agent-focus" class="input" name="focus" maxlength="100" required placeholder="e.g. Explain and debug JavaScript" /></div><div class="field"><label for="agent-keywords">Matching words</label><input id="agent-keywords" class="input" name="keywords" maxlength="160" placeholder="code, bug, website, javascript" /><div class="field-hint">Separate words with commas. These help route the right questions.</div></div><div class="field"><label for="agent-instructions">Instructions</label><textarea id="agent-instructions" class="textarea" name="instructions" maxlength="1200" placeholder="How should this specialist handle its tasks?"></textarea></div><div class="modal-actions"><button type="button" class="btn btn-light btn-small" data-action="close-modal">Cancel</button><button class="btn btn-dark btn-small">Add agent</button></div></form></section></div>`;
   if (modalType === 'memory') return `<div class="modal-backdrop" data-action="close-modal"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-head"><h2 class="modal-title" id="modal-title">Add a memory</h2><button class="modal-close" data-action="close-modal" aria-label="Close">${icon('close')}</button></div><p class="panel-copy" style="margin-top:7px">Keep it short, useful, and something you want your AI to remember.</p><form id="memory-form"><div class="field"><label for="memory-text">Memory</label><textarea id="memory-text" class="textarea" name="text" maxlength="600" required placeholder="I prefer examples before explanations…"></textarea></div><div class="modal-actions"><button type="button" class="btn btn-light btn-small" data-action="close-modal">Cancel</button><button class="btn btn-dark btn-small">Save memory</button></div></form></section></div>`;
-  if (modalType === 'package') return `<div class="modal-backdrop" data-action="close-modal"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-head"><h2 class="modal-title" id="modal-title">Add a capability</h2><button class="modal-close" data-action="close-modal" aria-label="Close">${icon('close')}</button></div><p class="panel-copy" style="margin-top:7px">Add a link or manifest to your private package shelf. Kin stores it for export; it does not execute package code.</p><form id="package-form"><div class="field"><label for="package-name">Name</label><input id="package-name" class="input" name="name" maxlength="70" required placeholder="e.g. GitHub MCP server" /></div><div class="field-row"><div class="field"><label for="package-type">Package type</label><select id="package-type" class="select" name="type"><option value="skill">Skill / instructions</option><option value="mcp">MCP server</option><option value="api">API / OpenAPI</option><option value="ide">IDE setup</option><option value="other">Other</option></select></div><div class="field"><label for="package-endpoint">Optional URL</label><input id="package-endpoint" class="input" name="endpoint" type="url" placeholder="https://…" /></div></div><div class="field"><label for="package-desc">What is it for?</label><textarea id="package-desc" class="textarea" style="min-height:70px" name="description" maxlength="500" placeholder="What does this package add to your workflow?"></textarea></div><div class="modal-actions"><button type="button" class="btn btn-light btn-small" data-action="close-modal">Cancel</button><button class="btn btn-dark btn-small">Add to shelf</button></div></form></section></div>`;
+  if (modalType === 'create-capability') return `<div class="modal-backdrop" data-action="close-modal"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-head"><h2 class="modal-title" id="modal-title">Ask your AI to make a capability</h2><button class="modal-close" data-action="close-modal" aria-label="Close">${icon('close')}</button></div><p class="panel-copy" style="margin-top:7px">The AI will generate a draft and save it to this build. Skills become instructions; tool and plugin code stays reviewable and is not run by Kin.</p><form id="capability-creator-form"><div class="field"><label for="creator-kind">Capability type</label><select id="creator-kind" class="select" name="kind"><option value="skill">Skill / reusable instructions</option><option value="tool">Tool specification</option><option value="plugin">Plugin / MCP manifest draft</option></select></div><div class="field"><label for="creator-purpose">What should it do?</label><textarea id="creator-purpose" class="textarea" name="purpose" maxlength="1500" required placeholder="Create a coding review skill that checks accessibility, bugs, and performance…"></textarea></div><div class="modal-actions"><button type="button" class="btn btn-light btn-small" data-action="close-modal">Cancel</button><button class="btn btn-dark btn-small">Generate and save</button></div></form></section></div>`;
+  if (modalType === 'package') return `<div class="modal-backdrop" data-action="close-modal"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-head"><h2 class="modal-title" id="modal-title">Add a capability</h2><button class="modal-close" data-action="close-modal" aria-label="Close">${icon('close')}</button></div><p class="panel-copy" style="margin-top:7px">Add a link or manifest to your private package shelf. Kin stores it for export; it does not execute package code.</p><form id="package-form"><div class="field"><label for="package-name">Name</label><input id="package-name" class="input" name="name" maxlength="70" required placeholder="e.g. GitHub MCP server" /></div><div class="field-row"><div class="field"><label for="package-type">Package type</label><select id="package-type" class="select" name="type"><option value="skill">Skill / instructions</option><option value="tool">Tool specification</option><option value="plugin">Plugin manifest</option><option value="mcp">MCP server</option><option value="api">API / OpenAPI</option><option value="ide">IDE setup</option><option value="other">Other</option></select></div><div class="field"><label for="package-endpoint">Optional URL</label><input id="package-endpoint" class="input" name="endpoint" type="url" placeholder="https://…" /></div></div><div class="field"><label for="package-desc">What is it for?</label><textarea id="package-desc" class="textarea" style="min-height:70px" name="description" maxlength="500" placeholder="What does this package add to your workflow?"></textarea></div><div class="modal-actions"><button type="button" class="btn btn-light btn-small" data-action="close-modal">Cancel</button><button class="btn btn-dark btn-small">Add to shelf</button></div></form></section></div>`;
   if (modalType === 'new-build') return `<div class="modal-backdrop" data-action="close-modal"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-head"><h2 class="modal-title" id="modal-title">Start a new AI build</h2><button class="modal-close" data-action="close-modal" aria-label="Close">${icon('close')}</button></div><p class="panel-copy" style="margin-top:7px">Create a fresh personality and choose how it should help.</p><form id="new-build-form"><div class="field"><label for="new-build-name">Name</label><input id="new-build-name" class="input" name="name" maxlength="48" required placeholder="e.g. Atlas" /></div><div class="field"><label for="new-build-role">Role</label><input id="new-build-role" class="input" name="role" maxlength="90" placeholder="e.g. A creative writing partner" /></div><div class="modal-actions"><button type="button" class="btn btn-light btn-small" data-action="close-modal">Cancel</button><button class="btn btn-dark btn-small">Create build ${icon('arrow')}</button></div></form></section></div>`;
   return '';
 }
@@ -700,6 +772,7 @@ async function sendChat(form) {
   const content = input.value.trim();
   if (!content || isSending) return;
   const build = activeBuild();
+  const capabilityRequest = capabilityRequestFromText(content);
   const autoCommand = autoToolCommand(content, build);
   if (!runtimeReady(build) && !autoCommand) { toast(runtimeMode(build) === 'local' ? 'Set up the local model before chatting.' : 'Connect a cloud model before chatting.', true); return; }
   const runtime = runtimeFor(build);
@@ -718,13 +791,18 @@ async function sendChat(form) {
   const messages = [{ role: 'system', content: system }, ...chatMessages.slice(-20).map(({ role, content: text }) => ({ role, content: text }))];
   const assistantMessage = {
     role: 'assistant', content: '', time: new Date().toISOString(),
-    agentName: agent?.name || build.name, agentFocus: agent?.focus || build.role, activityTask: content, activityPlan: toolPlanLabel(autoCommand), activityStatus: 'working',
+    agentName: agent?.name || build.name, agentFocus: agent?.focus || build.role, activityTask: content, activityPlan: capabilityRequest ? `Design and save a reusable ${capabilityRequest.kind} for this AI.` : toolPlanLabel(autoCommand), activityStatus: 'working',
     activityRouting: agent ? (agent.matched ? 'Matched this message to the agent’s focus or keywords.' : 'No specialist matched, so the first agent handled it by default.') : 'No specialist agents are configured; the main AI handled it.',
     activityMemory: memoryEntries.length ? `Checked ${memoryEntries.length} saved ${memoryEntries.length === 1 ? 'memory' : 'memories'}` : 'No saved memories were included'
   };
   chatMessages.push(assistantMessage); isSending = true; render();
   try {
     let answer; let toolOutput = '';
+    if (capabilityRequest) {
+      const artifact = await generateCapabilityArtifact(capabilityRequest.prompt, capabilityRequest.kind, build);
+      answer = `Created and enabled ${artifact.name} as a ${artifact.type}. It is saved in Capabilities and will be included in future prompts when relevant. ${artifact.manifest && artifact.type === 'plugin' ? 'The plugin manifest is a draft for review; connect it to a compatible runtime before use.' : artifact.type === 'tool' && artifact.toolDefinition?.operation && artifact.toolDefinition.operation !== 'none' ? `Its ${artifact.toolDefinition.operation} action can run when you use one of these phrases: ${(artifact.toolDefinition.triggers || []).join(', ') || 'its configured trigger'}, if the matching connection is enabled.` : artifact.type === 'tool' ? 'This tool is saved as a specification; it needs a supported connection or runtime to execute.' : ''}`;
+      assistantMessage.activityRouting = `Generated and saved ${artifact.type} “${artifact.name}” to this AI’s capability shelf.`;
+    } else {
     const bridgeAnswer = await runBridgeCommand(autoCommand || content, build);
     if (bridgeAnswer !== null) {
       toolOutput = bridgeAnswer;
@@ -747,6 +825,7 @@ async function sendChat(form) {
         if (!toolOutput) assistantMessage.activityRouting = routed.fallback ? `Primary model was unavailable; automatically switched to ${routed.provider}.` : `Answered with ${routed.provider}.`;
       }
     } else answer = toolOutput;
+    }
     if (typeof answer !== 'string' || !answer.trim()) throw new Error('The model did not return a chat message.');
     assistantMessage.content = answer.trim(); assistantMessage.activityStatus = 'complete';
   } catch (error) {
@@ -790,6 +869,7 @@ function handleClick(event) {
   if (action === 'delete-agent') { const build = activeBuild(); build.agents = (build.agents || []).filter((agent) => agent.id !== itemId); build.updatedAt = new Date().toISOString(); saveState(); render(); toast('Agent removed from this AI.'); }
   if (action === 'add-memory') { modalType = 'memory'; render(); document.querySelector('#memory-text')?.focus(); }
   if (action === 'add-package') { modalType = 'package'; render(); document.querySelector('#package-name')?.focus(); }
+  if (action === 'create-capability') { modalType = 'create-capability'; render(); document.querySelector('#creator-purpose')?.focus(); }
   if (action === 'export-blueprint') exportBlueprint();
   if (action === 'reset-model') { const build = activeBuild(); build.modelConfig = { foundation: 'Local open model', family: LOCAL_MODEL_ID, architecture: 'Conversational assistant', context: '8192', modalities: ['text'], memory: 'Long-term memory', toolPolicy: 'Ask before using tools', autonomy: 'Confirm writes', learning: 'Prompt + examples', frame: ['conversation', 'memory', 'tool-router', 'safety'] }; build.model = LOCAL_MODEL_ID; saveState(); render(); toast('Model recipe reset.'); }
   if (action === 'close-modal') { if (event.target === control || control.classList.contains('modal-close')) { modalType = ''; render(); } }
@@ -914,6 +994,14 @@ function handleSubmit(event) {
     const data = new FormData(form); const name = String(data.get('name')).trim();
     state.capabilities.unshift({ id: id(), buildId: activeBuild().id, name, type: String(data.get('type')), endpoint: String(data.get('endpoint')).trim(), description: String(data.get('description')).trim(), enabled: true, createdAt: new Date().toISOString() });
     saveState(); modalType = ''; currentPage = 'capabilities'; render(); toast('Capability added to your shelf.');
+  }
+  if (form.id === 'capability-creator-form') {
+    const data = new FormData(form); const kind = String(data.get('kind')); const purpose = String(data.get('purpose')).trim();
+    if (!runtimeReady(activeBuild())) { modalType = ''; currentPage = 'runtime'; render(); toast('Connect or load a model first so your AI can create the capability.', true); return; }
+    const prompt = `Create a ${kind} for yourself: ${purpose}`;
+    modalType = ''; currentPage = 'run'; render();
+    const chatInput = document.querySelector('#chat-input');
+    if (chatInput) { chatInput.value = prompt; document.querySelector('#chat-form')?.requestSubmit(); }
   }
   if (form.id === 'github-connection-form') {
     const data = new FormData(form); const token = String(data.get('token') || '').trim() || githubToken();
