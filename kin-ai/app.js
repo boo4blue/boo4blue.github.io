@@ -2,13 +2,15 @@ const STORE_KEY = 'kin.studio.v1';
 const KEY_SESSION = 'kin.runtime.key';
 const GITHUB_TOKEN_KEY = 'kin.github.token';
 const PROVIDER_TOKEN_PREFIX = 'kin.provider.token.';
+const ACCOUNT_API_KEY = 'kin.account.api';
+const ACCOUNT_SESSION_KEY = 'kin.account.session';
 const LOCAL_MODEL_KEY = 'kin.local-model.cached';
 const LOCAL_MODEL_ID = 'onnx-community/Qwen2.5-0.5B-Instruct';
 const LOCAL_MODEL_NAME = 'Kin Local Quick';
 const MAX_PACKAGE_BYTES = 512 * 1024;
 const ROUTES = [
   ['home', 'Overview', 'home'], ['builder', 'AI Builder', 'spark'], ['model', 'Model Lab', 'cpu'], ['memory', 'Memory', 'memory'],
-  ['capabilities', 'Capabilities', 'plug'], ['connections', 'Connections', 'plug'], ['run', 'Run your AI', 'chat'], ['runtime', 'Runtime', 'cpu'], ['library', 'My builds', 'layers']
+  ['capabilities', 'Capabilities', 'plug'], ['connections', 'Connections', 'plug'], ['run', 'Run your AI', 'chat'], ['runtime', 'Runtime', 'cpu'], ['library', 'My builds', 'layers'], ['account', 'Account & sync', 'layers']
 ];
 const ICONS = {
   home: '<path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',
@@ -185,11 +187,25 @@ let generationRequest = null;
 let thinkingTimer = null;
 let modelCatalog = [];
 let modelCatalogLoading = false;
+let accountStatus = '';
 const root = document.querySelector('#app');
 
 function saveState() {
   try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); }
   catch (error) { toast('Could not save: storage may be full. Remove a large package and try again.', true); }
+}
+function accountApiBase() { return (localStorage.getItem(ACCOUNT_API_KEY) || '').replace(/\/$/, ''); }
+function accountSession() { try { return JSON.parse(sessionStorage.getItem(ACCOUNT_SESSION_KEY) || 'null'); } catch { return null; } }
+async function accountRequest(path, options = {}) {
+  const base = accountApiBase();
+  if (!base) throw new Error('Set the account API URL first.');
+  const session = accountSession();
+  const headers = { 'content-type': 'application/json', ...(options.headers || {}) };
+  if (session?.token) headers.authorization = `Bearer ${session.token}`;
+  const response = await fetch(`${base}${path}`, { ...options, headers });
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) throw new Error(data.error || `Account service returned ${response.status}.`);
+  return data;
 }
 function activeBuild() { return state.builds.find((build) => build.id === state.activeBuildId) || state.builds[0]; }
 function memoriesFor(build = activeBuild()) { return state.memories.filter((entry) => entry.buildId === build.id); }
@@ -305,7 +321,28 @@ function activityMarkup(message) {
   if (!message.agentName) return '';
   const label = message.activityStatus === 'complete' ? 'Done' : message.activityStatus === 'error' ? 'Needs attention' : message.activityStatus === 'stopped' ? 'Stopped' : 'In progress';
   const finalStep = message.activityStatus === 'complete' ? 'Reply complete' : message.activityStatus === 'error' ? 'Could not finish this reply' : message.activityStatus === 'stopped' ? 'Reply stopped' : 'Preparing your reply…';
-  return `<details class="agent-activity"><summary><span>Thinking · ${escapeHTML(message.agentName)} · ${label}</span><span class="activity-expand">View activity</span></summary><div class="activity-body"><div><strong>Assigned task</strong><p>${escapeHTML(message.activityTask || 'Respond to the latest message.')}</p><p class="agent-focus-line">${escapeHTML(message.agentName)} · ${escapeHTML(message.agentFocus || 'General specialist')}</p><p class="agent-focus-line">${escapeHTML(message.activityRouting || '')}</p></div><ol><li class="activity-done">Read your message</li><li class="activity-done">${escapeHTML(message.activityMemory || 'No saved memories were included')}</li><li class="activity-current" data-agent-current>${escapeHTML(finalStep)}</li></ol><p class="activity-note">This shows task and progress updates, not private internal reasoning.</p></div></details>`;
+  return `<details class="agent-activity"><summary><span>Thinking · ${escapeHTML(message.agentName)} · ${label}</span><span class="activity-expand">View activity</span></summary><div class="activity-body"><div><strong>Task plan</strong><p>${escapeHTML(message.activityPlan || 'Answer the request using the selected AI and enabled capabilities.')}</p><p class="agent-focus-line">${escapeHTML(message.agentName)} · ${escapeHTML(message.agentFocus || 'General specialist')}</p><p class="agent-focus-line">${escapeHTML(message.activityRouting || '')}</p></div><ol><li class="activity-done">Read your message</li><li class="activity-done">${escapeHTML(message.activityMemory || 'No saved memories were included')}</li><li class="activity-current" data-agent-current>${escapeHTML(finalStep)}</li></ol><p class="activity-note">This shows the plan and work status, not private internal reasoning.</p></div></details>`;
+}
+function toolPlanLabel(command) {
+  if (!command) return 'Choose the best available model and enabled skills for this request.';
+  if (/^\/github\s+repos/i.test(command)) return 'Use GitHub to list repositories you can access.';
+  if (/^\/github\s+issues/i.test(command)) return `Use GitHub to read open issues in ${command.replace(/^\/github\s+issues\s*/i, '')}.`;
+  if (/^\/github\s+file/i.test(command)) return `Use GitHub to read ${command.replace(/^\/github\s+file\s*/i, '')}.`;
+  if (/^\/github\s+repo/i.test(command)) return `Use GitHub to inspect ${command.replace(/^\/github\s+repo\s*/i, '')}.`;
+  if (/^\/files/i.test(command)) return 'Use the local filesystem connection to list workspace files.';
+  if (/^\/read/i.test(command)) return `Use the local filesystem connection to read ${command.replace(/^\/read\s*/i, '')}.`;
+  if (/^\/write/i.test(command)) return 'Prepare a local file write and request approval before changing the workspace.';
+  if (/^\/run/i.test(command)) return 'Prepare a terminal command and request approval before running it.';
+  return 'Use an enabled connection to complete the requested task.';
+}
+function capabilityInstructions(build) {
+  return capabilitiesFor(build).filter((entry) => entry.enabled !== false && entry.type === 'skill' && entry.content).slice(0, 4).map((entry) => {
+    let content = String(entry.content);
+    if (entry.encoding === 'data-url' && content.includes(',')) {
+      try { content = new TextDecoder().decode(Uint8Array.from(atob(content.split(',')[1]), (char) => char.charCodeAt(0))); } catch { content = ''; }
+    }
+    return content ? `### ${entry.name}\n${content.slice(0, 5000)}` : '';
+  }).filter(Boolean).join('\n\n');
 }
 async function runBridgeCommand(content, build) {
   const config = build.agentConfig || {};
@@ -421,11 +458,11 @@ function sidebar() {
     <div class="workspace-pill"><div class="workspace-orb">Y</div><div><div class="workspace-label">Your studio</div><div class="workspace-sub">Private workspace</div></div></div>
     <div class="nav-label">Create</div><nav class="nav-list">${ROUTES.filter(([key]) => ['home', 'builder', 'model'].includes(key)).map((route) => navLink(route)).join('')}</nav>
     <div class="nav-spacer"></div><div class="nav-label">Personalize</div><nav class="nav-list">${ROUTES.filter(([key]) => ['memory', 'capabilities', 'connections'].includes(key)).map((route) => navLink(route)).join('')}</nav>
-    <div class="nav-spacer"></div><div class="nav-label">Use & manage</div><nav class="nav-list">${ROUTES.filter(([key]) => ['run', 'runtime', 'library'].includes(key)).map((route) => navLink(route)).join('')}</nav>
-    <div class="sidebar-bottom"><div class="runtime-mini"><div class="runtime-mini-head"><span>${escapeHTML(activeBuild().name)} runtime</span><span class="status-dot" style="background:${connected ? '#b2db68' : '#f1bc68'}"></span></div><p>${connected ? `Ready with ${runtimeMode() === 'cloud' ? 'cloud model' : 'local model'}.` : runtimeMode() === 'cloud' ? 'Cloud endpoint needs setup.' : 'Set up the free local model to chat.'}</p><button data-route="${runtimeMode() === 'cloud' ? 'runtime' : 'run'}">${connected ? 'Open AI chat' : runtimeMode() === 'cloud' ? 'Connect cloud model' : 'Set up local AI'} ${icon('arrow')}</button></div><div class="profile-chip"><div class="avatar">Y</div><div><div class="profile-name">Your workspace</div><div class="profile-mode">Saved on this device</div></div></div></div>
+    <div class="nav-spacer"></div><div class="nav-label">Use & manage</div><nav class="nav-list">${ROUTES.filter(([key]) => ['run', 'runtime', 'library', 'account'].includes(key)).map((route) => navLink(route)).join('')}</nav>
+    <div class="sidebar-bottom"><div class="runtime-mini"><div class="runtime-mini-head"><span>${escapeHTML(activeBuild().name)} runtime</span><span class="status-dot" style="background:${connected ? '#b2db68' : '#f1bc68'}"></span></div><p>${connected ? `Ready with ${runtimeMode() === 'cloud' ? 'cloud model' : 'local model'}.` : runtimeMode() === 'cloud' ? 'Cloud endpoint needs setup.' : 'Set up the free local model to chat.'}</p><button data-route="${runtimeMode() === 'cloud' ? 'runtime' : 'run'}">${connected ? 'Open AI chat' : runtimeMode() === 'cloud' ? 'Connect cloud model' : 'Set up local AI'} ${icon('arrow')}</button></div><button class="profile-chip profile-account" data-route="account"><div class="avatar">${accountSession()?.user?.username?.slice(0,1)?.toUpperCase() || 'Y'}</div><div><div class="profile-name">${escapeHTML(accountSession()?.user?.username || 'Your workspace')}</div><div class="profile-mode">${accountSession() ? 'Sync enabled' : 'Saved on this device'}</div></div></button></div>
   </aside>`;
 }
-function mobileNav() { return `<nav class="mobile-nav" aria-label="Mobile navigation">${ROUTES.filter(([key]) => ['home', 'builder', 'run', 'connections', 'memory', 'library'].includes(key)).map((route) => navLink(route, true)).join('')}</nav>`; }
+function mobileNav() { return `<nav class="mobile-nav" aria-label="Mobile navigation">${ROUTES.filter(([key]) => ['home', 'builder', 'run', 'connections', 'memory', 'account'].includes(key)).map((route) => navLink(route, true)).join('')}</nav>`; }
 function pageHeading(eyebrow, title, subtitle, action = '') {
   return `<div class="page-head"><div><div class="eyebrow">${eyebrow}</div><h1 class="page-title">${title}</h1><p class="page-subtitle">${subtitle}</p></div>${action}</div>`;
 }
@@ -505,6 +542,14 @@ function renderConnections() {
         <div class="form-actions"><button type="button" class="text-action" data-action="disconnect-github">Disconnect</button><div class="form-actions-end"><button class="btn btn-dark btn-small">${icon('plug')} Test & save GitHub</button></div></div></form></section>
       <aside class="panel connection-card"><div class="panel-title">Other services</div><p class="panel-copy">Save an OpenAPI, REST, or MCP-style service as a connection card. It will be available to your AI’s blueprint, but Kin will not call arbitrary endpoints automatically.</p><form id="generic-connection-form" class="connection-form"><div class="field"><label for="generic-name">Service name</label><input id="generic-name" class="input" name="name" required placeholder="e.g. Linear workspace" /></div><div class="field"><label for="generic-endpoint">API or MCP endpoint</label><input id="generic-endpoint" class="input" name="endpoint" type="url" required placeholder="https://api.example.com" /></div><div class="field"><label for="generic-token">Session token (optional)</label><input id="generic-token" class="input" name="token" type="password" autocomplete="new-password" placeholder="Stored only until this tab closes" /></div><button class="btn btn-light btn-small">${icon('plus')} Add connection</button></form>${generic.length ? `<div class="saved-connections">${generic.map((item) => `<div class="saved-connection"><div><strong>${escapeHTML(item.name)}</strong><small>${escapeHTML(item.endpoint)}</small></div><button class="text-action" data-action="delete-connection" data-id="${escapeHTML(item.id)}" aria-label="Remove ${escapeHTML(item.name)}">${icon('trash')}</button></div>`).join('')}</div>` : `<div class="empty-connection">No additional services yet.</div>`}<div class="separator"></div><div class="callout"><strong>Safer by default.</strong> Add a dedicated connector when you want live actions. Review scopes and keep write access off unless you intentionally build an approval flow.</div></aside></div>
     <section class="panel provider-pool content-space"><div class="section-head"><div><h2>Smart model fallback</h2><p>Put providers in a pool. Kin tries the active model first, then moves to the next enabled model after a quota, rate-limit, or capacity response.</p></div><span class="badge">${providersFor().length} backup${providersFor().length === 1 ? '' : 's'}</span></div><div class="callout"><strong>OpenAI sign-in note.</strong> A browser app cannot safely use a normal OpenAI API key as a shared account. Sign in with ChatGPT requires an approved app client and callback. For now, add an OpenAI API key or another compatible provider below; keys remain in this session.</div><form id="provider-form" class="connection-form"><div class="field-row"><div class="field"><label for="provider-name">Provider name</label><input id="provider-name" class="input" name="name" required placeholder="OpenRouter free" /></div><div class="field"><label for="provider-kind">Provider</label><select id="provider-kind" class="select" name="provider"><option>OpenAI</option><option>OpenRouter</option><option>Hugging Face</option><option>OpenAI-compatible</option></select></div></div><div class="field-row"><div class="field"><label for="provider-endpoint">Chat completions endpoint</label><input id="provider-endpoint" class="input" name="endpoint" type="url" required placeholder="https://…/v1/chat/completions" /></div><div class="field"><label for="provider-model">Model identifier</label><input id="provider-model" class="input" name="model" required placeholder="provider/model:free" /></div></div><div class="field-row"><div class="field"><label for="provider-token">API key</label><input id="provider-token" class="input" name="token" type="password" autocomplete="new-password" placeholder="Session-only key" /></div><div class="field"><label for="provider-priority">Fallback priority</label><input id="provider-priority" class="input" name="priority" type="number" min="0" max="99" value="10" /></div></div><button class="btn btn-light btn-small">${icon('plus')} Add fallback model</button></form>${providersFor().length ? `<div class="saved-connections">${providersFor().map((item) => `<div class="saved-connection"><div><strong>${escapeHTML(item.name || item.provider)}</strong><small>${escapeHTML(item.model)} · priority ${Number(item.priority || 0)} · ${providerToken(item.id) ? 'key ready' : 'key missing'}</small></div><button class="text-action" data-action="delete-provider" data-id="${escapeHTML(item.id)}" aria-label="Remove ${escapeHTML(item.name || item.provider)}">${icon('trash')}</button></div>`).join('')}</div>` : `<div class="empty-connection">No fallback models yet. Use Runtime → Browse models to find current free options.</div>`}</section>`);
+}
+function renderAccount() {
+  const session = accountSession();
+  const lastSync = localStorage.getItem('kin.account.lastSync') || '';
+  shell(`${pageHeading('Keep your studio with you', 'Account & sync', 'Sign in to sync your AI builds and memories between devices. Export a backup any time.', session ? `<button class="btn btn-light btn-small" data-action="account-logout">Sign out</button>` : '')}
+    <div class="account-layout content-space"><section class="panel"><div class="panel-title">Account service</div><p class="panel-copy">Kin uses its own account API. Configure the Worker URL once, then sign in on each device.</p><form id="account-api-form"><div class="field"><label for="account-api-url">Account API URL</label><input id="account-api-url" class="input" type="url" name="url" value="${escapeHTML(accountApiBase())}" required placeholder="https://kin-account-api.yourname.workers.dev" /><div class="field-hint">This URL is provided after deploying the account-service Worker.</div></div><button class="btn btn-light btn-small">Save and check service</button></form>
+    ${session ? `<div class="account-user"><div class="avatar">${escapeHTML(session.user?.username?.slice(0,1)?.toUpperCase() || 'K')}</div><div><strong>${escapeHTML(session.user?.username || 'Signed in')}</strong><small>${escapeHTML(session.user?.email || '')}${session.user?.isOwner ? ' · Owner' : ''}</small></div><span class="connection-status connected">SIGNED IN</span></div><div class="sync-actions"><button class="btn btn-dark btn-small" data-action="sync-upload">${icon('upload')} Save this device to cloud</button><button class="btn btn-light btn-small" data-action="sync-download">${icon('download')} Restore from cloud</button></div><div class="field-hint">Last sync: ${lastSync ? escapeHTML(new Date(lastSync).toLocaleString()) : 'Not synced yet'}</div>` : `<div class="account-auth-grid"><form id="account-login-form"><h3>Sign in</h3><div class="field"><label for="account-login-id">Email or username</label><input id="account-login-id" class="input" name="identity" required autocomplete="username" /></div><div class="field"><label for="account-login-password">Password</label><input id="account-login-password" class="input" name="password" type="password" required autocomplete="current-password" /></div><button class="btn btn-dark btn-small">Sign in</button></form><form id="account-register-form"><h3>Create account</h3><div class="field"><label for="account-register-email">Email</label><input id="account-register-email" class="input" name="email" type="email" required autocomplete="email" /></div><div class="field"><label for="account-register-username">Username</label><input id="account-register-username" class="input" name="username" required autocomplete="username" /></div><div class="field"><label for="account-register-password">Password</label><input id="account-register-password" class="input" name="password" type="password" minlength="12" required autocomplete="new-password" /><div class="field-hint">Use at least 12 characters.</div></div><div class="field"><label for="owner-setup-token">Owner setup token (first owner only)</label><input id="owner-setup-token" class="input" name="ownerSetupToken" type="password" autocomplete="new-password" placeholder="Optional one-time token" /></div><button class="btn btn-light btn-small">Create account</button></form></div>`}
+    ${accountStatus ? `<div class="account-status" role="status">${escapeHTML(accountStatus)}</div>` : ''}</section><aside class="panel"><div class="panel-title">Backups and privacy</div><p class="panel-copy">Use account sync for convenient device-to-device transfer. Keep a downloadable backup too, so you can restore without relying on the account service.</p><div class="sync-actions"><button class="btn btn-light btn-small" data-action="export-all">${icon('download')} Download studio backup</button><button class="btn btn-light btn-small" data-action="import-build">${icon('upload')} Restore backup file</button><input class="sr-only" id="import-file" type="file" accept=".json,application/json" /></div><div class="separator"></div><div class="callout"><strong>Secrets stay on this device.</strong> The sync payload excludes API keys, GitHub tokens, and account session tokens. Model files are cached by the browser and do not need to be synced.</div><div class="separator"></div><div class="panel-copy">${session ? 'Cloud data is private to your account. Restoring replaces this device’s saved builds, memories, packages, and settings.' : 'Sign in to enable private cloud sync. Backups work without an account.'}</div></aside></div>`);
 }
 function renderRuntime() {
   const build = activeBuild();
@@ -590,6 +635,7 @@ function render() {
   if (currentPage === 'memory') return renderMemory();
   if (currentPage === 'capabilities') return renderCapabilities();
   if (currentPage === 'connections') return renderConnections();
+  if (currentPage === 'account') return renderAccount();
   if (currentPage === 'runtime') return renderRuntime();
   if (currentPage === 'run') return renderRun();
   if (currentPage === 'library') return renderLibrary();
@@ -662,16 +708,17 @@ async function sendChat(form) {
   input.value = '';
   const memoryEntries = build.memoryEnabled ? memoriesFor(build) : [];
   const memories = memoryEntries.map((entry) => `- ${entry.text}`).join('\n');
+  const skills = capabilityInstructions(build);
   const agentInstructions = agent ? `\n\nFor this request, act as the specialist agent “${agent.name}”, focused on ${agent.focus}.${agent.instructions ? ` Follow these agent instructions: ${agent.instructions}` : ''} Use your specialty to answer the user's request directly.` : '';
   const harness = build.agentConfig || {};
   const toolSummary = capabilitiesFor(build).filter((entry) => entry.enabled !== false).map((entry) => `${entry.name} (${entry.type})`).slice(0, 12).join(', ');
   const connectedTools = githubConfig()?.enabled && githubToken() ? ' GitHub read tools are connected. Select them automatically when the user asks about their repositories, issues, projects, README, or files. Supported commands are /github help, /github repos, /github repo owner/name, /github issues owner/name, and /github file owner/name path.' : '';
   const harnessInstructions = `\n\nAgent harness: use a ${harness.reasoning === 'deep' ? 'deep, deliberate' : harness.reasoning === 'fast' ? 'fast' : 'balanced'} workflow, up to ${Number(harness.maxSteps || 8)} tool steps. ${harness.approval === 'trusted' ? 'Trusted tools may run automatically.' : 'Ask before making writes or running commands.'} ${harness.filesystem && harness.bridgeUrl ? `A local filesystem bridge is configured at ${harness.bridgeUrl}.` : 'No local filesystem bridge is active.'} ${harness.terminal && harness.bridgeUrl ? 'Terminal tools are enabled through that bridge.' : 'Terminal tools are disabled.'}${toolSummary ? ` Available attached capabilities: ${toolSummary}.` : ''}${connectedTools}`;
-  const system = `${build.systemPrompt || `You are ${build.name}, ${build.role}.`}${memories ? `\n\nThe user has chosen to share these saved memories with you:\n${memories}` : ''}${agentInstructions}${harnessInstructions}`;
+  const system = `${build.systemPrompt || `You are ${build.name}, ${build.role}.`}${memories ? `\n\nThe user has chosen to share these saved memories with you:\n${memories}` : ''}${skills ? `\n\nUse these enabled skills when relevant:\n${skills}` : ''}${agentInstructions}${harnessInstructions}`;
   const messages = [{ role: 'system', content: system }, ...chatMessages.slice(-20).map(({ role, content: text }) => ({ role, content: text }))];
   const assistantMessage = {
     role: 'assistant', content: '', time: new Date().toISOString(),
-    agentName: agent?.name || build.name, agentFocus: agent?.focus || build.role, activityTask: content, activityStatus: 'working',
+    agentName: agent?.name || build.name, agentFocus: agent?.focus || build.role, activityTask: content, activityPlan: toolPlanLabel(autoCommand), activityStatus: 'working',
     activityRouting: agent ? (agent.matched ? 'Matched this message to the agent’s focus or keywords.' : 'No specialist matched, so the first agent handled it by default.') : 'No specialist agents are configured; the main AI handled it.',
     activityMemory: memoryEntries.length ? `Checked ${memoryEntries.length} saved ${memoryEntries.length === 1 ? 'memory' : 'memories'}` : 'No saved memories were included'
   };
@@ -757,6 +804,9 @@ function handleClick(event) {
   if (action === 'disconnect-github') { state.connections.github = null; sessionStorage.removeItem(GITHUB_TOKEN_KEY); saveState(); render(); toast('GitHub disconnected from this browser.'); }
   if (action === 'delete-connection') { state.connections.generic = (state.connections.generic || []).filter((entry) => entry.id !== itemId); saveState(); render(); toast('Connection removed.'); }
   if (action === 'delete-provider') { const provider = (state.connections.providers || []).find((entry) => entry.id === itemId); state.connections.providers = (state.connections.providers || []).filter((entry) => entry.id !== itemId); sessionStorage.removeItem(`${PROVIDER_TOKEN_PREFIX}${itemId}`); saveState(); render(); toast(`${provider?.name || 'Fallback model'} removed.`); }
+  if (action === 'account-logout') signOutAccount();
+  if (action === 'sync-upload') uploadAccountData();
+  if (action === 'sync-download') downloadAccountData();
   if (action === 'select-build') { state.activeBuildId = itemId; saveState(); render(); toast(`${activeBuild().name} is now your active build.`); }
   if (action === 'export-build') { const build = state.builds.find((entry) => entry.id === itemId); if (build) exportBuild(build); }
   if (action === 'export-all') { downloadJSON('kin-studio-backup.kin.json', { format: 'kin-studio', version: 1, exportedAt: new Date().toISOString(), ...state }); toast('Studio backup exported. Runtime keys are never included.'); }
@@ -782,6 +832,46 @@ function saveRuntime() {
   if (key) sessionStorage.setItem(keyFor(build), key);
   build.updatedAt = new Date().toISOString();
   saveState(); render(); toast(endpoint ? `Runtime saved for ${build.name}.` : `${build.name} disconnected.`);
+}
+async function submitAccountAuth(form, register = false) {
+  const data = new FormData(form);
+  accountStatus = register ? 'Creating account…' : 'Signing in…'; render();
+  try {
+    const headers = { 'content-type': 'application/json' };
+    const ownerSetupToken = String(data.get('ownerSetupToken') || '').trim();
+    if (register && ownerSetupToken) headers['x-owner-setup-token'] = ownerSetupToken;
+    const body = register
+      ? { email: String(data.get('email')), username: String(data.get('username')), password: String(data.get('password')) }
+      : { identity: String(data.get('identity')), password: String(data.get('password')) };
+    const result = await accountRequest(register ? '/auth/register' : '/auth/login', { method: 'POST', headers, body: JSON.stringify(body) });
+    sessionStorage.setItem(ACCOUNT_SESSION_KEY, JSON.stringify({ token: result.token, expiresAt: result.expiresAt, user: result.user }));
+    accountStatus = `Signed in as ${result.user.username}. Cloud data has not been restored yet.`;
+  } catch (error) { accountStatus = error.message; }
+  render();
+}
+async function uploadAccountData() {
+  if (!accountSession()) { accountStatus = 'Sign in first.'; render(); return; }
+  if (!window.confirm('Save this device’s builds, memories, and settings to your account? This replaces the current cloud copy.')) return;
+  accountStatus = 'Saving your studio to the account…'; render();
+  try { await accountRequest('/account/data', { method: 'PUT', body: JSON.stringify({ payload: state }) }); localStorage.setItem('kin.account.lastSync', new Date().toISOString()); accountStatus = 'Studio saved to your account.'; }
+  catch (error) { accountStatus = error.message; }
+  render();
+}
+async function downloadAccountData() {
+  if (!accountSession()) { accountStatus = 'Sign in first.'; render(); return; }
+  accountStatus = 'Loading your cloud studio…'; render();
+  try {
+    const result = await accountRequest('/account/data');
+    if (!result.payload) { accountStatus = 'Your account has no saved studio yet. Save this device first.'; render(); return; }
+    if (!window.confirm('Restore the cloud studio onto this device? This replaces the saved builds, memories, packages, and settings here.')) { accountStatus = 'Restore canceled. Your local studio is unchanged.'; render(); return; }
+    state = { ...freshState(), ...result.payload, connections: { ...freshState().connections, ...(result.payload.connections || {}) } };
+    saveState(); localStorage.setItem('kin.account.lastSync', result.updatedAt || new Date().toISOString()); chatMessages = []; accountStatus = `Cloud studio restored${result.updatedAt ? ` (last saved ${new Date(result.updatedAt).toLocaleString()})` : ''}.`;
+  } catch (error) { accountStatus = error.message; }
+  render();
+}
+async function signOutAccount() {
+  try { await accountRequest('/auth/logout', { method: 'POST', body: '{}' }); } catch { /* clear local session even when offline */ }
+  sessionStorage.removeItem(ACCOUNT_SESSION_KEY); accountStatus = 'Signed out.'; render();
 }
 function handleSubmit(event) {
   event.preventDefault();
@@ -843,6 +933,15 @@ function handleSubmit(event) {
     state.connections.providers = [...(state.connections.providers || []), provider].slice(0, 20);
     sessionStorage.setItem(`${PROVIDER_TOKEN_PREFIX}${provider.id}`, token); saveState(); render(); toast(`${provider.name} added to the fallback pool.`);
   }
+  if (form.id === 'account-api-form') {
+    const endpoint = String(new FormData(form).get('url') || '').trim();
+    try { const parsed = new URL(endpoint); if (parsed.protocol !== 'https:' && !['localhost', '127.0.0.1'].includes(parsed.hostname)) throw new Error(); }
+    catch { accountStatus = 'Enter an HTTPS Worker URL (or localhost for development).'; render(); return; }
+    localStorage.setItem(ACCOUNT_API_KEY, endpoint.replace(/\/$/, '')); accountStatus = 'Checking account service…';
+    accountRequest('/health').then(() => { accountStatus = 'Account service is reachable.'; render(); }).catch((error) => { accountStatus = error.message; render(); }); render();
+  }
+  if (form.id === 'account-login-form') submitAccountAuth(form, false);
+  if (form.id === 'account-register-form') submitAccountAuth(form, true);
   if (form.id === 'chat-form') sendChat(form);
 }
 function handleChange(event) {
