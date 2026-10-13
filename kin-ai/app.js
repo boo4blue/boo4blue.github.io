@@ -1,12 +1,13 @@
 const STORE_KEY = 'kin.studio.v1';
 const KEY_SESSION = 'kin.runtime.key';
+const GITHUB_TOKEN_KEY = 'kin.github.token';
 const LOCAL_MODEL_KEY = 'kin.local-model.cached';
 const LOCAL_MODEL_ID = 'onnx-community/Qwen2.5-0.5B-Instruct';
 const LOCAL_MODEL_NAME = 'Kin Local Quick';
 const MAX_PACKAGE_BYTES = 512 * 1024;
 const ROUTES = [
   ['home', 'Overview', 'home'], ['builder', 'AI Builder', 'spark'], ['model', 'Model Lab', 'cpu'], ['memory', 'Memory', 'memory'],
-  ['capabilities', 'Capabilities', 'plug'], ['run', 'Run your AI', 'chat'], ['runtime', 'Runtime', 'cpu'], ['library', 'My builds', 'layers']
+  ['capabilities', 'Capabilities', 'plug'], ['connections', 'Connections', 'plug'], ['run', 'Run your AI', 'chat'], ['runtime', 'Runtime', 'cpu'], ['library', 'My builds', 'layers']
 ];
 const ICONS = {
   home: '<path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',
@@ -46,7 +47,7 @@ function freshState() {
   return {
     activeBuildId: 'nova',
     builds: [{ id: 'nova', name: 'Nova', role: 'A thoughtful everyday copilot', agents: [], agentConfig, model: LOCAL_MODEL_ID, runtime: LOCAL_MODEL_NAME, runtimeConfig: { mode: 'local', provider: LOCAL_MODEL_NAME, endpoint: '', model: LOCAL_MODEL_ID }, modelConfig, temperature: 0.7, memoryEnabled: true, systemPrompt: 'You are Nova, a thoughtful everyday copilot. Be warm, clear, curious, and practical. Remember what matters to the person you are helping. Ask one useful question when it would improve your answer.', createdAt: now, updatedAt: now }],
-    memories: [], capabilities: [],
+    memories: [], capabilities: [], connections: { github: null, generic: [] },
     runtime: { provider: 'OpenAI-compatible', endpoint: '', model: 'llama3.2' },
     settings: { compact: false }
   };
@@ -65,10 +66,60 @@ function readState() {
       const ownerId = restored.activeBuildId || restored.builds[0].id;
       restored.memories = (restored.memories || []).map((entry) => ({ ...entry, buildId: entry.buildId || ownerId }));
       restored.capabilities = (restored.capabilities || []).map((entry) => ({ ...entry, buildId: entry.buildId || ownerId }));
+      restored.connections = { github: null, generic: [], ...(restored.connections || {}) };
       return restored;
     }
   } catch (error) { console.warn('Could not load saved studio state', error); }
   return freshState();
+}
+function githubConfig() { return state.connections?.github || null; }
+function githubToken() { return sessionStorage.getItem(GITHUB_TOKEN_KEY) || ''; }
+function githubRequest(path, options = {}) {
+  const token = githubToken();
+  if (!token) throw new Error('Connect GitHub in Connections first.');
+  const headers = { Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28', ...(options.headers || {}) };
+  headers.Authorization = `Bearer ${token}`;
+  return fetch(`https://api.github.com${path}`, { ...options, headers }).then(async (response) => {
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(data.message || `GitHub returned ${response.status}.`);
+    return data;
+  });
+}
+function githubPermission(name) { return githubConfig()?.permissions?.includes(name); }
+async function runConnectorCommand(content) {
+  const command = String(content).trim();
+  if (!/^\/github(?:\s|$)/i.test(command)) return null;
+  if (!githubConfig()?.enabled || !githubToken()) throw new Error('GitHub is not connected. Open Connections and connect it first.');
+  const parts = command.replace(/^\/github\s*/i, '').trim();
+  const [verb, ...rest] = parts.split(/\s+/);
+  if (!verb || verb === 'help') return 'GitHub tools:\n/github repos — list your repositories\n/github repo owner/name — inspect a repository\n/github issues owner/name — list open issues\n/github file owner/name path — read a repository file';
+  if (verb === 'repos') {
+    if (!githubPermission('repos')) throw new Error('Repository access is disabled for this connection.');
+    const repos = await githubRequest('/user/repos?per_page=50&sort=updated');
+    return repos.map((repo) => `${repo.full_name} — ${repo.description || 'No description'}${repo.private ? ' · private' : ''}`).join('\n') || '(no repositories found)';
+  }
+  const repo = rest[0];
+  if (!repo || !/^[^/]+\/[^/]+$/.test(repo)) throw new Error('Use owner/repository, for example /github repo octo-org/hello-world.');
+  if (verb === 'repo') {
+    if (!githubPermission('repos')) throw new Error('Repository access is disabled for this connection.');
+    const data = await githubRequest(`/repos/${repo}`);
+    return `${data.full_name}\n${data.description || 'No description'}\nDefault branch: ${data.default_branch}\n${data.html_url}`;
+  }
+  if (verb === 'issues') {
+    if (!githubPermission('issues')) throw new Error('Issue access is disabled for this connection.');
+    const issues = await githubRequest(`/repos/${repo}/issues?state=open&per_page=30`);
+    return issues.filter((issue) => !issue.pull_request).map((issue) => `#${issue.number} ${issue.title} — ${issue.html_url}`).join('\n') || '(no open issues)';
+  }
+  if (verb === 'file') {
+    if (!githubPermission('files')) throw new Error('File access is disabled for this connection.');
+    const path = rest.slice(1).join(' ');
+    if (!path) throw new Error('Add a file path, for example /github file owner/repo src/app.js.');
+    const data = await githubRequest(`/repos/${repo}/contents/${path.split('/').map(encodeURIComponent).join('/')}`);
+    if (Array.isArray(data)) return data.map((item) => `${item.type === 'dir' ? '📁' : '📄'} ${item.path}`).join('\n');
+    if (data.encoding !== 'base64') return String(data.content || '').slice(0, 12000);
+    return atob(String(data.content || '').replace(/\s/g, '')).slice(0, 12000);
+  }
+  throw new Error('Unknown GitHub command. Try /github help.');
 }
 let state = readState();
 let currentPage = 'home';
@@ -322,7 +373,7 @@ function sidebar() {
     <a class="brand" href="#home" data-route="home"><span class="brand-mark">K</span><span><span class="brand-name">kin</span><span class="brand-caption">AI, your way</span></span></a>
     <div class="workspace-pill"><div class="workspace-orb">Y</div><div><div class="workspace-label">Your studio</div><div class="workspace-sub">Private workspace</div></div></div>
     <div class="nav-label">Create</div><nav class="nav-list">${ROUTES.filter(([key]) => ['home', 'builder', 'model'].includes(key)).map((route) => navLink(route)).join('')}</nav>
-    <div class="nav-spacer"></div><div class="nav-label">Personalize</div><nav class="nav-list">${ROUTES.filter(([key]) => ['memory', 'capabilities'].includes(key)).map((route) => navLink(route)).join('')}</nav>
+    <div class="nav-spacer"></div><div class="nav-label">Personalize</div><nav class="nav-list">${ROUTES.filter(([key]) => ['memory', 'capabilities', 'connections'].includes(key)).map((route) => navLink(route)).join('')}</nav>
     <div class="nav-spacer"></div><div class="nav-label">Use & manage</div><nav class="nav-list">${ROUTES.filter(([key]) => ['run', 'runtime', 'library'].includes(key)).map((route) => navLink(route)).join('')}</nav>
     <div class="sidebar-bottom"><div class="runtime-mini"><div class="runtime-mini-head"><span>${escapeHTML(activeBuild().name)} runtime</span><span class="status-dot" style="background:${connected ? '#b2db68' : '#f1bc68'}"></span></div><p>${connected ? `Ready with ${runtimeMode() === 'cloud' ? 'cloud model' : 'local model'}.` : runtimeMode() === 'cloud' ? 'Cloud endpoint needs setup.' : 'Set up the free local model to chat.'}</p><button data-route="${runtimeMode() === 'cloud' ? 'runtime' : 'run'}">${connected ? 'Open AI chat' : runtimeMode() === 'cloud' ? 'Connect cloud model' : 'Set up local AI'} ${icon('arrow')}</button></div><div class="profile-chip"><div class="avatar">Y</div><div><div class="profile-name">Your workspace</div><div class="profile-mode">Saved on this device</div></div></div></div>
   </aside>`;
@@ -393,6 +444,19 @@ function renderCapabilities() {
   const list = items.length ? `<div class="cap-list">${items.map((item) => `<article class="cap-item"><div class="cap-icon">${icon(item.type === 'mcp' ? 'plug' : item.type === 'ide' ? 'cpu' : item.type === 'api' ? 'bolt' : 'book')}</div><div class="cap-body"><div class="cap-name">${escapeHTML(item.name)} <span class="cap-type">${escapeHTML(item.type)}</span></div><div class="cap-desc">${escapeHTML(item.description || item.fileName || item.endpoint || 'Personal capability package')}</div>${item.fileName ? `<div class="cap-desc mono">${escapeHTML(item.fileName)} · ${(item.size / 1024).toFixed(1)} KB</div>` : ''}</div><div class="cap-buttons"><button class="text-action" data-action="toggle-capability" data-id="${escapeHTML(item.id)}" aria-label="${item.enabled ? 'Disable' : 'Enable'} ${escapeHTML(item.name)}">${icon(item.enabled ? 'check' : 'eye')}</button><button class="text-action" data-action="delete-capability" data-id="${escapeHTML(item.id)}" aria-label="Remove ${escapeHTML(item.name)}">${icon('trash')}</button></div></article>`).join('')}</div>` : `<div class="empty-state"><div class="empty-icon">${icon('plug')}</div><div class="empty-title">Your capability shelf is empty</div><p class="empty-copy">Import your own skill, MCP manifest, OpenAPI file, IDE instructions, or other text-based package to keep it with your build.</p></div>`;
   shell(`${pageHeading(`Capabilities for ${escapeHTML(build.name)}`, 'Capabilities', 'Give this AI its own shelf of tools, skills, MCP manifests, API specs, IDE files, and other packages.', `<button class="btn btn-dark btn-small" data-action="add-package">${icon('plus')} Add package</button>`)}
     <div class="two-col content-space"><section class="panel"><div class="section-head"><div><h2>${escapeHTML(build.name)}’s packages <span class="badge">${items.length}</span></h2><p>Each AI build keeps its own capability package shelf.</p></div><button class="btn btn-light btn-small" data-action="add-package">${icon('plus')} Add</button></div>${list}</section><aside class="panel"><div class="drop-zone" id="drop-zone"><div class="drop-icon">${icon('upload')}</div><div class="drop-title">Bring your own files</div><div class="drop-copy">Any file type up to 512 KB. Skills, MCPs, APIs, IDE files, and more.</div><button class="btn btn-light btn-small" data-action="browse-files">Choose files</button><input class="sr-only" type="file" id="package-files" multiple /></div><div class="callout" style="margin-top:13px"><strong>Packages are stored, not executed.</strong> Kin does not run uploaded code or connect to MCP servers automatically. Review files for private keys before exporting or using them with a trusted runtime.</div><button class="btn btn-light btn-small" style="margin-top:12px" data-route="library">Export this AI with packages ${icon('arrow')}</button></aside></div>`);
+}
+function renderConnections() {
+  const github = githubConfig() || { owner: '', repo: '', enabled: false, permissions: ['repos', 'issues', 'files'] };
+  const connected = Boolean(github.enabled && githubToken());
+  const generic = Array.isArray(state.connections?.generic) ? state.connections.generic : [];
+  shell(`${pageHeading('Give your AI useful reach', 'Connections', 'Connect services your AI can inspect with explicit, user-invoked tools. Tokens stay in this browser session.', `<button class="btn btn-light btn-small" data-route="run">Try in chat ${icon('arrow')}</button>`)}
+    <div class="connections-grid content-space"><section class="panel connection-card"><div class="connection-card-head"><div class="connection-logo github-logo">GH</div><div><div class="panel-title">GitHub</div><p class="panel-copy">Let your AI list repositories, inspect metadata, read files, and review open issues.</p></div><span class="connection-status ${connected ? 'connected' : ''}">${connected ? 'CONNECTED' : 'NOT CONNECTED'}</span></div>
+      <div class="callout"><strong>Explicit commands only.</strong> In chat, use <code>/github repos</code>, <code>/github repo owner/name</code>, <code>/github issues owner/name</code>, or <code>/github file owner/name path</code>. Kin never sends a write request through this connector.</div>
+      <form id="github-connection-form" class="connection-form"><div class="field-row"><div class="field"><label for="github-owner">Default owner</label><input id="github-owner" class="input" name="owner" value="${escapeHTML(github.owner || '')}" placeholder="your username" /></div><div class="field"><label for="github-repo">Default repository</label><input id="github-repo" class="input" name="repo" value="${escapeHTML(github.repo || '')}" placeholder="optional repo" /></div></div>
+        <div class="field"><label for="github-token">Personal access token</label><input id="github-token" class="input" name="token" type="password" autocomplete="new-password" placeholder="${connected ? 'Token saved for this session' : 'Paste a GitHub token'}" /><div class="field-hint">Use a fine-grained token with read-only repository and issue access. It is never stored in exports or localStorage. <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener noreferrer">Create token</a></div></div>
+        <div class="field"><label>Allowed read tools</label><div class="check-grid connection-checks"><label class="check-card compact"><input type="checkbox" name="repos" ${github.permissions?.includes('repos') ? 'checked' : ''}><span><strong>Repositories</strong><small>List and inspect repos</small></span></label><label class="check-card compact"><input type="checkbox" name="issues" ${github.permissions?.includes('issues') ? 'checked' : ''}><span><strong>Issues</strong><small>Read open issues</small></span></label><label class="check-card compact"><input type="checkbox" name="files" ${github.permissions?.includes('files') ? 'checked' : ''}><span><strong>Files</strong><small>Read file contents</small></span></label></div></div>
+        <div class="form-actions"><button type="button" class="text-action" data-action="disconnect-github">Disconnect</button><div class="form-actions-end"><button class="btn btn-dark btn-small">${icon('plug')} Test & save GitHub</button></div></div></form></section>
+      <aside class="panel connection-card"><div class="panel-title">Other services</div><p class="panel-copy">Save an OpenAPI, REST, or MCP-style service as a connection card. It will be available to your AI’s blueprint, but Kin will not call arbitrary endpoints automatically.</p><form id="generic-connection-form" class="connection-form"><div class="field"><label for="generic-name">Service name</label><input id="generic-name" class="input" name="name" required placeholder="e.g. Linear workspace" /></div><div class="field"><label for="generic-endpoint">API or MCP endpoint</label><input id="generic-endpoint" class="input" name="endpoint" type="url" required placeholder="https://api.example.com" /></div><div class="field"><label for="generic-token">Session token (optional)</label><input id="generic-token" class="input" name="token" type="password" autocomplete="new-password" placeholder="Stored only until this tab closes" /></div><button class="btn btn-light btn-small">${icon('plus')} Add connection</button></form>${generic.length ? `<div class="saved-connections">${generic.map((item) => `<div class="saved-connection"><div><strong>${escapeHTML(item.name)}</strong><small>${escapeHTML(item.endpoint)}</small></div><button class="text-action" data-action="delete-connection" data-id="${escapeHTML(item.id)}" aria-label="Remove ${escapeHTML(item.name)}">${icon('trash')}</button></div>`).join('')}</div>` : `<div class="empty-connection">No additional services yet.</div>`}<div class="separator"></div><div class="callout"><strong>Safer by default.</strong> Add a dedicated connector when you want live actions. Review scopes and keep write access off unless you intentionally build an approval flow.</div></aside></div>`);
 }
 function renderRuntime() {
   const build = activeBuild();
@@ -477,6 +541,7 @@ function render() {
   if (currentPage === 'model') return renderModelLab();
   if (currentPage === 'memory') return renderMemory();
   if (currentPage === 'capabilities') return renderCapabilities();
+  if (currentPage === 'connections') return renderConnections();
   if (currentPage === 'runtime') return renderRuntime();
   if (currentPage === 'run') return renderRun();
   if (currentPage === 'library') return renderLibrary();
@@ -551,7 +616,8 @@ async function sendChat(form) {
   const agentInstructions = agent ? `\n\nFor this request, act as the specialist agent “${agent.name}”, focused on ${agent.focus}.${agent.instructions ? ` Follow these agent instructions: ${agent.instructions}` : ''} Use your specialty to answer the user's request directly.` : '';
   const harness = build.agentConfig || {};
   const toolSummary = capabilitiesFor(build).filter((entry) => entry.enabled !== false).map((entry) => `${entry.name} (${entry.type})`).slice(0, 12).join(', ');
-  const harnessInstructions = `\n\nAgent harness: use a ${harness.reasoning === 'deep' ? 'deep, deliberate' : harness.reasoning === 'fast' ? 'fast' : 'balanced'} workflow, up to ${Number(harness.maxSteps || 8)} tool steps. ${harness.approval === 'trusted' ? 'Trusted tools may run automatically.' : 'Ask before making writes or running commands.'} ${harness.filesystem && harness.bridgeUrl ? `A local filesystem bridge is configured at ${harness.bridgeUrl}.` : 'No local filesystem bridge is active.'} ${harness.terminal && harness.bridgeUrl ? 'Terminal tools are enabled through that bridge.' : 'Terminal tools are disabled.'}${toolSummary ? ` Available attached capabilities: ${toolSummary}.` : ''}`;
+  const connectedTools = githubConfig()?.enabled && githubToken() ? ' GitHub read tools are connected. The user can invoke /github help, /github repos, /github repo owner/name, /github issues owner/name, or /github file owner/name path.' : '';
+  const harnessInstructions = `\n\nAgent harness: use a ${harness.reasoning === 'deep' ? 'deep, deliberate' : harness.reasoning === 'fast' ? 'fast' : 'balanced'} workflow, up to ${Number(harness.maxSteps || 8)} tool steps. ${harness.approval === 'trusted' ? 'Trusted tools may run automatically.' : 'Ask before making writes or running commands.'} ${harness.filesystem && harness.bridgeUrl ? `A local filesystem bridge is configured at ${harness.bridgeUrl}.` : 'No local filesystem bridge is active.'} ${harness.terminal && harness.bridgeUrl ? 'Terminal tools are enabled through that bridge.' : 'Terminal tools are disabled.'}${toolSummary ? ` Available attached capabilities: ${toolSummary}.` : ''}${connectedTools}`;
   const system = `${build.systemPrompt || `You are ${build.name}, ${build.role}.`}${memories ? `\n\nThe user has chosen to share these saved memories with you:\n${memories}` : ''}${agentInstructions}${harnessInstructions}`;
   const messages = [{ role: 'system', content: system }, ...chatMessages.slice(-20).map(({ role, content: text }) => ({ role, content: text }))];
   const assistantMessage = {
@@ -567,16 +633,22 @@ async function sendChat(form) {
     if (bridgeAnswer !== null) {
       answer = bridgeAnswer;
       assistantMessage.activityRouting = 'Executed an explicitly requested local bridge tool.';
-    } else if (runtimeMode(build) === 'local') {
-      answer = await generateLocalReply(messages, Number(build.temperature ?? 0.7));
     } else {
-      const headers = { 'Content-Type': 'application/json' };
-      const key = sessionStorage.getItem(keyFor(build));
-      if (key) headers.Authorization = `Bearer ${key}`;
-      const response = await fetch(runtime.endpoint, { method: 'POST', headers, body: JSON.stringify({ model: runtime.model || build.model, messages, temperature: Number(build.temperature ?? 0.7) }) });
-      if (!response.ok) throw new Error(`Runtime returned ${response.status}. Check the endpoint, model name, and server logs.`);
-      const result = await response.json();
-      answer = result?.choices?.[0]?.message?.content || result?.message?.content || result?.response;
+      const connectorAnswer = await runConnectorCommand(content);
+      if (connectorAnswer !== null) {
+        answer = connectorAnswer;
+        assistantMessage.activityRouting = 'Executed an explicitly requested connected service tool.';
+      } else if (runtimeMode(build) === 'local') {
+        answer = await generateLocalReply(messages, Number(build.temperature ?? 0.7));
+      } else {
+        const headers = { 'Content-Type': 'application/json' };
+        const key = sessionStorage.getItem(keyFor(build));
+        if (key) headers.Authorization = `Bearer ${key}`;
+        const response = await fetch(runtime.endpoint, { method: 'POST', headers, body: JSON.stringify({ model: runtime.model || build.model, messages, temperature: Number(build.temperature ?? 0.7) }) });
+        if (!response.ok) throw new Error(`Runtime returned ${response.status}. Check the endpoint, model name, and server logs.`);
+        const result = await response.json();
+        answer = result?.choices?.[0]?.message?.content || result?.message?.content || result?.response;
+      }
     }
     if (typeof answer !== 'string' || !answer.trim()) throw new Error('The model did not return a chat message.');
     assistantMessage.content = answer.trim(); assistantMessage.activityStatus = 'complete';
@@ -637,6 +709,8 @@ function handleClick(event) {
   if (action === 'open-chat') { currentPage = 'run'; render(); }
   if (action === 'clear-runtime') { selectLocalRuntime(); render(); toast('Switched this AI to the local model.'); }
   if (action === 'clear-api-key') { sessionStorage.removeItem(keyFor()); render(); toast('This AI’s API key removed from this browser session.'); }
+  if (action === 'disconnect-github') { state.connections.github = null; sessionStorage.removeItem(GITHUB_TOKEN_KEY); saveState(); render(); toast('GitHub disconnected from this browser.'); }
+  if (action === 'delete-connection') { state.connections.generic = (state.connections.generic || []).filter((entry) => entry.id !== itemId); saveState(); render(); toast('Connection removed.'); }
   if (action === 'select-build') { state.activeBuildId = itemId; saveState(); render(); toast(`${activeBuild().name} is now your active build.`); }
   if (action === 'export-build') { const build = state.builds.find((entry) => entry.id === itemId); if (build) exportBuild(build); }
   if (action === 'export-all') { downloadJSON('kin-studio-backup.kin.json', { format: 'kin-studio', version: 1, exportedAt: new Date().toISOString(), ...state }); toast('Studio backup exported. Runtime keys are never included.'); }
@@ -699,6 +773,21 @@ function handleSubmit(event) {
     const data = new FormData(form); const name = String(data.get('name')).trim();
     state.capabilities.unshift({ id: id(), buildId: activeBuild().id, name, type: String(data.get('type')), endpoint: String(data.get('endpoint')).trim(), description: String(data.get('description')).trim(), enabled: true, createdAt: new Date().toISOString() });
     saveState(); modalType = ''; currentPage = 'capabilities'; render(); toast('Capability added to your shelf.');
+  }
+  if (form.id === 'github-connection-form') {
+    const data = new FormData(form); const token = String(data.get('token') || '').trim() || githubToken();
+    if (!token) { toast('Paste a GitHub token first.', true); return; }
+    state.connections.github = { enabled: true, owner: String(data.get('owner') || '').trim(), repo: String(data.get('repo') || '').trim(), permissions: ['repos', 'issues', 'files'].filter((name) => data.get(name) === 'on'), updatedAt: new Date().toISOString() };
+    sessionStorage.setItem(GITHUB_TOKEN_KEY, token);
+    githubRequest('/user').then((user) => { saveState(); render(); toast(`Connected GitHub as ${user.login}.`); }).catch((error) => { state.connections.github = null; sessionStorage.removeItem(GITHUB_TOKEN_KEY); saveState(); render(); toast(`GitHub connection failed: ${error.message}`, true); });
+  }
+  if (form.id === 'generic-connection-form') {
+    const data = new FormData(form); const endpoint = String(data.get('endpoint')).trim();
+    try { const parsed = new URL(endpoint); if (!['http:', 'https:'].includes(parsed.protocol)) throw new Error(); } catch { toast('Enter a valid http or https service URL.', true); return; }
+    const item = { id: id(), name: String(data.get('name')).trim(), endpoint, createdAt: new Date().toISOString() };
+    state.connections.generic = [item, ...(state.connections.generic || [])].slice(0, 20);
+    const token = String(data.get('token') || '').trim(); if (token) sessionStorage.setItem(`kin.connection.${item.id}`, token);
+    saveState(); render(); toast(`${item.name} added. Add a dedicated tool before making live requests.`);
   }
   if (form.id === 'chat-form') sendChat(form);
 }
