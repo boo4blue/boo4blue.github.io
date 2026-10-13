@@ -21,8 +21,19 @@
     get loc() { try { return (typeof userLoc !== "undefined" && userLoc) ? [userLoc.lat, userLoc.lng] : null; } catch (e) { return null; } },
     set loc(v) { try { if (v && typeof userLoc !== "undefined") userLoc = { lat: v[0], lng: v[1] }; } catch (e) {} }
   };
-  /* app `locate(true)` -> site showUserLocation */
-  var locate = function () { try { if (typeof showUserLocation === "function") showUserLocation(true); } catch (e) {} };
+  /* app `locate(true)` -> one-shot geolocation, SILENT (the site's showUserLocation
+     pops a blocking alert() when location is denied/unavailable, which would freeze
+     the planner's getFrom() poll; here we just fill userLoc and let getFrom fall
+     back to the map center) */
+  var locate = function () {
+    try {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (pos) {
+          try { if (typeof userLoc !== "undefined") userLoc = { lat: pos.coords.latitude, lng: pos.coords.longitude }; } catch (e) {}
+        }, function () {}, { timeout: 8000, maximumAge: 60000 });
+      }
+    } catch (e) {}
+  };
   /* app `toast(msg)` -> site miniToast */
   var toast = function (m) { try { if (typeof miniToast === "function") miniToast(m); } catch (e) {} };
   /* app `catIcon(r)` -> site PIN_EMOJI */
@@ -436,7 +447,7 @@
       '<input type="search" id="tpQ" placeholder="' + tx("Search places…", "Buscar lugares…") + '" value="' + esc(filt.q) + '">' +
       '<div class="tp-row"><select id="tpCat">' + cats + '</select><label style="white-space:nowrap;font-size:calc(12.5px*var(--ts,1))"><input type="checkbox" id="tpOpen"' + (filt.open ? " checked" : "") + "> " + tx("Open now", "Abierto ahora") + "</label></div>" +
       '<div id="tpList"></div></div>' +
-      '<div class="tp-bar"><button data-act="clear">' + tx("Clear", "Borrar") + '</button><button data-act="route">🗺️ ' + tx("Route stops", "Trazar ruta") + '</button><button class="go" data-act="go"></button></div>';
+      '<div class="tp-bar"><button data-act="clear">' + tx("Clear", "Borrar") + '</button><button data-act="route">🗺️ ' + tx("Route stops", "Trazar ruta") + '</button><button class="go" data-act="go" disabled>" + tx("Select a place", "Elige un lugar") + "</button></div>';
     wire({});
     var q = sheet.querySelector("#tpQ");
     q.oninput = function () { filt.q = q.value; list(); };
