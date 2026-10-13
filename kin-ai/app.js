@@ -180,6 +180,47 @@ function capabilityRequestFromText(content) {
   const kind = /\b(plugin|mcp server)\b/i.test(text) ? 'plugin' : /\btool\b/i.test(text) ? 'tool' : 'skill';
   return { kind, prompt: text };
 }
+function projectRequestFromText(content) {
+  const text = String(content).trim();
+  if (!/\b(html|css|javascript|js|website|web app|apk|android app|android project|file|files|project)\b/i.test(text)) return null;
+  if (!/\b(create|make|build|generate|write|code|develop|add)\b/i.test(text)) return null;
+  const platform = /\b(apk|android app|android project)\b/i.test(text) ? 'android' : 'web';
+  return { platform, prompt: text };
+}
+function parseProjectOutput(text, request) {
+  let data = null;
+  const candidate = String(text).match(/\{[\s\S]*\}/)?.[0];
+  if (candidate) { try { data = JSON.parse(candidate); } catch { /* preserve a useful error below */ } }
+  const files = Array.isArray(data?.files) ? data.files.map((file) => ({
+    path: String(file.path || 'file.txt').replace(/^\/+/, '').replace(/\.\.(\/|\\)/g, ''),
+    content: String(file.content || ''),
+    mime: String(file.mime || 'text/plain')
+  })).filter((file) => file.path && file.content.length <= 200000).slice(0, 40) : [];
+  if (!files.length) throw new Error('The model did not return usable project files. Ask it to try again.');
+  return {
+    name: String(data?.name || (request.platform === 'android' ? 'Kin Android project' : 'Kin web project')).trim().slice(0, 80),
+    description: String(data?.description || `Generated ${request.platform} project`).trim().slice(0, 500),
+    platform: request.platform,
+    files
+  };
+}
+async function generateProjectArtifact(request, build = activeBuild()) {
+  if (!runtimeReady(build)) throw new Error('Load a local model or connect a cloud model before asking the AI to create files.');
+  const rules = request.platform === 'android'
+    ? 'Create a small Android Studio project using Kotlin and Jetpack Compose. Include settings.gradle.kts, build.gradle.kts, app/build.gradle.kts, AndroidManifest.xml, and a MainActivity.kt. It must be a coherent starter project. Do not include binary APK data.'
+    : 'Create a self-contained browser project. Include index.html, styles.css, and app.js. The HTML must link the CSS and JavaScript. Use accessible controls and no external dependencies unless the user specifically asks for one.';
+  const instruction = `You generate downloadable project files for Kin. User request: ${request.prompt}\n\n${rules}\n\nReturn only one valid JSON object with exactly: name (string), description (string), files (array of objects with path, content, mime). Keep each file text, keep the whole response under 30000 characters, and never wrap JSON in markdown. Do not include secrets, API keys, or executable binaries.`;
+  const messages = [{ role: 'system', content: instruction }, { role: 'user', content: `Build this ${request.platform} project for ${build.name}.` }];
+  const output = runtimeMode(build) === 'local' ? await generateLocalReply(messages, 0.35) : (await generateCloudReply(runtimeFor(build), messages, 0.35, build)).answer;
+  const project = parseProjectOutput(output, request);
+  const saved = { id: id(), buildId: build.id, name: project.name, type: 'project', description: project.description, platform: project.platform, projectFiles: project.files, content: JSON.stringify(project.files), encoding: 'text', enabled: true, generated: true, createdAt: new Date().toISOString() };
+  state.capabilities.unshift(saved); build.updatedAt = new Date().toISOString(); saveState();
+  return { ...project, id: saved.id };
+}
+function projectMarkup(project) {
+  if (!project?.files?.length) return '';
+  return `<div class="project-result"><strong>${escapeHTML(project.name)}</strong><span>${project.files.length} file${project.files.length === 1 ? '' : 's'} · ${escapeHTML(project.platform)}</span><div class="project-actions"><button class="btn btn-light btn-small" data-action="download-project" data-project-id="${escapeHTML(project.id || '')}">${icon('download')} Download project</button>${project.platform === 'web' ? `<button class="btn btn-dark btn-small" data-action="preview-project" data-project-id="${escapeHTML(project.id || '')}">${icon('eye')} Preview in Kin</button>` : ''}</div></div>`;
+}
 function runGeneratedToolRoute(text, build) {
   const lower = String(text).toLowerCase();
   const entries = capabilitiesFor(build).filter((entry) => entry.enabled !== false && entry.type === 'tool' && entry.toolDefinition);
@@ -624,8 +665,8 @@ function renderMemory() {
 function renderCapabilities() {
   const build = activeBuild();
   const items = capabilitiesFor();
-  const list = items.length ? `<div class="cap-list">${items.map((item) => `<article class="cap-item"><div class="cap-icon">${icon(['mcp', 'plugin'].includes(item.type) ? 'plug' : ['ide', 'tool'].includes(item.type) ? 'cpu' : item.type === 'api' ? 'bolt' : 'book')}</div><div class="cap-body"><div class="cap-name">${escapeHTML(item.name)} <span class="cap-type">${escapeHTML(item.type)}</span>${item.generated ? ' <span class="cap-type">AI made</span>' : ''}</div><div class="cap-desc">${escapeHTML(item.description || item.fileName || item.endpoint || 'Personal capability package')}</div>${item.fileName ? `<div class="cap-desc mono">${escapeHTML(item.fileName)} · ${(item.size / 1024).toFixed(1)} KB</div>` : ''}${item.content || item.manifest ? `<details class="cap-preview"><summary>Preview ${item.manifest ? 'instructions and manifest' : 'instructions'}</summary>${item.content ? `<pre>${escapeHTML(item.content.slice(0, 5000))}</pre>` : ''}${item.manifest ? `<pre>${escapeHTML(item.manifest.slice(0, 5000))}</pre>` : ''}</details>` : ''}</div><div class="cap-buttons"><button class="text-action" data-action="toggle-capability" data-id="${escapeHTML(item.id)}" aria-label="${item.enabled ? 'Disable' : 'Enable'} ${escapeHTML(item.name)}">${icon(item.enabled ? 'check' : 'eye')}</button><button class="text-action" data-action="delete-capability" data-id="${escapeHTML(item.id)}" aria-label="Remove ${escapeHTML(item.name)}">${icon('trash')}</button></div></article>`).join('')}</div>` : `<div class="empty-state"><div class="empty-icon">${icon('plug')}</div><div class="empty-title">Your capability shelf is empty</div><p class="empty-copy">Import your own skill, MCP manifest, OpenAPI file, IDE instructions, or other text-based package to keep it with your build.</p></div>`;
-  shell(`${pageHeading(`Capabilities for ${escapeHTML(build.name)}`, 'Capabilities', 'Ask your AI to make a skill, reusable tool spec, or plugin manifest. Saved skills become part of future prompts.', `<button class="btn btn-dark btn-small" data-action="create-capability">${icon('spark')} Make with AI</button>`)}
+  const list = items.length ? `<div class="cap-list">${items.map((item) => `<article class="cap-item"><div class="cap-icon">${icon(item.type === 'project' ? 'layers' : ['mcp', 'plugin'].includes(item.type) ? 'plug' : ['ide', 'tool'].includes(item.type) ? 'cpu' : item.type === 'api' ? 'bolt' : 'book')}</div><div class="cap-body"><div class="cap-name">${escapeHTML(item.name)} <span class="cap-type">${escapeHTML(item.type)}</span>${item.generated ? ' <span class="cap-type">AI made</span>' : ''}</div><div class="cap-desc">${escapeHTML(item.description || item.fileName || item.endpoint || 'Personal capability package')}</div>${item.fileName ? `<div class="cap-desc mono">${escapeHTML(item.fileName)} · ${(item.size / 1024).toFixed(1)} KB</div>` : ''}${item.type === 'project' ? `<div class="cap-desc mono">${(item.projectFiles || []).length} files · ${escapeHTML(item.platform || 'project')}</div><div class="project-actions"><button class="btn btn-light btn-small" data-action="download-project" data-id="${escapeHTML(item.id)}">${icon('download')} Download</button>${item.platform === 'web' ? `<button class="btn btn-dark btn-small" data-action="preview-project" data-id="${escapeHTML(item.id)}">${icon('eye')} Preview</button>` : ''}</div>` : ''}${item.content || item.manifest ? `<details class="cap-preview"><summary>Preview ${item.manifest ? 'instructions and manifest' : 'instructions'}</summary>${item.content ? `<pre>${escapeHTML(item.content.slice(0, 5000))}</pre>` : ''}${item.manifest ? `<pre>${escapeHTML(item.manifest.slice(0, 5000))}</pre>` : ''}</details>` : ''}</div><div class="cap-buttons"><button class="text-action" data-action="toggle-capability" data-id="${escapeHTML(item.id)}" aria-label="${item.enabled ? 'Disable' : 'Enable'} ${escapeHTML(item.name)}">${icon(item.enabled ? 'check' : 'eye')}</button><button class="text-action" data-action="delete-capability" data-id="${escapeHTML(item.id)}" aria-label="Remove ${escapeHTML(item.name)}">${icon('trash')}</button></div></article>`).join('')}</div>` : `<div class="empty-state"><div class="empty-icon">${icon('plug')}</div><div class="empty-title">Your capability shelf is empty</div><p class="empty-copy">Import your own skill, MCP manifest, OpenAPI file, IDE instructions, or other text-based package to keep it with your build.</p></div>`;
+  shell(`${pageHeading(`Capabilities for ${escapeHTML(build.name)}`, 'Capabilities', 'Ask your AI to make skills, files, websites, Android projects, reusable tools, or plugin manifests. Generated code stays reviewable until you run it.', `<button class="btn btn-dark btn-small" data-action="create-capability">${icon('spark')} Make with AI</button>`)}
     <div class="two-col content-space"><section class="panel"><div class="section-head"><div><h2>${escapeHTML(build.name)}’s packages <span class="badge">${items.length}</span></h2><p>Each AI build keeps its own capability package shelf.</p></div><button class="btn btn-light btn-small" data-action="add-package">${icon('plus')} Add</button></div>${list}</section><aside class="panel"><div class="drop-zone" id="drop-zone"><div class="drop-icon">${icon('upload')}</div><div class="drop-title">Bring your own files</div><div class="drop-copy">Any file type up to 512 KB. Skills, MCPs, APIs, IDE files, and more.</div><button class="btn btn-light btn-small" data-action="browse-files">Choose files</button><input class="sr-only" type="file" id="package-files" multiple /></div><div class="callout" style="margin-top:13px"><strong>Generated packages are drafts.</strong> Skills are added to future AI instructions. Tool code and plugin manifests are saved for review and export; Kin does not execute generated code.</div><button class="btn btn-light btn-small" style="margin-top:12px" data-route="library">Export this AI with packages ${icon('arrow')}</button></aside></div>`);
 }
 function renderConnections() {
@@ -701,7 +742,7 @@ function renderRun() {
   }
   const log = chatMessages.length ? chatMessages.map((message, index) => {
     const waiting = isSending && index === chatMessages.length - 1 && message.role === 'assistant' && !message.content;
-    const body = message.role === 'assistant' ? `<div data-answer>${waiting ? '<span class="thinking-indicator" id="thinking-status">Thinking on your device…</span>' : escapeHTML(message.content)}</div>${activityMarkup(message)}` : escapeHTML(message.content);
+    const body = message.role === 'assistant' ? `<div data-answer>${waiting ? '<span class="thinking-indicator" id="thinking-status">Thinking on your device…</span>' : escapeHTML(message.content)}</div>${message.project ? projectMarkup(message.project) : ''}${activityMarkup(message)}` : escapeHTML(message.content);
     return `<div class="message ${message.role}"><div class="message-bubble">${body}</div><div class="message-time">${message.role === 'user' ? 'You' : escapeHTML(build.name)} · ${new Intl.DateTimeFormat(undefined, { hour: 'numeric', minute: '2-digit' }).format(new Date(message.time))}</div></div>`;
   }).join('') : `<div class="chat-empty"><div class="preview-avatar">${icon('spark')}</div><h3>${ready ? `Meet ${escapeHTML(build.name)}` : 'Your conversation starts here'}</h3><p>${ready ? 'Try a question and see how your personality settings shape the answer.' : 'Connect a model runtime to start chatting. Your build and memory are already saved locally.'}</p></div>`;
   const interrupted = [...chatMessages].reverse().find((message) => message.activityStatus === 'interrupted');
@@ -727,6 +768,14 @@ function renderModal() {
   if (modalType === 'memory') return `<div class="modal-backdrop" data-action="close-modal"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-head"><h2 class="modal-title" id="modal-title">Add a memory</h2><button class="modal-close" data-action="close-modal" aria-label="Close">${icon('close')}</button></div><p class="panel-copy" style="margin-top:7px">Keep it short, useful, and something you want your AI to remember.</p><form id="memory-form"><div class="field"><label for="memory-text">Memory</label><textarea id="memory-text" class="textarea" name="text" maxlength="600" required placeholder="I prefer examples before explanations…"></textarea></div><div class="modal-actions"><button type="button" class="btn btn-light btn-small" data-action="close-modal">Cancel</button><button class="btn btn-dark btn-small">Save memory</button></div></form></section></div>`;
   if (modalType === 'create-capability') return `<div class="modal-backdrop" data-action="close-modal"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-head"><h2 class="modal-title" id="modal-title">Ask your AI to make a capability</h2><button class="modal-close" data-action="close-modal" aria-label="Close">${icon('close')}</button></div><p class="panel-copy" style="margin-top:7px">The AI will generate a draft and save it to this build. Skills become instructions; tool and plugin code stays reviewable and is not run by Kin.</p><form id="capability-creator-form"><div class="field"><label for="creator-kind">Capability type</label><select id="creator-kind" class="select" name="kind"><option value="skill">Skill / reusable instructions</option><option value="tool">Tool specification</option><option value="plugin">Plugin / MCP manifest draft</option></select></div><div class="field"><label for="creator-purpose">What should it do?</label><textarea id="creator-purpose" class="textarea" name="purpose" maxlength="1500" required placeholder="Create a coding review skill that checks accessibility, bugs, and performance…"></textarea></div><div class="modal-actions"><button type="button" class="btn btn-light btn-small" data-action="close-modal">Cancel</button><button class="btn btn-dark btn-small">Generate and save</button></div></form></section></div>`;
   if (modalType === 'package') return `<div class="modal-backdrop" data-action="close-modal"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-head"><h2 class="modal-title" id="modal-title">Add a capability</h2><button class="modal-close" data-action="close-modal" aria-label="Close">${icon('close')}</button></div><p class="panel-copy" style="margin-top:7px">Add a link or manifest to your private package shelf. Kin stores it for export; it does not execute package code.</p><form id="package-form"><div class="field"><label for="package-name">Name</label><input id="package-name" class="input" name="name" maxlength="70" required placeholder="e.g. GitHub MCP server" /></div><div class="field-row"><div class="field"><label for="package-type">Package type</label><select id="package-type" class="select" name="type"><option value="skill">Skill / instructions</option><option value="tool">Tool specification</option><option value="plugin">Plugin manifest</option><option value="mcp">MCP server</option><option value="api">API / OpenAPI</option><option value="ide">IDE setup</option><option value="other">Other</option></select></div><div class="field"><label for="package-endpoint">Optional URL</label><input id="package-endpoint" class="input" name="endpoint" type="url" placeholder="https://…" /></div></div><div class="field"><label for="package-desc">What is it for?</label><textarea id="package-desc" class="textarea" style="min-height:70px" name="description" maxlength="500" placeholder="What does this package add to your workflow?"></textarea></div><div class="modal-actions"><button type="button" class="btn btn-light btn-small" data-action="close-modal">Cancel</button><button class="btn btn-dark btn-small">Add to shelf</button></div></form></section></div>`;
+  if (modalType === 'project-preview') {
+    const files = modalData?.files || [];
+    const html = files.find((file) => /(^|\/)index\.html?$/i.test(file.path))?.content || files.find((file) => /\.html?$/i.test(file.path))?.content || '<!doctype html><html><body><p>No HTML entry file was generated.</p></body></html>';
+    const styles = files.filter((file) => /\.css$/i.test(file.path)).map((file) => `<style>${file.content}</style>`).join('');
+    const scripts = files.filter((file) => /\.js$/i.test(file.path)).map((file) => `<script>${file.content.replace(/<\/script/gi, '<\\/script')}<\/script>`).join('');
+    const srcdoc = html.replace(/<\/head>/i, `${styles}</head>`).replace(/<\/body>/i, `${scripts}</body>`);
+    return `<div class="modal-backdrop" data-action="close-modal"><section class="modal project-preview-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-head"><h2 class="modal-title" id="modal-title">${escapeHTML(modalData?.name || 'Web preview')}</h2><button class="modal-close" data-action="close-modal" aria-label="Close">${icon('close')}</button></div><p class="panel-copy">This preview runs in a sandboxed frame. It cannot access Kin, your files, or your tokens.</p><iframe class="project-preview-frame" title="Generated web project preview" sandbox="allow-scripts" srcdoc="${escapeHTML(srcdoc)}"></iframe></section></div>`;
+  }
   if (modalType === 'new-build') return `<div class="modal-backdrop" data-action="close-modal"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-head"><h2 class="modal-title" id="modal-title">Start a new AI build</h2><button class="modal-close" data-action="close-modal" aria-label="Close">${icon('close')}</button></div><p class="panel-copy" style="margin-top:7px">Create a fresh personality and choose how it should help.</p><form id="new-build-form"><div class="field"><label for="new-build-name">Name</label><input id="new-build-name" class="input" name="name" maxlength="48" required placeholder="e.g. Atlas" /></div><div class="field"><label for="new-build-role">Role</label><input id="new-build-role" class="input" name="role" maxlength="90" placeholder="e.g. A creative writing partner" /></div><div class="modal-actions"><button type="button" class="btn btn-light btn-small" data-action="close-modal">Cancel</button><button class="btn btn-dark btn-small">Create build ${icon('arrow')}</button></div></form></section></div>`;
   return '';
 }
@@ -758,6 +807,12 @@ function downloadJSON(filename, data) {
   const link = document.createElement('a');
   link.href = url; link.download = filename; link.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+function downloadProject(project) {
+  if (!project?.files?.length) return;
+  const safeName = project.name.toLowerCase().replace(/[^a-z0-9]+/g, '-') || 'kin-project';
+  downloadJSON(`${safeName}.kin-project.json`, { format: 'kin-project', version: 1, exportedAt: new Date().toISOString(), name: project.name, platform: project.platform, files: project.files });
+  toast('Project bundle downloaded. Open it in an editor or Android Studio.');
 }
 function exportBuild(build) {
   const bundle = { format: 'kin-build', version: 1, exportedAt: new Date().toISOString(), build, memories: memoriesFor(build), capabilities: capabilitiesFor(build) };
@@ -802,6 +857,7 @@ async function sendChat(form) {
   const content = input.value.trim();
   if (!content || isSending) return;
   const build = activeBuild();
+  const projectRequest = projectRequestFromText(content);
   const capabilityRequest = capabilityRequestFromText(content);
   const autoCommand = autoToolCommand(content, build);
   if (!runtimeReady(build) && !autoCommand) { toast(runtimeMode(build) === 'local' ? 'Set up the local model before chatting.' : 'Connect a cloud model before chatting.', true); return; }
@@ -828,7 +884,13 @@ async function sendChat(form) {
   chatMessages.push(assistantMessage); isSending = true; saveChat(); render();
   try {
     let answer; let toolOutput = '';
-    if (capabilityRequest) {
+    if (projectRequest) {
+      const project = await generateProjectArtifact(projectRequest, build);
+      assistantMessage.project = project;
+      answer = `Created ${project.name} with ${project.files.length} files. You can preview the web project in Kin or download the project files. Android requests produce source files for Android Studio; Kin cannot compile an APK inside the browser.`;
+      assistantMessage.activityPlan = `Generate and save a runnable ${project.platform} project from the requested files.`;
+      assistantMessage.activityRouting = `Generated ${project.files.length} reviewable project files and saved them to Capabilities.`;
+    } else if (capabilityRequest) {
       const artifact = await generateCapabilityArtifact(capabilityRequest.prompt, capabilityRequest.kind, build);
       answer = `Created and enabled ${artifact.name} as a ${artifact.type}. It is saved in Capabilities and will be included in future prompts when relevant. ${artifact.manifest && artifact.type === 'plugin' ? 'The plugin manifest is a draft for review; connect it to a compatible runtime before use.' : artifact.type === 'tool' && artifact.toolDefinition?.operation && artifact.toolDefinition.operation !== 'none' ? `Its ${artifact.toolDefinition.operation} action can run when you use one of these phrases: ${(artifact.toolDefinition.triggers || []).join(', ') || 'its configured trigger'}, if the matching connection is enabled.` : artifact.type === 'tool' ? 'This tool is saved as a specification; it needs a supported connection or runtime to execute.' : ''}`;
       assistantMessage.activityRouting = `Generated and saved ${artifact.type} “${artifact.name}” to this AI’s capability shelf.`;
@@ -887,6 +949,13 @@ function handleClick(event) {
     const previous = [...chatMessages].reverse().find((message) => message.role === 'user');
     const input = document.querySelector('#chat-input');
     if (previous && input) { input.value = previous.content; document.querySelector('#chat-form')?.requestSubmit(); }
+  }
+  if (action === 'download-project' || action === 'preview-project') {
+    const entry = capabilitiesFor(activeBuild()).find((item) => item.id === itemId && item.type === 'project');
+    if (!entry) { toast('That generated project is no longer on this build.', true); return; }
+    const project = { id: entry.id, name: entry.name, platform: entry.platform, files: entry.projectFiles || [] };
+    if (action === 'download-project') downloadProject(project);
+    else { modalData = project; modalType = 'project-preview'; render(); }
   }
   if (action === 'load-model-catalog') loadModelCatalog();
   if (action === 'select-cloud-model') {
