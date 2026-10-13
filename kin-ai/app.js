@@ -724,24 +724,29 @@ async function sendChat(form) {
   };
   chatMessages.push(assistantMessage); isSending = true; render();
   try {
-    let answer;
+    let answer; let toolOutput = '';
     const bridgeAnswer = await runBridgeCommand(autoCommand || content, build);
     if (bridgeAnswer !== null) {
-      answer = bridgeAnswer;
+      toolOutput = bridgeAnswer;
       assistantMessage.activityRouting = autoCommand && autoCommand !== content ? `Automatically selected the local tool ${autoCommand}.` : 'Executed an explicitly requested local bridge tool.';
     } else {
       const connectorAnswer = await runConnectorCommand(autoCommand || content);
       if (connectorAnswer !== null) {
-        answer = connectorAnswer;
+        toolOutput = connectorAnswer;
         assistantMessage.activityRouting = autoCommand && autoCommand !== content ? `Automatically selected the connected tool ${autoCommand}.` : 'Executed an explicitly requested connected service tool.';
-      } else if (runtimeMode(build) === 'local') {
-        answer = await generateLocalReply(messages, Number(build.temperature ?? 0.7));
-      } else {
-        const routed = await generateCloudReply(runtime, messages, Number(build.temperature ?? 0.7), build);
-        answer = routed.answer;
-        assistantMessage.activityRouting = routed.fallback ? `Primary model was unavailable; automatically switched to ${routed.provider}.` : `Answered with ${routed.provider}.`;
       }
     }
+    const shouldSummarizeTool = Boolean(toolOutput && autoCommand && autoCommand !== content && runtimeReady(build));
+    if (toolOutput && shouldSummarizeTool) messages.push({ role: 'system', content: `Connected tool result for the user's request (${toolPlanLabel(autoCommand)}):\n${toolOutput.slice(0, 12000)}\n\nUse this result to answer the user's original request. Clearly say if the result is incomplete.` });
+    if (!toolOutput || shouldSummarizeTool) {
+      if (!runtimeReady(build)) answer = toolOutput;
+      else if (runtimeMode(build) === 'local') answer = await generateLocalReply(messages, Number(build.temperature ?? 0.7));
+      else {
+        const routed = await generateCloudReply(runtime, messages, Number(build.temperature ?? 0.7), build);
+        answer = routed.answer;
+        if (!toolOutput) assistantMessage.activityRouting = routed.fallback ? `Primary model was unavailable; automatically switched to ${routed.provider}.` : `Answered with ${routed.provider}.`;
+      }
+    } else answer = toolOutput;
     if (typeof answer !== 'string' || !answer.trim()) throw new Error('The model did not return a chat message.');
     assistantMessage.content = answer.trim(); assistantMessage.activityStatus = 'complete';
   } catch (error) {
