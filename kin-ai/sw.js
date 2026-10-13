@@ -1,4 +1,4 @@
-const CACHE = 'kin-shell-v5';
+const CACHE = 'kin-shell-v6';
 const APP_FILES = ['./', './index.html', './styles.css', './app.js', './model-worker.js', './manifest.webmanifest', './icon.svg'];
 
 self.addEventListener('install', (event) => {
@@ -18,4 +18,10 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
   if (url.origin !== self.location.origin) return;
   event.respondWith(
-    c
+    caches.match(event.request).then((cached) => cached || fetch(event.request).then((response) => {
+      const copy = response.clone();
+      caches.open(CACHE).then((cache) => cache.put(event.request, copy));
+      return response;
+    }))
+  );
+});
