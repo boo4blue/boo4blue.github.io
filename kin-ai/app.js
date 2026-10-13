@@ -11,7 +11,7 @@ const LOCAL_MODEL_NAME = 'Kin Local Quick';
 const MAX_PACKAGE_BYTES = 512 * 1024;
 const MAX_PROJECT_CHARS = 180000;
 const ROUTES = [
-  ['home', 'Overview', 'home'], ['builder', 'AI Builder', 'spark'], ['model', 'Model Lab', 'cpu'], ['memory', 'Memory', 'memory'],
+  ['home', 'Overview', 'home'], ['builder', 'AI Builder', 'spark'], ['model', 'Model Lab', 'cpu'], ['memory', 'Memory', 'memory'], ['tasks', 'Scheduled agents', 'clock'],
   ['capabilities', 'Capabilities', 'plug'], ['connections', 'Connections', 'plug'], ['run', 'Run your AI', 'chat'], ['runtime', 'Runtime', 'cpu'], ['library', 'My builds', 'layers'], ['account', 'Account & sync', 'layers']
 ];
 const ICONS = {
@@ -38,7 +38,8 @@ const ICONS = {
   shield: '<path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/>',
   eye: '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/>',
   menu: '<path d="M4 6h16M4 12h16M4 18h16"/>',
-  flower: '<path d="M12 12c-5-7-9-2-5 1-4 3 0 8 5 1 5 7 9 2 5-1 4-3 0-8-5-1Z"/><circle cx="12" cy="12" r="1.5"/>'
+  flower: '<path d="M12 12c-5-7-9-2-5 1-4 3 0 8 5 1 5 7 9 2 5-1 4-3 0-8-5-1Z"/><circle cx="12" cy="12" r="1.5"/>',
+  clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'
 };
 const icon = (name, cls = '') => `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name] || ICONS.spark}</svg>`;
 const escapeHTML = (value = '') => String(value).replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
@@ -52,7 +53,7 @@ function freshState() {
   return {
     activeBuildId: 'nova',
     builds: [{ id: 'nova', name: 'Nova', role: 'A thoughtful everyday copilot', agents: [], agentConfig, model: LOCAL_MODEL_ID, runtime: LOCAL_MODEL_NAME, runtimeConfig: { mode: 'local', provider: LOCAL_MODEL_NAME, endpoint: '', model: LOCAL_MODEL_ID }, modelConfig, temperature: 0.7, memoryEnabled: true, systemPrompt: 'You are Nova, a thoughtful everyday copilot. Be warm, clear, curious, and practical. Remember what matters to the person you are helping. Ask one useful question when it would improve your answer.', createdAt: now, updatedAt: now }],
-    memories: [], capabilities: [], connections: { github: null, generic: [], providers: [] },
+    memories: [], capabilities: [], tasks: [], connections: { github: null, generic: [], providers: [] },
     runtime: { provider: 'OpenAI-compatible', endpoint: '', model: 'llama3.2' },
     settings: { compact: false }
   };
@@ -71,6 +72,7 @@ function readState() {
       const ownerId = restored.activeBuildId || restored.builds[0].id;
       restored.memories = (restored.memories || []).map((entry) => ({ ...entry, buildId: entry.buildId || ownerId }));
       restored.capabilities = (restored.capabilities || []).map((entry) => ({ ...entry, buildId: entry.buildId || ownerId }));
+      restored.tasks = Array.isArray(restored.tasks) ? restored.tasks : [];
       restored.connections = { github: null, generic: [], providers: [], ...(restored.connections || {}) };
       return restored;
     }
@@ -174,6 +176,24 @@ function autoToolCommand(content, build) {
   }
   return null;
 }
+function autoResearchCommand(content) {
+  const text = String(content).trim();
+  if (/^\/websearch\s+/i.test(text)) return text;
+  if (/\b(search the web|web search|research online|look up online|find sources|search online|what is the latest|latest news)\b/i.test(text)) return `/websearch ${text}`;
+  return null;
+}
+async function runWebSearchCommand(content) {
+  if (!/^\/websearch\s+/i.test(String(content).trim())) return null;
+  const query = String(content).replace(/^\/websearch\s*/i, '').trim();
+  if (!query) throw new Error('Add a topic after /websearch.');
+  const url = `https://en.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch=${encodeURIComponent(query)}&gsrlimit=5&prop=extracts&exintro=1&explaintext=1&exsentences=4&format=json&origin=*`;
+  const response = await fetch(url, { headers: { Accept: 'application/json' } });
+  if (!response.ok) throw new Error(`Web lookup returned ${response.status}.`);
+  const data = await response.json();
+  const pages = Object.values(data.query?.pages || {}).sort((a, b) => Number(a.index) - Number(b.index));
+  if (!pages.length) return `No matching Wikipedia pages found for: ${query}`;
+  return `Web research results for “${query}” (Wikipedia):\n\n${pages.map((page) => `${page.title}\nhttps://en.wikipedia.org/?curid=${page.pageid}\n${page.extract || 'Open the source for details.'}`).join('\n\n')}`;
+}
 function capabilityRequestFromText(content) {
   const text = String(content).trim();
   if (!/\b(skill|tool|plugin|mcp server|api integration)\b/i.test(text)) return null;
@@ -237,8 +257,9 @@ async function generateProjectArtifact(request, build = activeBuild(), existing 
   return { ...project, id: saved.id };
 }
 function projectMarkup(project) {
-  if (!project?.files?.length) return '';
-  return `<div class="project-result"><div class="artifact-label">ARTIFACT</div><strong>${escapeHTML(project.name)}</strong><span>${project.files.length} file${project.files.length === 1 ? '' : 's'} · ${escapeHTML(project.platform)}</span><div class="project-actions"><button class="btn btn-light btn-small" data-action="open-artifact" data-project-id="${escapeHTML(project.id || '')}">${icon('eye')} Open artifact</button><button class="btn btn-light btn-small" data-action="download-project" data-project-id="${escapeHTML(project.id || '')}">${icon('download')} Download</button>${project.platform === 'web' ? `<button class="btn btn-dark btn-small" data-action="preview-project" data-project-id="${escapeHTML(project.id || '')}">${icon('bolt')} Run preview</button>` : ''}</div></div>`;
+  if (!project) return '';
+  const count = project.files?.length || project.fileCount || 0;
+  return `<div class="project-result"><div class="artifact-label">ARTIFACT</div><strong>${escapeHTML(project.name)}</strong><span>${count} file${count === 1 ? '' : 's'} · ${escapeHTML(project.platform)}</span><div class="project-actions"><button class="btn btn-light btn-small" data-action="open-artifact" data-project-id="${escapeHTML(project.id || '')}">${icon('eye')} Open artifact</button><button class="btn btn-light btn-small" data-action="download-project" data-project-id="${escapeHTML(project.id || '')}">${icon('download')} Download</button><button class="btn btn-light btn-small" data-action="share-project" data-project-id="${escapeHTML(project.id || '')}">${icon('upload')} Share</button>${project.platform === 'web' ? `<button class="btn btn-dark btn-small" data-action="preview-project" data-project-id="${escapeHTML(project.id || '')}">${icon('bolt')} Run preview</button>` : ''}</div></div>`;
 }
 function runGeneratedToolRoute(text, build) {
   const lower = String(text).toLowerCase();
@@ -321,6 +342,8 @@ let modelCatalog = [];
 let modelCatalogLoading = false;
 let accountStatus = '';
 let artifactViewPath = '';
+let chatAttachments = [];
+let chatAttachmentsPromise = Promise.resolve();
 const root = document.querySelector('#app');
 
 function restoreChat() {
@@ -337,7 +360,10 @@ function restoreChat() {
   } catch { return []; }
 }
 function saveChat() {
-  try { localStorage.setItem(`${CHAT_KEY}${activeBuild().id}`, JSON.stringify(chatMessages.slice(-60))); }
+  try {
+    const compact = chatMessages.slice(-40).map((message) => message.project ? { ...message, project: { id: message.project.id, name: message.project.name, platform: message.project.platform, fileCount: message.project.files?.length || message.project.fileCount || 0 } } : message);
+    localStorage.setItem(`${CHAT_KEY}${activeBuild().id}`, JSON.stringify(compact));
+  }
   catch (error) { console.info('Chat could not be saved to this device.', error); }
 }
 async function notifyReply(build, answer) {
@@ -485,6 +511,7 @@ function activityMarkup(message) {
 }
 function toolPlanLabel(command) {
   if (!command) return 'Choose the best available model and enabled skills for this request.';
+  if (/^\/websearch\s/i.test(command)) return `Search reference pages for ${command.replace(/^\/websearch\s*/i, '')} and cite the results.`;
   if (/^\/github\s+repos/i.test(command)) return 'Use GitHub to list repositories you can access.';
   if (/^\/github\s+issues/i.test(command)) return `Use GitHub to read open issues in ${command.replace(/^\/github\s+issues\s*/i, '')}.`;
   if (/^\/github\s+file/i.test(command)) return `Use GitHub to read ${command.replace(/^\/github\s+file\s*/i, '')}.`;
@@ -609,7 +636,7 @@ async function generateLocalReply(messages, temperature) {
   });
 }
 function navLink([key, label, glyph], mobile = false) {
-  return `<button class="nav-link ${currentPage === key ? 'active' : ''}" data-route="${key}" aria-current="${currentPage === key ? 'page' : 'false'}">${icon(glyph)}<span>${label}</span></button>`;
+  return `<button class="nav-link ${currentPage === key ? 'active' : ''}" data-route="${key}" aria-current="${currentPage === key ? 'page' : 'false'}">${icon(glyph)}<span>${mobile && key === 'tasks' ? 'Tasks' : label}</span></button>`;
 }
 function sidebar() {
   const connected = runtimeReady();
@@ -617,12 +644,12 @@ function sidebar() {
     <a class="brand" href="#home" data-route="home"><span class="brand-mark">K</span><span><span class="brand-name">kin</span><span class="brand-caption">AI, your way</span></span></a>
     <div class="workspace-pill"><div class="workspace-orb">Y</div><div><div class="workspace-label">Your studio</div><div class="workspace-sub">Private workspace</div></div></div>
     <div class="nav-label">Create</div><nav class="nav-list">${ROUTES.filter(([key]) => ['home', 'builder', 'model'].includes(key)).map((route) => navLink(route)).join('')}</nav>
-    <div class="nav-spacer"></div><div class="nav-label">Personalize</div><nav class="nav-list">${ROUTES.filter(([key]) => ['memory', 'capabilities', 'connections'].includes(key)).map((route) => navLink(route)).join('')}</nav>
+    <div class="nav-spacer"></div><div class="nav-label">Personalize</div><nav class="nav-list">${ROUTES.filter(([key]) => ['memory', 'capabilities', 'connections', 'tasks'].includes(key)).map((route) => navLink(route)).join('')}</nav>
     <div class="nav-spacer"></div><div class="nav-label">Use & manage</div><nav class="nav-list">${ROUTES.filter(([key]) => ['run', 'runtime', 'library', 'account'].includes(key)).map((route) => navLink(route)).join('')}</nav>
     <div class="sidebar-bottom"><div class="runtime-mini"><div class="runtime-mini-head"><span>${escapeHTML(activeBuild().name)} runtime</span><span class="status-dot" style="background:${connected ? '#b2db68' : '#f1bc68'}"></span></div><p>${connected ? `Ready with ${runtimeMode() === 'cloud' ? 'cloud model' : 'local model'}.` : runtimeMode() === 'cloud' ? 'Cloud endpoint needs setup.' : 'Set up the free local model to chat.'}</p><button data-route="${runtimeMode() === 'cloud' ? 'runtime' : 'run'}">${connected ? 'Open AI chat' : runtimeMode() === 'cloud' ? 'Connect cloud model' : 'Set up local AI'} ${icon('arrow')}</button></div><button class="profile-chip profile-account" data-route="account"><div class="avatar">${accountSession()?.user?.username?.slice(0,1)?.toUpperCase() || 'Y'}</div><div><div class="profile-name">${escapeHTML(accountSession()?.user?.username || 'Your workspace')}</div><div class="profile-mode">${accountSession() ? 'Sync enabled' : 'Saved on this device'}</div></div></button></div>
   </aside>`;
 }
-function mobileNav() { return `<nav class="mobile-nav" aria-label="Mobile navigation">${ROUTES.filter(([key]) => ['home', 'builder', 'run', 'connections', 'memory', 'account'].includes(key)).map((route) => navLink(route, true)).join('')}</nav>`; }
+function mobileNav() { return `<nav class="mobile-nav" aria-label="Mobile navigation">${ROUTES.filter(([key]) => ['home', 'builder', 'run', 'connections', 'memory', 'tasks', 'account'].includes(key)).map((route) => navLink(route, true)).join('')}</nav>`; }
 function pageHeading(eyebrow, title, subtitle, action = '') {
   return `<div class="page-head"><div><div class="eyebrow">${eyebrow}</div><h1 class="page-title">${title}</h1><p class="page-subtitle">${subtitle}</p></div>${action}</div>`;
 }
@@ -681,6 +708,14 @@ function renderMemory() {
   const items = memoriesFor(build);
   const list = items.length ? `<div class="memory-list">${items.map((entry) => `<article class="memory-item"><div class="memory-bullet">${icon('memory')}</div><div class="memory-text">${escapeHTML(entry.text)}<div class="memory-date">Added ${timeLabel(entry.createdAt)}</div></div><button class="text-action" data-action="delete-memory" data-id="${escapeHTML(entry.id)}" aria-label="Delete memory">${icon('trash')}</button></article>`).join('')}</div>` : `<div class="empty-state"><div class="empty-icon">${icon('memory')}</div><div class="empty-title">A blank memory shelf</div><p class="empty-copy">Add details you want your assistant to keep in mind. You can see, edit, and delete every memory here.</p></div>`;
   shell(`${pageHeading(`Memory for ${escapeHTML(build.name)}`, 'Memory', 'Give this AI continuity without giving up control. These notes stay on this device and can be removed anytime.', `<button class="btn btn-dark btn-small" data-action="add-memory">${icon('plus')} Add memory</button>`)}<div class="two-col content-space"><section class="panel"><div class="section-head"><div><h2>${escapeHTML(build.name)}’s memories <span class="badge">${items.length}</span></h2><p>Only this AI receives these notes, and only when memory is switched on.</p></div></div>${list}</section><aside class="panel"><div class="panel-title">Thoughtful memory, by design</div><p class="panel-copy">Start with stable preferences, goals, and context you actually want to reuse. Avoid storing passwords, private tokens, or details you would not want in a conversation.</p><div class="separator"></div><div class="toggle-row" style="margin:0;border:0"><div><div class="toggle-title">Memory for ${escapeHTML(build.name)}</div><div class="toggle-copy">${build.memoryEnabled ? 'This build can use saved notes.' : 'This build will not receive saved notes.'}</div></div><button type="button" class="switch ${build.memoryEnabled ? 'on' : ''}" data-action="toggle-memory" role="switch" aria-checked="${build.memoryEnabled}" aria-label="Toggle AI memory"></button></div><button class="btn btn-light btn-small" data-route="builder">Configure memory per build</button></aside></div>`);
+}
+function renderTasks() {
+  const build = activeBuild();
+  const items = (state.tasks || []).filter((task) => task.buildId === build.id);
+  const tasks = items.length ? `<div class="task-list">${items.map((task) => `<article class="task-card"><div class="task-card-head"><div><strong>${escapeHTML(task.name)}</strong><span class="badge ${task.enabled ? 'lime' : ''}">${task.enabled ? 'Scheduled' : 'Paused'}</span></div><div class="task-card-actions"><button class="btn btn-light btn-small" data-action="run-task-now" data-id="${escapeHTML(task.id)}">Run now</button><button class="text-action" data-action="toggle-task" data-id="${escapeHTML(task.id)}">${task.enabled ? 'Pause' : 'Resume'}</button><button class="text-action" data-action="delete-task" data-id="${escapeHTML(task.id)}" aria-label="Delete ${escapeHTML(task.name)}">${icon('trash')}</button></div></div><p>${escapeHTML(task.prompt)}</p><small>Next run: ${task.enabled ? escapeHTML(new Date(task.nextAt).toLocaleString()) : 'paused'} · ${task.repeat === 'once' ? 'one time' : task.repeat}</small>${task.lastResult ? `<details><summary>Last run · ${escapeHTML(task.lastStatus || 'finished')}</summary><p>${escapeHTML(task.lastResult)}</p></details>` : ''}</article>`).join('')}</div>` : `<div class="empty-state"><div class="empty-icon">${icon('clock')}</div><div class="empty-title">No scheduled agents yet</div><p class="empty-copy">Create a recurring prompt for this AI. It can check in, research, or use the connections you explicitly enabled.</p></div>`;
+  shell(`${pageHeading(`Automations for ${escapeHTML(build.name)}`, 'Scheduled agents', 'Schedule prompts to run while Kin is open. The browser may pause timers when the tab is backgrounded, and closing Kin stops local schedules.', '')}<div class="two-col content-space"><section class="panel"><div class="section-head"><div><h2>Scheduled prompts</h2><p>Runs use this AI’s current model and enabled read-only tools.</p></div><span class="badge">${items.filter((item) => item.enabled).length} active</span></div>${tasks}</section><aside class="panel"><div class="panel-title">Create a scheduled agent</div><form id="scheduled-task-form"><div class="field"><label for="task-name">Name</label><input class="input" id="task-name" name="name" maxlength="60" required placeholder="Morning issue check" /></div><div class="field"><label for="task-prompt">What should it do?</label><textarea class="textarea" id="task-prompt" name="prompt" maxlength="1500" required placeholder="Check my GitHub issues and summarize urgent ones…"></textarea></div><div class="field"><label for="task-first-run">First run</label><input class="input" id="task-first-run" name="firstRun" type="datetime-local" required /></div><div class="field"><label for="task-repeat">Repeat</label><select class="select" id="task-repeat" name="repeat"><option value="once">Just once</option><option value="hourly">Every hour</option><option value="daily">Every day</option><option value="weekly">Every week</option></select></div><button class="btn btn-dark btn-small">Save schedule</button></form><div class="callout" style="margin-top:14px"><strong>Keep Kin open.</strong> Schedules run in this browser on this device and use read-only tools. They cannot run after the browser is closed. No messages are sent until the scheduled time, and each run is saved here.</div></aside></div>`);
+  const dateField = document.querySelector('#task-first-run');
+  if (dateField && !dateField.value) { const date = new Date(Date.now() + 5 * 60000); date.setMinutes(date.getMinutes() - date.getTimezoneOffset()); dateField.value = date.toISOString().slice(0, 16); }
 }
 function renderCapabilities() {
   const build = activeBuild();
@@ -762,13 +797,13 @@ function renderRun() {
   }
   const log = chatMessages.length ? chatMessages.map((message, index) => {
     const waiting = isSending && index === chatMessages.length - 1 && message.role === 'assistant' && !message.content;
-    const body = message.role === 'assistant' ? `<div data-answer>${waiting ? '<span class="thinking-indicator" id="thinking-status">Thinking on your device…</span>' : escapeHTML(message.content)}</div>${message.project ? projectMarkup(message.project) : ''}${activityMarkup(message)}` : escapeHTML(message.content);
-    return `<div class="message ${message.role}"><div class="message-bubble">${body}</div><div class="message-time">${message.role === 'user' ? 'You' : escapeHTML(build.name)} · ${new Intl.DateTimeFormat(undefined, { hour: 'numeric', minute: '2-digit' }).format(new Date(message.time))}</div></div>`;
+    const body = message.role === 'assistant' ? `<div data-answer>${waiting ? '<span class="thinking-indicator" id="thinking-status">Thinking on your device…</span>' : escapeHTML(message.content)}</div>${message.project ? projectMarkup(message.project) : ''}${activityMarkup(message)}` : `${escapeHTML(message.displayContent || message.content)}${message.attachments?.length ? `<div class="chat-attachment-chips">${message.attachments.map((name) => `<span>${icon('book')}${escapeHTML(name)}</span>`).join('')}</div>` : ''}`;
+    return `<div class="message ${message.role}"><div class="message-bubble">${body}</div><div class="message-time">${message.role === 'user' ? 'You' : escapeHTML(build.name)} · ${new Intl.DateTimeFormat(undefined, { hour: 'numeric', minute: '2-digit' }).format(new Date(message.time))}${message.role === 'assistant' && message.content ? ` <button class="message-speak" data-action="speak-message" data-message-index="${index}">Read aloud</button>` : ''}</div></div>`;
   }).join('') : `<div class="chat-empty"><div class="preview-avatar">${icon('spark')}</div><h3>${ready ? `Meet ${escapeHTML(build.name)}` : 'Your conversation starts here'}</h3><p>${ready ? 'Try a question and see how your personality settings shape the answer.' : 'Connect a model runtime to start chatting. Your build and memory are already saved locally.'}</p></div>`;
   const interrupted = [...chatMessages].reverse().find((message) => message.activityStatus === 'interrupted');
   shell(`${pageHeading('Try it out', 'Run your AI', `A private preview of ${escapeHTML(build.name)}. Recent messages are saved on this device.`, `<button class="btn btn-light btn-small" data-route="builder">${icon('sliders')} Tune personality</button>`)}
     ${interrupted ? `<div class="callout content-space"><strong>A reply was interrupted when Kin closed.</strong> The unfinished prompt is saved and can be sent again.<div class="setup-actions"><button class="btn btn-dark btn-small" data-action="retry-interrupted">Retry last prompt</button></div></div>` : ''}
-    <section class="chat-shell content-space"><div class="chat-head"><div style="display:flex;align-items:center;gap:10px"><div class="preview-avatar" style="width:31px;height:31px">${icon('spark')}</div><div><div class="build-name">${escapeHTML(build.name)}</div><div class="build-meta">${escapeHTML(mode === 'local' ? `${LOCAL_MODEL_NAME} · ${localModelDevice || 'on device'}` : runtime.model || build.model)}</div></div></div><div style="display:flex;align-items:center;gap:8px"><span class="badge lime"><span class="status-dot" style="background:#718c2e"></span>${mode === 'local' ? 'On device' : 'Cloud model'}</span><button class="btn btn-light btn-small" data-action="enable-notifications">${'Notification' in window && Notification.permission === 'granted' ? 'Notifications on' : 'Notify when done'}</button></div></div><div class="chat-log" id="chat-log">${log}</div><form class="chat-compose" id="chat-form"><label class="sr-only" for="chat-input">Message your AI</label><textarea class="textarea" id="chat-input" name="message" maxlength="4000" placeholder="Say hello to ${escapeHTML(build.name)}…" ${isSending ? 'disabled' : ''} required></textarea>${isSending && mode === 'local' ? '<button class="btn btn-light" type="button" data-action="stop-generation" aria-label="Stop response">Stop</button>' : isSending ? '<button class="btn btn-dark" type="button" disabled aria-label="Waiting for response">…</button>' : `<button class="btn btn-dark" type="submit" aria-label="Send message">${icon('arrow')}</button>`}</form></section><p class="inline-note" style="margin-top:9px">Kin can keep working while this page is open or minimized. Closing the browser may stop a reply; your chat is saved so you can retry.</p>`);
+    <section class="chat-shell content-space"><div class="chat-head"><div style="display:flex;align-items:center;gap:10px"><div class="preview-avatar" style="width:31px;height:31px">${icon('spark')}</div><div><div class="build-name">${escapeHTML(build.name)}</div><div class="build-meta">${escapeHTML(mode === 'local' ? `${LOCAL_MODEL_NAME} · ${localModelDevice || 'on device'}` : runtime.model || build.model)}</div></div></div><div style="display:flex;align-items:center;gap:8px"><span class="badge lime"><span class="status-dot" style="background:#718c2e"></span>${mode === 'local' ? 'On device' : 'Cloud model'}</span><button class="btn btn-light btn-small" data-action="enable-notifications">${'Notification' in window && Notification.permission === 'granted' ? 'Notifications on' : 'Notify when done'}</button></div></div><div class="chat-log" id="chat-log">${log}</div><form class="chat-compose" id="chat-form"><div class="chat-compose-tools"><label class="sr-only" for="chat-input">Message your AI</label><textarea class="textarea" id="chat-input" name="message" maxlength="4000" placeholder="Say hello to ${escapeHTML(build.name)}…" ${isSending ? 'disabled' : ''} required></textarea><div class="chat-tool-row"><input class="sr-only" type="file" id="chat-files" multiple accept="image/*,.txt,.md,.csv,.tsv,.json,.js,.jsx,.ts,.tsx,.css,.html,.xml,.yaml,.yml,.py,.java,.kt,.gradle,.sql,.log,.toml,.ini,.sh" /><button class="btn btn-light btn-small" type="button" data-action="choose-chat-files">${icon('plus')} Attach files</button><span class="field-hint" id="chat-attachment-status" aria-live="polite">Attach text/code (100 KB each) or up to 2 images (2 MB each).</span></div></div><button class="btn btn-light" type="button" data-action="start-voice" aria-label="Speak your message">${icon('chat')}</button>${isSending && mode === 'local' ? '<button class="btn btn-light" type="button" data-action="stop-generation" aria-label="Stop response">Stop</button>' : isSending ? '<button class="btn btn-dark" type="button" disabled aria-label="Waiting for response">…</button>' : `<button class="btn btn-dark" type="submit" aria-label="Send message">${icon('arrow')}</button>`}</form></section><p class="inline-note" style="margin-top:9px">Kin can keep working while this page is open or minimized. Closing the browser may stop a reply; your chat is saved so you can retry.</p>`);
   const logEl = document.querySelector('#chat-log');
   if (logEl) logEl.scrollTop = logEl.scrollHeight;
   if (isSending && mode === 'local') {
@@ -791,7 +826,7 @@ function renderModal() {
     const files = modalData?.files || modalData?.projectFiles || [];
     const selected = files.find((file) => file.path === artifactViewPath) || files[0];
     const versions = modalData?.versions || [];
-    return `<div class="modal-backdrop" data-action="close-modal"><section class="modal artifact-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-head"><div><div class="artifact-label">ARTIFACT · ${escapeHTML(modalData?.platform || 'project')}</div><h2 class="modal-title" id="modal-title">${escapeHTML(modalData?.name || 'Generated artifact')}</h2></div><button class="modal-close" data-action="close-modal" aria-label="Close">${icon('close')}</button></div><p class="panel-copy">Edit files here or describe changes in chat. Kin saves earlier versions so you can restore them.</p><div class="artifact-toolbar">${files.map((file) => `<button class="artifact-file ${selected?.path === file.path ? 'selected' : ''}" data-action="select-artifact-file" data-path="${escapeHTML(file.path)}">${escapeHTML(file.path)}</button>`).join('')}</div><div class="artifact-code-head"><span>${escapeHTML(selected?.mime || 'text/plain')}</span><span>${selected ? `${selected.content.length.toLocaleString()} characters` : ''}</span></div><textarea class="artifact-code" id="artifact-file-editor" aria-label="Edit ${escapeHTML(selected?.path || 'artifact file')}">${escapeHTML(selected?.content || '')}</textarea><div class="artifact-actions"><button class="btn btn-light btn-small" data-action="save-artifact-file">Save file</button><button class="btn btn-light btn-small" data-action="download-project" data-project-id="${escapeHTML(modalData?.id || '')}">${icon('download')} Download</button>${modalData?.platform === 'web' ? `<button class="btn btn-dark btn-small" data-action="preview-project" data-project-id="${escapeHTML(modalData?.id || '')}">${icon('bolt')} Run preview</button>` : ''}</div>${versions.length ? `<details class="artifact-history"><summary>Version history (${versions.length})</summary>${versions.map((version, index) => `<div class="artifact-version"><span>${new Date(version.savedAt).toLocaleString()} · ${escapeHTML(version.name)}</span><button class="btn btn-light btn-small" data-action="restore-artifact-version" data-version-index="${index}">Restore</button></div>`).join('')}</details>` : '<p class="field-hint" style="margin-top:12px">Version history appears after your first edit.</p>'}</section></div>`;
+    return `<div class="modal-backdrop" data-action="close-modal"><section class="modal artifact-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-head"><div><div class="artifact-label">ARTIFACT · ${escapeHTML(modalData?.platform || 'project')}</div><h2 class="modal-title" id="modal-title">${escapeHTML(modalData?.name || 'Generated artifact')}</h2></div><button class="modal-close" data-action="close-modal" aria-label="Close">${icon('close')}</button></div><p class="panel-copy">Edit files here or describe changes in chat. Kin saves earlier versions so you can restore them.</p><div class="artifact-toolbar">${files.map((file) => `<button class="artifact-file ${selected?.path === file.path ? 'selected' : ''}" data-action="select-artifact-file" data-path="${escapeHTML(file.path)}">${escapeHTML(file.path)}</button>`).join('')}</div><div class="artifact-code-head"><span>${escapeHTML(selected?.mime || 'text/plain')}</span><span>${selected ? `${selected.content.length.toLocaleString()} characters` : ''}</span></div><textarea class="artifact-code" id="artifact-file-editor" aria-label="Edit ${escapeHTML(selected?.path || 'artifact file')}">${escapeHTML(selected?.content || '')}</textarea><div class="artifact-actions"><button class="btn btn-light btn-small" data-action="save-artifact-file">Save file</button><button class="btn btn-light btn-small" data-action="download-project" data-project-id="${escapeHTML(modalData?.id || '')}">${icon('download')} Download</button><button class="btn btn-light btn-small" data-action="share-project" data-project-id="${escapeHTML(modalData?.id || '')}">${icon('upload')} Share</button>${modalData?.platform === 'web' ? `<button class="btn btn-dark btn-small" data-action="preview-project" data-project-id="${escapeHTML(modalData?.id || '')}">${icon('bolt')} Run preview</button>` : ''}</div>${versions.length ? `<details class="artifact-history"><summary>Version history (${versions.length})</summary>${versions.map((version, index) => `<div class="artifact-version"><span>${new Date(version.savedAt).toLocaleString()} · ${escapeHTML(version.name)}</span><button class="btn btn-light btn-small" data-action="restore-artifact-version" data-version-index="${index}">Restore</button></div>`).join('')}</details>` : '<p class="field-hint" style="margin-top:12px">Version history appears after your first edit.</p>'}</section></div>`;
   }
   if (modalType === 'package') return `<div class="modal-backdrop" data-action="close-modal"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-head"><h2 class="modal-title" id="modal-title">Add a capability</h2><button class="modal-close" data-action="close-modal" aria-label="Close">${icon('close')}</button></div><p class="panel-copy" style="margin-top:7px">Add a link or manifest to your private package shelf. Kin stores it for export; it does not execute package code.</p><form id="package-form"><div class="field"><label for="package-name">Name</label><input id="package-name" class="input" name="name" maxlength="70" required placeholder="e.g. GitHub MCP server" /></div><div class="field-row"><div class="field"><label for="package-type">Package type</label><select id="package-type" class="select" name="type"><option value="skill">Skill / instructions</option><option value="tool">Tool specification</option><option value="plugin">Plugin manifest</option><option value="mcp">MCP server</option><option value="api">API / OpenAPI</option><option value="ide">IDE setup</option><option value="other">Other</option></select></div><div class="field"><label for="package-endpoint">Optional URL</label><input id="package-endpoint" class="input" name="endpoint" type="url" placeholder="https://…" /></div></div><div class="field"><label for="package-desc">What is it for?</label><textarea id="package-desc" class="textarea" style="min-height:70px" name="description" maxlength="500" placeholder="What does this package add to your workflow?"></textarea></div><div class="modal-actions"><button type="button" class="btn btn-light btn-small" data-action="close-modal">Cancel</button><button class="btn btn-dark btn-small">Add to shelf</button></div></form></section></div>`;
   if (modalType === 'project-preview') {
@@ -810,6 +845,7 @@ function render() {
   if (currentPage === 'builder') return renderBuilder();
   if (currentPage === 'model') return renderModelLab();
   if (currentPage === 'memory') return renderMemory();
+  if (currentPage === 'tasks') return renderTasks();
   if (currentPage === 'capabilities') return renderCapabilities();
   if (currentPage === 'connections') return renderConnections();
   if (currentPage === 'account') return renderAccount();
@@ -871,15 +907,24 @@ function downloadProject(project) {
   link.href = url; link.download = `${safeName}.zip`; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1500);
   toast('Project ZIP downloaded. Open its files in an editor or Android Studio.');
 }
+async function shareProject(project) {
+  if (!project?.files?.length) return;
+  const name = `${project.name.toLowerCase().replace(/[^a-z0-9]+/g, '-') || 'kin-project'}.zip`;
+  const file = new File([zipProjectFiles(project.files)], name, { type: 'application/zip' });
+  if (navigator.share && navigator.canShare?.({ files: [file] })) {
+    try { await navigator.share({ title: project.name, text: 'Project created in Kin AI Studio', files: [file] }); }
+    catch (error) { if (error.name !== 'AbortError') toast(`Could not share this project: ${error.message}`, true); }
+  } else { downloadProject(project); toast('Your browser does not support file sharing here, so the ZIP was downloaded.'); }
+}
 function snapshotArtifact(entry) {
   entry.versions = [...(entry.versions || []), { savedAt: new Date().toISOString(), name: entry.name, description: entry.description, platform: entry.platform, files: (entry.projectFiles || []).map((file) => ({ ...file })) }].slice(-3);
 }
 function syncArtifactChat(entry) {
-  for (const message of chatMessages) if (message.project?.id === entry.id) message.project = { id: entry.id, name: entry.name, description: entry.description, platform: entry.platform, files: entry.projectFiles };
+  for (const message of chatMessages) if (message.project?.id === entry.id) message.project = { id: entry.id, name: entry.name, description: entry.description, platform: entry.platform, fileCount: entry.projectFiles?.length || 0 };
   saveChat();
 }
 function exportBuild(build) {
-  const bundle = { format: 'kin-build', version: 1, exportedAt: new Date().toISOString(), build, memories: memoriesFor(build), capabilities: capabilitiesFor(build) };
+  const bundle = { format: 'kin-build', version: 1, exportedAt: new Date().toISOString(), build, memories: memoriesFor(build), capabilities: capabilitiesFor(build), tasks: (state.tasks || []).filter((task) => task.buildId === build.id) };
   downloadJSON(`${build.name.toLowerCase().replace(/[^a-z0-9]+/g, '-') || 'kin-build'}.kin.json`, bundle);
   toast('Build exported. Runtime keys are never included.');
 }
@@ -916,19 +961,47 @@ function handleFiles(files) {
   function finish() { if (!pending) { saveState(); if (added) { currentPage = 'capabilities'; render(); toast(`${added} package${added === 1 ? '' : 's'} added to your shelf.`); } } }
   finish();
 }
+function loadChatAttachments(files) {
+  chatAttachments = [];
+  const status = document.querySelector('#chat-attachment-status');
+  const supported = /\.(txt|md|csv|tsv|json|js|jsx|ts|tsx|css|html?|xml|ya?ml|py|java|kt|gradle|sql|log|toml|ini|sh)$/i;
+  const selected = [...files].slice(0, 5);
+  chatAttachmentsPromise = Promise.all(selected.map((file) => new Promise((resolve) => {
+    const image = file.type.startsWith('image/');
+    if ((!image && !supported.test(file.name)) || file.size > (image ? 2 * 1024 * 1024 : 100 * 1024)) {
+      toast(`${file.name}: attach a supported text file under 100 KB or an image under 2 MB.`, true); resolve(null); return;
+    }
+    const reader = new FileReader();
+    reader.onload = () => resolve(image ? { name: file.name, type: file.type, image: true, dataURL: String(reader.result || '') } : { name: file.name, content: String(reader.result || '') });
+    reader.onerror = () => { toast(`Could not read ${file.name}.`, true); resolve(null); };
+    if (image) reader.readAsDataURL(file); else reader.readAsText(file);
+  }))).then((entries) => {
+    chatAttachments = entries.filter(Boolean);
+    if (chatAttachments.reduce((sum, file) => sum + (file.content?.length || 0), 0) > 150000 || chatAttachments.filter((file) => file.image).length > 2) { chatAttachments = []; toast('Keep text attachments under 150 KB total, with up to 2 images.', true); }
+    if (status) status.textContent = chatAttachments.length ? `${chatAttachments.length} file${chatAttachments.length === 1 ? '' : 's'} attached: ${chatAttachments.map((file) => file.name).join(', ')}` : 'Attach text/code (100 KB each) or up to 2 images (2 MB each).';
+  });
+}
 async function sendChat(form) {
   const input = form.elements.message;
   const content = input.value.trim();
+  await chatAttachmentsPromise;
   if (!content || isSending) return;
   const build = activeBuild();
   const projectRequest = projectRequestFromText(content);
   const projectToEdit = artifactToEdit(content, build);
   const capabilityRequest = capabilityRequestFromText(content);
-  const autoCommand = autoToolCommand(content, build);
+  const autoCommand = autoToolCommand(content, build) || autoResearchCommand(content);
   if (!runtimeReady(build) && !autoCommand) { toast(runtimeMode(build) === 'local' ? 'Set up the local model before chatting.' : 'Connect a cloud model before chatting.', true); return; }
   const runtime = runtimeFor(build);
   const agent = assignedAgent(build, content);
-  chatMessages.push({ role: 'user', content, time: new Date().toISOString() });
+  const attachments = chatAttachments;
+  const textAttachments = attachments.filter((file) => !file.image);
+  const imageAttachments = attachments.filter((file) => file.image);
+  const modelContent = textAttachments.length ? `${content}\n\nAttached files:\n${textAttachments.map((file) => `--- ${file.name} ---\n${file.content}`).join('\n\n')}` : content;
+  chatMessages.push({ role: 'user', content: modelContent, displayContent: content, attachments: attachments.map((file) => file.name), time: new Date().toISOString() });
+  chatAttachments = [];
+  const attachmentStatus = document.querySelector('#chat-attachment-status');
+  if (attachmentStatus) attachmentStatus.textContent = 'Attach text, code, or data files (up to 5, 100 KB each).';
   input.value = '';
   const memoryEntries = build.memoryEnabled ? memoriesFor(build) : [];
   const memories = memoryEntries.map((entry) => `- ${entry.text}`).join('\n');
@@ -972,12 +1045,20 @@ async function sendChat(form) {
         assistantMessage.activityRouting = autoCommand && autoCommand !== content ? `Automatically selected the connected tool ${autoCommand}.` : 'Executed an explicitly requested connected service tool.';
       }
     }
+    if (toolOutput === '' && autoCommand?.startsWith('/websearch ')) {
+      toolOutput = await runWebSearchCommand(autoCommand);
+      assistantMessage.activityRouting = 'Searched Wikipedia reference pages and gathered source links for the AI to summarize.';
+    }
     const shouldSummarizeTool = Boolean(toolOutput && autoCommand && autoCommand !== content && runtimeReady(build));
     if (toolOutput && shouldSummarizeTool) messages.push({ role: 'system', content: `Connected tool result for the user's request (${toolPlanLabel(autoCommand)}):\n${toolOutput.slice(0, 12000)}\n\nUse this result to answer the user's original request. Clearly say if the result is incomplete.` });
-    if (!toolOutput || shouldSummarizeTool) {
-      if (!runtimeReady(build)) answer = toolOutput;
-      else if (runtimeMode(build) === 'local') answer = await generateLocalReply(messages, Number(build.temperature ?? 0.7));
-      else {
+      if (!toolOutput || shouldSummarizeTool) {
+        if (!runtimeReady(build)) answer = toolOutput;
+        else if (runtimeMode(build) === 'local') {
+          if (imageAttachments.length) throw new Error('Image questions need a connected cloud model that supports vision.');
+          answer = await generateLocalReply(messages, Number(build.temperature ?? 0.7));
+        }
+        else {
+        if (imageAttachments.length) messages.at(-1).content = [{ type: 'text', text: content }, ...imageAttachments.map((file) => ({ type: 'image_url', image_url: { url: file.dataURL } }))];
         const routed = await generateCloudReply(runtime, messages, Number(build.temperature ?? 0.7), build);
         answer = routed.answer;
         if (!toolOutput) assistantMessage.activityRouting = routed.fallback ? `Primary model was unavailable; automatically switched to ${routed.provider}.` : `Answered with ${routed.provider}.`;
@@ -999,6 +1080,41 @@ function stopGeneration() {
   modelWorker?.terminate(); modelWorker = null;
   localModelPhase = localStorage.getItem(LOCAL_MODEL_KEY) === 'true' ? 'cached' : 'missing';
   pending.reject(new DOMException('Response stopped.', 'AbortError'));
+}
+let scheduledAgentBusy = false;
+function advanceScheduledTask(task) {
+  if (task.repeat === 'once') { task.enabled = false; return; }
+  const delay = task.repeat === 'hourly' ? 3600000 : task.repeat === 'weekly' ? 604800000 : 86400000;
+  task.nextAt = new Date(Date.now() + delay).toISOString();
+}
+async function runScheduledAgent(task, force = false) {
+  if (scheduledAgentBusy || isSending || (!force && (!task.enabled || Date.parse(task.nextAt) > Date.now()))) return;
+  scheduledAgentBusy = true; task.running = true; saveState();
+  const build = state.builds.find((entry) => entry.id === task.buildId);
+  try {
+    if (!build || !runtimeReady(build)) throw new Error('This AI needs a ready model runtime before its scheduled task can run.');
+    const memories = build.memoryEnabled ? memoriesFor(build).map((entry) => `- ${entry.text}`).join('\n') : '';
+    const skills = capabilityInstructions(build);
+    const messages = [{ role: 'system', content: `${build.systemPrompt || `You are ${build.name}.`}${memories ? `\n\nSaved memories:\n${memories}` : ''}${skills ? `\n\nUse these skills when relevant:\n${skills}` : ''}\n\nThis is a user-scheduled task. Use only read-only tools. Never execute terminal commands, write files, or make external changes.` }, { role: 'user', content: task.prompt }];
+    let toolOutput = '';
+    const command = autoToolCommand(task.prompt, build) || autoResearchCommand(task.prompt);
+    if (command && !/^\/(?:run|write)\b/i.test(command)) {
+      toolOutput = await runBridgeCommand(command, build) || await runConnectorCommand(command) || await runWebSearchCommand(command) || '';
+      if (toolOutput) messages.push({ role: 'system', content: `Read-only scheduled tool result:\n${toolOutput.slice(0, 10000)}\nUse it to answer the user's task and cite its links.` });
+    }
+    const answer = runtimeMode(build) === 'local' ? await generateLocalReply(messages, Number(build.temperature ?? 0.7)) : (await generateCloudReply(runtimeFor(build), messages, Number(build.temperature ?? 0.7), build)).answer;
+    task.lastStatus = 'complete'; task.lastResult = String(answer).slice(0, 5000); task.lastAt = new Date().toISOString();
+    await notifyReply(build, `Scheduled task “${task.name}” finished. ${task.lastResult}`);
+  } catch (error) {
+    task.lastStatus = 'error'; task.lastResult = error.message; task.lastAt = new Date().toISOString();
+  } finally {
+    task.running = false; advanceScheduledTask(task); saveState(); scheduledAgentBusy = false;
+    if (currentPage === 'tasks') render();
+  }
+}
+function runDueScheduledAgents() {
+  const due = (state.tasks || []).find((task) => task.enabled && Date.parse(task.nextAt) <= Date.now());
+  if (due) runScheduledAgent(due);
 }
 function handleClick(event) {
   const route = event.target.closest('[data-route]');
@@ -1027,10 +1143,27 @@ function handleClick(event) {
       syncArtifactChat(entry); saveState(); modalData = entry; artifactViewPath = entry.projectFiles[0]?.path || ''; render(); toast('Artifact version restored.');
     }
   }
+  if (action === 'choose-chat-files') document.querySelector('#chat-files')?.click();
+  if (action === 'start-voice') {
+    const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!Recognition) { toast('Voice input is not supported in this browser.', true); return; }
+    const recognition = new Recognition(); recognition.lang = navigator.language || 'en-US'; recognition.interimResults = false;
+    recognition.onresult = (resultEvent) => { const input = document.querySelector('#chat-input'); if (input) { input.value = `${input.value}${input.value ? ' ' : ''}${resultEvent.results[0][0].transcript}`; input.focus(); } };
+    recognition.onerror = () => toast('Voice capture did not finish. Check microphone permission.', true);
+    try { recognition.start(); toast('Listening…'); } catch { toast('Voice capture is already active.', true); }
+  }
+  if (action === 'speak-message') {
+    const message = chatMessages[Number(control.dataset.messageIndex)];
+    if (!message?.content || !window.speechSynthesis) { toast('Read aloud is not supported in this browser.', true); return; }
+    window.speechSynthesis.cancel(); const utterance = new SpeechSynthesisUtterance(message.content.slice(0, 12000)); utterance.lang = document.documentElement.lang || navigator.language || 'en-US'; window.speechSynthesis.speak(utterance);
+  }
   if (action === 'enable-notifications') {
     if (!('Notification' in window)) { toast('Notifications are not supported by this browser.', true); return; }
     Notification.requestPermission().then((permission) => { render(); toast(permission === 'granted' ? 'Kin will notify you when a background reply finishes.' : 'Allow notifications in browser settings to enable this.'); });
   }
+  if (action === 'toggle-task') { const task = state.tasks.find((item) => item.id === itemId); if (task) { task.enabled = !task.enabled; if (task.enabled && Date.parse(task.nextAt) < Date.now()) task.nextAt = new Date(Date.now() + 60000).toISOString(); saveState(); render(); } }
+  if (action === 'run-task-now') { const task = state.tasks.find((item) => item.id === itemId); if (task) runScheduledAgent(task, true); }
+  if (action === 'delete-task') { state.tasks = state.tasks.filter((item) => item.id !== itemId); saveState(); render(); toast('Scheduled agent removed.'); }
   if (action === 'retry-interrupted') {
     const previous = [...chatMessages].reverse().find((message) => message.role === 'user');
     const input = document.querySelector('#chat-input');
@@ -1043,11 +1176,12 @@ function handleClick(event) {
     artifactViewPath = modalData.projectFiles?.[0]?.path || '';
     modalType = 'artifact-inspector'; render();
   }
-  if (action === 'download-project' || action === 'preview-project') {
+  if (action === 'download-project' || action === 'preview-project' || action === 'share-project') {
     const entry = capabilitiesFor(activeBuild()).find((item) => item.id === itemId && item.type === 'project');
     if (!entry) { toast('That generated project is no longer on this build.', true); return; }
     const project = { id: entry.id, name: entry.name, platform: entry.platform, files: entry.projectFiles || [] };
     if (action === 'download-project') downloadProject(project);
+    else if (action === 'share-project') shareProject(project);
     else { modalData = project; modalType = 'project-preview'; render(); }
   }
   if (action === 'load-model-catalog') loadModelCatalog();
@@ -1097,7 +1231,7 @@ function handleClick(event) {
   if (action === 'export-build') { const build = state.builds.find((entry) => entry.id === itemId); if (build) exportBuild(build); }
   if (action === 'export-all') { downloadJSON('kin-studio-backup.kin.json', { format: 'kin-studio', version: 1, exportedAt: new Date().toISOString(), ...state }); toast('Studio backup exported. Runtime keys are never included.'); }
   if (action === 'import-build') document.querySelector('#import-file')?.click();
-  if (action === 'delete-build') { if (state.builds.length < 2) return; const build = state.builds.find((entry) => entry.id === itemId); modalType = ''; if (!window.confirm(`Delete “${build?.name}” and its memories and packages from this device?`)) return; state.builds = state.builds.filter((entry) => entry.id !== itemId); state.memories = state.memories.filter((entry) => entry.buildId !== itemId); state.capabilities = state.capabilities.filter((entry) => entry.buildId !== itemId); sessionStorage.removeItem(keyFor(build)); if (state.activeBuildId === itemId) state.activeBuildId = state.builds[0].id; saveState(); render(); toast('Build deleted.'); }
+  if (action === 'delete-build') { if (state.builds.length < 2) return; const build = state.builds.find((entry) => entry.id === itemId); modalType = ''; if (!window.confirm(`Delete “${build?.name}” and its memories, packages, and scheduled agents from this device?`)) return; state.builds = state.builds.filter((entry) => entry.id !== itemId); state.memories = state.memories.filter((entry) => entry.buildId !== itemId); state.capabilities = state.capabilities.filter((entry) => entry.buildId !== itemId); state.tasks = state.tasks.filter((task) => task.buildId !== itemId); sessionStorage.removeItem(keyFor(build)); if (state.activeBuildId === itemId) state.activeBuildId = state.builds[0].id; saveState(); render(); toast('Build deleted.'); }
 }
 function saveRuntime() {
   const endpoint = document.querySelector('#runtime-endpoint')?.value.trim();
@@ -1162,6 +1296,12 @@ async function signOutAccount() {
 function handleSubmit(event) {
   event.preventDefault();
   const form = event.target;
+  if (form.id === 'scheduled-task-form') {
+    const data = new FormData(form); const firstRun = new Date(String(data.get('firstRun')));
+    if (Number.isNaN(firstRun.getTime())) { toast('Choose a valid first run time.', true); return; }
+    state.tasks.unshift({ id: id(), buildId: activeBuild().id, name: String(data.get('name')).trim(), prompt: String(data.get('prompt')).trim(), repeat: String(data.get('repeat')), nextAt: firstRun.toISOString(), enabled: true, lastStatus: '', lastResult: '', createdAt: new Date().toISOString() });
+    saveState(); render(); toast('Scheduled agent saved on this device.');
+  }
   if (form.id === 'builder-form') {
     const data = new FormData(form); const build = activeBuild();
     build.name = String(data.get('name')).trim(); build.role = String(data.get('role')).trim(); build.systemPrompt = String(data.get('systemPrompt')).trim(); build.model = String(data.get('model')).trim(); build.temperature = Number(data.get('temperature')); build.updatedAt = new Date().toISOString();
@@ -1250,6 +1390,7 @@ function handleChange(event) {
   }
   if (event.target.id === 'model-catalog-free') renderModelCatalog();
   if (event.target.id === 'package-files' && event.target.files?.length) handleFiles(event.target.files);
+  if (event.target.id === 'chat-files' && event.target.files?.length) loadChatAttachments(event.target.files);
   if (event.target.id === 'import-file' && event.target.files?.[0]) importBundle(event.target.files[0]);
   if (event.target.id === 'model-foundation') {
     const family = document.querySelector('#model-family');
@@ -1267,12 +1408,14 @@ function importBundle(file) {
         state.builds.unshift(build); state.activeBuildId = build.id;
         if (Array.isArray(payload.memories)) state.memories = [...payload.memories.map((entry) => ({ ...entry, id: id(), buildId: build.id })), ...state.memories].slice(0, 300);
         if (Array.isArray(payload.capabilities)) state.capabilities = [...payload.capabilities.map((entry) => ({ ...entry, id: id(), buildId: build.id })), ...state.capabilities].slice(0, 100);
+        if (Array.isArray(payload.tasks)) state.tasks = [...payload.tasks.map((task) => ({ ...task, id: id(), buildId: build.id, enabled: false })), ...state.tasks].slice(0, 100);
       } else if (payload.format === 'kin-studio' && Array.isArray(payload.builds) && payload.builds.length) {
         const idMap = new Map();
         const importedBuilds = payload.builds.map((build) => { const nextId = id(); idMap.set(build.id, nextId); return { ...build, id: nextId }; });
         state.builds = [...importedBuilds, ...state.builds].slice(0, 30); state.activeBuildId = importedBuilds[0].id;
         if (Array.isArray(payload.memories)) state.memories = [...payload.memories.map((entry) => ({ ...entry, id: id(), buildId: idMap.get(entry.buildId) || importedBuilds[0].id })), ...state.memories].slice(0, 300);
         if (Array.isArray(payload.capabilities)) state.capabilities = [...payload.capabilities.map((entry) => ({ ...entry, id: id(), buildId: idMap.get(entry.buildId) || importedBuilds[0].id })), ...state.capabilities].slice(0, 100);
+        if (Array.isArray(payload.tasks)) state.tasks = [...payload.tasks.map((task) => ({ ...task, id: id(), buildId: idMap.get(task.buildId) || importedBuilds[0].id, enabled: false })), ...state.tasks].slice(0, 100);
       } else throw new Error('This file is not a Kin build or studio backup.');
       saveState(); currentPage = 'library'; render(); toast('Build imported. Review any attached packages before using them.');
     } catch (error) { toast(`Import failed: ${error.message}`, true); }
@@ -1305,4 +1448,6 @@ document.addEventListener('keydown', handleKey);
 const observer = new MutationObserver(installDropZone);
 observer.observe(root, { childList: true, subtree: true });
 if ('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('./sw.js').catch((error) => console.info('Offline install is unavailable in this environment.', error));
+setInterval(runDueScheduledAgents, 15000);
+runDueScheduledAgents();
 render();
