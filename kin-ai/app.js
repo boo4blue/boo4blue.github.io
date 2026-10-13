@@ -1,6 +1,7 @@
 const STORE_KEY = 'kin.studio.v1';
 const KEY_SESSION = 'kin.runtime.key';
 const GITHUB_TOKEN_KEY = 'kin.github.token';
+const PROVIDER_TOKEN_PREFIX = 'kin.provider.token.';
 const LOCAL_MODEL_KEY = 'kin.local-model.cached';
 const LOCAL_MODEL_ID = 'onnx-community/Qwen2.5-0.5B-Instruct';
 const LOCAL_MODEL_NAME = 'Kin Local Quick';
@@ -47,7 +48,7 @@ function freshState() {
   return {
     activeBuildId: 'nova',
     builds: [{ id: 'nova', name: 'Nova', role: 'A thoughtful everyday copilot', agents: [], agentConfig, model: LOCAL_MODEL_ID, runtime: LOCAL_MODEL_NAME, runtimeConfig: { mode: 'local', provider: LOCAL_MODEL_NAME, endpoint: '', model: LOCAL_MODEL_ID }, modelConfig, temperature: 0.7, memoryEnabled: true, systemPrompt: 'You are Nova, a thoughtful everyday copilot. Be warm, clear, curious, and practical. Remember what matters to the person you are helping. Ask one useful question when it would improve your answer.', createdAt: now, updatedAt: now }],
-    memories: [], capabilities: [], connections: { github: null, generic: [] },
+    memories: [], capabilities: [], connections: { github: null, generic: [], providers: [] },
     runtime: { provider: 'OpenAI-compatible', endpoint: '', model: 'llama3.2' },
     settings: { compact: false }
   };
@@ -66,13 +67,34 @@ function readState() {
       const ownerId = restored.activeBuildId || restored.builds[0].id;
       restored.memories = (restored.memories || []).map((entry) => ({ ...entry, buildId: entry.buildId || ownerId }));
       restored.capabilities = (restored.capabilities || []).map((entry) => ({ ...entry, buildId: entry.buildId || ownerId }));
-      restored.connections = { github: null, generic: [], ...(restored.connections || {}) };
+      restored.connections = { github: null, generic: [], providers: [], ...(restored.connections || {}) };
       return restored;
     }
   } catch (error) { console.warn('Could not load saved studio state', error); }
   return freshState();
 }
 function githubConfig() { return state.connections?.github || null; }
+function providersFor() { return Array.isArray(state.connections?.providers) ? state.connections.providers.filter((provider) => provider.enabled !== false) : []; }
+function providerToken(provider) { return sessionStorage.getItem(`${PROVIDER_TOKEN_PREFIX}${provider.id}`) || ''; }
+function quotaLike(status, message = '') { return [402, 408, 409, 429, 500, 502, 503, 504].includes(status) || /quota|rate.?limit|capacity|temporarily unavailable|too many requests|insufficient/i.test(message); }
+async function generateCloudReply(runtime, messages, temperature, build) {
+  const candidates = [{ id: 'active-runtime', provider: runtime.provider || 'Current runtime', endpoint: runtime.endpoint, model: runtime.model || build.model, token: sessionStorage.getItem(keyFor(build)) || '' }, ...providersFor().sort((a, b) => Number(a.priority || 0) - Number(b.priority || 0)).map((provider) => ({ ...provider, token: providerToken(provider) }))];
+  const seen = new Set(); const failures = [];
+  for (const candidate of candidates) {
+    if (!candidate.endpoint || !candidate.model || seen.has(`${candidate.endpoint}|${candidate.model}`)) continue;
+    seen.add(`${candidate.endpoint}|${candidate.model}`);
+    try {
+      const headers = { 'Content-Type': 'application/json' }; if (candidate.token) headers.Authorization = `Bearer ${candidate.token}`;
+      const response = await fetch(candidate.endpoint, { method: 'POST', headers, body: JSON.stringify({ model: candidate.model, messages, temperature }) });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) { const reason = result?.error?.message || result?.message || `status ${response.status}`; failures.push(`${candidate.provider || candidate.name}: ${reason}`); if (quotaLike(response.status, reason)) continue; throw new Error(reason); }
+      const answer = result?.choices?.[0]?.message?.content || result?.message?.content || result?.response;
+      if (!answer) throw new Error('The provider returned no chat message.');
+      return { answer, provider: candidate.provider || candidate.name || 'cloud model', fallback: failures.length > 0 };
+    } catch (error) { failures.push(`${candidate.provider || candidate.name}: ${error.message}`); if (!quotaLike(error.status, error.message)) throw error; }
+  }
+  throw new Error(`All configured model providers are unavailable. ${failures.join(' · ')}`);
+}
 function githubToken() { return sessionStorage.getItem(GITHUB_TOKEN_KEY) || ''; }
 function githubRequest(path, options = {}) {
   const token = githubToken();
@@ -378,7 +400,7 @@ function sidebar() {
     <div class="sidebar-bottom"><div class="runtime-mini"><div class="runtime-mini-head"><span>${escapeHTML(activeBuild().name)} runtime</span><span class="status-dot" style="background:${connected ? '#b2db68' : '#f1bc68'}"></span></div><p>${connected ? `Ready with ${runtimeMode() === 'cloud' ? 'cloud model' : 'local model'}.` : runtimeMode() === 'cloud' ? 'Cloud endpoint needs setup.' : 'Set up the free local model to chat.'}</p><button data-route="${runtimeMode() === 'cloud' ? 'runtime' : 'run'}">${connected ? 'Open AI chat' : runtimeMode() === 'cloud' ? 'Connect cloud model' : 'Set up local AI'} ${icon('arrow')}</button></div><div class="profile-chip"><div class="avatar">Y</div><div><div class="profile-name">Your workspace</div><div class="profile-mode">Saved on this device</div></div></div></div>
   </aside>`;
 }
-function mobileNav() { return `<nav class="mobile-nav" aria-label="Mobile navigation">${ROUTES.filter(([key]) => ['home', 'builder', 'run', 'memory', 'library'].includes(key)).map((route) => navLink(route, true)).join('')}</nav>`; }
+function mobileNav() { return `<nav class="mobile-nav" aria-label="Mobile navigation">${ROUTES.filter(([key]) => ['home', 'builder', 'run', 'connections', 'memory', 'library'].includes(key)).map((route) => navLink(route, true)).join('')}</nav>`; }
 function pageHeading(eyebrow, title, subtitle, action = '') {
   return `<div class="page-head"><div><div class="eyebrow">${eyebrow}</div><h1 class="page-title">${title}</h1><p class="page-subtitle">${subtitle}</p></div>${action}</div>`;
 }
@@ -456,7 +478,8 @@ function renderConnections() {
         <div class="field"><label for="github-token">Personal access token</label><input id="github-token" class="input" name="token" type="password" autocomplete="new-password" placeholder="${connected ? 'Token saved for this session' : 'Paste a GitHub token'}" /><div class="field-hint">Use a fine-grained token with read-only repository and issue access. It is never stored in exports or localStorage. <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener noreferrer">Create token</a></div></div>
         <div class="field"><label>Allowed read tools</label><div class="check-grid connection-checks"><label class="check-card compact"><input type="checkbox" name="repos" ${github.permissions?.includes('repos') ? 'checked' : ''}><span><strong>Repositories</strong><small>List and inspect repos</small></span></label><label class="check-card compact"><input type="checkbox" name="issues" ${github.permissions?.includes('issues') ? 'checked' : ''}><span><strong>Issues</strong><small>Read open issues</small></span></label><label class="check-card compact"><input type="checkbox" name="files" ${github.permissions?.includes('files') ? 'checked' : ''}><span><strong>Files</strong><small>Read file contents</small></span></label></div></div>
         <div class="form-actions"><button type="button" class="text-action" data-action="disconnect-github">Disconnect</button><div class="form-actions-end"><button class="btn btn-dark btn-small">${icon('plug')} Test & save GitHub</button></div></div></form></section>
-      <aside class="panel connection-card"><div class="panel-title">Other services</div><p class="panel-copy">Save an OpenAPI, REST, or MCP-style service as a connection card. It will be available to your AI’s blueprint, but Kin will not call arbitrary endpoints automatically.</p><form id="generic-connection-form" class="connection-form"><div class="field"><label for="generic-name">Service name</label><input id="generic-name" class="input" name="name" required placeholder="e.g. Linear workspace" /></div><div class="field"><label for="generic-endpoint">API or MCP endpoint</label><input id="generic-endpoint" class="input" name="endpoint" type="url" required placeholder="https://api.example.com" /></div><div class="field"><label for="generic-token">Session token (optional)</label><input id="generic-token" class="input" name="token" type="password" autocomplete="new-password" placeholder="Stored only until this tab closes" /></div><button class="btn btn-light btn-small">${icon('plus')} Add connection</button></form>${generic.length ? `<div class="saved-connections">${generic.map((item) => `<div class="saved-connection"><div><strong>${escapeHTML(item.name)}</strong><small>${escapeHTML(item.endpoint)}</small></div><button class="text-action" data-action="delete-connection" data-id="${escapeHTML(item.id)}" aria-label="Remove ${escapeHTML(item.name)}">${icon('trash')}</button></div>`).join('')}</div>` : `<div class="empty-connection">No additional services yet.</div>`}<div class="separator"></div><div class="callout"><strong>Safer by default.</strong> Add a dedicated connector when you want live actions. Review scopes and keep write access off unless you intentionally build an approval flow.</div></aside></div>`);
+      <aside class="panel connection-card"><div class="panel-title">Other services</div><p class="panel-copy">Save an OpenAPI, REST, or MCP-style service as a connection card. It will be available to your AI’s blueprint, but Kin will not call arbitrary endpoints automatically.</p><form id="generic-connection-form" class="connection-form"><div class="field"><label for="generic-name">Service name</label><input id="generic-name" class="input" name="name" required placeholder="e.g. Linear workspace" /></div><div class="field"><label for="generic-endpoint">API or MCP endpoint</label><input id="generic-endpoint" class="input" name="endpoint" type="url" required placeholder="https://api.example.com" /></div><div class="field"><label for="generic-token">Session token (optional)</label><input id="generic-token" class="input" name="token" type="password" autocomplete="new-password" placeholder="Stored only until this tab closes" /></div><button class="btn btn-light btn-small">${icon('plus')} Add connection</button></form>${generic.length ? `<div class="saved-connections">${generic.map((item) => `<div class="saved-connection"><div><strong>${escapeHTML(item.name)}</strong><small>${escapeHTML(item.endpoint)}</small></div><button class="text-action" data-action="delete-connection" data-id="${escapeHTML(item.id)}" aria-label="Remove ${escapeHTML(item.name)}">${icon('trash')}</button></div>`).join('')}</div>` : `<div class="empty-connection">No additional services yet.</div>`}<div class="separator"></div><div class="callout"><strong>Safer by default.</strong> Add a dedicated connector when you want live actions. Review scopes and keep write access off unless you intentionally build an approval flow.</div></aside></div>
+    <section class="panel provider-pool content-space"><div class="section-head"><div><h2>Smart model fallback</h2><p>Put providers in a pool. Kin tries the active model first, then moves to the next enabled model after a quota, rate-limit, or capacity response.</p></div><span class="badge">${providersFor().length} backup${providersFor().length === 1 ? '' : 's'}</span></div><div class="callout"><strong>OpenAI sign-in note.</strong> A browser app cannot safely use a normal OpenAI API key as a shared account. Sign in with ChatGPT requires an approved app client and callback. For now, add an OpenAI API key or another compatible provider below; keys remain in this session.</div><form id="provider-form" class="connection-form"><div class="field-row"><div class="field"><label for="provider-name">Provider name</label><input id="provider-name" class="input" name="name" required placeholder="OpenRouter free" /></div><div class="field"><label for="provider-kind">Provider</label><select id="provider-kind" class="select" name="provider"><option>OpenAI</option><option>OpenRouter</option><option>Hugging Face</option><option>OpenAI-compatible</option></select></div></div><div class="field-row"><div class="field"><label for="provider-endpoint">Chat completions endpoint</label><input id="provider-endpoint" class="input" name="endpoint" type="url" required placeholder="https://…/v1/chat/completions" /></div><div class="field"><label for="provider-model">Model identifier</label><input id="provider-model" class="input" name="model" required placeholder="provider/model:free" /></div></div><div class="field-row"><div class="field"><label for="provider-token">API key</label><input id="provider-token" class="input" name="token" type="password" autocomplete="new-password" placeholder="Session-only key" /></div><div class="field"><label for="provider-priority">Fallback priority</label><input id="provider-priority" class="input" name="priority" type="number" min="0" max="99" value="10" /></div></div><button class="btn btn-light btn-small">${icon('plus')} Add fallback model</button></form>${providersFor().length ? `<div class="saved-connections">${providersFor().map((item) => `<div class="saved-connection"><div><strong>${escapeHTML(item.name || item.provider)}</strong><small>${escapeHTML(item.model)} · priority ${Number(item.priority || 0)} · ${providerToken(item.id) ? 'key ready' : 'key missing'}</small></div><button class="text-action" data-action="delete-provider" data-id="${escapeHTML(item.id)}" aria-label="Remove ${escapeHTML(item.name || item.provider)}">${icon('trash')}</button></div>`).join('')}</div>` : `<div class="empty-connection">No fallback models yet. Use Runtime → Browse models to find current free options.</div>`}</section>`);
 }
 function renderRuntime() {
   const build = activeBuild();
@@ -641,13 +664,9 @@ async function sendChat(form) {
       } else if (runtimeMode(build) === 'local') {
         answer = await generateLocalReply(messages, Number(build.temperature ?? 0.7));
       } else {
-        const headers = { 'Content-Type': 'application/json' };
-        const key = sessionStorage.getItem(keyFor(build));
-        if (key) headers.Authorization = `Bearer ${key}`;
-        const response = await fetch(runtime.endpoint, { method: 'POST', headers, body: JSON.stringify({ model: runtime.model || build.model, messages, temperature: Number(build.temperature ?? 0.7) }) });
-        if (!response.ok) throw new Error(`Runtime returned ${response.status}. Check the endpoint, model name, and server logs.`);
-        const result = await response.json();
-        answer = result?.choices?.[0]?.message?.content || result?.message?.content || result?.response;
+        const routed = await generateCloudReply(runtime, messages, Number(build.temperature ?? 0.7), build);
+        answer = routed.answer;
+        assistantMessage.activityRouting = routed.fallback ? `Primary model was unavailable; automatically switched to ${routed.provider}.` : `Answered with ${routed.provider}.`;
       }
     }
     if (typeof answer !== 'string' || !answer.trim()) throw new Error('The model did not return a chat message.');
@@ -711,6 +730,7 @@ function handleClick(event) {
   if (action === 'clear-api-key') { sessionStorage.removeItem(keyFor()); render(); toast('This AI’s API key removed from this browser session.'); }
   if (action === 'disconnect-github') { state.connections.github = null; sessionStorage.removeItem(GITHUB_TOKEN_KEY); saveState(); render(); toast('GitHub disconnected from this browser.'); }
   if (action === 'delete-connection') { state.connections.generic = (state.connections.generic || []).filter((entry) => entry.id !== itemId); saveState(); render(); toast('Connection removed.'); }
+  if (action === 'delete-provider') { const provider = (state.connections.providers || []).find((entry) => entry.id === itemId); state.connections.providers = (state.connections.providers || []).filter((entry) => entry.id !== itemId); sessionStorage.removeItem(`${PROVIDER_TOKEN_PREFIX}${itemId}`); saveState(); render(); toast(`${provider?.name || 'Fallback model'} removed.`); }
   if (action === 'select-build') { state.activeBuildId = itemId; saveState(); render(); toast(`${activeBuild().name} is now your active build.`); }
   if (action === 'export-build') { const build = state.builds.find((entry) => entry.id === itemId); if (build) exportBuild(build); }
   if (action === 'export-all') { downloadJSON('kin-studio-backup.kin.json', { format: 'kin-studio', version: 1, exportedAt: new Date().toISOString(), ...state }); toast('Studio backup exported. Runtime keys are never included.'); }
@@ -788,6 +808,14 @@ function handleSubmit(event) {
     state.connections.generic = [item, ...(state.connections.generic || [])].slice(0, 20);
     const token = String(data.get('token') || '').trim(); if (token) sessionStorage.setItem(`kin.connection.${item.id}`, token);
     saveState(); render(); toast(`${item.name} added. Add a dedicated tool before making live requests.`);
+  }
+  if (form.id === 'provider-form') {
+    const data = new FormData(form); const endpoint = String(data.get('endpoint')).trim(); const token = String(data.get('token') || '').trim();
+    try { const parsed = new URL(endpoint); if (!['http:', 'https:'].includes(parsed.protocol)) throw new Error(); } catch { toast('Enter a valid https chat completions endpoint.', true); return; }
+    if (!token) { toast('Add a provider key so Kin can use this fallback.', true); return; }
+    const provider = { id: id(), name: String(data.get('name')).trim(), provider: String(data.get('provider')), endpoint, model: String(data.get('model')).trim(), priority: Math.max(0, Number(data.get('priority') || 10)), enabled: true, createdAt: new Date().toISOString() };
+    state.connections.providers = [...(state.connections.providers || []), provider].slice(0, 20);
+    sessionStorage.setItem(`${PROVIDER_TOKEN_PREFIX}${provider.id}`, token); saveState(); render(); toast(`${provider.name} added to the fallback pool.`);
   }
   if (form.id === 'chat-form') sendChat(form);
 }
