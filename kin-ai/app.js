@@ -410,4 +410,244 @@ function exportBuild(build) {
   downloadJSON(`${build.name.toLowerCase().replace(/[^a-z0-9]+/g, '-') || 'kin-build'}.kin.json`, bundle);
   toast('Build exported. Runtime keys are never included.');
 }
-function exp
+function exportBlueprint(build = activeBuild()) {
+  const bundle = { format: 'kin-model-blueprint', version: 1, exportedAt: new Date().toISOString(), build: { ...build, runtimeConfig: { provider: build.runtimeConfig?.provider || 'Local model server', model: build.runtimeConfig?.model || build.model || '' } }, modelConfig: build.modelConfig || {}, memories: memoriesFor(build), capabilities: capabilitiesFor(build) };
+  downloadJSON(`${build.name.toLowerCase().replace(/[^a-z0-9]+/g, '-') || 'kin-ai'}-blueprint.json`, bundle);
+  toast('Model blueprint exported. Session API keys are never included.');
+}
+function newBuild(name, role) {
+  const now = new Date().toISOString();
+  const model = LOCAL_MODEL_ID;
+  const build = { id: id(), name: name.trim(), role: role.trim() || 'A personal AI assistant', agents: [], agentConfig: { reasoning: 'balanced', maxSteps: 8, approval: 'ask-before-write', bridgeUrl: '', terminal: false, filesystem: false }, model, runtime: LOCAL_MODEL_NAME, runtimeConfig: { mode: 'local', provider: LOCAL_MODEL_NAME, endpoint: '', model }, modelConfig: { foundation: 'Local open model', family: model, architecture: 'Conversational assistant', context: '8192', modalities: ['text'], memory: 'Long-term memory', toolPolicy: 'Ask before using tools', autonomy: 'Confirm writes', learning: 'Prompt + examples', frame: ['conversation', 'memory', 'tool-router', 'safety'] }, temperature: 0.7, memoryEnabled: true, systemPrompt: `You are ${name.trim()}, ${role.trim() || 'a personal AI assistant'}. Be helpful, clear, and considerate. Adapt to the user's preferences, and say when you are unsure.`, createdAt: now, updatedAt: now };
+  state.builds.unshift(build); state.activeBuildId = build.id; saveState(); currentPage = 'run'; modalType = ''; chatMessages = []; render(); toast('Your AI is ready. Download its brain to start chatting.');
+}
+function handleFiles(files) {
+  const accepted = [...files];
+  if (!accepted.length) return;
+  const targetBuildId = activeBuild().id;
+  let pending = accepted.length;
+  let added = 0;
+  for (const file of accepted) {
+    if (file.size > MAX_PACKAGE_BYTES) { toast(`${file.name} is over 512 KB and was skipped.`, true); pending--; continue; }
+    const reader = new FileReader();
+    reader.onload = () => {
+      const content = String(reader.result || '');
+      const lowerName = file.name.toLowerCase();
+      const type = lowerName.endsWith('.json') && /mcp/i.test(lowerName) ? 'mcp' : lowerName.includes('openapi') || /\.ya?ml$/i.test(lowerName) ? 'api' : /\.md$|\.skill$/i.test(lowerName) ? 'skill' : /\.toml$|ide|editor/i.test(lowerName) ? 'ide' : 'other';
+      state.capabilities.unshift({ id: id(), buildId: targetBuildId, name: file.name.replace(/\.[^.]+$/, ''), type, description: `Imported ${file.type || 'file'}`, fileName: file.name, mimeType: file.type || 'application/octet-stream', size: file.size, content, encoding: 'data-url', enabled: true, createdAt: new Date().toISOString() });
+      added++; pending--; finish();
+    };
+    reader.onerror = () => { pending--; toast(`Could not read ${file.name}.`, true); finish(); };
+    reader.readAsDataURL(file);
+  }
+  function finish() { if (!pending) { saveState(); if (added) { currentPage = 'capabilities'; render(); toast(`${added} package${added === 1 ? '' : 's'} added to your shelf.`); } } }
+  finish();
+}
+async function sendChat(form) {
+  const input = form.elements.message;
+  const content = input.value.trim();
+  if (!content || isSending) return;
+  const build = activeBuild();
+  if (!runtimeReady(build)) { toast(runtimeMode(build) === 'local' ? 'Set up the local model before chatting.' : 'Connect a cloud model before chatting.', true); return; }
+  const runtime = runtimeFor(build);
+  const agent = assignedAgent(build, content);
+  chatMessages.push({ role: 'user', content, time: new Date().toISOString() });
+  input.value = '';
+  const memoryEntries = build.memoryEnabled ? memoriesFor(build) : [];
+  const memories = memoryEntries.map((entry) => `- ${entry.text}`).join('\n');
+  const agentInstructions = agent ? `\n\nFor this request, act as the specialist agent “${agent.name}”, focused on ${agent.focus}.${agent.instructions ? ` Follow these agent instructions: ${agent.instructions}` : ''} Use your specialty to answer the user's request directly.` : '';
+  const harness = build.agentConfig || {};
+  const toolSummary = capabilitiesFor(build).filter((entry) => entry.enabled !== false).map((entry) => `${entry.name} (${entry.type})`).slice(0, 12).join(', ');
+  const harnessInstructions = `\n\nAgent harness: use a ${harness.reasoning === 'deep' ? 'deep, deliberate' : harness.reasoning === 'fast' ? 'fast' : 'balanced'} workflow, up to ${Number(harness.maxSteps || 8)} tool steps. ${harness.approval === 'trusted' ? 'Trusted tools may run automatically.' : 'Ask before making writes or running commands.'} ${harness.filesystem && harness.bridgeUrl ? `A local filesystem bridge is configured at ${harness.bridgeUrl}.` : 'No local filesystem bridge is active.'} ${harness.terminal && harness.bridgeUrl ? 'Terminal tools are enabled through that bridge.' : 'Terminal tools are disabled.'}${toolSummary ? ` Available attached capabilities: ${toolSummary}.` : ''}`;
+  const system = `${build.systemPrompt || `You are ${build.name}, ${build.role}.`}${memories ? `\n\nThe user has chosen to share these saved memories with you:\n${memories}` : ''}${agentInstructions}${harnessInstructions}`;
+  const messages = [{ role: 'system', content: system }, ...chatMessages.slice(-20).map(({ role, content: text }) => ({ role, content: text }))];
+  const assistantMessage = {
+    role: 'assistant', content: '', time: new Date().toISOString(),
+    agentName: agent?.name || build.name, agentFocus: agent?.focus || build.role, activityTask: content, activityStatus: 'working',
+    activityRouting: agent ? (agent.matched ? 'Matched this message to the agent’s focus or keywords.' : 'No specialist matched, so the first agent handled it by default.') : 'No specialist agents are configured; the main AI handled it.',
+    activityMemory: memoryEntries.length ? `Checked ${memoryEntries.length} saved ${memoryEntries.length === 1 ? 'memory' : 'memories'}` : 'No saved memories were included'
+  };
+  chatMessages.push(assistantMessage); isSending = true; render();
+  try {
+    let answer;
+    const bridgeAnswer = await runBridgeCommand(content, build);
+    if (bridgeAnswer !== null) {
+      answer = bridgeAnswer;
+      assistantMessage.activityRouting = 'Executed an explicitly requested local bridge tool.';
+    } else if (runtimeMode(build) === 'local') {
+      answer = await generateLocalReply(messages, Number(build.temperature ?? 0.7));
+    } else {
+      const headers = { 'Content-Type': 'application/json' };
+      const key = sessionStorage.getItem(keyFor(build));
+      if (key) headers.Authorization = `Bearer ${key}`;
+      const response = await fetch(runtime.endpoint, { method: 'POST', headers, body: JSON.stringify({ model: runtime.model || build.model, messages, temperature: Number(build.temperature ?? 0.7) }) });
+      if (!response.ok) throw new Error(`Runtime returned ${response.status}. Check the endpoint, model name, and server logs.`);
+      const result = await response.json();
+      answer = result?.choices?.[0]?.message?.content || result?.message?.content || result?.response;
+    }
+    if (typeof answer !== 'string' || !answer.trim()) throw new Error('The model did not return a chat message.');
+    assistantMessage.content = answer.trim(); assistantMessage.activityStatus = 'complete';
+  } catch (error) {
+    const message = error.name === 'AbortError' ? 'Response stopped. Load the local model again from Model setup to retry.' : runtimeMode(build) === 'local' ? `The local model could not answer. ${error.message}\n\nTry loading the model again from Model setup.` : `I couldn't reach the model runtime. ${error.message}\n\nCheck that the endpoint is reachable from this device and allows requests from Kin (CORS).`;
+    assistantMessage.content = message; assistantMessage.activityStatus = error.name === 'AbortError' ? 'stopped' : 'error';
+  } finally { clearTimeout(thinkingTimer); thinkingTimer = null; isSending = false; currentPage = 'run'; render(); }
+}
+function stopGeneration() {
+  if (!generationRequest) return;
+  const pending = generationRequest;
+  generationRequest = null;
+  clearTimeout(pending.timeout);
+  modelWorker?.terminate(); modelWorker = null;
+  localModelPhase = localStorage.getItem(LOCAL_MODEL_KEY) === 'true' ? 'cached' : 'missing';
+  pending.reject(new DOMException('Response stopped.', 'AbortError'));
+}
+function handleClick(event) {
+  const route = event.target.closest('[data-route]');
+  if (route) { event.preventDefault(); currentPage = route.dataset.route; modalType = ''; render(); return; }
+  const control = event.target.closest('[data-action]');
+  if (!control) return;
+  const action = control.dataset.action;
+  const itemId = control.dataset.id;
+  if (action === 'new-build') { modalType = 'new-build'; render(); document.querySelector('#new-build-name')?.focus(); }
+  if (action === 'add-agent') { modalType = 'agent'; render(); document.querySelector('#agent-name')?.focus(); }
+  if (action === 'delete-agent') { const build = activeBuild(); build.agents = (build.agents || []).filter((agent) => agent.id !== itemId); build.updatedAt = new Date().toISOString(); saveState(); render(); toast('Agent removed from this AI.'); }
+  if (action === 'add-memory') { modalType = 'memory'; render(); document.querySelector('#memory-text')?.focus(); }
+  if (action === 'add-package') { modalType = 'package'; render(); document.querySelector('#package-name')?.focus(); }
+  if (action === 'export-blueprint') exportBlueprint();
+  if (action === 'reset-model') { const build = activeBuild(); build.modelConfig = { foundation: 'Local open model', family: LOCAL_MODEL_ID, architecture: 'Conversational assistant', context: '8192', modalities: ['text'], memory: 'Long-term memory', toolPolicy: 'Ask before using tools', autonomy: 'Confirm writes', learning: 'Prompt + examples', frame: ['conversation', 'memory', 'tool-router', 'safety'] }; build.model = LOCAL_MODEL_ID; saveState(); render(); toast('Model recipe reset.'); }
+  if (action === 'close-modal') { if (event.target === control || control.classList.contains('modal-close')) { modalType = ''; render(); } }
+  if (action === 'toggle-memory') { const build = activeBuild(); build.memoryEnabled = !build.memoryEnabled; build.updatedAt = new Date().toISOString(); saveState(); render(); }
+  if (action === 'toggle-harness') { const build = activeBuild(); build.agentConfig = { ...freshState().builds[0].agentConfig, ...(build.agentConfig || {}), [control.dataset.field]: !build.agentConfig?.[control.dataset.field] }; build.updatedAt = new Date().toISOString(); saveState(); render(); }
+  if (action === 'delete-memory') { state.memories = state.memories.filter((entry) => entry.id !== itemId); saveState(); render(); toast('Memory removed.'); }
+  if (action === 'delete-capability') { state.capabilities = state.capabilities.filter((entry) => entry.id !== itemId); saveState(); render(); toast('Package removed.'); }
+  if (action === 'toggle-capability') { const item = state.capabilities.find((entry) => entry.id === itemId); if (item) item.enabled = !item.enabled; saveState(); render(); toast(`${item?.enabled ? 'Enabled' : 'Paused'} package.`); }
+  if (action === 'browse-files') document.querySelector('#package-files')?.click();
+  if (action === 'save-runtime') saveRuntime();
+  if (action === 'start-local-model') { selectLocalRuntime(); loadLocalModel().catch((error) => toast(error.message, true)); }
+  if (action === 'cancel-model-load') cancelLocalModelLoad();
+  if (action === 'stop-generation') stopGeneration();
+  if (action === 'open-chat') { currentPage = 'run'; render(); }
+  if (action === 'clear-runtime') { selectLocalRuntime(); render(); toast('Switched this AI to the local model.'); }
+  if (action === 'clear-api-key') { sessionStorage.removeItem(keyFor()); render(); toast('This AI’s API key removed from this browser session.'); }
+  if (action === 'select-build') { state.activeBuildId = itemId; saveState(); render(); toast(`${activeBuild().name} is now your active build.`); }
+  if (action === 'export-build') { const build = state.builds.find((entry) => entry.id === itemId); if (build) exportBuild(build); }
+  if (action === 'export-all') { downloadJSON('kin-studio-backup.kin.json', { format: 'kin-studio', version: 1, exportedAt: new Date().toISOString(), ...state }); toast('Studio backup exported. Runtime keys are never included.'); }
+  if (action === 'import-build') document.querySelector('#import-file')?.click();
+  if (action === 'delete-build') { if (state.builds.length < 2) return; const build = state.builds.find((entry) => entry.id === itemId); modalType = ''; if (!window.confirm(`Delete “${build?.name}” and its memories and packages from this device?`)) return; state.builds = state.builds.filter((entry) => entry.id !== itemId); state.memories = state.memories.filter((entry) => entry.buildId !== itemId); state.capabilities = state.capabilities.filter((entry) => entry.buildId !== itemId); sessionStorage.removeItem(keyFor(build)); if (state.activeBuildId === itemId) state.activeBuildId = state.builds[0].id; saveState(); render(); toast('Build deleted.'); }
+}
+function saveRuntime() {
+  const endpoint = document.querySelector('#runtime-endpoint')?.value.trim();
+  const model = document.querySelector('#runtime-model')?.value.trim();
+  const provider = document.querySelector('#runtime-provider')?.value;
+  const key = document.querySelector('#runtime-key')?.value;
+  const build = activeBuild();
+  let parsedEndpoint = null;
+  if (endpoint) { try { parsedEndpoint = new URL(endpoint); if (!['http:', 'https:'].includes(parsedEndpoint.protocol)) throw new Error(); } catch { toast('Enter a valid http or https endpoint URL.', true); return; } }
+  const credential = key || sessionStorage.getItem(keyFor(build));
+  const loopback = parsedEndpoint && ['localhost', '127.0.0.1', '[::1]'].includes(parsedEndpoint.hostname);
+  if (credential && parsedEndpoint?.protocol === 'http:' && !loopback) { toast('Use HTTPS before sending an API key to a non-local server.', true); return; }
+  if (!endpoint) { toast('Add the cloud chat endpoint first, or use the local model above.', true); return; }
+  const cloud = { endpoint, model, provider };
+  build.runtimeConfig = { ...runtimeFor(build), ...cloud, cloud, mode: 'cloud' };
+  build.runtime = provider;
+  if (model) build.model = model;
+  if (key) sessionStorage.setItem(keyFor(build), key);
+  build.updatedAt = new Date().toISOString();
+  saveState(); render(); toast(endpoint ? `Runtime saved for ${build.name}.` : `${build.name} disconnected.`);
+}
+function handleSubmit(event) {
+  event.preventDefault();
+  const form = event.target;
+  if (form.id === 'builder-form') {
+    const data = new FormData(form); const build = activeBuild();
+    build.name = String(data.get('name')).trim(); build.role = String(data.get('role')).trim(); build.systemPrompt = String(data.get('systemPrompt')).trim(); build.model = String(data.get('model')).trim(); build.temperature = Number(data.get('temperature')); build.updatedAt = new Date().toISOString();
+    saveState(); render(); toast('Build saved on this device.');
+  }
+  if (form.id === 'harness-form') {
+    const data = new FormData(form); const build = activeBuild();
+    build.agentConfig = { ...(build.agentConfig || {}), reasoning: String(data.get('reasoning')), maxSteps: Number(data.get('maxSteps')), approval: String(data.get('approval')), bridgeUrl: String(data.get('bridgeUrl')).trim() };
+    const bridgeToken = String(data.get('bridgeToken') || '').trim(); if (bridgeToken) sessionStorage.setItem(`${KEY_SESSION}.bridge.${build.id}`, bridgeToken);
+    build.updatedAt = new Date().toISOString(); saveState(); render(); toast('Agent harness saved on this device.');
+  }
+  if (form.id === 'model-form') {
+    const data = new FormData(form); const build = activeBuild();
+    const foundation = String(data.get('foundation'));
+    build.modelConfig = { foundation, family: foundation === 'Local open model' ? LOCAL_MODEL_ID : String(data.get('family')).trim() || build.model || LOCAL_MODEL_ID, architecture: String(data.get('architecture')), context: String(data.get('context')), modalities: data.getAll('modalities'), memory: String(data.get('memory')), toolPolicy: String(data.get('toolPolicy')), autonomy: String(data.get('autonomy')), learning: String(data.get('learning')), frame: data.getAll('frame') };
+    if (foundation === 'Local open model') build.model = LOCAL_MODEL_ID;
+    build.updatedAt = new Date().toISOString(); saveState(); render(); toast('Model recipe saved on this device.');
+  }
+  if (form.id === 'memory-form') {
+    const text = String(new FormData(form).get('text')).trim();
+    if (!text) return;
+    state.memories.unshift({ id: id(), buildId: activeBuild().id, text, createdAt: new Date().toISOString() }); saveState(); modalType = ''; render(); toast(`Memory saved for ${activeBuild().name}.`);
+  }
+  if (form.id === 'agent-form') {
+    const data = new FormData(form); const build = activeBuild();
+    build.agents = [...(build.agents || []), { id: id(), name: String(data.get('name')).trim(), focus: String(data.get('focus')).trim(), keywords: String(data.get('keywords')).trim(), instructions: String(data.get('instructions')).trim(), createdAt: new Date().toISOString() }];
+    build.updatedAt = new Date().toISOString(); saveState(); modalType = ''; currentPage = 'builder'; render(); toast('Specialist agent added to this AI.');
+  }
+  if (form.id === 'new-build-form') { const data = new FormData(form); newBuild(String(data.get('name')), String(data.get('role') || '')); }
+  if (form.id === 'package-form') {
+    const data = new FormData(form); const name = String(data.get('name')).trim();
+    state.capabilities.unshift({ id: id(), buildId: activeBuild().id, name, type: String(data.get('type')), endpoint: String(data.get('endpoint')).trim(), description: String(data.get('description')).trim(), enabled: true, createdAt: new Date().toISOString() });
+    saveState(); modalType = ''; currentPage = 'capabilities'; render(); toast('Capability added to your shelf.');
+  }
+  if (form.id === 'chat-form') sendChat(form);
+}
+function handleChange(event) {
+  if (event.target.id === 'package-files' && event.target.files?.length) handleFiles(event.target.files);
+  if (event.target.id === 'import-file' && event.target.files?.[0]) importBundle(event.target.files[0]);
+  if (event.target.id === 'model-foundation') {
+    const family = document.querySelector('#model-family');
+    if (family) { const local = event.target.value === 'Local open model'; family.readOnly = local; if (local) family.value = LOCAL_MODEL_ID; }
+  }
+}
+function importBundle(file) {
+  if (file.size > 2 * 1024 * 1024) { toast('Import is over 2 MB.', true); return; }
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const payload = JSON.parse(String(reader.result));
+      if (payload.format === 'kin-build' && payload.build?.name) {
+        const build = { ...payload.build, id: id(), updatedAt: new Date().toISOString() };
+        state.builds.unshift(build); state.activeBuildId = build.id;
+        if (Array.isArray(payload.memories)) state.memories = [...payload.memories.map((entry) => ({ ...entry, id: id(), buildId: build.id })), ...state.memories].slice(0, 300);
+        if (Array.isArray(payload.capabilities)) state.capabilities = [...payload.capabilities.map((entry) => ({ ...entry, id: id(), buildId: build.id })), ...state.capabilities].slice(0, 100);
+      } else if (payload.format === 'kin-studio' && Array.isArray(payload.builds) && payload.builds.length) {
+        const idMap = new Map();
+        const importedBuilds = payload.builds.map((build) => { const nextId = id(); idMap.set(build.id, nextId); return { ...build, id: nextId }; });
+        state.builds = [...importedBuilds, ...state.builds].slice(0, 30); state.activeBuildId = importedBuilds[0].id;
+        if (Array.isArray(payload.memories)) state.memories = [...payload.memories.map((entry) => ({ ...entry, id: id(), buildId: idMap.get(entry.buildId) || importedBuilds[0].id })), ...state.memories].slice(0, 300);
+        if (Array.isArray(payload.capabilities)) state.capabilities = [...payload.capabilities.map((entry) => ({ ...entry, id: id(), buildId: idMap.get(entry.buildId) || importedBuilds[0].id })), ...state.capabilities].slice(0, 100);
+      } else throw new Error('This file is not a Kin build or studio backup.');
+      saveState(); currentPage = 'library'; render(); toast('Build imported. Review any attached packages before using them.');
+    } catch (error) { toast(`Import failed: ${error.message}`, true); }
+  };
+  reader.onerror = () => toast('Could not read that file.', true);
+  reader.readAsText(file);
+}
+function handleInput(event) {
+  if (event.target.id === 'build-name') document.querySelector('#live-name')?.replaceChildren(document.createTextNode(event.target.value || 'Your AI'));
+  if (event.target.id === 'build-role') document.querySelector('#live-role')?.replaceChildren(document.createTextNode(event.target.value || 'Your AI, taking shape'));
+  if (event.target.id === 'build-prompt') document.querySelector('#live-prompt')?.replaceChildren(document.createTextNode(event.target.value || 'Your instructions will shape how this AI communicates.'));
+  if (event.target.id === 'build-temp') { const value = Number(event.target.value).toFixed(1); const label = document.querySelector('#temperature-value'); if (label) label.textContent = value; }
+}
+function handleKey(event) {
+  if (event.key === 'Escape' && modalType) { modalType = ''; render(); }
+  if (event.key === 'Enter' && event.target.id === 'chat-input' && !event.shiftKey) { event.preventDefault(); document.querySelector('#chat-form')?.requestSubmit(); }
+}
+function installDropZone() {
+  const zone = document.querySelector('#drop-zone'); if (!zone) return;
+  ['dragenter', 'dragover'].forEach((type) => zone.addEventListener(type, (event) => { event.preventDefault(); zone.classList.add('dragging'); }));
+  ['dragleave', 'drop'].forEach((type) => zone.addEventListener(type, (event) => { event.preventDefault(); zone.classList.remove('dragging'); }));
+  zone.addEventListener('drop', (event) => handleFiles(event.dataTransfer.files));
+}
+document.addEventListener('click', handleClick);
+document.addEventListener('submit', handleSubmit);
+document.addEventListener('change', handleChange);
+document.addEventListener('input', handleInput);
+document.addEventListener('keydown', handleKey);
+const observer = new MutationObserver(installDropZone);
+observer.observe(root, { childList: true, subtree: true });
+if ('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('./sw.js').catch((error) => console.info('Offline install is unavailable in this environment.', error));
+render();
