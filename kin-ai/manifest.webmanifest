@@ -1,0 +1,10 @@
+{
+  "name": "Kin — Your AI, your way",
+  "short_name": "Kin AI",
+  "description": "Build and personalize an AI assistant that works your way.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f4f0",
+  "theme_color": "#f4f4f0",
+  "icons": [
+    { "sr
