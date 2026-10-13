@@ -26,4 +26,8 @@ const server = http.createServer(async (request, response) => {
     if (request.method === 'POST' && request.url === '/workspace/list') return send(response, 200, { path: payload.path || '.', entries: await fs.readdir(safePath(payload.path), { withFileTypes: true }).then((entries) => entries.map((entry) => ({ name: entry.name, type: entry.isDirectory() ? 'directory' : 'file' }))) });
     if (request.method === 'POST' && request.url === '/workspace/read') return send(response, 200, { path: payload.path, content: await fs.readFile(safePath(payload.path), 'utf8') });
     if (request.method === 'POST' && request.url === '/workspace/write') { await fs.writeFile(safePath(payload.path), String(payload.content || ''), 'utf8'); return send(response, 200, { ok: true, path: payload.path }); }
-    if (request.met
+    if (request.method === 'POST' && request.url === '/terminal/run') { if (!payload.command) return send(response, 400, { error: 'command is required' }); const [program, ...args] = String(payload.command).trim().split(/\s+/); const result = await exec(program, args, { cwd: safePath(payload.cwd || '.'), timeout: Math.min(Number(payload.timeout || 30000), 120000), maxBuffer: 2 * 1024 * 1024 }); return send(response, 200, { ok: true, stdout: result.stdout, stderr: result.stderr }); }
+    return send(response, 404, { error: 'Unknown bridge route.' });
+  } catch (error) { return send(response, 500, { error: error.message }); }
+});
+server.listen(port, '127.0.0.1', () => console.log(`Kin bridge listening on http://127.0.0.1:${port}\nWorkspace: ${root}\nSet KIN_BRIDGE_TOKEN to require a token.`));
