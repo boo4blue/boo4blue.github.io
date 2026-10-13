@@ -1,4 +1,4 @@
-const CACHE = 'kin-shell-v11';
+const CACHE = 'kin-shell-v12';
 const APP_FILES = ['./', './index.html', './styles.css', './catalog.css', './connections.css', './app.js', './model-worker.js', './manifest.webmanifest', './icon.svg'];
 
 self.addEventListener('install', (event) => {
@@ -26,4 +26,13 @@ self.addEventListener('fetch', (event) => {
       return response;
     }))
   );
+});
+
+self.addEventListener('notificationclick', (event) => {
+  event.notification.close();
+  event.waitUntil((async () => {
+    const windows = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
+    for (const client of windows) if ('focus' in client) return client.focus();
+    if (self.clients.openWindow) return self.clients.openWindow('./');
+  })());
 });
