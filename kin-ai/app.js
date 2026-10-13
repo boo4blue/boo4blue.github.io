@@ -1,4 +1,5 @@
 const STORE_KEY = 'kin.studio.v1';
+const CHAT_KEY = 'kin.chat.';
 const KEY_SESSION = 'kin.runtime.key';
 const GITHUB_TOKEN_KEY = 'kin.github.token';
 const PROVIDER_TOKEN_PREFIX = 'kin.provider.token.';
@@ -243,7 +244,7 @@ async function generateCapabilityArtifact(prompt, kind, build = activeBuild()) {
 }
 let state = readState();
 let currentPage = 'home';
-let chatMessages = [];
+let chatMessages = restoreChat();
 let isSending = false;
 let modalType = '';
 let modalData = null;
@@ -260,6 +261,33 @@ let modelCatalog = [];
 let modelCatalogLoading = false;
 let accountStatus = '';
 const root = document.querySelector('#app');
+
+function restoreChat() {
+  try {
+    const messages = JSON.parse(localStorage.getItem(`${CHAT_KEY}${state.activeBuildId}`) || '[]');
+    let interrupted = false;
+    for (const message of messages) if (message.activityStatus === 'working') {
+      message.activityStatus = 'interrupted';
+      message.content = 'This reply was interrupted when Kin was closed. You can retry the prompt below.';
+      interrupted = true;
+    }
+    if (interrupted) { localStorage.setItem(`${CHAT_KEY}${state.activeBuildId}`, JSON.stringify(messages)); currentPage = 'run'; }
+    return Array.isArray(messages) ? messages : [];
+  } catch { return []; }
+}
+function saveChat() {
+  try { localStorage.setItem(`${CHAT_KEY}${activeBuild().id}`, JSON.stringify(chatMessages.slice(-60))); }
+  catch (error) { console.info('Chat could not be saved to this device.', error); }
+}
+async function notifyReply(build, answer) {
+  if (!document.hidden || !('Notification' in window) || Notification.permission !== 'granted') return;
+  const options = { body: String(answer).slice(0, 180), icon: './icon.svg', tag: 'kin-reply', data: { url: './' } };
+  try {
+    const registration = await navigator.serviceWorker?.ready;
+    if (registration?.showNotification) await registration.showNotification(`${build.name} finished a reply`, options);
+    else new Notification(`${build.name} finished a reply`, options);
+  } catch (error) { console.info('Background notification was unavailable.', error); }
+}
 
 function saveState() {
   try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); }
@@ -676,8 +704,10 @@ function renderRun() {
     const body = message.role === 'assistant' ? `<div data-answer>${waiting ? '<span class="thinking-indicator" id="thinking-status">Thinking on your device…</span>' : escapeHTML(message.content)}</div>${activityMarkup(message)}` : escapeHTML(message.content);
     return `<div class="message ${message.role}"><div class="message-bubble">${body}</div><div class="message-time">${message.role === 'user' ? 'You' : escapeHTML(build.name)} · ${new Intl.DateTimeFormat(undefined, { hour: 'numeric', minute: '2-digit' }).format(new Date(message.time))}</div></div>`;
   }).join('') : `<div class="chat-empty"><div class="preview-avatar">${icon('spark')}</div><h3>${ready ? `Meet ${escapeHTML(build.name)}` : 'Your conversation starts here'}</h3><p>${ready ? 'Try a question and see how your personality settings shape the answer.' : 'Connect a model runtime to start chatting. Your build and memory are already saved locally.'}</p></div>`;
-  shell(`${pageHeading('Try it out', 'Run your AI', `A private preview of ${escapeHTML(build.name)}. Messages in this preview stay in memory until you leave this page.`, `<button class="btn btn-light btn-small" data-route="builder">${icon('sliders')} Tune personality</button>`)}
-    <section class="chat-shell content-space"><div class="chat-head"><div style="display:flex;align-items:center;gap:10px"><div class="preview-avatar" style="width:31px;height:31px">${icon('spark')}</div><div><div class="build-name">${escapeHTML(build.name)}</div><div class="build-meta">${escapeHTML(mode === 'local' ? `${LOCAL_MODEL_NAME} · ${localModelDevice || 'on device'}` : runtime.model || build.model)}</div></div></div><span class="badge lime"><span class="status-dot" style="background:#718c2e"></span>${mode === 'local' ? 'On device' : 'Cloud model'}</span></div><div class="chat-log" id="chat-log">${log}</div><form class="chat-compose" id="chat-form"><label class="sr-only" for="chat-input">Message your AI</label><textarea class="textarea" id="chat-input" name="message" maxlength="4000" placeholder="Say hello to ${escapeHTML(build.name)}…" ${isSending ? 'disabled' : ''} required></textarea>${isSending && mode === 'local' ? '<button class="btn btn-light" type="button" data-action="stop-generation" aria-label="Stop response">Stop</button>' : isSending ? '<button class="btn btn-dark" type="button" disabled aria-label="Waiting for response">…</button>' : `<button class="btn btn-dark" type="submit" aria-label="Send message">${icon('arrow')}</button>`}</form></section><p class="inline-note" style="margin-top:9px">${mode === 'local' ? 'The first reply can take a little while while your phone warms up the model. It runs on this device.' : 'Your message, AI instructions, and enabled memories are sent to your selected cloud provider.'}</p>`);
+  const interrupted = [...chatMessages].reverse().find((message) => message.activityStatus === 'interrupted');
+  shell(`${pageHeading('Try it out', 'Run your AI', `A private preview of ${escapeHTML(build.name)}. Recent messages are saved on this device.`, `<button class="btn btn-light btn-small" data-route="builder">${icon('sliders')} Tune personality</button>`)}
+    ${interrupted ? `<div class="callout content-space"><strong>A reply was interrupted when Kin closed.</strong> The unfinished prompt is saved and can be sent again.<div class="setup-actions"><button class="btn btn-dark btn-small" data-action="retry-interrupted">Retry last prompt</button></div></div>` : ''}
+    <section class="chat-shell content-space"><div class="chat-head"><div style="display:flex;align-items:center;gap:10px"><div class="preview-avatar" style="width:31px;height:31px">${icon('spark')}</div><div><div class="build-name">${escapeHTML(build.name)}</div><div class="build-meta">${escapeHTML(mode === 'local' ? `${LOCAL_MODEL_NAME} · ${localModelDevice || 'on device'}` : runtime.model || build.model)}</div></div></div><div style="display:flex;align-items:center;gap:8px"><span class="badge lime"><span class="status-dot" style="background:#718c2e"></span>${mode === 'local' ? 'On device' : 'Cloud model'}</span><button class="btn btn-light btn-small" data-action="enable-notifications">${'Notification' in window && Notification.permission === 'granted' ? 'Notifications on' : 'Notify when done'}</button></div></div><div class="chat-log" id="chat-log">${log}</div><form class="chat-compose" id="chat-form"><label class="sr-only" for="chat-input">Message your AI</label><textarea class="textarea" id="chat-input" name="message" maxlength="4000" placeholder="Say hello to ${escapeHTML(build.name)}…" ${isSending ? 'disabled' : ''} required></textarea>${isSending && mode === 'local' ? '<button class="btn btn-light" type="button" data-action="stop-generation" aria-label="Stop response">Stop</button>' : isSending ? '<button class="btn btn-dark" type="button" disabled aria-label="Waiting for response">…</button>' : `<button class="btn btn-dark" type="submit" aria-label="Send message">${icon('arrow')}</button>`}</form></section><p class="inline-note" style="margin-top:9px">Kin can keep working while this page is open or minimized. Closing the browser may stop a reply; your chat is saved so you can retry.</p>`);
   const logEl = document.querySelector('#chat-log');
   if (logEl) logEl.scrollTop = logEl.scrollHeight;
   if (isSending && mode === 'local') {
@@ -795,7 +825,7 @@ async function sendChat(form) {
     activityRouting: agent ? (agent.matched ? 'Matched this message to the agent’s focus or keywords.' : 'No specialist matched, so the first agent handled it by default.') : 'No specialist agents are configured; the main AI handled it.',
     activityMemory: memoryEntries.length ? `Checked ${memoryEntries.length} saved ${memoryEntries.length === 1 ? 'memory' : 'memories'}` : 'No saved memories were included'
   };
-  chatMessages.push(assistantMessage); isSending = true; render();
+  chatMessages.push(assistantMessage); isSending = true; saveChat(); render();
   try {
     let answer; let toolOutput = '';
     if (capabilityRequest) {
@@ -827,10 +857,10 @@ async function sendChat(form) {
     } else answer = toolOutput;
     }
     if (typeof answer !== 'string' || !answer.trim()) throw new Error('The model did not return a chat message.');
-    assistantMessage.content = answer.trim(); assistantMessage.activityStatus = 'complete';
+    assistantMessage.content = answer.trim(); assistantMessage.activityStatus = 'complete'; saveChat(); await notifyReply(build, assistantMessage.content);
   } catch (error) {
     const message = error.name === 'AbortError' ? 'Response stopped. Load the local model again from Model setup to retry.' : runtimeMode(build) === 'local' ? `The local model could not answer. ${error.message}\n\nTry loading the model again from Model setup.` : `I couldn't reach the model runtime. ${error.message}\n\nCheck that the endpoint is reachable from this device and allows requests from Kin (CORS).`;
-    assistantMessage.content = message; assistantMessage.activityStatus = error.name === 'AbortError' ? 'stopped' : 'error';
+    assistantMessage.content = message; assistantMessage.activityStatus = error.name === 'AbortError' ? 'stopped' : 'error'; saveChat();
   } finally { clearTimeout(thinkingTimer); thinkingTimer = null; isSending = false; currentPage = 'run'; render(); }
 }
 function stopGeneration() {
@@ -849,6 +879,15 @@ function handleClick(event) {
   if (!control) return;
   const action = control.dataset.action;
   const itemId = control.dataset.id;
+  if (action === 'enable-notifications') {
+    if (!('Notification' in window)) { toast('Notifications are not supported by this browser.', true); return; }
+    Notification.requestPermission().then((permission) => { render(); toast(permission === 'granted' ? 'Kin will notify you when a background reply finishes.' : 'Allow notifications in browser settings to enable this.'); });
+  }
+  if (action === 'retry-interrupted') {
+    const previous = [...chatMessages].reverse().find((message) => message.role === 'user');
+    const input = document.querySelector('#chat-input');
+    if (previous && input) { input.value = previous.content; document.querySelector('#chat-form')?.requestSubmit(); }
+  }
   if (action === 'load-model-catalog') loadModelCatalog();
   if (action === 'select-cloud-model') {
     const provider = control.dataset.provider || 'OpenAI-compatible';
@@ -892,7 +931,7 @@ function handleClick(event) {
   if (action === 'account-logout') signOutAccount();
   if (action === 'sync-upload') uploadAccountData();
   if (action === 'sync-download') downloadAccountData();
-  if (action === 'select-build') { state.activeBuildId = itemId; saveState(); render(); toast(`${activeBuild().name} is now your active build.`); }
+  if (action === 'select-build') { state.activeBuildId = itemId; chatMessages = restoreChat(); saveState(); render(); toast(`${activeBuild().name} is now your active build.`); }
   if (action === 'export-build') { const build = state.builds.find((entry) => entry.id === itemId); if (build) exportBuild(build); }
   if (action === 'export-all') { downloadJSON('kin-studio-backup.kin.json', { format: 'kin-studio', version: 1, exportedAt: new Date().toISOString(), ...state }); toast('Studio backup exported. Runtime keys are never included.'); }
   if (action === 'import-build') document.querySelector('#import-file')?.click();
