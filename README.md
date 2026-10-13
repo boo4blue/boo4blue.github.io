@@ -38,6 +38,8 @@ Set the bridge URL to `http://127.0.0.1:8787`, enable filesystem or terminal acc
 
 The blueprint describes a complete assistant system around model weights. The `LoRA adapter`, `Fine-tuning job`, and `Train from scratch` choices are handoff points for a separate training pipeline; the browser does not pretend to train a foundation model or run uploaded code.
 
+Ask your AI in chat to **make a skill**, **create a tool**, or **build a plugin**. Kin saves the generated capability to that AI's shelf. Skills are included in later prompts. Generated tool specs can invoke only supported read-only GitHub and workspace operations when their connection is enabled; plugin manifests are drafts to review and connect to a compatible runtime. Kin does not run model-generated code.
+
 ## Scope and data
 
 - Build profiles, per-build memories, and uploaded packages are stored in this browser's local storage. Each package file is limited to 512 KB and browser storage has a device-specific quota. Export regular backups before clearing browser data or moving devices.
