@@ -1,4 +1,4 @@
-const CACHE = 'kin-shell-v6';
+const CACHE = 'kin-shell-v7';
 const APP_FILES = ['./', './index.html', './styles.css', './app.js', './model-worker.js', './manifest.webmanifest', './icon.svg'];
 
 self.addEventListener('install', (event) => {
@@ -8,7 +8,9 @@ self.addEventListener('install', (event) => {
 
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then((keys) => Promise.all(keys.filter((key) => key !== CACHE).map((key) => caches.delete(key))))
+    // Keep Transformers.js and other model asset caches. Only retire Kin's
+    // previous app-shell caches when the site is updated.
+    caches.keys().then((keys) => Promise.all(keys.filter((key) => key.startsWith('kin-shell-') && key !== CACHE).map((key) => caches.delete(key))))
   );
   self.clients.claim();
 });
