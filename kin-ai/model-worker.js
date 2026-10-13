@@ -55,4 +55,24 @@ self.addEventListener('message', async (event) => {
     if (message.type === 'generate') {
       if (!generator) await load();
       let output = '';
-      const temperature = Number.isFinite(Number(message.temperature)) ? Number(mess
+      const temperature = Number.isFinite(Number(message.temperature)) ? Number(message.temperature) : 0.7;
+      const streamer = new TextStreamer(generator.tokenizer, {
+        skip_prompt: true,
+        callback_function: (token) => {
+          output += token;
+          self.postMessage({ type: 'token', requestId: message.requestId, token });
+        }
+      });
+      await generator(message.messages, {
+        max_new_tokens: 180,
+        temperature,
+        do_sample: temperature > 0,
+        top_p: 0.9,
+        streamer
+      });
+      self.postMessage({ type: 'complete', requestId: message.requestId, text: output.trim() });
+    }
+  } catch (error) {
+    self.postMessage({ type: 'error', requestId: message.requestId, message: error?.message || 'The local model could not start.' });
+  }
+});
