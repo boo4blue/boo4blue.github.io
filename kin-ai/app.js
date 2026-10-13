@@ -608,6 +608,7 @@ function handleClick(event) {
     const providerField = document.querySelector('#runtime-provider');
     const endpointField = document.querySelector('#runtime-endpoint');
     const modelField = document.querySelector('#runtime-model');
+    if (providerField?.value && providerField.value !== provider) sessionStorage.removeItem(keyFor(activeBuild()));
     if (providerField) providerField.value = provider;
     if (endpointField) endpointField.value = control.dataset.endpoint || '';
     if (modelField) modelField.value = control.dataset.model || '';
@@ -702,7 +703,10 @@ function handleSubmit(event) {
   if (form.id === 'chat-form') sendChat(form);
 }
 function handleChange(event) {
-  if (event.target.id === 'runtime-provider') updateProviderKeyHint(event.target.value);
+  if (event.target.id === 'runtime-provider') {
+    if (event.target.value !== cloudRuntimeFor(activeBuild()).provider) sessionStorage.removeItem(keyFor(activeBuild()));
+    updateProviderKeyHint(event.target.value);
+  }
   if (event.target.id === 'model-catalog-source') {
     modelCatalog = [];
     document.querySelector('#model-catalog-results')?.replaceChildren();
