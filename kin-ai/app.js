@@ -85,6 +85,8 @@ let modelLoadResolve = null;
 let modelLoadReject = null;
 let generationRequest = null;
 let thinkingTimer = null;
+let modelCatalog = [];
+let modelCatalogLoading = false;
 const root = document.querySelector('#app');
 
 function saveState() {
@@ -96,6 +98,96 @@ function memoriesFor(build = activeBuild()) { return state.memories.filter((entr
 function capabilitiesFor(build = activeBuild()) { return state.capabilities.filter((entry) => entry.buildId === build.id); }
 function runtimeFor(build = activeBuild()) { return build.runtimeConfig || state.runtime; }
 function cloudRuntimeFor(build = activeBuild()) { const runtime = runtimeFor(build); return runtime.cloud || runtime; }
+function modelCatalogMessage(message, error = false) {
+  const status = document.querySelector('#model-catalog-status');
+  if (!status) return;
+  status.textContent = message;
+  status.classList.toggle('error', error);
+}
+function updateProviderKeyHint(provider = document.querySelector('#runtime-provider')?.value) {
+  const hint = document.querySelector('#runtime-key-hint');
+  if (!hint) return;
+  if (provider === 'Hugging Face') hint.innerHTML = 'Create a token with <strong>Inference Providers</strong> access in <a href="https://huggingface.co/settings/tokens" target="_blank" rel="noopener noreferrer">Hugging Face settings</a>. The key stays in this browser session.';
+  else if (provider === 'OpenRouter') hint.innerHTML = 'Create a key in <a href="https://openrouter.ai/settings/keys" target="_blank" rel="noopener noreferrer">OpenRouter settings</a>. Free models and limits can change. The key stays in this browser session.';
+  else hint.textContent = 'The key stays in this browser session and is not included in exports.';
+}
+function modelPrice(price, free = false, scale = 1) {
+  if (free) return 'Free right now';
+  if (!price || (!Number(price.input) && !Number(price.output))) return 'Price not listed';
+  const input = Number(price.input) * scale;
+  const output = Number(price.output) * scale;
+  return `$${input.toFixed(input < 0.01 ? 4 : 2)} in · $${output.toFixed(output < 0.01 ? 4 : 2)} out / 1M tokens`;
+}
+function renderModelCatalog() {
+  const results = document.querySelector('#model-catalog-results');
+  const query = (document.querySelector('#model-catalog-search')?.value || '').trim().toLowerCase();
+  const freeOnly = Boolean(document.querySelector('#model-catalog-free')?.checked);
+  if (!results) return;
+  const filtered = modelCatalog.filter((item) => (!query || `${item.name} ${item.id} ${item.provider}`.toLowerCase().includes(query)) && (!freeOnly || item.free));
+  results.innerHTML = filtered.slice(0, 60).map((item) => `<article class="catalog-model-card"><div class="catalog-model-main"><div class="catalog-model-title">${escapeHTML(item.name)}</div><div class="catalog-model-id">${escapeHTML(item.id)}</div><div class="catalog-model-meta">${escapeHTML(item.provider)} · ${escapeHTML(item.price)}${item.context ? ` · ${Number(item.context).toLocaleString()} context` : ''}</div></div><button class="btn btn-light btn-small" data-action="select-cloud-model" data-model="${escapeHTML(item.model)}" data-endpoint="${escapeHTML(item.endpoint)}" data-provider="${escapeHTML(item.providerName)}">Use model</button></article>`).join('');
+  if (!filtered.length && modelCatalog.length) results.innerHTML = '<div class="catalog-empty">No models match those filters.</div>';
+  if (filtered.length > 60) modelCatalogMessage(`Showing 60 of ${filtered.length} matches. Add a search term to narrow the list.`);
+  else if (modelCatalog.length) modelCatalogMessage(`${filtered.length} model options loaded. Availability and pricing can change at the provider.`);
+}
+async function loadModelCatalog() {
+  const source = document.querySelector('#model-catalog-source')?.value || 'huggingface';
+  const button = document.querySelector('#load-model-catalog');
+  if (modelCatalogLoading) return;
+  modelCatalogLoading = true;
+  if (button) { button.disabled = true; button.textContent = 'Loading models…'; }
+  modelCatalogMessage(source === 'huggingface' ? 'Loading live Hugging Face Inference Providers…' : 'Loading OpenRouter models…');
+  try {
+    let response;
+    if (source === 'huggingface') {
+      response = await fetch('https://router.huggingface.co/v1/models', { headers: { accept: 'application/json' } });
+    } else {
+      response = await fetch('https://openrouter.ai/api/v1/models', { headers: { accept: 'application/json' } });
+    }
+    if (!response.ok) throw new Error(`Catalog request returned ${response.status}.`);
+    const payload = await response.json();
+    if (source === 'huggingface') {
+      modelCatalog = (payload.data || []).flatMap((model) => (model.providers || []).filter((provider) => provider.status === 'live').map((provider) => ({
+        id: model.id,
+        model: `${model.id}:${provider.provider}`,
+        endpoint: 'https://router.huggingface.co/v1/chat/completions',
+        name: model.name || model.id,
+        provider: `Hugging Face · ${provider.provider}`,
+        providerName: 'Hugging Face',
+        free: provider.is_free === true,
+        price: modelPrice(provider.pricing, provider.is_free === true),
+        context: provider.context_length
+      })));
+    } else {
+      modelCatalog = (payload.data || []).filter((model) => {
+        const modality = (model.architecture?.modality || '').toLowerCase();
+        return model.id && (!modality || modality.endsWith('->text'));
+      }).map((model) => {
+        const free = Number(model.pricing?.prompt) === 0 && Number(model.pricing?.completion) === 0;
+        return {
+          id: model.id,
+          model: model.id,
+          endpoint: 'https://openrouter.ai/api/v1/chat/completions',
+          name: model.name || model.id,
+          provider: `OpenRouter${free ? ' · free' : ''}`,
+          providerName: 'OpenRouter',
+          free,
+          price: modelPrice({ input: model.pricing?.prompt, output: model.pricing?.completion }, free, 1_000_000),
+          context: model.context_length
+        };
+      });
+    }
+    const freeCount = modelCatalog.filter((item) => item.free).length;
+    modelCatalogMessage(`${modelCatalog.length} chat model options loaded${freeCount ? ` · ${freeCount} currently marked free` : ''}. Choose one, then add your provider key.`);
+    renderModelCatalog();
+  } catch (error) {
+    modelCatalog = [];
+    document.querySelector('#model-catalog-results')?.replaceChildren();
+    modelCatalogMessage(`${error.message} Check your connection, or open the provider catalog directly.`, true);
+  } finally {
+    modelCatalogLoading = false;
+    if (button) { button.disabled = false; button.textContent = 'Browse models'; }
+  }
+}
 function keyFor(build = activeBuild()) { return `${KEY_SESSION}.${build.id}`; }
 function runtimeMode(build = activeBuild()) { const runtime = runtimeFor(build); return runtime.mode || (runtime.endpoint?.trim() ? 'cloud' : 'local'); }
 function runtimeReady(build = activeBuild()) { return runtimeMode(build) === 'cloud' ? Boolean(runtimeFor(build).endpoint?.trim()) : localModelPhase === 'ready'; }
@@ -318,11 +410,12 @@ function renderRuntime() {
         <div class="callout" style="margin-top:12px"><strong>First setup uses about 500–800 MB of data.</strong> Keep Kin open and use Wi-Fi for the first download. The downloaded model is cached by this browser. Answers from this small model may be simpler than cloud assistants.</div>
         <div class="form-actions"><button class="btn btn-dark btn-small" data-action="${isCloud ? 'start-local-model' : localLoaded ? 'open-chat' : 'start-local-model'}" ${localModelPhase === 'downloading' ? 'disabled' : ''}>${isCloud ? 'Use local model' : localLoaded ? 'Start chatting' : localModelPhase === 'cached' ? 'Load downloaded model' : localModelPhase === 'downloading' ? 'Setting up…' : 'Download free model'}</button>${localModelPhase === 'downloading' ? `<button class="btn btn-light btn-small" data-action="cancel-model-load">Cancel download</button>` : ''}</div>
       </div>
-      <details class="cloud-setup" ${isCloud ? 'open' : ''}><summary>Use a cloud model instead</summary><p class="panel-copy">Cloud providers may need an account and API key. Free plans can change; your messages go to that provider.</p>
-        <div class="field"><label for="runtime-provider">Connection name</label><select id="runtime-provider" class="select"><option ${cloudRuntime.provider === 'Free-tier cloud API' ? 'selected' : ''}>Free-tier cloud API</option><option ${cloudRuntime.provider === 'OpenAI-compatible' ? 'selected' : ''}>OpenAI-compatible</option><option ${cloudRuntime.provider === 'Custom endpoint' ? 'selected' : ''}>Custom endpoint</option></select></div>
+      <details id="cloud-setup" class="cloud-setup" ${isCloud ? 'open' : ''}><summary>Use a cloud model instead</summary><p class="panel-copy">Cloud providers may need an account and API key. Free plans can change; your messages go to that provider.</p>
+        <section class="model-catalog"><div class="catalog-head"><div><div class="panel-title">Pick a model</div><p class="panel-copy">Browse live chat models from Hugging Face and OpenRouter.</p></div><button id="load-model-catalog" type="button" class="btn btn-light btn-small" data-action="load-model-catalog">Browse models</button></div><div class="catalog-controls"><label class="sr-only" for="model-catalog-source">Model catalog</label><select id="model-catalog-source" class="select"><option value="huggingface">Hugging Face Inference</option><option value="openrouter">OpenRouter</option></select><label class="sr-only" for="model-catalog-search">Search models</label><input id="model-catalog-search" class="input" type="search" placeholder="Search model or provider" /><label class="catalog-free"><input id="model-catalog-free" type="checkbox" /> Free only</label></div><div id="model-catalog-status" class="catalog-status" aria-live="polite">Choose a catalog and browse its current models.</div><div id="model-catalog-results" class="catalog-results"></div><p class="field-hint">Kin fills in the provider and model settings. You still need a provider account and API key; availability and free limits can change.</p></section>
+        <div class="field"><label for="runtime-provider">Connection name</label><select id="runtime-provider" class="select"><option ${cloudRuntime.provider === 'Hugging Face' || String(cloudRuntime.provider || '').startsWith('Hugging Face ·') ? 'selected' : ''}>Hugging Face</option><option ${cloudRuntime.provider === 'OpenRouter' ? 'selected' : ''}>OpenRouter</option><option ${cloudRuntime.provider === 'Free-tier cloud API' ? 'selected' : ''}>Free-tier cloud API</option><option ${cloudRuntime.provider === 'OpenAI-compatible' ? 'selected' : ''}>OpenAI-compatible</option><option ${cloudRuntime.provider === 'Custom endpoint' ? 'selected' : ''}>Custom endpoint</option></select></div>
         <div class="field"><label for="runtime-endpoint">Chat completions endpoint</label><input id="runtime-endpoint" class="input" type="url" value="${escapeHTML(cloudRuntime.endpoint || '')}" placeholder="https://provider.example/v1/chat/completions" /></div>
         <div class="field"><label for="runtime-model">Model identifier</label><input id="runtime-model" class="input" value="${escapeHTML(cloudRuntime.model || '')}" placeholder="Model name from your provider" /></div>
-        <div class="field"><label for="runtime-key">${escapeHTML(build.name)}’s API key</label><input id="runtime-key" class="input" type="password" autocomplete="new-password" placeholder="${keyStored ? 'Key saved for this browser session' : 'Paste your provider key'}" /><div class="field-hint">The key stays in this browser session and is not included in exports.</div></div>
+        <div class="field"><label for="runtime-key">${escapeHTML(build.name)}’s API key</label><input id="runtime-key" class="input" type="password" autocomplete="new-password" placeholder="${keyStored ? 'Key saved for this browser session' : 'Paste your provider key'}" /><div id="runtime-key-hint" class="field-hint">The key stays in this browser session and is not included in exports.</div></div>
         <div class="form-actions"><button class="text-action" data-action="clear-runtime">Switch back to local model</button><div class="form-actions-end"><button type="button" class="btn btn-light btn-small" data-action="clear-api-key">Remove key</button><button class="btn btn-dark btn-small" data-action="save-runtime">Save cloud model</button></div></div>
       </details>
     </section><aside class="panel"><div class="panel-title">Your chats stay on this phone</div><p class="panel-copy">The local model works without a paid provider and does not send your messages to a model API. Internet is needed for the first model download. An optional cloud model can be configured below.</p><div class="next-step"><div class="step-number">01</div><div><div class="step-title">Download once</div><div class="step-desc">Allow around 500–800 MB of data and free storage.</div></div></div><div class="next-step"><div class="step-number">02</div><div><div class="step-title">Chat offline</div><div class="step-desc">The browser keeps model files for later chats.</div></div></div><div class="next-step"><div class="step-number">03</div><div><div class="step-title">Make it yours</div><div class="step-desc">Your AI’s role, personality, and memories shape its replies.</div></div></div></aside></div>`);
@@ -508,6 +601,20 @@ function handleClick(event) {
   if (!control) return;
   const action = control.dataset.action;
   const itemId = control.dataset.id;
+  if (action === 'load-model-catalog') loadModelCatalog();
+  if (action === 'select-cloud-model') {
+    const provider = control.dataset.provider || 'OpenAI-compatible';
+    document.querySelector('#cloud-setup')?.setAttribute('open', '');
+    const providerField = document.querySelector('#runtime-provider');
+    const endpointField = document.querySelector('#runtime-endpoint');
+    const modelField = document.querySelector('#runtime-model');
+    if (providerField) providerField.value = provider;
+    if (endpointField) endpointField.value = control.dataset.endpoint || '';
+    if (modelField) modelField.value = control.dataset.model || '';
+    modelCatalogMessage('Provider and model filled in. Add your API key, then save the connection.');
+    updateProviderKeyHint(provider);
+    document.querySelector('#runtime-key')?.focus();
+  }
   if (action === 'new-build') { modalType = 'new-build'; render(); document.querySelector('#new-build-name')?.focus(); }
   if (action === 'add-agent') { modalType = 'agent'; render(); document.querySelector('#agent-name')?.focus(); }
   if (action === 'delete-agent') { const build = activeBuild(); build.agents = (build.agents || []).filter((agent) => agent.id !== itemId); build.updatedAt = new Date().toISOString(); saveState(); render(); toast('Agent removed from this AI.'); }
@@ -595,6 +702,13 @@ function handleSubmit(event) {
   if (form.id === 'chat-form') sendChat(form);
 }
 function handleChange(event) {
+  if (event.target.id === 'runtime-provider') updateProviderKeyHint(event.target.value);
+  if (event.target.id === 'model-catalog-source') {
+    modelCatalog = [];
+    document.querySelector('#model-catalog-results')?.replaceChildren();
+    modelCatalogMessage('Browse to load this provider’s current model list.');
+  }
+  if (event.target.id === 'model-catalog-free') renderModelCatalog();
   if (event.target.id === 'package-files' && event.target.files?.length) handleFiles(event.target.files);
   if (event.target.id === 'import-file' && event.target.files?.[0]) importBundle(event.target.files[0]);
   if (event.target.id === 'model-foundation') {
@@ -627,6 +741,7 @@ function importBundle(file) {
   reader.readAsText(file);
 }
 function handleInput(event) {
+  if (event.target.id === 'model-catalog-search') renderModelCatalog();
   if (event.target.id === 'build-name') document.querySelector('#live-name')?.replaceChildren(document.createTextNode(event.target.value || 'Your AI'));
   if (event.target.id === 'build-role') document.querySelector('#live-role')?.replaceChildren(document.createTextNode(event.target.value || 'Your AI, taking shape'));
   if (event.target.id === 'build-prompt') document.querySelector('#live-prompt')?.replaceChildren(document.createTextNode(event.target.value || 'Your instructions will shape how this AI communicates.'));
