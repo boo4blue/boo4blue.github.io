@@ -1,5 +1,5 @@
-const CACHE = 'kin-shell-v7';
-const APP_FILES = ['./', './index.html', './styles.css', './app.js', './model-worker.js', './manifest.webmanifest', './icon.svg'];
+const CACHE = 'kin-shell-v8';
+const APP_FILES = ['./', './index.html', './styles.css', './catalog.css', './app.js', './model-worker.js', './manifest.webmanifest', './icon.svg'];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(APP_FILES)));
