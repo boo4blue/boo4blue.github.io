@@ -1,4 +1,4 @@
-const CACHE = 'kin-shell-v10';
+const CACHE = 'kin-shell-v11';
 const APP_FILES = ['./', './index.html', './styles.css', './catalog.css', './connections.css', './app.js', './model-worker.js', './manifest.webmanifest', './icon.svg'];
 
 self.addEventListener('install', (event) => {
