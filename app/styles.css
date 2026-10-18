@@ -373,3 +373,4 @@ body.hc :focus-visible{outline:3px solid #fff!important;}
 @media (max-width:560px){#dc-sidebar{width:128px;}#dc-chat{margin:8px;height:74vh;}}
 .tab:not(#tab-map),header,#sidebar,#filter-panel,#places-sheet,#sheet-overlay,#place-panel,#guideReader{zoom:var(--ts,1);}
 #tab-map>*:not(#map-wrap){zoom:var(--ts,1);}
+.app-pin::before{content:'';position:absolute;inset:calc(-12px*var(--ps,1));}
