@@ -42,7 +42,7 @@ function todoRemindClear(i){const t=todoItems();if(!t[i])return;delete t[i].rem;
 function requestNotifPerm(){try{if(typeof Notification!=='undefined'&&Notification.permission==='default'){Notification.requestPermission().catch(()=>{});}}catch(e){}}
 function checkTodoReminders(){try{const t=todoItems();let changed=false;const now=Date.now();t.forEach(x=>{if(x&&x.rem&&!x.d&&x.rem<=now){x.rem=null;changed=true;const body=String(x.t||'To-do');try{if(typeof Notification!=='undefined'&&Notification.permission==='granted'){new Notification('⏰ Haven FW reminder',{body:body});}else{miniToast('⏰ '+body);}}catch(e){try{miniToast('⏰ '+body);}catch(e2){}}}});if(changed){saveTodos(t);renderTodos();}}catch(e){}}
 if(document.readyState==='loading'){window.addEventListener('DOMContentLoaded',()=>{loadData(1);loadWeather();});}else{loadData(1);loadWeather();}
-function uFC(){const n=activeCats().length+(mapOpenOnly?1:0);let b=document.getElementById('fc');if(!b){b=document.createElement('span');b.id='fc';b.style.cssText='position:absolute;top:-4px;right:-4px;background:#ea4335;color:#fff;border-radius:50%;min-width:18px;height:18px;font-size:11px;line-height:18px;text-align:center;font-weight:800;';const btn=document.getElementById('map-filter-btn');if(btn){btn.style.position='relative';btn.appendChild(b);}}if(b){b.style.display=n?'block':'none';b.textContent=n;}}
+
 
 function printFlyer(cat,icon){
   const list=(allPlaces||[]).filter(r=>(r.cats||[]).includes(cat)).slice(0,20);
@@ -61,7 +61,7 @@ function printFlyer(cat,icon){
   setTimeout(()=>w.print(),500);
 }
 
-function uFC(){try{var n=activeCats().length+((typeof mapOpenOnly!=='undefined'&&mapOpenOnly)?1:0);var b=document.getElementById('fc');if(!b){var btn=document.getElementById('map-filter-btn');if(!btn)return;b=document.createElement('span');b.id='fc';b.style.cssText='position:absolute;top:-4px;right:-4px;background:#ea4335;color:#fff;border-radius:50%;min-width:18px;height:18px;font-size:11px;line-height:18px;text-align:center;font-weight:800;';btn.style.position='relative';btn.appendChild(b);}b.style.display=n?'block':'none';b.textContent=n;}catch(e){}}
+function uFC(){try{var n=activeCats().length+((typeof mapOpenOnly!=='undefined'&&mapOpenOnly)?1:0);var b=document.getElementById('fc');if(!b){var btn=document.getElementById('map-filter-btn');if(!btn)return;b=document.createElement('span');b.id='fc';b.style.cssText='position:absolute;top:-4px;right:-4px;background:#ea4335;color:#fff;border-radius:50%;min-width:18px;height:18px;font-size:11px;line-height:18px;text-align:center;font-weight:800;';btn.style.position='relative';btn.appendChild(b);}b.style.display=n?'block':'none';b.textContent=n;}catch(e){}}function updateFilterCount(){try{uFC();}catch(e){}}
 
 function printFlyer(cat,icon){
   var list=(allPlaces||[]).filter(function(r){return (r.cats||[]).indexOf(cat)>=0;}).slice(0,20);
