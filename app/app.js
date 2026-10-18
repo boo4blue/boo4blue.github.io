@@ -36,7 +36,7 @@ return `<div style='background:#1a1f2e;border:1px solid #2a2f3e;border-radius:14
 if(typeof renderBudgetStudio==='function')renderBudgetStudio();
 }
 function togglePlanStep(id){let done=JSON.parse(localStorage.getItem('haven_plan')||'[]');const i=done.indexOf(id);if(i>=0)done.splice(i,1);else done.push(id);localStorage.setItem('haven_plan',JSON.stringify(done));renderPlan();}function togglePlan(id){let done=JSON.parse(localStorage.getItem('haven_plan')||'[]');done=done.includes(id)? done.filter(x=>x!==id):[...done,id];localStorage.setItem('haven_plan',JSON.stringify(done));renderPlan();}function renderHotlines(){const h=typeof HOTLINES!=='undefined' ? HOTLINES.filter(x=>!x.area||x.area===getArea()):[{name:'Indiana 211',area:'fort-wayne',href:'tel:211',desc:'Food,shelter,bills,crisis help'},{name:'Oregon 211',area:'portland',href:'tel:211',desc:'Food,shelter,bills,crisis help'},{name:'988 Crisis Line',href:'tel:988',desc:'Suicide&crisis,call or text',crisis:true}];document.getElementById('hotlines').innerHTML=h.map(x=>{const phone=(x.href||'').replace('tel:','');const cc=x.crisis ? ' crisis-hotline':'';return `<div class="hotline${cc}"><h3>${x.icon||''}${x.name}</h3><p>${x.desc||''}</p><a href="${x.href}">📞 ${phone}</a></div>`;}).join('');}function getTextScale(){try{var v=parseInt(localStorage.getItem('haven_textscale'),10);if(v>=70&&v<=200)return v;}catch(e){}try{var old=localStorage.getItem('haven_textsize');if(old==='small')return 85;if(old==='large')return 120;}catch(e2){}return 100;}
-function setTextScale(pct){pct=Math.max(70,Math.min(200,Math.round(pct)));document.body.style.fontSize=Math.round(16*pct/100)+'px';try{localStorage.setItem('haven_textscale',String(pct));localStorage.removeItem('haven_textsize');}catch(e){}var r=document.getElementById('textscale-range');if(r&&+r.value!==pct)r.value=pct;var v=document.getElementById('textscale-val');if(v)v.textContent=pct+'%';}
+function setTextScale(pct){pct=Math.max(70,Math.min(200,Math.round(pct)));document.documentElement.style.setProperty('--ts',(pct/100).toFixed(2));try{localStorage.setItem('haven_textscale',String(pct));localStorage.removeItem('haven_textsize');}catch(e){}var r=document.getElementById('textscale-range');if(r&&+r.value!==pct)r.value=pct;var v=document.getElementById('textscale-val');if(v)v.textContent=pct+'%';}
 function stepTextScale(d){setTextScale(getTextScale()+d);}
 function getPinScale(){try{var v=parseInt(localStorage.getItem('haven_pinscale'),10);if(v>=50&&v<=200)return v;}catch(e){}return 100;}
 var _pinScaleApplied=0;function setPinScale(pct){pct=Math.max(50,Math.min(200,Math.round(pct)));try{localStorage.setItem('haven_pinscale',String(pct));}catch(e){}document.documentElement.style.setProperty('--ps',(pct/100).toFixed(2));var r=document.getElementById('pinscale-range');if(r&&+r.value!==pct)r.value=pct;var v=document.getElementById('pinscale-val');if(v)v.textContent=pct+'%';if(_pinScaleApplied&&_pinScaleApplied!==pct&&typeof map!=='undefined'&&map){try{render(activeCats(),activeQ());}catch(e2){}}_pinScaleApplied=pct;}
@@ -179,12 +179,29 @@ function renderSaved(){
   }).join('');
 }
 
-function renderEvents(){
-  var el=document.getElementById('events-list');
-  if(!el)return;
-  var evts=(typeof EVENTS!=='undefined'?EVENTS:[]);
+function decodeEnt(s){try{var t=document.createElement('textarea');t.innerHTML=String(s==null?'':s);return t.value;}catch(e){return String(s==null?'':s);}}
+function stripHtml(s){return decodeEnt(String(s||'')).replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();}
+function liveEventsUrl(){var d=new Date();var s=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');return 'https://whatzup.com/wp-json/tribe/events/v1/events?per_page=50&start_date='+s+'&status=publish';}
+function mapLiveEvt(e){
+  var v=e.venue||{};
+  var sd=String(e.start_date||'');
+  var dkey=sd.slice(0,10);
+  var when=dkey;
+  try{var dt=new Date(sd.replace(' ','T'));if(!isNaN(dt))when=dt.toLocaleDateString([],{weekday:'short',month:'short',day:'numeric'})+(e.all_day?'':' \u00b7 '+dt.toLocaleTimeString([],{hour:'numeric',minute:'2-digit'}));}catch(x){}
+  var addr=[v.address,v.city,v.zip].filter(Boolean).join(', ');
+  var rawDesc=(e.excerpt&&String(e.excerpt).trim())?e.excerpt:e.description;
+  var desc=stripHtml(rawDesc).slice(0,180);
+  return {id:'live-'+e.id,title:stripHtml(e.title),date:when,_dkey:dkey,venue:stripHtml(v.venue),addr:addr,desc:desc,url:e.website||e.url||'',live:true};
+}
+function mergeEvents(statics,live){
+  var seen={},out=[];
+  statics.forEach(function(e){var k=String(e.title||e.name||'').toLowerCase().trim()+'|'+String(e.date||'').slice(0,10);seen[k]=1;out.push(e);});
+  live.forEach(function(e){var k=String(e.title||'').toLowerCase().trim()+'|'+(e._dkey||'');if(!seen[k]){seen[k]=1;out.push(e);}});
+  return out;
+}
+function paintEventsList(el,evts){
   if(!evts.length){
-    el.innerHTML='<div style="text-align:center;color:#888;padding:40px 20px;"><div style="font-size:48px;margin-bottom:12px;">📅</div><div>No events right now.</div><div style="font-size:13px;margin-top:8px;">Check back soon!</div></div>';
+    el.innerHTML='<div style="text-align:center;color:#888;padding:40px 20px;"><div style="font-size:48px;margin-bottom:12px;">\uD83D\uDCC5</div><div>No events right now.</div><div style="font-size:13px;margin-top:8px;">Check back soon!</div></div>';
     return;
   }
   el.innerHTML=evts.map(function(e){
@@ -201,6 +218,21 @@ function renderEvents(){
       (e.desc?'<div style="font-size:13px;color:#888;margin-top:4px;">'+escapeHtml(e.desc)+'</div>':'')+
       (btns.length?'<div class="meta" style="margin-top:8px;">'+btns.join('')+'</div>':'')+'</div>';
   }).join('');
+}
+var _liveEvts=null,_liveEvtsBusy=false;
+function renderEvents(){
+  var el=document.getElementById('events-list');
+  if(!el)return;
+  var statics=(typeof EVENTS!=='undefined'?EVENTS:[]);
+  paintEventsList(el,mergeEvents(statics,_liveEvts||[]));
+  if(_liveEvts||_liveEvtsBusy||typeof fetch==='undefined')return;
+  _liveEvtsBusy=true;
+  fetch(liveEventsUrl()).then(function(r){if(!r.ok)throw new Error('ev');return r.json();}).then(function(d){
+    _liveEvts=(d.events||[]).map(mapLiveEvt);
+    _liveEvtsBusy=false;
+    var el2=document.getElementById('events-list');
+    if(el2)paintEventsList(el2,mergeEvents(statics,_liveEvts));
+  }).catch(function(){_liveEvtsBusy=false;});
 }
 
 function renderVolunteer(){

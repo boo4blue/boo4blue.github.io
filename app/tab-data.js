@@ -334,7 +334,7 @@ const GIGS = [
     kind: "app", added: "2026-10-08",
   },
   {
-    id: "job-empowering-care", audited: "2026-10-11", name: "Empowering Care Staffing and Employment Agency", type: "agency",
+    id: "job-empowering-care", audited: "2026-10-11", title: "Empowering Care Staffing and Employment Agency", name: "Empowering Care Staffing and Employment Agency", type: "agency",
     addr: "3521 Lake Ave STE 10b", zip: "46805", lat: 41.090916, lng: -85.09394,
     phone: "(260) 415-9909", phoneHref: "+12604159909", web: "https://empoweringcarestaffingagency.com",
     desc: "Staffing/employment agency — temp and employment placement. Listed Active with no closure/move signals.",
@@ -344,7 +344,7 @@ const GIGS = [
     reVerified: "2026-10-10: 3521 Lake Ave STE 10b + (260) 415-9909 + hours confirmed on active place listing (Active status) and business directories; no closure signals.",
   },
   {
-    id: "job-premier-employee-solutions", name: "Premier Employee Solutions", type: "agency",
+    id: "job-premier-employee-solutions", title: "Premier Employee Solutions", name: "Premier Employee Solutions", type: "agency",
     addr: "5800 Fairfield Ave, Suite 200", zip: "46807", lat: 41.030913, lng: -85.143848,
     phone: "(260) 755-7533", phoneHref: "+12607557533", web: "http://www.thepremierpride.com/",
     desc: "Staffing agency — light industrial and warehouse placements (also branded \"1st Class Staffing\" with a Fort Wayne branch at this address). Free to job seekers; temp and temp-to-hire roles. Verified 2026-10-10: active listings at 5800 Fairfield Ave Ste 200, (260) 755-7533; no closure signals.",
@@ -354,7 +354,7 @@ const GIGS = [
 
 
   {
-    audited: "2026-10-11", id: "job-sheet-metal-20", name: "Sheet Metal Workers Local 20 \u2014 Fort Wayne Apprenticeship", type: "help",
+    audited: "2026-10-11", id: "job-sheet-metal-20", title: "Sheet Metal Workers Local 20 \u2014 Fort Wayne Apprenticeship", name: "Sheet Metal Workers Local 20 \u2014 Fort Wayne Apprenticeship", type: "help",
     addr: "3019 Waynewood Dr", zip: "46809", lat: 41.02133, lng: -85.17779,
     phone: "(260) 478-1614", phoneHref: "+12604781614", web: "https://smw20training.com/",
     desc: "Earn-while-you-learn union apprenticeship in sheet metal work (HVAC duct systems, architectural metal, welding): paid on-the-job training plus classroom instruction through the Local 20 Joint Apprenticeship & Training Trust, working toward a journeyman card. Equal-opportunity program; the training program covers the Fort Wayne area. Call the Fort Wayne area office (260) 478-1614 or toll-free (800) 835-4531 for application windows and requirements. Verified 2026-10-11: Fort Wayne office active at 3019 Waynewood Dr (place card active, 4.2 stars, no closure signals); official training site confirms Fort Wayne coverage.",
