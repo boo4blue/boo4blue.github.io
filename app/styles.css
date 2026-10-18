@@ -315,3 +315,5 @@ body.hc :focus-visible{outline:3px solid #fff!important;}
 #hvFabMain:focus-visible{outline:3px solid #fff;outline-offset:3px;box-shadow:0 0 0 6px rgba(37,99,235,.55),0 8px 22px rgba(0,0,0,.45)}
 #hvFab.open>.hvf-it:focus-visible{outline:3px solid #fff;outline-offset:2px}
 @media (prefers-reduced-motion:reduce){#hvFab>.hvf-it,#hvFab.open>.hvf-it,#hvFabMain,#hvFabMain span{transition:none!important}}
+#peek #gmClose{position:absolute;top:8px;right:8px;z-index:2;width:34px;height:34px;border-radius:50%;border:1px solid #444;background:#2a2f3e;color:#fff;font:600 16px/1 system-ui;cursor:pointer;padding:0}
+#peek #gmClose:active{background:#3a4152}
