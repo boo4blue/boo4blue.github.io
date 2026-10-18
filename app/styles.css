@@ -373,3 +373,9 @@ body.hc :focus-visible{outline:3px solid #fff!important;}
 @media (max-width:560px){#dc-sidebar{width:128px;}#dc-chat{margin:8px;height:74vh;}}
 .tab:not(#tab-map),header,#sidebar,#filter-panel,#places-sheet,#sheet-overlay,#place-panel,#guideReader{zoom:var(--ts,1);}
 #tab-map>*:not(#map-wrap){zoom:var(--ts,1);}
+
+/* App-style pins (match Haven FW app) */
+.emoji-pin{background:none;border:none;}
+.emoji-pin .pin{position:relative;}
+.emoji-pin .pname{display:none;position:absolute;top:calc(50px*var(--ps,1));left:50%;transform:translateX(-50%);background:rgba(0,0,0,.75);color:#fff;font-size:11px;padding:2px 8px;border-radius:4px;white-space:nowrap;pointer-events:none;z-index:10;}
+body.pnames .emoji-pin .pname{display:block;}
