@@ -325,7 +325,7 @@ body.hc :focus-visible{outline:3px solid #fff!important;}
 #guideReader .gr-body{padding:16px 16px 60px;max-width:640px;margin:0 auto;}
 .app-pin{width:calc(38px*var(--ps,1));height:calc(38px*var(--ps,1));}
 .app-pin .pin-body{width:calc(38px*var(--ps,1));height:calc(38px*var(--ps,1));font-size:calc(21px*var(--ps,1));}
-.pin-label{top:calc(40px*var(--ps,1));}
+.pin-label{top:calc(50px*var(--ps,1));}
 .card a.sheet-btn{color:#fff;}
 #dc-chat{display:flex;height:72vh;min-height:420px;margin:16px;background:#313338;border:1px solid #1e1f22;border-radius:12px;overflow:hidden;}
 #dc-sidebar{width:190px;flex:none;background:#2b2d31;display:flex;flex-direction:column;padding:12px 8px;}
@@ -373,4 +373,3 @@ body.hc :focus-visible{outline:3px solid #fff!important;}
 @media (max-width:560px){#dc-sidebar{width:128px;}#dc-chat{margin:8px;height:74vh;}}
 .tab:not(#tab-map),header,#sidebar,#filter-panel,#places-sheet,#sheet-overlay,#place-panel,#guideReader{zoom:var(--ts,1);}
 #tab-map>*:not(#map-wrap){zoom:var(--ts,1);}
-.app-pin::before{content:'';position:absolute;inset:calc(-12px*var(--ps,1));}
