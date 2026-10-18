@@ -219,3 +219,20 @@
 .open-badge.open-now{animation:badgePulse 2.2s ease-in-out infinite}
 @keyframes badgePulse{0%,100%{box-shadow:0 0 6px #4ade80,0 0 0 0 #4ade80;opacity:1}50%{box-shadow:0 0 10px #4ade80,0 0 0 4px transparent;opacity:.85}}
 @media(prefers-reduced-motion:reduce){.open-badge.open-now{animation:none}}
+/* Feature #36: display modes (ported from app more-features.js: icon-first + high contrast) */
+body.iconfirst nav button{font-size:0;}
+body.iconfirst nav button .ico{font-size:32px;}
+body.iconfirst .filter-btn{font-size:16px;padding:12px 16px;}
+body.iconfirst .sheet-btn{font-size:17px;padding:14px 18px;}
+body.iconfirst .card h3{font-size:20px;}
+body.hc{background:#000!important;}
+body.hc header{background:#000!important;}
+body.hc .card{background:#0a0a0a!important;border:2px solid #fff!important;}
+body.hc .card p,body.hc .card .meta,body.hc .card small,body.hc .addr{color:#fff!important;}
+body.hc .sheet-btn,body.hc .filter-btn{border:2px solid #fff!important;color:#fff!important;}
+body.hc input,body.hc textarea,body.hc select{border:2px solid #fff!important;background:#000!important;color:#fff!important;}
+body.hc :focus-visible{outline:3px solid #fff!important;}
+
+/* #43 phonelines: "More numbers to call" list under the hotlines */
+.pl-line{border-left-color:#7c8aff;}
+.pl-line a{font-size:18px;}
