@@ -302,3 +302,16 @@ body.hc :focus-visible{outline:3px solid #fff!important;}
 /* #43 phonelines: "More numbers to call" list under the hotlines */
 .pl-line{border-left-color:#7c8aff;}
 .pl-line a{font-size:18px;}
+
+/* Feature #45: FAB pop-out map menu (ports app gm-fab.css; English-only). */
+#hvFab{position:absolute;right:10px;bottom:12px;z-index:520;width:54px;height:54px;pointer-events:none}
+#hvFabMain{position:absolute;right:0;bottom:0;width:54px;height:54px;border-radius:50%;border:1px solid #334;background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;font-size:26px;line-height:1;font-weight:300;box-shadow:0 8px 22px rgba(0,0,0,.45);cursor:pointer;pointer-events:auto;display:flex;align-items:center;justify-content:center;padding:0;-webkit-tap-highlight-color:transparent;transition:transform .28s cubic-bezier(.2,.9,.3,1.2),box-shadow .2s}
+#hvFabMain span{display:block;transition:transform .28s cubic-bezier(.2,.9,.3,1.2)}
+#hvFabMain:active{transform:scale(.92)}
+#hvFab.open #hvFabMain span{transform:rotate(135deg)}
+#hvFab>.hvf-it{position:absolute!important;right:3px!important;bottom:3px!important;left:auto!important;top:auto!important;margin:0!important;width:48px!important;height:48px!important;border-radius:50%!important;z-index:1;display:flex!important;align-items:center!important;justify-content:center!important;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(0) scale(.2);transform-origin:50% 100%;transition:transform .26s cubic-bezier(.2,.9,.3,1.25),opacity .18s ease,visibility 0s linear .26s}
+#hvFab.open>.hvf-it{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(calc(var(--i)*-60px - 62px)) scale(1);transition:transform .3s cubic-bezier(.2,.9,.3,1.25),opacity .2s ease,visibility 0s;transition-delay:calc(var(--i)*45ms)}
+#hvFab>.hvf-it::before{content:attr(data-lbl);position:absolute;right:58px;top:50%;transform:translateY(-50%);white-space:nowrap;padding:6px 11px;border-radius:999px;background:rgba(20,27,46,.96);color:#fff;border:1px solid #334;font-size:12.5px;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.35);pointer-events:none}
+#hvFabMain:focus-visible{outline:3px solid #fff;outline-offset:3px;box-shadow:0 0 0 6px rgba(37,99,235,.55),0 8px 22px rgba(0,0,0,.45)}
+#hvFab.open>.hvf-it:focus-visible{outline:3px solid #fff;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){#hvFab>.hvf-it,#hvFab.open>.hvf-it,#hvFabMain,#hvFabMain span{transition:none!important}}
