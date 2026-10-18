@@ -323,3 +323,6 @@ body.hc :focus-visible{outline:3px solid #fff!important;}
 #guideReader .gr-close{position:absolute;top:12px;right:12px;background:#2a3040;color:#fff;border:none;border-radius:50%;width:42px;height:42px;font-size:18px;cursor:pointer;}
 #guideReader .gr-close:active{background:#3a4050;}
 #guideReader .gr-body{padding:16px 16px 60px;max-width:640px;margin:0 auto;}
+.app-pin{width:calc(38px*var(--ps,1));height:calc(38px*var(--ps,1));}
+.app-pin .pin-body{width:calc(38px*var(--ps,1));height:calc(38px*var(--ps,1));font-size:calc(21px*var(--ps,1));}
+.pin-label{top:calc(40px*var(--ps,1));}
