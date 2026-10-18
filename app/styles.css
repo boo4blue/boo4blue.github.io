@@ -326,3 +326,4 @@ body.hc :focus-visible{outline:3px solid #fff!important;}
 .app-pin{width:calc(38px*var(--ps,1));height:calc(38px*var(--ps,1));}
 .app-pin .pin-body{width:calc(38px*var(--ps,1));height:calc(38px*var(--ps,1));font-size:calc(21px*var(--ps,1));}
 .pin-label{top:calc(40px*var(--ps,1));}
+.card a.sheet-btn{color:#fff;}
