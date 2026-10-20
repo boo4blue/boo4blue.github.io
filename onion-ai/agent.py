@@ -167,12 +167,23 @@ def chat_complete(messages):
                "User-Agent": "Mozilla/5.0 (compatible; OnionAI/1.0)"}
     if API_KEY:
         headers["Authorization"] = "Bearer " + API_KEY
-    req = urllib.request.Request(BASE_URL, data=json.dumps(payload).encode(),
-                                 headers=headers, method="POST")
-    with urllib.request.urlopen(req, timeout=HTTP_TIMEOUT) as r:
-        data = json.loads(r.read().decode("utf-8", "replace"))
-    msg = data["choices"][0]["message"]
-    return msg, data["choices"][0].get("finish_reason", "")
+    # The keyless brain is a shared free service: retry dropped connections.
+    last_err = None
+    for attempt, wait in ((1, 0), (2, 3), (3, 8), (4, 20)):
+        if wait:
+            log("brain hiccup, retry %d in %ds..." % (attempt, wait))
+            time.sleep(wait)
+        try:
+            req = urllib.request.Request(
+                BASE_URL, data=json.dumps(payload).encode(),
+                headers=headers, method="POST")
+            with urllib.request.urlopen(req, timeout=HTTP_TIMEOUT) as r:
+                data = json.loads(r.read().decode("utf-8", "replace"))
+            msg = data["choices"][0]["message"]
+            return msg, data["choices"][0].get("finish_reason", "")
+        except Exception as e:
+            last_err = e
+    raise RuntimeError("brain unreachable after 4 tries: %s" % last_err)
 
 
 SYSTEM = (
