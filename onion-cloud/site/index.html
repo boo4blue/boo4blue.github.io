@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Onion Cloud — Boo's free cloud server</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav><div class="inner">
+  <a class="logo" href="#">ONION CLOUD</a>
+  <div class="links"><span class="pill" id="nav-status"><span class="dot"></span>checking…</span></div>
+</div></nav>
+
+<main>
+  <section class="hero">
+    <h1>Your server in the sky.</h1>
+    <p class="sub">Free forever. Runs tasks on a schedule or on demand, from anywhere — even while your phone is off. Onion is wired straight into it.</p>
+    <div class="statrow">
+      <div class="stat"><div class="stat-v" id="st-alive">—</div><div class="stat-l">server</div></div>
+      <div class="stat"><div class="stat-v" id="st-beat">—</div><div class="stat-l">last heartbeat</div></div>
+      <div class="stat"><div class="stat-v" id="st-tasks">—</div><div class="stat-l">tasks done</div></div>
+      <div class="stat"><div class="stat-v" id="st-cost">$0</div><div class="stat-l">cost / month</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Run a task</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>💬 Ask Onion</h3>
+        <p>Tell Onion in chat — "cloud, ask the weather" — and he queues the task, the server runs it, and the answer lands here.</p>
+      </div>
+      <div class="card">
+        <h3>▶ GitHub Actions</h3>
+        <p>Open the repo's <b>Actions</b> tab → <b>Onion Cloud task runner</b> → <b>Run workflow</b>. Pick <code>ask</code>, <code>image</code> or <code>weather</code>, type a prompt, go.</p>
+      </div>
+      <div class="card">
+        <h3>⏰ Automatic</h3>
+        <p>Heartbeat every 30 min proves it's alive. Daily digest every morning at 7am ET. Schedules live in <code>.github/workflows/</code> — Onion can change them.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Task history</h2>
+    <div id="tasks" class="tasks"><p class="muted">Loading…</p></div>
+  </section>
+
+  <section>
+    <h2>Today's digest</h2>
+    <div id="digest" class="card"><p class="muted">Loading…</p></div>
+  </section>
+
+  <section>
+    <h2>Connected tools</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>☁ Runs in the cloud, no key</h3>
+        <ul>
+          <li><b>Pollinations</b> — free LLM answers + image generation</li>
+          <li><b>Open-Meteo</b> — free weather, no signup</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🧅 Via Onion in chat</h3>
+        <p class="muted">Keys live in Onion's secure vault — ask him and he uses them for you:</p>
+        <ul>
+          <li><b>Groq</b> — 70B/120B models, fastest free inference</li>
+          <li><b>OpenRouter</b> — free-tier reasoning models</li>
+          <li><b>Gemini</b> — long-context + Exa search</li>
+          <li><b>Cohere</b> — embeddings &amp; rerank</li>
+          <li><b>Speechify</b> — text to speech</li>
+          <li><b>OCR.space</b> — read text from images</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>How it works</h2>
+    <div class="card flow">
+      <p><b>You / Onion</b> → drop a task file in <code>tasks/queue/</code> (or hit Run workflow)</p>
+      <p>↓</p>
+      <p><b>GitHub Actions</b> → free cloud computer runs <code>worker.py</code> (ask / image / weather)</p>
+      <p>↓</p>
+      <p><b>Results</b> → committed to <code>site/data/</code> → shown here + readable by Onion</p>
+      <p class="muted">Phase 2: your own Oracle box for downloaded local models — 200GB free disk waiting.</p>
+    </div>
+  </section>
+</main>
+
+<footer>ONION CLOUD · free forever · built by Onion for Boo</footer>
+<script src="app.js"></script>
+</body>
+</html>
