@@ -1,9 +1,30 @@
 {
   "cloud": "zengine",
   "files": [
-    {"name": "demo.Z", "title": "Tech Demo", "url": "https://boo4blue.github.io/zengine/demo.Z"},
-    {"name": "npc.Z", "title": "AI NPC", "url": "https://boo4blue.github.io/zengine/npc.Z"},
-    {"name": "game.Z", "title": "Sandbox", "url": "https://boo4blue.github.io/zengine/game.Z"},
-    {"name": "app.Z", "title": "Demo App", "url": "https://boo4blue.github.io/zengine/app.Z"}
+    {
+      "name": "demo.Z",
+      "title": "Tech Demo",
+      "url": "https://boo4blue.github.io/zengine/demo.Z"
+    },
+    {
+      "name": "npc.Z",
+      "title": "AI NPC",
+      "url": "https://boo4blue.github.io/zengine/npc.Z"
+    },
+    {
+      "name": "game.Z",
+      "title": "Sandbox",
+      "url": "https://boo4blue.github.io/zengine/game.Z"
+    },
+    {
+      "name": "app.Z",
+      "title": "Demo App",
+      "url": "https://boo4blue.github.io/zengine/app.Z"
+    },
+    {
+      "name": "fireworks.Z",
+      "title": "Fireworks",
+      "url": "https://boo4blue.github.io/zengine/fireworks.Z"
+    }
   ]
 }

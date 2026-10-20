@@ -1,0 +1,45 @@
+# fireworks.Z — a fireworks show written for Z Engine.
+# Pushed live to Z Cloud by Muse. Open it from the cloud browser.
+
+scene "Fireworks" {
+    sky: sunset
+    ground: desert
+}
+
+script {
+    let t = 0
+    let count = 0
+
+    fn on_start() {
+        hud_text("Z Engine fireworks — by Muse")
+        play_sound("game_start")
+    }
+
+    fn on_tap(x, y, z) {
+        launch(x, z)
+    }
+
+    fn launch(x, z) {
+        # pick a bright color
+        let colors = [[1, 0.3, 0.3], [0.3, 1, 0.5], [0.4, 0.6, 1], [1, 0.85, 0.3], [1, 0.4, 0.9]]
+        let c = colors[count % 5]
+        burst(x, 14, z, c[0], c[1], c[2], 60, 11)
+        burst(x, 14, z, 1, 1, 1, 20, 6)
+        play_sound("explosion", 0.5)
+        count = count + 1
+        if (count == 10) {
+            hud_text("10 fireworks! Tap anywhere for more.")
+        }
+    }
+
+    fn on_update(dt) {
+        # auto show every 2.5 seconds
+        t = t + dt
+        if (t > 2.5) {
+            t = 0
+            let x = (count * 7) % 24 - 12
+            let z = (count * 13) % 20 - 10
+            launch(x, z)
+        }
+    }
+}
