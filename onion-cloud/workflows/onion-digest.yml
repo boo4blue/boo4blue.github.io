@@ -1,0 +1,25 @@
+name: Onion Cloud daily digest
+
+on:
+  schedule:
+    - cron: "0 11 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build digest
+        run: python3 onion-cloud/tasks/digest.py
+
+      - name: Commit digest
+        run: |
+          git config user.name "onion-cloud"
+          git config user.email "onion-cloud@boo4blue.github.io"
+          git add onion-cloud/site/data/digest.json
+          git diff --cached --quiet || (git commit -m "onion-cloud daily digest" && git push)

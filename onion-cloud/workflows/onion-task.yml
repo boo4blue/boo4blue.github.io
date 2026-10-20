@@ -1,0 +1,37 @@
+name: Onion Cloud task runner
+
+on:
+  push:
+    paths:
+      - "onion-cloud/tasks/queue/*.json"
+  workflow_dispatch:
+    inputs:
+      type:
+        description: "Task type: ask | image | weather"
+        required: true
+        default: "ask"
+      prompt:
+        description: "Task prompt"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run queued tasks
+        env:
+          DISPATCH_TYPE: ${{ inputs.type }}
+          DISPATCH_PROMPT: ${{ inputs.prompt }}
+        run: python3 onion-cloud/tasks/worker.py
+
+      - name: Commit results
+        run: |
+          git config user.name "onion-cloud"
+          git config user.email "onion-cloud@boo4blue.github.io"
+          git add onion-cloud/site/data onion-cloud/tasks/queue
+          git diff --cached --quiet || (git commit -m "onion-cloud task results" && git push)
