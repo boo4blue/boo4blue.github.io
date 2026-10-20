@@ -1,5 +1,11 @@
 [
   {
+    "id": "bigmodel-test-1",
+    "type": "bigmodel",
+    "ok": true,
+    "at": "2026-10-20T18:42:28.572699+00:00"
+  },
+  {
     "id": "hello-cloud",
     "type": "ask",
     "ok": true,

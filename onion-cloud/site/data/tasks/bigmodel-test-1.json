@@ -1,0 +1,13 @@
+{
+  "id": "bigmodel-test-1",
+  "type": "bigmodel",
+  "prompt": "Say exactly: the 120B brain is live on onion cloud",
+  "at": "2026-10-20T18:42:28.572699+00:00",
+  "runner": "onion-vm",
+  "result": {
+    "text": "the 120B brain is live on onion cloud",
+    "model": "openai/gpt-oss-120b",
+    "via": "groq"
+  },
+  "ok": true
+}
