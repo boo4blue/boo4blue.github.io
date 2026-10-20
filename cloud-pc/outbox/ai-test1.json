@@ -1,0 +1,21 @@
+{
+  "id": "ai-test1",
+  "action": "aimodel",
+  "at": "2026-10-20T20:02:22Z",
+  "job": {
+    "id": "ai-test1",
+    "action": "aimodel",
+    "session": "aitest01",
+    "minutes": 40,
+    "selftest": true
+  },
+  "result": {
+    "ok": true,
+    "session": "aitest01",
+    "minutes": 40,
+    "brain": {
+      "ok": false,
+      "error": "HTTP Error 500: Internal Server Error"
+    }
+  }
+}
