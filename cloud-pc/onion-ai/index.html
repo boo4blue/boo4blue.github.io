@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Onion AI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">🧅</div>
+  <div>
+    <h1>Onion AI</h1>
+    <p id="sub">your own AI, on your own PC</p>
+  </div>
+  <span id="status" class="dot idle"></span>
+</header>
+
+<div id="gate" class="card center">
+  <p id="gateMsg">Onion AI runs on your Cloud PC — a real 14B coding model,
+  private to you, no cloud company in the middle.</p>
+  <button id="start">Start Onion AI</button>
+  <p class="fine">Takes ~2–5 min to wake up the first time (downloads the
+  brain once, then it's cached). Sessions run up to 30 min.</p>
+  <p class="fine" id="keyMsg" hidden>No key saved yet —
+  <a href="../site/">set it up on the PC dashboard</a> first.</p>
+</div>
+
+<main id="chat" hidden>
+  <div id="msgs"></div>
+  <div class="composer">
+    <input id="in" placeholder="Ask Onion AI anything..." autocomplete="off">
+    <button id="send">➤</button>
+  </div>
+  <div class="row">
+    <span id="modelBadge" class="fine">qwen2.5-coder:14b · your PC</span>
+    <button id="stop" class="mini">Stop session</button>
+  </div>
+</main>
+
+<script src="https://unpkg.com/mqtt@5/dist/mqtt.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

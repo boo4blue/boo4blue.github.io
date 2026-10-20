@@ -143,8 +143,33 @@ def do_desktop(job):
         return {"ok": False, "error": str(e)}
 
 
+def do_aimodel(job):
+    import random
+    session = job.get("session") or "%016x" % random.getrandbits(64)
+    minutes = max(1, min(int(job.get("minutes", 30)), 45))
+    try:
+        p = subprocess.run(
+            [sys.executable, os.path.join(HERE, "aimodel.py"),
+             session, str(minutes)],
+            capture_output=True, text=True, timeout=minutes * 60 + 300, cwd=HERE)
+        tail = (p.stdout or "").strip().splitlines()
+        info = {}
+        for line in reversed(tail):
+            try:
+                info = json.loads(line)
+                break
+            except Exception:
+                continue
+        return {"ok": True, "session": session, "minutes": minutes,
+                "brain": info}
+    except subprocess.TimeoutExpired:
+        return {"ok": False, "error": "ai session timed out"}
+    except Exception as e:
+        return {"ok": False, "error": str(e)}
+
+
 ACTIONS = {"shell": do_shell, "fetch": do_fetch, "agent": do_agent,
-           "store": do_store, "desktop": do_desktop}
+           "store": do_store, "desktop": do_desktop, "aimodel": do_aimodel}
 
 
 def main():
