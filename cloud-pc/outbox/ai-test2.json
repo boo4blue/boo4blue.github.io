@@ -1,0 +1,23 @@
+{
+  "id": "ai-test2",
+  "action": "aimodel",
+  "at": "2026-10-20T21:29:15Z",
+  "job": {
+    "id": "ai-test2",
+    "action": "aimodel",
+    "session": "aitest02",
+    "minutes": 40,
+    "selftest": true
+  },
+  "result": {
+    "ok": true,
+    "session": "aitest02",
+    "minutes": 40,
+    "brain": {
+      "ok": true,
+      "selftest": "SELFTEST OK",
+      "eval_count": 4,
+      "seconds": 22.9
+    }
+  }
+}
