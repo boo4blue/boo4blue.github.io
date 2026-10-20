@@ -33,7 +33,7 @@
       </div>
       <div class="card">
         <h3>▶ GitHub Actions</h3>
-        <p>Open the repo's <b>Actions</b> tab → <b>Onion Cloud task runner</b> → <b>Run workflow</b>. Pick <code>ask</code>, <code>image</code> or <code>weather</code>, type a prompt, go.</p>
+        <p>Open the repo's <b>Actions</b> tab → <b>Onion Cloud task runner</b> → <b>Run workflow</b>. Pick <code>ask</code>, <code>bigmodel</code>, <code>image</code> or <code>weather</code>, type a prompt, go.</p>
       </div>
       <div class="card">
         <h3>⏰ Automatic</h3>
@@ -66,7 +66,7 @@
         <h3>🧅 Via Onion in chat</h3>
         <p class="muted">Keys live in Onion's secure vault — ask him and he uses them for you:</p>
         <ul>
-          <li><b>Groq</b> — 70B/120B models, fastest free inference</li>
+          <li><b>Groq</b> — 70B/120B models, fastest free inference (powers <code>bigmodel</code> cloud tasks)</li>
           <li><b>OpenRouter</b> — free-tier reasoning models</li>
           <li><b>Gemini</b> — long-context + Exa search</li>
           <li><b>Cohere</b> — embeddings &amp; rerank</li>
@@ -82,10 +82,10 @@
     <div class="card flow">
       <p><b>You / Onion</b> → drop a task file in <code>tasks/queue/</code> (or hit Run workflow)</p>
       <p>↓</p>
-      <p><b>GitHub Actions</b> → free cloud computer runs <code>worker.py</code> (ask / image / weather)</p>
+      <p><b>GitHub Actions</b> → free cloud computer runs <code>worker.py</code> (ask / bigmodel / image / weather)</p>
       <p>↓</p>
       <p><b>Results</b> → committed to <code>site/data/</code> → shown here + readable by Onion</p>
-      <p class="muted">Phase 2: your own Oracle box for downloaded local models — 200GB free disk waiting.</p>
+      <p class="muted">Big models live: <code>bigmodel</code> tasks run on Groq's 120B model through Onion — free, no server needed.</p>
     </div>
   </section>
 </main>

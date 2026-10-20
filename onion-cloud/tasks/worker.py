@@ -1,13 +1,17 @@
 #!/usr/bin/env python3
-"""Onion Cloud task worker. Runs on GitHub Actions. Stdlib only, no secrets needed.
+"""Onion Cloud task worker. Runs on Onion's VM via the onion-cloud-runner cron.
+Stdlib only; authenticated connectors are reached through their helper scripts
+(which pull credentials from secure storage themselves).
 
 Task types:
-  ask     - prompt -> free LLM answer (Pollinations, keyless)
-  image   - prompt -> free image URL (Pollinations, keyless)
-  weather - Fort Wayne weather (Open-Meteo, keyless)
+  ask      - prompt -> free LLM answer (Pollinations, keyless)
+  bigmodel - prompt -> 120B-parameter model answer (Groq gpt-oss-120b, Boo's free key)
+  image    - prompt -> free image URL (Pollinations, keyless)
+  weather  - Fort Wayne weather (Open-Meteo, keyless)
 """
 import json
 import os
+import subprocess
 import sys
 import time
 import datetime
@@ -51,7 +55,25 @@ def do_weather(_prompt):
     }
 
 
-HANDLERS = {"ask": do_ask, "image": do_image, "weather": do_weather}
+GROQ_HELPER = "/home/hatch/workspace/custom-connectors/custom.groq/bin/llm_chat.py"
+
+
+def do_bigmodel(prompt):
+    """120B-parameter answer through Boo's free Groq key (gpt-oss-120b)."""
+    p = subprocess.run(
+        [sys.executable, GROQ_HELPER, "--provider", "groq",
+         "--model", "openai/gpt-oss-120b",
+         "--prompt", prompt[:4000], "--max-tokens", "2000"],
+        capture_output=True, text=True, timeout=120)
+    text = (p.stdout or "").strip()
+    if not text:
+        raise RuntimeError("groq helper returned empty (stderr: %s)"
+                           % (p.stderr or "")[:200])
+    return {"text": text, "model": "openai/gpt-oss-120b", "via": "groq"}
+
+
+HANDLERS = {"ask": do_ask, "bigmodel": do_bigmodel,
+            "image": do_image, "weather": do_weather}
 
 
 def run_task(task):
@@ -67,7 +89,8 @@ def run_task(task):
     }
     try:
         if ttype not in HANDLERS:
-            raise ValueError("unknown type '%s' (want ask|image|weather)" % ttype)
+            raise ValueError("unknown type '%s' (want ask|bigmodel|image|weather)"
+                             % ttype)
         out["result"] = HANDLERS[ttype](prompt)
         out["ok"] = True
     except Exception as e:
@@ -117,4 +140,5 @@ def main():
     print("done:", ids)
 
 
-main()
+if __name__ == "__main__":
+    main()

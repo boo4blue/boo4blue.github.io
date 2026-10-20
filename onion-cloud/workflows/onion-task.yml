@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       type:
-        description: "Task type: ask | image | weather"
+        description: "Task type: ask | bigmodel | image | weather"
         required: true
         default: "ask"
       prompt:
