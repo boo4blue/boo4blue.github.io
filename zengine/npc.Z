@@ -1,0 +1,60 @@
+# npc.Z — talk to an AI NPC in 3D. Powered by Z Engine + free AI.
+# Tap the wise barrel. It answers with real AI.
+
+scene "NPC" {
+    sky: sunset
+    ground: desert
+
+    prop sage {
+        mesh: barrel
+        at: [0, 0.95, 0]
+        body: box
+    }
+    prop crate1 {
+        mesh: crate
+        at: [-5, 1, -3]
+        body: box
+    }
+    prop ball1 {
+        mesh: ball
+        at: [5, 0.9, 2]
+        body: sphere
+    }
+}
+
+script {
+    let sage = 0
+    let thinking = false
+
+    fn on_start() {
+        sage = find("sage")
+        freeze(sage)
+        hud_text("Tap the wise barrel to ask it anything...")
+        play_sound("game_start")
+    }
+
+    fn on_tap(x, y, z) {
+        if (thinking) {
+            hud_text("The sage is thinking...")
+            return
+        }
+        thinking = true
+        hud_text("The sage ponders your tap...")
+        play_sound("tear_pop")
+        burst(x, y, z, 0.6, 0.4, 1.0, 20, 6)
+        # ask the AI — pick a fun question based on tap position
+        let q = "A traveler taps the ground at " + x + ", " + z + ". Greet them as a mystical desert sage in one short sentence."
+        ai_ask(q, "You are the Wise Barrel, a mystical desert sage in a video game. Keep replies under 20 words. Be cryptic and fun.")
+    }
+
+    fn on_ai(text) {
+        thinking = false
+        hud_text("Wise Barrel: " + text)
+        play_sound("item_fanfare")
+        let p = get_pos(sage)
+        burst(p[0], p[1] + 1, p[2], 1.0, 0.85, 0.4, 30, 8)
+    }
+
+    fn on_update(dt) {
+    }
+}

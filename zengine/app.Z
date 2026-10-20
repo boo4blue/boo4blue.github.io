@@ -1,0 +1,69 @@
+# app.Z — a native app + web view written for Z Engine.
+# This is a .Z app: screens, buttons, labels, and a real webview.
+
+screen "main" {
+    label title {
+        text: "Hello Z"
+        at: [60, 120]
+        size: 42
+    }
+    label sub {
+        text: "Apps, games, and web — all in .Z files."
+        at: [60, 200]
+        size: 20
+    }
+    button counter_btn {
+        text: "Tap me: 0"
+        at: [60, 320]
+        size: [400, 110]
+    }
+    button web_btn {
+        text: "Open Web"
+        at: [60, 470]
+        size: [400, 110]
+    }
+    button game_btn {
+        text: "Play Game"
+        at: [60, 620]
+        size: [400, 110]
+    }
+}
+
+screen "web" {
+    label title {
+        text: "Z Web"
+        at: [60, 80]
+        size: 36
+    }
+    webview browser {
+        at: [40, 200]
+        size: [1000, 1300]
+        url: "https://example.com"
+    }
+    button back_btn {
+        text: "Back"
+        at: [60, 1560]
+        size: [300, 100]
+    }
+}
+
+script {
+    let taps = 0
+
+    fn on_start() {
+        print("Z app started")
+    }
+
+    fn on_click(id) {
+        if (id == "counter_btn") {
+            taps = taps + 1
+            set_text("counter_btn", "Tap me: " + taps)
+        } else if (id == "web_btn") {
+            show_screen("web")
+        } else if (id == "back_btn") {
+            show_screen("main")
+        } else if (id == "game_btn") {
+            open_z("game.Z")
+        }
+    }
+}

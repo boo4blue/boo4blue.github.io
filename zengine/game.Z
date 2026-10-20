@@ -1,0 +1,65 @@
+# Sandbox.Z — a physics sandbox game written for Z Engine.
+# Scenes AND scripts live in .Z files.
+
+scene "Sandbox" {
+    sky: sunset
+    ground: desert
+
+    prop crate1 {
+        mesh: crate
+        at: [-4, 1, 0]
+        body: box
+    }
+    prop crate2 {
+        mesh: crate
+        at: [-4, 3.1, 0.3]
+        body: box
+    }
+    prop ball1 {
+        mesh: ball
+        at: [3, 0.9, 2]
+        body: sphere
+    }
+    prop barrel1 {
+        mesh: barrel
+        at: [5, 0.95, -2]
+        body: box
+    }
+    prop barrel2 {
+        mesh: barrel
+        at: [6.8, 0.95, -1]
+        body: box
+    }
+}
+
+script {
+    let tool = "build"
+    let kind = "crate"
+
+    fn on_start() {
+        print("Z Engine sandbox ready")
+        print("tap empty ground to spawn - drag props to move them")
+    }
+
+    fn on_tap(x, y, z) {
+        if (tool == "build") {
+            spawn(kind, x, 8, z)
+        } else {
+            explode(x, y, z)
+        }
+    }
+
+    fn set_tool(t) {
+        tool = t
+        print("tool: " + t)
+    }
+
+    fn set_kind(k) {
+        kind = k
+        tool = "build"
+        print("spawning: " + k)
+    }
+
+    fn on_update(dt) {
+    }
+}

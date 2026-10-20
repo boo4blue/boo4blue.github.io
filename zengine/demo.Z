@@ -1,0 +1,67 @@
+# demo.Z — Z Engine tech demo. Every engine system in one .Z file.
+# Our own code, our own language, our own engine.
+
+scene "TechDemo" {
+    sky: sunset
+    ground: desert
+
+    prop hero {
+        mesh: ball
+        at: [0, 0.9, 0]
+        body: sphere
+    }
+    prop tower1 {
+        mesh: crate
+        at: [-6, 1, -4]
+        body: box
+    }
+    prop tower2 {
+        mesh: crate
+        at: [-6, 3.1, -4]
+        body: box
+    }
+    prop barrel1 {
+        mesh: barrel
+        at: [6, 0.95, -3]
+        body: box
+    }
+    prop barrel2 {
+        mesh: barrel
+        at: [7.8, 0.95, -2]
+        body: box
+    }
+}
+
+script {
+    let hero = 0
+    let shots = 0
+
+    fn on_start() {
+        hero = find("hero")
+        print("Z Engine tech demo ready")
+        play_sound("game_start")
+        burst(0, 4, 0, 0.4, 0.8, 1.0, 50, 10)
+    }
+
+    fn on_tap(x, y, z) {
+        # slingshot the hero ball toward the tap point
+        let p = get_pos(hero)
+        push(hero, (x - p[0]) * 2.5, 7, (z - p[2]) * 2.5)
+        play_sound("shoot")
+        burst(p[0], p[1], p[2], 1.0, 0.9, 0.4, 18, 7)
+        shots = shots + 1
+        if (shots == 5) {
+            print("nice shooting - barrels chain!")
+        }
+    }
+
+    fn on_update(dt) {
+        # respawn the hero if it flies off the world
+        let p = get_pos(hero)
+        if (p[1] < -10) {
+            move(hero, 0, 6, 0)
+            play_sound("descend")
+            burst(0, 6, 0, 0.4, 0.8, 1.0, 25, 8)
+        }
+    }
+}

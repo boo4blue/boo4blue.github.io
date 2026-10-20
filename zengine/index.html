@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Z Engine — games, apps, web in .Z files</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14101c; color: #f0e8ff; font-family: system-ui, sans-serif; line-height: 1.6; }
+  header { background: linear-gradient(135deg, #2b1a3d, #4d2440 60%, #7a3b1e); padding: 60px 20px; text-align: center; }
+  header h1 { font-size: 3em; color: #7ad9ff; text-shadow: 0 0 30px #7ad9ff66; letter-spacing: 2px; }
+  header p { font-size: 1.2em; color: #ffd97a; margin-top: 10px; }
+  nav { background: #1e1626; padding: 12px; text-align: center; position: sticky; top: 0; z-index: 10; }
+  nav a { color: #7ad9ff; text-decoration: none; margin: 0 18px; font-weight: bold; }
+  nav a:hover { color: #ffd97a; }
+  main { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+  h2 { color: #ffd97a; margin: 40px 0 16px; font-size: 1.6em; }
+  h3 { color: #7ad9ff; margin: 24px 0 10px; }
+  p { margin: 10px 0; color: #cfc3e8; }
+  code { background: #241b30; padding: 2px 8px; border-radius: 6px; color: #7ad9ff; font-size: 0.95em; }
+  pre { background: #1e1626; border: 1px solid #3a2b4d; border-radius: 10px; padding: 18px; overflow-x: auto; margin: 14px 0; }
+  pre code { background: none; padding: 0; color: #d8ccf0; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin: 20px 0; }
+  .card { background: #1e1626; border: 1px solid #3a2b4d; border-radius: 12px; padding: 22px; }
+  .card h3 { margin-top: 0; }
+  .card a { display: inline-block; margin-top: 12px; background: #7ad9ff; color: #14101c; padding: 10px 22px; border-radius: 8px; text-decoration: none; font-weight: bold; }
+  .card a:hover { background: #ffd97a; }
+  .btn { display: inline-block; background: #ffd97a; color: #14101c; padding: 14px 34px; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 1.1em; margin: 10px 10px 10px 0; }
+  .btn:hover { background: #7ad9ff; }
+  .btn.ghost { background: transparent; border: 2px solid #7ad9ff; color: #7ad9ff; }
+  footer { text-align: center; padding: 40px 20px; color: #8a7ba8; border-top: 1px solid #2b2138; margin-top: 60px; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+  th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid #2b2138; }
+  th { color: #7ad9ff; }
+  td code { white-space: nowrap; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Z ENGINE</h1>
+  <p>Zeroblue Engine — games, apps, and web. All in .Z files.</p>
+</header>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="docs.html">.Z Docs</a>
+  <a href="gallery.html">.Z Gallery</a>
+</nav>
+<main>
+  <h2>Our own game engine</h2>
+  <p>Z Engine is a game engine written from scratch — no Unity, no Godot, no borrowed engine code. Renderer, physics, audio, particles, scripting: all hand-written, all ours.</p>
+  <p>Games, apps, and web views are all written in <code>.Z files</code> — one format for scenes <em>and</em> scripts. Write a .Z file, and Z Engine runs it.</p>
+
+  <div style="margin: 24px 0;">
+    <a class="btn" href="#" id="apkBtn">Download Z Engine APK</a>
+    <a class="btn ghost" href="docs.html">Learn .Z</a>
+  </div>
+
+  <h2>One file does everything</h2>
+  <pre><code># mygame.Z — a whole game in one file
+scene "MyGame" {
+    sky: sunset
+    ground: desert
+    prop hero {
+        mesh: ball
+        at: [0, 0.9, 0]
+        body: sphere
+    }
+}
+
+script {
+    let hero = 0
+    fn on_start() {
+        hero = find("hero")
+        play_sound("game_start")
+    }
+    fn on_tap(x, y, z) {
+        let p = get_pos(hero)
+        push(hero, (x - p[0]) * 3, 7, (z - p[2]) * 3)
+        burst(p[0], p[1], p[2], 1, 0.8, 0.3, 20, 8)
+    }
+}</code></pre>
+
+  <h2>Engine systems</h2>
+  <div class="cards">
+    <div class="card"><h3>Renderer</h3><p>Cel shading, ink outlines, fog, rim light, shader sky with sun, clouds, and stars. Borderlands-style painted textures.</p></div>
+    <div class="card"><h3>Physics</h3><p>Spheres and boxes, sequential impulses, friction, explosions, raycast picking. Our own solver.</p></div>
+    <div class="card"><h3>Audio</h3><p>SoundPool SFX. <code>play_sound("explosion")</code> from any script.</p></div>
+    <div class="card"><h3>Particles</h3><p>CPU point sprites. <code>burst(x,y,z,r,g,b,count,speed)</code> anywhere.</p></div>
+    <div class="card"><h3>ZScript</h3><p>Lua-flavored language with our own lexer, parser, and interpreter. Functions, arrays, callbacks.</p></div>
+    <div class="card"><h3>Web</h3><p><code>http_get(url)</code> + <code>on_http</code> in scripts. <code>open_z(url)</code> loads .Z files from the web. Native webview widgets for apps.</p></div>
+  </div>
+
+  <h2>Z Cloud</h2>
+  <p>.Z files live in the cloud. The app fetches them by URL — publish a .Z file here and it runs on any Z Engine install. Muse controls the whole loop: write it, push it, play it.</p>
+  <p><a href="gallery.html" style="color:#7ad9ff;">Browse the .Z gallery →</a></p>
+</main>
+<footer>Z Engine · Zeroblue · our own code</footer>
+<script>
+  document.getElementById('apkBtn').href = 'https://gofile.io/d/J5w5S1m0';
+</script>
+</body>
+</html>

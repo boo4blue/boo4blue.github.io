@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>.Z Gallery — Z Engine</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14101c; color: #f0e8ff; font-family: system-ui, sans-serif; line-height: 1.6; }
+  nav { background: #1e1626; padding: 12px; text-align: center; position: sticky; top: 0; }
+  nav a { color: #7ad9ff; text-decoration: none; margin: 0 18px; font-weight: bold; }
+  nav a:hover { color: #ffd97a; }
+  main { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+  h1 { color: #7ad9ff; margin-bottom: 10px; }
+  p { color: #cfc3e8; margin: 10px 0; }
+  code { background: #241b30; padding: 2px 8px; border-radius: 6px; color: #7ad9ff; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin: 24px 0; }
+  .card { background: #1e1626; border: 1px solid #3a2b4d; border-radius: 12px; padding: 22px; }
+  .card h3 { color: #ffd97a; margin-bottom: 8px; }
+  .card p { font-size: 0.95em; }
+  .card a { display: inline-block; margin: 8px 8px 0 0; background: #7ad9ff; color: #14101c; padding: 8px 18px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.9em; }
+  .card a:hover { background: #ffd97a; }
+  .card a.raw { background: transparent; border: 1px solid #7ad9ff; color: #7ad9ff; }
+  footer { text-align: center; padding: 40px 20px; color: #8a7ba8; border-top: 1px solid #2b2138; margin-top: 60px; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="docs.html">.Z Docs</a>
+  <a href="gallery.html">.Z Gallery</a>
+</nav>
+<main>
+<h1>.Z Gallery</h1>
+<p>Every .Z file here runs in Z Engine — in the app, or straight from URL with <code>open_z("https://boo4blue.github.io/zengine/demo.Z")</code>.</p>
+<div class="cards" id="gallery"></div>
+</main>
+<footer>Z Engine · Zeroblue · our own code</footer>
+<script>
+const files = [
+  { f: "demo.Z", t: "Tech Demo", d: "Slingshot physics, particles, sounds, barrel chains — every engine system in one file." },
+  { f: "npc.Z", t: "AI NPC", d: "Talk to the Wise Barrel. Real AI answers, HUD dialogue, particle magic." },
+  { f: "game.Z", t: "Sandbox", d: "Physics sandbox: spawn props, drag them, blow them up." },
+  { f: "app.Z", t: "Demo App", d: "Native app in .Z: counter, screens, webview, opens games." }
+];
+const base = "https://boo4blue.github.io/zengine/";
+document.getElementById("gallery").innerHTML = files.map(x =>
+  `<div class="card"><h3>${x.t}</h3><p>${x.d}</p>` +
+  `<a href="${base}${x.f}" download>Download</a>` +
+  `<a class="raw" href="${base}${x.f}">Raw</a></div>`
+).join("");
+</script>
+</body>
+</html>

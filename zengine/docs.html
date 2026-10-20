@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>.Z Docs — Z Engine</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14101c; color: #f0e8ff; font-family: system-ui, sans-serif; line-height: 1.6; }
+  nav { background: #1e1626; padding: 12px; text-align: center; position: sticky; top: 0; }
+  nav a { color: #7ad9ff; text-decoration: none; margin: 0 18px; font-weight: bold; }
+  nav a:hover { color: #ffd97a; }
+  main { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+  h1 { color: #7ad9ff; margin-bottom: 10px; }
+  h2 { color: #ffd97a; margin: 36px 0 14px; }
+  p, li { color: #cfc3e8; margin: 8px 0; }
+  ul { padding-left: 24px; }
+  code { background: #241b30; padding: 2px 8px; border-radius: 6px; color: #7ad9ff; font-size: 0.95em; }
+  pre { background: #1e1626; border: 1px solid #3a2b4d; border-radius: 10px; padding: 18px; overflow-x: auto; margin: 14px 0; }
+  pre code { background: none; padding: 0; color: #d8ccf0; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+  th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid #2b2138; vertical-align: top; }
+  th { color: #7ad9ff; }
+  footer { text-align: center; padding: 40px 20px; color: #8a7ba8; border-top: 1px solid #2b2138; margin-top: 60px; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="docs.html">.Z Docs</a>
+  <a href="gallery.html">.Z Gallery</a>
+</nav>
+<main>
+<h1>.Z File Reference</h1>
+<p>A .Z file holds <strong>scenes</strong> (3D worlds), <strong>screens</strong> (app UI), and <strong>scripts</strong> (game logic) — all in one file.</p>
+
+<h2>Scene block — 3D worlds</h2>
+<pre><code>scene "MyWorld" {
+    sky: sunset
+    ground: desert
+
+    prop crate1 {
+        mesh: crate      # crate, ball, barrel
+        at: [-4, 1, 0]   # x, y, z
+        body: box        # box or sphere (physics shape)
+    }
+}</code></pre>
+
+<h2>Screen block — app UI</h2>
+<pre><code>screen "main" {
+    label title {
+        text: "Hello Z"
+        at: [60, 120]
+        size: 42          # font size for labels
+    }
+    button play {
+        text: "Play"
+        at: [60, 400]
+        size: [400, 110]  # width, height for buttons
+    }
+    webview browser {
+        at: [40, 600]
+        size: [1000, 800]
+        url: "https://example.com"
+    }
+}</code></pre>
+
+<h2>Script block — ZScript</h2>
+<p>Lua-flavored: <code>fn</code>, <code>if</code>/<code>else</code>, <code>while</code>, <code>let</code>, arrays, <code>and</code>/<code>or</code>/<code>not</code>.</p>
+<pre><code>script {
+    let score = 0
+
+    fn on_start() {
+        print("go!")
+    }
+
+    fn on_update(dt) {
+        score = score + dt
+    }
+
+    fn on_tap(x, y, z) {
+        spawn("crate", x, 8, z)
+    }
+
+    fn on_click(id) {
+        if (id == "play") {
+            show_screen("game")
+        }
+    }
+
+    fn on_http(url, body) {
+        print("web says: " + body)
+    }
+}</code></pre>
+
+<h2>Callbacks</h2>
+<table>
+<tr><th>Callback</th><th>When</th></tr>
+<tr><td><code>on_start()</code></td><td>.Z file loaded</td></tr>
+<tr><td><code>on_update(dt)</code></td><td>every frame (dt in seconds)</td></tr>
+<tr><td><code>on_tap(x, y, z)</code></td><td>tap on empty 3D space (world coords)</td></tr>
+<tr><td><code>on_click(id)</code></td><td>app UI button tapped</td></tr>
+<tr><td><code>on_http(url, body)</code></td><td><code>http_get</code> response arrived</td></tr>
+</table>
+
+<h2>Game API</h2>
+<table>
+<tr><th>Function</th><th>What it does</th></tr>
+<tr><td><code>spawn(mesh, x, y, z)</code></td><td>spawn crate/ball/barrel, returns id</td></tr>
+<tr><td><code>remove(id)</code></td><td>delete entity</td></tr>
+<tr><td><code>find("name")</code></td><td>entity id by prop name</td></tr>
+<tr><td><code>move(id, x, y, z)</code></td><td>teleport entity</td></tr>
+<tr><td><code>push(id, dx, dy, dz)</code></td><td>add velocity</td></tr>
+<tr><td><code>get_pos(id)</code></td><td>[x, y, z]</td></tr>
+<tr><td><code>freeze(id)</code> / <code>unfreeze(id)</code></td><td>toggle physics</td></tr>
+<tr><td><code>explode(x, y, z)</code></td><td>radial explosion + FX + sound</td></tr>
+<tr><td><code>burst(x,y,z,r,g,b,count,speed)</code></td><td>particle burst</td></tr>
+<tr><td><code>play_sound(name, vol)</code></td><td>play SFX</td></tr>
+<tr><td><code>count()</code></td><td>entity count</td></tr>
+<tr><td><code>time()</code></td><td>seconds since boot</td></tr>
+</table>
+
+<h2>App + Web API</h2>
+<table>
+<tr><th>Function</th><th>What it does</th></tr>
+<tr><td><code>show_screen("name")</code></td><td>switch app screen</td></tr>
+<tr><td><code>set_text(id, text)</code></td><td>update label/button text</td></tr>
+<tr><td><code>open_z(file_or_url)</code></td><td>load another .Z (local or http)</td></tr>
+<tr><td><code>open_url(id, url)</code></td><td>load URL into a webview widget</td></tr>
+<tr><td><code>http_get(url)</code></td><td>fetch URL, calls <code>on_http</code></td></tr>
+<tr><td><code>print(...)</code></td><td>log to console</td></tr>
+</table>
+</main>
+<footer>Z Engine · Zeroblue · our own code</footer>
+</body>
+</html>
