@@ -1,0 +1,75 @@
+# OnionAI agent runner — GitHub Actions workflow.
+#
+# ONE-TIME ACTIVATION (GitHub won't let bots write here, so this is manual):
+#   1. In the repo, create the file  .github/workflows/onion-ai.yml
+#   2. Paste the entire contents of THIS file into it. Done.
+# After that, the agent runs on GitHub's free machines whenever:
+#   - you hit "Run workflow" in the Actions tab and type a task, or
+#   - a JSON file lands in onion-ai/queue/ ({"id": "...", "task": "..."})
+# Results land in onion-ai/results/<id>.json and the queue file is deleted.
+#
+# Free tier: 2,000 Actions minutes/month. A typical agent task takes 3-10 min.
+# No API keys needed: the brain is keyless by default (see agent.py).
+
+name: OnionAI agent
+
+on:
+  workflow_dispatch:
+    inputs:
+      task:
+        description: "Task for the agent"
+        required: true
+        type: string
+      task_id:
+        description: "Task id (optional)"
+        required: false
+        default: ""
+  push:
+    paths:
+      - "onion-ai/queue/*.json"
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run agent
+        env:
+          ONIONAI_WORKSPACE: ${{ github.workspace }}/ai-workspace
+        run: |
+          mkdir -p onion-ai/results
+          run_one() {
+            local task="$1" tid="$2"
+            echo "=== task $tid ==="
+            python3 onion-ai/agent.py "$task" > "onion-ai/results/${tid}.json" 2> "onion-ai/results/${tid}.log" || true
+            cat "onion-ai/results/${tid}.json"
+          }
+          if [ -n "${{ inputs.task }}" ]; then
+            tid="${{ inputs.task_id }}"
+            [ -z "$tid" ] && tid="manual-$(date +%s)"
+            run_one "${{ inputs.task }}" "$tid"
+          else
+            for f in onion-ai/queue/*.json; do
+              [ -e "$f" ] || continue
+              tid=$(python3 -c "import json,sys; print(json.load(open('$f')).get('id','q'))")
+              task=$(python3 -c "import json; print(json.load(open('$f')).get('task',''))")
+              [ -z "$task" ] && continue
+              run_one "$task" "$tid"
+              rm "$f"
+            done
+          fi
+
+      - name: Commit results
+        run: |
+          git config user.name "onionai"
+          git config user.email "onionai@local"
+          git add onion-ai/results onion-ai/queue
+          git diff --cached --quiet || (git commit -m "onionai: agent results" && git push)
