@@ -1,0 +1,21 @@
+{
+  "id": "desk-test1",
+  "action": "desktop",
+  "at": "2026-10-20T19:49:10Z",
+  "job": {
+    "id": "desk-test1",
+    "action": "desktop",
+    "session": "dtest01ab",
+    "minutes": 4
+  },
+  "result": {
+    "ok": true,
+    "session": "dtest01ab",
+    "minutes": 4,
+    "bridge": {
+      "ok": true,
+      "session": "dtest01ab",
+      "shots": 214
+    }
+  }
+}
