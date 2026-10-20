@@ -101,6 +101,25 @@ def main():
         if r.returncode != 0:
             raise RuntimeError("ollama pull failed: " + r.stdout[-500:])
         log("model ready")
+        if "selftest" in sys.argv:
+            payload = json.dumps({
+                "model": MODEL,
+                "messages": [{"role": "user",
+                              "content": "Reply with exactly: SELFTEST OK"}],
+                "stream": False,
+            }).encode()
+            req = urllib.request.Request(
+                "http://127.0.0.1:11434/api/chat", data=payload,
+                headers={"Content-Type": "application/json"})
+            t0 = time.time()
+            d = json.loads(urllib.request.urlopen(req, timeout=300).read())
+            dt = time.time() - t0
+            answer = (d.get("message") or {}).get("content", "")
+            serve.terminate()
+            print(json.dumps({"ok": True, "selftest": answer.strip()[:200],
+                              "eval_count": d.get("eval_count", 0),
+                              "seconds": round(dt, 1)}))
+            return
     except Exception as e:
         serve.terminate()
         print(json.dumps({"ok": False, "error": str(e)[:200]}))

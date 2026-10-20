@@ -148,10 +148,12 @@ def do_aimodel(job):
     session = job.get("session") or "%016x" % random.getrandbits(64)
     minutes = max(1, min(int(job.get("minutes", 30)), 45))
     try:
-        p = subprocess.run(
-            [sys.executable, os.path.join(HERE, "aimodel.py"),
-             session, str(minutes)],
-            capture_output=True, text=True, timeout=minutes * 60 + 300, cwd=HERE)
+        argv = [sys.executable, os.path.join(HERE, "aimodel.py"),
+                session, str(minutes)]
+        if job.get("selftest"):
+            argv.append("selftest")
+        p = subprocess.run(argv, capture_output=True, text=True,
+                           timeout=minutes * 60 + 300, cwd=HERE)
         tail = (p.stdout or "").strip().splitlines()
         info = {}
         for line in reversed(tail):
