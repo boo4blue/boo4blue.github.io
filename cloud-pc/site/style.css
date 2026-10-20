@@ -29,4 +29,11 @@ button.mini{background:#21262d;padding:4px 10px;font-size:.85rem;margin:0 0 0 8p
 .job pre{background:#0d1117;border-radius:6px;padding:8px;margin-top:8px;
   white-space:pre-wrap;word-break:break-word;font-size:.82rem;max-height:300px;overflow:auto}
 .file{font-family:monospace;font-size:.85rem;padding:4px 0;border-bottom:1px solid #21262d}
+#screen{width:100%;border:1px solid #30363d;border-radius:8px;margin-top:10px;
+  touch-action:manipulation;cursor:crosshair;background:#000}
+.launch{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.launch .mini{margin:0}
+.typerow{display:flex;gap:6px;margin-top:8px}
+.typerow input{flex:1;margin:0}
+.typerow .mini{margin:0;white-space:nowrap}
 a{color:#58a6ff}

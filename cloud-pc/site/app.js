@@ -169,4 +169,105 @@ async function loadDisk() {
 
 $("refresh").onclick = loadJobs;
 $("refreshDisk").onclick = loadDisk;
+
+/* ---------- Live desktop over MQTT ---------- */
+let mq = null, deskSecret = "", deskBase = "", deskOn = false;
+
+function mqPub(topic, obj) {
+  if (mq && mq.connected) mq.publish(topic, JSON.stringify(obj));
+}
+
+function deskMsg(t) { $("deskState").textContent = t; }
+
+$("deskStart").onclick = async () => {
+  if (typeof mqtt === "undefined") { deskMsg("MQTT library failed to load."); return; }
+  deskSecret = Array.from(crypto.getRandomValues(new Uint8Array(8)))
+    .map(b => b.toString(16).padStart(2, "0")).join("");
+  deskBase = "onionpc/v1/" + deskSecret;
+  deskMsg("Waking the PC (installing desktop, ~2 min)...");
+  $("deskStart").disabled = true;
+  try {
+    await api("/contents/cloud-pc/inbox/desk-" + deskSecret.slice(0, 8) + ".json", {
+      method: "PUT",
+      body: JSON.stringify({
+        message: "cloudpc: desktop session from web",
+        content: b64(JSON.stringify({ id: "desk-" + deskSecret.slice(0, 8),
+          action: "desktop", session: deskSecret, minutes: 30 }))
+      })
+    });
+  } catch (e) { deskMsg("Failed to queue: " + e.message); $("deskStart").disabled = false; return; }
+  mq = mqtt.connect("wss://broker.emqx.io:8084/mqtt", { connectTimeout: 15000 });
+  mq.on("connect", () => {
+    mq.subscribe(deskBase + "/status");
+    mq.subscribe(deskBase + "/screen");
+    deskMsg("Waiting for the desktop to boot...");
+  });
+  mq.on("error", () => deskMsg("Realtime link failed — the PC may still boot; try Stop then Start."));
+  mq.on("message", (topic, payload) => {
+    if (topic === deskBase + "/status") {
+      try {
+        const s = JSON.parse(payload.toString());
+        if (s.state === "ready") {
+          deskOn = true;
+          $("deskWrap").hidden = false;
+          $("deskStop").disabled = false;
+          deskMsg("Live — click the screen, type below.");
+        } else if (s.state === "ended") {
+          deskEnd("Session ended (" + (s.shots || 0) + " frames).");
+        }
+      } catch (e) {}
+    } else if (topic === deskBase + "/screen") {
+      const img = new Image();
+      img.onload = () => {
+        const c = $("screen");
+        c.width = img.naturalWidth; c.height = img.naturalHeight;
+        c.getContext("2d").drawImage(img, 0, 0);
+      };
+      img.src = "data:image/jpeg;base64," + payload.toString();
+    }
+  });
+};
+
+function deskEnd(t) {
+  deskOn = false;
+  deskMsg(t);
+  $("deskStart").disabled = false;
+  $("deskStop").disabled = true;
+  try { mq && mq.end(); } catch (e) {}
+  mq = null;
+}
+
+$("deskStop").onclick = () => {
+  mqPub(deskBase + "/input", { type: "stop" });
+  deskEnd("Stopping...");
+};
+
+$("screen").addEventListener("click", e => {
+  if (!deskOn) return;
+  const c = $("screen"), r = c.getBoundingClientRect();
+  const cx = (e.clientX - r.left) * (c.width / r.width);
+  const cy = (e.clientY - r.top) * (c.height / r.height);
+  // Bridge desktop is 1024x768; map canvas pixels back to desktop pixels.
+  mqPub(deskBase + "/input", { type: "click",
+    x: Math.round(cx * 1024 / c.width), y: Math.round(cy * 768 / c.height),
+    button: 1 });
+});
+
+$("typeSend").onclick = () => {
+  const t = $("typebox").value;
+  if (!t || !deskOn) return;
+  mqPub(deskBase + "/input", { type: "type", text: t });
+  $("typebox").value = "";
+};
+$("typebox").addEventListener("keydown", e => {
+  if (e.key === "Enter") $("typeSend").onclick();
+});
+
+document.querySelectorAll("[data-app]").forEach(b => {
+  b.onclick = () => deskOn && mqPub(deskBase + "/input", { type: "launch", app: b.dataset.app });
+});
+document.querySelectorAll("[data-key]").forEach(b => {
+  b.onclick = () => deskOn && mqPub(deskBase + "/input", { type: "key", key: b.dataset.key });
+});
+
 boot();

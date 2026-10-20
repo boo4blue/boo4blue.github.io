@@ -106,8 +106,45 @@ def do_store(job):
         return {"ok": False, "error": str(e)}
 
 
+def do_desktop(job):
+    import random
+    session = job.get("session") or "%016x" % random.getrandbits(64)
+    minutes = max(1, min(int(job.get("minutes", 30)), 45))
+    pkgs = ["xvfb", "openbox", "pcmanfm", "lxterminal", "obconf",
+            "imagemagick", "xdotool", "scrot"]
+    try:
+        log("installing desktop packages...")
+        subprocess.run(["sudo", "apt-get", "update", "-qq"],
+                       stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                       timeout=300)
+        subprocess.run(["sudo", "apt-get", "install", "-y", "-qq"] + pkgs,
+                       stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                       timeout=600)
+    except Exception as e:
+        return {"ok": False, "error": "apt install failed: %s" % e}
+    try:
+        p = subprocess.run(
+            [sys.executable, os.path.join(HERE, "desktop.py"),
+             session, str(minutes)],
+            capture_output=True, text=True, timeout=minutes * 60 + 180, cwd=HERE)
+        tail = (p.stdout or "").strip().splitlines()
+        info = {}
+        for line in reversed(tail):
+            try:
+                info = json.loads(line)
+                break
+            except Exception:
+                continue
+        return {"ok": True, "session": session, "minutes": minutes,
+                "bridge": info}
+    except subprocess.TimeoutExpired:
+        return {"ok": False, "error": "desktop session timed out"}
+    except Exception as e:
+        return {"ok": False, "error": str(e)}
+
+
 ACTIONS = {"shell": do_shell, "fetch": do_fetch, "agent": do_agent,
-           "store": do_store}
+           "store": do_store, "desktop": do_desktop}
 
 
 def main():

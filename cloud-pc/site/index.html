@@ -59,6 +59,36 @@
   </section>
 
   <section class="card">
+    <h2>Live desktop</h2>
+    <p class="fine">A real Linux desktop on your PC, streamed live. Click the
+    screen, type, open Files or Settings. Sessions cap at 30 min (free-minutes
+    budget).</p>
+    <div>
+      <button id="deskStart">Start desktop</button>
+      <button id="deskStop" class="mini" disabled>Stop</button>
+      <span id="deskState" class="fine"></span>
+    </div>
+    <div id="deskWrap" hidden>
+      <canvas id="screen"></canvas>
+      <div class="launch">
+        <button class="mini" data-app="lxterminal">Terminal</button>
+        <button class="mini" data-app="pcmanfm">Files</button>
+        <button class="mini" data-app="obconf">Settings</button>
+      </div>
+      <div class="typerow">
+        <input id="typebox" placeholder="Type here, then Send (or tap screen)">
+        <button id="typeSend" class="mini">Send</button>
+      </div>
+      <div class="launch">
+        <button class="mini" data-key="Return">Enter</button>
+        <button class="mini" data-key="BackSpace">⌫</button>
+        <button class="mini" data-key="Escape">Esc</button>
+        <button class="mini" data-key="Tab">Tab</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
     <h2>Jobs <button id="refresh" class="mini">↻</button></h2>
     <div id="jobs"><p class="fine">No jobs yet.</p></div>
   </section>
@@ -73,6 +103,7 @@
   (workflow "Boo's Cloud PC" → Run workflow). <a href="#" id="forget">Forget saved key</a></p>
 </main>
 
+<script src="https://unpkg.com/mqtt@5/dist/mqtt.min.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
