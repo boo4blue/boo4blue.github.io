@@ -5,132 +5,128 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>.Z Docs — Z Engine</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: #14101c; color: #f0e8ff; font-family: system-ui, sans-serif; line-height: 1.6; }
-  nav { background: #1e1626; padding: 12px; text-align: center; position: sticky; top: 0; }
-  nav a { color: #7ad9ff; text-decoration: none; margin: 0 18px; font-weight: bold; }
-  nav a:hover { color: #ffd97a; }
-  main { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
-  h1 { color: #7ad9ff; margin-bottom: 10px; }
-  h2 { color: #ffd97a; margin: 36px 0 14px; }
-  p, li { color: #cfc3e8; margin: 8px 0; }
-  ul { padding-left: 24px; }
-  code { background: #241b30; padding: 2px 8px; border-radius: 6px; color: #7ad9ff; font-size: 0.95em; }
-  pre { background: #1e1626; border: 1px solid #3a2b4d; border-radius: 10px; padding: 18px; overflow-x: auto; margin: 14px 0; }
-  pre code { background: none; padding: 0; color: #d8ccf0; }
-  table { width: 100%; border-collapse: collapse; margin: 14px 0; }
-  th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid #2b2138; vertical-align: top; }
-  th { color: #7ad9ff; }
-  footer { text-align: center; padding: 40px 20px; color: #8a7ba8; border-top: 1px solid #2b2138; margin-top: 60px; }
+  :root { --bg:#0a0e17; --card:rgba(255,255,255,0.04); --border:rgba(255,255,255,0.09);
+    --blue:#4dc3ff; --gold:#ffd97a; --text:#eef2ff; --muted:#9aa7c7; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Inter,sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased; }
+  nav { position:sticky; top:0; z-index:50; backdrop-filter:blur(20px);
+    background:rgba(10,14,23,0.75); border-bottom:1px solid var(--border); }
+  nav .inner { max-width:1100px; margin:0 auto; padding:14px 24px;
+    display:flex; align-items:center; justify-content:space-between; }
+  nav .logo { font-weight:800; letter-spacing:2px; color:var(--blue); text-decoration:none; }
+  nav .links a { color:var(--muted); text-decoration:none; margin-left:28px; font-weight:600; }
+  nav .links a:hover { color:var(--text); }
+  main { max-width:900px; margin:0 auto; padding:60px 24px 40px; }
+  h1 { font-size:2.6em; font-weight:800; letter-spacing:-1px; margin-bottom:8px; }
+  .sub { color:var(--muted); font-size:1.1em; margin-bottom:30px; }
+  h2 { color:var(--gold); margin:44px 0 14px; font-size:1.5em; letter-spacing:-0.5px; }
+  p, li { color:var(--muted); margin:8px 0; }
+  ul { padding-left:22px; }
+  .codeblock { background:#0d1322; border:1px solid var(--border); border-radius:14px;
+    margin:18px 0; overflow:hidden; }
+  .codeblock pre { padding:22px; overflow-x:auto; font-size:0.9em; line-height:1.7; }
+  .codeblock code { font-family:"SF Mono","JetBrains Mono",Menlo,monospace; color:#c9d6f5; }
+  .tok-k{color:var(--blue);} .tok-s{color:var(--gold);} .tok-c{color:#5b6b8c;} .tok-f{color:#9d7bff;}
+  table { width:100%; border-collapse:collapse; margin:16px 0; font-size:0.93em;
+    background:var(--card); border-radius:14px; overflow:hidden; }
+  th, td { text-align:left; padding:12px 16px; border-bottom:1px solid var(--border); }
+  th { color:var(--blue); } td { color:var(--muted); }
+  td code, p code, li code { background:rgba(77,195,255,0.1); color:var(--blue);
+    padding:2px 8px; border-radius:6px; font-size:0.9em; }
+  footer { text-align:center; padding:50px 24px 36px; color:#5b6b8c; font-size:0.9em;
+    border-top:1px solid var(--border); margin-top:70px; }
 </style>
 </head>
 <body>
-<nav>
-  <a href="index.html">Home</a>
-  <a href="docs.html">.Z Docs</a>
-  <a href="gallery.html">.Z Gallery</a>
-</nav>
+<nav><div class="inner">
+  <a class="logo" href="index.html">Z ENGINE</a>
+  <div class="links"><a href="index.html">Home</a><a href="docs.html">Docs</a><a href="gallery.html">Gallery</a></div>
+</div></nav>
 <main>
-<h1>.Z File Reference</h1>
-<p>A .Z file holds <strong>scenes</strong> (3D worlds), <strong>screens</strong> (app UI), and <strong>scripts</strong> (game logic) — all in one file.</p>
+<h1>.Z Reference</h1>
+<p class="sub">One format for scenes, app UI, and scripts.</p>
 
-<h2>Scene block — 3D worlds</h2>
-<pre><code>scene "MyWorld" {
+<h2>Scene — 3D worlds</h2>
+<div class="codeblock"><pre><code><span class="tok-k">scene</span> <span class="tok-s">"MyWorld"</span> {
     sky: sunset
     ground: desert
-
-    prop crate1 {
-        mesh: crate      # crate, ball, barrel
-        at: [-4, 1, 0]   # x, y, z
-        body: box        # box or sphere (physics shape)
+    <span class="tok-k">prop</span> crate1 {
+        mesh: crate     <span class="tok-c"># crate · ball · barrel</span>
+        at: [-4, 1, 0]
+        body: box       <span class="tok-c"># box · sphere</span>
     }
-}</code></pre>
+}</code></pre></div>
 
-<h2>Screen block — app UI</h2>
-<pre><code>screen "main" {
-    label title {
-        text: "Hello Z"
+<h2>Screen — app UI</h2>
+<div class="codeblock"><pre><code><span class="tok-k">screen</span> <span class="tok-s">"main"</span> {
+    <span class="tok-k">label</span> title {
+        text: <span class="tok-s">"Hello Z"</span>
         at: [60, 120]
-        size: 42          # font size for labels
+        size: 42
     }
-    button play {
-        text: "Play"
+    <span class="tok-k">button</span> play {
+        text: <span class="tok-s">"Play"</span>
         at: [60, 400]
-        size: [400, 110]  # width, height for buttons
+        size: [400, 110]
     }
-    webview browser {
+    <span class="tok-k">webview</span> browser {
         at: [40, 600]
         size: [1000, 800]
-        url: "https://example.com"
+        url: <span class="tok-s">"https://example.com"</span>
     }
-}</code></pre>
+}</code></pre></div>
 
-<h2>Script block — ZScript</h2>
-<p>Lua-flavored: <code>fn</code>, <code>if</code>/<code>else</code>, <code>while</code>, <code>let</code>, arrays, <code>and</code>/<code>or</code>/<code>not</code>.</p>
-<pre><code>script {
-    let score = 0
-
-    fn on_start() {
-        print("go!")
+<h2>Script — ZScript</h2>
+<p>Lua-flavored: <code>fn</code> · <code>if</code>/<code>else</code> · <code>while</code> · <code>let</code> · arrays · <code>and</code>/<code>or</code>/<code>not</code></p>
+<div class="codeblock"><pre><code><span class="tok-k">script</span> {
+    <span class="tok-k">let</span> score = 0
+    <span class="tok-k">fn</span> <span class="tok-f">on_start</span>() { <span class="tok-f">print</span>(<span class="tok-s">"go!"</span>) }
+    <span class="tok-k">fn</span> <span class="tok-f">on_tap</span>(x, y, z) { <span class="tok-f">spawn</span>(<span class="tok-s">"crate"</span>, x, 8, z) }
+    <span class="tok-k">fn</span> <span class="tok-f">on_click</span>(id) {
+        <span class="tok-k">if</span> (id == <span class="tok-s">"play"</span>) { <span class="tok-f">show_screen</span>(<span class="tok-s">"game"</span>) }
     }
-
-    fn on_update(dt) {
-        score = score + dt
-    }
-
-    fn on_tap(x, y, z) {
-        spawn("crate", x, 8, z)
-    }
-
-    fn on_click(id) {
-        if (id == "play") {
-            show_screen("game")
-        }
-    }
-
-    fn on_http(url, body) {
-        print("web says: " + body)
-    }
-}</code></pre>
+    <span class="tok-k">fn</span> <span class="tok-f">on_ai</span>(text) { <span class="tok-f">hud_text</span>(text) }
+}</code></pre></div>
 
 <h2>Callbacks</h2>
 <table>
-<tr><th>Callback</th><th>When</th></tr>
-<tr><td><code>on_start()</code></td><td>.Z file loaded</td></tr>
-<tr><td><code>on_update(dt)</code></td><td>every frame (dt in seconds)</td></tr>
-<tr><td><code>on_tap(x, y, z)</code></td><td>tap on empty 3D space (world coords)</td></tr>
-<tr><td><code>on_click(id)</code></td><td>app UI button tapped</td></tr>
-<tr><td><code>on_http(url, body)</code></td><td><code>http_get</code> response arrived</td></tr>
+<tr><th>Callback</th><th>Fires when</th></tr>
+<tr><td><code>on_start()</code></td><td>.Z loaded</td></tr>
+<tr><td><code>on_update(dt)</code></td><td>every frame</td></tr>
+<tr><td><code>on_tap(x, y, z)</code></td><td>tap on 3D space</td></tr>
+<tr><td><code>on_click(id)</code></td><td>UI button tapped</td></tr>
+<tr><td><code>on_http(url, body)</code></td><td>web fetch returns</td></tr>
+<tr><td><code>on_ai(text)</code></td><td>AI answers</td></tr>
 </table>
 
 <h2>Game API</h2>
 <table>
-<tr><th>Function</th><th>What it does</th></tr>
-<tr><td><code>spawn(mesh, x, y, z)</code></td><td>spawn crate/ball/barrel, returns id</td></tr>
-<tr><td><code>remove(id)</code></td><td>delete entity</td></tr>
-<tr><td><code>find("name")</code></td><td>entity id by prop name</td></tr>
-<tr><td><code>move(id, x, y, z)</code></td><td>teleport entity</td></tr>
-<tr><td><code>push(id, dx, dy, dz)</code></td><td>add velocity</td></tr>
+<tr><th>Call</th><th>Does</th></tr>
+<tr><td><code>spawn(mesh,x,y,z)</code></td><td>spawn prop → id</td></tr>
+<tr><td><code>find("name")</code></td><td>id by prop name</td></tr>
+<tr><td><code>move(id,x,y,z)</code></td><td>teleport</td></tr>
+<tr><td><code>push(id,dx,dy,dz)</code></td><td>add velocity</td></tr>
 <tr><td><code>get_pos(id)</code></td><td>[x, y, z]</td></tr>
 <tr><td><code>freeze(id)</code> / <code>unfreeze(id)</code></td><td>toggle physics</td></tr>
-<tr><td><code>explode(x, y, z)</code></td><td>radial explosion + FX + sound</td></tr>
-<tr><td><code>burst(x,y,z,r,g,b,count,speed)</code></td><td>particle burst</td></tr>
-<tr><td><code>play_sound(name, vol)</code></td><td>play SFX</td></tr>
-<tr><td><code>count()</code></td><td>entity count</td></tr>
-<tr><td><code>time()</code></td><td>seconds since boot</td></tr>
+<tr><td><code>explode(x,y,z)</code></td><td>explosion + FX + sound</td></tr>
+<tr><td><code>burst(x,y,z,r,g,b,n,s)</code></td><td>particles</td></tr>
+<tr><td><code>play_sound(name,vol)</code></td><td>SFX</td></tr>
+<tr><td><code>hud_text(t)</code></td><td>on-screen text</td></tr>
 </table>
 
-<h2>App + Web API</h2>
+<h2>App + Web + AI</h2>
 <table>
-<tr><th>Function</th><th>What it does</th></tr>
-<tr><td><code>show_screen("name")</code></td><td>switch app screen</td></tr>
-<tr><td><code>set_text(id, text)</code></td><td>update label/button text</td></tr>
-<tr><td><code>open_z(file_or_url)</code></td><td>load another .Z (local or http)</td></tr>
-<tr><td><code>open_url(id, url)</code></td><td>load URL into a webview widget</td></tr>
-<tr><td><code>http_get(url)</code></td><td>fetch URL, calls <code>on_http</code></td></tr>
-<tr><td><code>print(...)</code></td><td>log to console</td></tr>
+<tr><th>Call</th><th>Does</th></tr>
+<tr><td><code>show_screen(n)</code></td><td>switch screen</td></tr>
+<tr><td><code>set_text(id,t)</code></td><td>update widget</td></tr>
+<tr><td><code>open_z(file/url)</code></td><td>load another .Z</td></tr>
+<tr><td><code>open_url(id,url)</code></td><td>webview loads URL</td></tr>
+<tr><td><code>http_get(url)</code></td><td>fetch → <code>on_http</code></td></tr>
+<tr><td><code>ai_ask(prompt,sys)</code></td><td>free AI → <code>on_ai</code></td></tr>
 </table>
 </main>
-<footer>Z Engine · Zeroblue · our own code</footer>
+<footer><b style="color:var(--blue)">Z ENGINE</b> · Zeroblue · our own code</footer>
 </body>
 </html>

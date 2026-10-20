@@ -3,51 +3,68 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>.Z Gallery — Z Engine</title>
+<title>Gallery — Z Engine</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: #14101c; color: #f0e8ff; font-family: system-ui, sans-serif; line-height: 1.6; }
-  nav { background: #1e1626; padding: 12px; text-align: center; position: sticky; top: 0; }
-  nav a { color: #7ad9ff; text-decoration: none; margin: 0 18px; font-weight: bold; }
-  nav a:hover { color: #ffd97a; }
-  main { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
-  h1 { color: #7ad9ff; margin-bottom: 10px; }
-  p { color: #cfc3e8; margin: 10px 0; }
-  code { background: #241b30; padding: 2px 8px; border-radius: 6px; color: #7ad9ff; }
-  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin: 24px 0; }
-  .card { background: #1e1626; border: 1px solid #3a2b4d; border-radius: 12px; padding: 22px; }
-  .card h3 { color: #ffd97a; margin-bottom: 8px; }
-  .card p { font-size: 0.95em; }
-  .card a { display: inline-block; margin: 8px 8px 0 0; background: #7ad9ff; color: #14101c; padding: 8px 18px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.9em; }
-  .card a:hover { background: #ffd97a; }
-  .card a.raw { background: transparent; border: 1px solid #7ad9ff; color: #7ad9ff; }
-  footer { text-align: center; padding: 40px 20px; color: #8a7ba8; border-top: 1px solid #2b2138; margin-top: 60px; }
+  :root { --bg:#0a0e17; --card:rgba(255,255,255,0.04); --border:rgba(255,255,255,0.09);
+    --blue:#4dc3ff; --gold:#ffd97a; --text:#eef2ff; --muted:#9aa7c7; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Inter,sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased; }
+  nav { position:sticky; top:0; z-index:50; backdrop-filter:blur(20px);
+    background:rgba(10,14,23,0.75); border-bottom:1px solid var(--border); }
+  nav .inner { max-width:1100px; margin:0 auto; padding:14px 24px;
+    display:flex; align-items:center; justify-content:space-between; }
+  nav .logo { font-weight:800; letter-spacing:2px; color:var(--blue); text-decoration:none; }
+  nav .links a { color:var(--muted); text-decoration:none; margin-left:28px; font-weight:600; }
+  nav .links a:hover { color:var(--text); }
+  main { max-width:1100px; margin:0 auto; padding:60px 24px 40px; }
+  h1 { font-size:2.6em; font-weight:800; letter-spacing:-1px; margin-bottom:8px; }
+  .sub { color:var(--muted); margin-bottom:30px; }
+  .sub code { background:rgba(77,195,255,0.1); color:var(--blue); padding:2px 8px; border-radius:6px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:18px;
+    padding:30px; backdrop-filter:blur(12px); transition:all .3s ease;
+    display:flex; flex-direction:column; }
+  .card:hover { transform:translateY(-4px); border-color:rgba(77,195,255,.4);
+    box-shadow:0 20px 50px rgba(0,0,0,.35); }
+  .card .icon { font-size:2.2em; margin-bottom:12px; }
+  .card h3 { font-size:1.3em; margin-bottom:8px; }
+  .card p { color:var(--muted); font-size:.95em; flex:1; }
+  .actions { display:flex; gap:10px; margin-top:20px; }
+  .mini { padding:11px 22px; border-radius:10px; font-weight:700; font-size:.9em;
+    text-decoration:none; transition:all .2s; }
+  .mini.solid { background:var(--blue); color:#06121f; }
+  .mini.solid:hover { background:var(--gold); }
+  .mini.line { border:1px solid var(--border); color:var(--text); }
+  .mini.line:hover { border-color:var(--blue); }
+  footer { text-align:center; padding:50px 24px 36px; color:#5b6b8c; font-size:.9em;
+    border-top:1px solid var(--border); margin-top:70px; }
 </style>
 </head>
 <body>
-<nav>
-  <a href="index.html">Home</a>
-  <a href="docs.html">.Z Docs</a>
-  <a href="gallery.html">.Z Gallery</a>
-</nav>
+<nav><div class="inner">
+  <a class="logo" href="index.html">Z ENGINE</a>
+  <div class="links"><a href="index.html">Home</a><a href="docs.html">Docs</a><a href="gallery.html">Gallery</a></div>
+</div></nav>
 <main>
 <h1>.Z Gallery</h1>
-<p>Every .Z file here runs in Z Engine — in the app, or straight from URL with <code>open_z("https://boo4blue.github.io/zengine/demo.Z")</code>.</p>
-<div class="cards" id="gallery"></div>
+<p class="sub">Every file runs in Z Engine — or straight from URL: <code>open_z("https://boo4blue.github.io/zengine/demo.Z")</code></p>
+<div class="grid" id="gallery"></div>
 </main>
-<footer>Z Engine · Zeroblue · our own code</footer>
+<footer><b style="color:var(--blue)">Z ENGINE</b> · Zeroblue · our own code</footer>
 <script>
-const files = [
-  { f: "demo.Z", t: "Tech Demo", d: "Slingshot physics, particles, sounds, barrel chains — every engine system in one file." },
-  { f: "npc.Z", t: "AI NPC", d: "Talk to the Wise Barrel. Real AI answers, HUD dialogue, particle magic." },
-  { f: "game.Z", t: "Sandbox", d: "Physics sandbox: spawn props, drag them, blow them up." },
-  { f: "app.Z", t: "Demo App", d: "Native app in .Z: counter, screens, webview, opens games." }
-];
 const base = "https://boo4blue.github.io/zengine/";
+const files = [
+  { f:"demo.Z", i:"🎯", t:"Tech Demo", d:"Slingshot physics, particles, sounds, barrel chains. Every engine system in one file." },
+  { f:"npc.Z", i:"🤖", t:"AI NPC", d:"Talk to the Wise Barrel. Real AI answers, HUD dialogue, particle magic." },
+  { f:"game.Z", i:"📦", t:"Sandbox", d:"Physics sandbox — spawn props, drag them, blow them up." },
+  { f:"app.Z", i:"📱", t:"Demo App", d:"A native app written in .Z — counter, screens, webview." }
+];
 document.getElementById("gallery").innerHTML = files.map(x =>
-  `<div class="card"><h3>${x.t}</h3><p>${x.d}</p>` +
-  `<a href="${base}${x.f}" download>Download</a>` +
-  `<a class="raw" href="${base}${x.f}">Raw</a></div>`
+  `<div class="card"><div class="icon">${x.i}</div><h3>${x.t}</h3><p>${x.d}</p>` +
+  `<div class="actions"><a class="mini solid" href="${base}${x.f}" download>Download</a>` +
+  `<a class="mini line" href="${base}${x.f}">Raw</a></div></div>`
 ).join("");
 </script>
 </body>
