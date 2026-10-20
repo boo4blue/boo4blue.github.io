@@ -46,7 +46,37 @@
 </div></nav>
 <main>
 <h1>.Z Reference</h1>
-<p class="sub">One format for scenes, app UI, and scripts.</p>
+<p class="sub">One format for scenes, app UI, and scripts — single .Z files or multi-file projects.</p>
+
+<h2>Projects — Unity-style multi-file</h2>
+<p class="sub">Big games don't live in one file. A Z Engine project is a folder with separate scene and script files — just like Unity.</p>
+<div class="codeblock"><pre><code>MyGame/
+  <span class="tok-s">project.Z</span>              <span class="tok-c"># manifest: name + entry scene</span>
+  Scenes/
+    <span class="tok-s">Main.Zscene</span>          <span class="tok-c"># scene "Main" { ... }</span>
+  Scripts/
+    <span class="tok-s">Player.Zscript</span>       <span class="tok-c"># script "Player" { attach: "hero" ... }</span>
+    <span class="tok-s">Enemy.Zscript</span>        <span class="tok-c"># script "Enemy" { attach: "enemy1" ... }</span>
+</code></pre></div>
+
+<h3>project.Z — the manifest</h3>
+<div class="codeblock"><pre><code><span class="tok-k">project</span> <span class="tok-s">"MyGame"</span> {
+    entry: <span class="tok-s">"Scenes/Main.Zscene"</span>
+}
+</code></pre></div>
+
+<h3>Scripts attach to objects</h3>
+<p>Like Unity's components: a script with <code>attach: "hero"</code> runs for that prop. Inside it, <code>self</code> is the prop's name — so one script file can drive any object.</p>
+<div class="codeblock"><pre><code><span class="tok-k">script</span> <span class="tok-s">"Player"</span> {
+    attach: <span class="tok-s">"hero"</span>   <span class="tok-c"># self == "hero" in here</span>
+
+    <span class="tok-k">fn</span> on_update(dt) {
+        <span class="tok-k">let</span> p = get_pos(self)
+        move(self, p[<span class="tok-n">0</span>], p[<span class="tok-n">1</span>], p[<span class="tok-n">2</span>])
+    }
+}
+</code></pre></div>
+<p>Scripts without <code>attach</code> are global — they run for the whole scene, like a manager object. Each script is isolated (its own scope), and all scripts receive <code>on_start</code>, <code>on_update</code>, <code>on_tap</code>, <code>on_http</code>, <code>on_ai</code>.</p>
 
 <h2>Scene — 3D worlds</h2>
 <div class="codeblock"><pre><code><span class="tok-k">scene</span> <span class="tok-s">"MyWorld"</span> {
