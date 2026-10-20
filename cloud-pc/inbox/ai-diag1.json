@@ -1,1 +1,0 @@
-{"id": "ai-diag1", "action": "shell", "command": "bash /tmp/diag.sh", "timeout": 500}
