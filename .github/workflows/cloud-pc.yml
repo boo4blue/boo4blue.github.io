@@ -1,1 +1,70 @@
+# Boo's Cloud PC - GitHub Actions runner.
+#
+# ONE-TIME ACTIVATION (GitHub won't let bots write here, so this is manual):
 #   1. In the repo, create the file  .github/workflows/cloud-pc.yml
+#   2. Paste the entire contents of THIS file into it. Commit. Done.
+# After that, the PC wakes up whenever:
+#   - you hit "Run workflow" in the Actions tab with a job JSON, or
+#   - a JSON job file lands in cloud-pc/inbox/ ({"id": "...", "action": "..."})
+# Jobs: shell (run a command) | fetch (download a file) | agent (AI does a task)
+#       | store (save a file). Results land in cloud-pc/outbox/<id>.json,
+#       inbox files are deleted, everything is committed.
+#
+# Specs: 7GB RAM, 2-4 CPU, ~14GB disk per run, 10GB persistent cache.
+# Free: 2,000 Actions minutes/month. Runs cap at 50 min each.
+
+name: Boo's Cloud PC
+
+on:
+  workflow_dispatch:
+    inputs:
+      job_json:
+        description: 'Job JSON, e.g. {"id":"j1","action":"shell","command":"ls"}'
+        required: true
+        type: string
+  push:
+    paths:
+      - "cloud-pc/inbox/*.json"
+
+jobs:
+  pc:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Restore model cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/cloudpc-models
+          key: cloudpc-models-v1
+
+      - name: Run jobs
+        run: |
+          mkdir -p cloud-pc/outbox
+          run_one() {
+            echo "$1" > /tmp/job.json
+            python3 cloud-pc/pc.py /tmp/job.json
+          }
+          if [ -n "${{ inputs.job_json }}" ]; then
+            run_one '${{ inputs.job_json }}'
+          else
+            for f in cloud-pc/inbox/*.json; do
+              [ -e "$f" ] || continue
+              run_one "$(cat "$f")"
+              rm "$f"
+            done
+          fi
+
+      - name: Commit results
+        run: |
+          git config user.name "cloudpc"
+          git config user.email "cloudpc@local"
+          git add cloud-pc/outbox cloud-pc/inbox cloud-pc/storage
+          git diff --cached --quiet || (git commit -m "cloudpc: job results" && git push)
