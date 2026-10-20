@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boo's Cloud PC</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Boo's Cloud PC</h1>
+  <span id="status" class="dot idle" title="connection"></span>
+</header>
+
+<section id="setup" class="card">
+  <h2>One-time setup</h2>
+  <p>The site talks to your repo through GitHub's API, so it needs a key that
+  can <b>only</b> touch <code>boo4blue.github.io</code> — nothing else.</p>
+  <ol>
+    <li>GitHub → your avatar → <b>Settings</b> → <b>Developer settings</b> →
+      <b>Personal access tokens</b> → <b>Fine-grained tokens</b> →
+      <b>Generate new token</b></li>
+    <li>Repository access → <b>Only select repositories</b> →
+      <code>boo4blue.github.io</code></li>
+    <li>Permissions → <b>Contents</b> → <b>Read and write</b></li>
+    <li><b>Generate token</b>, copy it, paste below:</li>
+  </ol>
+  <input id="token" type="password" placeholder="github_pat_..." autocomplete="off">
+  <button id="saveToken">Save key</button>
+  <p class="fine">The key stays in this browser only (localStorage). No server
+  ever sees it. You can revoke it anytime under the same Tokens page.</p>
+</section>
+
+<main id="app" hidden>
+  <section class="card">
+    <h2>New job</h2>
+    <div class="tabs">
+      <button data-tab="shell" class="on">Run</button>
+      <button data-tab="fetch">Download</button>
+      <button data-tab="agent">Ask AI</button>
+      <button data-tab="store">Save file</button>
+    </div>
+    <div id="tab-shell" class="pane">
+      <textarea id="f-command" rows="3" placeholder="python3 scripts/scrape.py"></textarea>
+    </div>
+    <div id="tab-fetch" class="pane" hidden>
+      <input id="f-url" placeholder="https://...file.zip">
+      <input id="f-dest" placeholder="save as: models/m.gguf">
+    </div>
+    <div id="tab-agent" class="pane" hidden>
+      <textarea id="f-task" rows="3" placeholder="Research X and save it to notes.txt"></textarea>
+    </div>
+    <div id="tab-store" class="pane" hidden>
+      <input id="f-path" placeholder="notes/todo.txt">
+      <textarea id="f-content" rows="4" placeholder="file contents..."></textarea>
+    </div>
+    <button id="send">Send to PC</button>
+    <p id="sendMsg" class="fine"></p>
+  </section>
+
+  <section class="card">
+    <h2>Jobs <button id="refresh" class="mini">↻</button></h2>
+    <div id="jobs"><p class="fine">No jobs yet.</p></div>
+  </section>
+
+  <section class="card">
+    <h2>PC disk <button id="refreshDisk" class="mini">↻</button></h2>
+    <div id="disk"><p class="fine">—</p></div>
+  </section>
+
+  <p class="fine">No key? You can also run jobs from the repo's
+  <a href="https://github.com/boo4blue/boo4blue.github.io/actions">Actions tab</a>
+  (workflow "Boo's Cloud PC" → Run workflow). <a href="#" id="forget">Forget saved key</a></p>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
