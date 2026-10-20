@@ -9,6 +9,7 @@ workflow's actions/cache), so only the first boot downloads ~9GB.
 """
 import json
 import os
+import shutil
 import subprocess
 import sys
 import time
@@ -49,29 +50,49 @@ def download(url, dest):
 
 
 def ensure_ollama():
-    binpath = os.path.join(BINDIR, "ollama")
-    if os.path.exists(binpath):
+    # The tarball ships bin/ollama PLUS lib/ollama/llama-server (+ shared
+    # libs). The server refuses to run without its runner binary, so the
+    # WHOLE tree must be kept — never extract just the ollama file.
+    binpath = os.path.join(BINDIR, "bin", "ollama")
+    runner = os.path.join(BINDIR, "lib", "ollama", "llama-server")
+    if os.path.exists(binpath) and os.path.exists(runner):
         return binpath
+    # clear any broken/partial install (e.g. the old bin-only layout)
+    shutil.rmtree(BINDIR, ignore_errors=True)
     os.makedirs(BINDIR, exist_ok=True)
     tarpath = os.path.join(BINDIR, "ollama.tar.zst")
     download(OLLAMA_URL, tarpath)
-    os.makedirs(os.path.join(BINDIR, "x"), exist_ok=True)
+    xdir = os.path.join(BINDIR, "x")
+    os.makedirs(xdir, exist_ok=True)
     ok = False
-    for prog in (["tar", "-I", "zstd", "-xf", tarpath, "-C", BINDIR + "/x"],
+    for prog in (["tar", "-I", "zstd", "-xf", tarpath, "-C", xdir],
                  ["tar", "--use-compress-program=unzstd", "-xf",
-                  tarpath, "-C", BINDIR + "/x"]):
+                  tarpath, "-C", xdir]):
         r = subprocess.run(prog, stdout=DEVNULL, stderr=DEVNULL, timeout=120)
         if r.returncode == 0:
             ok = True
             break
     if not ok:
         raise RuntimeError("could not extract ollama (no zstd)")
-    # tarball holds bin/ollama
-    for root, _, files in os.walk(BINDIR + "/x"):
-        if "ollama" in files:
-            os.replace(os.path.join(root, "ollama"), binpath)
+    src = None
+    for root, _dirs, files in os.walk(xdir):
+        if "ollama" in files and os.path.basename(root) == "bin":
+            src = os.path.dirname(root)
             break
+    if not src:
+        raise RuntimeError("ollama binary not found in tarball")
+    for name in ("bin", "lib"):
+        p = os.path.join(src, name)
+        if os.path.isdir(p):
+            shutil.move(p, os.path.join(BINDIR, name))
+    shutil.rmtree(xdir, ignore_errors=True)
+    try:
+        os.remove(tarpath)
+    except OSError:
+        pass
     os.chmod(binpath, 0o755)
+    if not os.path.exists(runner):
+        raise RuntimeError("llama-server missing from ollama bundle")
     return binpath
 
 
@@ -82,8 +103,9 @@ def main():
     env = dict(os.environ, OLLAMA_MODELS=MODELS,
                OLLAMA_HOST="127.0.0.1:11434")
     log("starting ollama serve")
+    serve_log = open(os.path.join(CACHE, "ollama-serve.log"), "wb")
     serve = subprocess.Popen([ollama, "serve"], env=env,
-                             stdout=DEVNULL, stderr=DEVNULL)
+                             stdout=DEVNULL, stderr=serve_log)
     try:
         for _ in range(90):
             try:
@@ -122,7 +144,18 @@ def main():
             return
     except Exception as e:
         serve.terminate()
-        print(json.dumps({"ok": False, "error": str(e)[:200]}))
+        tail = ""
+        try:
+            serve_log.flush()
+            with open(os.path.join(CACHE, "ollama-serve.log"), "rb") as f:
+                f.seek(0, 2)
+                n = min(f.tell(), 3000)
+                f.seek(-n, 2)
+                tail = f.read().decode("utf-8", "replace")[-1500:]
+        except Exception:
+            pass
+        err = str(e)[:200] + (" | serve log: " + tail if tail else "")
+        print(json.dumps({"ok": False, "error": err[:1800]}))
         return
 
     client = None
