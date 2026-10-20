@@ -1,0 +1,1 @@
+{"id":"tcp-probe","action":"shell","command":"timeout 10 bash -c 'echo > /dev/tcp/broker.emqx.io/1883' && echo TCP_OK || echo TCP_BLOCKED; timeout 10 bash -c 'echo > /dev/tcp/test.mosquitto.org/1883' && echo MOSQ_OK || echo MOSQ_BLOCKED"}
