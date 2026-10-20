@@ -1,1 +1,0 @@
-{"id":"hello-pc","action":"shell","command":"echo hello from your cloud pc && python3 --version && free -g | head -2"}
