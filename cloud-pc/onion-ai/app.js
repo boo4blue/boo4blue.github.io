@@ -48,7 +48,6 @@ $("start").onclick = async () => {
   if (typeof mqtt === "undefined") { $("gateMsg").textContent = "Realtime library failed to load."; return; }
   const secret = Array.from(crypto.getRandomValues(new Uint8Array(8)))
     .map(b => b.toString(16).padStart(2, "0")).join("");
-  base = "onionpc/v1/" + secret;
   $("gateMsg").textContent = "Waking Onion AI (first boot downloads the brain, ~5 min)...";
   $("start").disabled = true;
   try {
@@ -61,11 +60,17 @@ $("start").onclick = async () => {
       })
     });
   } catch (e) {
-    $("gateMsg").textContent = "Failed to start: " + e.message +
-      " — check your key on the PC dashboard.";
+    $("gateMsg").innerHTML = "Your key can't write to the repo (GitHub 403). " +
+      "Either <a href='../site/'>fix the key</a> (Contents → Read and write), " +
+      "or just tell me in chat <b>“start onion ai”</b> and I'll start it for you.";
     $("start").disabled = false;
     return;
   }
+  connectMqtt(secret);
+};
+
+function connectMqtt(secret) {
+  base = "onionpc/v1/" + secret;
   mq = mqtt.connect("wss://broker.emqx.io:8084/mqtt", { connectTimeout: 15000 });
   mq.on("connect", () => {
     mq.subscribe(base + "/ai/status");
@@ -143,3 +148,16 @@ function send() {
 $("send").onclick = send;
 $("in").addEventListener("keydown", e => { if (e.key === "Enter") send(); });
 setStatus("idle");
+
+// Deep link: ?session=<secret> — joins a session started from chat,
+// no API key needed (MQTT is keyless).
+(function () {
+  const s = new URLSearchParams(location.search).get("session");
+  if (s && /^[0-9a-f]{16}$/.test(s) && typeof mqtt !== "undefined") {
+    $("gateMsg").textContent = "Connecting to your session...";
+    $("start").disabled = true;
+    // strip the secret from the URL bar
+    history.replaceState(null, "", location.pathname);
+    connectMqtt(s);
+  }
+})();

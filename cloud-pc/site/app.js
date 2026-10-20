@@ -183,7 +183,6 @@ $("deskStart").onclick = async () => {
   if (typeof mqtt === "undefined") { deskMsg("MQTT library failed to load."); return; }
   deskSecret = Array.from(crypto.getRandomValues(new Uint8Array(8)))
     .map(b => b.toString(16).padStart(2, "0")).join("");
-  deskBase = "onionpc/v1/" + deskSecret;
   deskMsg("Waking the PC (installing desktop, ~2 min)...");
   $("deskStart").disabled = true;
   try {
@@ -195,8 +194,18 @@ $("deskStart").onclick = async () => {
           action: "desktop", session: deskSecret, minutes: 30 }))
       })
     });
-  } catch (e) { deskMsg("Failed to queue: " + e.message); $("deskStart").disabled = false; return; }
-  mq = mqtt.connect("wss://broker.emqx.io:8084/mqtt", { connectTimeout: 15000 });
+  } catch (e) {
+    deskMsg("Key can't write (GitHub 403) — fix it above, or tell me in chat " +
+      "“start desktop” and I'll start it for you.");
+    $("deskStart").disabled = false;
+    return;
+  }
+  deskConnect(deskSecret);
+};
+
+function deskConnect(secret) {
+  deskSecret = secret;
+  deskBase = "onionpc/v1/" + deskSecret;
   mq.on("connect", () => {
     mq.subscribe(deskBase + "/status");
     mq.subscribe(deskBase + "/screen");
@@ -269,5 +278,16 @@ document.querySelectorAll("[data-app]").forEach(b => {
 document.querySelectorAll("[data-key]").forEach(b => {
   b.onclick = () => deskOn && mqPub(deskBase + "/input", { type: "key", key: b.dataset.key });
 });
+
+// Deep link: ?session=<secret> — joins a desktop started from chat.
+(function () {
+  const s = new URLSearchParams(location.search).get("session");
+  if (s && /^[0-9a-f]{16}$/.test(s) && typeof mqtt !== "undefined") {
+    history.replaceState(null, "", location.pathname);
+    $("deskStart").disabled = true;
+    deskMsg("Connecting to your desktop session...");
+    deskConnect(s);
+  }
+})();
 
 boot();
