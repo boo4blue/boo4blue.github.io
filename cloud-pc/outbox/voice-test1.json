@@ -1,0 +1,16 @@
+{
+  "id": "voice-test1",
+  "action": "shell",
+  "at": "2026-10-21T17:00:02Z",
+  "job": {
+    "id": "voice-test1",
+    "action": "shell",
+    "command": "pip install -q edge-tts && python3 -c \"import asyncio, edge_tts; asyncio.run(edge_tts.Communicate(\\\"Hello Boo, this is a cloud voice test\\\", \\\"ja-JP-NanamiNeural\\\").save(\\\"/tmp/voice-test1.mp3\\\"))\" && ls -la /tmp/voice-test1.mp3 && python3 -c \"import base64; d=open(\\\"/tmp/voice-test1.mp3\\\",\\\"rb\\\").read(); print(\\\"MP3_BYTES:\\\", len(d)); print(\\\"MP3_B64_HEAD:\\\", base64.b64encode(d[:60]).decode())\" && cp /tmp/voice-test1.mp3 cloud-pc/storage/voice-test1.mp3 && echo STORED_OK"
+  },
+  "result": {
+    "ok": true,
+    "exit": 1,
+    "stdout": "-rw-r--r-- 1 runner runner 24480 Oct 21 17:00 /tmp/voice-test1.mp3\nMP3_BYTES: 24480\nMP3_B64_HEAD: //NkxAAAAANIAAAAAExBTUVVVVUERoAEB33c0ED9EKKAFCd65u7wtC3iEHMIIunEeUOId/3NDlfROOEE\n",
+    "stderr": "\n[notice] A new release of pip is available: 26.2.1 -> 26.2.2\n[notice] To update, run: pip install --upgrade pip\ncp: cannot create regular file 'cloud-pc/storage/voice-test1.mp3': No such file or directory\n"
+  }
+}
