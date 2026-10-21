@@ -1,5 +1,0 @@
-{
- "id": "naruto-clone-perfect",
- "action": "shell",
- "command": "export HF_HOME=/tmp/hf && pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu 2>&1 | tail -1; pip install -q chatterbox-tts soundfile lameenc numpy 2>&1 | tail -1; cd /home/runner/work/boo4blue.github.io/boo4blue.github.io/cloud-pc/storage && curl -sL 'https://muse.ai/files/1400300103161982/2086353921995840/a21g9qgac17fsdwuvchnkf1f/naruto-mega-ref.flac' -o voices/naruto-mega-ref.flac && ls -la voices/naruto-mega-ref.flac && python3 -c \"import soundfile as sf; d,sr=sf.read('voices/naruto-mega-ref.flac'); import numpy as np; d=np.array(d); d=d.mean(axis=1) if d.ndim>1 else d; sf.write('voices/naruto-mega-ref.wav', d, 24000)\" && ls -la voices/naruto-mega-ref.wav && python3 ../cloner.py --ref voices/naruto-mega-ref.wav --text \"Believe it! I am Naruto Uzumaki, the future Hokage! Boo, lets go train together, dattebayo!\" --out voices/naruto-perfect-raw.wav && python3 ../encode_mp3.py voices/naruto-perfect-raw.wav voices/naruto-clone-perfect.mp3 && ls -la voices/naruto-clone-perfect.mp3"
-}
