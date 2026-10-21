@@ -1,0 +1,16 @@
+{
+  "id": "rvc-naruto-setup",
+  "action": "shell",
+  "at": "2026-10-21T20:09:15Z",
+  "job": {
+    "id": "rvc-naruto-setup",
+    "action": "shell",
+    "command": "cd /home/runner/work/boo4blue.github.io/boo4blue.github.io/cloud-pc/storage && mkdir -p rvc-training && cd rvc-training && cat > setup_and_preprocess.sh << 'SETUPEOF'\nset -e\nLOG=\"/home/runner/work/boo4blue.github.io/boo4blue.github.io/cloud-pc/storage/rvc-training.log\"\nexec > >(tee -a \"$LOG\") 2>&1\necho \"=== RVC Naruto Training Setup - $(date) ===\"\nSTART=$(date +%s)\n\n# 1. Download reference audio (10.5MB FLAC)\necho \"[1/6] Downloading reference audio...\"\ncurl -L --retry 3 \"https://muse.ai/files/1400300103161982/872612365880023/0j0u8ozreyguhfkidwxxav2p/naruto-mega-ref.flac\" -o naruto-mega-ref.flac\nls -lh naruto-mega-ref.flac\n\n# 2. Install Python deps (CPU torch)\necho \"[2/6] Installing Python dependencies...\"\npip install --quiet torch torchaudio --index-url https://download.pytorch.org/whl/cpu 2>&1 | tail -2\npip install --quiet numpy scipy librosa soundfile 2>&1 | tail -2\n\n# 3. Clone RVC repo (shallow, no history)\necho \"[3/6] Cloning RVC repository...\"\nif [ ! -d \"Retrieval-based-Voice-Conversion-WebUI\" ]; then\n  git clone --depth 1 https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI.git\nfi\ncd Retrieval-based-Voice-Conversion-WebUI\n\n# 4. Download pretrained models\necho \"[4/6] Downloading pretrained models...\"\nmkdir -p assets/hubert assets/pretrained\nif [ ! -f \"assets/hubert/hubert_base.pt\" ]; then\n  curl -L --retry 3 \"https://huggingface.co/lj1995/VoiceConversionWebUI/resolve/main/hubert_base.pt\" -o assets/hubert/hubert_base.pt\nfi\nif [ ! -f \"assets/pretrained/f0G40k.pth\" ]; then\n  curl -L --retry 3 \"https://huggingface.co/lj1995/VoiceConversionWebUI/resolve/main/pretrained/f0G40k.pth\" -o assets/pretrained/f0G40k.pth\nfi\nif [ ! -f \"assets/pretrained/f0D40k.pth\" ]; then\n  curl -L --retry 3 \"https://huggingface.co/lj1995/VoiceConversionWebUI/resolve/main/pretrained/f0D40k.pth\" -o assets/pretrained/f0D40k.pth\nfi\nls -lh assets/hubert/ assets/pretrained/\n\n# 5. Convert FLAC to WAV 40kHz mono for RVC\necho \"[5/6] Converting audio to RVC format...\"\nmkdir -p dataset/naruto-en\nffmpeg -v error -y -i ../naruto-mega-ref.flac -ac 1 -ar 40000 dataset/naruto-en/naruto-ref.wav\nls -lh dataset/naruto-en/\n\n# 6. Test HuBERT loading (don't run full extraction yet - just verify)\necho \"[6/6] Verifying HuBERT model loads...\"\npython3 -c \"\nimport torch\nprint('torch:', torch.__version__)\nprint('cuda available:', torch.cuda.is_available())\n# Just verify the file exists and is valid\nimport os\nsz = os.path.getsize('assets/hubert/hubert_base.pt')\nprint(f'hubert_base.pt: {sz/1e6:.1f}MB')\nassert sz > 300e6, 'HuBERT file too small, download failed'\nprint('SETUP OK')\n\"\n\nELAPSED=$(( $(date +%s) - START ))\necho \"=== Setup complete in ${ELAPSED}s ===\"\necho \"Next: run preprocessing (HuBERT + F0 extraction) then training\"\nSETUPEOF\nchmod +x setup_and_preprocess.sh\n./setup_and_preprocess.sh\n"
+  },
+  "result": {
+    "ok": true,
+    "exit": 2,
+    "stdout": "",
+    "stderr": "./setup_and_preprocess.sh: 3: Syntax error: redirection unexpected\n"
+  }
+}
