@@ -1,0 +1,31 @@
+[4/6] Downloading pretrained models...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  1026  100  1026    0     0   6324      0 --:--:-- --:--:-- --:--:--  6333
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 29  180M   29 53.4M    0     0  45.7M      0  0:00:03  0:00:01  0:00:02 55.0M100  180M  100  180M    0     0   116M      0  0:00:01  0:00:01 --:--:--  133M
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  1014  100  1014    0     0   7261      0 --:--:-- --:--:-- --:--:--  7294
+  0 69.5M    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 38 69.5M   38 26.6M    0     0  15.8M      0  0:00:04  0:00:01  0:00:03 30.8M100 69.5M  100 69.5M    0     0  27.4M      0  0:00:02  0:00:02 --:--:-- 40.5M
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  1012  100  1012    0     0   8424      0 --:--:-- --:--:-- --:--:--  8363100  1012  100  1012    0     0   8419      0 --:--:-- --:--:-- --:--:--  8363
+ 36  104M   36 38.3M    0     0  36.2M      0  0:00:02  0:00:01  0:00:01 36.2M100  104M  100  104M    0     0  72.8M      0  0:00:01  0:00:01 --:--:--  174M
+assets/hubert/:
+total 181M
+-rw-r--r-- 1 runner runner 181M Oct 21 20:13 hubert_base.pt
+
+assets/pretrained/:
+total 175M
+-rw-r--r-- 1 runner runner 105M Oct 21 20:13 f0D40k.pth
+-rw-r--r-- 1 runner runner  70M Oct 21 20:13 f0G40k.pth
+[5/6] Converting audio to RVC format...
+/bin/sh: 24: ffmpeg: not found
+total 0
+[6/6] Verifying setup...
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+AssertionError
+torch: 2.14.1+cpu
+hubert: 190MB
+=== Setup complete in 51s ===
