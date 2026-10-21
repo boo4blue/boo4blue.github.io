@@ -1,0 +1,16 @@
+{
+  "id": "rvc-diagnostic",
+  "action": "shell",
+  "at": "2026-10-21T20:25:05Z",
+  "job": {
+    "id": "rvc-diagnostic",
+    "action": "shell",
+    "command": "cd /home/runner/work/boo4blue.github.io/boo4blue.github.io/cloud-pc/storage\necho \"=== Storage contents ===\"\nls -lh\necho \"\"\necho \"=== rvc-training contents ===\"\nls -lh rvc-training/ 2>&1\necho \"\"\necho \"=== RVC repo check ===\"\nls rvc-training/Retrieval-based-Voice-Conversion-WebUI/ 2>&1 | head -20\necho \"\"\necho \"=== Model files ===\"\nls -lh rvc-training/Retrieval-based-Voice-Conversion-WebUI/assets/hubert/ 2>&1\nls -lh rvc-training/Retrieval-based-Voice-Conversion-WebUI/assets/pretrained/ 2>&1\necho \"\"\necho \"=== Disk space ===\"\ndf -h . | tail -1\n"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "=== Storage contents ===\ntotal 16K\ndrwxr-xr-x 3 runner runner 4.0K Oct 21 20:23 rvc-training\n-rw-r--r-- 1 runner runner  804 Oct 21 20:23 rvc-training.log\ndrwxr-xr-x 2 runner runner 4.0K Oct 21 20:23 screenshots\ndrwxr-xr-x 2 runner runner 4.0K Oct 21 20:23 voices\n\n=== rvc-training contents ===\ntotal 11M\ndrwxr-xr-x 2 runner runner 4.0K Oct 21 20:23 Retrieval-based-Voice-Conversion-WebUI\n-rw-r--r-- 1 runner runner  11M Oct 21 20:23 naruto-mega-ref.flac\n-rw-r--r-- 1 runner runner 2.9K Oct 21 20:23 rvc-training.log\n-rwxr-xr-x 1 runner runner 2.6K Oct 21 20:23 setup_and_preprocess.sh\n\n=== RVC repo check ===\n\n=== Model files ===\nls: cannot access 'rvc-training/Retrieval-based-Voice-Conversion-WebUI/assets/hubert/': No such file or directory\nls: cannot access 'rvc-training/Retrieval-based-Voice-Conversion-WebUI/assets/pretrained/': No such file or directory\n\n=== Disk space ===\n/dev/root       145G   71G   74G  49% /\n",
+    "stderr": ""
+  }
+}
