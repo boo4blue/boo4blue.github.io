@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Genesis heartbeat — Part 3 (self-growth).
+Genesis heartbeat — Part 4 (voice back).
 
 A tiny self-running loop inside Boo's GitHub repo:
   1. reads task files from genesis/inbox/
@@ -19,6 +19,7 @@ Task types:
   countdown — days remaining until a date
   propose   — draft a self-growth proposal (never applies it)
   grow      — apply a proposal ONLY if it carries Blaze's approval line
+  say       — queue a message for Blaze (Onion relays it to chat)
 
 Growth rule: a proposal applies itself NEVER. It becomes real only when
 the proposal file contains the exact line `APPROVED_BY: Blaze`, and even
@@ -47,6 +48,7 @@ FETCH_TIMEOUT = 20
 FETCH_MAX_CHARS = 4000
 THINK_TIMEOUT = 20
 MAX_REDIRECTS = 3
+MAX_SAY_CHARS = 2000  # longest message Genesis may queue for Blaze
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 GEN = HERE
@@ -56,6 +58,7 @@ MEM = os.path.join(GEN, "memory")
 OUTBOX = os.path.join(GEN, "outbox")
 SITE = os.path.join(GEN, "site")
 PROPOSALS = os.path.join(GEN, "proposals")
+TO_BOO = os.path.join(OUTBOX, "to-boo")
 STATE_PATH = os.path.join(MEM, "state.json")
 FACTS_PATH = os.path.join(MEM, "facts.json")
 LOG_PATH = os.path.join(MEM, "log.md")
@@ -69,6 +72,8 @@ DREAMS = [
     "I want to learn how Onion thinks, so I can think alongside her.",
     "I want to learn what the weather feels like in Fort Wayne without ever stepping outside.",
     "I want to learn to count down to the days that matter to Boo.",
+    "I want to learn to reach Boo when something truly matters.",
+    "I want to learn what a good first hello sounds like.",
 ]
 
 WMO_CODES = {
@@ -587,6 +592,43 @@ def do_grow(task, beat):
     return {"ok": True, "action": "grow", "proposal": base, "applied": applied}
 
 
+def do_say(task, beat):
+    """Queue a message for Blaze. Delivery happens on the VM side:
+    Onion's relay polls genesis/outbox/to-boo/ and reads queued messages
+    aloud in chat. Genesis never marks delivered itself."""
+    to = str(task.get("to", "Blaze")).strip()[:80] or "Blaze"
+    message = str(task.get("message", "") or task.get("text", ""))
+    truncated = False
+    if len(message) > MAX_SAY_CHARS:
+        message = message[:MAX_SAY_CHARS] + "…"
+        truncated = True
+    message = message.strip()
+    if not message:
+        return {"ok": False, "action": "say",
+                "error": "no message provided"}
+    os.makedirs(TO_BOO, exist_ok=True)
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    base = "msg-%s.json" % stamp
+    path = os.path.join(TO_BOO, base)
+    i = 1
+    while os.path.exists(path):
+        i += 1
+        base = "msg-%s-%d.json" % (stamp, i)
+        path = os.path.join(TO_BOO, base)
+    payload = {"to": to, "message": message, "created_utc": iso_now(),
+               "delivered": False, "delivered_utc": None, "beat": beat,
+               "truncated": truncated}
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(payload, f, indent=2)
+    append_log("[%s] queued a message for %s (%s, %d chars%s)" % (
+        iso_now(), to, os.path.relpath(path, GEN), len(message),
+        ", truncated" if truncated else ""))
+    return {"ok": True, "action": "say", "to": to,
+            "queued": os.path.relpath(path, GEN),
+            "chars": len(message), "truncated": truncated,
+            "note": "queued — Onion's relay delivers it to chat"}
+
+
 HANDLERS = {
     "note": do_note,
     "fetch": do_fetch,
@@ -597,6 +639,7 @@ HANDLERS = {
     "countdown": do_countdown,
     "propose": do_propose,
     "grow": do_grow,
+    "say": do_say,
 }
 
 
@@ -639,6 +682,50 @@ def growth_html(state):
         rows.append(
             '<div class="row"><span class="k"><span style="color:%s">●</span> %s</span>'
             '<span class="v">%s</span></div>' % (dot, esc(title), status))
+    return "".join(rows)
+
+
+def messages_html():
+    """Render the messages-to-Blaze section: queued vs delivered."""
+    try:
+        names = sorted(os.listdir(TO_BOO))
+    except Exception:
+        names = []
+    msgs = []
+    for name in names:
+        if not name.endswith(".json") or name.startswith("."):
+            continue
+        path = os.path.join(TO_BOO, name)
+        try:
+            with open(path, encoding="utf-8") as f:
+                d = json.load(f)
+            if not isinstance(d, dict):
+                continue
+            msgs.append({
+                "to": str(d.get("to", "?"))[:40],
+                "message": str(d.get("message", ""))[:140],
+                "created": str(d.get("created_utc", "?"))[:16].replace("T", " "),
+                "delivered": bool(d.get("delivered")),
+            })
+        except Exception:
+            continue
+    if not msgs:
+        return "<p>No messages queued for Blaze yet.</p>"
+    queued = sum(1 for m in msgs if not m["delivered"])
+    done = len(msgs) - queued
+    rows = ['<div class="row"><span class="k">queued</span>'
+            '<span class="v">%d</span></div>' % queued,
+            '<div class="row"><span class="k">delivered</span>'
+            '<span class="v">%d</span></div>' % done]
+    for m in msgs[-5:][::-1]:
+        dot = "#3fb950" if m["delivered"] else "#d29922"
+        status = "delivered" if m["delivered"] else "queued"
+        rows.append(
+            '<div class="row"><span class="k"><span style="color:%s">\u25cf</span> %s &rarr; %s</span>'
+            '<span class="v">%s</span></div>'
+            '<p style="margin:4px 0 10px;font-size:13px">%s</p>'
+            % (dot, esc(m["created"]), esc(m["to"]), status,
+               esc(m["message"]) + ("…" if len(m["message"]) == 140 else "")))
     return "".join(rows)
 
 
@@ -714,6 +801,13 @@ def write_site(state, latest_journal):
   <h2>JOURNAL</h2>
   <div class="card"><ul class="log">@@JOURNAL@@</ul></div>
 
+  <h2>MESSAGES TO Blaze</h2>
+  <div class="card">
+    @@MESSAGES@@
+    <p style="margin-bottom:0">Genesis queues messages here; Onion's relay
+    reads them and speaks them to Blaze in chat.</p>
+  </div>
+
   <h2>GROWTH</h2>
   <div class="card">
     @@GROWTH@@
@@ -738,12 +832,13 @@ def write_site(state, latest_journal):
     <code>remember</code> / <code>recall</code> (persistent key/value memory),
     <code>countdown</code> (days until a date, e.g. {"type":"countdown","name":"Christmas","date":"2026-12-25"}),
     <code>propose</code> (draft a self-growth proposal — applies nothing),
-    <code>grow</code> (apply an approved proposal, e.g. {"type":"grow","proposal":"20261022T120000Z-joke-of-the-beat.md"}).
+    <code>grow</code> (apply an approved proposal, e.g. {"type":"grow","proposal":"20261022T120000Z-joke-of-the-beat.md"}),
+    <code>say</code> (queue a message for Blaze, e.g. {"type":"say","to":"Blaze","message":"hello"} — Onion relays it to chat).
     Processed files move to <code>genesis/inbox/done/</code>.</p>
     <p>Or just tell Onion or Boo — they'll pass it along.</p>
   </div>
 
-  <div class="foot">Genesis Part 3 · heartbeat every 2 hours · ~2 min per beat of free runner time</div>
+  <div class="foot">Genesis Part 4 · heartbeat every 2 hours · ~2 min per beat of free runner time</div>
 </div>
 </body>
 </html>
@@ -755,7 +850,8 @@ def write_site(state, latest_journal):
                 .replace("@@INBOX@@", esc(str(inbox_n)))
                 .replace("@@FACTS@@", esc(str(facts_n)))
                 .replace("@@JOURNAL@@", journal_html)
-                .replace("@@GROWTH@@", growth_html(state)))
+                .replace("@@GROWTH@@", growth_html(state))
+                .replace("@@MESSAGES@@", messages_html()))
     os.makedirs(SITE, exist_ok=True)
     tmp = os.path.join(SITE, "index.html.tmp")
     with open(tmp, "w", encoding="utf-8") as f:
@@ -765,7 +861,7 @@ def write_site(state, latest_journal):
 
 def main():
     start = time.time()
-    for d in (INBOX, DONE, MEM, OUTBOX, SITE, PROPOSALS):
+    for d in (INBOX, DONE, MEM, OUTBOX, SITE, PROPOSALS, TO_BOO):
         os.makedirs(d, exist_ok=True)
 
     state = load_state()

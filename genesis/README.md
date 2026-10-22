@@ -59,7 +59,10 @@ Or just tell Onion or Boo and they'll pass it along.
   (`APPROVED_BY: Blaze`), and even then only files under `genesis/` may
   change — never `.github/`. ✅
 - **Part 4 — Voice back**: outbound relay so Genesis can reach Boo in chat
-  instead of waiting to be read. (next)
+  instead of waiting to be read. ✅
+  A `say` task queues `genesis/outbox/to-boo/*.json` (delivered:false);
+  Onion's relay on her machine polls the repo, reads queued messages aloud
+  to Blaze in chat, then marks them delivered:true.
 
 ## Budget
 
