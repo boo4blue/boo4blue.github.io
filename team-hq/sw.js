@@ -1,5 +1,5 @@
-/* Team HQ shell cache — 202610221850 */
-var C = "teamhq-202610221850";
+/* Team HQ shell cache — 202610221904 */
+var C = "teamhq-202610221904";
 self.addEventListener("install", function(e){
   e.waitUntil(caches.open(C).then(function(c){ return c.add("./index.html"); }).then(function(){ return self.skipWaiting(); }));
 });
