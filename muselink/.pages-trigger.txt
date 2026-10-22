@@ -1,3 +1,5 @@
 GitHub Pages rebuild trigger.
 
 Background: commits authored via the API (create_or_update_file) on 2026-10-21/22 did not queue Pages builds - the live site kept serving the 2026-10-21 20:11 UTC deployment. Merging a PR fires a normal push event, which does trigger a build.
+
+2026-10-22 ~10:47 EDT: testing PR-merge rebuild for onion-lord-hq (PR pages-rebuild-hq -> main).
