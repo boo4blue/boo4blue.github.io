@@ -1,8 +1,8 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>OnionLive Demo</title><link rel="stylesheet" href="style.css"></head>
+<title>OnionLive Demo</title><link rel="stylesheet" href="style.css?v=6"></head>
 <body><div class="card">
 <h1>⚡ OnionLive Demo</h1>
-<p class="ver">site version <b id="v">4</b> · updated <span id="t">just now</span></p>
+<p class="ver">site version <b id="v">6</b> · updated <span id="t">just now</span></p>
 <p>Watch this page. Onion changes the site files and this app updates
 <strong>live</strong> — no download, no refresh, no restart.</p>
 <ul id="feed">
@@ -11,6 +11,7 @@
 <li>✅ v3 — you're looking at the future</li>
 <li>⚡ v4 — files changed on the server, app reloaded itself</li>
 <li>🔥 v5 — pushed through jsDelivr CDN, zero app updates</li>
+<li>⚡ v6 — instant cache-busting live: this line appeared while you watched</li>
 </ul>
 <p class="hint">Leave this open. New lines appear like magic.</p>
 </div><script>fetch('manifest.json').then(r=>r.json()).then(m=>{document.getElementById('v').textContent=m.version})</script>
