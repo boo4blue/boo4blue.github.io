@@ -397,6 +397,7 @@ body.pnames .emoji-pin .pname{display:block;}
 .header-sub #count{color:var(--text2);}
 .area-chip{margin-left:auto;background:var(--bg);border:1px solid var(--line2);color:#fff;border-radius:20px;padding:8px 14px;font-size:14px;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:6px;min-height:44px;}
 .area-chip .ic{color:var(--accent);}
+.area-caret{color:var(--accent);font-size:16px;line-height:1;}
 
 /* crisis strip */
 .crisis-strip{background:linear-gradient(135deg,#3a1420,#2a1a2e);border-bottom:1px solid var(--line);padding:12px 16px;}
@@ -407,6 +408,8 @@ body.pnames .emoji-pin .pname{display:block;}
 .crisis-chips{display:flex;gap:8px;}
 .crisis-chips .chip{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:12px 8px;min-height:44px;}
 .crisis-chips .chip .ic{color:var(--accent);}
+.crisis-hint{display:block;width:100%;margin-top:8px;padding:6px;background:none;border:none;color:rgba(255,255,255,.55);font-size:12px;text-align:center;cursor:pointer;}
+.crisis-hint:active{color:#fff;}
 
 /* map search + controls */
 #map-wrap{position:relative;margin:0;}

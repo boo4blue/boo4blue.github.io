@@ -12,10 +12,10 @@
 <meta property="og:image" content="https://boo4blue.github.io/app/assets/og-image.png">
 <meta name="theme-color" content="#0d1220">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%230d1220'/%3E%3Cpath%20d='M32%2054s-15-10.8-15-23.4a15%2015%200%200%201%2030%200C47%2043.2%2032%2054%2032%2054z'%20fill='none'%20stroke='%237dd3fc'%20stroke-width='4'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3Ccircle%20cx='32'%20cy='30'%20r='5.5'%20fill='%237dd3fc'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="vendor/leaflet.css?v=1792700580">
-<link rel="stylesheet" href="vendor/MarkerCluster.css?v=1792700580">
-<link rel="stylesheet" href="vendor/MarkerCluster.Default.css?v=1792700580">
-<link rel="stylesheet" href="styles.css?v=1792700580">
+<link rel="stylesheet" href="vendor/leaflet.css?v=1792704940">
+<link rel="stylesheet" href="vendor/MarkerCluster.css?v=1792704940">
+<link rel="stylesheet" href="vendor/MarkerCluster.Default.css?v=1792704940">
+<link rel="stylesheet" href="styles.css?v=1792704940">
 </head>
 <body>
 <svg class="svg-sprite" aria-hidden="true">
@@ -105,7 +105,7 @@
 <div class="header-sub"><span id="area-sub">Fort Wayne</span> free resources — <span id="count">loading...</span></div>
 <button id="area-chip" class="area-chip" onclick="cycleArea()" aria-label="Switch city">
 <svg class="ic" width="16" height="16" aria-hidden="true"><use href="#haven-map-pin"/></svg>
-<span class="area-name">Fort Wayne, IN</span>
+<span class="area-name">Fort Wayne, IN</span><span class="area-caret" aria-hidden="true">▾</span>
 </button>
 </header>
 
@@ -113,7 +113,7 @@
 <div class="side-panel-head"><h2>Filters</h2><button onclick="toggleFilterPanel()" aria-label="Close filters">×</button></div>
 <h3 onclick="toggleFilterCollapse()" class="side-panel-h3">CATEGORIES <span id="filter-arrow">▼</span></h3>
 <div id="sidebar-filters"></div>
-<h3 class="side-panel-h3">SORT</h3>
+<h3 onclick="toggleSortCollapse()" class="side-panel-h3">SORT <span id="sort-arrow">▼</span></h3>
 <select id="sort-sidebar" class="field" onchange="document.getElementById('sort').value=this.value;document.getElementById('sort').dispatchEvent(new Event('change'))">
 <option value="def">Default</option><option value="az">A–Z</option><option value="near">📍 Nearest me</option>
 </select>
@@ -139,6 +139,7 @@
 <button class="chip" onclick="crisisChip('food')"><svg class="ic" width="18" height="18" aria-hidden="true"><use href="#haven-food"/></svg>Food</button>
 <button class="chip" onclick="crisisChip('day')"><svg class="ic" width="18" height="18" aria-hidden="true"><use href="#haven-shower"/></svg>Showers</button>
 </div>
+<button class="crisis-hint" onclick="goTab('help')">need a bed / interpreter? &#8594;</button>
 </section>
 <div id="map-wrap">
 <div id="map"></div>
@@ -289,6 +290,15 @@
 
 <div id="tab-settings" class="tab"><div class="content">
 <div class="view-head"><h2>Settings</h2></div>
+<div class="card"><h3>📣 Suggest a Place</h3><p class="card-sub">Know a place that should be on the map? Save it here — kept on this device.</p>
+<div class="form-stack">
+<label class="visually-hidden" for="wsugName">Place name</label><input id="wsugName" type="text" class="field" placeholder="Place name" maxlength="80" aria-label="Place name">
+<label class="visually-hidden" for="wsugAddr">Address</label><input id="wsugAddr" type="text" class="field" placeholder="Address (optional)" maxlength="120" aria-label="Address">
+<label class="visually-hidden" for="wsugCat">Category</label><select id="wsugCat" class="field" aria-label="Category"></select>
+<label class="visually-hidden" for="wsugNotes">Notes</label><textarea id="wsugNotes" rows="2" class="field" placeholder="Notes (optional)" maxlength="500" aria-label="Notes"></textarea>
+</div>
+<div class="meta"><button class="sheet-btn" onclick="wsugAdd()">＋ Add suggestion</button></div>
+<div id="wsugList"></div></div>
 <div class="card"><h3>🔠 Text Size</h3><p class="card-sub">Make all the text on the site smaller or bigger.</p>
 <div class="scale-row"><button class="sheet-btn" onclick="stepTextScale(-10)" aria-label="Smaller text">−</button>
 <input type="range" id="textscale-range" min="70" max="200" step="5" value="100" oninput="setTextScale(+this.value)" aria-label="Text size" class="range">
@@ -317,15 +327,7 @@
 <div class="meta"><button class="sheet-btn" onclick="showUserLocation(true)">📍 Use my location</button></div></div>
 <div class="card"><h3>🎤 Voice Search</h3><p class="card-sub">Say what you need — your words become the map search.</p>
 <div class="meta"><button class="sheet-btn" onclick="voiceSearch()">🎤 Start voice search</button></div></div>
-<div class="card"><h3>📣 Suggest a Place</h3><p class="card-sub">Know a place that should be on the map? Save it here — kept on this device.</p>
-<div class="form-stack">
-<label class="visually-hidden" for="wsugName">Place name</label><input id="wsugName" type="text" class="field" placeholder="Place name" maxlength="80" aria-label="Place name">
-<label class="visually-hidden" for="wsugAddr">Address</label><input id="wsugAddr" type="text" class="field" placeholder="Address (optional)" maxlength="120" aria-label="Address">
-<label class="visually-hidden" for="wsugCat">Category</label><select id="wsugCat" class="field" aria-label="Category"></select>
-<label class="visually-hidden" for="wsugNotes">Notes</label><textarea id="wsugNotes" rows="2" class="field" placeholder="Notes (optional)" maxlength="500" aria-label="Notes"></textarea>
-</div>
-<div class="meta"><button class="sheet-btn" onclick="wsugAdd()">＋ Add suggestion</button></div>
-<div id="wsugList"></div></div>
+
 <div class="card"><h3>About</h3><p>Haven FW — Fort Wayne free resources</p><p class="card-sub">Website version of the Haven FW app · <span id="about-ver">v?</span></p>
 <div class="meta"><button class="sheet-btn" onclick="openAbout()">About Haven FW</button></div></div>
 </div></div>
@@ -348,9 +350,9 @@
 <div id="sheet-overlay" onclick="if(event.target===this)closeSheet()"><div id="sheet"><button id="sheet-close" onclick="closeSheet()" aria-label="Close">✕</button><div id="sheet-body"></div></div></div>
 <div id="peek"><div id="peek-content"></div></div>
 
-<script src="vendor/vendor.js?v=1792700580"></script>
-<script src="data.js?v=1792700580"></script>
-<script src="bundle-core.js?v=1792700580"></script>
+<script src="vendor/vendor.js?v=1792704940"></script>
+<script src="data.js?v=1792704940"></script>
+<script src="bundle-core.js?v=1792704940"></script>
 <script>try{document.getElementById("about-ver").textContent="v"+(typeof HAVEN_BUILD!=="undefined"?HAVEN_BUILD:"?");}catch(e){}</script>
 </body>
 </html>
