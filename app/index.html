@@ -12,10 +12,10 @@
 <meta property="og:image" content="https://boo4blue.github.io/app/assets/og-image.png">
 <meta name="theme-color" content="#0d1220">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%230d1220'/%3E%3Cpath%20d='M32%2054s-15-10.8-15-23.4a15%2015%200%200%201%2030%200C47%2043.2%2032%2054%2032%2054z'%20fill='none'%20stroke='%237dd3fc'%20stroke-width='4'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3Ccircle%20cx='32'%20cy='30'%20r='5.5'%20fill='%237dd3fc'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="vendor/leaflet.css?v=1792706174">
-<link rel="stylesheet" href="vendor/MarkerCluster.css?v=1792706174">
-<link rel="stylesheet" href="vendor/MarkerCluster.Default.css?v=1792706174">
-<link rel="stylesheet" href="styles.css?v=1792706174">
+<link rel="stylesheet" href="vendor/leaflet.css?v=1792706693">
+<link rel="stylesheet" href="vendor/MarkerCluster.css?v=1792706693">
+<link rel="stylesheet" href="vendor/MarkerCluster.Default.css?v=1792706693">
+<link rel="stylesheet" href="styles.css?v=1792706693">
 </head>
 <body>
 <svg class="svg-sprite" aria-hidden="true">
@@ -140,6 +140,10 @@
 <button class="chip" onclick="crisisChip('day')"><svg class="ic" width="18" height="18" aria-hidden="true"><use href="#haven-shower"/></svg>Showers</button>
 </div>
 <button class="crisis-hint" onclick="goTab('help')">need a bed / interpreter? &#8594;</button>
+<div class="tonight-row">
+<button class="tonight-btn" onclick="openSafeTonight()">Safe Tonight <span class="tonight-sub">— open shelters now</span></button>
+<button class="charge-btn" onclick="openChargeSpots()">Charge My Phone</button>
+</div>
 </section>
 <div id="map-wrap">
 <div id="map"></div>
@@ -173,7 +177,7 @@
 <select id="places-sort" class="field" onchange="renderPlacesSheet()" aria-label="Sort places"><option value="def">Default</option><option value="az">A–Z</option><option value="near">Nearest</option></select>
 </div>
 <div id="places-filters" class="chip-row"></div>
-<div class="btn-row"><button id="places-open-toggle" class="btn-danger" onclick="togglePlacesOpenNow(this)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Open now</button></div>
+<div class="btn-row wrap"><button id="places-open-toggle" class="btn-danger" onclick="togglePlacesOpenNow(this)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Open now</button><button id="bathroom-toggle" class="toggle-btn" onclick="toggleBathroom()" aria-label="Show restrooms near me"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Bathrooms</button><button id="kids-toggle" class="toggle-btn" onclick="toggleKidsMode()" aria-label="Show only family-friendly places"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Kids with me</button></div>
 </div>
 <div id="list" class="places-list"><div id="loading">Loading resources...</div></div>
 </div>
@@ -187,7 +191,7 @@
 <select id="pt-sort" class="field" onchange="renderPlacesTab()" aria-label="Sort places"><option value="def">Default</option><option value="az">A–Z</option><option value="near">Nearest</option></select>
 </div>
 <div id="pt-filters" class="chip-row"></div>
-<div class="btn-row"><button id="pt-open-toggle" class="btn-danger" onclick="togglePtOpenNow(this)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Open now</button></div>
+<div class="btn-row wrap"><button id="pt-open-toggle" class="btn-danger" onclick="togglePtOpenNow(this)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Open now</button><button id="bathroom-toggle-pt" class="toggle-btn" onclick="toggleBathroom()" aria-label="Show restrooms near me"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Bathrooms</button><button id="kids-toggle-pt" class="toggle-btn" onclick="toggleKidsMode()" aria-label="Show only family-friendly places"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Kids with me</button></div>
 <div id="pt-list"></div>
 </div></div>
 
@@ -203,6 +207,8 @@
 </div>
 </div>
 <button class="newhere-card" onclick="openNewHereGuide()"><span class="newhere-emoji">🛏️</span><span class="newhere-text"><b>Never stayed at a shelter before?</b><span class="newhere-sub">What intake is like, what to bring, your rights</span></span><span class="newhere-arrow">›</span></button>
+<button class="newhere-card tonight-card" onclick="openSafeTonight()"><span class="newhere-emoji">🌙</span><span class="newhere-text"><b>Safe Tonight</b><span class="newhere-sub">Shelters open right now, nearest first</span></span><span class="newhere-arrow">›</span></button>
+<button class="newhere-card charge-card" onclick="openChargeSpots()"><span class="newhere-emoji">🔌</span><span class="newhere-text"><b>Charge My Phone</b><span class="newhere-sub">Free charging + WiFi spots near you</span></span><span class="newhere-arrow">›</span></button>
 <a href="tel:911" class="btn-sos">🆘 SOS — Call 911</a>
 <button onclick="openCardPicker()" class="btn-card">🪧 Show a card <span class="btn-sub">— I need a bed / food / interpreter</span></button>
 <div id="hotlines"></div><div id="phonelines"></div>
@@ -351,9 +357,9 @@
 <div id="sheet-overlay" onclick="if(event.target===this)closeSheet()"><div id="sheet"><button id="sheet-close" onclick="closeSheet()" aria-label="Close">✕</button><div id="sheet-body"></div></div></div>
 <div id="peek"><div id="peek-content"></div></div>
 
-<script src="vendor/vendor.js?v=1792706174"></script>
-<script src="data.js?v=1792706174"></script>
-<script src="bundle-core.js?v=1792706174"></script>
+<script src="vendor/vendor.js?v=1792706693"></script>
+<script src="data.js?v=1792706693"></script>
+<script src="bundle-core.js?v=1792706693"></script>
 <script>try{document.getElementById("about-ver").textContent="v"+(typeof HAVEN_BUILD!=="undefined"?HAVEN_BUILD:"?");}catch(e){}</script>
 </body>
 </html>
