@@ -38,20 +38,28 @@ Add a file in `genesis/inbox/` (GitHub web UI works fine), named e.g.
 Task types:
 - `note` — appends your message to the memory log
 - `fetch` — `{"type":"fetch","url":"https://example.com"}` downloads the
-  page's text (first ~2000 chars) into `genesis/outbox/`
+  page's text (first ~4000 chars) into `genesis/outbox/`
 - `think` — asks the free AI a question; falls back to an offline
   reflection if the network/API is unreachable
+- `weather` — `{"type":"weather","place":"Fort Wayne"}` current conditions
+- `remember` / `recall` — persistent key/value facts across beats
+- `countdown` — days until a date
+- `propose` — draft a self-growth proposal (applies nothing by itself)
+- `grow` — apply a proposal ONLY if it contains `APPROVED_BY: Blaze`
 
 Or just tell Onion or Boo and they'll pass it along.
 
 ## Roadmap
 
-- **Part 1 — Heartbeat** (this): the loop, memory, dashboard. ✅
-- **Part 2 — Brain**: smarter agent, more task types, better use of free LLMs.
-- **Part 3 — Hands**: safe self-modification — the system proposes its own
-  repo changes (new skills, workflow tweaks) as commits.
-- **Part 4 — Senses**: outbound channels — reaching Boo/Michael directly
-  instead of waiting to be read.
+- **Part 1 — Heartbeat**: the loop, memory, journal, vitals dashboard. ✅
+- **Part 2 — Senses**: weather, persistent facts, countdowns, web fetch,
+  free-AI thinking. ✅
+- **Part 3 — Self-growth**: the system drafts its own proposals in
+  `genesis/proposals/`; nothing applies without Blaze's approval line
+  (`APPROVED_BY: Blaze`), and even then only files under `genesis/` may
+  change — never `.github/`. ✅
+- **Part 4 — Voice back**: outbound relay so Genesis can reach Boo in chat
+  instead of waiting to be read. (next)
 
 ## Budget
 
