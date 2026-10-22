@@ -12,10 +12,10 @@
 <meta property="og:image" content="https://boo4blue.github.io/app/assets/og-image.png">
 <meta name="theme-color" content="#0d1220">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%230d1220'/%3E%3Cpath%20d='M32%2054s-15-10.8-15-23.4a15%2015%200%200%201%2030%200C47%2043.2%2032%2054%2032%2054z'%20fill='none'%20stroke='%237dd3fc'%20stroke-width='4'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3Ccircle%20cx='32'%20cy='30'%20r='5.5'%20fill='%237dd3fc'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="vendor/leaflet.css?v=1792704940">
-<link rel="stylesheet" href="vendor/MarkerCluster.css?v=1792704940">
-<link rel="stylesheet" href="vendor/MarkerCluster.Default.css?v=1792704940">
-<link rel="stylesheet" href="styles.css?v=1792704940">
+<link rel="stylesheet" href="vendor/leaflet.css?v=1792706174">
+<link rel="stylesheet" href="vendor/MarkerCluster.css?v=1792706174">
+<link rel="stylesheet" href="vendor/MarkerCluster.Default.css?v=1792706174">
+<link rel="stylesheet" href="styles.css?v=1792706174">
 </head>
 <body>
 <svg class="svg-sprite" aria-hidden="true">
@@ -146,11 +146,11 @@
 <div class="map-search">
 <label class="visually-hidden" for="search">Search food, shelter, showers</label>
 <input type="search" id="search" class="map-search-input" placeholder="Search food, shelter, showers...">
-<button id="voice-btn" class="map-icon-btn" onclick="voiceSearch()" aria-label="Voice search">🎤</button>
+<button id="voice-btn" class="map-icon-btn" onclick="voiceSearch()" aria-label="Voice search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></button>
 <button class="map-icon-btn" onclick="showUserLocation(true)" aria-label="Use my location"><svg class="ic" width="20" height="20" aria-hidden="true"><use href="#haven-map-pin"/></svg></button>
 </div>
 <button id="map-filter-btn" class="map-icon-btn map-filter-btn" onclick="toggleFilterPanel()" aria-label="Filters"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7c8aff" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M7 12h10M10 18h4"/></svg></button>
-<button id="map-open-toggle" class="map-icon-btn map-open-btn" onclick="toggleMapOpenNow(this)" aria-label="Toggle open now">🕐</button>
+<button id="map-open-toggle" class="map-icon-btn map-open-btn" onclick="toggleMapOpenNow(this)" aria-label="Toggle open now"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></button>
 </div>
 <div id="filters" class="chip-row"></div>
 <div id="recent-searches"></div>
@@ -173,7 +173,7 @@
 <select id="places-sort" class="field" onchange="renderPlacesSheet()" aria-label="Sort places"><option value="def">Default</option><option value="az">A–Z</option><option value="near">Nearest</option></select>
 </div>
 <div id="places-filters" class="chip-row"></div>
-<div class="btn-row"><button id="places-open-toggle" class="btn-danger" onclick="togglePlacesOpenNow(this)">🕐 Open now</button></div>
+<div class="btn-row"><button id="places-open-toggle" class="btn-danger" onclick="togglePlacesOpenNow(this)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Open now</button></div>
 </div>
 <div id="list" class="places-list"><div id="loading">Loading resources...</div></div>
 </div>
@@ -187,7 +187,7 @@
 <select id="pt-sort" class="field" onchange="renderPlacesTab()" aria-label="Sort places"><option value="def">Default</option><option value="az">A–Z</option><option value="near">Nearest</option></select>
 </div>
 <div id="pt-filters" class="chip-row"></div>
-<div class="btn-row"><button id="pt-open-toggle" class="btn-danger" onclick="togglePtOpenNow(this)">🕐 Open now</button></div>
+<div class="btn-row"><button id="pt-open-toggle" class="btn-danger" onclick="togglePtOpenNow(this)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Open now</button></div>
 <div id="pt-list"></div>
 </div></div>
 
@@ -202,6 +202,7 @@
 <a href="tel:211" class="btn-white-ghost">📞 211 Help</a>
 </div>
 </div>
+<button class="newhere-card" onclick="openNewHereGuide()"><span class="newhere-emoji">🛏️</span><span class="newhere-text"><b>Never stayed at a shelter before?</b><span class="newhere-sub">What intake is like, what to bring, your rights</span></span><span class="newhere-arrow">›</span></button>
 <a href="tel:911" class="btn-sos">🆘 SOS — Call 911</a>
 <button onclick="openCardPicker()" class="btn-card">🪧 Show a card <span class="btn-sub">— I need a bed / food / interpreter</span></button>
 <div id="hotlines"></div><div id="phonelines"></div>
@@ -223,7 +224,7 @@
 <div class="sec-title">📲 Share Haven</div>
 <div class="share-box">
 <div class="share-url">https://boo4blue.github.io/app/</div>
-<button onclick="navigator.clipboard.writeText('https://boo4blue.github.io/app/');this.textContent='✓ Copied!'" class="btn-primary">📋 Copy Link</button>
+<button onclick="copyAppLink(this)" class="btn-primary">📋 Copy Link</button>
 </div>
 </div></div>
 
@@ -325,8 +326,8 @@
 <div class="meta"><button class="sheet-btn" onclick="wsSwitchArea()">🔄 Switch city</button></div></div>
 <div class="card"><h3>🛰️ My Location</h3><p class="card-sub">Center the map on where you are right now.</p>
 <div class="meta"><button class="sheet-btn" onclick="showUserLocation(true)">📍 Use my location</button></div></div>
-<div class="card"><h3>🎤 Voice Search</h3><p class="card-sub">Say what you need — your words become the map search.</p>
-<div class="meta"><button class="sheet-btn" onclick="voiceSearch()">🎤 Start voice search</button></div></div>
+<div class="card"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg> Voice Search</h3><p class="card-sub">Say what you need — your words become the map search.</p>
+<div class="meta"><button class="sheet-btn" onclick="voiceSearch()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg> Start voice search</button></div></div>
 
 <div class="card"><h3>About</h3><p>Haven FW — Fort Wayne free resources</p><p class="card-sub">Website version of the Haven FW app · <span id="about-ver">v?</span></p>
 <div class="meta"><button class="sheet-btn" onclick="openAbout()">About Haven FW</button></div></div>
@@ -350,9 +351,9 @@
 <div id="sheet-overlay" onclick="if(event.target===this)closeSheet()"><div id="sheet"><button id="sheet-close" onclick="closeSheet()" aria-label="Close">✕</button><div id="sheet-body"></div></div></div>
 <div id="peek"><div id="peek-content"></div></div>
 
-<script src="vendor/vendor.js?v=1792704940"></script>
-<script src="data.js?v=1792704940"></script>
-<script src="bundle-core.js?v=1792704940"></script>
+<script src="vendor/vendor.js?v=1792706174"></script>
+<script src="data.js?v=1792706174"></script>
+<script src="bundle-core.js?v=1792706174"></script>
 <script>try{document.getElementById("about-ver").textContent="v"+(typeof HAVEN_BUILD!=="undefined"?HAVEN_BUILD:"?");}catch(e){}</script>
 </body>
 </html>

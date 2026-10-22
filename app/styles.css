@@ -480,6 +480,19 @@ body.pnames .emoji-pin .pname{display:block;}
 .flex1{flex:1;}
 .btn-white{background:#fff;color:#dc2626;padding:10px 18px;border-radius:12px;text-decoration:none;font-weight:800;min-height:44px;display:inline-flex;align-items:center;}
 .btn-white-ghost{background:rgba(255,255,255,.2);color:#fff;padding:10px 18px;border-radius:12px;text-decoration:none;font-weight:800;min-height:44px;display:inline-flex;align-items:center;}
+/* New Here Guide entry card — warm, welcoming, stands out from crisis red */
+.newhere-card{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:16px;margin-bottom:12px;border-radius:14px;border:1px solid #8a6d2d;background:linear-gradient(135deg,#3a2c12,#241a0a);cursor:pointer;min-height:64px;}
+.newhere-card:active{transform:scale(.99);}
+.newhere-emoji{font-size:30px;flex:none;}
+.newhere-text{flex:1;display:flex;flex-direction:column;gap:3px;}
+.newhere-text b{color:#ffe9b8;font-size:16px;}
+.newhere-sub{color:#cbb37e;font-size:13px;line-height:1.35;}
+.newhere-arrow{font-size:28px;color:#cbb37e;flex:none;font-weight:300;}
+/* New Here Guide sheet sections */
+.nh-intro{font-size:15px;line-height:1.55;color:#d8cfc0;margin-bottom:4px;}
+.nh-sec{color:#f5c76a;font-weight:bold;font-size:13px;text-transform:uppercase;letter-spacing:.5px;margin:18px 0 8px;}
+.nh-sec:first-of-type{margin-top:14px;}
+.nh-p{font-size:15px;line-height:1.6;color:#e6e0d4;margin-bottom:6px;}
 .btn-sos{width:100%;padding:14px;background:#dc2626;color:#fff;border:0;border-radius:12px;font-size:16px;font-weight:800;margin-bottom:12px;cursor:pointer;min-height:52px;}
 .btn-card{width:100%;padding:14px;background:var(--bg);border:1px solid var(--accent);border-radius:12px;font-size:16px;font-weight:800;margin-bottom:12px;cursor:pointer;color:#fff;min-height:52px;}
 .btn-sub{font-weight:400;font-size:13px;color:#9fb3d9;}
@@ -517,3 +530,6 @@ button{min-height:44px;}
 /* filter panel slides from the right (toggleFilterPanel sets style.right) */
 #filter-panel{left:auto;right:-290px;transition:right .3s;}
 #peek{position:fixed;left:0;right:0;bottom:-50vh;background:#1a1f2e;z-index:1003;transition:bottom .3s;border-radius:20px 20px 0 0;padding:8px 16px 14px;box-shadow:0 -4px 18px rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.12);border-bottom:0;max-height:46vh;overflow-y:auto;}
+
+#voice-btn.listening{background:var(--accent);animation:voice-pulse 1.2s ease-in-out infinite;}
+@keyframes voice-pulse{0%,100%{opacity:1;}50%{opacity:.55;}}

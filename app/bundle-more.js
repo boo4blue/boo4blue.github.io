@@ -786,7 +786,7 @@ function sgCard(g){var r=sgPlace(g),p=sgProg(g);
   var btns="";
   if(r){btns='<div class="sg-btns">';
     if(r.lat)btns+='<button class="sg-b" data-sgmap="'+gid+'">🗺️ View map</button>';
-    if(r.lat)btns+='<a class="sg-b" target="_blank" rel="noopener" href="https://maps.google.com/?q='+r.lat+','+r.lng+'">➤ Directions</a>';
+    if(r.lat)btns+='<a class="sg-b" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination='+r.lat+','+r.lng+'">➤ Directions</a>';
     var tel=sgTelHref(r);if(tel)btns+='<a class="sg-b" href="'+tel+'">📞 Call</a>';
     btns+='</div>';}
   var bring="";
