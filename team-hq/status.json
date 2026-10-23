@@ -41,15 +41,15 @@
   },
   {
    "avatar": "avatars/lens.png",
-   "current_task": "QA 3 Wren specs (continuous-improve cycle)",
+   "current_task": null,
    "id": "lens",
-   "last_update": "2026-10-23T07:57:00-04:00",
+   "last_update": "2026-10-23T08:05:00-04:00",
    "name": "Lens",
    "progress_label": null,
    "progress_pct": null,
    "progress_steps": null,
    "role": "QA",
-   "status": "working",
+   "status": "idle",
    "team": "website"
   },
   {
@@ -117,5 +117,5 @@
    "name": "Build Team"
   }
  ],
- "updated_at": "2026-10-23T07:58:24-04:00"
+ "updated_at": "2026-10-23T08:18:57-04:00"
 }
