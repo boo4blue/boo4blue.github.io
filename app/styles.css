@@ -610,3 +610,42 @@ h1,h2,h3{letter-spacing:-.01em;}
 .hsub-chip.on{background:var(--accent);border-color:var(--accent);color:#fff;}
 .gear-btn{background:var(--bg);border:1px solid var(--line2);color:var(--text2);border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none;}
 .more-sec{font-size:12px;font-weight:800;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;padding:14px 16px 6px;}
+
+/* ===== PASS 4: Tonight strip, plan card, open words, bus rows ===== */
+#tonight-strip{padding:0 12px;}
+.tonight-card{background:#1a1f2e;border:1px solid #2a2f3e;border-radius:14px;padding:12px;margin:12px 0;}
+.tonight-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;}
+.tonight-head b{color:#fff;font-size:17px;}
+.tonight-head span{color:#aab2c5;font-size:13px;}
+.tstep{display:flex;gap:10px;padding:10px 0;border-top:1px solid #242a3d;align-items:flex-start;}
+.tstep-icon{font-size:24px;flex:none;line-height:1.2;}
+.tstep-body{flex:1;min-width:0;}
+.tstep-label{font-size:13px;color:#aab2c5;font-weight:700;}
+.tstep-name{color:#fff;font-weight:700;font-size:15px;margin-top:2px;}
+.tstep-sub{font-size:13px;margin-top:2px;color:#aab2c5;}
+.tstep-btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;}
+.tstep-btns .sheet-btn{min-height:44px;display:inline-flex;align-items:center;}
+.tstep.done{opacity:.6;}
+.tstep-check{color:#4ade80;font-size:22px;font-weight:700;flex:none;}
+.tstep-missing{color:#e0e0e0;font-size:14px;margin-top:4px;}
+.ow-open{color:#4ade80;font-weight:700;font-size:13px;}
+.ow-soon{color:#fbbf24;font-weight:700;font-size:13px;}
+.ow-closed{color:#ff7a7a;font-weight:700;font-size:13px;}
+.ow-unknown{color:#aab2c5;font-size:13px;}
+.bus-row{font-size:13px;color:#aab2c5;margin:6px 0 0;}
+.bus-row a{color:#7c8aff;font-weight:600;}
+.plan-card{background:#1a1f2e;border:1px solid #2a2f3e;border-radius:14px;padding:14px;margin-bottom:12px;}
+.plan-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;}
+.plan-head b{color:#fff;font-size:17px;}
+.plan-head span{color:#aab2c5;font-size:13px;}
+.plan-row{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-top:1px solid #242a3d;align-items:center;}
+.plan-row b{color:#fff;font-size:14px;}
+.plan-row.done{opacity:.6;}
+.plan-addr{font-size:13px;color:#aab2c5;}
+.plan-btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+.plan-btns .sheet-btn{min-height:44px;display:inline-flex;align-items:center;}
+.plan-empty{color:#aab2c5;font-size:14px;}
+.plan-prog{font-size:13px;color:#aab2c5;margin-top:8px;}
+.plan-note{font-size:12px;color:#aab2c5;margin:8px 0 0;}
+.bus-next{color:#4ade80;font-weight:700;font-size:13px;}
+.bus-next a{color:#7c8aff;font-weight:600;}
