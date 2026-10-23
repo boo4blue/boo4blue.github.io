@@ -4,7 +4,7 @@
    "avatar": "avatars/wren.png",
    "current_task": null,
    "id": "wren",
-   "last_update": "2026-10-22T19:57:11.274986-04:00",
+   "last_update": "2026-10-22T20:02:56.152027-04:00",
    "name": "Wren",
    "progress_label": null,
    "progress_pct": null,
@@ -15,15 +15,15 @@
   },
   {
    "avatar": "avatars/bolt.png",
-   "current_task": "haven-release: build Text my plan + Freeze banner + plain-hours",
+   "current_task": null,
    "id": "bolt",
-   "last_update": "2026-10-22T19:57:11.274986-04:00",
+   "last_update": "2026-10-22T20:02:56.152027-04:00",
    "name": "Bolt",
    "progress_label": null,
    "progress_pct": null,
    "progress_steps": null,
    "role": "Builder",
-   "status": "working",
+   "status": "idle",
    "team": "website"
   },
   {
@@ -43,7 +43,7 @@
    "avatar": "avatars/lens.png",
    "current_task": null,
    "id": "lens",
-   "last_update": "2026-10-22T18:04:33-04:00",
+   "last_update": "2026-10-22T20:02:56.152027-04:00",
    "name": "Lens",
    "progress_label": null,
    "progress_pct": null,
@@ -117,5 +117,5 @@
    "name": "Build Team"
   }
  ],
- "updated_at": "2026-10-22T19:57:43-04:00"
+ "updated_at": "2026-10-22T20:13:11-04:00"
 }
