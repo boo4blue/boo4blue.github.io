@@ -1,1 +1,0 @@
-{"id":"barksing-probe1","action":"shell","command":"python3 --version; pip --version 2>&1 | head -1; df -h /github/workspace 2>/dev/null | tail -1 || df -h /tmp | tail -1; free -g | sed -n 2p; python3 -c \"import torch; print('torch', torch.__version__)\" 2>&1 | tail -1; ls ~/storage 2>/dev/null | head -5"}
