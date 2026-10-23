@@ -1,0 +1,16 @@
+{
+  "id": "barksing-build1",
+  "action": "shell",
+  "at": "2026-10-23T14:15:25Z",
+  "job": {
+    "id": "barksing-build1",
+    "action": "shell",
+    "command": "pwd; mkdir -p /github/workspace/cloud-pc/storage/voices; pip install -q torch --index-url https://download.pytorch.org/whl/cpu transformers scipy 2>&1 | tail -1; python3 -c \"import torch, transformers; print('torch', torch.__version__, '| transformers', transformers.__version__)\""
+  },
+  "result": {
+    "ok": true,
+    "exit": 1,
+    "stdout": "/home/runner/work/boo4blue.github.io/boo4blue.github.io/cloud-pc/storage\nERROR: No matching distribution found for transformers\n",
+    "stderr": "mkdir: cannot create directory \u2018/github\u2019: Permission denied\nTraceback (most recent call last):\n  File \"<string>\", line 1, in <module>\nModuleNotFoundError: No module named 'torch'\n"
+  }
+}
