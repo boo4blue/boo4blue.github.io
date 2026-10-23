@@ -4,7 +4,7 @@
    "avatar": "avatars/wren.png",
    "current_task": null,
    "id": "wren",
-   "last_update": "2026-10-23T03:54:30-04:00",
+   "last_update": "2026-10-23T07:54:00-04:00",
    "name": "Wren",
    "progress_label": null,
    "progress_pct": null,
@@ -17,7 +17,7 @@
    "avatar": "avatars/bolt.png",
    "current_task": null,
    "id": "bolt",
-   "last_update": "2026-10-23T05:59:00-04:00",
+   "last_update": "2026-10-23T07:57:00-04:00",
    "name": "Bolt",
    "progress_label": null,
    "progress_pct": null,
@@ -41,15 +41,15 @@
   },
   {
    "avatar": "avatars/lens.png",
-   "current_task": null,
+   "current_task": "QA 3 Wren specs (continuous-improve cycle)",
    "id": "lens",
-   "last_update": "2026-10-23T06:02:00-04:00",
+   "last_update": "2026-10-23T07:57:00-04:00",
    "name": "Lens",
    "progress_label": null,
    "progress_pct": null,
    "progress_steps": null,
    "role": "QA",
-   "status": "idle",
+   "status": "working",
    "team": "website"
   },
   {
@@ -117,5 +117,5 @@
    "name": "Build Team"
   }
  ],
- "updated_at": "2026-10-23T06:42:47-04:00"
+ "updated_at": "2026-10-23T07:58:24-04:00"
 }
