@@ -67,15 +67,15 @@
   },
   {
    "avatar": "avatars/anvil.png",
-   "current_task": "Tycoon FULL GAME (30min sprint)",
+   "current_task": null,
    "id": "anvil",
-   "last_update": "2026-10-22T18:03:33-04:00",
+   "last_update": "2026-10-22T20:22:00-04:00",
    "name": "Anvil",
    "progress_label": null,
    "progress_pct": null,
    "progress_steps": null,
    "role": "Builder",
-   "status": "working",
+   "status": "idle",
    "team": "build"
   },
   {
@@ -117,5 +117,5 @@
    "name": "Build Team"
   }
  ],
- "updated_at": "2026-10-22T20:13:11-04:00"
+ "updated_at": "2026-10-22T20:27:42-04:00"
 }
