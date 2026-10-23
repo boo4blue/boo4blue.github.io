@@ -12,10 +12,10 @@
 <meta property="og:image" content="https://boo4blue.github.io/app/assets/og-image.png">
 <meta name="theme-color" content="#0d1220">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%230d1220'/%3E%3Cpath%20d='M32%2054s-15-10.8-15-23.4a15%2015%200%200%201%2030%200C47%2043.2%2032%2054%2032%2054z'%20fill='none'%20stroke='%237dd3fc'%20stroke-width='4'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3Ccircle%20cx='32'%20cy='30'%20r='5.5'%20fill='%237dd3fc'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="vendor/leaflet.css?v=1792706693">
-<link rel="stylesheet" href="vendor/MarkerCluster.css?v=1792706693">
-<link rel="stylesheet" href="vendor/MarkerCluster.Default.css?v=1792706693">
-<link rel="stylesheet" href="styles.css?v=1792706693">
+<link rel="stylesheet" href="vendor/leaflet.css?v=1792749037">
+<link rel="stylesheet" href="vendor/MarkerCluster.css?v=1792749037">
+<link rel="stylesheet" href="vendor/MarkerCluster.Default.css?v=1792749037">
+<link rel="stylesheet" href="styles.css?v=1792749037">
 </head>
 <body>
 <svg class="svg-sprite" aria-hidden="true">
@@ -37,6 +37,9 @@
   </symbol>
   <symbol id="haven-shelter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M2.5 4.5V20"/><path d="M2.5 9h17a2 2 0 0 1 2 2v9"/><path d="M2.5 17.5h19"/><path d="M6.5 9v8"/>
+  </symbol>
+  <symbol id="haven-bus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="4" y="4" width="16" height="13" rx="2"/><path d="M4 10h16"/><circle cx="8.5" cy="19.5" r="1.5"/><circle cx="15.5" cy="19.5" r="1.5"/>
   </symbol>
   <symbol id="haven-food" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M4 13h16a8 8 0 0 1-16 0"/><path d="M9.5 10c0-1.6 1.5-1.6 1.5-3.2M14 10c0-1.6 1.5-1.6 1.5-3.2"/>
@@ -132,6 +135,7 @@
 <div class="crisis-main">
 <span class="crisis-title">🆘 Need help now?</span>
 <a class="crisis-tel" href="tel:988" aria-label="Call 988 crisis line">988</a>
+<a class="crisis-tel" href="sms:988" aria-label="Text 988 crisis line">Text 988</a>
 <a class="crisis-tel" href="tel:211" aria-label="Call 211 help line">211</a>
 </div>
 <div class="crisis-chips">
@@ -143,13 +147,14 @@
 <div class="tonight-row">
 <button class="tonight-btn" onclick="openSafeTonight()">Safe Tonight <span class="tonight-sub">— open shelters now</span></button>
 <button class="charge-btn" onclick="openChargeSpots()">Charge My Phone</button>
+<button class="bus-btn" onclick="openBusStops()"><svg class="ic" width="18" height="18" aria-hidden="true"><use href="#haven-bus"/></svg>Bus Stops <span class="tonight-sub">— near me</span></button>
 </div>
 </section>
 <div id="map-wrap">
 <div id="map"></div>
 <div class="map-search">
 <label class="visually-hidden" for="search">Search food, shelter, showers</label>
-<input type="search" id="search" class="map-search-input" placeholder="Search food, shelter, showers...">
+<input type="search" id="search" class="map-search-input" placeholder="What do you need? Try 'hungry' or 'a shower'...">
 <button id="voice-btn" class="map-icon-btn" onclick="voiceSearch()" aria-label="Voice search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></button>
 <button class="map-icon-btn" onclick="showUserLocation(true)" aria-label="Use my location"><svg class="ic" width="20" height="20" aria-hidden="true"><use href="#haven-map-pin"/></svg></button>
 </div>
@@ -187,7 +192,7 @@
 <div class="view-head"><h2>Places</h2></div>
 <div class="search-row">
 <label class="visually-hidden" for="pt-search">Search places</label>
-<input type="search" id="pt-search" class="field flex1" placeholder="Search places..." oninput="renderPlacesTab()" aria-label="Search places">
+<input type="search" id="pt-search" class="field flex1" placeholder="What do you need? Try 'hungry' or 'a shower'..." oninput="renderPlacesTab()" aria-label="Search places">
 <select id="pt-sort" class="field" onchange="renderPlacesTab()" aria-label="Sort places"><option value="def">Default</option><option value="az">A–Z</option><option value="near">Nearest</option></select>
 </div>
 <div id="pt-filters" class="chip-row"></div>
@@ -203,6 +208,7 @@
 <div class="hero-sub">Free, confidential, 24/7</div>
 <div class="btn-row center">
 <a href="tel:988" class="btn-white">📞 988 Crisis</a>
+<a href="sms:988" class="btn-white-ghost">Text 988</a>
 <a href="tel:211" class="btn-white-ghost">📞 211 Help</a>
 </div>
 </div>
@@ -357,9 +363,9 @@
 <div id="sheet-overlay" onclick="if(event.target===this)closeSheet()"><div id="sheet"><button id="sheet-close" onclick="closeSheet()" aria-label="Close">✕</button><div id="sheet-body"></div></div></div>
 <div id="peek"><div id="peek-content"></div></div>
 
-<script src="vendor/vendor.js?v=1792706693"></script>
-<script src="data.js?v=1792706693"></script>
-<script src="bundle-core.js?v=1792706693"></script>
+<script src="vendor/vendor.js?v=1792749037"></script>
+<script src="data.js?v=1792749037"></script>
+<script src="bundle-core.js?v=1792749037"></script>
 <script>try{document.getElementById("about-ver").textContent="v"+(typeof HAVEN_BUILD!=="undefined"?HAVEN_BUILD:"?");}catch(e){}</script>
 </body>
 </html>

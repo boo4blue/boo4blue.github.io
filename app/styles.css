@@ -405,6 +405,7 @@ body.pnames .emoji-pin .pname{display:block;}
 .crisis-title{color:#fff;font-weight:800;font-size:16px;}
 .crisis-tel{background:#fff;color:#dc2626;padding:10px 18px;border-radius:12px;text-decoration:none;font-weight:800;font-size:16px;min-height:44px;display:inline-flex;align-items:center;}
 .crisis-tel[href="tel:211"]{background:rgba(255,255,255,.16);color:#fff;}
+.crisis-tel[href="sms:988"]{background:rgba(255,255,255,.16);color:#fff;}
 .crisis-chips{display:flex;gap:8px;}
 .crisis-chips .chip{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:12px 8px;min-height:44px;}
 .crisis-chips .chip .ic{color:var(--accent);}
@@ -497,6 +498,8 @@ body.pnames .emoji-pin .pname{display:block;}
 .tonight-sub{display:block;font-weight:400;font-size:12px;color:#8fa8d8;}
 .charge-btn{flex:1;padding:12px 10px;background:linear-gradient(135deg,#22330f,#141f08);border:1px solid #65a30d;border-radius:12px;color:#d9f99d;font-size:14px;font-weight:800;cursor:pointer;min-height:52px;}
 .charge-btn:active{transform:scale(.99);}
+.bus-btn{flex:1;padding:12px 10px;background:linear-gradient(135deg,#0f2b33,#081418);border:1px solid #14b8a6;border-radius:12px;color:#a5f3fc;font-size:14px;font-weight:800;cursor:pointer;min-height:52px;}
+.bus-btn:active{transform:scale(.99);}
 .newhere-emoji{font-size:30px;flex:none;}
 .newhere-text{flex:1;display:flex;flex-direction:column;gap:3px;}
 .newhere-text b{color:#ffe9b8;font-size:16px;}
