@@ -12,10 +12,10 @@
 <meta property="og:image" content="https://boo4blue.github.io/app/assets/og-image.png">
 <meta name="theme-color" content="#0d1220">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%230d1220'/%3E%3Cpath%20d='M32%2054s-15-10.8-15-23.4a15%2015%200%200%201%2030%200C47%2043.2%2032%2054%2032%2054z'%20fill='none'%20stroke='%237dd3fc'%20stroke-width='4'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3Ccircle%20cx='32'%20cy='30'%20r='5.5'%20fill='%237dd3fc'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="vendor/leaflet.css?v=1792757923">
-<link rel="stylesheet" href="vendor/MarkerCluster.css?v=1792757923">
-<link rel="stylesheet" href="vendor/MarkerCluster.Default.css?v=1792757923">
-<link rel="stylesheet" href="styles.css?v=1792757923">
+<link rel="stylesheet" href="vendor/leaflet.css?v=1792769813">
+<link rel="stylesheet" href="vendor/MarkerCluster.css?v=1792769813">
+<link rel="stylesheet" href="vendor/MarkerCluster.Default.css?v=1792769813">
+<link rel="stylesheet" href="styles.css?v=1792769813">
 </head>
 <body>
 <svg class="svg-sprite" aria-hidden="true">
@@ -97,6 +97,15 @@
     <path d="M9 18l6-6-6-6"/>
   </symbol>
 
+
+<symbol id="haven-crisis" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.2"/><g transform="translate(12,12) scale(0.52) translate(-12,-12)"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></g></symbol>
+<symbol id="haven-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><circle cx="9" cy="10.5" r="0.6" fill="currentColor" stroke="none"/><circle cx="12.5" cy="10.5" r="0.6" fill="currentColor" stroke="none"/><circle cx="16" cy="10.5" r="0.6" fill="currentColor" stroke="none"/></symbol>
+<symbol id="haven-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+<symbol id="haven-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+<symbol id="haven-battery" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="18" height="12" rx="2" ry="2"/><line x1="23" y1="13" x2="23" y2="11"/></symbol>
+<symbol id="haven-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="5" r="2.5"/><path d="M7.5 19H15a3.5 3.5 0 0 0 0-7H9a3.5 3.5 0 0 1 0-7h7.5" stroke-dasharray="2.5 2.5"/></symbol>
+<symbol id="haven-thermometer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></symbol>
+<symbol id="haven-wifi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></symbol>
 </svg>
 <header class="app-header">
 <button class="wordmark-btn" onclick="openAbout()" aria-label="About Haven FW">
@@ -110,7 +119,15 @@
 <svg class="ic" width="16" height="16" aria-hidden="true"><use href="#haven-map-pin"/></svg>
 <span class="area-name">Fort Wayne, IN</span><span class="area-caret" aria-hidden="true">▾</span>
 </button>
+<button class="gear-btn" onclick="goTab('settings')" aria-label="Settings"><svg class="ic" width="20" height="20" aria-hidden="true"><use href="#haven-settings"/></svg></button>
 </header>
+<div id="slim-crisis" class="slim-crisis" aria-label="Need help now">
+<span class="slim-t">In crisis?</span>
+<a class="slim-b" href="tel:988">Call 988</a>
+<a class="slim-b" href="sms:988">Text 988</a>
+<a class="slim-b" href="tel:211">211</a>
+</div>
+
 
 <div id="filter-panel" class="side-panel">
 <div class="side-panel-head"><h2>Filters</h2><button onclick="toggleFilterPanel()" aria-label="Close filters">×</button></div>
@@ -133,15 +150,17 @@
 <div id="rain-banner"></div>
 <section class="crisis-strip" aria-label="Need help now">
 <div class="crisis-main">
-<span class="crisis-title">🆘 Need help now?</span>
+<span class="crisis-title"><svg class="ic" width="18" height="18" aria-hidden="true"><use href="#haven-crisis"/></svg> Need help now?</span>
 <a class="crisis-tel" href="tel:988" aria-label="Call 988 crisis line">988</a>
 <a class="crisis-tel" href="sms:988" aria-label="Text 988 crisis line">Text 988</a>
 <a class="crisis-tel" href="tel:211" aria-label="Call 211 help line">211</a>
 </div>
+<div class="need-label">Need something now?</div>
 <div class="crisis-chips">
 <button class="chip" onclick="crisisChip('shelter')"><svg class="ic" width="18" height="18" aria-hidden="true"><use href="#haven-shelter"/></svg>Shelter</button>
 <button class="chip" onclick="crisisChip('food')"><svg class="ic" width="18" height="18" aria-hidden="true"><use href="#haven-food"/></svg>Food</button>
 <button class="chip" onclick="crisisChip('day')"><svg class="ic" width="18" height="18" aria-hidden="true"><use href="#haven-shower"/></svg>Showers</button>
+<button class="chip" onclick="goTab('help')"><svg class="ic" width="18" height="18" aria-hidden="true"><use href="#haven-text"/></svg>Talk to someone</button>
 </div>
 <button class="crisis-hint" onclick="goTab('help')">need a bed / interpreter? &#8594;</button>
 <div class="tonight-row">
@@ -164,8 +183,8 @@
 <div id="filters" class="chip-row"></div>
 <div id="recent-searches"></div>
 <div class="btn-row pad-x">
-<button id="finder-btn" class="btn-primary flex1" onclick="openFinder()">🔎 Can I go here?</button>
-<button class="btn-primary flex1" onclick="openFoodDay()">📅 Food by day</button>
+<button id="finder-btn" class="btn-primary flex1" onclick="openFinder()"><svg class="ic" width="18" height="18" aria-hidden="true"><use href="#haven-search"/></svg> Can I go here?</button>
+<button class="btn-primary flex1" onclick="openFoodDay()"><svg class="ic" width="18" height="18" aria-hidden="true"><use href="#haven-clock"/></svg> Food by day</button>
 </div>
 <div id="sortrow"><label for="sort">Sort:</label>
 <select id="sort" class="field"><option value="def" selected>Default</option><option value="az">A–Z</option><option value="near">📍 Nearest me</option></select>
@@ -195,6 +214,7 @@
 <input type="search" id="pt-search" class="field flex1" placeholder="What do you need? Try 'hungry' or 'a shower'..." oninput="renderPlacesTab()" aria-label="Search places">
 <select id="pt-sort" class="field" onchange="renderPlacesTab()" aria-label="Sort places"><option value="def">Default</option><option value="az">A–Z</option><option value="near">Nearest</option></select>
 </div>
+<div id="pt-needs" class="need-row" role="tablist" aria-label="Find by need"></div>
 <div id="pt-filters" class="chip-row"></div>
 <div class="btn-row wrap"><button id="pt-open-toggle" class="btn-danger" onclick="togglePtOpenNow(this)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Open now</button><button id="bathroom-toggle-pt" class="toggle-btn" onclick="toggleBathroom()" aria-label="Show restrooms near me"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Bathrooms</button><button id="kids-toggle-pt" class="toggle-btn" onclick="toggleKidsMode()" aria-label="Show only family-friendly places"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Kids with me</button></div>
 <div id="pt-list"></div>
@@ -202,7 +222,12 @@
 
 <div id="tab-help" class="tab"><div class="content">
 <button class="about-link" onclick="openAbout()">💜 About Haven FW</button>
-<div class="hero-card hero-red">
+<div class="hsub-row" role="tablist" aria-label="Help sections">
+<button class="hsub-chip on" data-hs="now" onclick="helpSub('now',this)">Right now</button>
+<button class="hsub-chip" data-hs="talk" onclick="helpSub('talk',this)">Talk to someone</button>
+<button class="hsub-chip" data-hs="guides" onclick="helpSub('guides',this)">Guides</button>
+</div>
+<div class="helpsub" data-hs="now"><div class="hero-card hero-red">
 <div class="big-emoji">🆘</div>
 <div class="hero-title">Need help now?</div>
 <div class="hero-sub">Free, confidential, 24/7</div>
@@ -212,12 +237,12 @@
 <a href="tel:211" class="btn-white-ghost">📞 211 Help</a>
 </div>
 </div>
-<button class="newhere-card" onclick="openNewHereGuide()"><span class="newhere-emoji">🛏️</span><span class="newhere-text"><b>Never stayed at a shelter before?</b><span class="newhere-sub">What intake is like, what to bring, your rights</span></span><span class="newhere-arrow">›</span></button>
 <button class="newhere-card tonight-card" onclick="openSafeTonight()"><span class="newhere-emoji">🌙</span><span class="newhere-text"><b>Safe Tonight</b><span class="newhere-sub">Shelters open right now, nearest first</span></span><span class="newhere-arrow">›</span></button>
 <button class="newhere-card charge-card" onclick="openChargeSpots()"><span class="newhere-emoji">🔌</span><span class="newhere-text"><b>Charge My Phone</b><span class="newhere-sub">Free charging + WiFi spots near you</span></span><span class="newhere-arrow">›</span></button>
 <a href="tel:911" class="btn-sos">🆘 SOS — Call 911</a>
 <button onclick="openCardPicker()" class="btn-card">🪧 Show a card <span class="btn-sub">— I need a bed / food / interpreter</span></button>
-<div id="hotlines"></div><div id="phonelines"></div>
+</div><div class="helpsub" data-hs="talk" style="display:none"><div id="hotlines"></div><div id="phonelines"></div>
+</div><div class="helpsub" data-hs="guides" style="display:none"><button class="newhere-card" onclick="openNewHereGuide()"><span class="newhere-emoji">🛏️</span><span class="newhere-text"><b>Never stayed at a shelter before?</b><span class="newhere-sub">What intake is like, what to bring, your rights</span></span><span class="newhere-arrow">›</span></button>
 <div class="sec-title">Good to know</div>
 <div class="tip-box"><b>📞 Call ahead.</b> Hours change — a quick call saves a wasted trip.</div>
 <div class="tip-box"><b>🪪 Bring ID if you have it.</b> Most places help without it.</div>
@@ -240,7 +265,7 @@
 </div>
 </div></div>
 
-<div id="tab-saved" class="tab"><div class="content">
+</div></div></div><div id="tab-saved" class="tab"><div class="content">
 <div class="view-head"><h2>Saved Places</h2><p>Your favorite spots, saved on this phone</p></div>
 <div id="saved-list"></div>
 <h2 class="sec-h2">✅ My To-dos</h2>
@@ -363,9 +388,9 @@
 <div id="sheet-overlay" onclick="if(event.target===this)closeSheet()"><div id="sheet"><button id="sheet-close" onclick="closeSheet()" aria-label="Close">✕</button><div id="sheet-body"></div></div></div>
 <div id="peek"><div id="peek-content"></div></div>
 
-<script src="vendor/vendor.js?v=1792757923"></script>
-<script src="data.js?v=1792757923"></script>
-<script src="bundle-core.js?v=1792757923"></script>
+<script src="vendor/vendor.js?v=1792769813"></script>
+<script src="data.js?v=1792769813"></script>
+<script src="bundle-core.js?v=1792769813"></script>
 <script>try{document.getElementById("about-ver").textContent="v"+(typeof HAVEN_BUILD!=="undefined"?HAVEN_BUILD:"?");}catch(e){}</script>
 </body>
 </html>
