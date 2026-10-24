@@ -5,6 +5,7 @@ Renders each line as a sung segment (Bark, CPU), uploads each WAV to
 Gofile immediately (survives a job timeout), prints SEGMENT lines.
 """
 import sys, subprocess, os
+os.environ["TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD"] = "1"  # torch>=2.6 default breaks bark ckpts
 
 lyrics_file, a, b, tag = sys.argv[1], int(sys.argv[2]), int(sys.argv[3]), sys.argv[4]
 lines = [l.strip() for l in open(lyrics_file) if l.strip()]
