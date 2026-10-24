@@ -1,5 +1,0 @@
-{
- "id": "barksing-build3",
- "action": "shell",
- "command": "mkdir -p storage/voices; pip install -q transformers scipy 2>&1 | tail -1; pip install -q git+https://github.com/suno-ai/bark.git 2>&1 | tail -1; pip install -q --force-reinstall torch torchaudio --index-url https://download.pytorch.org/whl/cpu 2>&1 | tail -1; python3 -c \"import torch; print('torch', torch.__version__, 'cuda?', torch.cuda.is_available()); from bark import SAMPLE_RATE; print('bark OK sr=', SAMPLE_RATE)\""
-}
