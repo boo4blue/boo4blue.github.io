@@ -1,0 +1,1 @@
+{"id":"retrigger-ping","action":"shell","command":"echo retrigger-ok && date"}
