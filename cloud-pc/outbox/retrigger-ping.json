@@ -1,0 +1,16 @@
+{
+  "id": "retrigger-ping",
+  "action": "shell",
+  "at": "2026-10-24T14:31:20Z",
+  "job": {
+    "id": "retrigger-ping",
+    "action": "shell",
+    "command": "echo retrigger-ok && date"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "retrigger-ok\nSat Oct 24 14:31:20 UTC 2026\n",
+    "stderr": ""
+  }
+}
