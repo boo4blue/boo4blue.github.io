@@ -1,0 +1,1 @@
+{"action":"shell","command":"ROOT=$(git rev-parse --show-toplevel); python3 \"$ROOT/cloud-pc/tools/refs_fetch.py\"","id":"refs-fetch-1"}
