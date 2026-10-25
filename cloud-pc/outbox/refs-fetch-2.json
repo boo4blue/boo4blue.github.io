@@ -1,0 +1,16 @@
+{
+  "id": "refs-fetch-2",
+  "action": "shell",
+  "at": "2026-10-25T12:01:16Z",
+  "job": {
+    "action": "shell",
+    "command": "ROOT=$(git rev-parse --show-toplevel); python3 \"$ROOT/cloud-pc/tools/refs_fetch.py\"",
+    "id": "refs-fetch-2"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "YTDLP_READY\nREFS_FAIL sueco-paralyzed all clients blocked; last:  manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n\nREFS_FAIL sueco-loser all clients blocked; last:  manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n\nREFS_FAIL stellar-ashes all clients blocked; last:  manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n\nREFS_FAIL stellar-baddream all clients blocked; last:  manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n\nREFS_DONE\n",
+    "stderr": ""
+  }
+}
