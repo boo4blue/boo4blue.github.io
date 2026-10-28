@@ -1,0 +1,16 @@
+{
+  "id": "01-emu-setup3",
+  "action": "shell",
+  "at": "2026-10-28T13:11:13Z",
+  "job": {
+    "id": "01-emu-setup3",
+    "action": "shell",
+    "command": "bash emu/run3.sh setup"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "sdkmanager exit=0\nSETUP_DONE\n",
+    "stderr": ""
+  }
+}

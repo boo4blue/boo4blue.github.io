@@ -1,0 +1,585 @@
+--------- beginning of main
+10-28 13:12:54.178  1042  4275 D SliceBuilder: Creating slice for: com.android.settings.fuelgauge.batterysaver.BatterySaverButtonPreferenceController
+10-28 13:12:54.187  1042  4251 D SlicesIndexer: Slices already indexed - returning.
+10-28 13:12:54.189  1042  4251 D SettingsSliceProvider: Built slice (content://android.settings.slices/action/battery_saver) in: 2
+--------- beginning of system
+10-28 13:12:54.459   522   537 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+10-28 13:12:54.767   471   871 D mediaserver: Time zone APEX ICU file found: /apex/com.android.tzdata/etc/icu/icu_tzdata.dat
+10-28 13:12:54.767   471   871 D mediaserver: I18n APEX ICU file found: /apex/com.android.i18n/etc/icu/icudt72l.dat
+10-28 13:12:54.795   336   368 I netd    : tetherGetStats() -> {[]} <0.36ms>
+10-28 13:12:54.809   336   368 I netd    : bandwidthSetGlobalAlert(2097152) <0.12ms>
+10-28 13:12:54.887   522   549 D OomAdjuster: Not killing cached processes
+10-28 13:12:55.040   826   826 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-28 13:12:55.192  4117  4124 I gs.intelligence: Background young concurrent copying GC freed 90883(4347KB) AllocSpace objects, 6(1356KB) LOS objects, 42% free, 6527KB/11MB, paused 11.624ms,17us total 106.907ms
+10-28 13:12:55.208   522   608 D ActivityManager: freezing 4345 com.google.android.gms.ui
+10-28 13:12:55.550  4331  4445 E MendelPackageState: Failed to fetch after encountering old config
+10-28 13:12:55.550  4331  4445 E MendelPackageState: ctft: Timed out: ctef@d7f1d7b[status=PENDING, info=[delegate=[ctaz@23d3798[status=PENDING, info=[inputFuture=[byrl@2912bf1[status=PENDING, info=[bphe@9953d6]]], exceptionType=[class bnmn], fallback=[chaj@6581657]]]]]]
+10-28 13:12:55.550  4331  4445 E MendelPackageState: 	at tk_trace.PhenotypeApi.getConfigurationSnapshot(Unknown Source:0)
+10-28 13:12:55.550  4331  4445 E MendelPackageState: 	at tk_trace.Fetching experiments for device(Unknown Source:0)
+10-28 13:12:55.550  4331  4445 E MendelPackageState: 	at tk_trace.Application.onCreate(Unknown Source:0)
+10-28 13:12:55.550  4331  4445 E MendelPackageState: 	at tk_trace.Application creation(Unknown Source:0)
+10-28 13:12:55.550  4331  4445 E MendelPackageState: 	at tk_trace.BuglePhoneApplicationBase#attatchBaseContext(Unknown Source:0)
+10-28 13:12:55.550  4331  4445 E MendelPackageState: 	Suppressed: cnqp: 
+10-28 13:12:55.550  4331  4445 E MendelPackageState: 		at tk_trace.PhenotypeApi.getConfigurationSnapshot(unfinished)(Unknown Source:0)
+10-28 13:12:55.564  4331  4421 E AndroidFutures: Failed to obtain initial snapshot
+10-28 13:12:55.564  4331  4421 E AndroidFutures: ctft: Timed out: ctef@89a3544[status=PENDING, info=[delegate=[ctaz@c7b962d[status=PENDING, info=[inputFuture=[byrl@c2ed762[status=PENDING, info=[bphe@d5dc0f3]]], exceptionType=[class bnmn], fallback=[chaj@6581657]]]]]]
+10-28 13:12:55.564  4331  4421 E AndroidFutures: 	at tk_trace.PhenotypeApi.getConfigurationSnapshot(Unknown Source:0)
+10-28 13:12:55.564  4331  4421 E AndroidFutures: 	at tk_trace.Fetching experiments for device(Unknown Source:0)
+10-28 13:12:55.564  4331  4421 E AndroidFutures: 	at tk_trace.StartupAfterPackageReplaced(Unknown Source:0)
+10-28 13:12:55.564  4331  4421 E AndroidFutures: 	at tk_trace.AfterPackageReplaced(Unknown Source:0)
+10-28 13:12:55.564  4331  4421 E AndroidFutures: 	at tk_trace.Startup Listeners(Unknown Source:0)
+10-28 13:12:55.564  4331  4421 E AndroidFutures: 	at tk_trace.Application.onCreate(Unknown Source:0)
+10-28 13:12:55.564  4331  4421 E AndroidFutures: 	at tk_trace.Application creation(Unknown Source:0)
+10-28 13:12:55.564  4331  4421 E AndroidFutures: 	at tk_trace.BuglePhoneApplicationBase#attatchBaseContext(Unknown Source:0)
+10-28 13:12:55.564  4331  4421 E AndroidFutures: 	Suppressed: cnqp: 
+10-28 13:12:55.564  4331  4421 E AndroidFutures: 		at tk_trace.PhenotypeApi.getConfigurationSnapshot(unfinished)(Unknown Source:0)
+10-28 13:12:55.565   398   504 D AudioFlinger: mixer(0x79dc1612e930) throttle end: throttle time(15)
+10-28 13:12:55.574  4331  4412 I SnapshotHandler: Unable to retrieve flag snapshot for com.google.android.libraries.consentverifier#com.google.android.apps.messaging, using defaults.
+10-28 13:12:55.595   398   504 D AudioFlinger: mixer(0x79dc1612e930) throttle end: throttle time(2)
+10-28 13:12:55.660   522   608 D ActivityManager: freezing 3672 com.android.dynsystem:dynsystem
+10-28 13:12:55.661   522   608 D ActivityManager: freezing 3628 com.android.dynsystem
+10-28 13:12:55.661   522   608 D ActivityManager: freezing 2318 com.android.localtransport
+10-28 13:12:55.662   522   608 D ActivityManager: freezing 1860 com.android.keychain
+10-28 13:12:56.142  1711  2625 W YouTubeMusic: Could not register for notifications with InnerTube: 
+10-28 13:12:56.142  1711  2625 W YouTubeMusic: abqx: zvm: Precondition check failed.
+10-28 13:12:56.142  1711  2625 W YouTubeMusic: 	at abqn.apply(Unknown Source:4)
+10-28 13:12:56.142  1711  2625 W YouTubeMusic: 	at yyi.r(PG:5)
+10-28 13:12:56.142  1711  2625 W YouTubeMusic: 	at yyi.b(PG:2)
+10-28 13:12:56.142  1711  2625 W YouTubeMusic: 	at abqp.d(PG:4)
+10-28 13:12:56.142  1711  2625 W YouTubeMusic: 	at agsb.c(PG:63)
+10-28 13:12:56.142  1711  2625 W YouTubeMusic: 	at agsb.j(PG:38)
+10-28 13:12:56.142  1711  2625 W YouTubeMusic: 	at agsb.d(PG:3)
+10-28 13:12:56.142  1711  2625 W YouTubeMusic: 	at agrz.run(Unknown Source:2)
+10-28 13:12:56.142  1711  2625 W YouTubeMusic: 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:487)
+10-28 13:12:56.142  1711  2625 W YouTubeMusic: 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+10-28 13:12:56.142  1711  2625 W YouTubeMusic: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+10-28 13:12:56.142  1711  2625 W YouTubeMusic: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+10-28 13:12:56.142  1711  2625 W YouTubeMusic: 	at smg.run(PG:2)
+10-28 13:12:56.142  1711  2625 W YouTubeMusic: 	at java.lang.Thread.run(Thread.java:1012)
+10-28 13:12:56.142  1711  2625 W YouTubeMusic: 	at snu.run(PG:5)
+10-28 13:12:56.142  1711  2625 W YouTubeMusic: Caused by: zvm: Precondition check failed.
+10-28 13:12:56.142  1711  2625 W YouTubeMusic: 	at abpb.e(PG:5)
+10-28 13:12:56.142  1711  2625 W YouTubeMusic: 	at zhp.f(PG:1)
+10-28 13:12:56.142  1711  2625 W YouTubeMusic: 	at zhp.e(PG:1)
+10-28 13:12:56.142  1711  2625 W YouTubeMusic: 	at zgl.run(PG:19)
+10-28 13:12:56.142  1711  2625 W YouTubeMusic: 	at aosb.run(PG:3)
+10-28 13:12:56.142  1711  2625 W YouTubeMusic: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+10-28 13:12:56.142  1711  2625 W YouTubeMusic: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+10-28 13:12:56.142  1711  2625 W YouTubeMusic: 	at yxr.run(PG:11)
+10-28 13:12:56.142  1711  2625 W YouTubeMusic: 	at java.lang.Thread.run(Thread.java:1012)
+10-28 13:12:56.142  1711  2625 W YouTubeMusic: Caused by: efc
+10-28 13:12:56.142  1711  2625 W YouTubeMusic: 	at zgl.run(PG:13)
+10-28 13:12:56.142  1711  2625 W YouTubeMusic: 	... 5 more
+10-28 13:12:56.275   398   504 D AudioFlinger: mixer(0x79dc1612e930) throttle end: throttle time(3)
+10-28 13:12:56.471  1414  1422 I .gms.persistent: Background young concurrent copying GC freed 241841(14MB) AllocSpace objects, 0(0B) LOS objects, 44% free, 17MB/31MB, paused 34us,20us total 171.756ms
+10-28 13:12:56.630   336   368 I netd    : tetherGetStats() -> {[]} <0.41ms>
+10-28 13:12:56.643   336   368 I netd    : bandwidthSetGlobalAlert(2097152) <0.08ms>
+10-28 13:12:56.648   336   368 I netd    : bandwidthRemoveInterfaceQuota(eth0) <0.56ms>
+10-28 13:12:56.649   336   368 I netd    : bandwidthSetInterfaceQuota(eth0, 9223372036854775807) <0.51ms>
+10-28 13:12:56.820   398   504 D AudioFlinger: mixer(0x79dc1612e930) throttle end: throttle time(6)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: Failed to apply ContentProviderOperation(type=insert uri=content://media/internal/file values={instance_id=null, compilation=null, disc_number=null, duration=10170, is_ringtone=1, album_artist=null, resolution=null, orientation=null, artist=<unknown>, author=null, height=null, is_drm=0, is_audiobook=0, date_modified=1720722121, writer=null, composer=null, _modifier=3, is_recording=0, datetaken=null, mime_type=audio/ogg, is_notification=0, bitrate=192000, cd_track_number=null, xmp=[], year=null, _data=/product/media/audio/ringtones/Perseus.ogg, _size=236343, album=ringtones, genre=null, is_alarm=0, title=Perseus, track=null, width=null, is_music=0, document_id=null, is_podcast=0, capture_framerate=null, num_tracks=1, original_document_id=null, media_type=2} exceptionAllowed)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: android.database.sqlite.SQLiteConstraintException: UNIQUE constraint failed: files._data (code 2067 SQLITE_CONSTRAINT_UNIQUE)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at android.database.sqlite.SQLiteConnection.nativeExecuteForLastInsertedRowId(Native Method)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at android.database.sqlite.SQLiteConnection.executeForLastInsertedRowId(SQLiteConnection.java:961)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at android.database.sqlite.SQLiteSession.executeForLastInsertedRowId(SQLiteSession.java:790)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at android.database.sqlite.SQLiteStatement.executeInsert(SQLiteStatement.java:89)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.util.DatabaseUtils.executeInsert(DatabaseUtils.java:456)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.insert(SQLiteQueryBuilder.java:611)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.lambda$insert$1(SQLiteQueryBuilder.java:575)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.$r8$lambda$z6PmNgi8nEawad46M5nyYc14aRM(SQLiteQueryBuilder.java:0)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder$$ExternalSyntheticLambda4.apply(R8$$SyntheticClass:0)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.DatabaseHelper.runWithTransaction(DatabaseHelper.java:850)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.insert(SQLiteQueryBuilder.java:574)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.lambda$insertAllowingUpsert$20(MediaProvider.java:4846)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.$r8$lambda$A8_bSAcDGkyGiCcvRo57xoMQkf8(MediaProvider.java:0)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider$$ExternalSyntheticLambda39.apply(R8$$SyntheticClass:0)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.DatabaseHelper.runWithTransaction(DatabaseHelper.java:850)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertAllowingUpsert(MediaProvider.java:4836)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertFile(MediaProvider.java:4818)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertInternal(MediaProvider.java:5287)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insert(MediaProvider.java:4980)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at android.content.ContentProviderOperation.applyInternal(ContentProviderOperation.java:375)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at android.content.ContentProviderOperation.apply(ContentProviderOperation.java:347)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at android.content.ContentProvider.applyBatch(ContentProvider.java:2653)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.applyBatch(MediaProvider.java:5339)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at android.content.ContentProvider.applyBatch(ContentProvider.java:2644)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at android.content.ContentResolver.applyBatch(ContentResolver.java:2246)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.applyPending(ModernMediaScanner.java:938)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.maybeApplyPending(ModernMediaScanner.java:928)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.visitFile(ModernMediaScanner.java:834)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.visitFile(ModernMediaScanner.java:319)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at java.nio.file.Files.walkFileTree(Files.java:2670)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at java.nio.file.Files.walkFileTree(Files.java:2742)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.walkFileTree(ModernMediaScanner.java:435)
+10-28 13:12:56.855  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.runInternal(ModernMediaScanner.java:398)
+10-28 13:12:56.862  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.run(ModernMediaScanner.java:387)
+10-28 13:12:56.862  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner.scanDirectory(ModernMediaScanner.java:246)
+10-28 13:12:56.862  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.scanDirectory(MediaProvider.java:1939)
+10-28 13:12:56.862  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onScanVolume(MediaService.java:204)
+10-28 13:12:56.862  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onScanVolume(MediaService.java:172)
+10-28 13:12:56.862  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onHandleWork(MediaService.java:95)
+10-28 13:12:56.862  1629  2389 W ModernMediaScanner: 	at androidx.core.app.JobIntentService$CommandProcessor.doInBackground(JobIntentService.java:396)
+10-28 13:12:56.862  1629  2389 W ModernMediaScanner: 	at androidx.core.app.JobIntentService$CommandProcessor.doInBackground(JobIntentService.java:387)
+10-28 13:12:56.862  1629  2389 W ModernMediaScanner: 	at android.os.AsyncTask$3.call(AsyncTask.java:394)
+10-28 13:12:56.862  1629  2389 W ModernMediaScanner: 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+10-28 13:12:56.862  1629  2389 W ModernMediaScanner: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+10-28 13:12:56.862  1629  2389 W ModernMediaScanner: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+10-28 13:12:56.862  1629  2389 W ModernMediaScanner: 	at java.lang.Thread.run(Thread.java:1012)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: Failed to apply ContentProviderOperation(type=insert uri=content://media/internal/file values={instance_id=null, compilation=null, disc_number=null, duration=3498, is_ringtone=1, album_artist=null, resolution=null, orientation=null, artist=<unknown>, author=null, height=null, is_drm=0, is_audiobook=0, date_modified=1720722121, writer=null, composer=null, _modifier=3, is_recording=0, datetaken=null, mime_type=audio/ogg, is_notification=0, bitrate=80000, cd_track_number=null, xmp=[], year=null, _data=/product/media/audio/ringtones/CanisMajor.ogg, _size=31133, album=ringtones, genre=null, is_alarm=0, title=Canis Major, track=null, width=null, is_music=0, document_id=null, is_podcast=0, capture_framerate=null, num_tracks=1, original_document_id=null, media_type=2} exceptionAllowed)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: android.database.sqlite.SQLiteConstraintException: UNIQUE constraint failed: files._data (code 2067 SQLITE_CONSTRAINT_UNIQUE)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at android.database.sqlite.SQLiteConnection.nativeExecuteForLastInsertedRowId(Native Method)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at android.database.sqlite.SQLiteConnection.executeForLastInsertedRowId(SQLiteConnection.java:961)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at android.database.sqlite.SQLiteSession.executeForLastInsertedRowId(SQLiteSession.java:790)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at android.database.sqlite.SQLiteStatement.executeInsert(SQLiteStatement.java:89)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.util.DatabaseUtils.executeInsert(DatabaseUtils.java:456)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.insert(SQLiteQueryBuilder.java:611)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.lambda$insert$1(SQLiteQueryBuilder.java:575)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.$r8$lambda$z6PmNgi8nEawad46M5nyYc14aRM(SQLiteQueryBuilder.java:0)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder$$ExternalSyntheticLambda4.apply(R8$$SyntheticClass:0)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.DatabaseHelper.runWithTransaction(DatabaseHelper.java:850)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.insert(SQLiteQueryBuilder.java:574)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.lambda$insertAllowingUpsert$20(MediaProvider.java:4846)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.$r8$lambda$A8_bSAcDGkyGiCcvRo57xoMQkf8(MediaProvider.java:0)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider$$ExternalSyntheticLambda39.apply(R8$$SyntheticClass:0)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.DatabaseHelper.runWithTransaction(DatabaseHelper.java:850)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertAllowingUpsert(MediaProvider.java:4836)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertFile(MediaProvider.java:4818)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertInternal(MediaProvider.java:5287)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insert(MediaProvider.java:4980)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at android.content.ContentProviderOperation.applyInternal(ContentProviderOperation.java:375)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at android.content.ContentProviderOperation.apply(ContentProviderOperation.java:347)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at android.content.ContentProvider.applyBatch(ContentProvider.java:2653)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.applyBatch(MediaProvider.java:5339)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at android.content.ContentProvider.applyBatch(ContentProvider.java:2644)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at android.content.ContentResolver.applyBatch(ContentResolver.java:2246)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.applyPending(ModernMediaScanner.java:938)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.maybeApplyPending(ModernMediaScanner.java:928)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.visitFile(ModernMediaScanner.java:834)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.visitFile(ModernMediaScanner.java:319)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at java.nio.file.Files.walkFileTree(Files.java:2670)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at java.nio.file.Files.walkFileTree(Files.java:2742)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.walkFileTree(ModernMediaScanner.java:435)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.runInternal(ModernMediaScanner.java:398)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.run(ModernMediaScanner.java:387)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner.scanDirectory(ModernMediaScanner.java:246)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.scanDirectory(MediaProvider.java:1939)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onScanVolume(MediaService.java:204)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onScanVolume(MediaService.java:172)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onHandleWork(MediaService.java:95)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at androidx.core.app.JobIntentService$CommandProcessor.doInBackground(JobIntentService.java:396)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at androidx.core.app.JobIntentService$CommandProcessor.doInBackground(JobIntentService.java:387)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at android.os.AsyncTask$3.call(AsyncTask.java:394)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+10-28 13:12:56.868  1629  2389 W ModernMediaScanner: 	at java.lang.Thread.run(Thread.java:1012)
+10-28 13:12:56.870   522   532 I system_server: Background young concurrent copying GC freed 777222(21MB) AllocSpace objects, 13(2796KB) LOS objects, 46% free, 26MB/49MB, paused 70us,6.914ms total 173.759ms
+10-28 13:12:57.120  1480  3892 E WorkSourceUtil: Could not find package: com.google.android.gms.westworld
+10-28 13:12:57.244   522   608 D ActivityManager: freezing 1711 com.google.android.apps.youtube.music
+10-28 13:12:57.657  2453  3334 I HttpGrpcBindableService: [pfd-write] DOWNLOAD COMPLETE: Downloaded 38498810 bytes from URL [https://storage.googleapis.com/captions/aiai-en-US-v3003.zip].
+10-28 13:12:57.662  1632  2916 I AstreaHttpConnection: Download completed for url [https://storage.googleapis.com/captions/aiai-en-US-v3003.zip].
+10-28 13:12:57.673  1632  2424 I SP.AiAi : Download stopped: captions_i18n_v0_en-US:asr_en-US_v3003, succeeded, size: 38498810
+10-28 13:12:57.685  2453  2909 I HttpGrpcBindableService: Downloading requested for URL 'https://storage.googleapis.com/captions/sound_recognition_v1.zip'
+10-28 13:12:57.708  2453  2909 I HttpGrpcBindableService: Responding with header information for URL 'https://storage.googleapis.com/captions/sound_recognition_v1.zip'
+10-28 13:12:57.711  1632  2916 I AstreaHttpConnection: Started download from url='https://storage.googleapis.com/captions/sound_recognition_v1.zip'
+10-28 13:12:57.907  1632  2424 I SP.AiAi : Scheduling: download stopped, 0 started, 0 paused, 0 scheduled, 7 pending: manifests:spelling_correction-22110320 {W:b:I:l, bg}, kg_collections_table:collections_table_main_21980965fbd997111d89f86c16e9e090 {W:b:u:l, bg}, actions-ranking-table:table_5f787033cc44fc7a8804e0030b2bf848 {W:b:u:l, bg}, manifests:text-classifier-annotator-272525175 {W:b:u:l, bg}, manifests:text-classifier-actions-1140547708 {W:b:u:l, bg}, manifests:text-classifier-langid-1941001461 {W:b:u:l, bg}, captions_i18n_v0_mandatory:sound_recognition_v1 @ {W:b:u:l, bg}
+10-28 13:12:57.954   398   504 D AudioFlinger: mixer(0x79dc1612e930) throttle end: throttle time(6)
+10-28 13:12:58.418  2453  3334 I HttpGrpcBindableService: [pfd-write] DOWNLOAD COMPLETE: Downloaded 2565038 bytes from URL [https://storage.googleapis.com/captions/sound_recognition_v1.zip].
+10-28 13:12:58.443  1632  2916 I AstreaHttpConnection: Download completed for url [https://storage.googleapis.com/captions/sound_recognition_v1.zip].
+10-28 13:12:58.510   336   368 I netd    : tetherGetStats() -> {[]} <0.43ms>
+10-28 13:12:58.536   336   368 I netd    : bandwidthSetGlobalAlert(2097152) <0.12ms>
+10-28 13:12:58.698  1632  2424 I SP.AiAi : <==== Finishing job {W:b:u:l, bg}, 25644 ms. elapsed since start
+10-28 13:12:58.698  1632  2424 I SP.AiAi : Download stopped: captions_i18n_v0_mandatory:sound_recognition_v1, succeeded, size: 2565038
+10-28 13:12:58.902  1632  2424 I SP.AiAi : Scheduling job with delay of 0s for {W:b:I:l, bg}, 1 candidates
+10-28 13:12:58.970  3489  3575 E androidemu: Logging hang event. Number of tasks already hung: 0
+10-28 13:12:58.971  3489  3575 E androidemu: Metadata:
+10-28 13:12:58.971  3489  3575 E androidemu: 	 file: device/generic/goldfish-opengl/system/vulkan_enc/VkEncoder.cpp
+10-28 13:12:58.971  3489  3575 E androidemu: 	 function: vkWaitForFences
+10-28 13:12:58.971  3489  3575 E androidemu: 	 line: 4746
+10-28 13:12:58.971  3489  3575 E androidemu: 	 msg: vkWaitForFences in VkEncoder
+10-28 13:12:58.972  3489  3575 E androidemu: 	 thread: 3578 (0x00000dfa)
+10-28 13:12:58.972  3489  3575 E androidemu: 	 process name: com.onion.deathcart
+10-28 13:12:58.972  3489  3575 E androidemu: 	 Additional information:
+10-28 13:12:58.972  3489  3575 E androidemu: 	 	 seqno: 27147
+10-28 13:12:58.972  3489  3575 E androidemu: 	 	 packetSize: 44
+10-28 13:12:58.972  3489  3575 E androidemu: 	 	 packetContents:  47 4E 00 00 2C 00 00 00 0B 6A 00 00 02 00 00 00 02 00 03 00 01 00 00 00 0E 00 00 00 02 00 17 00 01 00 00 00 FF FF FF FF FF FF FF FF
+10-28 13:12:58.972  3489  3575 E androidemu: HealthMonitor: Number of unresponsive tasks increased: 0 -> 1
+10-28 13:12:59.007  1632  2424 I SP.AiAi : Scheduling job with delay of 0s for {W:b:u:l, bg}, 5 candidates
+10-28 13:12:59.033  1632  1632 I SP.AiAi : ====> Starting job {W:b:u:l, bg}
+10-28 13:12:59.205   522   601 D ActivityManager: sync unfroze 1781 com.google.android.youtube for 6
+10-28 13:12:59.407   522   882 D ConnectivityService: requestNetwork for uid/pid:10139/1781 activeRequest: null callbackRequest: 121 [NetworkRequest [ REQUEST id=122, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10139 RequestorUid: 10139 RequestorPkg: com.google.android.youtube UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+10-28 13:12:59.411   522   746 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=122, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10139 RequestorUid: 10139 RequestorPkg: com.google.android.youtube UnderlyingNetworks: Null] ]
+10-28 13:12:59.411   522   746 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=122, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10139 RequestorUid: 10139 RequestorPkg: com.google.android.youtube UnderlyingNetworks: Null] ]
+10-28 13:12:59.411   522   746 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=122, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10139 RequestorUid: 10139 RequestorPkg: com.google.android.youtube UnderlyingNetworks: Null] ]
+10-28 13:12:59.411   522   753 D ConnectivityService: NetReassign [122 : null → 101] [c 1] [a 0] [i 1]
+10-28 13:12:59.412   522   746 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=122, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10139 RequestorUid: 10139 RequestorPkg: com.google.android.youtube UnderlyingNetworks: Null] ]
+10-28 13:12:59.554  1632  2424 I SP.AiAi : Scheduling: download stopped, 0 started, 0 paused, 6 scheduled, 6 pending: manifests:spelling_correction-22110320 * {W:b:I:l, bg}, kg_collections_table:collections_table_main_21980965fbd997111d89f86c16e9e090 * {W:b:u:l, bg}, actions-ranking-table:table_5f787033cc44fc7a8804e0030b2bf848 * {W:b:u:l, bg}, manifests:text-classifier-annotator-272525175 * {W:b:u:l, bg}, manifests:text-classifier-actions-1140547708 * {W:b:u:l, bg}, manifests:text-classifier-langid-1941001461 * {W:b:u:l, bg}
+10-28 13:13:00.128   522   550 D OomAdjuster: Not killing cached processes
+10-28 13:13:00.309   826   888 D EGL_emulation: app_time_stats: avg=15139.25ms min=15139.25ms max=15139.25ms count=1
+10-28 13:13:00.313  1632  2142 I AiAiEcho: Predicting[0]: 
+10-28 13:13:00.313  1632  2142 I AiAiEcho: EchoTargets: 
+10-28 13:13:00.313  1632  2142 I AiAiEcho: Filtered by AiAi flag check: 
+10-28 13:13:00.313  1632  2142 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-28 13:13:00.314  1632  2142 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-28 13:13:00.330   826   826 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-28 13:13:00.456   522   601 D ActivityManager: sync unfroze 3795 com.google.android.configupdater for 6
+10-28 13:13:00.460   522   608 D ActivityManager: freezing 4699 com.google.android.apps.messaging:rcs
+10-28 13:13:00.507   522   536 W JobScheduler: Job didn't exist in JobStore: f484051 #u0a129/1 com.google.android.configupdater/.MainJobService
+10-28 13:13:00.608  3795  4850 I ConfigUpdater: Update started
+10-28 13:13:00.717  1632  2424 I SP.AiAi : Scheduling job with delay of 0s for {W:b:I:l, bg}, 1 candidates
+10-28 13:13:00.797   522  2155 D CompatibilityChangeReporter: Compat change id reported: 271850009; UID 10086; state: ENABLED
+10-28 13:13:00.807   522  2155 D ConnectivityService: requestNetwork for uid/pid:1000/522 asUid: 10129 activeRequest: null callbackRequest: 123 [NetworkRequest [ REQUEST id=124, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10129 RequestorUid: 1000 RequestorPkg: android UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+10-28 13:13:00.812   522   746 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=124, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10129 RequestorUid: 1000 RequestorPkg: android UnderlyingNetworks: Null] ]
+10-28 13:13:00.816   522   746 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=124, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10129 RequestorUid: 1000 RequestorPkg: android UnderlyingNetworks: Null] ]
+10-28 13:13:00.816   522   746 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=124, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10129 RequestorUid: 1000 RequestorPkg: android UnderlyingNetworks: Null] ]
+10-28 13:13:00.817   522   746 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=124, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10129 RequestorUid: 1000 RequestorPkg: android UnderlyingNetworks: Null] ]
+10-28 13:13:00.817   522   753 D ConnectivityService: NetReassign [124 : null → 101] [c 0] [a 0] [i 7]
+10-28 13:13:00.861  3795  4850 I ConfigUpdater: Update started
+10-28 13:13:00.879  1480  3699 I Pay     : Device does not support HCE. [CONTEXT service_id=198 ]
+10-28 13:13:00.883  1414  4672 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.pay.gcmtask.PayGcmTaskService started execution. cause:4 exec_start_elapsed_seconds: 104 [CONTEXT service_id=218 ]
+10-28 13:13:00.907  2035  4851 D DownloadManager: [1] Starting
+10-28 13:13:00.957  1414  1422 I .gms.persistent: Background young concurrent copying GC freed 220836(13MB) AllocSpace objects, 0(0B) LOS objects, 37% free, 19MB/31MB, paused 34us,21us total 711.095ms
+10-28 13:13:00.987  1414  4405 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.pay.gcmtask.PayGcmTaskService finished executing. cause:4 result: 2 elapsed_millis: 406 uptime_millis: 406 exec_start_elapsed_seconds: 104 [CONTEXT service_id=218 ]
+10-28 13:13:01.040   336  4852 I resolv  : GetAddrInfoHandler::run: {101 983141 101 983141 10086 0}
+10-28 13:13:01.056   336  4854 I resolv  : res_nmkquery: (QUERY, IN, A)
+10-28 13:13:01.056   336  4854 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0x7e6ebe66e630
+10-28 13:13:01.057   336  4854 I resolv  : doQuery: rcode=0, ancount=8, return value=161
+10-28 13:13:01.057   336  4853 I resolv  : res_nmkquery: (QUERY, IN, AAAA)
+10-28 13:13:01.058   336  4853 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0x7e6ece673b50
+10-28 13:13:01.058   336  4853 I resolv  : doQuery: rcode=0, ancount=8, return value=257
+10-28 13:13:01.059  2035  4851 D TrafficStats: tagSocket(76) with statsTag=0xffffff01, statsUid=10129
+10-28 13:13:01.084  2035  4856 D DownloadManager: [2] Starting
+10-28 13:13:01.086  1632  2424 I SP.AiAi : Scheduling: job start ({W:b:u:l, bg}), 5 started, 0 paused, 1 scheduled, 6 pending: manifests:spelling_correction-22110320 * {W:b:I:l, bg}, kg_collections_table:collections_table_main_21980965fbd997111d89f86c16e9e090 @ * {W:b:u:l, bg}, actions-ranking-table:table_5f787033cc44fc7a8804e0030b2bf848 @ * {W:b:u:l, bg}, manifests:text-classifier-annotator-272525175 @ * {W:b:u:l, bg}, manifests:text-classifier-actions-1140547708 @ * {W:b:u:l, bg}, manifests:text-classifier-langid-1941001461 @ * {W:b:u:l, bg}
+10-28 13:13:01.169   522   608 D ActivityManager: freezing 3904 com.google.android.rkpdapp
+10-28 13:13:01.277  2035  4856 D TrafficStats: tagSocket(80) with statsTag=0xffffff01, statsUid=10129
+10-28 13:13:01.309  2035  4851 D DownloadManager: [1] Finished with status SUCCESS
+10-28 13:13:01.441  2035  4859 D DownloadManager: [3] Starting
+10-28 13:13:01.502  2035  4859 D TrafficStats: tagSocket(79) with statsTag=0xffffff01, statsUid=10129
+10-28 13:13:01.604  1480  1480 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.ocr.service.internal.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsInternalApiService }
+10-28 13:13:01.618  1632  2424 I SP.AiAi : Requesting download of URL https://gstatic.com/matchmaker/kg_collections_table/21051103/collections_table_main_21980965fbd997111d89f86c16e9e090.zip to collections_table_main_21980965fbd997111d89f86c16e9e090.zip.fetched (constraints: W:b:u:l)
+10-28 13:13:01.624  1632  2424 I SP.AiAi : Requesting download of URL https://gstatic.com/matchmaker/kg_actions_ranking_table/211005/table_5f787033cc44fc7a8804e0030b2bf848.zip to table_5f787033cc44fc7a8804e0030b2bf848.zip.fetched (constraints: W:b:u:l)
+10-28 13:13:01.630  1480  1523 I GCM-GMS : Registering GMS for direct boot.
+10-28 13:13:01.634  1414  4672 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.gcm.gmsproc.GcmInGmsTaskService started execution. cause:5 exec_start_elapsed_seconds: 104 [CONTEXT service_id=218 ]
+10-28 13:13:01.669   159  4021 I keystore2: system/security/keystore2/src/watchdog.rs:319 - Watchdog thread idle -> terminating. Have a great day.
+10-28 13:13:01.688  2453  2909 I HttpGrpcBindableService: Downloading requested for URL 'https://gstatic.com/matchmaker/kg_collections_table/21051103/collections_table_main_21980965fbd997111d89f86c16e9e090.zip'
+10-28 13:13:01.696  1632  2424 I SP.AiAi : Requesting download of URL https://gstatic.com/matchmaker/tclib_models/annotator/v803/en/superpacks_manifest.zip to text-classifier-annotator-272525175.zip.fetched (constraints: W:b:u:l)
+10-28 13:13:01.707  2453  2909 I HttpGrpcBindableService: Responding with header information for URL 'https://gstatic.com/matchmaker/kg_collections_table/21051103/collections_table_main_21980965fbd997111d89f86c16e9e090.zip'
+10-28 13:13:01.708  2453  3334 I HttpGrpcBindableService: [pfd-write] DOWNLOAD COMPLETE: Downloaded 613 bytes from URL [https://gstatic.com/matchmaker/kg_collections_table/21051103/collections_table_main_21980965fbd997111d89f86c16e9e090.zip].
+10-28 13:13:01.709  1632  2916 I AstreaHttpConnection: Started download from url='https://gstatic.com/matchmaker/kg_collections_table/21051103/collections_table_main_21980965fbd997111d89f86c16e9e090.zip'
+10-28 13:13:01.711  1632  2916 I AstreaHttpConnection: Download completed for url [https://gstatic.com/matchmaker/kg_collections_table/21051103/collections_table_main_21980965fbd997111d89f86c16e9e090.zip].
+10-28 13:13:01.711  1632  2424 I SP.AiAi : Requesting download of URL https://gstatic.com/matchmaker/tclib_models/actions/v104/en-us/superpacks_manifest.zip to text-classifier-actions-1140547708.zip.fetched (constraints: W:b:u:l)
+10-28 13:13:01.712  1632  2424 I SP.AiAi : Requesting download of URL https://gstatic.com/matchmaker/tclib_models/langid/v1/superpacks_manifest.zip to text-classifier-langid-1941001461.zip.fetched (constraints: W:b:u:l)
+10-28 13:13:01.807  2035  4856 D DownloadManager: [2] Finished with status SUCCESS
+10-28 13:13:01.944  2035  4859 D DownloadManager: [3] Finished with status SUCCESS
+10-28 13:13:02.031  2035  4863 D DownloadManager: [4] Starting
+10-28 13:13:02.051  2035  4863 D TrafficStats: tagSocket(76) with statsTag=0xffffff01, statsUid=10129
+10-28 13:13:02.076  2453  2909 I HttpGrpcBindableService: Downloading requested for URL 'https://gstatic.com/matchmaker/kg_actions_ranking_table/211005/table_5f787033cc44fc7a8804e0030b2bf848.zip'
+10-28 13:13:02.090  2453  2909 I HttpGrpcBindableService: Responding with header information for URL 'https://gstatic.com/matchmaker/kg_actions_ranking_table/211005/table_5f787033cc44fc7a8804e0030b2bf848.zip'
+10-28 13:13:02.090  2453  3334 I HttpGrpcBindableService: [pfd-write] DOWNLOAD COMPLETE: Downloaded 309 bytes from URL [https://gstatic.com/matchmaker/kg_actions_ranking_table/211005/table_5f787033cc44fc7a8804e0030b2bf848.zip].
+10-28 13:13:02.100  1632  2916 I AstreaHttpConnection: Started download from url='https://gstatic.com/matchmaker/kg_actions_ranking_table/211005/table_5f787033cc44fc7a8804e0030b2bf848.zip'
+10-28 13:13:02.101  1632  2916 I AstreaHttpConnection: Download completed for url [https://gstatic.com/matchmaker/kg_actions_ranking_table/211005/table_5f787033cc44fc7a8804e0030b2bf848.zip].
+10-28 13:13:02.107  2453  2909 I HttpGrpcBindableService: Downloading requested for URL 'https://gstatic.com/matchmaker/tclib_models/annotator/v803/en/superpacks_manifest.zip'
+10-28 13:13:02.122  2453  2909 I HttpGrpcBindableService: Responding with header information for URL 'https://gstatic.com/matchmaker/tclib_models/annotator/v803/en/superpacks_manifest.zip'
+10-28 13:13:02.123  2453  3334 I HttpGrpcBindableService: [pfd-write] DOWNLOAD COMPLETE: Downloaded 404 bytes from URL [https://gstatic.com/matchmaker/tclib_models/annotator/v803/en/superpacks_manifest.zip].
+10-28 13:13:02.145  1632  2916 I AstreaHttpConnection: Started download from url='https://gstatic.com/matchmaker/tclib_models/annotator/v803/en/superpacks_manifest.zip'
+10-28 13:13:02.158  1632  2916 I AstreaHttpConnection: Download completed for url [https://gstatic.com/matchmaker/tclib_models/annotator/v803/en/superpacks_manifest.zip].
+10-28 13:13:02.171  3795  4850 I ConfigUpdater: Update downloaded, starting installation
+10-28 13:13:02.215  1632  2424 I SP.AiAi : Download stopped: kg_collections_table:collections_table_main_21980965fbd997111d89f86c16e9e090, succeeded, size: 613
+10-28 13:13:02.239  2453  2909 I HttpGrpcBindableService: Downloading requested for URL 'https://gstatic.com/matchmaker/tclib_models/actions/v104/en-us/superpacks_manifest.zip'
+10-28 13:13:02.260  2453  2909 I HttpGrpcBindableService: Responding with header information for URL 'https://gstatic.com/matchmaker/tclib_models/actions/v104/en-us/superpacks_manifest.zip'
+10-28 13:13:02.262  2453  3334 I HttpGrpcBindableService: [pfd-write] DOWNLOAD COMPLETE: Downloaded 408 bytes from URL [https://gstatic.com/matchmaker/tclib_models/actions/v104/en-us/superpacks_manifest.zip].
+10-28 13:13:02.264  3795  4850 I ConfigUpdater: doneInstall
+10-28 13:13:02.269  2035  4520 V DownloadManager: Deleting /data/data/com.android.providers.downloads/cache/08202014-metadata.txt via provider delete
+10-28 13:13:02.274  1629  4303 W ModernMediaScanner: Failed to visit /data/data/com.android.providers.downloads/cache/08202014-metadata.txt: java.nio.file.NoSuchFileException: /data/data/com.android.providers.downloads/cache/08202014-metadata.txt
+10-28 13:13:02.283  1629  4303 I MediaProvider: Scanned internal due to REASON_DEMAND, found 0 items in 13ms, 0 inserts 0 updates 0 deletes
+10-28 13:13:02.317  1632  2916 I AstreaHttpConnection: Started download from url='https://gstatic.com/matchmaker/tclib_models/actions/v104/en-us/superpacks_manifest.zip'
+10-28 13:13:02.326  1632  2916 I AstreaHttpConnection: Download completed for url [https://gstatic.com/matchmaker/tclib_models/actions/v104/en-us/superpacks_manifest.zip].
+10-28 13:13:02.327   522  4866 I ConfigUpdateInstallReceiver: Couldn't find current metadata, assuming first update
+10-28 13:13:02.327   522  4866 I ConfigUpdateInstallReceiver: Failed to read current content, assuming first update!
+10-28 13:13:02.327   522  4866 I ConfigUpdateInstallReceiver: Found new update, installing...
+10-28 13:13:02.328  2035  4863 D DownloadManager: [4] Finished with status SUCCESS
+10-28 13:13:02.357  1480  1523 W GCM-GMS : Failed to get direct boot token: java.io.IOException: QUOTA_EXCEEDED
+10-28 13:13:02.365   522  4866 I ConfigUpdateInstallReceiver: Installation successful
+10-28 13:13:02.383  1414  2094 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.gcm.gmsproc.GcmInGmsTaskService finished executing. cause:5 result: 3 elapsed_millis: 1014 uptime_millis: 1014 exec_start_elapsed_seconds: 104 [CONTEXT service_id=218 ]
+10-28 13:13:02.392  2453  2909 I HttpGrpcBindableService: Downloading requested for URL 'https://gstatic.com/matchmaker/tclib_models/langid/v1/superpacks_manifest.zip'
+10-28 13:13:02.398  2035  4520 V DownloadManager: Deleting /data/data/com.android.providers.downloads/cache/08202014-pins.txt via provider delete
+10-28 13:13:02.415  2453  2909 I HttpGrpcBindableService: Responding with header information for URL 'https://gstatic.com/matchmaker/tclib_models/langid/v1/superpacks_manifest.zip'
+10-28 13:13:02.420  2453  3334 I HttpGrpcBindableService: [pfd-write] DOWNLOAD COMPLETE: Downloaded 399 bytes from URL [https://gstatic.com/matchmaker/tclib_models/langid/v1/superpacks_manifest.zip].
+10-28 13:13:02.420  1632  2916 I AstreaHttpConnection: Started download from url='https://gstatic.com/matchmaker/tclib_models/langid/v1/superpacks_manifest.zip'
+10-28 13:13:02.430  1632  2916 I AstreaHttpConnection: Download completed for url [https://gstatic.com/matchmaker/tclib_models/langid/v1/superpacks_manifest.zip].
+10-28 13:13:02.432  1632  2424 I SP.AiAi : Scheduling job with delay of 0s for {W:b:I:l, bg}, 1 candidates
+10-28 13:13:02.440  1629  4303 W ModernMediaScanner: Failed to visit /data/data/com.android.providers.downloads/cache/08202014-pins.txt: java.nio.file.NoSuchFileException: /data/data/com.android.providers.downloads/cache/08202014-pins.txt
+10-28 13:13:02.441  1629  4303 I MediaProvider: Scanned internal due to REASON_DEMAND, found 0 items in 28ms, 0 inserts 0 updates 0 deletes
+10-28 13:13:02.463  1632  2424 I SP.AiAi : Scheduling: download stopped, 0 started, 0 paused, 1 scheduled, 5 pending: manifests:spelling_correction-22110320 * {W:b:I:l, bg}, actions-ranking-table:table_5f787033cc44fc7a8804e0030b2bf848 @ {W:b:u:l, bg}, manifests:text-classifier-annotator-272525175 @ {W:b:u:l, bg}, manifests:text-classifier-actions-1140547708 @ {W:b:u:l, bg}, manifests:text-classifier-langid-1941001461 @ {W:b:u:l, bg}
+10-28 13:13:02.466  1632  2424 I SP.AiAi : Download stopped: actions-ranking-table:table_5f787033cc44fc7a8804e0030b2bf848, succeeded, size: 309
+10-28 13:13:02.472  2035  2542 D CompatibilityChangeReporter: Compat change id reported: 150939131; UID 10086; state: ENABLED
+10-28 13:13:02.558  1632  2424 I SP.AiAi : Scheduling job with delay of 0s for {W:b:I:l, bg}, 1 candidates
+10-28 13:13:02.594  3795  4850 I ConfigUpdater: Update downloaded, starting installation
+10-28 13:13:02.606   522  4869 I ConfigUpdateInstallReceiver: Couldn't find current metadata, assuming first update
+10-28 13:13:02.606   522  4869 I ConfigUpdateInstallReceiver: Failed to read current content, assuming first update!
+10-28 13:13:02.606   522  4869 I ConfigUpdateInstallReceiver: Found new update, installing...
+10-28 13:13:02.609  3795  4850 I ConfigUpdater: doneInstall
+10-28 13:13:02.616   522  4869 I ConfigUpdateInstallReceiver: Installation successful
+10-28 13:13:02.618  2035  4520 V DownloadManager: Deleting /data/data/com.android.providers.downloads/cache/09252026-sms-denylist-metadata.txt via provider delete
+10-28 13:13:02.623  1629  4303 W ModernMediaScanner: Failed to visit /data/data/com.android.providers.downloads/cache/09252026-sms-denylist-metadata.txt: java.nio.file.NoSuchFileException: /data/data/com.android.providers.downloads/cache/09252026-sms-denylist-metadata.txt
+10-28 13:13:02.623  1629  4303 I MediaProvider: Scanned internal due to REASON_DEMAND, found 0 items in 1ms, 0 inserts 0 updates 0 deletes
+10-28 13:13:02.629  2035  4520 V DownloadManager: Deleting /data/data/com.android.providers.downloads/cache/09252026-sms-denylist.txt via provider delete
+10-28 13:13:02.635  1629  4303 W ModernMediaScanner: Failed to visit /data/data/com.android.providers.downloads/cache/09252026-sms-denylist.txt: java.nio.file.NoSuchFileException: /data/data/com.android.providers.downloads/cache/09252026-sms-denylist.txt
+10-28 13:13:02.636  1629  4303 I MediaProvider: Scanned internal due to REASON_DEMAND, found 0 items in 0ms, 0 inserts 0 updates 0 deletes
+10-28 13:13:02.730   522   608 D ActivityManager: freezing 4331 com.google.android.apps.messaging
+10-28 13:13:02.867  1632  2424 I SP.AiAi : Scheduling: download stopped, 0 started, 0 paused, 1 scheduled, 4 pending: manifests:spelling_correction-22110320 * {W:b:I:l, bg}, manifests:text-classifier-annotator-272525175 @ {W:b:u:l, bg}, manifests:text-classifier-actions-1140547708 @ {W:b:u:l, bg}, manifests:text-classifier-langid-1941001461 @ {W:b:u:l, bg}
+10-28 13:13:02.904  1632  2424 I SP.AiAi : Download stopped: manifests:text-classifier-annotator-272525175, succeeded, size: 404
+10-28 13:13:02.966  1632  2424 I SP.AiAi : Scheduling job with delay of 0s for {W:b:I:l, bg}, 1 candidates
+10-28 13:13:03.016  1632  2270 I SP.AiAi : Sync for captions_i18n_v0_en-US succeeded in 27160 ms: {added: [asr_en-US_v3003], metadata: false
+10-28 13:13:03.030  1632  2270 I SP.AiAi : Sync for captions_i18n_v0_mandatory succeeded in 27172 ms: {added: [sound_recognition_v1], metadata: false
+10-28 13:13:03.039  1632  2270 I SP.AiAi : GC for 'captions_i18n_v0_en-US' (10) with ttl of 0 ms took 0 ms (0/0/0)
+10-28 13:13:03.039  1632  2270 I SP.AiAi : GC for 'captions_i18n_v0_mandatory' (10) with ttl of 0 ms took 0 ms (0/0/0)
+10-28 13:13:03.040  1632  2270 I AiAiNowPlaying: Superpacks changed. Refreshing FA controller
+10-28 13:13:03.041  1632  2270 I AiAiNowPlaying: Superpacks changed. Refreshing FA controller
+10-28 13:13:03.082  1632  2270 I SP.AiAi : Successfully got manifest for text-classifier-annotator-manifest: manifests:text-classifier-annotator-272525175
+10-28 13:13:03.085  1632  4583 I AiAiCaptions: downloadSuperpack(): Successfully downloaded superpack 'captions_i18n_v0_mandatory' version 20210623.
+10-28 13:13:03.085  1632  3576 I AiAiCaptions: downloadSuperpack(): Successfully downloaded superpack 'captions_i18n_v0_en-US' version 20210623.
+10-28 13:13:03.091  1632  3576 I AiAiTextClassifier: [ResourceDownloaderImpl]: downloadResource(): Successfully loaded embedded superpacks manifest for 'text-classifier-annotator' (download version 272525175), starting to download superpack.
+10-28 13:13:03.094  1632  2793 I AiAiCaptions: ComponentsManagerImpl::update()
+10-28 13:13:03.094  1632  2793 I AiAiCaptions: updateBasicComponents::updateBasicComponents()
+10-28 13:13:03.095  1632  2793 I AiAiCaptions: Would enable com.google.android.apps.miphone.aiai.captions.settingsui.settingsactivity.CaptionsSettingsActivity but already enabled
+10-28 13:13:03.096  1632  2793 I AiAiCaptions: Would enable com.google.android.apps.miphone.aiai.captions.CaptionsSettingsActivity but already enabled
+10-28 13:13:03.096  1632  2793 I AiAiCaptions: Would enable com.google.android.apps.miphone.aiai.captions.downloadservice.CaptionsDownloadService but already enabled
+10-28 13:13:03.101  1632  2424 I SP.AiAi : Scheduling: download stopped, 0 started, 0 paused, 1 scheduled, 3 pending: manifests:spelling_correction-22110320 * {W:b:I:l, bg}, manifests:text-classifier-actions-1140547708 @ {W:b:u:l, bg}, manifests:text-classifier-langid-1941001461 @ {W:b:u:l, bg}
+10-28 13:13:03.102  1632  2270 I SP.AiAi : Syncing text-classifier-annotator (272525175) with slices: [tc_model_a3d2c1298643d7cc3b5703308fd5b2d0], metadata: false
+10-28 13:13:03.107  1632  2424 I SP.AiAi : Download stopped: manifests:text-classifier-actions-1140547708, succeeded, size: 408
+10-28 13:13:03.108  1632  2793 I AiAiCaptions: initialize(): bound to superpacks service.
+10-28 13:13:03.138  1632  2793 I AiAiCaptions: Enable com.google.android.apps.miphone.aiai.captions.CaptionsForegroundService
+10-28 13:13:03.139   522  2155 D PackageManager: Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
+10-28 13:13:03.139   522  2155 D PackageManager: Clear ephemeral installer activity
+10-28 13:13:03.143  1632  2270 I SP.AiAi : Scheduling job with delay of 0s for {W:b:I:l, bg}, 1 candidates
+10-28 13:13:03.154  1632  2793 I AiAiCaptions: initialize(): bound to superpacks service.
+10-28 13:13:03.157  1632  2793 I AiAiCaptions: shouldEnableCaptionsForCalls: isCallCaptioningEnabled is true
+10-28 13:13:03.157  1632  2793 I AiAiCaptions: Enable com.google.android.apps.miphone.aiai.captions.tulip.audiosource.impl.CIS
+10-28 13:13:03.158   522  2308 D PackageManager: Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
+10-28 13:13:03.158   522  2308 D PackageManager: Clear ephemeral installer activity
+10-28 13:13:03.158  1632  2270 I SP.AiAi : Scheduling: download registered, 1 started, 0 paused, 1 scheduled, 3 pending: manifests:spelling_correction-22110320 * {W:b:I:l, bg}, manifests:text-classifier-langid-1941001461 @ {W:b:u:l, bg}, text-classifier-annotator:tc_model_a3d2c1298643d7cc3b5703308fd5b2d0 @ * {W:b:u:l, bg}
+10-28 13:13:03.164  1632  2424 I SP.AiAi : Scheduling job with delay of 0s for {W:b:I:l, bg}, 1 candidates
+10-28 13:13:03.168  1632  2793 I AiAiCaptions: initialize(): bound to superpacks service.
+10-28 13:13:03.178  1480  3896 D TrafficStats: tagSocket(154) with statsTag=0x30001803, statsUid=-1
+10-28 13:13:03.190  1632  2793 I AiAiCaptions: Enable com.google.android.apps.miphone.aiai.captions.CaptionsOnboardingService
+10-28 13:13:03.190   522  2155 D PackageManager: Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
+10-28 13:13:03.190   522  2155 D PackageManager: Clear ephemeral installer activity
+10-28 13:13:03.191  1632  2793 I AiAiCaptions: initialize(): bound to superpacks service.
+10-28 13:13:03.200  1632  2793 I AiAiCaptions: Enable com.google.android.apps.miphone.aiai.captions.notificationbroadcastreceiver.CaptionsNotificationBroadcastReceiver
+10-28 13:13:03.200   522  2155 D PackageManager: Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
+10-28 13:13:03.200   522  2155 D PackageManager: Clear ephemeral installer activity
+10-28 13:13:03.201  1632  2793 I AiAiCaptions: initialize(): bound to superpacks service.
+10-28 13:13:03.203  1632  2793 I AiAiCaptions: Enable com.google.android.apps.miphone.aiai.captions.quicksetting.CaptionsTileService
+10-28 13:13:03.204   522  2155 D PackageManager: Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
+10-28 13:13:03.204   522  2155 D PackageManager: Clear ephemeral installer activity
+10-28 13:13:03.205  1632  2793 I AiAiCaptions: initialize(): bound to superpacks service.
+10-28 13:13:03.212  1632  2793 I AiAiCaptions: setVolumeControlEnabled() changing volume control state to enabled because: volume control behavior is: ENABLE
+10-28 13:13:03.213  1632  2233 I AiAiEcho: Settings changed for uri: content://settings/secure/odi_captions_volume_ui_enabled
+10-28 13:13:03.214  1632  2793 I AiAiCaptions: updateComponents(): Updated components state
+10-28 13:13:03.214  1632  2793 I AiAiCaptions: updateTriggerState(): stopping trigger.
+10-28 13:13:03.214  1632  2793 I AiAiCaptions: stop(): stop is called but CaptionsTriggerImpl already stopped
+10-28 13:13:03.215  1632  2142 I AiAiEcho: Predicting[0]: 
+10-28 13:13:03.216  1632  2142 I AiAiEcho: EchoTargets: 
+10-28 13:13:03.216  1632  2142 I AiAiEcho: Filtered by AiAi flag check: 
+10-28 13:13:03.216  1632  2142 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-28 13:13:03.216  1632  2142 I AiAiEcho: Predicting[0]: 
+10-28 13:13:03.216  1632  2142 I AiAiEcho: EchoTargets: 
+10-28 13:13:03.216  1632  2142 I AiAiEcho: Filtered by AiAi flag check: 
+10-28 13:13:03.216  1632  2142 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-28 13:13:03.217  1632  2142 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+10-28 13:13:03.218  1632  2142 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-28 13:13:03.219   826   826 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-28 13:13:03.236  1632  2424 I SP.AiAi : Scheduling: download stopped, 0 started, 0 paused, 1 scheduled, 3 pending: manifests:spelling_correction-22110320 * {W:b:I:l, bg}, manifests:text-classifier-langid-1941001461 @ {W:b:u:l, bg}, text-classifier-annotator:tc_model_a3d2c1298643d7cc3b5703308fd5b2d0 @ {W:b:u:l, bg}
+10-28 13:13:03.246  1632  2424 I SP.AiAi : Download stopped: manifests:text-classifier-langid-1941001461, succeeded, size: 399
+10-28 13:13:03.273  1632  2270 I SP.AiAi : Successfully got manifest for text-classifier-actions-manifest: manifests:text-classifier-actions-1140547708
+10-28 13:13:03.277  1632  2270 I SP.AiAi : Sync for kg_collections_table succeeded in 42595 ms: {added: [collections_table_main_21980965fbd997111d89f86c16e9e090], metadata: false
+10-28 13:13:03.281  1632  3576 I AiAiTextClassifier: [ResourceDownloaderImpl]: downloadResource(): Successfully loaded embedded superpacks manifest for 'text-classifier-actions' (download version 1140547708), starting to download superpack.
+10-28 13:13:03.283  1632  2424 I SP.AiAi : Scheduling job with delay of 0s for {W:b:I:l, bg}, 1 candidates
+10-28 13:13:03.319  1632  2270 I SP.AiAi : Sync for actions-ranking-table succeeded in 40004 ms: {added: [table_5f787033cc44fc7a8804e0030b2bf848], metadata: false
+10-28 13:13:03.332  1632  2270 I SP.AiAi : GC for 'kg_collections_table' (10) with ttl of 0 ms took 0 ms (0/0/0)
+10-28 13:13:03.333  1632  2270 I SP.AiAi : GC for 'actions-ranking-table' (10) with ttl of 0 ms took 0 ms (0/0/0)
+10-28 13:13:03.339  1632  2270 I AiAiNowPlaying: Superpacks changed. Refreshing FA controller
+10-28 13:13:03.340  1632  2270 I AiAiNowPlaying: Superpacks changed. Refreshing FA controller
+10-28 13:13:03.343  1632  3576 I AiAiTextClassifier: [ResourceDownloaderImpl]: downloadResource(): Successfully downloaded superpack 'kg_collections_table', download version 21051103.
+10-28 13:13:03.355  1632  2424 I SP.AiAi : Scheduling: download stopped, 0 started, 0 paused, 1 scheduled, 2 pending: manifests:spelling_correction-22110320 * {W:b:I:l, bg}, text-classifier-annotator:tc_model_a3d2c1298643d7cc3b5703308fd5b2d0 @ {W:b:u:l, bg}
+10-28 13:13:03.359  1632  4583 I AiAiTextClassifier: [ResourceDownloaderImpl]: downloadResource(): Successfully downloaded superpack 'actions-ranking-table', download version 211005.
+10-28 13:13:03.363  1632  2424 I SP.AiAi : Requesting download of URL https://gstatic.com/matchmaker/tclib_models/annotator/v803/en/tc_model_a3d2c1298643d7cc3b5703308fd5b2d0.zip to tc_model_a3d2c1298643d7cc3b5703308fd5b2d0.zip.fetched (constraints: W:b:u:l)
+10-28 13:13:03.376  1632  2270 I SP.AiAi : Successfully got manifest for text-classifier-langid-manifest: manifests:text-classifier-langid-1941001461
+10-28 13:13:03.380  1632  4583 I AiAiTextClassifier: [ResourceDownloaderImpl]: downloadResource(): Successfully loaded embedded superpacks manifest for 'text-classifier-langid' (download version 1941001461), starting to download superpack.
+10-28 13:13:03.381  2453  2909 I HttpGrpcBindableService: Downloading requested for URL 'https://gstatic.com/matchmaker/tclib_models/annotator/v803/en/tc_model_a3d2c1298643d7cc3b5703308fd5b2d0.zip'
+10-28 13:13:03.398  2453  2909 I HttpGrpcBindableService: Responding with header information for URL 'https://gstatic.com/matchmaker/tclib_models/annotator/v803/en/tc_model_a3d2c1298643d7cc3b5703308fd5b2d0.zip'
+10-28 13:13:03.401  1632  2916 I AstreaHttpConnection: Started download from url='https://gstatic.com/matchmaker/tclib_models/annotator/v803/en/tc_model_a3d2c1298643d7cc3b5703308fd5b2d0.zip'
+10-28 13:13:03.430  1632  2331 I AiAiTextClassifier: [KnowledgeGraphCollectionsTableDownloaderImpl] reading KnowledgeGraphCollectionsTable from path /data/user/0/com.google.android.as/files/superpacks/kg_collections_table/collections_table_main_21980965fbd997111d89f86c16e9e090/collections_table.
+10-28 13:13:03.452  1632  2270 I SP.AiAi : Syncing text-classifier-actions (1140547708) with slices: [tc_model_e202592534082c01f9642f709a627dd9], metadata: false
+10-28 13:13:03.469  1632  2270 I SP.AiAi : Syncing text-classifier-langid (1941001461) with slices: [tc_model_436dc3fd14049b93d75788a8c0cc8eea], metadata: false
+10-28 13:13:03.483   398   504 D AudioFlinger: mixer(0x79dc1612e930) throttle end: throttle time(7)
+10-28 13:13:03.539  2453  3334 I HttpGrpcBindableService: [pfd-write] DOWNLOAD COMPLETE: Downloaded 350999 bytes from URL [https://gstatic.com/matchmaker/tclib_models/annotator/v803/en/tc_model_a3d2c1298643d7cc3b5703308fd5b2d0.zip].
+10-28 13:13:03.540  1632  2916 I AstreaHttpConnection: Download completed for url [https://gstatic.com/matchmaker/tclib_models/annotator/v803/en/tc_model_a3d2c1298643d7cc3b5703308fd5b2d0.zip].
+10-28 13:13:03.550  1632  2270 I SP.AiAi : Scheduling job with delay of 0s for {W:b:I:l, bg}, 1 candidates
+10-28 13:13:03.551  1632  2424 I SP.AiAi : Requesting download of URL https://gstatic.com/matchmaker/tclib_models/actions/v104/en-us/tc_model_e202592534082c01f9642f709a627dd9.zip to tc_model_e202592534082c01f9642f709a627dd9.zip.fetched (constraints: W:b:u:l)
+10-28 13:13:03.554  1632  2270 I SP.AiAi : Scheduling: download registered, 1 started, 0 paused, 1 scheduled, 3 pending: manifests:spelling_correction-22110320 * {W:b:I:l, bg}, text-classifier-annotator:tc_model_a3d2c1298643d7cc3b5703308fd5b2d0 @ {W:b:u:l, bg}, text-classifier-actions:tc_model_e202592534082c01f9642f709a627dd9 @ * {W:b:u:l, bg}
+10-28 13:13:03.558   522   532 I system_server: Background young concurrent copying GC freed 1104524(23MB) AllocSpace objects, 5(80KB) LOS objects, 45% free, 27MB/49MB, paused 63us,71us total 184.529ms
+10-28 13:13:03.572  1632  2270 I SP.AiAi : Scheduling job with delay of 0s for {W:b:I:l, bg}, 1 candidates
+10-28 13:13:03.579  1632  2270 I SP.AiAi : Scheduling: download registered, 1 started, 0 paused, 1 scheduled, 4 pending: manifests:spelling_correction-22110320 * {W:b:I:l, bg}, text-classifier-annotator:tc_model_a3d2c1298643d7cc3b5703308fd5b2d0 @ {W:b:u:l, bg}, text-classifier-actions:tc_model_e202592534082c01f9642f709a627dd9 @ {W:b:u:l, bg}, text-classifier-langid:tc_model_436dc3fd14049b93d75788a8c0cc8eea @ * {W:b:u:l, bg}
+10-28 13:13:03.580  1632  2424 I SP.AiAi : Download stopped: text-classifier-annotator:tc_model_a3d2c1298643d7cc3b5703308fd5b2d0, succeeded, size: 350999
+10-28 13:13:03.597  1632  2424 I SP.AiAi : Scheduling job with delay of 0s for {W:b:I:l, bg}, 1 candidates
+10-28 13:13:03.599  2453  2909 I HttpGrpcBindableService: Downloading requested for URL 'https://gstatic.com/matchmaker/tclib_models/actions/v104/en-us/tc_model_e202592534082c01f9642f709a627dd9.zip'
+10-28 13:13:03.616  2453  2909 I HttpGrpcBindableService: Responding with header information for URL 'https://gstatic.com/matchmaker/tclib_models/actions/v104/en-us/tc_model_e202592534082c01f9642f709a627dd9.zip'
+10-28 13:13:03.620  1632  2916 I AstreaHttpConnection: Started download from url='https://gstatic.com/matchmaker/tclib_models/actions/v104/en-us/tc_model_e202592534082c01f9642f709a627dd9.zip'
+10-28 13:13:03.636  1632  2424 I SP.AiAi : Scheduling: download stopped, 0 started, 0 paused, 1 scheduled, 3 pending: manifests:spelling_correction-22110320 * {W:b:I:l, bg}, text-classifier-actions:tc_model_e202592534082c01f9642f709a627dd9 @ {W:b:u:l, bg}, text-classifier-langid:tc_model_436dc3fd14049b93d75788a8c0cc8eea @ {W:b:u:l, bg}
+10-28 13:13:03.638  1632  2424 I SP.AiAi : Requesting download of URL https://gstatic.com/matchmaker/tclib_models/langid/v1/tc_model_436dc3fd14049b93d75788a8c0cc8eea.zip to tc_model_436dc3fd14049b93d75788a8c0cc8eea.zip.fetched (constraints: W:b:u:l)
+10-28 13:13:03.868   398   504 D AudioFlinger: mixer(0x79dc1612e930) throttle end: throttle time(7)
+10-28 13:13:03.923  1632  2270 I SP.AiAi : Sync for text-classifier-annotator succeeded in 820 ms: {added: [tc_model_a3d2c1298643d7cc3b5703308fd5b2d0], metadata: false
+10-28 13:13:04.021  1632  2270 I SP.AiAi : GC for 'text-classifier-annotator' (10) with ttl of 0 ms took 0 ms (0/0/0)
+10-28 13:13:04.025  1632  2270 I AiAiNowPlaying: Superpacks changed. Refreshing FA controller
+10-28 13:13:04.033  1632  4583 I AiAiTextClassifier: [ResourceDownloaderImpl]: downloadResource(): Successfully downloaded superpack 'text-classifier-annotator', download version 272525175.
+10-28 13:13:04.047  1632  2331 I AiAiTextClassifier: [TcLibModelManagerImpl]: downloadNewModelRecursively: packSet downloaded successfully: https://gstatic.com/matchmaker/tclib_models/annotator/v803/en/superpacks_manifest.zip
+10-28 13:13:04.186   522   609 I RoleService: Granting default roles...
+10-28 13:13:04.194   522   522 V NotificationListeners: enabling notification listener for 0: ComponentInfo{com.google.android.apps.nexuslauncher/com.android.launcher3.notification.NotificationListener}
+10-28 13:13:04.194   522   522 V NotificationListeners: Not registering ComponentInfo{com.google.android.apps.nexuslauncher/com.android.launcher3.notification.NotificationListener} is already bound
+10-28 13:13:04.194   522   522 V NotificationListeners: enabling notification listener for 0: ComponentInfo{com.google.android.as/com.google.android.apps.miphone.aiai.common.notification.service.AiAiNotificationListenerService}
+10-28 13:13:04.194   522   522 V NotificationListeners: Not registering ComponentInfo{com.google.android.as/com.google.android.apps.miphone.aiai.common.notification.service.AiAiNotificationListenerService} is already bound
+10-28 13:13:04.194   522   522 V NotificationAssistants: enabling notification assistant for 0: ComponentInfo{com.google.android.as/com.google.android.apps.miphone.aiai.common.notification.service.AiAiNotificationAssistantService}
+10-28 13:13:04.194   522   522 V NotificationAssistants: Not registering ComponentInfo{com.google.android.as/com.google.android.apps.miphone.aiai.common.notification.service.AiAiNotificationAssistantService} is already bound
+10-28 13:13:04.216   828  1013 E RoleControllerServiceImpl: Default/fallback role holder package doesn't qualify for the role, package: com.google.android.gms.supervision, role: android.app.role.SYSTEM_SUPERVISION
+10-28 13:13:04.221   828  1013 I Role    : com.google.android.gms not qualified for android.app.role.SYSTEM_CALL_STREAMING due to missing RequiredComponent{mIntentFilterData=IntentFilterData{mAction='android.telecom.CallStreamingService', mCategories='[]', mDataScheme='null', mDataType='null'}, mMinTargetSdkVersion=1, mFlags='0', mPermission='android.permission.BIND_CALL_STREAMING_SERVICE', mQueryFlags=0, mMetaData=[]}
+10-28 13:13:04.221   828  1013 E RoleControllerServiceImpl: Default/fallback role holder package doesn't qualify for the role, package: com.google.android.gms, role: android.app.role.SYSTEM_CALL_STREAMING
+10-28 13:13:04.225  1041  1041 D CarrierSvcBindHelper: onPackageModified: com.google.android.as
+10-28 13:13:04.225  1041  1041 D CarrierSvcBindHelper: No carrier app for: 0
+10-28 13:13:04.233  1017  1017 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 13:13:04.233  1017  1017 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 13:13:04.250   828   854 I PermissionControllerServiceImpl: Updating user sensitive for uid 10126
+10-28 13:13:04.271   826   826 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+10-28 13:13:04.271   522   620 I InputReader: Reconfiguring input devices, changes=KEYBOARD_LAYOUTS
+10-28 13:13:04.276   826   885 D StylusManager: Stylus InputDevice changed: 14 virtio_input_multi_touch_11
+10-28 13:13:04.277   826   885 D StylusManager: Stylus InputDevice changed: 13 virtio_input_multi_touch_10
+10-28 13:13:04.279   826   885 D StylusManager: Stylus InputDevice changed: 12 virtio_input_multi_touch_9
+10-28 13:13:04.283   826   885 D StylusManager: Stylus InputDevice changed: 10 virtio_input_multi_touch_7
+10-28 13:13:04.292   828  1013 W Role    : Default holder doesn't have required signing certificate: com.google.android.apps.work.clouddpc:23962F4B43B9857638EA66F4D419518EAE282491ACDA4B94707BD59003C45E58
+10-28 13:13:04.296  1041  1338 D ImsResolver: maybeAddedImsService, packageName: com.google.android.as
+10-28 13:13:04.297   826   885 D StylusManager: Stylus InputDevice changed: 8 virtio_input_multi_touch_5
+10-28 13:13:04.297   826   885 D StylusManager: Stylus InputDevice changed: 9 virtio_input_multi_touch_6
+10-28 13:13:04.297   826   885 D StylusManager: Stylus InputDevice changed: 6 virtio_input_multi_touch_3
+10-28 13:13:04.298   826   885 D StylusManager: Stylus InputDevice changed: 7 virtio_input_multi_touch_4
+10-28 13:13:04.298   826   885 D StylusManager: Stylus InputDevice changed: 5 virtio_input_multi_touch_2
+10-28 13:13:04.298   826   885 D StylusManager: Stylus InputDevice changed: 11 virtio_input_multi_touch_8
+10-28 13:13:04.299   826   885 D StylusManager: Stylus InputDevice changed: 4 virtio_input_multi_touch_1
+10-28 13:13:04.300   522   549 D AmbientContextManagerService: onServiceRemoved
+10-28 13:13:04.300   522   549 D AmbientContextManagerPerUserService: Trying to cancel the remote request. Reason: Service destroyed.
+10-28 13:13:04.300   522   549 I AmbientContextManagerService: Incorrect number of services provided for testing.
+10-28 13:13:04.300   522   549 D AmbientContextManagerService: newServicesListLocked with service name: com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiAmbientContextDetectionService
+10-28 13:13:04.300   522   549 D DefaultAmbientContextManagerPerUserService: Created DefaultAmbientContextManagerPerUserServiceand service type: DEFAULT and service name: com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiAmbientContextDetectionService
+10-28 13:13:04.524  2453  3334 I HttpGrpcBindableService: [pfd-write] DOWNLOAD COMPLETE: Downloaded 2452263 bytes from URL [https://gstatic.com/matchmaker/tclib_models/actions/v104/en-us/tc_model_e202592534082c01f9642f709a627dd9.zip].
+10-28 13:13:04.525  1632  2916 I AstreaHttpConnection: Download completed for url [https://gstatic.com/matchmaker/tclib_models/actions/v104/en-us/tc_model_e202592534082c01f9642f709a627dd9.zip].
+10-28 13:13:04.536  1632  4871 I tflite  : Initialized TensorFlow Lite runtime.
+10-28 13:13:04.558  1632  2331 I AiAiTextClassifier: [TcLibModelManagerImpl]: updateModelsInTextClassifierLib: Done executing updateModels() from path: /data/user/0/com.google.android.as/files/superpacks/text-classifier-annotator/tc_model_a3d2c1298643d7cc3b5703308fd5b2d0/en.fb.
+10-28 13:13:04.559  1632  2424 I SP.AiAi : Download stopped: text-classifier-actions:tc_model_e202592534082c01f9642f709a627dd9, succeeded, size: 2452263
+10-28 13:13:04.572  2453  2909 I HttpGrpcBindableService: Downloading requested for URL 'https://gstatic.com/matchmaker/tclib_models/langid/v1/tc_model_436dc3fd14049b93d75788a8c0cc8eea.zip'
+10-28 13:13:04.602  2453  2909 I HttpGrpcBindableService: Responding with header information for URL 'https://gstatic.com/matchmaker/tclib_models/langid/v1/tc_model_436dc3fd14049b93d75788a8c0cc8eea.zip'
+10-28 13:13:04.604  1632  2916 I AstreaHttpConnection: Started download from url='https://gstatic.com/matchmaker/tclib_models/langid/v1/tc_model_436dc3fd14049b93d75788a8c0cc8eea.zip'
+10-28 13:13:04.621  1632  2424 I SP.AiAi : Scheduling job with delay of 0s for {W:b:I:l, bg}, 1 candidates
+10-28 13:13:04.669  1632  1632 I AiAiEcho: AppFetcherImpl onPackageChanged com.google.android.as.
+10-28 13:13:04.673  1632  2994 I AiAiEcho: AppIndexer Package:[com.google.android.as] UserProfile:[0] Enabled:[true].
+10-28 13:13:04.684  1632  2994 I AiAiEcho: AppFetcherImplV2 updateApps package:[com.google.android.as], userId:[0], reason:[package is updated.].
+10-28 13:13:04.740  2453  3334 I HttpGrpcBindableService: [pfd-write] DOWNLOAD COMPLETE: Downloaded 335528 bytes from URL [https://gstatic.com/matchmaker/tclib_models/langid/v1/tc_model_436dc3fd14049b93d75788a8c0cc8eea.zip].
+10-28 13:13:04.743  1414  1414 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.tapandpay.service.BIND dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiService }
+10-28 13:13:04.755  1632  2916 E AstreaHttpConnection: Service error while downloading from url='https://gstatic.com/matchmaker/tclib_models/langid/v1/tc_model_436dc3fd14049b93d75788a8c0cc8eea.zip'
+10-28 13:13:04.755  1632  2916 E AstreaHttpConnection: qhi: CANCELLED: Client cancelled.
+10-28 13:13:04.755  1632  2916 E AstreaHttpConnection: 	at qhg.i(Unknown Source:2)
+10-28 13:13:04.755  1632  2916 E AstreaHttpConnection: 	at qur.Q(PG:2)
+10-28 13:13:04.755  1632  2916 E AstreaHttpConnection: 	at qkv.a(PG:3)
+10-28 13:13:04.755  1632  2916 E AstreaHttpConnection: 	at qlo.run(PG:2)
+10-28 13:13:04.755  1632  2916 E AstreaHttpConnection: 	at qqt.run(PG:2)
+10-28 13:13:04.755  1632  2916 E AstreaHttpConnection: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+10-28 13:13:04.755  1632  2916 E AstreaHttpConnection: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+10-28 13:13:04.755  1632  2916 E AstreaHttpConnection: 	at java.lang.Thread.run(Thread.java:1012)
+10-28 13:13:04.784  1632  2424 I SP.AiAi : Scheduling: download stopped, 0 started, 0 paused, 1 scheduled, 2 pending: manifests:spelling_correction-22110320 * {W:b:I:l, bg}, text-classifier-langid:tc_model_436dc3fd14049b93d75788a8c0cc8eea @ {W:b:u:l, bg}
+10-28 13:13:04.806  1632  2424 I SP.AiAi : <==== Finishing job {W:b:u:l, bg}, 5774 ms. elapsed since start
+10-28 13:13:04.807  1632  2424 I SP.AiAi : Download stopped: text-classifier-langid:tc_model_436dc3fd14049b93d75788a8c0cc8eea, succeeded, size: 335528
+10-28 13:13:04.846   398   504 D AudioFlinger: mixer(0x79dc1612e930) throttle end: throttle time(5)
+10-28 13:13:04.869  1632  2424 I SP.AiAi : Scheduling job with delay of 0s for {W:b:I:l, bg}, 1 candidates
+10-28 13:13:04.915  1414  4872 I Fitness : OnPackageChangedOperation got intent: Intent { act=android.intent.action.PACKAGE_CHANGED dat=package: flg=0x45000010 pkg=com.google.android.gms cmp=com.google.android.gms/.chimera.PersistentIntentOperationService (has extras) } [CONTEXT service_id=17 ]
+10-28 13:13:04.951  1414  4873 I Fitness : FitCleanupIntentOperation received Intent android.intent.action.PACKAGE_CHANGED [CONTEXT service_id=17 ]
+10-28 13:13:04.956   522   608 D ActivityManager: freezing 3116 com.google.android.gms.unstable
+10-28 13:13:05.003   336   368 I netd    : tetherGetStats() -> {[]} <0.40ms>
+10-28 13:13:05.003   826   826 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-28 13:13:05.013   336   368 I netd    : bandwidthSetGlobalAlert(2097152) <0.10ms>
+10-28 13:13:05.020   336   368 I netd    : bandwidthRemoveInterfaceQuota(eth0) <0.48ms>
+10-28 13:13:05.021   336   368 I netd    : bandwidthSetInterfaceQuota(eth0, 9223372036854775807) <0.33ms>
+10-28 13:13:05.043   336   368 I netd    : bandwidthRemoveInterfaceQuota(eth0) <0.36ms>
+10-28 13:13:05.043   336   368 I netd    : bandwidthSetInterfaceQuota(eth0, 9223372036854775807) <0.36ms>
+10-28 13:13:05.048   522   824 D NetworkStatsObservers: Unregistering RequestInfo from pid/uid:522/1000(android) for DataUsageRequest [ requestId=10, networkTemplate=NetworkTemplate: matchRule=MOBILE, matchSubscriberIds=[310260...], matchWifiNetworkKeys=[], metered=YES, defaultNetwork=NO, thresholdInBytes=3429298 ] accessLevel:3
+10-28 13:13:05.049   522   744 D NetworkStatsObservers: Registering observer for RequestInfo from pid/uid:522/1000(android) for DataUsageRequest [ requestId=11, networkTemplate=NetworkTemplate: matchRule=MOBILE, matchSubscriberIds=[310260...], matchWifiNetworkKeys=[], metered=YES, defaultNetwork=NO, thresholdInBytes=3426063 ] accessLevel:3
+10-28 13:13:05.069   336   368 I netd    : tetherGetStats() -> {[]} <0.31ms>
+10-28 13:13:05.074  1480  1480 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.pay.service.BIND dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsApiService }
+10-28 13:13:05.197  1632  2424 I SP.AiAi : Scheduling: download stopped, 0 started, 0 paused, 1 scheduled, 1 pending: manifests:spelling_correction-22110320 * {W:b:I:l, bg}
+10-28 13:13:05.216  1632  2270 I SP.AiAi : Sync for text-classifier-actions succeeded in 1783 ms: {added: [tc_model_e202592534082c01f9642f709a627dd9], metadata: false
+10-28 13:13:05.231  1632  2270 I SP.AiAi : GC for 'text-classifier-actions' (10) with ttl of 0 ms took 0 ms (0/0/0)
+10-28 13:13:05.231  1632  2270 I AiAiNowPlaying: Superpacks changed. Refreshing FA controller
+10-28 13:13:05.232  1632  4583 I AiAiTextClassifier: [ResourceDownloaderImpl]: downloadResource(): Successfully downloaded superpack 'text-classifier-actions', download version 1140547708.
+10-28 13:13:05.233  1632  2331 I AiAiTextClassifier: [TcLibModelManagerImpl]: downloadNewModelRecursively: packSet downloaded successfully: https://gstatic.com/matchmaker/tclib_models/actions/v104/en-us/superpacks_manifest.zip
+10-28 13:13:05.290  1632  2331 I AiAiTextClassifier: [TcLibModelManagerImpl]: updateModelsInTextClassifierLib: Done executing updateModels() from path: /data/user/0/com.google.android.as/files/superpacks/text-classifier-actions/tc_model_e202592534082c01f9642f709a627dd9/en.model.
+10-28 13:13:05.324  1414  3131 W SQLiteConnectionPool: The connection pool for database '/data/user/0/com.google.android.gms/databases/phenotype.db' has been unable to grant a connection to thread 105 (lowpool[7]) with flags 0x2 for 30.002 seconds.
+10-28 13:13:05.324  1414  3131 W SQLiteConnectionPool: Connections: 0 active, 1 idle, 1 available.
+10-28 13:13:05.355  1632  2270 I SP.AiAi : Sync for text-classifier-langid succeeded in 1923 ms: {added: [tc_model_436dc3fd14049b93d75788a8c0cc8eea], metadata: false
+10-28 13:13:05.372  1632  2270 I SP.AiAi : GC for 'text-classifier-langid' (10) with ttl of 0 ms took 0 ms (0/0/0)
+10-28 13:13:05.372  1632  2270 I AiAiNowPlaying: Superpacks changed. Refreshing FA controller
+10-28 13:13:05.373  1632  4583 I AiAiTextClassifier: [ResourceDownloaderImpl]: downloadResource(): Successfully downloaded superpack 'text-classifier-langid', download version 1941001461.
+10-28 13:13:05.377  1632  2331 I AiAiTextClassifier: [TcLibModelManagerImpl]: downloadNewModelRecursively: packSet downloaded successfully: https://gstatic.com/matchmaker/tclib_models/langid/v1/superpacks_manifest.zip
+10-28 13:13:05.436  1632  2331 I AiAiTextClassifier: [TcLibModelManagerImpl]: updateModelsInTextClassifierLib: Done executing updateModels() from path: /data/user/0/com.google.android.as/files/superpacks/text-classifier-langid/tc_model_436dc3fd14049b93d75788a8c0cc8eea/model.smfb.
+10-28 13:13:06.107   522  2308 D OomAdjuster: Not killing cached processes
+10-28 13:13:06.120  1480  1480 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.chimera.container.moduleinstall.ModuleInstallService.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsApiService }
+10-28 13:13:06.792  1776  2367 W NamedFutures: Timeout future task has been cancelled: 60000 milliseconds
+10-28 13:13:06.797  1776  1776 E A       : Task 255 failed or timed out. Client 7812723796841447 disconnecting from SearchService!
+10-28 13:13:06.797  1776  1776 E A       : java.util.concurrent.CancellationException: Task was cancelled.
+10-28 13:13:06.797  1776  1776 E A       : 	at com.google.common.util.concurrent.d.s(PG:3)
+10-28 13:13:06.797  1776  1776 E A       : 	at com.google.common.util.concurrent.d.get(PG:4)
+10-28 13:13:06.797  1776  1776 E A       : 	at com.google.common.util.concurrent.eb.a(PG:1)
+10-28 13:13:06.797  1776  1776 E A       : 	at com.google.common.util.concurrent.ci.r(PG:2)
+10-28 13:13:06.797  1776  1776 E A       : 	at com.google.common.util.concurrent.cb.run(PG:4)
+10-28 13:13:06.797  1776  1776 E A       : 	at com.google.android.apps.gsa.shared.util.c.a.ba.run(PG:1)
+10-28 13:13:06.797  1776  1776 E A       : 	at android.os.Handler.handleCallback(Handler.java:958)
+10-28 13:13:06.797  1776  1776 E A       : 	at android.os.Handler.dispatchMessage(Handler.java:99)
+10-28 13:13:06.797  1776  1776 E A       : 	at android.os.Looper.loopOnce(Looper.java:205)
+10-28 13:13:06.797  1776  1776 E A       : 	at android.os.Looper.loop(Looper.java:294)
+10-28 13:13:06.797  1776  1776 E A       : 	at android.app.ActivityThread.main(ActivityThread.java:8177)
+10-28 13:13:06.797  1776  1776 E A       : 	at java.lang.reflect.Method.invoke(Native Method)
+10-28 13:13:06.797  1776  1776 E A       : 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+10-28 13:13:06.797  1776  1776 E A       : 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+10-28 13:13:06.798  1776  2817 W SearchServiceCore: Abort, client detached.
+10-28 13:13:06.814  1776  2157 E BgTaskExecutorImpl: EXCLUSIVE background task SEND_GSA_HOME_REQUEST was cancelled.
+10-28 13:13:06.814  1776  2157 E BgTaskExecutorImpl: java.util.concurrent.CancellationException: Task was cancelled.
+10-28 13:13:06.814  1776  2157 E BgTaskExecutorImpl: 	at com.google.common.util.concurrent.d.s(PG:3)
+10-28 13:13:06.814  1776  2157 E BgTaskExecutorImpl: 	at com.google.common.util.concurrent.d.get(PG:4)
+10-28 13:13:06.814  1776  2157 E BgTaskExecutorImpl: 	at com.google.common.util.concurrent.eb.a(PG:1)
+10-28 13:13:06.814  1776  2157 E BgTaskExecutorImpl: 	at com.google.common.util.concurrent.ci.r(PG:2)
+10-28 13:13:06.814  1776  2157 E BgTaskExecutorImpl: 	at com.google.common.util.concurrent.cb.run(PG:4)
+10-28 13:13:06.814  1776  2157 E BgTaskExecutorImpl: 	at com.google.android.apps.gsa.shared.util.c.a.cf.b(PG:1)
+10-28 13:13:06.814  1776  2157 E BgTaskExecutorImpl: 	at com.google.android.apps.gsa.shared.util.c.a.ci.run(PG:1)
+10-28 13:13:06.814  1776  2157 E BgTaskExecutorImpl: 	at com.google.android.libraries.i.ae.run(PG:1)
+10-28 13:13:06.814  1776  2157 E BgTaskExecutorImpl: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+10-28 13:13:06.814  1776  2157 E BgTaskExecutorImpl: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+10-28 13:13:06.814  1776  2157 E BgTaskExecutorImpl: 	at com.google.android.libraries.i.i.run(PG:2)
+10-28 13:13:06.814  1776  2157 E BgTaskExecutorImpl: 	at com.google.android.libraries.i.p.run(PG:4)
+10-28 13:13:06.814  1776  2157 E BgTaskExecutorImpl: 	at java.lang.Thread.run(Thread.java:1012)
+10-28 13:13:06.834   522   811 W JobScheduler: Job didn't exist in JobStore: f0dc47b #u0a132/-151 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.tasks.BackgroundTasksJobService
+10-28 13:13:07.375  4882  4882 W BpBinder: Linking to death on android.gui.ISurfaceComposer but there are no threads (yet?) listening to incoming transactions. See ProcessState::startThreadPool and ProcessState::setThreadPoolMaxThreadCount. Generally you should setup the binder threadpool before other initialization steps.
+10-28 13:13:07.375  4882  4882 W ProcessState: Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+10-28 13:13:07.426   135   135 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-28 13:13:07.429  4882  4883 I Gralloc4: mapper 4.x is not supported
+--------- beginning of kernel
+10-28 13:13:07.572     0     0 I servicemanager: Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest.
+10-28 13:13:07.567   398   504 D AudioFlinger: mixer(0x79dc1612e930) throttle end: throttle time(11)
+10-28 13:13:07.661  1414  1414 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.pseudonymous.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiService }
+10-28 13:13:07.701  1414  1414 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.gmscompliance.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentBoundBrokerService }
+10-28 13:13:07.721   398   504 D AudioFlinger: mixer(0x79dc1612e930) throttle end: throttle time(2)
+10-28 13:13:07.770  1414  1703 I HeterodyneSyncScheduler: Scheduling Phenotype for a PhenotypeSyncImmediately(6, com.google.android.platform.statsd_java_boot) one off with window [1, 2] in seconds [CONTEXT service_id=51 ]
+10-28 13:13:07.813  1414  1703 W bwft    : Succeeded but not registered: com.google.android.gms.time#com.google.android.gms [CONTEXT service_id=51 ]
+10-28 13:13:07.835   398   504 D AudioFlinger: mixer(0x79dc1612e930) throttle end: throttle time(5)
+10-28 13:13:07.967  1414  1703 W bwft    : Succeeded but not registered: com.google.android.gms.trustlet_onbody [CONTEXT service_id=51 ]
+10-28 13:13:07.997  1414  3631 W .gms.persistent: Long monitor contention with owner [com.google.android.gms.chimera.container.intentoperation.PersistentIntentOperationChimeraService-Executor] processing com.google.android.gms.platformconfigurator.PhenotypeConfigurationUpdateListener for action com.google.android.gms.chimera.container.CONTAINER_UPDATED (3583) at void hjm.run()(:com.google.android.gms@231818047@23.18.18 (190800-535401451):3) waiters=0 in void hjm.run() for 50.256s
+10-28 13:13:08.001  1414  3660 W .gms.persistent: Long monitor contention with owner [com.google.android.gms.chimera.container.intentoperation.PersistentIntentOperationChimeraService-Executor] processing com.google.android.gms.platformconfigurator.PhenotypeConfigurationUpdateListener for action com.google.android.gms.chimera.container.CONTAINER_UPDATED (3583) at void hjm.run()(:com.google.android.gms@231818047@23.18.18 (190800-535401451):3) waiters=1 in void hjm.run() for 46.150s
+10-28 13:13:08.010  1414  3631 I NewModuleComplete: Received com.google.android.chimera.IntentOperation.NEW_MODULE(com.google.android.gms.chimera.PersistentIntentOperationService,2,true)
+10-28 13:13:08.030  1480  4874 I NewModuleHelper: Received com.google.android.chimera.container.NEW_MODULE_FINALIZE(2/0): com.google.android.gms.chimera.PersistentIntentOperationService,2,true
+10-28 13:13:08.062   398   504 D AudioFlinger: mixer(0x79dc1612e930) throttle end: throttle time(1)
