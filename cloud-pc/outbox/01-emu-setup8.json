@@ -1,0 +1,16 @@
+{
+  "id": "01-emu-setup8",
+  "action": "shell",
+  "at": "2026-10-28T14:20:28Z",
+  "job": {
+    "id": "01-emu-setup8",
+    "action": "shell",
+    "command": "bash emu/run7.sh setup"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "attempt 1 sdkmanager exit=0\nSDK verified OK on attempt 1\n/home/runner/.cache/cloudpc-models/android-sdk/emulator/emulator\n/home/runner/.cache/cloudpc-models/android-sdk/platform-tools/adb\nSETUP_DONE\n",
+    "stderr": ""
+  }
+}

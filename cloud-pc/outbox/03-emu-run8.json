@@ -1,0 +1,16 @@
+{
+  "id": "03-emu-run8",
+  "action": "shell",
+  "at": "2026-10-28T14:22:19Z",
+  "job": {
+    "id": "03-emu-run8",
+    "action": "shell",
+    "command": "bash emu/run7.sh run"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "gpu=angle_indirect package=com.onion.deathcart\nfetching APK directly\n-rw-r--r-- 1 runner runner 57342883 Oct 28 14:20 /tmp/test.apk\nbooted after ~30s\nboot_completed=1\nscreen=1080x2400\nSuccess\n## Network stats: elapsed time=183ms (0ms mobile, 0ms wifi, 183ms not connected)\n--- pid:\nRUN_DONE\n",
+    "stderr": "* daemon not running; starting now at tcp:5037\n* daemon started successfully\n"
+  }
+}
