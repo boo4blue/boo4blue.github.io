@@ -1,0 +1,16 @@
+{
+  "id": "00-emu-script5",
+  "action": "store",
+  "at": "2026-10-28T13:39:16Z",
+  "job": {
+    "id": "00-emu-script5",
+    "action": "store",
+    "path": "emu/run5.sh",
+    "content_bytes": 3283
+  },
+  "result": {
+    "ok": true,
+    "path": "emu/run5.sh",
+    "bytes": 3283
+  }
+}

@@ -16,7 +16,9 @@ INFO         | Increasing RAM size to 2560MB
 ##  data is being collected by emulator as part of usage statistics.        ##
 ##############################################################################
 INFO         | Guest GLES Driver: Auto (ext controls)
-INFO         | emuglConfig_init: vulkan_mode_selected:swiftshader gles_mode_selected:swiftshader
+ERROR        | gpuChoiceBasedOnGpuOptions: Selected GPU option 'angle_indirect' is not valid, switching to 'auto' mode.
+WARNING      | Your GPU drivers may have a bug. Switching to software rendering.
+INFO         | emuglConfig_init: vulkan_mode_selected:lavapipe gles_mode_selected:swangle
 INFO         | Checking system compatibility:
 INFO         |   Checking: hasSufficientDiskSpace
 INFO         |      Ok: Disk space requirements to run avd: `dc` are met
@@ -25,17 +27,17 @@ INFO         |      Ok: Hardware GPU compatibility checks are not required
 INFO         |   Checking: hasSufficientSystem
 INFO         |      Ok: System requirements to run avd: `dc` are met
 WARNING      | Feature QuickbootFileBacked is disabled due to stability issues, if you really want that, the environment variable ANDROID_EMU_FORCE_QUICKBOOT_FILE_BACKED need to set to 1
-INFO         | Storing crashdata in: /tmp/android-runner/emu-crash-37.2.12.db, detection is enabled for process: 2648
+INFO         | Storing crashdata in: /tmp/android-runner/emu-crash-37.2.12.db, detection is enabled for process: 2433
 INFO         | Initializing gfxstream backend
 INFO         | startOpenglesRendererImpl: gpu info
 INFO         | 
-INFO         | initIcdPaths: ICD set to 'swiftshader', using Swiftshader ICD
-INFO         | Setting ICD filenames for the loader = /home/runner/.cache/cloudpc-models/android-sdk/emulator/lib64/vulkan/vk_swiftshader_icd.json
+INFO         | initIcdPaths: ICD set to 'lavapipe', using Lavapipe ICD
+INFO         | Setting ICD filenames for the loader = /home/runner/.cache/cloudpc-models/android-sdk/emulator/lib64/vulkan/lvp_icd.json
 INFO         | SharedLibrary::open for [/home/runner/.cache/cloudpc-models/android-sdk/emulator/qemu/linux-x86_64/lib64/vulkan/libvulkan.so]
 INFO         | SharedLibrary::open for [/home/runner/.cache/cloudpc-models/android-sdk/emulator/qemu/linux-x86_64/lib64/vulkan/libvulkan.so.1]
 INFO         | SharedLibrary::open for [/home/runner/.cache/cloudpc-models/android-sdk/emulator/lib64/vulkan/libvulkan.so]
 INFO         | Added library: /home/runner/.cache/cloudpc-models/android-sdk/emulator/lib64/vulkan/libvulkan.so
-INFO         | Selecting Vulkan device: SwiftShader Device (Subzero), Version: 1.3.0
+INFO         | Selecting Vulkan device: llvmpipe (LLVM 21.0.0, 256 bits), Version: 1.4.318
 INFO         | Using Vulkan externalMemoryMode: OpaqueFd for VkEmulation
 INFO         | Format VK_FORMAT_G10X6_B10X6R10X6_2PLANE_422_UNORM_3PACK16 does not support YCbCr sampler conversion
 INFO         | SharedLibrary::open for [libX11]
@@ -58,13 +60,15 @@ INFO         |     guestVulkanOnly: false
 INFO         |     useDedicatedAllocations: false
 INFO         |     guestVulkanMaxApiVersion: 1.3.0
 INFO         |     enableProtectedMemoryEmulation: false
-INFO         | Graphics Adapter Vendor Google (Google Inc.)
-INFO         | Graphics Adapter Android Emulator OpenGL ES Translator (Google SwiftShader)
-INFO         | Graphics API Version OpenGL ES 3.0 (OpenGL ES 3.0 SwiftShader 4.0.0.1)
-INFO         | Graphics API Extensions GL_OES_EGL_sync GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_depth24 GL_OES_depth32 GL_OES_element_index_uint GL_OES_texture_float GL_OES_texture_float_linear GL_OES_compressed_paletted_texture GL_OES_compressed_ETC1_RGB8_texture GL_OES_depth_texture GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_packed_depth_stencil GL_OES_vertex_half_float GL_OES_standard_derivatives GL_OES_texture_npot GL_OES_rgb8_rgba8 GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_texture_format_BGRA8888 GL_APPLE_texture_format_BGRA8888 
+INFO         | Graphics Adapter Vendor Google (Google Inc. (Mesa))
+INFO         | Graphics Adapter Android Emulator OpenGL ES Translator (ANGLE (Mesa, Vulkan 1.4.318 (llvmpipe (LLVM 21.0.0 256 bits) (0x00000000)), llvmpipe-25.2.4))
+INFO         | Graphics API Version OpenGL ES 3.0 (OpenGL ES 3.1.0 (ANGLE 2.1.17841 git hash: 5fa2e61da947))
+INFO         | Graphics API Extensions GL_OES_EGL_sync GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_depth24 GL_OES_depth32 GL_OES_element_index_uint GL_OES_texture_float GL_OES_texture_float_linear GL_OES_compressed_paletted_texture GL_OES_compressed_ETC1_RGB8_texture GL_OES_depth_texture GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_packed_depth_stencil GL_OES_vertex_half_float GL_OES_standard_derivatives GL_OES_texture_npot GL_OES_rgb8_rgba8 GL_OVR_multiview2 GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_texture_format_BGRA8888 GL_APPLE_texture_format_BGRA8888 GL_EXT_draw_buffers_indexed GL_EXT_clip_cull_distance 
 INFO         | Graphics Device Extensions N/A
 INFO         | Disabling sparse binding feature support
-INFO         | Sending adb public key [QAAAAE8El5xRbf7PbcXo51emL+vHU4gw17yhqs4vLAP7ZpNrQFw7Cp7Hd4UiqNtvuabtQBtVcLZDn///h5JGpfS3HXVeNJ49O6QZd/6HulraWe55bwZk2GSFM2xAOOfRO+oOy01Er1TSpNFEhkN6G1Iutag5M5J3cimWpNOshedxjQGpVMgr0w62gEH30IfuShloxcZl+Rl/NmrLw7rffDoMKP+rj+/JpBNGBhPuzNmVRcm09Nq5T2pney5EInHlObKxQlq1cXdD4v+u7chi5839m8gLIq4XUsrUXMr/5xEU9Jl24yY1kH5HHf5BLwdBgWLiMKGf8z2w12eAEIGAzEwBCpP9ucnBE+tK4Lw/TfIQ7uB1OdhcRqaY5hLjOVo6MtK2LmtVZb5FPZi40ASAKGPeoiHDNV3J0erjqIBUTOMYbNPywCzxh1JHrucZNCH4YHVA5txTagjsPGLWL6qRWU9B/mAK4kxeGib0+vyjx8cPtqBpwQoUbVUtuQnLDk61hHZS/PdWHzuSeVjnbfTkte+QvqCCc8Dia3alNzZ9jHerx9hGthuX5ousM5J3FlCKPDhNNsDKFP7PiHFM7GHmkB1zHuCoPCW693u8ftw775F5zpHfSLFN5KdZyqaNx5jUCFP/RHOEoJVyoLSbkpI7Iqw95vBb6fEnUGIZJXssNTYjvN/9v2G/BQEAAQA= runner@unknown]
+ERROR        | Setting read-only feature 'GLAsyncSwap' to '0'
+INFO         | Feature 'GLAsyncSwap' (50) is overridden to 'disabled'
+INFO         | Sending adb public key [QAAAALFhmHGvuP51Rd68pGDFGz8m0U+wZfA8N8G6yEHpj1DulaBQxWx1eX6qrzmPvLfxubdUt5IxClW7neKzcxvLbuhNbeRpkDLYMjKYCd9CWkIxEYibCnMsALgMNOtURIvmYytJ4HUFf/DtDUJLqpiD4rpXcD0WEH+fBMkgT72u41D5LIQvqBanBSbuZl0mqkmBnjm3DvqeVCpVYeVnQKhXcdFWi/wt7AaCrsBXv7PEyqFwNfWE3V2RUgCQW2mfmWl6G+8zeVl519Ds5rv3m49LroErmk54EihU1gKby9Gsn2FZwIrCAmSk83/xAAyYKj8I9kmmgHaxAztE+E3hNYPNfJrA2Rya+0bHIXxG2BKA5PuhCGdYpwhQf6IHakrPwKxQoWczHHZnWI7IsLBiO/5ROE0yB383LgiCUaR6pa14nhYlEBiUuJku+elQt0ZvUhjmsjziefcqPI2KA0xdXOEXGQQUSTv6Ra6NeeT02j23HiWaUdLAi+5mxV4qDgTVu/KSkDvgI1I8yXYmDJrQ5wkkmQJHY2/tTnUTkHXhR+qwSk3ZXB94HFZon0QfEHDvgPZJ0zcfdp7D8LOW6W5MbSpk2Y565pcrC3VIJaKh/kWyGhLqV5EBe/66v30/s04SwOmdqQsdR6/zSKeDVclCPQvI47sOBmpiouEoz8lIJdVa00bjJnaGWQEAAQA= runner@unknown]
 INFO         | Userspace boot properties:
 INFO         |   androidboot.boot_devices=pci0000:00/0000:00:03.0 pci0000:00/0000:00:06.0
 INFO         |   androidboot.dalvik.vm.heapsize=576m
@@ -74,9 +78,9 @@ INFO         |   androidboot.hardware=ranchu
 INFO         |   androidboot.hardware.gltransport=pipe
 INFO         |   androidboot.hardware.vulkan=ranchu
 INFO         |   androidboot.logcat=*:V
-INFO         |   androidboot.opengles.version=196608
+INFO         |   androidboot.opengles.version=196609
 INFO         |   androidboot.qemu=1
-INFO         |   androidboot.qemu.adb.pubkey=QAAAAE8El5xRbf7PbcXo51emL+vHU4gw17yhqs4vLAP7ZpNrQFw7Cp7Hd4UiqNtvuabtQBtVcLZDn///h5JGpfS3HXVeNJ49O6QZd/6HulraWe55bwZk2GSFM2xAOOfRO+oOy01Er1TSpNFEhkN6G1Iutag5M5J3cimWpNOshedxjQGpVMgr0w62gEH30IfuShloxcZl+Rl/NmrLw7rffDoMKP+rj+/JpBNGBhPuzNmVRcm09Nq5T2pney5EInHlObKxQlq1cXdD4v+u7chi5839m8gLIq4XUsrUXMr/5xEU9Jl24yY1kH5HHf5BLwdBgWLiMKGf8z2w12eAEIGAzEwBCpP9ucnBE+tK4Lw/TfIQ7uB1OdhcRqaY5hLjOVo6MtK2LmtVZb5FPZi40ASAKGPeoiHDNV3J0erjqIBUTOMYbNPywCzxh1JHrucZNCH4YHVA5txTagjsPGLWL6qRWU9B/mAK4kxeGib0+vyjx8cPtqBpwQoUbVUtuQnLDk61hHZS/PdWHzuSeVjnbfTkte+QvqCCc8Dia3alNzZ9jHerx9hGthuX5ousM5J3FlCKPDhNNsDKFP7PiHFM7GHmkB1zHuCoPCW693u8ftw775F5zpHfSLFN5KdZyqaNx5jUCFP/RHOEoJVyoLSbkpI7Iqw95vBb6fEnUGIZJXssNTYjvN/9v2G/BQEAAQA= runner@unknown
+INFO         |   androidboot.qemu.adb.pubkey=QAAAALFhmHGvuP51Rd68pGDFGz8m0U+wZfA8N8G6yEHpj1DulaBQxWx1eX6qrzmPvLfxubdUt5IxClW7neKzcxvLbuhNbeRpkDLYMjKYCd9CWkIxEYibCnMsALgMNOtURIvmYytJ4HUFf/DtDUJLqpiD4rpXcD0WEH+fBMkgT72u41D5LIQvqBanBSbuZl0mqkmBnjm3DvqeVCpVYeVnQKhXcdFWi/wt7AaCrsBXv7PEyqFwNfWE3V2RUgCQW2mfmWl6G+8zeVl519Ds5rv3m49LroErmk54EihU1gKby9Gsn2FZwIrCAmSk83/xAAyYKj8I9kmmgHaxAztE+E3hNYPNfJrA2Rya+0bHIXxG2BKA5PuhCGdYpwhQf6IHakrPwKxQoWczHHZnWI7IsLBiO/5ROE0yB383LgiCUaR6pa14nhYlEBiUuJku+elQt0ZvUhjmsjziefcqPI2KA0xdXOEXGQQUSTv6Ra6NeeT02j23HiWaUdLAi+5mxV4qDgTVu/KSkDvgI1I8yXYmDJrQ5wkkmQJHY2/tTnUTkHXhR+qwSk3ZXB94HFZon0QfEHDvgPZJ0zcfdp7D8LOW6W5MbSpk2Y565pcrC3VIJaKh/kWyGhLqV5EBe/66v30/s04SwOmdqQsdR6/zSKeDVclCPQvI47sOBmpiouEoz8lIJdVa00bjJnaGWQEAAQA= runner@unknown
 INFO         |   androidboot.qemu.avd_name=dc
 INFO         |   androidboot.qemu.camera_hq_edge_processing=0
 INFO         |   androidboot.qemu.camera_protocol_ver=1
@@ -95,41 +99,23 @@ INFO         |   androidboot.vbmeta.digest=451e57ed688ff746d2c636d52169ade253e2b
 INFO         |   androidboot.vbmeta.hash_alg=sha256
 INFO         |   androidboot.vbmeta.size=6656
 INFO         |   androidboot.veritymode=enforcing
-WARNING: cannnot unmap ptr 0x7fd477401000 as it is in the protected range from 0x7fd3d7400000 to 0x7fd477600000
+WARNING: cannnot unmap ptr 0x7fda05001000 as it is in the protected range from 0x7fd965000000 to 0x7fda05200000
 INFO         | Monitoring duration of emulator setup.
 WARNING      | The emulator now requires a signed jwt token for gRPC access! Use the -grpc flag if you really want an open unprotected grpc port
 INFO         | Using security allow list from: /home/runner/.cache/cloudpc-models/android-sdk/emulator/lib/emulator_access.json
-INFO         | The active JSON Web Key Sets can be found here: /run/user/1001/avd/running/2648/jwks/bbbc14cb-866b-41d0-87ef-62bebf4a7be7/active.jwk
-INFO         | Scanning /run/user/1001/avd/running/2648/jwks/bbbc14cb-866b-41d0-87ef-62bebf4a7be7 for jwk keys.
+INFO         | The active JSON Web Key Sets can be found here: /run/user/1001/avd/running/2433/jwks/f85a0130-5eab-43ee-bb11-7fcd5c537a82/active.jwk
+INFO         | Scanning /run/user/1001/avd/running/2433/jwks/f85a0130-5eab-43ee-bb11-7fcd5c537a82 for jwk keys.
 INFO         | Started GRPC server at 127.0.0.1:8554, security: Local, auth: +token
-INFO         | Advertising in: /run/user/1001/avd/running/pid_2648.ini
-INFO         | Successfully initialized netsim WiFi
+INFO         | Advertising in: /run/user/1001/avd/running/pid_2433.ini
 INFO         | Activated packet streamer for bluetooth emulation
+INFO         | Successfully initialized netsim WiFi
 INFO         | Setting display: 0 configuration to: 1080x2400, dpi: 420x420 
 INFO         | setDisplayActiveConfig: id:0, 1080x2400
 INFO         | emulatorSetupEnvironment: Environment scene is not required
 USER_INFO    | Emulator is performing a full startup. This may take upto two minutes, or more.
 WARNING      | Failed to process .ini file /home/runner/.android/emu-update-last-check.ini for reading.
 WARNING      | Failed to process .ini file /home/runner/.android/emu-update-last-check.ini for reading.
-INFO         | Boot completed in 39234 ms
+INFO         | Boot completed in 30866 ms
 INFO         | Increasing screen off timeout, logcat buffer size to 2M.
-INFO         | Created VkInstance:0x55de4a991000 for application:'Death Cart' engine:'Godot Engine'.
-../../third_party/SwiftShader/src/Vulkan/VkPhysicalDevice.cpp:649 WARNING: UNSUPPORTED: curExtension->sType: 1000338000
-../../third_party/SwiftShader/src/Vulkan/VkPhysicalDevice.cpp:649 WARNING: UNSUPPORTED: curExtension->sType: 1000437000
-../../third_party/SwiftShader/src/Vulkan/VkPhysicalDevice.cpp:649 WARNING: UNSUPPORTED: curExtension->sType: 1000338000
-../../third_party/SwiftShader/src/Vulkan/VkPhysicalDevice.cpp:649 WARNING: UNSUPPORTED: curExtension->sType: 1000437000
-../../third_party/SwiftShader/src/Vulkan/VkPhysicalDevice.cpp:649 WARNING: UNSUPPORTED: curExtension->sType: 1000338000
-../../third_party/SwiftShader/src/Vulkan/VkPhysicalDevice.cpp:649 WARNING: UNSUPPORTED: curExtension->sType: 1000437000
-../../third_party/SwiftShader/src/Vulkan/VkPhysicalDevice.cpp:649 WARNING: UNSUPPORTED: curExtension->sType: 1000338000
-../../third_party/SwiftShader/src/Vulkan/VkPhysicalDevice.cpp:649 WARNING: UNSUPPORTED: curExtension->sType: 1000437000
-../../third_party/SwiftShader/src/Vulkan/VkPhysicalDevice.cpp:649 WARNING: UNSUPPORTED: curExtension->sType: 1000338000
-../../third_party/SwiftShader/src/Vulkan/VkPhysicalDevice.cpp:649 WARNING: UNSUPPORTED: curExtension->sType: 1000437000
-../../third_party/SwiftShader/src/Vulkan/VkPhysicalDevice.cpp:649 WARNING: UNSUPPORTED: curExtension->sType: 1000338000
-../../third_party/SwiftShader/src/Vulkan/VkPhysicalDevice.cpp:649 WARNING: UNSUPPORTED: curExtension->sType: 1000437000
-../../third_party/SwiftShader/src/Vulkan/VkPhysicalDevice.cpp:649 WARNING: UNSUPPORTED: curExtension->sType: 1000338000
-../../third_party/SwiftShader/src/Vulkan/VkPhysicalDevice.cpp:649 WARNING: UNSUPPORTED: curExtension->sType: 1000437000
-../../third_party/SwiftShader/src/Vulkan/VkPhysicalDevice.cpp:649 WARNING: UNSUPPORTED: curExtension->sType: 1000338000
-../../third_party/SwiftShader/src/Vulkan/VkPhysicalDevice.cpp:649 WARNING: UNSUPPORTED: curExtension->sType: 1000437000
-INFO         | Created VkDevice:0x55de6d268010 for application:'Death Cart' instance:0x55de4a991000. ASTC emulation:on CPU decoding:off. Protected memory:off
-ERROR        | Failed to find ColorBuffer: 133
-ERROR        | Failed to bind to texture: invalid color buffer.
+INFO         | Created VkInstance:0x561a7a3d2000 for application:'Death Cart' engine:'Godot Engine'.
+INFO         | Created VkDevice:0x561a66cf9000 for application:'Death Cart' instance:0x561a7a3d2000. ASTC emulation:on CPU decoding:off. Protected memory:off
