@@ -1,0 +1,16 @@
+{
+  "id": "02-emu-fetch",
+  "action": "fetch",
+  "at": "2026-10-28T12:36:14Z",
+  "job": {
+    "id": "02-emu-fetch",
+    "action": "fetch",
+    "url": "https://github.com/boo4blue/boo4blue.github.io/releases/download/emu-assets/DeathCart-emu.apk",
+    "dest": "emu/DeathCart-emu.apk"
+  },
+  "result": {
+    "ok": true,
+    "path": "emu/DeathCart-emu.apk",
+    "bytes": 57342883
+  }
+}

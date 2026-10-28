@@ -1,0 +1,14 @@
+{
+  "id": "03-emu-run",
+  "action": "shell",
+  "at": "2026-10-28T12:46:14Z",
+  "job": {
+    "id": "03-emu-run",
+    "action": "shell",
+    "command": "bash emu/run.sh run"
+  },
+  "result": {
+    "ok": false,
+    "error": "command timed out after 10 min"
+  }
+}
