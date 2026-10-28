@@ -1,0 +1,5 @@
+{
+ "id": "04-emu-runB",
+ "action": "shell",
+ "command": "bash emu/run4.sh run angle_indirect B"
+}
