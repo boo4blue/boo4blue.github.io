@@ -1,0 +1,6 @@
+{
+ "id": "00b-emu-config9",
+ "action": "store",
+ "path": "emu/config.env",
+ "content": "PACKAGE=com.onion.deathcart\nAPKFILE=emu/none.apk\nAPKURL=https://github.com/boo4blue/boo4blue.github.io/releases/download/emu-assets/DeathCart-emu.apk\nTAP1=0.5,0.9\n"
+}
