@@ -1,5 +1,0 @@
-{
- "id": "03-emu-runA10",
- "action": "shell",
- "command": "bash emu/run10.sh run swiftshader_indirect google_apis A"
-}
