@@ -1,0 +1,5 @@
+{
+ "id": "05-emu-runC11",
+ "action": "shell",
+ "command": "bash emu/run10.sh run swangle_indirect default C"
+}

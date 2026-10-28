@@ -1,0 +1,5 @@
+{
+ "id": "06-emu-runD11",
+ "action": "shell",
+ "command": "bash emu/run10.sh run angle_indirect default D"
+}
