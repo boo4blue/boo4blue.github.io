@@ -1,0 +1,5 @@
+{
+ "id": "01-emu-setup6",
+ "action": "shell",
+ "command": "bash emu/run5.sh setup"
+}
