@@ -1,0 +1,16 @@
+{
+  "id": "03-emu-run6",
+  "action": "shell",
+  "at": "2026-10-28T13:59:02Z",
+  "job": {
+    "id": "03-emu-run6",
+    "action": "shell",
+    "command": "bash emu/run5.sh run"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "gpu=angle_indirect package=com.onion.deathcart\nfetching APK directly\n-rw-r--r-- 1 runner runner 57342883 Oct 28 13:55 /tmp/test.apk\nboot_completed=0\nnohup: failed to run command '/home/runner/.cache/cloudpc-models/android-sdk/emulator/emulator': No such file or directory\n",
+    "stderr": "timeout: failed to run command \u2018adb\u2019: No such file or directory\n"
+  }
+}
