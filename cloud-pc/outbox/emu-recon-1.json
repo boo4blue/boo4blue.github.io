@@ -1,0 +1,16 @@
+{
+  "id": "emu-recon-1",
+  "action": "shell",
+  "at": "2026-10-28T12:30:06Z",
+  "job": {
+    "id": "emu-recon-1",
+    "action": "shell",
+    "command": "echo KVM:; ls -la /dev/kvm 2>&1; id; echo CPU:; nproc; grep -m1 'model name' /proc/cpuinfo; echo MEM:; free -g | head -2; echo DISK:; df -h / | tail -1; echo JAVA:; java -version 2>&1 | head -2; echo ANDROID_HOME=$ANDROID_HOME ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT; ls $ANDROID_HOME 2>/dev/null; echo --- emulator:; ls $ANDROID_HOME/emulator 2>/dev/null | head -5; echo --- system-images:; find $ANDROID_HOME/system-images -maxdepth 3 2>/dev/null; echo --- platforms:; ls $ANDROID_HOME/platforms 2>/dev/null; echo --- cmdline:; ls $ANDROID_HOME/cmdline-tools 2>/dev/null; which sdkmanager avdmanager adb emulator 2>/dev/null; echo CACHE:; ls ~/.cache/cloudpc-models 2>/dev/null | head"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "KVM:\ncrw-rw---- 1 root kvm 10, 232 Oct 28 12:19 /dev/kvm\nuid=1001(runner) gid=1001(runner) groups=1001(runner),4(adm),100(users),118(docker),999(systemd-journal)\nCPU:\n4\nmodel name\t: AMD EPYC 9V74 80-Core Processor\nMEM:\n               total        used        free      shared  buff/cache   available\nMem:              15           0           2           0          12          14\nDISK:\n/dev/root       145G   71G   74G  49% /\nJAVA:\nopenjdk version \"17.0.20.1\" 2026-08-18\nOpenJDK Runtime Environment Temurin-17.0.20.1+1 (build 17.0.20.1+1)\nANDROID_HOME=/usr/local/lib/android/sdk ANDROID_SDK_ROOT=/usr/local/lib/android/sdk\nbuild-tools\ncmake\ncmdline-tools\nextras\nlicenses\nndk\npackages-list.txt\nplatform-tools\nplatforms\n--- emulator:\n--- system-images:\n--- platforms:\nandroid-34\nandroid-34-ext10\nandroid-34-ext11\nandroid-34-ext12\nandroid-34-ext8\nandroid-35\nandroid-35-ext14\nandroid-35-ext15\nandroid-36\nandroid-36-ext18\nandroid-36-ext19\nandroid-36.1\nandroid-37.0\nandroid-37.1\nandroid-37.2\nandroid-37.2-beta1\nandroid-37.2-beta2\nandroid-37.2-beta3\n--- cmdline:\nlatest\nCACHE:\nollama-bin\nollama-models\n",
+    "stderr": ""
+  }
+}
