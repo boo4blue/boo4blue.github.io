@@ -1,0 +1,1365 @@
+--------- beginning of main
+10-28 15:00:49.447   324  2251 I resolv  : GetAddrInfoHandler::run: {100 100 100 983140 10119 0}
+--------- beginning of system
+10-28 15:00:49.450   795   868 V ActivityThread: getPackageInfo() caused update to cached ApplicationInfo for package android
+10-28 15:00:49.451   504   555 D CompatibilityChangeReporter: Compat change id reported: 168419799; UID 10141; state: DISABLED
+10-28 15:00:49.451   504   555 D CompatibilityChangeReporter: Compat change id reported: 273564678; UID 10141; state: DISABLED
+10-28 15:00:49.457   504   504 W JobScheduler: Job didn't exist in JobStore: d4a5676 #u0a131/0 com.android.devicelockcontroller/androidx.work.impl.background.systemjob.SystemJobService
+10-28 15:00:49.459   795   795 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-28 15:00:49.460   795   795 I Choreographer: Skipped 52 frames!  The application may be doing too much work on its main thread.
+10-28 15:00:49.393   504   504 W binder:504_7: type=1400 audit(0.0:13): avc:  denied  { getopt } for  scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+10-28 15:00:49.478   324  2252 I resolv  : res_nmkquery: (QUERY, IN, A)
+10-28 15:00:49.481   985   985 D CarrierSvcBindHelper: onPackageAdded: com.onion.deathcart
+10-28 15:00:49.482   985   985 D CarrierSvcBindHelper: No carrier app for: 0
+10-28 15:00:49.483   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_ADDED
+10-28 15:00:49.483   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_ADDED
+10-28 15:00:49.484   324  2252 I resolv  : res_nsend: used send_dg 179 terrno: 0
+10-28 15:00:49.484   324  2252 I resolv  : doQuery: rcode=0, ancount=8, return value=179
+10-28 15:00:49.485  2123  2232 D TrafficStats: tagSocket(71) with statsTag=0x0, statsUid=-1
+10-28 15:00:49.393   504   504 W binder:504_7: type=1400 audit(0.0:14): avc:  denied  { getopt } for  scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+10-28 15:00:49.495   504   504 W JobScheduler: Job didn't exist in JobStore: 26545c #u0a119/1 com.android.rkpdapp/androidx.work.impl.background.systemjob.SystemJobService
+10-28 15:00:49.502   504   763 I SdkSandboxManager: No SDKs used. Skipping SDK data reconcilation for CallingInfo{mUid=10141, mPackageName='com.onion.deathcart, mAppProcessToken='null'}
+10-28 15:00:49.506   504   595 I InputReader: Reconfiguring input devices, changes=KEYBOARD_LAYOUTS
+10-28 15:00:49.511  2100  2100 V ActivityThread: getPackageInfo() caused update to cached ApplicationInfo for package com.android.packageinstaller
+10-28 15:00:49.515   504   504 W JobScheduler: Job didn't exist in JobStore: 12535c9 #u0a59/2 com.android.statementservice/androidx.work.impl.background.systemjob.SystemJobService
+10-28 15:00:49.518   504   504 V GameManagerService_GamePackageConfiguration: No android.game_mode_config meta-data found for package com.onion.deathcart
+10-28 15:00:49.528   504   726 E AppOps  : attributionTag VCN not declared in manifest of android
+10-28 15:00:49.539   797  2223 I PermissionControllerServiceImpl: Updating user sensitive for uid 10141
+10-28 15:00:49.544   504   504 V GameManagerService: Package configuration not found for com.onion.deathcart
+10-28 15:00:49.545   504   504 D TransparencyService: Not an update. Skipping...
+10-28 15:00:49.545   795   868 D StylusManager: Stylus InputDevice changed: 14 virtio_input_multi_touch_11
+10-28 15:00:49.549   795   868 D StylusManager: Stylus InputDevice changed: 8 virtio_input_multi_touch_5
+10-28 15:00:49.550   795   868 D StylusManager: Stylus InputDevice changed: 7 virtio_input_multi_touch_4
+10-28 15:00:49.550   795   868 D StylusManager: Stylus InputDevice changed: 10 virtio_input_multi_touch_7
+10-28 15:00:49.550   795   868 D StylusManager: Stylus InputDevice changed: 6 virtio_input_multi_touch_3
+10-28 15:00:49.550   795   868 D StylusManager: Stylus InputDevice changed: 4 virtio_input_multi_touch_1
+10-28 15:00:49.550   795   868 D StylusManager: Stylus InputDevice changed: 11 virtio_input_multi_touch_8
+10-28 15:00:49.550   795   868 D StylusManager: Stylus InputDevice changed: 5 virtio_input_multi_touch_2
+10-28 15:00:49.550   795   868 D StylusManager: Stylus InputDevice changed: 12 virtio_input_multi_touch_9
+10-28 15:00:49.551   795   868 D StylusManager: Stylus InputDevice changed: 13 virtio_input_multi_touch_10
+10-28 15:00:49.551   795   868 D StylusManager: Stylus InputDevice changed: 9 virtio_input_multi_touch_6
+10-28 15:00:49.570   797   797 I SafetyLabelChangedBroadcastReceiver: received broadcast packageName: com.onion.deathcart, current user: UserHandle{0}, packageChangeEvent: NEW_INSTALL, intent user: UserHandle{0}
+10-28 15:00:49.582   504   595 I InputReader: Reconfiguring input devices, changes=KEYBOARD_LAYOUTS
+10-28 15:00:49.584   797  2223 I PermissionControllerServiceImpl: Updating user sensitive for uid 10141
+10-28 15:00:49.588   795   823 I OpenGLRenderer: Davey! duration=992ms; Flags=0, FrameTimelineVsyncId=2672, IntendedVsync=22176176204, Vsync=23042842836, InputEventId=0, HandleInputStart=23050635551, AnimationStart=23050636693, PerformTraversalsStart=23050684584, DrawStart=23052514594, FrameDeadline=22409509528, FrameInterval=23050409694, FrameStartTime=16666666, SyncQueued=23161615595, SyncStart=23161777232, IssueDrawCommandsStart=23161815058, SwapBuffers=23163385652, FrameCompleted=23168972407, DequeueBufferDuration=3365, QueueBufferDuration=921935, GpuCompleted=23168918927, SwapBuffersCompleted=23168972407, DisplayPresentTime=72904454231359540, CommandSubmissionCompleted=23163385652, 
+10-28 15:00:49.591   795   868 D StylusManager: Stylus InputDevice changed: 14 virtio_input_multi_touch_11
+10-28 15:00:49.591   795   868 D StylusManager: Stylus InputDevice changed: 8 virtio_input_multi_touch_5
+10-28 15:00:49.591   795   868 D StylusManager: Stylus InputDevice changed: 7 virtio_input_multi_touch_4
+10-28 15:00:49.594   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:49.594   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:49.598   985  1267 D ImsResolver: maybeAddedImsService, packageName: com.onion.deathcart
+10-28 15:00:49.599   985   985 D CarrierSvcBindHelper: onPackageModified: com.onion.deathcart
+10-28 15:00:49.599   985   985 D CarrierSvcBindHelper: No carrier app for: 0
+10-28 15:00:49.601   985  1267 D ImsResolver: maybeAddedImsService, packageName: com.onion.deathcart
+10-28 15:00:49.601   795   868 D StylusManager: Stylus InputDevice changed: 10 virtio_input_multi_touch_7
+10-28 15:00:49.609   795   868 D StylusManager: Stylus InputDevice changed: 6 virtio_input_multi_touch_3
+10-28 15:00:49.611  2255  2255 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10-28 15:00:49.612   795   868 D StylusManager: Stylus InputDevice changed: 4 virtio_input_multi_touch_1
+10-28 15:00:49.613   795   868 D StylusManager: Stylus InputDevice changed: 11 virtio_input_multi_touch_8
+10-28 15:00:49.613   795   868 D StylusManager: Stylus InputDevice changed: 5 virtio_input_multi_touch_2
+10-28 15:00:49.617   504   514 I system_server: Background concurrent copying GC freed 103357(4298KB) AllocSpace objects, 20(800KB) LOS objects, 49% free, 17MB/35MB, paused 28us,62us total 223.901ms
+10-28 15:00:49.617   795   868 D StylusManager: Stylus InputDevice changed: 12 virtio_input_multi_touch_9
+10-28 15:00:49.619  2255  2255 I AndroidRuntime: Using default boot image
+10-28 15:00:49.619  2255  2255 I AndroidRuntime: Leaving lock profiling enabled
+10-28 15:00:49.620   795   868 D StylusManager: Stylus InputDevice changed: 13 virtio_input_multi_touch_10
+10-28 15:00:49.620   795   868 D StylusManager: Stylus InputDevice changed: 9 virtio_input_multi_touch_6
+10-28 15:00:49.621  2255  2255 I app_process: Core platform API reporting enabled, enforcing=false
+10-28 15:00:49.622  2255  2255 I app_process: Using CollectorTypeCC GC.
+10-28 15:00:49.623   951  1130 D IpClient/wlan0: addressUpdated: fe80::5d82:e270:515e:4a85/64 on ifindex 16 flags 0x00000880 scope 253
+10-28 15:00:49.628   951  1130 D IpClient/wlan0: routeUpdated: ::/0 -> fe80::2 wlan0 mtu 0
+10-28 15:00:49.629   951  1130 D IpClient/wlan0: routeUpdated: fec0::/64 -> :: wlan0 mtu 0
+10-28 15:00:49.629   951  1130 D IpClient/wlan0: addressUpdated: fec0::b9cd:d001:79e0:e127/64 on ifindex 16 flags 0x00000944 scope 200
+10-28 15:00:49.629   951  1130 D IpClient/wlan0: addressUpdated: fec0::8a36:1dfb:a8c5:20ea/64 on ifindex 16 flags 0x00000045 scope 200
+10-28 15:00:49.631   951  1130 D IpClient.wlan0: set max DTIM multiplier to 2
+10-28 15:00:49.632   324   345 I netd    : networkAddRouteParcel(100, RouteInfoParcel{destination: fec0::/64, ifName: wlan0, nextHop: , mtu: 0}) <0.08ms>
+10-28 15:00:49.632   324   345 E netd    : Error adding route ::/0 -> fe80::2 wlan0 to table 1016: File exists
+10-28 15:00:49.632   324   345 I netd    : networkAddRouteParcel(100, RouteInfoParcel{destination: ::/0, ifName: wlan0, nextHop: fe80::2, mtu: 0}) <0.03ms>
+10-28 15:00:49.634   951  2190 D ApfFilter: (wlan0): Adding RA fe80::2 -> ff02::1 1800s fec0::/64 86400s/14400s 
+10-28 15:00:49.637   504   713 E WifiStaIfaceAidlImpl: setDtimMultiplier failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+10-28 15:00:49.642   504   713 E WifiStaIfaceAidlImpl: installApfPacketFilter failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+10-28 15:00:49.672  2255  2255 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
+10-28 15:00:49.678   504   531 W WindowMagnificationMgr: requestConnection duplicated request: connect=false, mConnectionState=DISCONNECTED
+10-28 15:00:49.684   795   795 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-28 15:00:49.685   795   795 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-28 15:00:49.695   795  1275 I OpenGLRenderer: Davey! duration=1037ms; Flags=0, FrameTimelineVsyncId=2672, IntendedVsync=22176176204, Vsync=23042842836, InputEventId=0, HandleInputStart=23050635551, AnimationStart=23050636693, PerformTraversalsStart=23050684584, DrawStart=23202635854, FrameDeadline=22659509518, FrameInterval=23050409694, FrameStartTime=16666666, SyncQueued=23203034539, SyncStart=23265652209, IssueDrawCommandsStart=23265840210, SwapBuffers=23267719333, FrameCompleted=23276322975, DequeueBufferDuration=2942280, QueueBufferDuration=347228, GpuCompleted=23276322975, SwapBuffersCompleted=23272036003, DisplayPresentTime=0, CommandSubmissionCompleted=23267719333, 
+10-28 15:00:49.695  2255  2255 D app_process: Time zone APEX ICU file found: /apex/com.android.tzdata/etc/icu/icu_tzdata.dat
+10-28 15:00:49.695  2255  2255 D app_process: I18n APEX ICU file found: /apex/com.android.i18n/etc/icu/icudt72l.dat
+10-28 15:00:49.699  2255  2255 W app_process: Unexpected CPU variant for x86: x86_64.
+10-28 15:00:49.699  2255  2255 W app_process: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, tremont, kabylake, default
+10-28 15:00:49.701   504   531 W PackageManager: Failed registering loading progress callback. Package is fully loaded.
+10-28 15:00:49.702   504   531 W VoiceInteractionManager: no available voice recognition services found for user 0
+10-28 15:00:49.703   504   531 W WindowMagnificationMgr: requestConnection duplicated request: connect=false, mConnectionState=DISCONNECTED
+--------- beginning of kernel
+10-28 15:00:49.877     0     0 W audit   : audit_lost=1 audit_rate_limit=5 audit_backlog_limit=64
+10-28 15:00:49.879     0     0 E audit   : rate limit exceeded
+10-28 15:00:49.718  2255  2255 W libc    : Access denied finding property "ro.product.name_for_attestation"
+10-28 15:00:49.719  2255  2255 W libc    : Access denied finding property "ro.product.brand_for_attestation"
+10-28 15:00:49.717  2255  2255 W main    : type=1400 audit(0.0:15): avc:  denied  { read } for  name="u:object_r:build_attestation_prop:s0" dev="tmpfs" ino=86 scontext=u:r:shell:s0 tcontext=u:object_r:build_attestation_prop:s0 tclass=file permissive=0
+10-28 15:00:49.727  2255  2255 W libc    : Access denied finding property "ro.product.model_for_attestation"
+10-28 15:00:49.728  2255  2255 D AndroidRuntime: Calling main entry com.android.commands.monkey.Monkey
+10-28 15:00:49.728  2255  2255 W Monkey  : args: [-p, com.onion.deathcart, -c, android.intent.category.LAUNCHER, 1]
+10-28 15:00:49.728  2255  2255 W Monkey  :  arg: "-p"
+10-28 15:00:49.728  2255  2255 W Monkey  :  arg: "com.onion.deathcart"
+10-28 15:00:49.728  2255  2255 W Monkey  :  arg: "-c"
+10-28 15:00:49.728  2255  2255 W Monkey  :  arg: "android.intent.category.LAUNCHER"
+10-28 15:00:49.728  2255  2255 W Monkey  :  arg: "1"
+10-28 15:00:49.728  2255  2255 W Monkey  : data="com.onion.deathcart"
+10-28 15:00:49.728  2255  2255 W Monkey  : data="android.intent.category.LAUNCHER"
+10-28 15:00:49.733   795   795 W SubscriptionInfo: MCC string is not a number
+10-28 15:00:49.733   795   795 W SubscriptionInfo: MNC string is not a number
+10-28 15:00:49.734   795   795 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-28 15:00:49.717  2255  2255 W main    : type=1400 audit(0.0:16): avc:  denied  { read } for  name="u:object_r:build_attestation_prop:s0" dev="tmpfs" ino=86 scontext=u:r:shell:s0 tcontext=u:object_r:build_attestation_prop:s0 tclass=file permissive=0
+10-28 15:00:49.739   504   531 W VoiceInteractionManager: no available voice recognition services found for user 0
+10-28 15:00:49.747   504  2078 W ActivityManager: registerReceiverWithFeature: no app for null
+10-28 15:00:49.750  2255  2255 W System  : No Compatibility callbacks set! Querying change 263076149
+10-28 15:00:49.750  2255  2255 W System  : No Compatibility callbacks set! Querying change 263076149
+10-28 15:00:49.750  2255  2255 W System  : No Compatibility callbacks set! Querying change 263076149
+10-28 15:00:49.753   504  2087 D CompatibilityChangeReporter: Compat change id reported: 161252188; UID 10141; state: DISABLED
+10-28 15:00:49.753   504  2087 W ActivityTaskManager: callingPackage for (uid=2000, pid=2255) has no WPC
+10-28 15:00:49.754   504  2087 D CompatibilityChangeReporter: Compat change id reported: 244637991; UID 2000; state: ENABLED
+10-28 15:00:49.754   504  2087 D CompatibilityChangeReporter: Compat change id reported: 265464455; UID 10141; state: DISABLED
+10-28 15:00:49.755   504  2087 D CompatibilityChangeReporter: Compat change id reported: 265452344; UID 10141; state: DISABLED
+10-28 15:00:49.755   504  2087 D CompatibilityChangeReporter: Compat change id reported: 266124927; UID 10141; state: DISABLED
+10-28 15:00:49.755   504  2087 D CompatibilityChangeReporter: Compat change id reported: 265451093; UID 10141; state: DISABLED
+10-28 15:00:49.755   504  2087 D CompatibilityChangeReporter: Compat change id reported: 265456536; UID 10141; state: DISABLED
+10-28 15:00:49.755   504  2087 D CompatibilityChangeReporter: Compat change id reported: 255940284; UID 10141; state: DISABLED
+10-28 15:00:49.755   504  2087 D CompatibilityChangeReporter: Compat change id reported: 236283604; UID 10141; state: DISABLED
+10-28 15:00:49.755   504  2087 D CompatibilityChangeReporter: Compat change id reported: 263959004; UID 10141; state: DISABLED
+10-28 15:00:49.755   504  2087 D CompatibilityChangeReporter: Compat change id reported: 264304459; UID 10141; state: DISABLED
+10-28 15:00:49.755   504  2087 D CompatibilityChangeReporter: Compat change id reported: 264301586; UID 10141; state: DISABLED
+10-28 15:00:49.755   504  2087 D CompatibilityChangeReporter: Compat change id reported: 254631730; UID 10141; state: DISABLED
+10-28 15:00:49.755   504  2087 D CompatibilityChangeReporter: Compat change id reported: 273509367; UID 10141; state: DISABLED
+10-28 15:00:49.755   504  2087 D CompatibilityChangeReporter: Compat change id reported: 263259275; UID 10141; state: DISABLED
+10-28 15:00:49.756   504  2087 D CompatibilityChangeReporter: Compat change id reported: 174042980; UID 10141; state: DISABLED
+10-28 15:00:49.756   504  2087 D CompatibilityChangeReporter: Compat change id reported: 174042936; UID 10141; state: DISABLED
+10-28 15:00:49.756   504  2087 D CompatibilityChangeReporter: Compat change id reported: 181136395; UID 10141; state: DISABLED
+10-28 15:00:49.758   504  2087 D CompatibilityChangeReporter: Compat change id reported: 194480991; UID 10141; state: ENABLED
+10-28 15:00:49.760   504  2087 D CompatibilityChangeReporter: Compat change id reported: 184838306; UID 10141; state: DISABLED
+10-28 15:00:49.760   504  2087 D CompatibilityChangeReporter: Compat change id reported: 185004937; UID 10141; state: DISABLED
+10-28 15:00:49.766   504  2087 D CompatibilityChangeReporter: Compat change id reported: 197654537; UID 10141; state: ENABLED
+10-28 15:00:49.767   504  2087 D CompatibilityChangeReporter: Compat change id reported: 205907456; UID 10141; state: ENABLED
+10-28 15:00:49.768   504  2087 D CompatibilityChangeReporter: Compat change id reported: 194833441; UID 10141; state: ENABLED
+10-28 15:00:49.768   504  2087 I ActivityTaskManager: START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.onion.deathcart/com.godot.game.GodotAppLauncher} with LAUNCH_SINGLE_INSTANCE_PER_TASK from uid 2000 (BAL_ALLOW_PERMISSION) result code=0
+10-28 15:00:49.768  2255  2255 I Monkey  : Events injected: 1
+10-28 15:00:49.768   504   525 D CompatibilityChangeReporter: Compat change id reported: 135634846; UID 10141; state: DISABLED
+10-28 15:00:49.771   504   533 D CompatibilityChangeReporter: Compat change id reported: 143937733; UID 10141; state: ENABLED
+10-28 15:00:49.777   325   325 D Zygote  : Forked child process 2270
+10-28 15:00:49.778   795   864 W ShellStartingWindow: Get attribute fail, return default: File res/mipmap-xxhdpi-v4/icon_background.webp from drawable resource ID #0x7f0a0001: .xml extension required
+10-28 15:00:49.784   504   576 D CompatibilityChangeReporter: Compat change id reported: 265195908; UID 10141; state: ENABLED
+10-28 15:00:49.785   504   533 I ActivityManager: Start proc 2270:com.onion.deathcart/u0a141 for next-top-activity {com.onion.deathcart/com.godot.game.GodotAppLauncher}
+10-28 15:00:49.790  2255  2255 I Monkey  : ## Network stats: elapsed time=33ms (0ms mobile, 0ms wifi, 33ms not connected)
+10-28 15:00:49.791  2255  2255 I app_process: System.exit called, status: 0
+10-28 15:00:49.791  2255  2255 I AndroidRuntime: VM exiting with result code 0.
+10-28 15:00:49.799   795   839 V WindowManagerShell: Transition requested: android.os.BinderProxy@a78a5b7 TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=8 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.onion.deathcart/com.godot.game.GodotAppLauncher } baseActivity=ComponentInfo{com.onion.deathcart/com.godot.game.GodotApp} topActivity=ComponentInfo{com.onion.deathcart/com.godot.game.GodotApp} origActivity=ComponentInfo{com.onion.deathcart/com.godot.game.GodotAppLauncher} realActivity=ComponentInfo{com.onion.deathcart/com.godot.game.GodotApp} numActivities=1 lastActiveTime=23357 supportsMultiWindow=true resizeMode=2 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@a668124} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 128 - 0, 0) topActivityInfo=ActivityInfo{ed6248d com.godot.game.GodotAppLauncher} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+10-28 15:00:49.803   795   864 D SplashScreenView: Build android.window.SplashScreenView{1c8b90 V.E...... ......ID 0,0-0,0}
+10-28 15:00:49.803   795   864 D SplashScreenView: Icon: view: android.widget.ImageView{d7c89 V.ED..... ......I. 0,0-0,0 #10204f0 android:id/splashscreen_icon_view} drawable: com.android.wm.shell.startingsurface.SplashscreenIconDrawableFactory$ImmobileIconDrawable@ca5f48e size: 504
+10-28 15:00:49.803   795   864 D SplashScreenView: Branding: view: android.view.View{70094af V.ED..... ......I. 0,0-0,0 #10204ef android:id/splashscreen_branding_view} drawable: android.graphics.drawable.BitmapDrawable@6e6d0bc size w: 525 h: 210
+10-28 15:00:49.808  2270  2270 I onion.deathcart: Using CollectorTypeCC GC.
+10-28 15:00:49.808  2270  2270 W onion.deathcart: Unexpected CPU variant for x86: x86_64.
+10-28 15:00:49.808  2270  2270 W onion.deathcart: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, tremont, kabylake, default
+10-28 15:00:49.817   795   868 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+10-28 15:00:49.817   401   415 I adbd    : jdwp connection from 2270
+10-28 15:00:49.828   504   523 V GameManagerService: Game power mode ON (process state was changed to foreground)
+10-28 15:00:49.828   379   379 I android.hardware.power-service.example: Power isModeSupported: 15
+10-28 15:00:49.830   795   868 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+10-28 15:00:49.832   795   868 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+10-28 15:00:49.834  2270  2270 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10141; state: ENABLED
+10-28 15:00:49.834  2270  2270 D CompatibilityChangeReporter: Compat change id reported: 242716250; UID 10141; state: ENABLED
+10-28 15:00:49.834   795   868 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+10-28 15:00:49.835   504  2108 D CompatibilityChangeReporter: Compat change id reported: 170503758; UID 10141; state: ENABLED
+10-28 15:00:49.844  2270  2270 D nativeloader: Configuring clns-6 for other apk /data/app/~~gFYJeMS05AB8CD7kdQQcOQ==/com.onion.deathcart-ZaztR3OoYkxXNunms10ZPA==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~gFYJeMS05AB8CD7kdQQcOQ==/com.onion.deathcart-ZaztR3OoYkxXNunms10ZPA==/lib/x86_64:/data/app/~~gFYJeMS05AB8CD7kdQQcOQ==/com.onion.deathcart-ZaztR3OoYkxXNunms10ZPA==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.onion.deathcart
+10-28 15:00:49.863  2270  2270 V GraphicsEnvironment: Currently set values for:
+10-28 15:00:49.863  2270  2270 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+10-28 15:00:49.863  2270  2270 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+10-28 15:00:49.863  2270  2270 V GraphicsEnvironment: ANGLE GameManagerService for com.onion.deathcart: false
+10-28 15:00:49.863  2270  2270 V GraphicsEnvironment: com.onion.deathcart is not listed in per-application setting
+10-28 15:00:49.864  2270  2270 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-28 15:00:49.878   504  1541 I ActivityManager: Flag disabled. Ignoring finishAttachApplication from uid: 10141. pid: 2270
+10-28 15:00:49.881  2270  2289 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+10-28 15:00:49.882  2270  2289 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+10-28 15:00:49.883  2270  2289 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+10-28 15:00:49.886   387   387 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+10-28 15:00:49.913   504  2087 D CoreBackPreview: Window{c33a557 u0 Splash Screen com.onion.deathcart}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@58f3d2d, mPriority=0, mIsAnimationCallback=false}
+10-28 15:00:49.951   795   795 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-28 15:00:49.965  2270  2270 D GodotActivity: Project command line parameters: [--xr_mode_regular, --xr-mode, off, --fullscreen, --background_color, #000000]
+10-28 15:00:49.965  2270  2270 D GodotActivity: Launch intent Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.onion.deathcart/com.godot.game.GodotAppLauncher } with parameters []
+10-28 15:00:49.968   795   806 W ndroid.systemui: Cleared Reference was only reachable from finalizer (only reported once)
+10-28 15:00:49.968  2270  2270 V GodotActivity: Creating new Godot fragment instance.
+10-28 15:00:49.973   795   806 I ndroid.systemui: NativeAlloc concurrent copying GC freed 544567(26MB) AllocSpace objects, 64(2300KB) LOS objects, 49% free, 17MB/34MB, paused 31us,34us total 247.378ms
+10-28 15:00:50.001  2270  2270 V Godot   : Initializing Godot plugin registry
+10-28 15:00:50.002  2270  2270 I GodotPluginRegistry: Registering runtime plugin AndroidRuntime
+10-28 15:00:50.002  2270  2270 V Godot   : InitEngine with params: [--xr_mode_regular, --xr-mode, off, --fullscreen, --background_color, #000000]
+10-28 15:00:50.019  2270  2270 V Godot   : Godot native layer initialization completed: true
+10-28 15:00:50.019  2270  2270 V Godot   : Setting up native layer with params: [--xr-mode, off, --fullscreen]
+10-28 15:00:50.048  2270  2270 V Godot   : Godot native layer setup completed
+10-28 15:00:50.048  2270  2270 V Godot   : OnInitRenderView: GodotFragment{ed35d72} (a77a9452-a0cf-44c6-80c7-bacbfba6092f id=0x7f07002c)
+10-28 15:00:50.051  2270  2270 D CompatibilityChangeReporter: Compat change id reported: 210923482; UID 10141; state: ENABLED
+10-28 15:00:50.052   795   870 E OpenGLRenderer: Unable to match the desired swap behavior.
+10-28 15:00:50.060  1048  1532 D EGL_emulation: app_time_stats: avg=321.78ms min=84.23ms max=951.05ms count=5
+10-28 15:00:50.061  2270  2270 D Godot   : Render view should be transparent: false
+10-28 15:00:50.077  2270  2270 E platform: Failed to open rendernode: No such file or directory
+10-28 15:00:50.077  2270  2270 I androidemu: HealthMonitor enabled. Returning monitor.
+10-28 15:00:50.077  2270  2270 D vulkan  : searching for layers in '/data/app/~~gFYJeMS05AB8CD7kdQQcOQ==/com.onion.deathcart-ZaztR3OoYkxXNunms10ZPA==/lib/x86_64'
+10-28 15:00:50.077  2270  2270 D vulkan  : searching for layers in '/data/app/~~gFYJeMS05AB8CD7kdQQcOQ==/com.onion.deathcart-ZaztR3OoYkxXNunms10ZPA==/base.apk!/lib/x86_64'
+10-28 15:00:50.078  2270  2270 E godot   : ERROR: vkEnumeratePhysicalDevices reported zero accessible devices.
+10-28 15:00:50.078  2270  2270 E godot   : 
+10-28 15:00:50.078  2270  2270 E godot   : Do you have a compatible Vulkan installable client driver (ICD) installed?
+10-28 15:00:50.078  2270  2270 E godot   : vkEnumeratePhysicalDevices Failure.
+10-28 15:00:50.078  2270  2270 E godot   :    at: _initialize_devices (drivers/vulkan/rendering_context_driver_vulkan.cpp:845)
+10-28 15:00:50.078  2270  2270 E godot   : ERROR: Condition "err != OK" is true. Returning: err
+10-28 15:00:50.078  2270  2270 E godot   :    at: initialize (drivers/vulkan/rendering_context_driver_vulkan.cpp:921)
+10-28 15:00:50.078  2270  2270 E godot   : WARNING: Your device does not seem to support Vulkan, switching to OpenGL 3.
+10-28 15:00:50.078  2270  2270 E godot   :    at: check_vulkan_global_context (platform/android/display_server_android.cpp:710)
+10-28 15:00:50.078  2270  2270 D Godot   : renderingDevice: opengl3 (Fallback)
+10-28 15:00:50.078  2270  2270 D Godot   : 			renderer: gl_compatibility (Fallback)
+10-28 15:00:50.080  2270  2270 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+10-28 15:00:50.080  2270  2270 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+10-28 15:00:50.081  2270  2270 V Godot   : OnStart: GodotFragment{ed35d72} (a77a9452-a0cf-44c6-80c7-bacbfba6092f id=0x7f07002c)
+10-28 15:00:50.083  2270  2270 V Godot   : OnResume: GodotFragment{ed35d72} (a77a9452-a0cf-44c6-80c7-bacbfba6092f id=0x7f07002c)
+10-28 15:00:50.084  2270  2270 D CompatibilityChangeReporter: Compat change id reported: 237531167; UID 10141; state: DISABLED
+10-28 15:00:50.084  2270  2270 W OpenGLRenderer: Unknown dataspace 0
+10-28 15:00:50.124  2123  2232 V RkpdServerInterface: Network request completed successfully.
+10-28 15:00:50.125  2123  2232 I RkpdPeriodicProvisioner: Total services found implementing IRPC: 1
+10-28 15:00:50.125  2123  2232 I RkpdPeriodicProvisioner: Starting provisioning for com.android.rkpdapp.interfaces.SystemInterface{android.hardware.security.keymint.IRemotelyProvisionedComponent/default}
+10-28 15:00:50.126  2123  2232 I RkpdKeyPoolStats: PoolStats{keysInUse=0, idealTotalSignedKeys=12, keysToGenerate=12, keysUnassigned=0}
+10-28 15:00:50.126  2123  2232 I RkpdProvisioner: Requested number of keys for provisioning: 12
+10-28 15:00:50.132  2123  2232 W RkpdSystemInterface: HAL returned a batch size that's too small (20), defaulting to 20
+10-28 15:00:50.133  2123  2232 I RkpdServerInterface: request_id: 8e6ae725-7ff0-46ff-9e8b-b9cd1c462b77
+10-28 15:00:50.133  2123  2232 V RkpdServerInterface: Requesting data from server. Attempt 1
+10-28 15:00:50.138   795   839 V WindowManagerShell: onTransitionReady android.os.BinderProxy@a78a5b7: {id=7 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@f1a2cf9} m=OPEN f=NONE leash=Surface(name=Task=8)/@0x7bbadfd sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@96f343e} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0xa9aa543 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0}]}
+10-28 15:00:50.138   795   839 V WindowManagerShell: Playing animation for (#7)android.os.BinderProxy@a78a5b7@0
+10-28 15:00:50.138   795   839 V WindowManagerShell:  try handler com.android.wm.shell.transition.DefaultMixedHandler@1057ddd
+10-28 15:00:50.138   795   839 V WindowManagerShell:  try handler com.android.wm.shell.keyguard.KeyguardTransitionHandler@19e1d52
+10-28 15:00:50.138   795   839 V WindowManagerShell:  try handler com.android.wm.shell.activityembedding.ActivityEmbeddingController@cada823
+10-28 15:00:50.138   795   839 V WindowManagerShell:  try handler com.android.wm.shell.recents.RecentsTransitionHandler@d3d7120
+10-28 15:00:50.138   795   839 V ShellRecents: RecentsTransitionHandler.startAnimation: no controller found
+10-28 15:00:50.138   795   839 V WindowManagerShell:  try handler com.android.wm.shell.pip.PipTransition@a611ad9
+10-28 15:00:50.138   795   839 V WindowManagerShell:  try handler com.android.wm.shell.splitscreen.StageCoordinator@e5cbc9e
+10-28 15:00:50.138   795   839 V WindowManagerShell:  try handler com.android.wm.shell.transition.RemoteTransitionHandler@f28a37f
+10-28 15:00:50.138   795   839 V WindowManagerShell: Transition doesn't have explicit remote, search filters for match for {id=7 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@f1a2cf9} m=OPEN f=NONE leash=Surface(name=Task=8)/@0x7bbadfd sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@96f343e} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0xa9aa543 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0}]}
+10-28 15:00:50.138   795   839 V WindowManagerShell:  Checking filter Pair{{types=[] flags=0x0] notFlags=0x100 checks=[{atype=home independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=TOP topActivity=ComponentInfo{com.android.launcher3/com.android.launcher3.uioverrides.QuickstepLauncher}},{atype=standard independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@c38529f, appThread = android.app.IApplicationThread$Stub$Proxy@321cfec, debugName = QuickstepLaunchHome }}
+10-28 15:00:50.138   795   839 V WindowManagerShell:  Delegate animation for #7 to null
+10-28 15:00:50.138   795   839 V WindowManagerShell:  try handler com.android.wm.shell.transition.DefaultTransitionHandler@9587f4c
+10-28 15:00:50.138   795   839 V WindowManagerShell: start default transition animation, info = {id=7 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@f1a2cf9} m=OPEN f=NONE leash=Surface(name=Task=8)/@0x7bbadfd sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@96f343e} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0xa9aa543 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0}]}
+10-28 15:00:50.139   795   839 V WindowManagerShell: loadAnimation: anim=android.view.animation.AnimationSet@8d979bb animAttr=0x13 type=OPEN isEntrance=false
+10-28 15:00:50.139   504   522 V WindowManager: Sent Transition #7 createdAt=10-28 15:00:49.758 via request=TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=8 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.onion.deathcart/com.godot.game.GodotAppLauncher } baseActivity=ComponentInfo{com.onion.deathcart/com.godot.game.GodotApp} topActivity=ComponentInfo{com.onion.deathcart/com.godot.game.GodotApp} origActivity=ComponentInfo{com.onion.deathcart/com.godot.game.GodotAppLauncher} realActivity=ComponentInfo{com.onion.deathcart/com.godot.game.GodotApp} numActivities=1 lastActiveTime=23357 supportsMultiWindow=true resizeMode=2 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{6e6cb9d Task{62bc89e #8 type=standard A=10141:com.onion.deathcart}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 128 - 0, 0) topActivityInfo=ActivityInfo{abcb812 com.godot.game.GodotAppLauncher} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+10-28 15:00:50.139   504   522 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+10-28 15:00:50.139   504   522 V WindowManager:     info={id=7 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{6e6cb9d Task{62bc89e #8 type=standard A=10141:com.onion.deathcart}}} m=OPEN f=NONE leash=Surface(name=Task=8)/@0xc929247 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0},{WCT{RemoteToken{25c0be3 Task{aac41e2 #1 type=home}}} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0x5e81a08 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0}]}
+10-28 15:00:50.141   504  1541 W WindowManager: Failed looking up window session=Session{d86ea61 2270:u0a10141} callers=com.android.server.wm.WindowManagerService.windowForClientLocked:6034 com.android.server.wm.Session.updateRequestedVisibleTypes:690 android.view.IWindowSession$Stub.onTransact:1034 
+10-28 15:00:50.142   795   839 V WindowManagerShell: loadAnimation: anim=android.view.animation.AnimationSet@625d0f0 animAttr=0x12 type=OPEN isEntrance=true
+10-28 15:00:50.142   795   839 V WindowManagerShell:  animated by com.android.wm.shell.transition.DefaultTransitionHandler@9587f4c
+10-28 15:00:50.166  2123  2232 E RkpdServerInterface: Server connection failed for url: https://remoteprovisioning.googleapis.com/v1:signCertificates?challenge=AAABoYMHNdQBILStYzLtYfRV49vUEz3yVgxkZkA=&request_id=8e6ae725-7ff0-46ff-9e8b-b9cd1c462b77, response code: 400
+10-28 15:00:50.166  2123  2232 E RkpdServerInterface: Repeated failure count: 1
+10-28 15:00:50.167  2123  2232 E RkpdServerInterface: {
+10-28 15:00:50.167  2123  2232 E RkpdServerInterface:   "error": {
+10-28 15:00:50.167  2123  2232 E RkpdServerInterface:     "code": 400,
+10-28 15:00:50.167  2123  2232 E RkpdServerInterface:     "message": "Invalid request payload: vendor_patch_level`0` should be in the format YYYYMMDD or YYYYMM if present.\nRequestId: 8e6ae725-7ff0-46ff-9e8b-b9cd1c462b77",
+10-28 15:00:50.167  2123  2232 E RkpdServerInterface:     "status": "INVALID_ARGUMENT"
+10-28 15:00:50.167  2123  2232 E RkpdServerInterface:   }
+10-28 15:00:50.167  2123  2232 E RkpdServerInterface: }
+10-28 15:00:50.167  2123  2232 E RkpdPeriodicProvisioner: Error provisioning keys for com.android.rkpdapp.interfaces.SystemInterface{android.hardware.security.keymint.IRemotelyProvisionedComponent/default}
+10-28 15:00:50.167  2123  2232 E RkpdPeriodicProvisioner: com.android.rkpdapp.RkpdException: HTTP error status encountered: 400
+10-28 15:00:50.167  2123  2232 E RkpdPeriodicProvisioner: 	at com.android.rkpdapp.interfaces.ServerInterface.requestData(ServerInterface.java:341)
+10-28 15:00:50.167  2123  2232 E RkpdPeriodicProvisioner: 	at com.android.rkpdapp.interfaces.ServerInterface.connectAndGetData(ServerInterface.java:287)
+10-28 15:00:50.167  2123  2232 E RkpdPeriodicProvisioner: 	at com.android.rkpdapp.interfaces.ServerInterface.requestSignedCertificates(ServerInterface.java:121)
+10-28 15:00:50.167  2123  2232 E RkpdPeriodicProvisioner: 	at com.android.rkpdapp.provisioner.Provisioner.batchProvision(Provisioner.java:157)
+10-28 15:00:50.167  2123  2232 E RkpdPeriodicProvisioner: 	at com.android.rkpdapp.provisioner.Provisioner.fetchCertificates(Provisioner.java:136)
+10-28 15:00:50.167  2123  2232 E RkpdPeriodicProvisioner: 	at com.android.rkpdapp.provisioner.Provisioner.provisionKeys(Provisioner.java:89)
+10-28 15:00:50.167  2123  2232 E RkpdPeriodicProvisioner: 	at com.android.rkpdapp.provisioner.PeriodicProvisioner.doWork(PeriodicProvisioner.java:110)
+10-28 15:00:50.167  2123  2232 E RkpdPeriodicProvisioner: 	at androidx.work.Worker$1.run(Worker.java:82)
+10-28 15:00:50.167  2123  2232 E RkpdPeriodicProvisioner: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+10-28 15:00:50.167  2123  2232 E RkpdPeriodicProvisioner: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+10-28 15:00:50.167  2123  2232 E RkpdPeriodicProvisioner: 	at java.lang.Thread.run(Thread.java:1012)
+10-28 15:00:50.169   504  1482 D CoreBackPreview: Window{6698499 u0 com.onion.deathcart/com.godot.game.GodotAppLauncher}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@9b9833f, mPriority=0, mIsAnimationCallback=false}
+10-28 15:00:50.170  2123  2156 I WM-WorkerWrapper: Worker result FAILURE for Work [ id=77f81c9e-0bb5-419e-8fa8-ec776ff330e7, tags={ com.android.rkpdapp.provisioner.PeriodicProvisioner } ]
+10-28 15:00:50.174   387   606 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10141 pid=0
+10-28 15:00:50.174   387   606 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10141 => denied (91 us)
+10-28 15:00:50.174   387   606 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10141 pid=0
+10-28 15:00:50.174   387   606 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10141 => denied (28 us)
+10-28 15:00:50.174   387   606 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10141 pid=0
+10-28 15:00:50.174   387   606 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10141 => denied (33 us)
+10-28 15:00:50.206   795   795 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+10-28 15:00:50.206   795   795 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+10-28 15:00:50.302  2270  2288 W OpenGLRenderer: Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+10-28 15:00:50.302  2270  2288 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-28 15:00:50.312   504   524 I DropBoxManagerService: add tag=system_app_strictmode isTagEnabled=true flags=0x2
+10-28 15:00:50.318   504  1541 D SystemServerTiming: getUserSwitchability-0
+10-28 15:00:50.318   504  1541 D SystemServerTiming: TM.isInCall
+10-28 15:00:50.318   504  1541 V SystemServerTiming: TM.isInCall took to complete: 0ms
+10-28 15:00:50.318   504  1541 D SystemServerTiming: hasUserRestriction-DISALLOW_USER_SWITCH
+10-28 15:00:50.318   504  1541 V SystemServerTiming: hasUserRestriction-DISALLOW_USER_SWITCH took to complete: 0ms
+10-28 15:00:50.318   504  1541 D SystemServerTiming: getInt-ALLOW_USER_SWITCHING_WHEN_SYSTEM_USER_LOCKED
+10-28 15:00:50.318   504  1541 V SystemServerTiming: getInt-ALLOW_USER_SWITCHING_WHEN_SYSTEM_USER_LOCKED took to complete: 0ms
+10-28 15:00:50.318   504  1541 D SystemServerTiming: isUserUnlocked-USER_SYSTEM
+10-28 15:00:50.318   504  1541 V SystemServerTiming: isUserUnlocked-USER_SYSTEM took to complete: 0ms
+10-28 15:00:50.318   504  1541 V SystemServerTiming: getUserSwitchability-0 took to complete: 0ms
+10-28 15:00:50.318   504  1541 D SystemServerTiming: getUserSwitchability-0
+10-28 15:00:50.318   504  1541 D SystemServerTiming: TM.isInCall
+10-28 15:00:50.318   504  1541 V SystemServerTiming: TM.isInCall took to complete: 0ms
+10-28 15:00:50.318   504  1541 D SystemServerTiming: hasUserRestriction-DISALLOW_USER_SWITCH
+10-28 15:00:50.318   504  1541 V SystemServerTiming: hasUserRestriction-DISALLOW_USER_SWITCH took to complete: 0ms
+10-28 15:00:50.318   504  1541 D SystemServerTiming: getInt-ALLOW_USER_SWITCHING_WHEN_SYSTEM_USER_LOCKED
+10-28 15:00:50.318   504  1541 V SystemServerTiming: getInt-ALLOW_USER_SWITCHING_WHEN_SYSTEM_USER_LOCKED took to complete: 0ms
+10-28 15:00:50.318   504  1541 D SystemServerTiming: isUserUnlocked-USER_SYSTEM
+10-28 15:00:50.318   504  1541 V SystemServerTiming: isUserUnlocked-USER_SYSTEM took to complete: 0ms
+10-28 15:00:50.319   504  1541 V SystemServerTiming: getUserSwitchability-0 took to complete: 0ms
+10-28 15:00:50.365   504   524 I DropBoxManagerService: add tag=system_app_strictmode isTagEnabled=true flags=0x2
+10-28 15:00:50.396   951  1130 D IpClient/wlan0: addressUpdated: fec0::8a36:1dfb:a8c5:20ea/64 on ifindex 16 flags 0x00000001 scope 200
+10-28 15:00:50.397   951  1130 D IpClient/wlan0: addressUpdated: fec0::b9cd:d001:79e0:e127/64 on ifindex 16 flags 0x00000900 scope 200
+10-28 15:00:50.439   795   839 V WindowManagerShell: Transition animation finished (aborted=false), notifying core (#7)android.os.BinderProxy@a78a5b7@0
+10-28 15:00:50.440   504   522 V WindowManager: Finish Transition #7: created at 10-28 15:00:49.758 collect-started=0.017ms request-sent=9.472ms started=40.984ms ready=68.586ms sent=378.65ms finished=681.867ms
+10-28 15:00:50.446   795   839 V WindowManagerShell: Track 0 became idle
+10-28 15:00:50.446   795   839 V WindowManagerShell: All active transition animations finished
+10-28 15:00:50.688  2270  2307 W RegularContextFactory: creating OpenGL ES 3.0 context :
+10-28 15:00:50.744   795   870 D EGL_emulation: app_time_stats: avg=982.29ms min=799.16ms max=1165.42ms count=2
+10-28 15:00:50.913     0     0 I servicemanager: Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest.
+10-28 15:00:50.759   132   132 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-28 15:00:50.759  2270  2307 I Gralloc4: mapper 4.x is not supported
+10-28 15:00:50.815  2270  2288 E OpenGLRenderer: Unable to match the desired swap behavior.
+10-28 15:00:50.820   795   870 D EGL_emulation: app_time_stats: avg=297.21ms min=3.37ms max=647.72ms count=6
+10-28 15:00:50.908  2270  2307 I godot   : Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+10-28 15:00:50.955   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:50.961   504   595 I InputReader: Reconfiguring input devices, changes=KEYBOARD_LAYOUTS
+10-28 15:00:50.966   985   985 D CarrierSvcBindHelper: onPackageModified: com.android.messaging
+10-28 15:00:50.967   985   985 D CarrierSvcBindHelper: No carrier app for: 0
+10-28 15:00:50.970   504   523 D CompatibilityChangeReporter: Compat change id reported: 168419799; UID 1000; state: DISABLED
+10-28 15:00:50.970   504   523 D CompatibilityChangeReporter: Compat change id reported: 273564678; UID 1000; state: DISABLED
+10-28 15:00:50.974   797  2223 I PermissionControllerServiceImpl: Updating user sensitive for uid 10108
+10-28 15:00:50.980   504   595 I InputReader: Reconfiguring input devices, changes=KEYBOARD_LAYOUTS
+10-28 15:00:50.981   797  2223 I PermissionControllerServiceImpl: Updating user sensitive for uid 10104
+10-28 15:00:50.987   504   523 D CompatibilityChangeReporter: Compat change id reported: 210923482; UID 1000; state: ENABLED
+10-28 15:00:50.994  2270  2270 I Choreographer: Skipped 49 frames!  The application may be doing too much work on its main thread.
+10-28 15:00:50.995   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:50.995   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:50.995   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:50.995   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:50.996   795   795 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+10-28 15:00:50.996   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:50.997   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:50.997   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:50.997   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:50.997   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:50.997   795   795 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+10-28 15:00:50.998  1048  1048 D b/267448330: provider: ComponentInfo{com.android.quicksearchbox/com.android.quicksearchbox.SearchWidgetProvider}, paddedSizes: [382.09525x131.42857, 382.09525x131.42857, 684.9524x61.333332, 684.9524x61.333332], getMinMaxSizes: Rect(382, 61 - 684, 131)
+10-28 15:00:50.999   795   795 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+10-28 15:00:50.999   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:50.999   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:51.000   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:51.000   795   795 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+10-28 15:00:51.000   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:51.001   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:51.001   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:51.001   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:51.001   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:51.001   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:51.001   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:51.002   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:51.002   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:51.002   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:51.002   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:51.002   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:51.002   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:51.002   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:51.002   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:51.014  2270  2285 I OpenGLRenderer: Davey! duration=838ms; Flags=1, FrameTimelineVsyncId=3321, IntendedVsync=23742842808, Vsync=23742842808, InputEventId=0, HandleInputStart=23757050534, AnimationStart=23757051035, PerformTraversalsStart=23757051185, DrawStart=24405698826, FrameDeadline=23759509474, FrameInterval=23757046298, FrameStartTime=16666666, SyncQueued=24406997093, SyncStart=24410111400, IssueDrawCommandsStart=24421879256, SwapBuffers=24497928947, FrameCompleted=24584121884, DequeueBufferDuration=57267168, QueueBufferDuration=223573, GpuCompleted=24526775107, SwapBuffersCompleted=24584121884, DisplayPresentTime=0, CommandSubmissionCompleted=24497928947, 
+10-28 15:00:51.030   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:51.030   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:51.031   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:51.031   973   973 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 15:00:51.032   450   452 W idmap2d : failed to parse idmap header of '/data/resource-cache/vendor@overlay@SystemUI__auto_generated_rro_vendor.apk@idmap'
+10-28 15:00:51.037   450   452 W idmap2d : failed to find resource 'bool/config_show4GForLTE'
+10-28 15:00:51.037   450   452 E idmap2d : no resources were overlaid
+10-28 15:00:51.038   797  2223 I PermissionControllerServiceImpl: Updating user sensitive for uid 1001
+10-28 15:00:51.041   504   531 W VoiceInteractionManager: no available voice recognition services found for user 0
+10-28 15:00:51.042   504   531 D AppWidgetServiceImpl: Provider info from ComponentInfo{com.android.calendar/com.android.calendar.widget.CalendarAppWidgetProvider} won't be persisted.
+10-28 15:00:51.042   504   531 D AppWidgetServiceImpl: Provider info from ComponentInfo{com.android.messaging/com.android.messaging.widget.BugleWidgetProvider} won't be persisted.
+10-28 15:00:51.042   504   531 D AppWidgetServiceImpl: Provider info from ComponentInfo{com.android.messaging/com.android.messaging.widget.WidgetConversationProvider} won't be persisted.
+10-28 15:00:51.042   504   531 D AppWidgetServiceImpl: Provider info from ComponentInfo{com.android.systemui/com.android.systemui.people.widget.PeopleSpaceWidgetProvider} won't be persisted.
+10-28 15:00:51.042   797  2223 I PermissionControllerServiceImpl: Updating user sensitive for uid 10059
+10-28 15:00:51.044   797  2223 I PermissionControllerServiceImpl: Updating user sensitive for uid 10101
+10-28 15:00:51.049   504   595 I InputReader: Reconfiguring input devices, changes=KEYBOARD_LAYOUTS
+10-28 15:00:51.063   795   868 D StylusManager: Stylus InputDevice changed: 14 virtio_input_multi_touch_11
+10-28 15:00:51.064   504   595 I InputReader: Reconfiguring input devices, changes=KEYBOARD_LAYOUTS
+10-28 15:00:51.069   504   595 I InputReader: Reconfiguring input devices, changes=KEYBOARD_LAYOUTS
+10-28 15:00:51.076   797  2223 I PermissionControllerServiceImpl: Updating user sensitive for uid 10119
+10-28 15:00:51.076   797  2223 I PermissionControllerServiceImpl: Updating user sensitive for uid 10110
+10-28 15:00:51.076   797  2223 I PermissionControllerServiceImpl: Updating user sensitive for uid 10082
+10-28 15:00:51.076   797  2223 I PermissionControllerServiceImpl: Updating user sensitive for uid 10109
+10-28 15:00:51.076   797  2223 I PermissionControllerServiceImpl: Updating user sensitive for uid 10137
+10-28 15:00:51.076   797  2223 I PermissionControllerServiceImpl: Updating user sensitive for uid 1000
+10-28 15:00:51.076   797  2223 I PermissionControllerServiceImpl: Updating user sensitive for uid 10138
+10-28 15:00:51.076   797  2223 I PermissionControllerServiceImpl: Updating user sensitive for uid 10118
+10-28 15:00:51.081   504   523 D CompatibilityChangeReporter: Compat change id reported: 161145287; UID 1000; state: ENABLED
+10-28 15:00:51.082   504   523 D CoreBackPreview: Window{64ade88 u0 ImmersiveModeConfirmation}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.WindowOnBackInvokedDispatcher$OnBackInvokedCallbackWrapper@9edf225, mPriority=0, mIsAnimationCallback=false}
+10-28 15:00:51.085   795   868 D StylusManager: Stylus InputDevice changed: 8 virtio_input_multi_touch_5
+10-28 15:00:51.085   795   795 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+10-28 15:00:51.085   504  1529 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10141 pid=0
+10-28 15:00:51.085   504  1529 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10141 => denied (22398 us)
+10-28 15:00:51.085   504  1529 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10141 pid=0
+10-28 15:00:51.085   504  1529 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10141 => denied (35 us)
+10-28 15:00:51.085   504  1529 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10141 pid=0
+10-28 15:00:51.085   504  1529 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10141 => denied (10 us)
+10-28 15:00:51.087   797  2223 I PermissionControllerServiceImpl: Updating user sensitive for uid 10134
+10-28 15:00:51.096   795   795 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+10-28 15:00:51.098   985   985 D CarrierSvcBindHelper: onPackageModified: com.android.camera2
+10-28 15:00:51.098   985   985 D CarrierSvcBindHelper: No carrier app for: 0
+10-28 15:00:51.102   985  1267 D ImsResolver: maybeAddedImsService, packageName: com.android.messaging
+10-28 15:00:51.102   797  2223 I PermissionControllerServiceImpl: Updating user sensitive for uid 1002
+10-28 15:00:51.102   797  2223 I PermissionControllerServiceImpl: Updating user sensitive for uid 10131
+10-28 15:00:51.117   504   531 W VoiceInteractionManager: no available voice recognition services found for user 0
+10-28 15:00:51.120   795   868 D StylusManager: Stylus InputDevice changed: 7 virtio_input_multi_touch_4
+10-28 15:00:51.127   795   795 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+10-28 15:00:51.138  1048  1048 D b/267448330: provider: ComponentInfo{com.android.quicksearchbox/com.android.quicksearchbox.SearchWidgetProvider}, paddedSizes: [382.09525x131.42857, 382.09525x131.42857, 684.9524x61.333332, 684.9524x61.333332], getMinMaxSizes: Rect(382, 61 - 684, 131)
+10-28 15:00:51.151   795   795 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+10-28 15:00:51.153   795   795 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+10-28 15:00:51.156   795   795 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+10-28 15:00:51.163   985   985 D CarrierSvcBindHelper: onPackageModified: com.android.stk
+10-28 15:00:51.163   985   985 D CarrierSvcBindHelper: No carrier app for: 0
+10-28 15:00:51.163   985  1267 D ImsResolver: maybeAddedImsService, packageName: com.android.camera2
+10-28 15:00:51.169   795   795 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+10-28 15:00:51.177   795   795 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+10-28 15:00:51.179   985   985 D CarrierSvcBindHelper: onPackageModified: com.android.statementservice
+10-28 15:00:51.179   985   985 D CarrierSvcBindHelper: No carrier app for: 0
+10-28 15:00:51.180   795   795 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+10-28 15:00:51.180   985  1267 D ImsResolver: maybeAddedImsService, packageName: com.android.stk
+10-28 15:00:51.183   504   531 W VoiceInteractionManager: no available voice recognition services found for user 0
+10-28 15:00:51.208   797   813 I ssioncontroller: Background concurrent copying GC freed 259432(12MB) AllocSpace objects, 32(3884KB) LOS objects, 49% free, 5969KB/11MB, paused 50us,10us total 163.394ms
+10-28 15:00:51.210   504   531 W VoiceInteractionManager: no available voice recognition services found for user 0
+10-28 15:00:51.214   504   531 W VoiceInteractionManager: no available voice recognition services found for user 0
+10-28 15:00:51.215   504   531 D AppWidgetServiceImpl: Provider info from ComponentInfo{com.android.calendar/com.android.calendar.widget.CalendarAppWidgetProvider} won't be persisted.
+10-28 15:00:51.215   504   531 D AppWidgetServiceImpl: Provider info from ComponentInfo{com.android.messaging/com.android.messaging.widget.BugleWidgetProvider} won't be persisted.
+10-28 15:00:51.215   504   531 D AppWidgetServiceImpl: Provider info from ComponentInfo{com.android.messaging/com.android.messaging.widget.WidgetConversationProvider} won't be persisted.
+10-28 15:00:51.215   504   531 D AppWidgetServiceImpl: Provider info from ComponentInfo{com.android.systemui/com.android.systemui.people.widget.PeopleSpaceWidgetProvider} won't be persisted.
+10-28 15:00:51.221   504   531 W VoiceInteractionManager: no available voice recognition services found for user 0
+10-28 15:00:51.222   504   531 W VoiceInteractionManager: no available voice recognition services found for user 0
+10-28 15:00:51.222   504   531 W VoiceInteractionManager: no available voice recognition services found for user 0
+10-28 15:00:51.227   504   531 W VoiceInteractionManager: no available voice recognition services found for user 0
+10-28 15:00:51.227   504   531 W VoiceInteractionManager: no available voice recognition services found for user 0
+10-28 15:00:51.231   504   531 E system_server: No package ID 7f found for resource ID 0x7f08025b.
+10-28 15:00:51.231   504   531 E system_server: No package ID 7f found for resource ID 0x7f1315be.
+10-28 15:00:51.231   504   531 E system_server: No package ID 7f found for resource ID 0x7f08025a.
+10-28 15:00:51.231   504   531 E system_server: No package ID 7f found for resource ID 0x7f13067c.
+10-28 15:00:51.231   504   531 E system_server: No package ID 7f found for resource ID 0x7f080259.
+10-28 15:00:51.231   504   531 E system_server: No package ID 7f found for resource ID 0x7f130e50.
+10-28 15:00:51.231   504   531 W VoiceInteractionManager: no available voice recognition services found for user 0
+10-28 15:00:51.235   504   531 W VoiceInteractionManager: no available voice recognition services found for user 0
+10-28 15:00:51.236   504   531 D AppWidgetServiceImpl: Provider info from ComponentInfo{com.android.calendar/com.android.calendar.widget.CalendarAppWidgetProvider} won't be persisted.
+10-28 15:00:51.236   504   531 D AppWidgetServiceImpl: Provider info from ComponentInfo{com.android.messaging/com.android.messaging.widget.BugleWidgetProvider} won't be persisted.
+10-28 15:00:51.236   504   531 D AppWidgetServiceImpl: Provider info from ComponentInfo{com.android.messaging/com.android.messaging.widget.WidgetConversationProvider} won't be persisted.
+10-28 15:00:51.236   504   531 D AppWidgetServiceImpl: Provider info from ComponentInfo{com.android.systemui/com.android.systemui.people.widget.PeopleSpaceWidgetProvider} won't be persisted.
+10-28 15:00:51.245   504   531 W VoiceInteractionManager: no available voice recognition services found for user 0
+10-28 15:00:51.246   504   531 W VoiceInteractionManager: no available voice recognition services found for user 0
+10-28 15:00:51.247   504   531 W VoiceInteractionManager: no available voice recognition services found for user 0
+10-28 15:00:51.247   504   531 W VoiceInteractionManager: no available voice recognition services found for user 0
+10-28 15:00:51.247   504   531 D AppWidgetServiceImpl: Provider info from ComponentInfo{com.android.calendar/com.android.calendar.widget.CalendarAppWidgetProvider} won't be persisted.
+10-28 15:00:51.248   504   531 D AppWidgetServiceImpl: Provider info from ComponentInfo{com.android.messaging/com.android.messaging.widget.BugleWidgetProvider} won't be persisted.
+10-28 15:00:51.248   504   531 D AppWidgetServiceImpl: Provider info from ComponentInfo{com.android.messaging/com.android.messaging.widget.WidgetConversationProvider} won't be persisted.
+10-28 15:00:51.248   504   531 D AppWidgetServiceImpl: Provider info from ComponentInfo{com.android.systemui/com.android.systemui.people.widget.PeopleSpaceWidgetProvider} won't be persisted.
+10-28 15:00:51.251  2270  2310 E SurfaceSyncGroup: Failed to receive transaction ready in 1000ms. Marking SurfaceSyncGroup(wmsSync-VRI[GodotAppLauncher]#1) as ready
+10-28 15:00:51.286   795   795 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+10-28 15:00:51.290  1048  1048 D b/267448330: provider: ComponentInfo{com.android.quicksearchbox/com.android.quicksearchbox.SearchWidgetProvider}, paddedSizes: [382.09525x131.42857, 382.09525x131.42857, 684.9524x61.333332, 684.9524x61.333332], getMinMaxSizes: Rect(382, 61 - 684, 131)
+10-28 15:00:51.291   795   795 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+10-28 15:00:51.296  2270  2310 E SurfaceSyncGroup: Failed to receive transaction ready in 1000ms. Marking SurfaceSyncGroup(VRI[GodotAppLauncher]#2) as ready
+10-28 15:00:51.296  2270  2310 E SurfaceSyncGroup: Failed to receive transaction ready in 1000ms. Marking SurfaceSyncGroup(SurfaceView[com.onion.deathcart/com.godot.game.GodotAppLauncher]#0) as ready
+10-28 15:00:51.310   504   522 I ActivityTaskManager: Displayed com.onion.deathcart/com.godot.game.GodotAppLauncher for user 0: +1s339ms
+10-28 15:00:51.310   504   522 W Looper  : Slow dispatch took 193ms android.fg h=android.os.Handler c=com.android.server.wm.ActivityMetricsLogger$$ExternalSyntheticLambda0@824f017 m=0
+10-28 15:00:51.316   795   795 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+10-28 15:00:51.319   795   868 D StylusManager: Stylus InputDevice changed: 10 virtio_input_multi_touch_7
+10-28 15:00:51.327   985   985 D CarrierSvcBindHelper: onPackageModified: com.android.calendar
+10-28 15:00:51.327   985   985 D CarrierSvcBindHelper: No carrier app for: 0
+10-28 15:00:51.328   985  1267 D ImsResolver: maybeAddedImsService, packageName: com.android.statementservice
+10-28 15:00:51.330  1048  1085 I ImeTracker: com.android.launcher3:ba398105: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
+10-28 15:00:51.330   504   859 I ImeTracker: com.android.launcher3:ba398105: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-28 15:00:51.333   985   985 D CarrierSvcBindHelper: onPackageModified: com.android.rkpdapp
+10-28 15:00:51.333   985   985 D CarrierSvcBindHelper: No carrier app for: 0
+10-28 15:00:51.335   985   985 D CarrierSvcBindHelper: onPackageModified: com.android.sdksetup
+10-28 15:00:51.335   985   985 D CarrierSvcBindHelper: No carrier app for: 0
+10-28 15:00:51.340   795   868 D StylusManager: Stylus InputDevice changed: 6 virtio_input_multi_touch_3
+10-28 15:00:51.340   985  1267 D ImsResolver: maybeAddedImsService, packageName: com.android.calendar
+10-28 15:00:51.341   985  1267 D ImsResolver: maybeAddedImsService, packageName: com.android.rkpdapp
+10-28 15:00:51.341   985   985 D CarrierSvcBindHelper: onPackageModified: com.android.carrierdefaultapp
+10-28 15:00:51.341   985   985 D CarrierSvcBindHelper: No carrier app for: 0
+10-28 15:00:51.341   985  1267 D ImsResolver: maybeAddedImsService, packageName: com.android.sdksetup
+10-28 15:00:51.349   795   868 D StylusManager: Stylus InputDevice changed: 4 virtio_input_multi_touch_1
+10-28 15:00:51.360   504   532 I ActivityManager: reportOnUserCompletedEvent(0): stored=10, eligible=111
+10-28 15:00:51.360   504   532 D SystemServerTimingAsync: ssm.CompletedEventUser-0
+10-28 15:00:51.360   504   532 I SystemServiceManager: Calling onCompletedEventUser 0
+10-28 15:00:51.362   985   985 D CarrierSvcBindHelper: onPackageModified: com.android.inputmethod.latin
+10-28 15:00:51.362   985   985 D CarrierSvcBindHelper: No carrier app for: 0
+10-28 15:00:51.362   795   868 D StylusManager: Stylus InputDevice changed: 11 virtio_input_multi_touch_8
+10-28 15:00:51.365   795   868 D StylusManager: Stylus InputDevice changed: 5 virtio_input_multi_touch_2
+10-28 15:00:51.369   985   985 D CarrierSvcBindHelper: onPackageModified: com.android.cellbroadcastreceiver.module
+10-28 15:00:51.369   985   985 D CarrierSvcBindHelper: No carrier app for: 0
+10-28 15:00:51.370   795   868 D StylusManager: Stylus InputDevice changed: 12 virtio_input_multi_touch_9
+10-28 15:00:51.371   985  1267 D ImsResolver: maybeAddedImsService, packageName: com.android.carrierdefaultapp
+10-28 15:00:51.371   985  1267 D ImsResolver: maybeAddedImsService, packageName: com.android.inputmethod.latin
+10-28 15:00:51.372   795   868 D StylusManager: Stylus InputDevice changed: 13 virtio_input_multi_touch_10
+10-28 15:00:51.376   504  2322 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.security.FileIntegrityService
+10-28 15:00:51.376   795   868 D StylusManager: Stylus InputDevice changed: 9 virtio_input_multi_touch_6
+10-28 15:00:51.378   985  1267 D ImsResolver: maybeAddedImsService, packageName: com.android.cellbroadcastreceiver.module
+10-28 15:00:51.383   985   985 D CarrierSvcBindHelper: onPackageModified: com.android.settings
+10-28 15:00:51.383   985   985 D CarrierSvcBindHelper: No carrier app for: 0
+10-28 15:00:51.434   985  1267 D ImsResolver: maybeAddedImsService, packageName: com.android.settings
+10-28 15:00:51.436   985   985 D CarrierSvcBindHelper: onPackageModified: com.android.providers.media.module
+10-28 15:00:51.437   985   985 D CarrierSvcBindHelper: No carrier app for: 0
+10-28 15:00:51.439   985  1267 D ImsResolver: maybeAddedImsService, packageName: com.android.providers.media.module
+10-28 15:00:51.443   985   985 D CarrierSvcBindHelper: onPackageModified: com.android.systemui
+10-28 15:00:51.444   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.Installer
+10-28 15:00:51.444   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.Installer took to complete: 0ms
+10-28 15:00:51.444   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.os.DeviceIdentifiersPolicyService
+10-28 15:00:51.444   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.os.DeviceIdentifiersPolicyService took to complete: 0ms
+10-28 15:00:51.444   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.uri.UriGrantsManagerService$Lifecycle
+10-28 15:00:51.444   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.uri.UriGrantsManagerService$Lifecycle took to complete: 0ms
+10-28 15:00:51.444   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.powerstats.PowerStatsService
+10-28 15:00:51.444   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.powerstats.PowerStatsService took to complete: 0ms
+10-28 15:00:51.444   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.permission.access.AccessCheckingService
+10-28 15:00:51.444   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.permission.access.AccessCheckingService took to complete: 0ms
+10-28 15:00:51.444   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.wm.ActivityTaskManagerService$Lifecycle
+10-28 15:00:51.444   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.wm.ActivityTaskManagerService$Lifecycle took to complete: 0ms
+10-28 15:00:51.444   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.am.ActivityManagerService$Lifecycle
+10-28 15:00:51.444   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.am.ActivityManagerService$Lifecycle took to complete: 0ms
+10-28 15:00:51.444   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.DataLoaderManagerService
+10-28 15:00:51.444   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.DataLoaderManagerService took to complete: 0ms
+10-28 15:00:51.444   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.power.PowerManagerService
+10-28 15:00:51.444   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.power.PowerManagerService took to complete: 0ms
+10-28 15:00:51.444   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.power.ThermalManagerService
+10-28 15:00:51.444   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.power.ThermalManagerService took to complete: 0ms
+10-28 15:00:51.444   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.power.hint.HintManagerService
+10-28 15:00:51.446   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.power.hint.HintManagerService took to complete: 0ms
+10-28 15:00:51.447   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.recoverysystem.RecoverySystemService$Lifecycle
+10-28 15:00:51.447   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.recoverysystem.RecoverySystemService$Lifecycle took to complete: 0ms
+10-28 15:00:51.447   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.lights.LightsService
+10-28 15:00:51.447   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.lights.LightsService took to complete: 0ms
+10-28 15:00:51.447   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.display.DisplayManagerService
+10-28 15:00:51.447   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.display.DisplayManagerService took to complete: 0ms
+10-28 15:00:51.447   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.verify.domain.DomainVerificationService
+10-28 15:00:51.447   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.verify.domain.DomainVerificationService took to complete: 0ms
+10-28 15:00:51.447   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.PackageInstallerService$Lifecycle
+10-28 15:00:51.447   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.PackageInstallerService$Lifecycle took to complete: 0ms
+10-28 15:00:51.447   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.UserManagerService$LifeCycle
+10-28 15:00:51.447   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.UserManagerService$LifeCycle took to complete: 0ms
+10-28 15:00:51.447   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.om.OverlayManagerService
+10-28 15:00:51.448   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.om.OverlayManagerService took to complete: 0ms
+10-28 15:00:51.448   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.resources.ResourcesManagerService
+10-28 15:00:51.448   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.resources.ResourcesManagerService took to complete: 0ms
+10-28 15:00:51.448   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.sensorprivacy.SensorPrivacyService
+10-28 15:00:51.448   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.sensorprivacy.SensorPrivacyService took to complete: 0ms
+10-28 15:00:51.448   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.sensors.SensorService
+10-28 15:00:51.448   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.sensors.SensorService took to complete: 0ms
+10-28 15:00:51.448   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.SystemConfigService
+10-28 15:00:51.448   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.SystemConfigService took to complete: 0ms
+10-28 15:00:51.448   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.BatteryService
+10-28 15:00:51.448   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.BatteryService took to complete: 0ms
+10-28 15:00:51.448   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.usage.UsageStatsService
+10-28 15:00:51.448   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.usage.UsageStatsService took to complete: 0ms
+10-28 15:00:51.448   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.webkit.WebViewUpdateService
+10-28 15:00:51.448   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.webkit.WebViewUpdateService took to complete: 0ms
+10-28 15:00:51.448   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.CachedDeviceStateService
+10-28 15:00:51.448   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.CachedDeviceStateService took to complete: 0ms
+10-28 15:00:51.448   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.BinderCallsStatsService$LifeCycle
+10-28 15:00:51.448   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.BinderCallsStatsService$LifeCycle took to complete: 0ms
+10-28 15:00:51.448   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.LooperStatsService$Lifecycle
+10-28 15:00:51.448   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.LooperStatsService$Lifecycle took to complete: 0ms
+10-28 15:00:51.448   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.rollback.RollbackManagerService
+10-28 15:00:51.448   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.rollback.RollbackManagerService took to complete: 0ms
+10-28 15:00:51.448   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.os.NativeTombstoneManagerService
+10-28 15:00:51.448   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.os.NativeTombstoneManagerService took to complete: 0ms
+10-28 15:00:51.448   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.os.BugreportManagerService
+10-28 15:00:51.448   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.os.BugreportManagerService took to complete: 0ms
+10-28 15:00:51.448   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.gpu.GpuService
+10-28 15:00:51.448   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.gpu.GpuService took to complete: 0ms
+10-28 15:00:51.448   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.security.rkp.RemoteProvisioningService
+10-28 15:00:51.448   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.security.rkp.RemoteProvisioningService took to complete: 0ms
+10-28 15:00:51.448   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.cpu.CpuMonitorService
+10-28 15:00:51.448   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.cpu.CpuMonitorService took to complete: 0ms
+10-28 15:00:51.448   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.security.KeyChainSystemService
+10-28 15:00:51.448   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.security.KeyChainSystemService took to complete: 0ms
+10-28 15:00:51.448   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.BinaryTransparencyService
+10-28 15:00:51.448   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.BinaryTransparencyService took to complete: 0ms
+10-28 15:00:51.448   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.telecom.TelecomLoaderService
+10-28 15:00:51.448   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.telecom.TelecomLoaderService took to complete: 0ms
+10-28 15:00:51.449   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.accounts.AccountManagerService$Lifecycle
+10-28 15:00:51.449   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.accounts.AccountManagerService$Lifecycle took to complete: 0ms
+10-28 15:00:51.449   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.content.ContentService$Lifecycle
+10-28 15:00:51.449   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.content.ContentService$Lifecycle took to complete: 0ms
+10-28 15:00:51.449   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.deviceconfig.DeviceConfigInit$Lifecycle
+10-28 15:00:51.449   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.deviceconfig.DeviceConfigInit$Lifecycle took to complete: 0ms
+10-28 15:00:51.449   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.DropBoxManagerService
+10-28 15:00:51.449   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.DropBoxManagerService took to complete: 0ms
+10-28 15:00:51.449   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.role.RoleService
+10-28 15:00:51.449   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.role.RoleService took to complete: 0ms
+10-28 15:00:51.449   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.vibrator.VibratorManagerService$Lifecycle
+10-28 15:00:51.449   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.vibrator.VibratorManagerService$Lifecycle took to complete: 0ms
+10-28 15:00:51.449   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.tare.InternalResourceService
+10-28 15:00:51.449   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.tare.InternalResourceService took to complete: 0ms
+10-28 15:00:51.449   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.alarm.AlarmManagerService
+10-28 15:00:51.449   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.alarm.AlarmManagerService took to complete: 0ms
+10-28 15:00:51.449   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.devicestate.DeviceStateManagerService
+10-28 15:00:51.449   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.devicestate.DeviceStateManagerService took to complete: 0ms
+10-28 15:00:51.449   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.camera.CameraServiceProxy
+10-28 15:00:51.449   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.camera.CameraServiceProxy took to complete: 0ms
+10-28 15:00:51.449   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.bluetooth.BluetoothService
+10-28 15:00:51.449   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.bluetooth.BluetoothService took to complete: 0ms
+10-28 15:00:51.449   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.connectivity.IpConnectivityMetrics
+10-28 15:00:51.449   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.connectivity.IpConnectivityMetrics took to complete: 0ms
+10-28 15:00:51.449   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.net.watchlist.NetworkWatchlistService$Lifecycle
+10-28 15:00:51.449   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.net.watchlist.NetworkWatchlistService$Lifecycle took to complete: 0ms
+10-28 15:00:51.449   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.PinnerService
+10-28 15:00:51.449   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.PinnerService took to complete: 0ms
+10-28 15:00:51.449   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.integrity.AppIntegrityManagerService
+10-28 15:00:51.449   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.integrity.AppIntegrityManagerService took to complete: 0ms
+10-28 15:00:51.449   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.logcat.LogcatManagerService
+10-28 15:00:51.449   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.logcat.LogcatManagerService took to complete: 0ms
+10-28 15:00:51.449   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.inputmethod.InputMethodManagerService$Lifecycle
+10-28 15:00:51.449   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.inputmethod.InputMethodManagerService$Lifecycle took to complete: 0ms
+10-28 15:00:51.449   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.accessibility.AccessibilityManagerService$Lifecycle
+10-28 15:00:51.449   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.accessibility.AccessibilityManagerService$Lifecycle took to complete: 0ms
+10-28 15:00:51.449   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.StorageManagerService$Lifecycle
+10-28 15:00:51.449   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.StorageManagerService$Lifecycle took to complete: 0ms
+10-28 15:00:51.449   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.usage.StorageStatsService$Lifecycle
+10-28 15:00:51.450   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.usage.StorageStatsService$Lifecycle took to complete: 0ms
+10-28 15:00:51.450   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.UiModeManagerService
+10-28 15:00:51.450   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.UiModeManagerService took to complete: 0ms
+10-28 15:00:51.450   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.locales.LocaleManagerService
+10-28 15:00:51.450   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.locales.LocaleManagerService took to complete: 0ms
+10-28 15:00:51.450   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.grammaticalinflection.GrammaticalInflectionService
+10-28 15:00:51.450   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.grammaticalinflection.GrammaticalInflectionService took to complete: 0ms
+10-28 15:00:51.450   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.apphibernation.AppHibernationService
+10-28 15:00:51.450   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.apphibernation.AppHibernationService took to complete: 0ms
+10-28 15:00:51.450   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.locksettings.LockSettingsService$Lifecycle
+10-28 15:00:51.450   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.locksettings.LockSettingsService$Lifecycle took to complete: 0ms
+10-28 15:00:51.450   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.testharness.TestHarnessModeService
+10-28 15:00:51.450   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.testharness.TestHarnessModeService took to complete: 0ms
+10-28 15:00:51.450   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.DeviceIdleController
+10-28 15:00:51.450   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.DeviceIdleController took to complete: 0ms
+10-28 15:00:51.450   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.devicepolicy.DevicePolicyManagerService$Lifecycle
+10-28 15:00:51.450   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.devicepolicy.DevicePolicyManagerService$Lifecycle took to complete: 0ms
+10-28 15:00:51.450   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.texttospeech.TextToSpeechManagerService
+10-28 15:00:51.450   795   868 D StylusManager: Stylus InputDevice changed: 14 virtio_input_multi_touch_11
+10-28 15:00:51.450   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.texttospeech.TextToSpeechManagerService took to complete: 0ms
+10-28 15:00:51.450   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.ambientcontext.AmbientContextManagerService
+10-28 15:00:51.450   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.ambientcontext.AmbientContextManagerService took to complete: 0ms
+10-28 15:00:51.450   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.wearable.WearableSensingManagerService
+10-28 15:00:51.450   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.wearable.WearableSensingManagerService took to complete: 0ms
+10-28 15:00:51.450   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.speech.SpeechRecognitionManagerService
+10-28 15:00:51.451   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.speech.SpeechRecognitionManagerService took to complete: 0ms
+10-28 15:00:51.451   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.searchui.SearchUiManagerService
+10-28 15:00:51.451   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.searchui.SearchUiManagerService took to complete: 0ms
+10-28 15:00:51.451   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.smartspace.SmartspaceManagerService
+10-28 15:00:51.452   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.smartspace.SmartspaceManagerService took to complete: 1ms
+10-28 15:00:51.452   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.graphics.fonts.FontManagerService$Lifecycle
+10-28 15:00:51.452   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.graphics.fonts.FontManagerService$Lifecycle took to complete: 0ms
+10-28 15:00:51.452   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.textservices.TextServicesManagerService$Lifecycle
+10-28 15:00:51.452   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.textservices.TextServicesManagerService$Lifecycle took to complete: 0ms
+10-28 15:00:51.452   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.textclassifier.TextClassificationManagerService$Lifecycle
+10-28 15:00:51.452   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.textclassifier.TextClassificationManagerService$Lifecycle took to complete: 0ms
+10-28 15:00:51.452   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.NetworkScoreService$Lifecycle
+10-28 15:00:51.452   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.NetworkScoreService$Lifecycle took to complete: 0ms
+10-28 15:00:51.452   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.NetworkStatsServiceInitializer
+10-28 15:00:51.452   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.NetworkStatsServiceInitializer took to complete: 0ms
+10-28 15:00:51.452   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.wifi.WifiService
+10-28 15:00:51.452   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.wifi.WifiService took to complete: 0ms
+10-28 15:00:51.452   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.wifi.scanner.WifiScanningService
+10-28 15:00:51.452   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.wifi.scanner.WifiScanningService took to complete: 0ms
+10-28 15:00:51.452   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.wifi.p2p.WifiP2pService
+10-28 15:00:51.452   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.wifi.p2p.WifiP2pService took to complete: 0ms
+10-28 15:00:51.452   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.ConnectivityServiceInitializer
+10-28 15:00:51.452   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.ConnectivityServiceInitializer took to complete: 0ms
+10-28 15:00:51.452   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.notification.NotificationManagerService
+10-28 15:00:51.452   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.notification.NotificationManagerService took to complete: 0ms
+10-28 15:00:51.452   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.storage.DeviceStorageMonitorService
+10-28 15:00:51.452   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.storage.DeviceStorageMonitorService took to complete: 0ms
+10-28 15:00:51.452   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.timedetector.TimeDetectorService$Lifecycle
+10-28 15:00:51.452   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.timedetector.TimeDetectorService$Lifecycle took to complete: 0ms
+10-28 15:00:51.452   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.location.LocationManagerService$Lifecycle
+10-28 15:00:51.452   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.location.LocationManagerService$Lifecycle took to complete: 0ms
+10-28 15:00:51.452   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.timezonedetector.TimeZoneDetectorService$Lifecycle
+10-28 15:00:51.452   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.timezonedetector.TimeZoneDetectorService$Lifecycle took to complete: 0ms
+10-28 15:00:51.452   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.location.altitude.AltitudeService$Lifecycle
+10-28 15:00:51.452   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.location.altitude.AltitudeService$Lifecycle took to complete: 0ms
+10-28 15:00:51.452   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.timezonedetector.location.LocationTimeZoneManagerService$Lifecycle
+10-28 15:00:51.452   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.timezonedetector.location.LocationTimeZoneManagerService$Lifecycle took to complete: 0ms
+10-28 15:00:51.452   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.search.SearchManagerService$Lifecycle
+10-28 15:00:51.452   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.search.SearchManagerService$Lifecycle took to complete: 0ms
+10-28 15:00:51.452   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.wallpaper.WallpaperManagerService$Lifecycle
+10-28 15:00:51.453   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.wallpaper.WallpaperManagerService$Lifecycle took to complete: 0ms
+10-28 15:00:51.453   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.wallpapereffectsgeneration.WallpaperEffectsGenerationManagerService
+10-28 15:00:51.453   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.wallpapereffectsgeneration.WallpaperEffectsGenerationManagerService took to complete: 0ms
+10-28 15:00:51.453   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.audio.AudioService$Lifecycle
+10-28 15:00:51.453   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.audio.AudioService$Lifecycle took to complete: 0ms
+10-28 15:00:51.453   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.soundtrigger_middleware.SoundTriggerMiddlewareService$Lifecycle
+10-28 15:00:51.453   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.soundtrigger_middleware.SoundTriggerMiddlewareService$Lifecycle took to complete: 0ms
+10-28 15:00:51.453   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.DockObserver
+10-28 15:00:51.453   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.DockObserver took to complete: 0ms
+10-28 15:00:51.457   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.midi.MidiService$Lifecycle
+10-28 15:00:51.457   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.midi.MidiService$Lifecycle took to complete: 0ms
+10-28 15:00:51.458   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.adb.AdbService$Lifecycle
+10-28 15:00:51.458   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.adb.AdbService$Lifecycle took to complete: 0ms
+10-28 15:00:51.458   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.usb.UsbService$Lifecycle
+10-28 15:00:51.458   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.usb.UsbService$Lifecycle took to complete: 0ms
+10-28 15:00:51.458   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.twilight.TwilightService
+10-28 15:00:51.458   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.twilight.TwilightService took to complete: 0ms
+10-28 15:00:51.458   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.display.color.ColorDisplayService
+10-28 15:00:51.458   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.display.color.ColorDisplayService took to complete: 0ms
+10-28 15:00:51.458   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.job.JobSchedulerService
+10-28 15:00:51.458   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.job.JobSchedulerService took to complete: 0ms
+10-28 15:00:51.459   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.soundtrigger.SoundTriggerService
+10-28 15:00:51.459   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.soundtrigger.SoundTriggerService took to complete: 0ms
+10-28 15:00:51.459   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.trust.TrustManagerService
+10-28 15:00:51.459   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.trust.TrustManagerService took to complete: 0ms
+10-28 15:00:51.459   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.backup.BackupManagerService$Lifecycle
+10-28 15:00:51.459   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.backup.BackupManagerService$Lifecycle took to complete: 0ms
+10-28 15:00:51.459   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.appwidget.AppWidgetService
+10-28 15:00:51.459   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.appwidget.AppWidgetService took to complete: 0ms
+10-28 15:00:51.459   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.voiceinteraction.VoiceInteractionManagerService
+10-28 15:00:51.459   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.voiceinteraction.VoiceInteractionManagerService took to complete: 0ms
+10-28 15:00:51.459   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.GestureLauncherService
+10-28 15:00:51.459   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.GestureLauncherService took to complete: 0ms
+10-28 15:00:51.459   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.SensorNotificationService
+10-28 15:00:51.459   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.SensorNotificationService took to complete: 0ms
+10-28 15:00:51.459   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.emergency.EmergencyAffordanceService
+10-28 15:00:51.459   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.emergency.EmergencyAffordanceService took to complete: 0ms
+10-28 15:00:51.459   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.blob.BlobStoreManagerService
+10-28 15:00:51.459   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.blob.BlobStoreManagerService took to complete: 0ms
+10-28 15:00:51.459   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.dreams.DreamManagerService
+10-28 15:00:51.459   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.dreams.DreamManagerService took to complete: 0ms
+10-28 15:00:51.459   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.print.PrintManagerService
+10-28 15:00:51.459   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.print.PrintManagerService took to complete: 0ms
+10-28 15:00:51.459   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.security.AttestationVerificationManagerService
+10-28 15:00:51.459   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.security.AttestationVerificationManagerService took to complete: 0ms
+10-28 15:00:51.459   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.companion.CompanionDeviceManagerService
+10-28 15:00:51.459   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.companion.CompanionDeviceManagerService took to complete: 0ms
+10-28 15:00:51.459   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.companion.virtual.VirtualDeviceManagerService
+10-28 15:00:51.459   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.companion.virtual.VirtualDeviceManagerService took to complete: 0ms
+10-28 15:00:51.459   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.restrictions.RestrictionsManagerService
+10-28 15:00:51.459   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.restrictions.RestrictionsManagerService took to complete: 0ms
+10-28 15:00:51.459   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.media.MediaSessionService
+10-28 15:00:51.459   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.media.MediaSessionService took to complete: 0ms
+10-28 15:00:51.459   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.media.MediaResourceMonitorService
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.media.MediaResourceMonitorService took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.biometrics.sensors.face.FaceService
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.biometrics.sensors.face.FaceService took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.biometrics.sensors.fingerprint.FingerprintService
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.biometrics.sensors.fingerprint.FingerprintService took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.biometrics.BiometricService
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.biometrics.BiometricService took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.biometrics.AuthService
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.biometrics.AuthService took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.ShortcutService$Lifecycle
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.ShortcutService$Lifecycle took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.LauncherAppsService
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.LauncherAppsService took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.CrossProfileAppsService
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.CrossProfileAppsService took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.people.PeopleService
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.people.PeopleService took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.media.metrics.MediaMetricsManagerService
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.media.metrics.MediaMetricsManagerService took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.BackgroundInstallControlService
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.BackgroundInstallControlService took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.media.projection.MediaProjectionManagerService
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.media.projection.MediaProjectionManagerService took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.slice.SliceManagerService$Lifecycle
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.slice.SliceManagerService$Lifecycle took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.stats.StatsCompanion$Lifecycle
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.stats.StatsCompanion$Lifecycle took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.scheduling.RebootReadinessManagerService$Lifecycle
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.scheduling.RebootReadinessManagerService$Lifecycle took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.stats.pull.StatsPullAtomService
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.stats.pull.StatsPullAtomService took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.stats.bootstrap.StatsBootstrapAtomService$Lifecycle
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.stats.bootstrap.StatsBootstrapAtomService$Lifecycle took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.incident.IncidentCompanionService
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.incident.IncidentCompanionService took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.sdksandbox.SdkSandboxManagerService$Lifecycle
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.sdksandbox.SdkSandboxManagerService$Lifecycle took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.adservices.AdServicesManagerService$Lifecycle
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.adservices.AdServicesManagerService$Lifecycle took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.ondevicepersonalization.OnDevicePersonalizationSystemService$Lifecycle
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.ondevicepersonalization.OnDevicePersonalizationSystemService$Lifecycle took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.MmsServiceBroker
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.MmsServiceBroker took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.autofill.AutofillManagerService
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.autofill.AutofillManagerService took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.credentials.CredentialManagerService
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.credentials.CredentialManagerService took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.selectiontoolbar.SelectionToolbarManagerService
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.selectiontoolbar.SelectionToolbarManagerService took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.clipboard.ClipboardService
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.clipboard.ClipboardService took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.appbinding.AppBindingService$Lifecycle
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.appbinding.AppBindingService$Lifecycle took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.tracing.TracingServiceProxy
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.tracing.TracingServiceProxy took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.policy.PermissionPolicyService
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.policy.PermissionPolicyService took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.StagingManager$Lifecycle
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.StagingManager$Lifecycle took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.app.GameManagerService$Lifecycle
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.app.GameManagerService$Lifecycle took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.safetycenter.SafetyCenterService
+10-28 15:00:51.460   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.safetycenter.SafetyCenterService took to complete: 0ms
+10-28 15:00:51.460   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.appsearch.AppSearchModule$Lifecycle
+10-28 15:00:51.461   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.appsearch.AppSearchModule$Lifecycle took to complete: 0ms
+10-28 15:00:51.461   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.media.MediaCommunicationService
+10-28 15:00:51.461   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.media.MediaCommunicationService took to complete: 0ms
+10-28 15:00:51.461   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.compat.overrides.AppCompatOverridesService$Lifecycle
+10-28 15:00:51.461   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.compat.overrides.AppCompatOverridesService$Lifecycle took to complete: 0ms
+10-28 15:00:51.461   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.healthconnect.HealthConnectManagerService
+10-28 15:00:51.461   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.healthconnect.HealthConnectManagerService took to complete: 0ms
+10-28 15:00:51.461   504  2323 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.devicelock.DeviceLockService
+10-28 15:00:51.461   504  2323 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.devicelock.DeviceLockService took to complete: 0ms
+10-28 15:00:51.461   504  2322 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.security.FileIntegrityService took to complete: 0ms
+10-28 15:00:51.461   504   532 V SystemServerTimingAsync: ssm.CompletedEventUser-0 took to complete: 101ms
+10-28 15:00:51.461   985   985 D CarrierSvcBindHelper: No carrier app for: 0
+10-28 15:00:51.513   985  1015 I m.android.phone: Background concurrent copying GC freed 436063(25MB) AllocSpace objects, 59(2544KB) LOS objects, 49% free, 3590KB/7180KB, paused 36us,13us total 125.831ms
+10-28 15:00:51.515   985  1017 W System  : A resource failed to call AbstractCursor.close. 
+10-28 15:00:51.515   985  1017 W System  : A resource failed to call AbstractCursor.close. 
+10-28 15:00:51.516   985  1017 W System  : A resource failed to call AbstractCursor.close. 
+10-28 15:00:51.516   985  1017 W System  : A resource failed to call AbstractCursor.close. 
+10-28 15:00:51.516   985  1017 W System  : A resource failed to call AbstractCursor.close. 
+10-28 15:00:51.516   985  1017 W System  : A resource failed to call AbstractCursor.close. 
+10-28 15:00:51.531   504  2315 W OpenGLRenderer: Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+10-28 15:00:51.532   504  2315 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-28 15:00:51.546   985  1267 D ImsResolver: maybeAddedImsService, packageName: com.android.systemui
+10-28 15:00:51.552   985   985 D CarrierSvcBindHelper: onPackageModified: com.android.permissioncontroller
+10-28 15:00:51.552   985   985 D CarrierSvcBindHelper: No carrier app for: 0
+10-28 15:00:51.685   504   522 W Looper  : Slow dispatch took 152ms android.fg h=android.os.Handler c=<recycled PooledLambda@b28e3de> m=0
+10-28 15:00:51.686   985   985 D CarrierSvcBindHelper: onPackageModified: com.android.bluetooth
+10-28 15:00:51.686   985   985 D CarrierSvcBindHelper: No carrier app for: 0
+10-28 15:00:51.696   985  1267 D ImsResolver: maybeAddedImsService, packageName: com.android.permissioncontroller
+10-28 15:00:51.855     0     0 I servicemanager: Notifying android.hardware.drm.IDrmFactory/clearkey they do (previously: don't) have clients when service is guaranteed to be in use
+10-28 15:00:51.704  2239  2239 I AidlLazyServiceRegistrar: Process has 1 (of 1 available) client(s) in use after notification android.hardware.drm.IDrmFactory/clearkey has clients: 1
+10-28 15:00:51.705   795   795 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-28 15:00:51.859     0     0 I servicemanager: Notifying android.hardware.drm.IDrmFactory/clearkey they don't (previously: do) have clients when we now have no record of a client
+10-28 15:00:51.867     0     0 I servicemanager: Notifying artd they don't (previously: do) have clients when we now have no record of a client
+10-28 15:00:51.711  2195  2195 I AidlLazyServiceRegistrar: Process has 0 (of 1 available) client(s) in use after notification artd has clients: 0
+10-28 15:00:51.711  2195  2195 I AidlLazyServiceRegistrar: Trying to shut down the service. No clients in use for any service in process.
+10-28 15:00:51.712  2239  2239 I AidlLazyServiceRegistrar: Process has 0 (of 1 available) client(s) in use after notification android.hardware.drm.IDrmFactory/clearkey has clients: 0
+10-28 15:00:51.712  2239  2239 I AidlLazyServiceRegistrar: Trying to shut down the service. No clients in use for any service in process.
+10-28 15:00:51.870     0     0 I servicemanager: Unregistering artd
+10-28 15:00:51.875     0     0 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-28 15:00:51.721  2195  2195 I AidlLazyServiceRegistrar: Unregistered all clients and exiting
+10-28 15:00:51.724   985   985 D CarrierSvcBindHelper: onPackageModified: com.android.devicelockcontroller
+10-28 15:00:51.724   985   985 D CarrierSvcBindHelper: No carrier app for: 0
+10-28 15:00:51.883     0     0 I init    : Service 'artd' (pid 2195) exited with status 0 oneshot service took 3.061000 seconds in background
+10-28 15:00:51.888     0     0 I init    : Sending signal 9 to service 'artd' (pid 2195) process group...
+10-28 15:00:51.891     0     0 I libprocessgroup: Successfully killed process cgroup uid 1082 pid 2195 in 0ms
+10-28 15:00:51.899     0     0 I servicemanager: Unregistering android.hardware.drm.IDrmFactory/clearkey
+10-28 15:00:51.903     0     0 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-28 15:00:51.745   795   863 I Choreographer: Skipped 35 frames!  The application may be doing too much work on its main thread.
+10-28 15:00:51.750  2239  2239 I AidlLazyServiceRegistrar: Unregistered all clients and exiting
+10-28 15:00:51.909     0     0 I init    : Service 'vendor.drm-clearkey-service' (pid 2239) exited with status 0 oneshot service took 2.419000 seconds in background
+10-28 15:00:51.914     0     0 I init    : Sending signal 9 to service 'vendor.drm-clearkey-service' (pid 2239) process group...
+10-28 15:00:51.916     0     0 I libprocessgroup: Successfully killed process cgroup uid 1013 pid 2239 in 0ms
+10-28 15:00:51.759   985  1267 D ImsResolver: maybeAddedImsService, packageName: com.android.bluetooth
+10-28 15:00:51.759   985  1267 D ImsResolver: maybeAddedImsService, packageName: com.android.devicelockcontroller
+10-28 15:00:51.759  1669  1669 D CompatibilityChangeReporter: Compat change id reported: 253665015; UID 10061; state: ENABLED
+10-28 15:00:51.759  1669  1669 D CompatibilityChangeReporter: Compat change id reported: 194532703; UID 10061; state: ENABLED
+10-28 15:00:51.760   504   859 D CompatibilityChangeReporter: Compat change id reported: 253665015; UID 10061; state: ENABLED
+10-28 15:00:51.760   504   859 D CompatibilityChangeReporter: Compat change id reported: 194532703; UID 10061; state: ENABLED
+10-28 15:00:51.813   795   863 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@2e5eb0f
+10-28 15:00:51.813   504   859 D CoreBackPreview: Window{c33a557 u0 Splash Screen com.onion.deathcart EXITING}: Setting back callback null
+10-28 15:00:51.813   504   562 W InputManager-JNI: Input channel object 'c33a557 Splash Screen com.onion.deathcart (client)' was disposed without first being removed with the input manager!
+10-28 15:00:51.826  1048  1061 W droid.launcher3: Cleared Reference was only reachable from finalizer (only reported once)
+10-28 15:00:51.828  1048  1061 I droid.launcher3: Background concurrent copying GC freed 140220(7182KB) AllocSpace objects, 75(5404KB) LOS objects, 49% free, 6085KB/11MB, paused 24us,13us total 163.841ms
+10-28 15:00:51.899   504   524 I DropBoxManagerService: add tag=system_app_strictmode isTagEnabled=true flags=0x2
+10-28 15:00:52.012   456  2165 D mediaserver: Time zone APEX ICU file found: /apex/com.android.tzdata/etc/icu/icu_tzdata.dat
+10-28 15:00:52.013   456  2165 D mediaserver: I18n APEX ICU file found: /apex/com.android.i18n/etc/icu/icudt72l.dat
+10-28 15:00:52.050  1048  1089 D ModelWriter: removing items from db . Reason: [removed because the corresponding package or component is removed. mOp=2 removedPackages=[] removedComponents=[{com.android.inputmethod.latin/com.android.inputmethod.latin.setup.SetupActivity}]]
+10-28 15:00:52.085   504   524 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
+10-28 15:00:52.136   504  2315 E OpenGLRenderer: Unable to match the desired swap behavior.
+10-28 15:00:52.141   504  2320 E SurfaceSyncGroup: Failed to receive transaction ready in 1000ms. Marking SurfaceSyncGroup(wmsSync-VRI[ImmersiveModeConfirmation]#0) as ready
+10-28 15:00:52.142   504  2320 E SurfaceSyncGroup: Failed to receive transaction ready in 1000ms. Marking SurfaceSyncGroup(VRI[ImmersiveModeConfirmation]#1) as ready
+10-28 15:00:52.202   504   523 W Looper  : Slow dispatch took 1216ms android.ui h=android.view.Choreographer$FrameHandler c=android.view.Choreographer$FrameDisplayEventReceiver@13471dc m=0
+10-28 15:00:52.202   504   523 W Looper  : Slow delivery took 1230ms android.ui h=android.view.ViewRootImpl$ViewRootHandler c=null m=17
+10-28 15:00:52.202   504   523 I Choreographer: Skipped 71 frames!  The application may be doing too much work on its main thread.
+10-28 15:00:52.215   973   973 D AvrcpBrowsablePlayerConnector: Received a message: msg.what=2
+10-28 15:00:52.215   973   973 V AvrcpBrowsablePlayerConnector: Timed out waiting for players
+10-28 15:00:52.215   973   973 I AvrcpBrowsablePlayerConnector: Successfully connected to 0 browsable players.
+10-28 15:00:52.215   973   973 I MediaPlayerList: init: Browsable Player list size is 0
+10-28 15:00:52.253   504   576 W BroadcastLoopers: Found previously unknown looper Thread[appscheduling.default,5,main]
+10-28 15:00:52.271   504  2108 I OpenGLRenderer: Davey! duration=1269ms; Flags=1, FrameTimelineVsyncId=3622, IntendedVsync=24576176108, Vsync=24576176108, InputEventId=0, HandleInputStart=24576769405, AnimationStart=24576769485, PerformTraversalsStart=24576769605, DrawStart=25726062047, FrameDeadline=24592842774, FrameInterval=24576764778, FrameStartTime=16666666, SyncQueued=25726356607, SyncStart=25739947633, IssueDrawCommandsStart=25740764321, SwapBuffers=25741761479, FrameCompleted=25859640666, DequeueBufferDuration=3295, QueueBufferDuration=119208, GpuCompleted=25859640666, SwapBuffersCompleted=25761110917, DisplayPresentTime=0, CommandSubmissionCompleted=25741761479, 
+10-28 15:00:52.374   504   523 W Looper  : Slow dispatch took 172ms android.ui h=android.view.Choreographer$FrameHandler c=android.view.Choreographer$FrameDisplayEventReceiver@13471dc m=0
+10-28 15:00:52.376   504   523 D CompatibilityChangeReporter: Compat change id reported: 214016041; UID 1000; state: ENABLED
+10-28 15:00:52.376   504   523 I ImeTracker: android:609b560a: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+10-28 15:00:52.376   504   523 I ImeTracker: android:609b560a: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-28 15:00:52.383   504   523 W Looper  : Drained
+10-28 15:00:52.504   795   870 D EGL_emulation: app_time_stats: avg=841.67ms min=84.41ms max=1598.93ms count=2
+10-28 15:00:52.550   504  1608 D WifiNl80211Manager: Scan result ready event
+10-28 15:00:52.550   504  1608 D WifiNative: Scan result ready event
+10-28 15:00:52.784   504  1850 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+10-28 15:00:52.985   504  2108 I OpenGLRenderer: Davey! duration=1409ms; Flags=0, FrameTimelineVsyncId=3651, IntendedVsync=24592842774, Vsync=25776176060, InputEventId=0, HandleInputStart=25792972122, AnimationStart=25792972493, PerformTraversalsStart=25963718492, DrawStart=25963782798, FrameDeadline=25892842722, FrameInterval=25792711243, FrameStartTime=16666666, SyncQueued=25964020162, SyncStart=25964037798, IssueDrawCommandsStart=25968767104, SwapBuffers=25970890862, FrameCompleted=26002354604, DequeueBufferDuration=3806, QueueBufferDuration=1800997, GpuCompleted=26002354604, SwapBuffersCompleted=25973509629, DisplayPresentTime=0, CommandSubmissionCompleted=25970890862, 
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: Failed to apply ContentProviderOperation(type=insert uri=content://media/internal/file values={instance_id=null, compilation=null, disc_number=0, duration=10214, is_ringtone=1, album_artist=null, resolution=null, orientation=null, artist=pdx, author=null, height=null, is_drm=0, is_audiobook=0, date_modified=1702767290, writer=null, composer=null, _modifier=3, is_recording=0, datetaken=null, mime_type=audio/ogg, is_notification=0, bitrate=96000, cd_track_number=0, xmp=[], year=null, _data=/product/media/audio/ringtones/PERSEUS.ogg, _size=112981, album=Unknown, genre=Unknown, is_alarm=0, title=Perseus, track=0, width=null, is_music=0, document_id=null, is_podcast=0, capture_framerate=null, num_tracks=1, original_document_id=null, media_type=2} exceptionAllowed)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: android.database.sqlite.SQLiteConstraintException: UNIQUE constraint failed: files._data (code 2067 SQLITE_CONSTRAINT_UNIQUE)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at android.database.sqlite.SQLiteConnection.nativeExecuteForLastInsertedRowId(Native Method)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at android.database.sqlite.SQLiteConnection.executeForLastInsertedRowId(SQLiteConnection.java:961)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at android.database.sqlite.SQLiteSession.executeForLastInsertedRowId(SQLiteSession.java:790)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at android.database.sqlite.SQLiteStatement.executeInsert(SQLiteStatement.java:89)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.util.DatabaseUtils.executeInsert(DatabaseUtils.java:488)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.insert(SQLiteQueryBuilder.java:611)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.lambda$insert$1(SQLiteQueryBuilder.java:575)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.$r8$lambda$z6PmNgi8nEawad46M5nyYc14aRM(SQLiteQueryBuilder.java:0)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder$$ExternalSyntheticLambda4.apply(R8$$SyntheticClass:0)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.DatabaseHelper.runWithTransaction(DatabaseHelper.java:850)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.insert(SQLiteQueryBuilder.java:574)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.lambda$insertAllowingUpsert$20(MediaProvider.java:4846)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.$r8$lambda$A8_bSAcDGkyGiCcvRo57xoMQkf8(MediaProvider.java:0)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider$$ExternalSyntheticLambda39.apply(R8$$SyntheticClass:0)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.DatabaseHelper.runWithTransaction(DatabaseHelper.java:850)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertAllowingUpsert(MediaProvider.java:4836)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertFile(MediaProvider.java:4818)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertInternal(MediaProvider.java:5287)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insert(MediaProvider.java:4980)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at android.content.ContentProviderOperation.applyInternal(ContentProviderOperation.java:375)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at android.content.ContentProviderOperation.apply(ContentProviderOperation.java:347)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at android.content.ContentProvider.applyBatch(ContentProvider.java:2653)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.applyBatch(MediaProvider.java:5339)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at android.content.ContentProvider.applyBatch(ContentProvider.java:2644)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at android.content.ContentResolver.applyBatch(ContentResolver.java:2246)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.applyPending(ModernMediaScanner.java:957)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.maybeApplyPending(ModernMediaScanner.java:947)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.visitFile(ModernMediaScanner.java:853)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.visitFile(ModernMediaScanner.java:338)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at java.nio.file.Files.walkFileTree(Files.java:2670)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at java.nio.file.Files.walkFileTree(Files.java:2742)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.walkFileTree(ModernMediaScanner.java:454)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.runInternal(ModernMediaScanner.java:417)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.run(ModernMediaScanner.java:406)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner.scanDirectory(ModernMediaScanner.java:252)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.scanDirectory(MediaProvider.java:1939)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onScanVolume(MediaService.java:204)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onScanVolume(MediaService.java:172)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onHandleWork(MediaService.java:95)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at androidx.core.app.JobIntentService$CommandProcessor.doInBackground(JobIntentService.java:396)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at androidx.core.app.JobIntentService$CommandProcessor.doInBackground(JobIntentService.java:387)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at android.os.AsyncTask$3.call(AsyncTask.java:394)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+10-28 15:00:53.103  1421  1858 W ModernMediaScanner: 	at java.lang.Thread.run(Thread.java:1012)
+10-28 15:00:53.143   504   523 W Looper  : Slow dispatch took 731ms android.ui h=android.view.Choreographer$FrameHandler c=android.view.Choreographer$FrameDisplayEventReceiver@13471dc m=0
+10-28 15:00:53.145   504   523 W Looper  : Slow delivery took 761ms android.ui h=android.view.ViewRootImpl$ViewRootHandler c=null m=29
+10-28 15:00:53.146   504   523 I Choreographer: Skipped 43 frames!  The application may be doing too much work on its main thread.
+10-28 15:00:53.179   504  2108 I OpenGLRenderer: Davey! duration=919ms; Flags=0, FrameTimelineVsyncId=4097, IntendedVsync=25809509392, Vsync=25959509386, InputEventId=0, HandleInputStart=25968822076, AnimationStart=25968822276, PerformTraversalsStart=25968856948, DrawStart=25970109446, FrameDeadline=26026176050, FrameInterval=25968734866, FrameStartTime=16666666, SyncQueued=25970200302, SyncStart=25973526254, IssueDrawCommandsStart=25974100481, SwapBuffers=26581161520, FrameCompleted=26732312229, DequeueBufferDuration=5208, QueueBufferDuration=31857709, GpuCompleted=26731385942, SwapBuffersCompleted=26732312229, DisplayPresentTime=4294957296, CommandSubmissionCompleted=26581161520, 
+10-28 15:00:53.185   504   576 D CompatibilityChangeReporter: Compat change id reported: 265195908; UID 10057; state: ENABLED
+10-28 15:00:53.185   504   576 D CompatibilityChangeReporter: Compat change id reported: 265195908; UID 10065; state: ENABLED
+10-28 15:00:53.351   504   523 W Looper  : Drained
+10-28 15:00:53.388   504  2108 I OpenGLRenderer: Davey! duration=925ms; Flags=0, FrameTimelineVsyncId=4146, IntendedVsync=26009509384, Vsync=26726176022, InputEventId=0, HandleInputStart=26736154316, AnimationStart=26736155158, PerformTraversalsStart=26736246394, DrawStart=26740345790, FrameDeadline=26876176016, FrameInterval=26735962911, FrameStartTime=16666666, SyncQueued=26740469124, SyncStart=26769927939, IssueDrawCommandsStart=26769974288, SwapBuffers=26940264337, FrameCompleted=26964324019, DequeueBufferDuration=3245, QueueBufferDuration=120059, GpuCompleted=26964324019, SwapBuffersCompleted=26941090426, DisplayPresentTime=7741794610491519589, CommandSubmissionCompleted=26940264337, 
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: Failed to apply ContentProviderOperation(type=insert uri=content://media/internal/file values={instance_id=null, compilation=null, disc_number=0, duration=4383, is_ringtone=0, album_artist=null, resolution=null, orientation=null, artist=Unknown, author=null, height=null, is_drm=0, is_audiobook=0, date_modified=1702767290, writer=null, composer=null, _modifier=3, is_recording=0, datetaken=null, mime_type=audio/ogg, is_notification=1, bitrate=96000, cd_track_number=null, xmp=[], year=null, _data=/product/media/audio/notifications/Vega.ogg, _size=29310, album=notifications, genre=null, is_alarm=0, title=Vega, track=null, width=null, is_music=0, document_id=null, is_podcast=0, capture_framerate=null, num_tracks=1, original_document_id=null, media_type=2} exceptionAllowed)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: android.database.sqlite.SQLiteConstraintException: UNIQUE constraint failed: files._data (code 2067 SQLITE_CONSTRAINT_UNIQUE)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at android.database.sqlite.SQLiteConnection.nativeExecuteForLastInsertedRowId(Native Method)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at android.database.sqlite.SQLiteConnection.executeForLastInsertedRowId(SQLiteConnection.java:961)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at android.database.sqlite.SQLiteSession.executeForLastInsertedRowId(SQLiteSession.java:790)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at android.database.sqlite.SQLiteStatement.executeInsert(SQLiteStatement.java:89)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.util.DatabaseUtils.executeInsert(DatabaseUtils.java:488)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.insert(SQLiteQueryBuilder.java:611)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.lambda$insert$1(SQLiteQueryBuilder.java:575)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.$r8$lambda$z6PmNgi8nEawad46M5nyYc14aRM(SQLiteQueryBuilder.java:0)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder$$ExternalSyntheticLambda4.apply(R8$$SyntheticClass:0)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.DatabaseHelper.runWithTransaction(DatabaseHelper.java:850)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.insert(SQLiteQueryBuilder.java:574)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.lambda$insertAllowingUpsert$20(MediaProvider.java:4846)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.$r8$lambda$A8_bSAcDGkyGiCcvRo57xoMQkf8(MediaProvider.java:0)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider$$ExternalSyntheticLambda39.apply(R8$$SyntheticClass:0)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.DatabaseHelper.runWithTransaction(DatabaseHelper.java:850)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertAllowingUpsert(MediaProvider.java:4836)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertFile(MediaProvider.java:4818)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertInternal(MediaProvider.java:5287)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insert(MediaProvider.java:4980)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at android.content.ContentProviderOperation.applyInternal(ContentProviderOperation.java:375)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at android.content.ContentProviderOperation.apply(ContentProviderOperation.java:347)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at android.content.ContentProvider.applyBatch(ContentProvider.java:2653)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.applyBatch(MediaProvider.java:5339)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at android.content.ContentProvider.applyBatch(ContentProvider.java:2644)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at android.content.ContentResolver.applyBatch(ContentResolver.java:2246)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.applyPending(ModernMediaScanner.java:957)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.maybeApplyPending(ModernMediaScanner.java:947)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.visitFile(ModernMediaScanner.java:853)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.visitFile(ModernMediaScanner.java:338)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at java.nio.file.Files.walkFileTree(Files.java:2670)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at java.nio.file.Files.walkFileTree(Files.java:2742)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.walkFileTree(ModernMediaScanner.java:454)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.runInternal(ModernMediaScanner.java:417)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.run(ModernMediaScanner.java:406)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner.scanDirectory(ModernMediaScanner.java:252)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.scanDirectory(MediaProvider.java:1939)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onScanVolume(MediaService.java:204)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onScanVolume(MediaService.java:172)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onHandleWork(MediaService.java:95)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at androidx.core.app.JobIntentService$CommandProcessor.doInBackground(JobIntentService.java:396)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at androidx.core.app.JobIntentService$CommandProcessor.doInBackground(JobIntentService.java:387)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at android.os.AsyncTask$3.call(AsyncTask.java:394)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at java.lang.Thread.run(Thread.java:1012)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: Failed to apply ContentProviderOperation(type=insert uri=content://media/internal/file values={instance_id=null, compilation=null, disc_number=null, duration=1000, is_ringtone=0, album_artist=null, resolution=null, orientation=null, artist=pdx, author=null, height=null, is_drm=0, is_audiobook=0, date_modified=1702767290, writer=null, composer=null, _modifier=3, is_recording=0, datetaken=null, mime_type=audio/ogg, is_notification=1, bitrate=80000, cd_track_number=2dB214a, xmp=[], year=null, _data=/product/media/audio/notifications/arcturus.ogg, _size=7908, album=notifications, genre=null, is_alarm=0, title=Arcturus, track=null, width=null, is_music=0, document_id=null, is_podcast=0, capture_framerate=null, num_tracks=1, original_document_id=null, media_type=2} exceptionAllowed)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: android.database.sqlite.SQLiteConstraintException: UNIQUE constraint failed: files._data (code 2067 SQLITE_CONSTRAINT_UNIQUE)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at android.database.sqlite.SQLiteConnection.nativeExecuteForLastInsertedRowId(Native Method)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at android.database.sqlite.SQLiteConnection.executeForLastInsertedRowId(SQLiteConnection.java:961)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at android.database.sqlite.SQLiteSession.executeForLastInsertedRowId(SQLiteSession.java:790)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at android.database.sqlite.SQLiteStatement.executeInsert(SQLiteStatement.java:89)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.util.DatabaseUtils.executeInsert(DatabaseUtils.java:488)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.insert(SQLiteQueryBuilder.java:611)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.lambda$insert$1(SQLiteQueryBuilder.java:575)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.$r8$lambda$z6PmNgi8nEawad46M5nyYc14aRM(SQLiteQueryBuilder.java:0)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder$$ExternalSyntheticLambda4.apply(R8$$SyntheticClass:0)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.DatabaseHelper.runWithTransaction(DatabaseHelper.java:850)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.insert(SQLiteQueryBuilder.java:574)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.lambda$insertAllowingUpsert$20(MediaProvider.java:4846)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.$r8$lambda$A8_bSAcDGkyGiCcvRo57xoMQkf8(MediaProvider.java:0)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider$$ExternalSyntheticLambda39.apply(R8$$SyntheticClass:0)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.DatabaseHelper.runWithTransaction(DatabaseHelper.java:850)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertAllowingUpsert(MediaProvider.java:4836)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertFile(MediaProvider.java:4818)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertInternal(MediaProvider.java:5287)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insert(MediaProvider.java:4980)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at android.content.ContentProviderOperation.applyInternal(ContentProviderOperation.java:375)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at android.content.ContentProviderOperation.apply(ContentProviderOperation.java:347)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at android.content.ContentProvider.applyBatch(ContentProvider.java:2653)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.applyBatch(MediaProvider.java:5339)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at android.content.ContentProvider.applyBatch(ContentProvider.java:2644)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at android.content.ContentResolver.applyBatch(ContentResolver.java:2246)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.applyPending(ModernMediaScanner.java:957)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.maybeApplyPending(ModernMediaScanner.java:947)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.visitFile(ModernMediaScanner.java:853)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.visitFile(ModernMediaScanner.java:338)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at java.nio.file.Files.walkFileTree(Files.java:2670)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at java.nio.file.Files.walkFileTree(Files.java:2742)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.walkFileTree(ModernMediaScanner.java:454)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.runInternal(ModernMediaScanner.java:417)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.run(ModernMediaScanner.java:406)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner.scanDirectory(ModernMediaScanner.java:252)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.scanDirectory(MediaProvider.java:1939)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onScanVolume(MediaService.java:204)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onScanVolume(MediaService.java:172)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onHandleWork(MediaService.java:95)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at androidx.core.app.JobIntentService$CommandProcessor.doInBackground(JobIntentService.java:396)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at androidx.core.app.JobIntentService$CommandProcessor.doInBackground(JobIntentService.java:387)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at android.os.AsyncTask$3.call(AsyncTask.java:394)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+10-28 15:00:53.648  1421  1858 W ModernMediaScanner: 	at java.lang.Thread.run(Thread.java:1012)
+10-28 15:00:53.674  1421  1858 I MediaProvider: Scanned internal due to REASON_MOUNTED, found 225 items in 6415ms, 221 inserts 4 updates 0 deletes
+10-28 15:00:53.680   504   859 D CompatibilityChangeReporter: Compat change id reported: 182734110; UID 1000; state: ENABLED
+10-28 15:00:53.682  1421  1858 W MediaProvider: Didn't find any volume for getVolume(/product/media/audio/ringtones/Ring_Synth_04.ogg)
+10-28 15:00:53.682  1421  1858 I MediaProvider: Open with lower FS for /product/media/audio/ringtones/Ring_Synth_04.ogg. Uid: 10138
+10-28 15:00:53.685  1421  1858 W MediaProvider: Didn't find any volume for getVolume(/product/media/audio/notifications/pixiedust.ogg)
+10-28 15:00:53.685  1421  1858 I MediaProvider: Open with lower FS for /product/media/audio/notifications/pixiedust.ogg. Uid: 10138
+10-28 15:00:53.688  1421  1858 W MediaProvider: Didn't find any volume for getVolume(/product/media/audio/alarms/Alarm_Classic.ogg)
+10-28 15:00:53.688  1421  1858 I MediaProvider: Open with lower FS for /product/media/audio/alarms/Alarm_Classic.ogg. Uid: 10138
+10-28 15:00:53.691  1421  1858 W MediaProvider: isAppCloneUserPair for user 0: false
+10-28 15:00:53.692  1421  1858 W MediaProvider: isAppCloneUserPair for user 0: false
+10-28 15:00:53.693  1421  1858 W MediaProvider: isAppCloneUserPair for user 0: false
+10-28 15:00:53.694  1421  1615 E StorageManager: Failed to set extended attributes for /storage/emulated/0/Android to set project id.: Operation not permitted
+10-28 15:00:53.694  1421  1615 W MediaProvider: Failed to update quota type for /storage/emulated/0/Android
+10-28 15:00:53.694  1421  1615 W MediaProvider: java.io.IOException: Failed to update quota type for /storage/emulated/0/Android
+10-28 15:00:53.694  1421  1615 W MediaProvider: 	at android.os.storage.StorageManager.updateExternalStorageFileQuotaType(StorageManager.java:2551)
+10-28 15:00:53.694  1421  1615 W MediaProvider: 	at com.android.providers.media.MediaProvider.updateQuotaTypeForFileInternal(MediaProvider.java:882)
+10-28 15:00:53.694  1421  1615 W MediaProvider: 	at com.android.providers.media.MediaProvider.updateQuotaTypeForUri(MediaProvider.java:857)
+10-28 15:00:53.694  1421  1615 W MediaProvider: 	at com.android.providers.media.MediaProvider.-$$Nest$mupdateQuotaTypeForUri(MediaProvider.java:0)
+10-28 15:00:53.694  1421  1615 W MediaProvider: 	at com.android.providers.media.MediaProvider$5.lambda$onInsert$0(MediaProvider.java:916)
+10-28 15:00:53.694  1421  1615 W MediaProvider: 	at com.android.providers.media.MediaProvider$5.$r8$lambda$fpXVCCb4tNgN0rBFXazZWCUznbc(MediaProvider.java:0)
+10-28 15:00:53.694  1421  1615 W MediaProvider: 	at com.android.providers.media.MediaProvider$5$$ExternalSyntheticLambda1.run(R8$$SyntheticClass:0)
+10-28 15:00:53.694  1421  1615 W MediaProvider: 	at android.os.Handler.handleCallback(Handler.java:958)
+10-28 15:00:53.694  1421  1615 W MediaProvider: 	at android.os.Handler.dispatchMessage(Handler.java:99)
+10-28 15:00:53.694  1421  1615 W MediaProvider: 	at android.os.Looper.loopOnce(Looper.java:205)
+10-28 15:00:53.694  1421  1615 W MediaProvider: 	at android.os.Looper.loop(Looper.java:294)
+10-28 15:00:53.694  1421  1615 W MediaProvider: 	at android.os.HandlerThread.run(HandlerThread.java:67)
+10-28 15:00:53.696  1421  1615 E StorageManager: Failed to set extended attributes for /storage/emulated/0/Android/media to set project id.: Operation not permitted
+10-28 15:00:53.696  1421  1615 W MediaProvider: Failed to update quota type for /storage/emulated/0/Android/media
+10-28 15:00:53.696  1421  1615 W MediaProvider: java.io.IOException: Failed to update quota type for /storage/emulated/0/Android/media
+10-28 15:00:53.696  1421  1615 W MediaProvider: 	at android.os.storage.StorageManager.updateExternalStorageFileQuotaType(StorageManager.java:2551)
+10-28 15:00:53.696  1421  1615 W MediaProvider: 	at com.android.providers.media.MediaProvider.updateQuotaTypeForFileInternal(MediaProvider.java:882)
+10-28 15:00:53.696  1421  1615 W MediaProvider: 	at com.android.providers.media.MediaProvider.updateQuotaTypeForUri(MediaProvider.java:857)
+10-28 15:00:53.696  1421  1615 W MediaProvider: 	at com.android.providers.media.MediaProvider.-$$Nest$mupdateQuotaTypeForUri(MediaProvider.java:0)
+10-28 15:00:53.696  1421  1615 W MediaProvider: 	at com.android.providers.media.MediaProvider$5.lambda$onInsert$0(MediaProvider.java:916)
+10-28 15:00:53.696  1421  1615 W MediaProvider: 	at com.android.providers.media.MediaProvider$5.$r8$lambda$fpXVCCb4tNgN0rBFXazZWCUznbc(MediaProvider.java:0)
+10-28 15:00:53.696  1421  1615 W MediaProvider: 	at com.android.providers.media.MediaProvider$5$$ExternalSyntheticLambda1.run(R8$$SyntheticClass:0)
+10-28 15:00:53.696  1421  1615 W MediaProvider: 	at android.os.Handler.handleCallback(Handler.java:958)
+10-28 15:00:53.696  1421  1615 W MediaProvider: 	at android.os.Handler.dispatchMessage(Handler.java:99)
+10-28 15:00:53.696  1421  1615 W MediaProvider: 	at android.os.Looper.loopOnce(Looper.java:205)
+10-28 15:00:53.696  1421  1615 W MediaProvider: 	at android.os.Looper.loop(Looper.java:294)
+10-28 15:00:53.696  1421  1615 W MediaProvider: 	at android.os.HandlerThread.run(HandlerThread.java:67)
+10-28 15:00:53.699  1421  1858 I MediaProvider: Scanned external_primary due to REASON_MOUNTED, found 15 items in 9ms, 3 inserts 0 updates 0 deletes
+10-28 15:00:53.700  1421  1858 I MediaProvider: End Intent { act=com.android.providers.media.action.SCAN_VOLUME (has extras) }
+10-28 15:00:53.700  1421  1858 I MediaProvider: Begin Intent { act=android.intent.action.MEDIA_MOUNTED dat=file:///... flg=0x5000010 cmp=com.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
+10-28 15:00:53.700  1421  1858 I MediaProvider: Volume MediaVolume name: [external_primary] id: [emulated;0] user: [UserHandle{0}] path: [/storage/emulated/0] externallyManaged: [false] mPublicVolume: [false] already attached
+10-28 15:00:53.700  1421  1858 I MediaProvider: End Intent { act=android.intent.action.MEDIA_MOUNTED dat=file:///... flg=0x5000010 cmp=com.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
+10-28 15:00:53.700  1421  1858 I MediaProvider: Begin Intent { act=android.intent.action.MEDIA_MOUNTED dat=file:///... flg=0x5000010 cmp=com.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
+10-28 15:00:53.700  1421  1858 I MediaProvider: Volume MediaVolume name: [external_primary] id: [emulated;0] user: [UserHandle{0}] path: [/storage/emulated/0] externallyManaged: [false] mPublicVolume: [false] already attached
+10-28 15:00:53.700  1421  1858 I MediaProvider: End Intent { act=android.intent.action.MEDIA_MOUNTED dat=file:///... flg=0x5000010 cmp=com.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
+10-28 15:00:53.701   504   859 D OomAdjuster: Not killing cached processes
+10-28 15:00:53.812   973   973 D AvrcpBrowsablePlayerConnector: Received a message: msg.what=2
+10-28 15:00:53.812   973   973 V AvrcpBrowsablePlayerConnector: Timed out waiting for players
+10-28 15:00:53.812   973   973 I AvrcpBrowsablePlayerConnector: Successfully connected to 0 browsable players.
+10-28 15:00:53.812   973   973 I MediaPlayerList: init: Browsable Player list size is 0
+10-28 15:00:53.894  2270  2307 I godot   : OpenGL API OpenGL ES 3.1 (OpenGL ES 3.1.0 (ANGLE 2.1.17841 git hash: 5fa2e61da947)) - Compatibility - Using Device: Google (Google Inc. (Google)) - Android Emulator OpenGL ES Translator (ANGLE (Google, Vulkan 1.2.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver-5.0.0))
+10-28 15:00:53.895  2270  2307 D onion.deathcart: PlayerBase::PlayerBase()
+10-28 15:00:53.896  2270  2307 D onion.deathcart: TrackPlayerBase::TrackPlayerBase()
+10-28 15:00:53.896  2270  2307 I libOpenSLES: Emulating old channel mask behavior (ignoring positional mask 0x3, using default mask 0x3 based on channel count of 2)
+10-28 15:00:53.897   383  1487 W AudioFlinger: createTrack_l(): mismatch between requested flags (00000104) and output flags (00000002)
+10-28 15:00:53.897   383  1487 D AudioFlinger: Client defaulted notificationFrames to 882 for frameCount 4012
+10-28 15:00:53.898   383  1487 D AF::TrackHandle: OpPlayAudio: track:55 usage:1 not muted
+10-28 15:00:53.900   504   731 D CompatibilityChangeReporter: Compat change id reported: 171306433; UID 1000; state: ENABLED
+10-28 15:00:53.900   504   731 D CompatibilityChangeReporter: Compat change id reported: 218533173; UID 1000; state: ENABLED
+10-28 15:00:53.900   383  1487 D audioserver: FGS Logger Transaction failed
+10-28 15:00:53.900   383  1487 D audioserver: -129
+10-28 15:00:53.900  2270  2307 I godot   : 
+10-28 15:00:54.032   383   486 D AudioFlinger: mixer(0x7dfe524d0930) throttle end: throttle time(33)
+10-28 15:00:54.036  2270  2288 D EGL_emulation: app_time_stats: avg=332.56ms min=3.59ms max=2291.49ms count=8
+10-28 15:00:54.087   383   486 D AudioFlinger: mixer(0x7dfe524d0930) throttle end: throttle time(32)
+10-28 15:00:54.131   383   486 D AudioFlinger: mixer(0x7dfe524d0930) throttle end: throttle time(12)
+10-28 15:00:54.275  2270  2307 V Godot   : OnGodotSetupCompleted
+10-28 15:00:54.318   504   583 D ActivityManager: freezing 1486 com.android.music
+10-28 15:00:54.640   504   583 D ActivityManager: freezing 1455 com.android.sdksetup
+10-28 15:00:54.679   795   795 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-28 15:00:54.832  1454  1454 D CompatibilityChangeReporter: Compat change id reported: 150939131; UID 10073; state: ENABLED
+10-28 15:00:54.832  1454  1454 I ProvidersCache: Updating roots due to change on user 0at content://com.android.providers.media.documents/root
+10-28 15:00:54.833  2270  2307 V Godot   : OnGodotMainLoopStarted
+10-28 15:00:54.979   795   795 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-28 15:00:56.018  1454  1454 I ProvidersCache: Updating roots due to change on user 0at content://com.android.externalstorage.documents
+10-28 15:00:56.277  1454  1454 I ProvidersCache: Updating roots due to change on user 0at content://com.android.externalstorage.documents
+10-28 15:00:56.441  1454  1454 I ProvidersCache: Updating roots due to change on user 0at content://com.android.externalstorage.documents
+10-28 15:00:56.517  1454  1454 I ProvidersCache: Updating roots due to change on user 0at content://com.android.providers.media.documents/root
+10-28 15:00:56.537  1454  1454 I ProvidersCache: Updating roots due to change on user 0at content://com.android.externalstorage.documents
+10-28 15:00:56.565  1454  1454 I ProvidersCache: Updating roots due to change on user 0at content://com.android.externalstorage.documents
+10-28 15:00:56.605  1454  1454 I ProvidersCache: Updating roots due to change on user 0at content://com.android.externalstorage.documents
+10-28 15:00:57.203   504   583 D ActivityManager: freezing 1960 com.android.carrierdefaultapp
+10-28 15:00:58.144   504   583 D ActivityManager: freezing 1562 com.android.printspooler
+10-28 15:00:58.676   504   583 D ActivityManager: freezing 1243 com.android.cellbroadcastreceiver
+10-28 15:00:59.544   155   165 I keystore2: system/security/keystore2/src/watchdog.rs:319 - Watchdog thread idle -> terminating. Have a great day.
+10-28 15:00:59.625  2270  2307 D EGL_emulation: app_time_stats: avg=2816.29ms min=94.63ms max=5537.96ms count=2
+10-28 15:01:00.426   383   486 D AudioFlinger: mixer(0x7dfe524d0930) throttle end: throttle time(14)
+10-28 15:01:00.486   383   486 D AudioFlinger: mixer(0x7dfe524d0930) throttle end: throttle time(1)
+10-28 15:01:00.683   795   795 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-28 15:01:00.916   383   486 D AudioFlinger: mixer(0x7dfe524d0930) throttle end: throttle time(8)
+10-28 15:01:01.093   795   870 D EGL_emulation: app_time_stats: avg=1697.79ms min=80.80ms max=8120.08ms count=5
+10-28 15:01:01.103   504   583 D ActivityManager: freezing 1703 com.android.quicksearchbox
+10-28 15:01:01.110   795  1882 I OpenGLRenderer: Davey! duration=1050ms; Flags=0, FrameTimelineVsyncId=4309, IntendedVsync=33642842412, Vsync=33642842412, InputEventId=0, HandleInputStart=33643131004, AnimationStart=33643132006, PerformTraversalsStart=33643132386, DrawStart=33643536108, FrameDeadline=33659509078, FrameInterval=33643126577, FrameStartTime=16666666, SyncQueued=33643627395, SyncStart=33643649778, IssueDrawCommandsStart=33643724850, SwapBuffers=34681464217, FrameCompleted=34693819424, DequeueBufferDuration=6049, QueueBufferDuration=478544, GpuCompleted=34693819424, SwapBuffersCompleted=34684083896, DisplayPresentTime=0, CommandSubmissionCompleted=34681464217, 
+10-28 15:01:01.261     0     0 I init    : Sending signal 9 to service 'idmap2d' (pid 450) process group...
+10-28 15:01:01.111   504  2108 W OverlayManager: service 'idmap' died
+10-28 15:01:01.274     0     0 I libprocessgroup: Successfully killed process cgroup uid 1000 pid 450 in 5ms
+10-28 15:01:01.276     0     0 I init    : Control message: Processed ctl.stop for 'idmap2d' from pid: 504 (system_server)
+10-28 15:01:01.283     0     0 I init    : Service 'idmap2d' (pid 450) received signal 9
+10-28 15:01:01.250  2270  2307 D EGL_emulation: app_time_stats: avg=1624.93ms min=1624.93ms max=1624.93ms count=1
+10-28 15:01:01.290   504   779 D OomAdjuster: Not killing cached processes
+10-28 15:01:01.357   504   524 I DropBoxManagerService: add tag=system_app_strictmode isTagEnabled=true flags=0x2
+10-28 15:01:01.523   951  1130 D DhcpClient: Received packet: 02:15:b2:00:00:00 OFFER, ip /10.0.2.16, mask /255.255.255.0, DNS servers: /10.0.2.3 , gateways [/10.0.2.2], lease time 86400, domain null
+10-28 15:01:01.530   951  1130 D DhcpClient: Received packet: 02:15:b2:00:00:00 ACK: your new IP /10.0.2.16, netmask /255.255.255.0, gateways [/10.0.2.2] DNS servers: /10.0.2.3 , lease time 86400
+10-28 15:01:01.840   504   523 D AutofillManager: Fill dialog is enabled:false, hints=[]
+10-28 15:01:02.030   504   583 D ActivityManager: freezing 1799 com.android.externalstorage
+10-28 15:01:02.036   383  1487 W AudioFlinger: createTrack_l(): mismatch between requested flags (00000004) and output flags (00000002)
+10-28 15:01:02.038   383  1487 D AF::TrackHandle: OpPlayAudio: track:56 usage:13 not muted
+10-28 15:01:02.040   383  1487 D audioserver: FGS Logger Transaction failed
+10-28 15:01:02.040   383  1487 D audioserver: -129
+10-28 15:01:02.271   383   486 D audioserver: FGS Logger Transaction failed
+10-28 15:01:02.271   383   486 D audioserver: -129
+10-28 15:01:02.516   504  2315 D EGL_emulation: app_time_stats: avg=2062.23ms min=3.76ms max=9165.03ms count=5
+10-28 15:01:02.625   504  2315 D OpenGLRenderer: endAllActiveAnimators on 0x766084c7e720 (RippleDrawable) with handle 0x7660f4cdcf50
+10-28 15:01:02.813   383   486 D AudioFlinger: mixer(0x7dfe524d0930) throttle end: throttle time(40)
+10-28 15:01:03.096   504   523 W Looper  : Slow dispatch took 1238ms android.ui h=android.view.ViewRootImpl$ViewRootHandler c=android.view.View$PerformClick@58e519b m=0
+10-28 15:01:03.096   504   523 W Looper  : Slow delivery took 1255ms android.ui h=android.view.ViewRootImpl$ViewRootHandler c=android.view.View$UnsetPressedState@268cd11 m=0
+10-28 15:01:03.096   504   523 I Choreographer: Skipped 73 frames!  The application may be doing too much work on its main thread.
+10-28 15:01:03.097   504   523 I ImeTracker: android:dbdbfab2: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_SAME_WINDOW_FOCUSED_WITHOUT_EDITOR
+10-28 15:01:03.097   504   523 I ImeTracker: android:dbdbfab2: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-28 15:01:03.132   986  1005 W ndroid.settings: Cleared Reference was only reachable from finalizer (only reported once)
+10-28 15:01:03.156  1372  1383 W putmethod.latin: Cleared Reference was only reachable from finalizer (only reported once)
+10-28 15:01:03.194  2270  2307 D EGL_emulation: app_time_stats: avg=971.42ms min=538.81ms max=1404.04ms count=2
+10-28 15:01:03.283   504   523 E RippleDrawable: The RippleDrawable.STYLE_PATTERNED animation is not supported for a non-hardware accelerated Canvas. Skipping animation.
+10-28 15:01:03.399   504   523 W Looper  : Slow dispatch took 303ms android.ui h=android.view.Choreographer$FrameHandler c=android.view.Choreographer$FrameDisplayEventReceiver@13471dc m=0
+10-28 15:01:03.399   504   523 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@75d261c
+10-28 15:01:03.399   504   523 D CoreBackPreview: Window{64ade88 u0 ImmersiveModeConfirmation}: Setting back callback null
+10-28 15:01:03.401   504   523 W InputManager-JNI: Input channel object '64ade88 ImmersiveModeConfirmation (client)' was disposed without first being removed with the input manager!
+10-28 15:01:03.418   504   523 I ImeTracker: null:5e968c56: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
+10-28 15:01:03.419   504   523 I ImeTracker: null:5e968c56: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-28 15:01:03.419   504   523 W InputMethodManager: No current root view, ignoring closeCurrentInput()
+10-28 15:01:03.419   504   523 W Looper  : Drained
+10-28 15:01:03.462   504   562 D WifiNl80211Manager: Scan result ready event
+10-28 15:01:03.462   504   562 D WifiNative: Scan result ready event
+10-28 15:01:03.478   383   486 D AudioFlinger: mixer(0x7dfe524d0930) throttle end: throttle time(55)
+10-28 15:01:03.487   504   525 V WindowManager: Unknown focus tokens, dropping reportFocusChanged
+10-28 15:01:03.518   504   562 D CompatibilityChangeReporter: Compat change id reported: 214016041; UID 10141; state: ENABLED
+10-28 15:01:03.518   504   562 I ImeTracker: com.onion.deathcart:f9b41d44: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+10-28 15:01:03.518   504   562 I ImeTracker: com.onion.deathcart:f9b41d44: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-28 15:01:03.630   504   763 I SdkSandboxManager: Reconciling sdk data package directories for 0
+10-28 15:01:03.705   383   486 D AudioFlinger: mixer(0x7dfe524d0930) throttle end: throttle time(34)
+10-28 15:01:03.720  1454  1454 I ProvidersCache: Updating roots due to change on user 0at content://com.android.providers.media.documents/root
+10-28 15:01:03.749   383   486 D AudioFlinger: mixer(0x7dfe524d0930) throttle end: throttle time(3)
+10-28 15:01:03.775   795   795 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-28 15:01:04.153   383   486 D AudioFlinger: mixer(0x7dfe524d0930) throttle end: throttle time(45)
+10-28 15:01:04.615  2270  2307 D EGL_emulation: app_time_stats: avg=473.80ms min=286.59ms max=661.45ms count=3
+10-28 15:01:04.983   795   795 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-28 15:01:05.248   385   392 W GpuWork : Failed to attach bpf program to power/gpu_work_period tracepoint [2(No such file or directory)]
+10-28 15:01:05.798  2270  2307 D EGL_emulation: app_time_stats: avg=340.02ms min=68.18ms max=611.87ms count=2
+10-28 15:01:05.809  1546  1559 D StrictMode: StrictMode policy violation: android.os.strictmode.SqliteObjectLeakedViolation: Finalizing a Cursor that has not been deactivated or closed. database = /data/user/0/com.android.providers.contacts/databases/contacts2.db, table = raw_contacts, query = SELECT contacts_view._id AS _id, contacts_view.display_name AS display_name, contacts_view.photo_thumb_uri AS photo_thumb_uri, data1 AS number, data2 AS type, data3 AS label, contacts_view.lookup AS lookup FROM raw_contacts JOIN view_contacts as contacts_view ON (contacts_view._id = raw_contacts.contact_id) JOIN (SELECT data_id,normalized_number FROM phone_lookup WHERE (phone_lookup.min_match = '7654321')) AS lookup ON lookup.data_id=data._id JOIN data ON data.raw_contact_id=raw_contacts._id WHERE (PHONE_NUMBERS_EQUAL(data.data1, '+15551234567', 0, 7)) ORDER BY  length(lookup.normalized_number) DESC
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at android.os.StrictMode.onSqliteObjectLeaked(StrictMode.java:2222)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at android.database.sqlite.SQLiteCursor.finalize(SQLiteCursor.java:282)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at java.lang.Daemons$FinalizerDaemon.doFinalize(Daemons.java:339)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at java.lang.Daemons$FinalizerDaemon.processReference(Daemons.java:324)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at java.lang.Daemons$FinalizerDaemon.runInternal(Daemons.java:300)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at java.lang.Daemons$Daemon.run(Daemons.java:145)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at java.lang.Thread.run(Thread.java:1012)
+10-28 15:01:05.809  1546  1559 D StrictMode: StrictMode policy violation: android.os.strictmode.LeakedClosableViolation: A resource was acquired at attached stack trace but never released. See java.io.Closeable for information on avoiding resource leaks.
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at android.os.StrictMode$AndroidCloseGuardReporter.report(StrictMode.java:1994)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at dalvik.system.CloseGuard.warnIfOpen(CloseGuard.java:336)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at android.database.AbstractCursor.finalize(AbstractCursor.java:531)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at android.database.sqlite.SQLiteCursor.finalize(SQLiteCursor.java:291)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at java.lang.Daemons$FinalizerDaemon.doFinalize(Daemons.java:339)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at java.lang.Daemons$FinalizerDaemon.processReference(Daemons.java:324)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at java.lang.Daemons$FinalizerDaemon.runInternal(Daemons.java:300)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at java.lang.Daemons$Daemon.run(Daemons.java:145)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at java.lang.Thread.run(Thread.java:1012)
+10-28 15:01:05.809  1546  1559 D StrictMode: Caused by: java.lang.Throwable: Explicit termination method 'AbstractCursor.close' not called
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at dalvik.system.CloseGuard.openWithCallSite(CloseGuard.java:288)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at dalvik.system.CloseGuard.open(CloseGuard.java:257)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at android.database.AbstractCursor.<init>(AbstractCursor.java:227)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at android.database.AbstractWindowedCursor.<init>(AbstractWindowedCursor.java:39)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at android.database.sqlite.SQLiteCursor.<init>(SQLiteCursor.java:98)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at android.database.sqlite.SQLiteDirectCursorDriver.query(SQLiteDirectCursorDriver.java:52)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at android.database.sqlite.SQLiteDatabase.rawQueryWithFactory(SQLiteDatabase.java:1714)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at android.database.sqlite.SQLiteQueryBuilder.query(SQLiteQueryBuilder.java:592)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at com.android.providers.contacts.ContactsProvider2.doQuery(ContactsProvider2.java:7543)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at com.android.providers.contacts.ContactsProvider2.queryLocal(ContactsProvider2.java:7249)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at com.android.providers.contacts.ContactsProvider2.queryCorpLookupIfNecessary(ContactsProvider2.java:7728)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at com.android.providers.contacts.ContactsProvider2.queryLookupEnterprise(ContactsProvider2.java:7867)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at com.android.providers.contacts.ContactsProvider2.queryPhoneLookupEnterprise(ContactsProvider2.java:7838)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at com.android.providers.contacts.ContactsProvider2.queryLocal(ContactsProvider2.java:7172)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at com.android.providers.contacts.ContactsProvider2.queryDirectoryIfNecessary(ContactsProvider2.java:5883)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at com.android.providers.contacts.ContactsProvider2.queryInternal(ContactsProvider2.java:5728)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at com.android.providers.contacts.ContactsProvider2.query(ContactsProvider2.java:5673)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at android.content.ContentProvider.query(ContentProvider.java:1692)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at android.content.ContentProvider$Transport.query(ContentProvider.java:292)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at android.content.ContentProviderNative.onTransact(ContentProviderNative.java:107)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at android.os.Binder.execTransactInternal(Binder.java:1344)
+10-28 15:01:05.809  1546  1559 D StrictMode: 	at android.os.Binder.execTransact(Binder.java:1275)
+10-28 15:01:06.563   504   576 D OomAdjuster: Not killing cached processes
+10-28 15:01:06.786   795   795 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-28 15:01:07.522  2270  2307 D EGL_emulation: app_time_stats: avg=862.08ms min=504.79ms max=1219.37ms count=2
+10-28 15:01:08.849  2270  2307 D EGL_emulation: app_time_stats: avg=441.59ms min=115.35ms max=613.31ms count=3
+10-28 15:01:09.787   795   795 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-28 15:01:10.011  2270  2307 D EGL_emulation: app_time_stats: avg=1161.46ms min=1161.46ms max=1161.46ms count=1
+10-28 15:01:10.692   383   486 D AudioFlinger: mixer(0x7dfe524d0930) throttle end: throttle time(49)
+10-28 15:01:11.374   383   486 D AudioFlinger: mixer(0x7dfe524d0930) throttle end: throttle time(51)
+10-28 15:01:11.809  2270  2307 D EGL_emulation: app_time_stats: avg=899.00ms min=650.65ms max=1147.36ms count=2
+10-28 15:01:12.791   795   795 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-28 15:01:13.115  2270  2307 D EGL_emulation: app_time_stats: avg=652.99ms min=641.23ms max=664.74ms count=2
+10-28 15:01:13.834   383   486 D AudioFlinger: mixer(0x7dfe524d0930) throttle end: throttle time(52)
+10-28 15:01:13.926   383   486 D AudioFlinger: mixer(0x7dfe524d0930) throttle end: throttle time(10)
+10-28 15:01:14.074   504   583 D ActivityManager: freezing 1454 com.android.documentsui
+10-28 15:01:14.302  2270  2307 D EGL_emulation: app_time_stats: avg=593.23ms min=521.88ms max=664.58ms count=2
+10-28 15:01:14.472   383   486 D AudioFlinger: mixer(0x7dfe524d0930) throttle end: throttle time(1)
+10-28 15:01:14.872   504   562 D OomAdjuster: Not killing cached processes
+10-28 15:01:14.989   795   795 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-28 15:01:15.035   383   486 D AudioFlinger: mixer(0x7dfe524d0930) throttle end: throttle time(33)
+10-28 15:01:15.683  2270  2307 D EGL_emulation: app_time_stats: avg=397.45ms min=120.16ms max=674.75ms count=2
+10-28 15:01:15.794   795   795 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-28 15:01:16.570   504   583 D ActivityManager: freezing 1854 com.android.traceur
+10-28 15:01:16.666   504   583 D ActivityManager: freezing 1207 com.android.cellbroadcastreceiver.module
+10-28 15:01:16.728   504   583 D ActivityManager: freezing 1633 com.android.imsserviceentitlement
+10-28 15:01:16.742   504   583 D ActivityManager: freezing 1760 com.android.messaging
+10-28 15:01:16.774   504   583 D ActivityManager: freezing 1669 com.android.providers.calendar
+10-28 15:01:16.930  2270  2307 D EGL_emulation: app_time_stats: avg=623.35ms min=603.05ms max=643.65ms count=2
+10-28 15:01:17.002   504   583 D ActivityManager: freezing 1878 com.android.calendar
+10-28 15:01:17.026   504   583 D ActivityManager: freezing 1927 com.android.camera2
+10-28 15:01:17.116   504   583 D ActivityManager: freezing 1945 com.android.contacts
+10-28 15:01:17.242   504   583 D ActivityManager: freezing 2015 com.android.dynsystem:dynsystem
+10-28 15:01:17.242   504   583 D ActivityManager: freezing 1980 com.android.dynsystem
+10-28 15:01:17.243   504   583 D ActivityManager: freezing 1885 com.android.localtransport
+10-28 15:01:17.243   504   583 D ActivityManager: freezing 986 com.android.settings
+10-28 15:01:17.243   504   583 D ActivityManager: freezing 1690 com.android.keychain
+10-28 15:01:18.167  2270  2307 D EGL_emulation: app_time_stats: avg=618.17ms min=607.85ms max=628.49ms count=2
+10-28 15:01:18.171   504   583 D ActivityManager: freezing 2123 com.android.rkpdapp
+10-28 15:01:18.416   504   583 D ActivityManager: freezing 2160 com.android.statementservice
+10-28 15:01:18.664   383   486 D AudioFlinger: mixer(0x7dfe524d0930) throttle end: throttle time(3)
+10-28 15:01:18.798   795   795 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-28 15:01:19.466  2270  2307 D EGL_emulation: app_time_stats: avg=649.60ms min=624.52ms max=674.68ms count=2
+10-28 15:01:20.582  2270  2307 D EGL_emulation: app_time_stats: avg=1116.12ms min=1116.12ms max=1116.12ms count=1
+10-28 15:01:21.970  2419  2419 W BpBinder: Linking to death on android.gui.ISurfaceComposer but there are no threads (yet?) listening to incoming transactions. See ProcessState::startThreadPool and ProcessState::setThreadPoolMaxThreadCount. Generally you should setup the binder threadpool before other initialization steps.
+10-28 15:01:21.971  2419  2419 W ProcessState: Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+10-28 15:01:22.044   387   402 W ServiceManagerCppClient: Permission failure: android.permission.CAPTURE_BLACKOUT_CONTENT from uid=2000 pid=2419
+10-28 15:01:22.044   387   402 D PermissionCache: checking android.permission.CAPTURE_BLACKOUT_CONTENT for uid=2000 => denied (432 us)
+10-28 15:01:22.214   383   486 D AudioFlinger: mixer(0x7dfe524d0930) throttle end: throttle time(46)
+10-28 15:01:22.665  2270  2307 D EGL_emulation: app_time_stats: avg=497.26ms min=49.92ms max=1298.09ms count=3
+10-28 15:01:22.667   132   132 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-28 15:01:22.667  2419  2420 I Gralloc4: mapper 4.x is not supported
+10-28 15:01:22.820     0     0 I servicemanager: Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest.
+10-28 15:01:22.732   383   486 D AudioFlinger: mixer(0x7dfe524d0930) throttle end: throttle time(3)
+10-28 15:01:23.466   504   562 D WifiNl80211Manager: Scan result ready event
+10-28 15:01:23.466   504   562 D WifiNative: Scan result ready event
+10-28 15:01:23.782  2270  2270 D AutofillManager: Fill dialog is enabled:false, hints=[]
+10-28 15:01:23.800  2270  2307 D EGL_emulation: app_time_stats: avg=567.10ms min=195.80ms max=938.41ms count=2
+10-28 15:01:24.806   795   795 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-28 15:01:24.904   504   583 D ActivityManager: freezing 797 com.android.permissioncontroller
+10-28 15:01:24.986   795   795 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-28 15:01:25.493  2270  2307 D EGL_emulation: app_time_stats: avg=565.98ms min=551.14ms max=580.82ms count=2
+10-28 15:01:26.411   504   532 D ActivityManager: sync unfroze 986 com.android.settings for 3
+10-28 15:01:26.411   504   532 D OomAdjuster: Not killing cached processes
+10-28 15:01:26.423   986   986 D BatteryUsageBroadcastReceiver: onReceive:android.intent.action.BATTERY_LEVEL_CHANGED
+10-28 15:01:26.424   986   986 D BatteryUsageBroadcastReceiver: fetch data because of event: ACTION_BATTERY_LEVEL_CHANGED
+10-28 15:01:26.428   986   986 D BatteryUsageBroadcastReceiver: cancel sendBroadcastToFetchUsageData when broadcastDelay is 2339982ms.
+10-28 15:01:26.711   986  1807 D SharedPreferencesImpl: Time required to fsync /data/user_de/0/com.android.settings/shared_prefs/battery_usage_shared_prefs.xml: [<1: 0, <2: 0, <4: 0, <8: 0, <16: 0, <32: 0, <64: 0, <128: 0, <256: 0, <512: 1, <1024: 0, <2048: 0, <4096: 0, <8192: 0, <16384: 0, >=16384: 0]
+10-28 15:01:26.734  2270  2307 D EGL_emulation: app_time_stats: avg=225.66ms min=35.75ms max=518.21ms count=3
+10-28 15:01:27.013   504   713 E WifiHealthMonitor:  Hit PackageManager exception
+10-28 15:01:27.013   504   713 E WifiHealthMonitor: android.content.pm.PackageManager$NameNotFoundException: No module info for package: com.android.wifi
+10-28 15:01:27.013   504   713 E WifiHealthMonitor: 	at android.app.ApplicationPackageManager.getModuleInfo(ApplicationPackageManager.java:1190)
+10-28 15:01:27.013   504   713 E WifiHealthMonitor: 	at com.android.server.wifi.WifiHealthMonitor.getWifiStackVersion(WifiHealthMonitor.java:367)
+10-28 15:01:27.013   504   713 E WifiHealthMonitor: 	at com.android.server.wifi.WifiHealthMonitor.extractCurrentSoftwareBuildInfo(WifiHealthMonitor.java:588)
+10-28 15:01:27.013   504   713 E WifiHealthMonitor: 	at com.android.server.wifi.WifiHealthMonitor.postBootSwBuildCheck(WifiHealthMonitor.java:523)
+10-28 15:01:27.013   504   713 E WifiHealthMonitor: 	at com.android.server.wifi.WifiHealthMonitor.postBootDetectionHandler(WifiHealthMonitor.java:514)
+10-28 15:01:27.013   504   713 E WifiHealthMonitor: 	at com.android.server.wifi.WifiHealthMonitor.-$$Nest$mpostBootDetectionHandler(WifiHealthMonitor.java:0)
+10-28 15:01:27.013   504   713 E WifiHealthMonitor: 	at com.android.server.wifi.WifiHealthMonitor$2.onAlarm(WifiHealthMonitor.java:190)
+10-28 15:01:27.013   504   713 E WifiHealthMonitor: 	at android.app.AlarmManager$ListenerWrapper.run(AlarmManager.java:375)
+10-28 15:01:27.013   504   713 E WifiHealthMonitor: 	at android.os.Handler.handleCallback(Handler.java:958)
+10-28 15:01:27.013   504   713 E WifiHealthMonitor: 	at android.os.Handler.dispatchMessage(Handler.java:99)
+10-28 15:01:27.013   504   713 E WifiHealthMonitor: 	at com.android.server.wifi.RunnerHandler.dispatchMessage(RunnerHandler.java:122)
+10-28 15:01:27.013   504   713 E WifiHealthMonitor: 	at android.os.Looper.loopOnce(Looper.java:205)
+10-28 15:01:27.013   504   713 E WifiHealthMonitor: 	at android.os.Looper.loop(Looper.java:294)
+10-28 15:01:27.013   504   713 E WifiHealthMonitor: 	at android.os.HandlerThread.run(HandlerThread.java:67)
+10-28 15:01:27.810   795   795 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-28 15:01:28.040   383   486 D AudioFlinger: mixer(0x7dfe524d0930) throttle end: throttle time(31)
+10-28 15:01:28.604  2270  2307 D EGL_emulation: app_time_stats: avg=666.04ms min=109.48ms max=1222.59ms count=2
+10-28 15:01:29.314  2430  2430 W BpBinder: Linking to death on android.gui.ISurfaceComposer but there are no threads (yet?) listening to incoming transactions. See ProcessState::startThreadPool and ProcessState::setThreadPoolMaxThreadCount. Generally you should setup the binder threadpool before other initialization steps.
+10-28 15:01:29.314  2430  2430 W ProcessState: Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+10-28 15:01:30.093     0     0 I servicemanager: Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest.
+10-28 15:01:29.939   132   132 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-28 15:01:29.939  2430  2431 I Gralloc4: mapper 4.x is not supported
+10-28 15:01:30.008   383   486 D AudioFlinger: mixer(0x7dfe524d0930) throttle end: throttle time(34)
+10-28 15:01:30.017  2270  2307 D EGL_emulation: app_time_stats: avg=294.48ms min=31.74ms max=704.92ms count=3
+10-28 15:01:30.815   795   795 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-28 15:01:31.232  2270  2307 D EGL_emulation: app_time_stats: avg=1215.00ms min=1215.00ms max=1215.00ms count=1
+10-28 15:01:33.088  2270  2307 D EGL_emulation: app_time_stats: avg=433.38ms min=50.44ms max=1140.76ms count=3
+10-28 15:01:33.818   795   795 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-28 15:01:34.043   383   486 D AudioFlinger: mixer(0x7dfe524d0930) throttle end: throttle time(15)
+10-28 15:01:34.564   383   486 D AudioFlinger: mixer(0x7dfe524d0930) throttle end: throttle time(5)
+10-28 15:01:34.855  2270  2307 D EGL_emulation: app_time_stats: avg=411.90ms min=49.80ms max=1064.28ms count=3
+10-28 15:01:35.129     0     0 W healthd : battery l=100 v=5000 t=25.0 h=2 st=2 c=900000 fc=3000000 cc=10 chg=a
+10-28 15:01:34.986   795   795 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+10-28 15:01:35.651   795   870 D EGL_emulation: app_time_stats: avg=34557.72ms min=34557.72ms max=34557.72ms count=1
+10-28 15:01:35.724   795  1882 I OpenGLRenderer: Davey! duration=700ms; Flags=0, FrameTimelineVsyncId=5770, IntendedVsync=68576174348, Vsync=68576174348, InputEventId=0, HandleInputStart=68576443604, AnimationStart=68576444085, PerformTraversalsStart=68576444476, DrawStart=68576489122, FrameDeadline=68592841014, FrameInterval=68576439709, FrameStartTime=16666666, SyncQueued=68576683733, SyncStart=68576719315, IssueDrawCommandsStart=68576779645, SwapBuffers=69239998611, FrameCompleted=69276321178, DequeueBufferDuration=4647, QueueBufferDuration=159007, GpuCompleted=69276321178, SwapBuffersCompleted=69242084864, DisplayPresentTime=0, CommandSubmissionCompleted=69239998611, 
+10-28 15:01:36.226  2270  2307 D EGL_emulation: app_time_stats: avg=685.37ms min=129.90ms max=1240.84ms count=2
+10-28 15:01:36.753   504   583 D ActivityManager: freezing 986 com.android.settings
+10-28 15:01:36.825   795   795 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+10-28 15:01:36.922   383   486 D AudioFlinger: mixer(0x7dfe524d0930) throttle end: throttle time(12)
+10-28 15:01:37.197   383   486 D AudioFlinger: mixer(0x7dfe524d0930) throttle end: throttle time(3)
+10-28 15:01:37.386  2270  2307 D EGL_emulation: app_time_stats: avg=221.11ms min=38.61ms max=509.04ms count=3
+10-28 15:01:38.466  2270  2307 D EGL_emulation: app_time_stats: avg=290.51ms min=110.25ms max=470.76ms count=2
+10-28 15:01:38.532   383   486 D AudioFlinger: mixer(0x7dfe524d0930) throttle end: throttle time(5)
+10-28 15:01:38.829   383   486 D AudioFlinger: mixer(0x7dfe524d0930) throttle end: throttle time(1)
+10-28 15:01:39.580  2270  2307 D EGL_emulation: app_time_stats: avg=304.35ms min=75.51ms max=533.20ms count=2
+10-28 15:01:40.705  2270  2307 D EGL_emulation: app_time_stats: avg=67.24ms min=39.83ms max=94.65ms count=2
+10-28 15:01:40.768   504   779 D ActivityManager: sync unfroze 797 com.android.permissioncontroller for 6
+10-28 15:01:40.769   504   779 D OomAdjuster: Not killing cached processes
+10-28 15:01:40.778   797   818 I PermissionControllerServiceImpl: Updating user sensitive for user 0
+10-28 15:01:41.299   383   486 D AudioFlinger: mixer(0x7dfe524d0930) throttle end: throttle time(33)
+10-28 15:01:41.825  2270  2307 D EGL_emulation: app_time_stats: avg=1119.43ms min=1119.43ms max=1119.43ms count=1
+10-28 15:01:42.545   383   486 D AudioFlinger: mixer(0x7dfe524d0930) throttle end: throttle time(1)
+10-28 15:01:42.850  2434  2434 W BpBinder: Linking to death on android.gui.ISurfaceComposer but there are no threads (yet?) listening to incoming transactions. See ProcessState::startThreadPool and ProcessState::setThreadPoolMaxThreadCount. Generally you should setup the binder threadpool before other initialization steps.
+10-28 15:01:42.851  2434  2434 W ProcessState: Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+10-28 15:01:42.953   132   132 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-28 15:01:42.953  2434  2435 I Gralloc4: mapper 4.x is not supported
+10-28 15:01:43.109     0     0 I servicemanager: Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest.
+10-28 15:01:42.967  2270  2307 D EGL_emulation: app_time_stats: avg=570.81ms min=102.75ms max=1038.88ms count=2
+10-28 15:01:43.997     0     0 I logd    : logdr: UID=2000 GID=2000 PID=2438 n tail=0 logMask=99 pid=0 start=0ns deadline=0ns

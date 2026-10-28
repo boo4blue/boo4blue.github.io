@@ -1,0 +1,16 @@
+{
+  "id": "06-emu-runD11",
+  "action": "shell",
+  "at": "2026-10-28T15:01:44Z",
+  "job": {
+    "id": "06-emu-runD11",
+    "action": "shell",
+    "command": "bash emu/run10.sh run angle_indirect default D"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "gpu=angle_indirect img=default tag=D package=com.onion.deathcart\n-rw-r--r-- 1 runner runner 57342883 Oct 28 15:00 /tmp/test-D.apk\n3c273e0fe5ec09c78780b08cc93a02d1  /tmp/test-D.apk\nbooted after ~15s\nboot_completed=1\nscreen=1080x2400\nSuccess\n## Network stats: elapsed time=33ms (0ms mobile, 0ms wifi, 33ms not connected)\n--- pid@shot1:\n2270\n--- pid@end:\n2270\nOK: killing emulator, bye bye\nOK\nRUN_DONE_D\n",
+    "stderr": "* daemon not running; starting now at tcp:5037\n* daemon started successfully\n"
+  }
+}
