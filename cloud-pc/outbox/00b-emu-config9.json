@@ -1,0 +1,16 @@
+{
+  "id": "00b-emu-config9",
+  "action": "store",
+  "at": "2026-10-28T14:32:26Z",
+  "job": {
+    "id": "00b-emu-config9",
+    "action": "store",
+    "path": "emu/config.env",
+    "content_bytes": 163
+  },
+  "result": {
+    "ok": true,
+    "path": "emu/config.env",
+    "bytes": 163
+  }
+}

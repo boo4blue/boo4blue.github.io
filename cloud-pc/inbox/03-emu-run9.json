@@ -1,5 +1,0 @@
-{
- "id": "03-emu-run9",
- "action": "shell",
- "command": "bash emu/run9.sh run"
-}
