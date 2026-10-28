@@ -1,5 +1,0 @@
-{
- "id": "03-emu-runA",
- "action": "shell",
- "command": "bash emu/run4.sh run swangle_indirect A"
-}
