@@ -1,0 +1,16 @@
+{
+  "id": "01-emu-setup2",
+  "action": "shell",
+  "at": "2026-10-28T12:59:27Z",
+  "job": {
+    "id": "01-emu-setup2",
+    "action": "shell",
+    "command": "bash emu/run2.sh setup"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "crw-rw-rw- 1 root kvm 10, 232 Oct 28 12:58 /dev/kvm\nsdkmanager exit=0\ncmdline-tools\nemulator\nlicenses\nplatform-tools\nplatforms\nsystem-images\nSETUP_DONE\n",
+    "stderr": ""
+  }
+}

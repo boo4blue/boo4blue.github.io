@@ -1,0 +1,16 @@
+{
+  "id": "03-emu-run2",
+  "action": "shell",
+  "at": "2026-10-28T13:01:18Z",
+  "job": {
+    "id": "03-emu-run2",
+    "action": "shell",
+    "command": "bash emu/run2.sh run"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "package=com.onion.deathcart apk=emu/DeathCart-emu.apk\n-rw-r--r-- 1 runner runner 57342883 Oct 28 12:55 /tmp/test.apk\navdmanager exit=0\n--- avd home:\ntotal 16\ndrwxr-xr-x  3 runner runner 4096 Oct 28 12:59 .\ndrwxr-x--- 13 runner runner 4096 Oct 28 12:58 ..\ndrwxr-xr-x  2 runner runner 4096 Oct 28 12:59 dc.avd\n-rw-r--r--  1 runner runner   79 Oct 28 12:59 dc.ini\ndc\nwait-for-device exit=0\nbooted after ~30s of polling\nboot_completed=1\n14\nPerforming Streamed Install\nSuccess\n## Network stats: elapsed time=492ms (0ms mobile, 0ms wifi, 492ms not connected)\n--- focus:\n--- pid:\n3324\ntotal 340\ndrwxr-xr-x 2 runner runner   4096 Oct 28 13:01 .\ndrwxr-xr-x 6 runner runner   4096 Oct 28 12:55 ..\n-rw-r--r-- 1 runner runner    358 Oct 28 12:59 avd.log\n-rw-r--r-- 1 runner runner  12146 Oct 28 13:00 boot.log\n-rw-r--r-- 1 runner runner 140968 Oct 28 12:58 licenses.log\n-rw-r--r-- 1 runner runner   2331 Oct 28 12:55 run.sh\n-rw-r--r-- 1 runner runner   3350 Oct 28 12:58 run2.sh\n-rw-r--r-- 1 runner runner  33293 Oct 28 12:59 setup.log\n-rw-r--r-- 1 runner runner  42450 Oct 28 13:00 shot-1.png\n-rw-r--r-- 1 runner runner  42450 Oct 28 13:00 shot-2.png\n-rw-r--r-- 1 runner runner  42450 Oct 28 13:01 shot-3.png\nRUN_DONE\n",
+    "stderr": "* daemon not running; starting now at tcp:5037\n* daemon started successfully\n"
+  }
+}
