@@ -1,0 +1,5 @@
+{
+ "id": "spark-connect-1",
+ "action": "shell",
+ "command": "set -e; CACHE=$HOME/.cache/cloudpc-models; mkdir -p $CACHE/ollama-bin $CACHE/ollama-models; BIN=$CACHE/ollama-bin/bin/ollama; if [ ! -f $BIN ]; then curl -sL https://github.com/ollama/ollama/releases/download/v0.40.6/ollama-linux-amd64.tar.zst -o /tmp/ol.tar.zst && tar --zstd -xf /tmp/ol.tar.zst -C $CACHE/ollama-bin; fi; export OLLAMA_MODELS=$CACHE/ollama-models; ($BIN serve > /tmp/ollama.log 2>&1 &); for i in $(seq 1 30); do curl -s localhost:11434/api/version && break || sleep 2; done; $BIN pull SparkLLM/Spark-X2.6-4B; $BIN list; curl -s localhost:11434/api/generate -d '{\"model\":\"SparkLLM/Spark-X2.6-4B\",\"prompt\":\"Write a GDScript function that returns the sum of a typed Array[int]. Code only.\",\"stream\":false,\"options\":{\"num_predict\":120}}' | head -c 1500"
+}
