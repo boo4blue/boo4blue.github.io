@@ -1,0 +1,16 @@
+{
+  "id": "11-emu-setupNT3",
+  "action": "shell",
+  "at": "2026-10-30T02:30:00Z",
+  "job": {
+    "id": "11-emu-setupNT3",
+    "action": "shell",
+    "command": "bash emu/run10.sh setup"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "attempt 1 sdkmanager exit=0\nSDK verified OK on attempt 1\nSETUP_DONE\n",
+    "stderr": ""
+  }
+}

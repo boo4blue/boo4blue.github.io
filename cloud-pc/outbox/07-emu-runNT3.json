@@ -1,0 +1,16 @@
+{
+  "id": "07-emu-runNT3",
+  "action": "shell",
+  "at": "2026-10-30T02:28:59Z",
+  "job": {
+    "id": "07-emu-runNT3",
+    "action": "shell",
+    "command": "bash emu/runNT.sh"
+  },
+  "result": {
+    "ok": true,
+    "exit": 1,
+    "stdout": "FATAL: emulator missing (run setup first)\n",
+    "stderr": ""
+  }
+}

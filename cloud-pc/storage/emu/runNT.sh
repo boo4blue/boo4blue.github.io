@@ -51,11 +51,13 @@ adb shell settings put system accelerometer_rotation 1 2>/dev/null
 adb shell settings put system user_rotation 0 2>/dev/null
 adb shell monkey -p $PACKAGE -c android.intent.category.LAUNCHER 1 2>&1 | tail -1
 sleep 12
-tapfrac 0.66,0.49
-sleep 3
+tapfrac 0.80,0.27
+sleep 2
+tapfrac 0.80,0.27
+sleep 2
 echo "--- pid@home:"; adb shell pidof $PACKAGE
 adb exec-out screencap -p > emu/shot-$TAG-home.png
-tapfrac 0.5,0.66
+tapfrac 0.5,0.59
 sleep 10
 echo "--- pid@battle1:"; adb shell pidof $PACKAGE
 adb exec-out screencap -p > emu/shot-$TAG-battle1.png

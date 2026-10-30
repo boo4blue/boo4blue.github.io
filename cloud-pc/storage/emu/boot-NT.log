@@ -45,7 +45,7 @@ INFO         | Graphics API Extensions GL_OES_EGL_sync GL_OES_EGL_image GL_OES_E
 INFO         | Graphics Device Extensions N/A
 ERROR        | Setting read-only feature 'GLAsyncSwap' to '0'
 INFO         | Feature 'GLAsyncSwap' (50) is overridden to 'disabled'
-INFO         | Sending adb public key [QAAAAFEA19RPt12TE0M4Rrhq8CFWoMAXumlw7iQvLqwZqN/eEF2IDqVnN9X7VP6IjNKyhHSgB7gJnZPiH/whBkOCAbLtJSIe0nUnPruBBtdLNWdV6/GAeAbeTkcatO71I8pTDzS8464TCBPGmmeQbi1dEyAY0iR8g+vpaNC43aIIcGloK2cozF+EfcYX054RrlJ0dNZTxBNlnsJ3gOmINYR5TDeGutLrFyDeyuDCciLoOWUhM8OI2r31359aVO44KsGGS5MM9cNW2j4DegSP0FwNN9fH0VMemMGOcJ83bpExws86+k+5iW6PaosgXFQlfVZoAVxWo77RqpKmxhX+c1SIEHLxD6Kb1PAfyDH7w0g/Jdrf3+xMYOjZ3YLzyJaEEaN8q3s60g3IDi2PqFTimxuW6AoEFLyTEjSbvEAgQpJT3+IONMsWSIyoP6Hbc3I3FJ4NgtT/FFwiVbRjzhMnPIB3waSFWto1qJ61FSB5dQBTHEboyV11Wq7ojJluyJH76nfFAAZ1BXDYtgeEzdmn8USVBlXAmESQElwEw7yE7k/OaTVk8Ww+3sDGI987iGnLHvcDii/fsSIFqSVatLYfY1lctnyw3TT1UzM1TFgP/BaxXMvCv36EM6w6TrekGrNKrFH4n8sRJc1A/dFOIZWDc2vR4umgVworRD0a5AvzpTEvnD5N6dF3RQEAAQA= runner@unknown]
+INFO         | Sending adb public key [QAAAAJlbwp5XN43vVLFFQ9mJDtJ27F4tIN8sJHK2Lv6KTTL6nq0+HdThqloJ19CT87lNqC0IOYsI865RXZD8lsj0fUM6T11qGSFoHCGk08i+rLdzuncZE6VsoFY5xzkChTmbZDtj7ZNlOGbBwBIZJJNn7GHgnDjqYWbHyygEfV/1ZHZXohR0lOesh4N9VdLH/J9mCF8GNsM1cxjVf0K53DAECLhkjfdY8G0CwqKLf7ULUObajyC4MUWPnUGm4XHPzRUeSY6PADseExJplM9tSZ/i7Th/a2jl04tU+yGi/s4cHlVo7PNry8iFg7xaZBydn6F/cl/rpXW68Y0TghODEBwinw7GUEG2/Fwm48vVbqocmJzexVEldBS/8cUjjlpTf3yy6B/oeW5zVyAGa3DAq67VRxRpfufa5CKYXCptbvBd+kLlwog/nJOe69e7S6A/xpeJTYDqgL7vA2RA6kfJApTfdOd1HPF+TNTv/wIk3/TOjiSbgGlUINnb0acMqjJ1jZwIq5UrqNKKSJdAaKssXj0x/ABTEMJs2oeds6aI/4V7UCQ2qUeynp7wx/Aqig5NEvCxoG77rikkbTC0ahT8fyKweHJwwrIdy2K6gfguJGhG1EXc7Zp0r0xyhTL+Dpdc+z7w/kjC256swZDH6gAu8Wl4zGljjXIbPouPFyKNaLqvipsar4ojYQEAAQA= runner@unknown]
 INFO         | Userspace boot properties:
 INFO         |   androidboot.boot_devices=pci0000:00/0000:00:03.0 pci0000:00/0000:00:06.0
 INFO         |   androidboot.dalvik.vm.heapsize=576m
@@ -56,7 +56,7 @@ INFO         |   androidboot.hardware.gltransport=pipe
 INFO         |   androidboot.logcat=*:V
 INFO         |   androidboot.opengles.version=196609
 INFO         |   androidboot.qemu=1
-INFO         |   androidboot.qemu.adb.pubkey=QAAAAFEA19RPt12TE0M4Rrhq8CFWoMAXumlw7iQvLqwZqN/eEF2IDqVnN9X7VP6IjNKyhHSgB7gJnZPiH/whBkOCAbLtJSIe0nUnPruBBtdLNWdV6/GAeAbeTkcatO71I8pTDzS8464TCBPGmmeQbi1dEyAY0iR8g+vpaNC43aIIcGloK2cozF+EfcYX054RrlJ0dNZTxBNlnsJ3gOmINYR5TDeGutLrFyDeyuDCciLoOWUhM8OI2r31359aVO44KsGGS5MM9cNW2j4DegSP0FwNN9fH0VMemMGOcJ83bpExws86+k+5iW6PaosgXFQlfVZoAVxWo77RqpKmxhX+c1SIEHLxD6Kb1PAfyDH7w0g/Jdrf3+xMYOjZ3YLzyJaEEaN8q3s60g3IDi2PqFTimxuW6AoEFLyTEjSbvEAgQpJT3+IONMsWSIyoP6Hbc3I3FJ4NgtT/FFwiVbRjzhMnPIB3waSFWto1qJ61FSB5dQBTHEboyV11Wq7ojJluyJH76nfFAAZ1BXDYtgeEzdmn8USVBlXAmESQElwEw7yE7k/OaTVk8Ww+3sDGI987iGnLHvcDii/fsSIFqSVatLYfY1lctnyw3TT1UzM1TFgP/BaxXMvCv36EM6w6TrekGrNKrFH4n8sRJc1A/dFOIZWDc2vR4umgVworRD0a5AvzpTEvnD5N6dF3RQEAAQA= runner@unknown
+INFO         |   androidboot.qemu.adb.pubkey=QAAAAJlbwp5XN43vVLFFQ9mJDtJ27F4tIN8sJHK2Lv6KTTL6nq0+HdThqloJ19CT87lNqC0IOYsI865RXZD8lsj0fUM6T11qGSFoHCGk08i+rLdzuncZE6VsoFY5xzkChTmbZDtj7ZNlOGbBwBIZJJNn7GHgnDjqYWbHyygEfV/1ZHZXohR0lOesh4N9VdLH/J9mCF8GNsM1cxjVf0K53DAECLhkjfdY8G0CwqKLf7ULUObajyC4MUWPnUGm4XHPzRUeSY6PADseExJplM9tSZ/i7Th/a2jl04tU+yGi/s4cHlVo7PNry8iFg7xaZBydn6F/cl/rpXW68Y0TghODEBwinw7GUEG2/Fwm48vVbqocmJzexVEldBS/8cUjjlpTf3yy6B/oeW5zVyAGa3DAq67VRxRpfufa5CKYXCptbvBd+kLlwog/nJOe69e7S6A/xpeJTYDqgL7vA2RA6kfJApTfdOd1HPF+TNTv/wIk3/TOjiSbgGlUINnb0acMqjJ1jZwIq5UrqNKKSJdAaKssXj0x/ABTEMJs2oeds6aI/4V7UCQ2qUeynp7wx/Aqig5NEvCxoG77rikkbTC0ahT8fyKweHJwwrIdy2K6gfguJGhG1EXc7Zp0r0xyhTL+Dpdc+z7w/kjC256swZDH6gAu8Wl4zGljjXIbPouPFyKNaLqvipsar4ojYQEAAQA= runner@unknown
 INFO         |   androidboot.qemu.avd_name=dcNT
 INFO         |   androidboot.qemu.camera_hq_edge_processing=0
 INFO         |   androidboot.qemu.camera_protocol_ver=1
@@ -75,25 +75,25 @@ INFO         |   androidboot.vbmeta.digest=8bee4f6105b6acd7de887b1ee6629ab07066d
 INFO         |   androidboot.vbmeta.hash_alg=sha256
 INFO         |   androidboot.vbmeta.size=6656
 INFO         |   androidboot.veritymode=enforcing
-WARNING: cannnot unmap ptr 0x7fc1a5201000 as it is in the protected range from 0x7fc105200000 to 0x7fc1a5400000
+WARNING: cannnot unmap ptr 0x7fdb3f601000 as it is in the protected range from 0x7fda9f600000 to 0x7fdb3f800000
 INFO         | Monitoring duration of emulator setup.
 WARNING      | The emulator now requires a signed jwt token for gRPC access! Use the -grpc flag if you really want an open unprotected grpc port
 INFO         | Using security allow list from: /home/runner/.cache/cloudpc-models/android-sdk/emulator/lib/emulator_access.json
-INFO         | The active JSON Web Key Sets can be found here: /run/user/1001/avd/running/2628/jwks/a36371f1-519d-43fe-b816-47eed405bbc6/active.jwk
-INFO         | Scanning /run/user/1001/avd/running/2628/jwks/a36371f1-519d-43fe-b816-47eed405bbc6 for jwk keys.
+INFO         | The active JSON Web Key Sets can be found here: /run/user/1001/avd/running/2628/jwks/ea2b1198-4455-45e3-a6b5-81fee132e721/active.jwk
+INFO         | Scanning /run/user/1001/avd/running/2628/jwks/ea2b1198-4455-45e3-a6b5-81fee132e721 for jwk keys.
 INFO         | Started GRPC server at 127.0.0.1:8554, security: Local, auth: +token
 INFO         | Advertising in: /run/user/1001/avd/running/pid_2628.ini
-INFO         | Activated packet streamer for bluetooth emulation
 INFO         | Successfully initialized netsim WiFi
+INFO         | Activated packet streamer for bluetooth emulation
 INFO         | Setting display: 0 configuration to: 1080x2400, dpi: 420x420 
 INFO         | setDisplayActiveConfig: id:0, 1080x2400
 INFO         | emulatorSetupEnvironment: Environment scene is not required
 USER_INFO    | Emulator is performing a full startup. This may take upto two minutes, or more.
 WARNING      | Failed to process .ini file /home/runner/.android/emu-update-last-check.ini for reading.
 WARNING      | Failed to process .ini file /home/runner/.android/emu-update-last-check.ini for reading.
-INFO         | Boot completed in 26075 ms
+INFO         | Boot completed in 25902 ms
 INFO         | Increasing screen off timeout, logcat buffer size to 2M.
-ERROR        | bad color buffer handle 276
+ERROR        | bad color buffer handle 167
 INFO         | Wait for emulator (pid 2628) 20 seconds to shutdown gracefully before kill;you can set environment variable ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL(in seconds) to change the default value (20 seconds)
 
 USER_INFO    | Snapshots have been disabled by the user, save request is ignored.
