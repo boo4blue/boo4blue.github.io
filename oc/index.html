@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Onion Domains — .oc gateway</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#07070f;color:#eaeaff;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:28px 16px;text-align:center}
+h1{font-size:clamp(1.9rem,8vw,3rem);margin:6px 0 4px}
+h1 .pop{color:#22d3ee}
+.sub{opacity:.75;max-width:38ch;line-height:1.5;margin:6px 0 20px}
+.bar{width:84px;height:6px;border-radius:99px;background:#22d3ee;margin:8px auto 20px}
+form{display:flex;gap:8px;width:min(440px,92vw)}
+input{flex:1;padding:14px 16px;border-radius:12px;border:1px solid #26264a;background:#10101e;color:#eaeaff;font-size:1.05rem}
+button{padding:14px 20px;border:0;border-radius:12px;background:#22d3ee;color:#04252c;font-weight:800;font-size:1.05rem;cursor:pointer}
+.dir{margin-top:26px;width:min(440px,92vw)}
+.dir h2{font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;opacity:.55;margin:0 0 10px}
+a.chip{display:block;margin:8px auto;padding:13px 16px;border:1px solid #26264a;border-radius:14px;
+background:#10101e;color:#eaeaff;text-decoration:none;font-weight:700}
+a.chip span{display:block;font-weight:400;font-size:.82rem;opacity:.6;margin-top:2px;word-break:break-all}
+.card{width:min(440px,92vw);border:1px solid #26264a;border-radius:16px;background:#10101e;padding:22px 18px;margin-top:10px}
+.card a{color:#22d3ee;font-weight:700;word-break:break-all}
+.err{border-color:#5a2640}
+footer{margin-top:auto;padding-top:34px;font-size:.8rem;opacity:.55}
+.spin{width:34px;height:34px;border-radius:50%;border:4px solid #26264a;border-top-color:#22d3ee;
+margin:18px auto;animation:sp 0.8s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<h1>🧅 Onion <span class="pop">Domains</span></h1>
+<div class="bar"></div>
+<div id="view"></div>
+<footer>Onion Core · our own .oc registry — no registrar, no rent</footer>
+
+<script>
+"use strict";
+var GATEWAY_HOME = location.origin + location.pathname; // this page, no query
+
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){
+  return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+
+function normName(raw){
+  var n = String(raw||"").trim().toLowerCase().replace(/\.+$/,"");
+  if(n && n.indexOf(".") === -1) n += ".oc";
+  return n;
+}
+
+function landing(registry, notice){
+  var chips = "";
+  var names = Object.keys(registry.names||{}).sort();
+  for(var i=0;i<names.length;i++){
+    var rec = registry.names[names[i]];
+    chips += '<a class="chip" href="?n='+encodeURIComponent(names[i])+'">'+esc(names[i])+
+             '<span>'+esc(rec.notes||rec.target)+'</span></a>';
+  }
+  document.getElementById("view").innerHTML =
+    (notice ? '<div class="card err"><p>'+notice+'</p></div>' : "")+
+    '<p class="sub">Names that end in <b>.oc</b> come from our own registry. '+
+    'Type one and go — this gateway opens it right here, in any browser.</p>'+
+    '<form id="go"><input id="nm" placeholder="blaze.oc" autocomplete="off" '+
+    'autocapitalize="none" spellcheck="false"><button type="submit">Go</button></form>'+
+    '<div class="dir"><h2>Registered names</h2>'+ (chips || "<p>None yet.</p>") +'</div>';
+  document.getElementById("go").addEventListener("submit", function(ev){
+    ev.preventDefault();
+    var n = normName(document.getElementById("nm").value);
+    if(n) location.search = "?n=" + encodeURIComponent(n);
+  });
+}
+
+function showCard(html){
+  document.getElementById("view").innerHTML = '<div class="card">'+html+'</div>';
+}
+
+function badge(name){
+  return '<div id="oc-badge" style="position:fixed;right:10px;bottom:10px;z-index:2147483647;'+
+    'background:#10101e;border:1px solid #22d3ee;border-radius:99px;padding:7px 8px 7px 13px;'+
+    'font:600 12px system-ui,sans-serif;color:#eaeaff;box-shadow:0 4px 18px rgba(0,0,0,.45)">'+
+    '🧅 '+esc(name)+' · <a href="'+esc(GATEWAY_HOME)+'" style="color:#22d3ee;text-decoration:none">Onion Domains</a> '+
+    '<a href="#" onclick="document.getElementById(\'oc-badge\').remove();return false;" '+
+    'style="color:#eaeaff;text-decoration:none;opacity:.6;padding:0 4px">✕</a></div>';
+}
+
+function serve(name, rec){
+  showCard('<div class="spin"></div><p>Opening <b>'+esc(name)+'</b>…</p>'+
+           '<p style="opacity:.6;font-size:.85rem">'+esc(rec.target)+'</p>');
+  fetch(rec.target, {credentials:"omit"}).then(function(r){
+    var ct = r.headers.get("content-type")||"";
+    if(!r.ok || ct.indexOf("text/html") === -1) throw new Error("not-html");
+    return r.text();
+  }).then(function(html){
+    // Give relative links/images the target's own base, then swap the
+    // whole document — no iframe, the .oc site becomes this page.
+    var base = '<base href="'+esc(rec.target)+'">';
+    if(/<head[^>]*>/i.test(html)) html = html.replace(/<head[^>]*>/i, function(m){return m+base;});
+    else html = base + html;
+    var b = badge(name);
+    if(/<\/body>/i.test(html)) html = html.replace(/<\/body>/i, b+"</body>");
+    else html += b;
+    document.open(); document.write(html); document.close();
+  }).catch(function(){
+    // Cross-origin or non-HTML target: hand the browser over directly.
+    showCard('<p><b>'+esc(name)+'</b> lives at:</p><p><a href="'+esc(rec.target)+'">'+
+             esc(rec.target)+'</a></p><p style="opacity:.65">Taking you there…</p>');
+    setTimeout(function(){ location.replace(rec.target); }, 1200);
+  });
+}
+
+function main(){
+  var params = new URLSearchParams(location.search);
+  var raw = params.get("n") || (location.hash ? location.hash.slice(1) : "");
+  fetch("registry.json", {cache:"no-store"}).then(function(r){ return r.json(); })
+  .then(function(registry){
+    if(!raw){ landing(registry, ""); return; }
+    var name = normName(raw);
+    var rec = (registry.names||{})[name];
+    if(!rec){
+      landing(registry, '<b>'+esc(name)+'</b> is not registered in the .oc registry yet.');
+      return;
+    }
+    serve(name, rec);
+  }).catch(function(){
+    document.getElementById("view").innerHTML =
+      '<div class="card err"><p>The .oc registry could not be loaded. Try again in a moment.</p></div>';
+  });
+}
+main();
+</script>
+</body>
+</html>

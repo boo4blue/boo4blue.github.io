@@ -1,0 +1,36 @@
+{
+  "gateway": "https://boo4blue.github.io/oc/",
+  "names": {
+    "blaze.oc": {
+      "notes": "Blaze's poster page \u2014 the live gateway demo",
+      "owner": "Blaze",
+      "target": "https://boo4blue.github.io/oc/demo/blaze.html"
+    },
+    "files.oc": {
+      "notes": "Onion Core Files \u2014 app written, not live yet (Cloudflare token wall); name held, target activates on deploy",
+      "owner": "Blaze",
+      "target": "https://onioncore-files.pages.dev/"
+    },
+    "haven.oc": {
+      "notes": "Haven FW site",
+      "owner": "Blaze",
+      "target": "https://boo4blue.github.io/app/"
+    },
+    "proof.oc": {
+      "notes": "End-to-end proof name \u2014 registered by the CLI, resolved by our resolver, served by the gateway",
+      "owner": "Blaze",
+      "target": "https://boo4blue.github.io/oc/demo/proof.html"
+    },
+    "studio.oc": {
+      "notes": "Onion Image Studio",
+      "owner": "Blaze",
+      "target": "https://boo4blue.github.io/image-studio/"
+    },
+    "tower.oc": {
+      "notes": "Neon Tower v1.0.0 \u2014 APK release page",
+      "owner": "Blaze",
+      "target": "https://github.com/boo4blue/boo4blue.github.io/releases/tag/neontower-v1.0.0"
+    }
+  },
+  "tld": "oc"
+}
