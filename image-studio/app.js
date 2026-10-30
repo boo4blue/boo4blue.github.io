@@ -131,6 +131,7 @@ $("presets").addEventListener("click", (e) => {
   preset = b.dataset.preset;
   document.querySelectorAll("#presets .chip").forEach(c =>
     c.classList.toggle("on", c === b));
+  savePrefs(); updateSummary();
 });
 function chipRow(rowId, attr, fn) {
   $(rowId).addEventListener("click", (e) => {
@@ -141,18 +142,23 @@ function chipRow(rowId, attr, fn) {
     fn(b.dataset[attr]);
   });
 }
-chipRow("counts", "count", v => { count = parseInt(v, 10); });
+chipRow("counts", "count", v => {
+  count = parseInt(v, 10); savePrefs(); updateSummary();
+});
 let assetKind = "anything";
-chipRow("assets", "asset", v => { assetKind = v; });
+chipRow("assets", "asset", v => { assetKind = v; savePrefs(); });
 document.querySelectorAll('input[name="mode"]').forEach(r =>
   r.addEventListener("change", () => {
     document.querySelectorAll(".mode").forEach(m =>
       m.classList.toggle("on", m.querySelector("input").checked));
+    savePrefs(); updateSummary();
   }));
 
-$("size").addEventListener("change", () => {
-  $("customsize").hidden = $("size").value !== "custom";
-  updateSnapNote();
+let sizeVal = "square";
+chipRow("sizes", "size", v => {
+  sizeVal = v;
+  $("customsize").hidden = v !== "custom";
+  updateSnapNote(); savePrefs(); updateSummary();
 });
 function updateSnapNote() {
   const w = snap($("cw").value), h = snap($("ch").value);
@@ -160,8 +166,8 @@ function updateSnapNote() {
     ? "→ the studio will use " + w + "×" + h + " (sizes snap to tidy numbers)"
     : "512–1536 each way";
 }
-$("cw").addEventListener("input", updateSnapNote);
-$("ch").addEventListener("input", updateSnapNote);
+$("cw").addEventListener("input", () => { updateSnapNote(); savePrefs(); });
+$("ch").addEventListener("input", () => { updateSnapNote(); savePrefs(); });
 
 function refCheck() {
   const has = $("ref-url").value.trim() || $("ref-file").value.trim();
@@ -198,7 +204,7 @@ $("generate").addEventListener("click", () => {
     negative: $("negative").value.trim(),
     positive: $("positive").value.trim(),
     preset: preset, mode: mode,
-    size: $("size").value,
+    size: sizeVal,
     count: count,
     guidance: Number($("guidance").value),
     steps: Number($("steps").value),
@@ -270,8 +276,10 @@ function strengthWord(v) {
   if (v <= 0.7) return v.toFixed(2) + " — a solid change";
   return v.toFixed(2) + " — a big change";
 }
-$("edit-strength").addEventListener("input", () =>
-  $("edit-strength-val").textContent = strengthWord($("edit-strength").value));
+$("edit-strength").addEventListener("input", () => {
+  $("edit-strength-val").textContent = strengthWord($("edit-strength").value);
+  updateEditSummary();
+});
 
 $("edit-go").addEventListener("click", () => {
   if (!editSrc.state.source) {
@@ -304,7 +312,7 @@ $("edit-go").addEventListener("click", () => {
 
 // ---- crop form ---------------------------------------------------------------
 let cropMode = "subject";
-chipRow("crop-modes", "cropmode", v => { cropMode = v; });
+chipRow("crop-modes", "cropmode", v => { cropMode = v; updateCropSummary(); });
 $("crop-go").addEventListener("click", () => {
   if (!cropSrc.state.source) {
     $("cropcard").scrollIntoView({ behavior: "smooth" });
@@ -362,17 +370,25 @@ function detailsBlock(e) {
 function card(e) {
   const div = document.createElement("div");
   div.className = "gcard";
-  let top;
+  div.dataset.eid = e.id;
+  let media;
   if (e.state === "done" && e.image) {
-    top = '<img src="' + esc(e.image) + '" loading="lazy" alt=""' +
-      (e.transparent ? ' class="alpha"' : "") + '>';
+    media = '<img src="' + esc(e.image) + '" loading="lazy" alt=""' +
+      (e.transparent ? ' class="alpha"' : "") + ">" +
+      '<div class="govl"><a class="icbtn" href="' + esc(e.image) +
+      '" download title="Download">⬇</a>' +
+      '<button type="button" class="icbtn" data-edit="' + esc(e.id) +
+      '" title="Edit this picture">✏️</button>' +
+      '<button type="button" class="icbtn" data-crop="' + esc(e.id) +
+      '" title="Crop this picture">✂️</button></div>';
   } else if (e.state === "cooking") {
-    top = '<div class="ph">🔥</div>';
+    media = '<div class="ph">🔥</div>';
   } else if (e.state === "failed") {
-    top = '<div class="ph">🚫</div>';
+    media = '<div class="ph">🚫</div>';
   } else {
-    top = '<div class="ph">🎨</div>';
+    media = '<div class="ph">🎨</div>';
   }
+  const top = '<div class="gmedia">' + media + "</div>";
   const shownPrompt = (e.state === "done" && e.final_prompt)
     ? e.final_prompt : e.prompt;
   const badge = e.kind === "edit" ? ' <span class="kindbadge">✏️ EDIT</span>'
@@ -390,14 +406,6 @@ function card(e) {
   if (e.state === "failed" && e.error)
     html += '<div class="gerr">' + esc(e.error) + "</div>";
   html += detailsBlock(e);
-  if (e.state === "done" && e.image) {
-    html += '<div class="gact"><a class="dl" href="' + esc(e.image) +
-      '" download>⬇ Download</a>' +
-      '<button type="button" class="gbtn" data-edit="' + esc(e.id) +
-      '">✏️ Edit</button>' +
-      '<button type="button" class="gbtn" data-crop="' + esc(e.id) +
-      '">✂️ Crop</button></div>';
-  }
   div.innerHTML = html + "</div>";
   return div;
 }
@@ -414,9 +422,11 @@ $("gallery").addEventListener("click", (e) => {
   const src = { kind: "gallery", value: "image-studio/" + entry.image,
                 label: "gallery picture", preset: entry.preset || undefined };
   if (eb) {
+    switchTab("edit");
     editSrc.set(src);
     $("editcard").scrollIntoView({ behavior: "smooth" });
   } else {
+    switchTab("crop");
     cropSrc.set(src);
     $("cropcard").scrollIntoView({ behavior: "smooth" });
   }
@@ -439,6 +449,7 @@ async function render() {
     .filter(p => !seen.has(p.id))
     .map(p => ({ ...p, state: "sent" }));
   const all = mine.concat(idx);
+  updateStrip(all);
   const gal = $("gallery");
   gal.innerHTML = "";
   if (!all.length) {
@@ -452,6 +463,137 @@ async function render() {
     .flatMap(e => [e.id, e.group].filter(Boolean)));
   if (landed.size) savePending(loadPending().filter(p => !landed.has(p.id)));
 }
+
+// ---- v3: tabs ---------------------------------------------------------------
+function switchTab(name) {
+  document.querySelectorAll(".tab").forEach(t =>
+    t.classList.toggle("on", t.dataset.tab === name));
+  document.querySelectorAll(".tabpane").forEach(p =>
+    { p.hidden = p.id !== "tab-" + name; });
+  try { localStorage.setItem("is_tab", name); } catch (e) {}
+}
+document.querySelectorAll(".tab").forEach(t =>
+  t.addEventListener("click", () => switchTab(t.dataset.tab)));
+
+// ---- v3: advanced drawer ------------------------------------------------------
+$("adv-toggle").addEventListener("click", () => {
+  const body = $("adv-body");
+  body.hidden = !body.hidden;
+  $("adv-chev").textContent = body.hidden ? "▸" : "▾";
+  $("adv-toggle").setAttribute("aria-expanded", String(!body.hidden));
+});
+
+// ---- v3: remembered settings --------------------------------------------------
+function savePrefs() {
+  try {
+    localStorage.setItem("is_prefs", JSON.stringify({
+      preset: preset, asset: assetKind, size: sizeVal,
+      cw: $("cw").value, ch: $("ch").value, count: count,
+      mode: document.querySelector('input[name="mode"]:checked').value
+    }));
+  } catch (e) {}
+}
+function markChip(rowId, attr, val) {
+  document.querySelectorAll("#" + rowId + " .chip").forEach(c =>
+    c.classList.toggle("on", c.dataset[attr] === String(val)));
+}
+function applyPrefs() {
+  let p = null;
+  try { p = JSON.parse(localStorage.getItem("is_prefs") || "null"); }
+  catch (e) {}
+  if (!p) return;
+  if (p.preset && document.querySelector(
+      '#presets .chip[data-preset="' + p.preset + '"]')) {
+    preset = p.preset; markChip("presets", "preset", preset);
+  }
+  if (p.asset && document.querySelector(
+      '#assets .chip[data-asset="' + p.asset + '"]')) {
+    assetKind = p.asset; markChip("assets", "asset", assetKind);
+  }
+  if (p.size && document.querySelector(
+      '#sizes .chip[data-size="' + p.size + '"]')) {
+    sizeVal = p.size; markChip("sizes", "size", sizeVal);
+    $("customsize").hidden = sizeVal !== "custom";
+  }
+  if (p.cw) $("cw").value = p.cw;
+  if (p.ch) $("ch").value = p.ch;
+  if (sizeVal === "custom") updateSnapNote();
+  if (p.count && document.querySelector(
+      '#counts .chip[data-count="' + p.count + '"]')) {
+    count = parseInt(p.count, 10); markChip("counts", "count", count);
+  }
+  if (p.mode) {
+    const r = document.querySelector('input[name="mode"][value="' + p.mode + '"]');
+    if (r) {
+      r.checked = true;
+      document.querySelectorAll(".mode").forEach(m =>
+        m.classList.toggle("on", m.querySelector("input").checked));
+    }
+  }
+}
+
+// ---- v3: sticky-bar summaries ---------------------------------------------------
+function chipLabel(rowId, attr, val) {
+  const c = document.querySelector(
+    "#" + rowId + ' .chip[data-' + attr + '="' + val + '"]');
+  return c ? c.textContent.trim() : String(val);
+}
+function updateSummary() {
+  const sizeTxt = chipLabel("sizes", "size", sizeVal).split("·")[0].trim();
+  let s = chipLabel("presets", "preset", preset) + " • " + sizeTxt +
+    " • ×" + count;
+  const mode = document.querySelector('input[name="mode"]:checked');
+  if (mode && mode.value === "quick") s += " • ⚡ Quick";
+  $("sum-create").textContent = s;
+}
+function updateEditSummary() {
+  $("sum-edit").textContent = "✏️ Edit • strength " +
+    Number($("edit-strength").value).toFixed(2);
+}
+const CROP_LABELS = { subject: "Just the subject", square: "Square",
+                      tall: "Tall", wide: "Wide" };
+function updateCropSummary() {
+  $("sum-crop").textContent = "✂️ Crop • " + (CROP_LABELS[cropMode] || cropMode);
+}
+
+// ---- v3: cooking strip ----------------------------------------------------------
+let stripTarget = null;
+function updateStrip(all) {
+  const strip = $("cookstrip");
+  if (!all || !all.length) { strip.hidden = true; stripTarget = null; return; }
+  const e = all[0];
+  stripTarget = (e.state === "done" && e.image) ? e.id : null;
+  const snippet = String(e.prompt || "").slice(0, 44);
+  strip.className = "cookstrip " + e.state;
+  strip.innerHTML = '<span class="cs-state">' +
+    (STATE_LABEL[e.state] || esc(e.state)) + '</span><span class="cs-prompt">' +
+    esc(snippet) + (e.prompt && e.prompt.length > 44 ? "…" : "") +
+    '</span><span class="cs-ago">' + esc(ago(e.at)) + "</span>" +
+    (stripTarget ? '<span class="cs-go">view →</span>' : "");
+  strip.hidden = false;
+}
+$("cookstrip").addEventListener("click", () => {
+  switchTab("gallery");
+  if (!stripTarget) return;
+  const id = stripTarget;
+  setTimeout(() => {
+    const el = document.querySelector('.gcard[data-eid="' + id + '"]');
+    if (!el) return;
+    el.scrollIntoView({ behavior: "smooth", block: "center" });
+    el.classList.add("flash");
+    setTimeout(() => el.classList.remove("flash"), 2600);
+  }, 80);
+});
+
+// ---- v3 init ---------------------------------------------------------------------
+applyPrefs();
+updateSummary();
+updateEditSummary();
+updateCropSummary();
+let startTab = "create";
+try { startTab = localStorage.getItem("is_tab") || "create"; } catch (e) {}
+if (!document.getElementById("tab-" + startTab)) startTab = "create";
+switchTab(startTab);
 
 render();
 setInterval(render, 45000);
