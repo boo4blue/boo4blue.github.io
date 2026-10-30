@@ -1,0 +1,78 @@
+{
+ "sites": [
+  {
+   "slug": "image-studio",
+   "displayName": "Image Studio",
+   "kind": "external",
+   "kindLabel": "Tool",
+   "url": "https://boo4blue.github.io/image-studio/",
+   "note": "Has its own app for making pictures.",
+   "status": "live",
+   "lastError": null,
+   "createdAt": "2026-10-30T01:33:09Z",
+   "updatedAt": "2026-10-30T01:33:09Z"
+  },
+  {
+   "slug": "haven-fw",
+   "displayName": "Haven FW",
+   "kind": "external",
+   "kindLabel": "App",
+   "url": "https://boo4blue.github.io/app/",
+   "note": "",
+   "status": "live",
+   "lastError": null,
+   "createdAt": "2026-10-30T01:33:09Z",
+   "updatedAt": "2026-10-30T01:33:09Z"
+  },
+  {
+   "slug": "team-hq",
+   "displayName": "Team HQ",
+   "kind": "external",
+   "kindLabel": "Website",
+   "url": "https://boo4blue.github.io/team-hq/",
+   "note": "",
+   "status": "live",
+   "lastError": null,
+   "createdAt": "2026-10-30T01:33:09Z",
+   "updatedAt": "2026-10-30T01:33:09Z"
+  },
+  {
+   "slug": "onion-cloud",
+   "displayName": "Onion Cloud",
+   "kind": "external",
+   "kindLabel": "Tool",
+   "url": "https://boo4blue.github.io/onion-cloud/site/",
+   "note": "Your cloud PC + AI dashboard.",
+   "status": "live",
+   "lastError": null,
+   "createdAt": "2026-10-30T01:33:09Z",
+   "updatedAt": "2026-10-30T01:33:09Z"
+  },
+  {
+   "slug": "wild-cultivation",
+   "displayName": "Wild Cultivation",
+   "kind": "external",
+   "kindLabel": "Game page",
+   "url": "https://boo4blue.github.io/wild-cultivation/",
+   "note": "",
+   "status": "live",
+   "lastError": null,
+   "createdAt": "2026-10-30T01:33:09Z",
+   "updatedAt": "2026-10-30T01:33:09Z"
+  },
+  {
+   "slug": "haven-fw-download",
+   "displayName": "Haven FW \u2014 Get the App",
+   "kind": "external",
+   "kindLabel": "Download",
+   "url": "https://boo4blue.github.io/HavenFW.apk",
+   "note": "Direct app download.",
+   "status": "live",
+   "lastError": null,
+   "createdAt": "2026-10-30T01:33:09Z",
+   "updatedAt": "2026-10-30T01:33:09Z"
+  }
+ ],
+ "stubs": {},
+ "updatedAt": "2026-10-30T01:33:09Z"
+}
