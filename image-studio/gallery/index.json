@@ -1,5 +1,24 @@
 [
   {
+    "prompt": "cute neon onion mascot character with a happy face, waving one hand, game sprite, dark background",
+    "positive": "",
+    "negative": "",
+    "preset": "sprite",
+    "mode": "studio",
+    "size": "square",
+    "width": 1024,
+    "height": 1024,
+    "seed_requested": null,
+    "guidance": 7.0,
+    "steps": 28,
+    "improved": [],
+    "group": "img-proof-neon-onion",
+    "at": "2026-10-30T00:33:52.611211+00:00",
+    "started_at": "2026-10-30T01:29:09.559192+00:00",
+    "id": "img-proof-neon-onion",
+    "state": "cooking"
+  },
+  {
     "prompt": "A human hand",
     "positive": "",
     "negative": "low quality, worst quality, blurry, deformed, bad anatomy, deformed hands, fewer than 5 fingers, less than five fingers, missing fingers, extra fingers, fused fingers, merged fingers, mutated hands, malformed limbs, extra limbs, watermark, text, signature, jpeg artifacts, out of frame",
