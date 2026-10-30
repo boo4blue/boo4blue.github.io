@@ -75,3 +75,37 @@ h2{margin:22px 0 6px}
   text-decoration:none}
 footer{max-width:760px;margin:0 auto;padding:22px 16px 34px;color:var(--muted);
   font-size:.85rem;text-align:center}
+
+/* ---- v2 additions ---- */
+textarea.willpolish{border-color:var(--pink);border-style:dashed}
+.btnrow{display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap}
+.improvebtn{background:var(--panel2);color:var(--magenta);border:1px solid var(--pink);
+  border-radius:999px;padding:7px 13px;font-size:.88rem;font-weight:700;cursor:pointer}
+.improvebtn:active{transform:scale(.97)}
+.impnote{color:var(--muted);font-size:.82rem}
+.txtin{width:100%;background:var(--panel2);color:var(--txt);border:1px solid var(--line);
+  border-radius:12px;padding:12px;font-size:1rem;font-family:inherit;margin-top:6px}
+.txtin:focus{outline:2px solid var(--cyan);border-color:transparent}
+input[type=range]{width:100%;accent-color:var(--cyan);margin:4px 0}
+.numrow{display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap;margin-top:8px}
+.numrow label{font-size:.9rem;color:var(--muted)}
+.numrow input{width:110px;background:var(--panel2);color:var(--txt);
+  border:1px solid var(--line);border-radius:10px;padding:10px;font-size:1rem}
+.card a{color:var(--cyan)}
+.srcprev{margin:6px 0;border:1px dashed var(--line);border-radius:12px;
+  padding:10px;display:flex;align-items:center;gap:12px;min-height:56px}
+.srcprev img{width:72px;height:72px;object-fit:cover;border-radius:8px;background:#000}
+.gact{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;align-items:center}
+.gact .dl{margin-top:0}
+.gbtn{background:var(--panel2);color:var(--txt);border:1px solid var(--line);
+  border-radius:10px;padding:9px 13px;font-size:.9rem;font-weight:700;cursor:pointer}
+.gbtn:active{transform:scale(.97)}
+.kindbadge{background:rgba(34,211,238,.15);color:var(--cyan);font-size:.72rem;
+  font-weight:800;padding:2px 8px;border-radius:999px;vertical-align:middle}
+details.gfinal{margin-top:10px;border-top:1px solid var(--line);padding-top:8px}
+details.gfinal summary{cursor:pointer;color:var(--cyan);font-size:.85rem;font-weight:700}
+.frow{font-size:.82rem;color:var(--muted);line-height:1.5;margin-top:5px;
+  word-break:break-word}
+.frow b{color:var(--txt)}
+.gcard img.alpha{background:
+  repeating-conic-gradient(#2a2a44 0% 25%, #17172a 0% 50%) 0 0/22px 22px}

@@ -20,23 +20,65 @@
     this page and come back — orders keep cooking.</p>
   </section>
 
+  <!-- ================= NEW PICTURE ================= -->
   <section class="card">
     <label class="flabel" for="prompt">What do you want to see?</label>
     <textarea id="prompt" rows="3" placeholder="Describe your image… e.g. a cartoon white glove hand with five fingers pointing, black background"></textarea>
+    <div class="btnrow">
+      <button type="button" class="improvebtn" data-improve="prompt">✨ Improve with AI</button>
+      <span class="impnote" id="note-prompt"></span>
+    </div>
+
+    <label class="flabel" for="positive">Good things <span class="muted">(extra quality boosters — the studio adds its own too)</span></label>
+    <textarea id="positive" rows="2"></textarea>
+    <div class="btnrow">
+      <button type="button" class="improvebtn" data-improve="positive">✨ Improve with AI</button>
+      <span class="impnote" id="note-positive"></span>
+    </div>
 
     <label class="flabel" for="negative">Keep OUT of the picture <span class="muted">(negatives — edit if you want)</span></label>
     <textarea id="negative" rows="3"></textarea>
+    <div class="btnrow">
+      <button type="button" class="improvebtn" data-improve="negative">✨ Improve with AI</button>
+      <span class="impnote" id="note-negative"></span>
+    </div>
     <p class="hint">Studio mode always blocks the worst stuff (bad hands, watermarks, blur).
     Quick mode can't take negatives — it's a fast draft.</p>
 
     <label class="flabel">Style</label>
     <div class="chips" id="presets">
       <button type="button" class="chip on" data-preset="anime">🎌 Anime</button>
+      <button type="button" class="chip" data-preset="realistic">📸 Realistic Photo</button>
+      <button type="button" class="chip" data-preset="toon">🎞️ Cartoon Toon</button>
+      <button type="button" class="chip" data-preset="chibi">🌸 Chibi</button>
+      <button type="button" class="chip" data-preset="cyberpunk">🌆 Cyberpunk Neon</button>
+      <button type="button" class="chip" data-preset="manga">🖋️ Manga Panel</button>
+      <button type="button" class="chip" data-preset="comic">💥 Comic Book</button>
+      <button type="button" class="chip" data-preset="pixel">👾 Pixel Art</button>
+      <button type="button" class="chip" data-preset="watercolor">🎨 Watercolor</button>
+      <button type="button" class="chip" data-preset="render3d">🧊 3D Render</button>
+      <button type="button" class="chip" data-preset="darkfantasy">🐉 Dark Fantasy</button>
+      <button type="button" class="chip" data-preset="sticker">🏷️ Sticker / Flat Vector</button>
       <button type="button" class="chip" data-preset="portrait">🧑 Portrait</button>
-      <button type="button" class="chip" data-preset="sprite">👾 Sprite</button>
+      <button type="button" class="chip" data-preset="sprite">🎮 Sprite</button>
       <button type="button" class="chip" data-preset="glove">🧤 Hand &amp; Glove</button>
-      <button type="button" class="chip" data-preset="realistic">📸 Realistic</button>
     </div>
+
+    <label class="flabel">What kind of thing is it? <span class="muted">(asset mode)</span></label>
+    <div class="chips" id="assets">
+      <button type="button" class="chip on" data-asset="anything">🌍 Anything</button>
+      <button type="button" class="chip" data-asset="game-item">⚔️ Game Item</button>
+      <button type="button" class="chip" data-asset="character-sprite">🧍 Character Sprite</button>
+      <button type="button" class="chip" data-asset="icon">🔷 Icon</button>
+      <button type="button" class="chip" data-asset="game-prop">🪑 Game Prop</button>
+      <button type="button" class="chip" data-asset="tile">🧱 Tile / Texture</button>
+      <button type="button" class="chip" data-asset="sticker">🏷️ Sticker</button>
+    </div>
+    <p class="hint" id="asset-hint">Anything = a normal picture. Pick a kind and the
+    studio switches to <b>asset mode</b>: one subject, centered, whole thing in frame,
+    plain clean background — then it cuts the background out, so you get a
+    <b>transparent PNG</b> ready to drop into a game. (Tiles/textures stay full-frame —
+    no cutout, that's what makes them tile.)</p>
 
     <label class="flabel">How should it cook?</label>
     <div class="modes">
@@ -55,7 +97,49 @@
       <option value="square" selected>Square · 1024×1024</option>
       <option value="tall">Tall · 832×1216 (phone wallpaper)</option>
       <option value="wide">Wide · 1216×832</option>
+      <option value="story">Story · 768×1344</option>
+      <option value="banner">Banner · 1344×768</option>
+      <option value="custom">Custom size…</option>
     </select>
+    <div id="customsize" class="numrow" hidden>
+      <label>Width <input type="number" id="cw" min="512" max="1536" step="64" placeholder="1024"></label>
+      <label>Height <input type="number" id="ch" min="512" max="1536" step="64" placeholder="1024"></label>
+      <span class="hint" id="snapnote"></span>
+    </div>
+
+    <label class="flabel">Reference picture <span class="muted">(optional — the new picture will borrow its look)</span></label>
+    <input type="url" id="ref-url" class="txtin" placeholder="Paste an image link (https://…)">
+    <p class="hint">…or <a href="https://github.com/boo4blue/boo4blue.github.io/upload/main/image-studio/queue/refs" target="_blank" rel="noopener">upload a picture on GitHub</a>, then type its file name here:</p>
+    <input type="text" id="ref-file" class="txtin" placeholder="e.g. my-reference.png">
+    <div id="refstrength" class="sliderrow" hidden>
+      <label class="flabel" for="ref-strength">Reference strength · <span id="ref-strength-val">0.65</span></label>
+      <input type="range" id="ref-strength" min="0.1" max="1" step="0.05" value="0.65">
+      <p class="hint">Low = just a hint of the look · high = copy the look closely. Studio mode only.</p>
+    </div>
+
+    <label class="flabel" for="guidance">Creativity · <span id="guidance-val">7 — balanced</span></label>
+    <input type="range" id="guidance" min="3" max="12" step="0.5" value="7">
+    <p class="hint">Lower = follows your words tighter · higher = wilder, more surprising.</p>
+
+    <label class="flabel" for="steps">Detail steps · <span id="steps-val">28</span></label>
+    <input type="range" id="steps" min="10" max="40" step="1" value="28">
+    <p class="hint">More steps = slower, finer detail.</p>
+
+    <label class="flabel">How many pictures?</label>
+    <div class="chips" id="counts">
+      <button type="button" class="chip on" data-count="1">1</button>
+      <button type="button" class="chip" data-count="2">2</button>
+      <button type="button" class="chip" data-count="3">3</button>
+      <button type="button" class="chip" data-count="4">4</button>
+      <button type="button" class="chip" data-count="6">6</button>
+      <button type="button" class="chip" data-count="8">8</button>
+    </div>
+    <p class="hint">More pictures = longer cooking. Each one lands in the gallery on its own.</p>
+
+    <label class="flabel" for="seed">Seed <span class="muted">(blank or 0 = random)</span></label>
+    <input type="number" id="seed" class="txtin" min="0" placeholder="Random">
+    <p class="hint">Same seed + same words = same picture again. A batch with one seed
+    makes variations: seed, seed+1, seed+2… Every picture shows the seed it used.</p>
 
     <button id="generate" class="bigbtn">GENERATE ✨</button>
 
@@ -71,6 +155,81 @@
     </div>
   </section>
 
+  <!-- ================= EDIT ================= -->
+  <section class="card" id="editcard">
+    <h3 style="margin-top:0">✏️ Edit a picture</h3>
+    <p class="hint">Start from a picture you already have and say what should change.
+    Tap <b>✏️ Edit</b> under any gallery picture, paste an image link, or upload one.</p>
+
+    <label class="flabel">Source picture</label>
+    <div id="edit-srcprev" class="srcprev"><span class="muted">No source picked yet.</span></div>
+    <input type="url" id="edit-url" class="txtin" placeholder="Paste an image link (https://…)">
+    <p class="hint">…or <a href="https://github.com/boo4blue/boo4blue.github.io/upload/main/image-studio/queue/refs" target="_blank" rel="noopener">upload a picture on GitHub</a>, then type its file name:</p>
+    <input type="text" id="edit-file" class="txtin" placeholder="e.g. photo-to-edit.png">
+
+    <label class="flabel" for="edit-prompt">What should change?</label>
+    <textarea id="edit-prompt" rows="3" placeholder="e.g. make it night time with neon rain, keep the character the same"></textarea>
+    <div class="btnrow">
+      <button type="button" class="improvebtn" data-improve="edit">✨ Improve with AI</button>
+      <span class="impnote" id="note-edit"></span>
+    </div>
+
+    <label class="flabel" for="edit-strength">Change strength · <span id="edit-strength-val">0.55 — a solid change</span></label>
+    <input type="range" id="edit-strength" min="0.1" max="1" step="0.05" value="0.55">
+    <p class="hint">Low = gentle touch-up · high = big change.</p>
+
+    <label class="flabel">How many versions?</label>
+    <div class="chips" id="edit-counts">
+      <button type="button" class="chip on" data-count="1">1</button>
+      <button type="button" class="chip" data-count="2">2</button>
+      <button type="button" class="chip" data-count="3">3</button>
+      <button type="button" class="chip" data-count="4">4</button>
+    </div>
+    <label class="flabel" for="edit-seed">Seed <span class="muted">(blank or 0 = random)</span></label>
+    <input type="number" id="edit-seed" class="txtin" min="0" placeholder="Random">
+
+    <button id="edit-go" class="bigbtn">EDIT IT ✏️</button>
+    <div id="edit-sendbox" class="sendbox" hidden>
+      <p><b>One more tap — that's the handoff.</b> Tap below, then tap
+      <b>Commit changes</b> on the GitHub page.</p>
+      <a id="edit-sendlink" class="bigbtn send" href="#" target="_blank" rel="noopener">2. SEND MY EDIT ON GITHUB →</a>
+      <p class="hint">Edits always cook in Studio quality. The result lands in the gallery marked ✏️ EDIT.</p>
+    </div>
+  </section>
+
+  <!-- ================= CROP ================= -->
+  <section class="card" id="cropcard">
+    <h3 style="margin-top:0">✂️ Crop a picture</h3>
+    <p class="hint">The studio's AI finds the subject and cuts the picture tight around it.
+    <b>Crops come back fast — seconds, not minutes.</b> Tap <b>✂️ Crop</b> under any
+    gallery picture, paste a link, or upload one.</p>
+
+    <label class="flabel">Source picture</label>
+    <div id="crop-srcprev" class="srcprev"><span class="muted">No source picked yet.</span></div>
+    <input type="url" id="crop-url" class="txtin" placeholder="Paste an image link (https://…)">
+    <p class="hint">…or <a href="https://github.com/boo4blue/boo4blue.github.io/upload/main/image-studio/queue/refs" target="_blank" rel="noopener">upload a picture on GitHub</a>, then type its file name:</p>
+    <input type="text" id="crop-file" class="txtin" placeholder="e.g. photo-to-crop.png">
+
+    <label class="flabel">Crop shape</label>
+    <div class="chips" id="crop-modes">
+      <button type="button" class="chip on" data-cropmode="subject">🎯 Just the subject</button>
+      <button type="button" class="chip" data-cropmode="square">⬛ Square</button>
+      <button type="button" class="chip" data-cropmode="tall">📱 Tall</button>
+      <button type="button" class="chip" data-cropmode="wide">🖥️ Wide</button>
+    </div>
+    <p class="hint">"Just the subject" = tight box + a little breathing room. The others
+    center the subject and cut to that shape.</p>
+
+    <button id="crop-go" class="bigbtn">CROP IT ✂️</button>
+    <div id="crop-sendbox" class="sendbox" hidden>
+      <p><b>One more tap — that's the handoff.</b> Tap below, then tap
+      <b>Commit changes</b> on the GitHub page.</p>
+      <a id="crop-sendlink" class="bigbtn send" href="#" target="_blank" rel="noopener">2. SEND MY CROP ON GITHUB →</a>
+      <p class="hint">The result lands in the gallery marked ✂️ CROP.</p>
+    </div>
+  </section>
+
+  <!-- ================= GALLERY ================= -->
   <section>
     <h2>Your gallery</h2>
     <p class="muted" id="gal-note">Loading…</p>
