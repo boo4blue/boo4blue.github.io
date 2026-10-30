@@ -22,7 +22,8 @@
       "value": "image-studio/gallery/img-proof-neon-onion.png"
     },
     "id": "img-mvuc3tc3-lcsk",
-    "state": "cooking"
+    "state": "failed",
+    "error": "Something broke while cooking this one. Please try again."
   },
   {
     "prompt": "cute neon onion mascot character with a happy face, waving one hand, game sprite, dark background",
