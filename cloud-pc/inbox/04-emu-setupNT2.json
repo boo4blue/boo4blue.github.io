@@ -1,1 +1,0 @@
-{"id": "04-emu-setupNT2", "action": "shell", "command": "bash emu/run10.sh setup", "note": "retry2"}

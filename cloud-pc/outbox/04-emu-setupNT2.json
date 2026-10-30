@@ -1,0 +1,17 @@
+{
+  "id": "04-emu-setupNT2",
+  "action": "shell",
+  "at": "2026-10-30T02:23:53Z",
+  "job": {
+    "id": "04-emu-setupNT2",
+    "action": "shell",
+    "command": "bash emu/run10.sh setup",
+    "note": "retry2"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "attempt 1 sdkmanager exit=0\nSDK verified OK on attempt 1\nSETUP_DONE\n",
+    "stderr": ""
+  }
+}

@@ -47,13 +47,15 @@ EOF
 adb push /tmp/nt_save.json /data/data/$PACKAGE/files/neontower_save.json 2>&1 | tail -1
 adb shell chmod 666 /data/data/$PACKAGE/files/neontower_save.json 2>/dev/null
 echo "save seeded: $(adb shell ls -la /data/data/$PACKAGE/files/ 2>/dev/null | grep neontower || echo FAILED)"
+adb shell settings put system accelerometer_rotation 1 2>/dev/null
+adb shell settings put system user_rotation 0 2>/dev/null
 adb shell monkey -p $PACKAGE -c android.intent.category.LAUNCHER 1 2>&1 | tail -1
 sleep 12
-tapfrac 0.80,0.27
-sleep 6
+tapfrac 0.66,0.49
+sleep 3
 echo "--- pid@home:"; adb shell pidof $PACKAGE
 adb exec-out screencap -p > emu/shot-$TAG-home.png
-tapfrac 0.5,0.845
+tapfrac 0.5,0.66
 sleep 10
 echo "--- pid@battle1:"; adb shell pidof $PACKAGE
 adb exec-out screencap -p > emu/shot-$TAG-battle1.png
