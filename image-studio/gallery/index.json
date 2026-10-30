@@ -16,7 +16,8 @@
     "at": "2026-10-30T00:33:52.611211+00:00",
     "started_at": "2026-10-30T01:29:09.559192+00:00",
     "id": "img-proof-neon-onion",
-    "state": "cooking"
+    "state": "failed",
+    "error": "Studio generator hit a snag ( [studio] PUSH FAILED (no success line from kaggle CLI)). Please try again."
   },
   {
     "prompt": "A human hand",
