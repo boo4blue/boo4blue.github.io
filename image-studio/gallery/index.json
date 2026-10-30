@@ -16,6 +16,7 @@
     "at": "2026-10-30T00:55:37.447Z",
     "started_at": "2026-10-30T01:27:02.365009+00:00",
     "id": "img-mvu9gkiv-9f3f",
-    "state": "cooking"
+    "state": "failed",
+    "error": "The free daily Quick budget is used up \u2014 it refills tomorrow. Studio mode still works."
   }
 ]
