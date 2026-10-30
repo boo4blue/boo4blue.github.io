@@ -71,8 +71,26 @@
    "lastError": null,
    "createdAt": "2026-10-30T01:33:09Z",
    "updatedAt": "2026-10-30T01:33:09Z"
+  },
+  {
+   "slug": "demo-one",
+   "displayName": "Demo One",
+   "kind": "made",
+   "template": "poster",
+   "fields": {
+    "heading": "Demo One",
+    "text": "This website was made with the Onion Core Website Maker.",
+    "bg": "#0b0b16",
+    "ink": "#f5f5fa",
+    "accent": "#22d3ee"
+   },
+   "status": "live",
+   "lastError": null,
+   "url": "https://boo4blue.github.io/demo-one/",
+   "createdAt": "2026-10-30T01:33:18Z",
+   "updatedAt": "2026-10-30T01:33:18Z"
   }
  ],
  "stubs": {},
- "updatedAt": "2026-10-30T01:33:09Z"
+ "updatedAt": "2026-10-30T01:33:18Z"
 }
