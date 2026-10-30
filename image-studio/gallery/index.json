@@ -14,10 +14,14 @@
     "improved": [],
     "group": "img-proof-neon-onion",
     "at": "2026-10-30T00:33:52.611211+00:00",
-    "started_at": "2026-10-30T01:29:09.559192+00:00",
+    "started_at": "2026-10-30T05:52:56+00:00",
     "id": "img-proof-neon-onion",
-    "state": "failed",
-    "error": "Studio generator hit a snag ( [studio] PUSH FAILED (no success line from kaggle CLI)). Please try again."
+    "state": "done",
+    "image": "gallery/img-proof-neon-onion.png",
+    "done_at": "2026-10-30T05:57:07+00:00",
+    "seed": 777777,
+    "final_prompt": "masterpiece, best quality, very aesthetic, absurdres, game sprite, full body, centered, single character, solid black background, full shot, cute neon onion mascot character with a happy face, waving one hand, game sprite, dark background, clean lineart, cel shading, sharp focus, high detail",
+    "final_negative": "low quality, worst quality, blurry, deformed, bad anatomy, deformed hands, fewer than 5 fingers, less than five fingers, missing fingers, extra fingers, fused fingers, merged fingers, mutated hands, malformed limbs, extra limbs, watermark, text, signature, jpeg artifacts, out of frame, multiple characters, group, cropped, close-up, portrait, scenery, complex background, ground, shadow"
   },
   {
     "prompt": "A human hand",
