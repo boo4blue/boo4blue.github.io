@@ -3,7 +3,7 @@
    Reads the site list from data/state.json (kept fresh by the workshop runner).
    Changes travel as small order files: this page builds the order, then a
    one-tap GitHub page files it — no keys or tokens live in this page. */
-const GATE_HASH = "eb1e3080e8ae9b5c773eaeda61a43b7a610092372df52f5e1c6ea68e05ac43d4";
+const GATE_HASH = "2c297fbf592ddcdc981e0ea25653a0e41d0cdfd1ee3f929198650ce43bfca4a6";
 const STATE_URL = "data/state.json";
 const REPO_NEW = "https://github.com/boo4blue/boo4blue.github.io/new/main/my-websites/queue";
 const $ = (id) => document.getElementById(id);
