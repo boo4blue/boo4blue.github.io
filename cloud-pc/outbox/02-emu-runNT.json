@@ -1,0 +1,16 @@
+{
+  "id": "02-emu-runNT",
+  "action": "shell",
+  "at": "2026-10-30T00:15:22Z",
+  "job": {
+    "id": "02-emu-runNT",
+    "action": "shell",
+    "command": "bash emu/runNT.sh"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "-rw-r--r-- 1 runner runner 118594661 Oct 30 00:13 /tmp/test-NT.apk\nd1d02430b3f783d47dd5642a2e9fc2d8  /tmp/test-NT.apk\nbooted after ~20s\nboot_completed=1\nscreen=1080x2400\nSuccess\n## Network stats: elapsed time=125ms (0ms mobile, 0ms wifi, 125ms not connected)\n/tmp/nt_save.json: 1 file pushed, 0 skipped. 5.9 MB/s (404 bytes in 0.000s)\nsave seeded: -rw-rw-rw-  1 root    root     404 2026-10-30 00:14 neontower_save.json\n## Network stats: elapsed time=33ms (0ms mobile, 0ms wifi, 33ms not connected)\n--- pid@home:\n2425\n--- pid@battle1:\n2425\n--- pid@end:\n2425\nOK: killing emulator, bye bye\nOK\nRUN_DONE_NT\n",
+    "stderr": "* daemon not running; starting now at tcp:5037\n* daemon started successfully\n"
+  }
+}

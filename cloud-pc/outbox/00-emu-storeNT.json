@@ -1,0 +1,16 @@
+{
+  "id": "00-emu-storeNT",
+  "action": "store",
+  "at": "2026-10-30T00:12:33Z",
+  "job": {
+    "id": "00-emu-storeNT",
+    "action": "store",
+    "path": "emu/runNT.sh",
+    "content_bytes": 3330
+  },
+  "result": {
+    "ok": true,
+    "path": "emu/runNT.sh",
+    "bytes": 3330
+  }
+}

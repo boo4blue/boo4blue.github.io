@@ -1,1 +1,0 @@
-{"id": "02-emu-runNT", "action": "shell", "command": "bash emu/runNT.sh"}
