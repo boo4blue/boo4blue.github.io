@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Onion Core — My Websites</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="logo">🧅 <span>Onion<b>Core</b></span></div>
+  <div class="tag">My Websites</div>
+</header>
+
+<!-- Unlock -->
+<section id="view-lock" class="view">
+  <div class="card lockcard">
+    <div class="biglogo">🧅</div>
+    <h1>Onion Core</h1>
+    <p class="muted">Your website maker. Type your passcode once — this phone remembers it.</p>
+    <input id="pass-input" type="password" inputmode="text" autocomplete="off" placeholder="Passcode">
+    <button id="unlock-btn" class="bigbtn">Unlock</button>
+    <p id="lock-err" class="err"></p>
+  </div>
+</section>
+
+<!-- Home -->
+<section id="view-home" class="view hidden">
+  <button id="new-btn" class="bigbtn">＋ Make a Website</button>
+  <div id="cookstrip" class="cookstrip hidden"></div>
+  <h2>All my websites</h2>
+  <div id="cards" class="cards"></div>
+  <p class="foot">Onion Core — Website Maker</p>
+</section>
+
+<!-- Create / Edit -->
+<section id="view-form" class="view hidden">
+  <button class="backbtn" data-back>← Back</button>
+  <h2 id="form-title">Make a website</h2>
+
+  <label class="flabel">Name it anything you want</label>
+  <input id="f-name" type="text" placeholder="e.g. My Cool Page" maxlength="58" autocomplete="off">
+  <p class="hint">Site name: <b id="f-addr">…</b><br>
+  <span class="muted">Your live link lands in your list the moment the site is built. Once your own domain is live it becomes <b id="f-addr2">….onioncore.com</b> — same site, nothing to redo.</span></p>
+
+  <label class="flabel">Pick a style</label>
+  <div id="tpl-chips" class="chips">
+    <button class="chip" data-tpl="blank">📄 Blank Page</button>
+    <button class="chip" data-tpl="poster">🎨 Poster</button>
+    <button class="chip" data-tpl="linklist">🔗 Link List</button>
+    <button class="chip" data-tpl="photowall">🖼️ Photo Wall</button>
+  </div>
+
+  <div id="fields-blank" class="fields">
+    <label class="flabel">One line of text <span class="muted">(optional)</span></label>
+    <input id="fld-blank-text" type="text" placeholder="Coming soon…" maxlength="140">
+  </div>
+
+  <div id="fields-poster" class="fields hidden">
+    <label class="flabel">Big heading</label>
+    <input id="fld-poster-heading" type="text" placeholder="HELLO WORLD" maxlength="80">
+    <label class="flabel">Words under it</label>
+    <textarea id="fld-poster-text" rows="3" placeholder="Say something big…" maxlength="400"></textarea>
+    <div class="colorrow">
+      <label>Background <input id="fld-poster-bg" type="color" value="#0b0b16"></label>
+      <label>Text <input id="fld-poster-ink" type="color" value="#f5f5fa"></label>
+      <label>Pop color <input id="fld-poster-accent" type="color" value="#22d3ee"></label>
+    </div>
+  </div>
+
+  <div id="fields-linklist" class="fields hidden">
+    <label class="flabel">Title</label>
+    <input id="fld-links-title" type="text" placeholder="My links" maxlength="80">
+    <label class="flabel">Links <span class="muted">(up to 8)</span></label>
+    <div id="link-rows"></div>
+    <button id="link-add" class="minibtn">＋ Add a link</button>
+  </div>
+
+  <div id="fields-photowall" class="fields hidden">
+    <label class="flabel">Title</label>
+    <input id="fld-wall-title" type="text" placeholder="My photos" maxlength="80">
+    <label class="flabel">Photo links <span class="muted">(one per line, up to 12)</span></label>
+    <textarea id="fld-wall-images" rows="5" placeholder="https://…"></textarea>
+  </div>
+
+  <button id="form-go" class="bigbtn">🚀 Make my website</button>
+  <p id="form-err" class="err"></p>
+
+  <div id="sendbox" class="sendbox hidden">
+    <p><b>One last tap:</b> your order needs a ride to the workshop. Tap the button, then tap <b>Commit changes</b> on the page that opens. That's it — your site cooks and shows up in the list in a minute or two.</p>
+    <a id="send-link" class="bigbtn send" href="#" target="_blank" rel="noopener">Send it →</a>
+    <button class="minibtn" data-back>Done — back to my websites</button>
+  </div>
+</section>
+
+<!-- Rename -->
+<section id="view-rename" class="view hidden">
+  <button class="backbtn" data-back>← Back</button>
+  <h2>Rename <span id="rn-old"></span></h2>
+  <label class="flabel">New name</label>
+  <input id="rn-name" type="text" maxlength="58" autocomplete="off">
+  <p class="hint">New address: <b id="rn-addr"></b><br><span class="muted">The old address will point to the new one, so old links keep working.</span></p>
+  <button id="rn-go" class="bigbtn">Rename it</button>
+  <p id="rn-err" class="err"></p>
+  <div id="rn-sendbox" class="sendbox hidden">
+    <p><b>One last tap:</b> tap the button, then tap <b>Commit changes</b> on the page that opens.</p>
+    <a id="rn-send-link" class="bigbtn send" href="#" target="_blank" rel="noopener">Send it →</a>
+    <button class="minibtn" data-back>Done — back to my websites</button>
+  </div>
+</section>
+
+<!-- Delete confirm -->
+<section id="view-delete" class="view hidden">
+  <button class="backbtn" data-back>← Back</button>
+  <h2>Delete <span id="del-name"></span>?</h2>
+  <p class="muted">The site and its address go away for good. This can't be undone.</p>
+  <button id="del-go" class="bigbtn danger">Yes, delete it</button>
+  <div id="del-sendbox" class="sendbox hidden">
+    <p><b>One last tap:</b> tap the button, then tap <b>Commit changes</b> on the page that opens.</p>
+    <a id="del-send-link" class="bigbtn send" href="#" target="_blank" rel="noopener">Send it →</a>
+    <button class="minibtn" data-back>Done — back to my websites</button>
+  </div>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
