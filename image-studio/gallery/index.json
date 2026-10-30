@@ -1,5 +1,30 @@
 [
   {
+    "prompt": "Make it blue",
+    "positive": "",
+    "negative": "",
+    "preset": "sprite",
+    "mode": "studio",
+    "size": "square",
+    "width": 1024,
+    "height": 1024,
+    "seed_requested": null,
+    "guidance": 7.0,
+    "steps": 28,
+    "improved": [],
+    "group": "img-mvuc3tc3-lcsk",
+    "at": "2026-10-30T02:09:41.187Z",
+    "started_at": "2026-10-30T02:10:52.931503+00:00",
+    "kind": "edit",
+    "strength": 0.55,
+    "source": {
+      "kind": "gallery",
+      "value": "image-studio/gallery/img-proof-neon-onion.png"
+    },
+    "id": "img-mvuc3tc3-lcsk",
+    "state": "cooking"
+  },
+  {
     "prompt": "cute neon onion mascot character with a happy face, waving one hand, game sprite, dark background",
     "positive": "",
     "negative": "",
