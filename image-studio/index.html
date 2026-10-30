@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Onion Image Studio — make pictures</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav><div class="inner">
+  <a class="logo" href="#">🎨 ONION IMAGE STUDIO</a>
+  <span class="pill" id="nav-status"><span class="dot"></span>checking…</span>
+</div></nav>
+
+<main>
+  <section class="hero">
+    <h1>Describe it. Get a picture.</h1>
+    <p class="sub">Your own image studio. Type what you want, tap generate, and the
+    picture cooks on Onion's GPU and lands in your gallery below. You can close
+    this page and come back — orders keep cooking.</p>
+  </section>
+
+  <section class="card">
+    <label class="flabel" for="prompt">What do you want to see?</label>
+    <textarea id="prompt" rows="3" placeholder="Describe your image… e.g. a cartoon white glove hand with five fingers pointing, black background"></textarea>
+
+    <label class="flabel" for="negative">Keep OUT of the picture <span class="muted">(negatives — edit if you want)</span></label>
+    <textarea id="negative" rows="3"></textarea>
+    <p class="hint">Studio mode always blocks the worst stuff (bad hands, watermarks, blur).
+    Quick mode can't take negatives — it's a fast draft.</p>
+
+    <label class="flabel">Style</label>
+    <div class="chips" id="presets">
+      <button type="button" class="chip on" data-preset="anime">🎌 Anime</button>
+      <button type="button" class="chip" data-preset="portrait">🧑 Portrait</button>
+      <button type="button" class="chip" data-preset="sprite">👾 Sprite</button>
+      <button type="button" class="chip" data-preset="glove">🧤 Hand &amp; Glove</button>
+      <button type="button" class="chip" data-preset="realistic">📸 Realistic</button>
+    </div>
+
+    <label class="flabel">How should it cook?</label>
+    <div class="modes">
+      <label class="mode on" id="mode-studio">
+        <input type="radio" name="mode" value="studio" checked>
+        <b>🎨 Studio</b><span>Best quality. The GPU has to wake up and load the art brain — usually 5–15 minutes.</span>
+      </label>
+      <label class="mode" id="mode-quick">
+        <input type="radio" name="mode" value="quick">
+        <b>⚡ Quick</b><span>Fast draft, under a minute — when the free daily budget has room (it refills every day).</span>
+      </label>
+    </div>
+
+    <label class="flabel" for="size">Shape</label>
+    <select id="size">
+      <option value="square" selected>Square · 1024×1024</option>
+      <option value="tall">Tall · 832×1216 (phone wallpaper)</option>
+      <option value="wide">Wide · 1216×832</option>
+    </select>
+
+    <button id="generate" class="bigbtn">GENERATE ✨</button>
+
+    <div id="sendbox" class="sendbox" hidden>
+      <p><b>One more tap — that's the handoff.</b> This page can't write to the
+      studio by itself, so your order rides on your own GitHub: tap the button
+      below, then tap <b>Commit changes</b> on the GitHub page. No password is
+      stored here — you're just signed into your own GitHub.</p>
+      <a id="sendlink" class="bigbtn send" href="#" target="_blank" rel="noopener">2. SEND MY ORDER ON GITHUB →</a>
+      <p class="hint">After committing, come back to this page. Your picture shows
+      up in the gallery as <b>Queued → Cooking → Done</b>. The studio checks for
+      new orders every couple of minutes.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Your gallery</h2>
+    <p class="muted" id="gal-note">Loading…</p>
+    <div id="gallery" class="gallery"></div>
+  </section>
+
+  <section class="card small">
+    <h3>How it works</h3>
+    <p><b>You</b> describe a picture → <b>GitHub</b> carries the order (one commit tap) →
+    <b>the studio</b> (Onion's image tool on a free GPU) cooks it →
+    the picture lands <b>here</b>.</p>
+    <p class="muted">Heads-up: this page is public, so pictures in the gallery are
+    public too. Don't cook anything you wouldn't want seen.</p>
+  </section>
+</main>
+
+<footer>ONION IMAGE STUDIO · free · built by Onion for Boo</footer>
+<script src="app.js"></script>
+</body>
+</html>
