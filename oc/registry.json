@@ -16,6 +16,11 @@
       "owner": "Blaze",
       "target": "https://boo4blue.github.io/app/"
     },
+    "os.oc": {
+      "notes": "Onion OS \u2014 the whole platform in one desktop",
+      "owner": "Blaze",
+      "target": "https://boo4blue.github.io/onion-os/"
+    },
     "proof.oc": {
       "notes": "End-to-end proof name \u2014 registered by the CLI, resolved by our resolver, served by the gateway",
       "owner": "Blaze",
