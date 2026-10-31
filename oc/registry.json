@@ -1,6 +1,11 @@
 {
   "gateway": "https://boo4blue.github.io/oc/",
   "names": {
+    "agent.oc": {
+      "notes": "Onion AI Agent Console \u2014 brain-proposed tasks via the Bridge agent layer; web_search runs server-side, machine actions (bash/file) park at awaiting_approval for human approval, then dispatch to the Cloud PC agentrun service. Self-tune rules are proposals until approved.",
+      "owner": "Blaze",
+      "target": "https://onioncore-agent.blueblazer82.workers.dev/"
+    },
     "background.oc": {
       "notes": "Onion Core Background Check \u2014 public-footprint reports (public web + RDAP + breach metadata only); admin deep tier pass-gated via Bridge /api/lookup",
       "owner": "Blaze",
