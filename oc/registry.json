@@ -42,7 +42,7 @@
       "target": "https://onioncore-community.pages.dev/"
     },
     "covered.oc": {
-      "notes": "",
+      "notes": "Am I Covered? \u2014 shows what a website can see about your connection and browser (your own facts only, via Bridge /api/echo)",
       "owner": "Blaze",
       "target": "https://onioncore-covered.pages.dev/"
     },
@@ -55,6 +55,11 @@
       "notes": "Onion Core Open Data hub: Data.gov (GSA Catalog API v4), World Bank, NASA CMR connected; WHO GHO unreachable (API 500, Oct 31 2026); FRED graph tier, CDN-refused (520) at launch; master index 3,115 links (Awesome x2 + AWS registry + SNAP + DataHub). Pages slot pending account limit; Worker serves the site.",
       "owner": "Blaze",
       "target": "https://onioncore-data.blueblazer82.workers.dev/"
+    },
+    "db.oc": {
+      "notes": "Onion Core Database Builder \u2014 build your own databases: tables, collections, key-value, ledger, pipelines, AI ask, external connections via the Cloud PC",
+      "owner": "Blaze",
+      "target": "https://onioncore-db.blueblazer82.workers.dev"
     },
     "door.oc": {
       "notes": "The Vault Door \u2014 stash rooms behind an optional code word; wrong code or unknown room answers only 'no such room'. Bridge /api/door/*, 30-day rooms.",
@@ -82,7 +87,7 @@
       "target": "https://onioncore-id.pages.dev/"
     },
     "map.oc": {
-      "notes": "Google-free Indiana map (opens on Fort Wayne). STATEWIDE since 2026-10-30: 707 verified live public cameras (704 INDOT 511 + 3 WeatherSTEM, all byte-verified; 704 with HLS) in cameras-in.json; FW's 55 stay baked as the default view. Addendum features: 'Can they see me?' (120 m ESTIMATED coverage, dead-zone answer, 6 s watch cycle), coverage/dead-zone layer, OSRM route planner with camera scoring. Plus RainViewer radar, police dispatch radio (OpenMHz), incidents, Open-Meteo weather. Tor .onion door serves a local copy incl. cameras-in.json.",
+      "notes": "Multi-state verified camera map (5,619 byte-verified DOT cameras: IN 711, GA 2864, NC 984, NY 231, NE 222, MI 217, IA 210, KY 180) with smart cluster renderer, per-state on-demand loading, See-Me/coverage/routes over all loaded states, EarthCam + directory link-out pins, community cameras with human approval, owner tier. VA/AL/CO documented zero (unverifiable from harvest network). Updated 2026-10-31. Tor door: blazez7igmrjr32tn5nxyfkbplp5jlvbq2zdasgb67mxehidi3anb7qd.onion",
       "owner": "Blaze",
       "target": "https://onioncore-map.pages.dev/"
     },
@@ -137,12 +142,12 @@
       "target": "https://onioncore-undernet.pages.dev/"
     },
     "vouch.oc": {
-      "notes": "",
+      "notes": "Onion Core Vouch \u2014 consent-based background checks: the subject signs a Disclosure & Authorization, both sides get the identical public-sources report; eligibility purposes hard-blocked",
       "owner": "Blaze",
       "target": "https://onioncore-vouch.pages.dev/"
     },
     "wire.oc": {
-      "notes": "",
+      "notes": "The Wire \u2014 anonymous message board; posts burn after 24 hours",
       "owner": "Blaze",
       "target": "https://onioncore-wire.pages.dev/"
     }
