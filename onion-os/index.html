@@ -564,6 +564,40 @@ INIT.studio = frameInit(SITES_HOME + "/image-studio/");
 RENDER.websites = frameRender(SITES_HOME + "/my-websites/");
 INIT.websites = frameInit(SITES_HOME + "/my-websites/");
 
+/* ---- Onion Core sites (the .oc fleet, each opening its real live URL) ---- */
+var CORE_SITES = [
+  { id:"agent",      icon:"🤖", title:"Onion AI",        url:"https://onioncore-agent.blueblazer82.workers.dev/" },
+  { id:"map",        icon:"🗺️", title:"Map",             url:"https://onioncore-map.pages.dev/" },
+  { id:"data",       icon:"📊", title:"Open Data",       url:"https://onioncore-data.blueblazer82.workers.dev/" },
+  { id:"source",     icon:"🧲", title:"Source Maker",    url:"https://onioncore-source.blueblazer82.workers.dev/" },
+  { id:"db",         icon:"🗄️", title:"Database Builder", url:"https://onioncore-db.blueblazer82.workers.dev/" },
+  { id:"underground",icon:"📺", title:"Underground",     url:"https://onioncore-underground.pages.dev/" },
+  { id:"undernet",   icon:"🕸️", title:"Undernet",        url:"https://onioncore-undernet.pages.dev/" },
+  { id:"vouch",      icon:"🤝", title:"Vouch",           url:"https://onioncore-vouch.pages.dev/" },
+  { id:"background", icon:"🕵️", title:"Background Check", url:"https://onioncore-background.pages.dev/" },
+  { id:"breach",     icon:"🔓", title:"Breach Check",    url:"https://onioncore-breach.pages.dev/" },
+  { id:"scanner",    icon:"📻", title:"Scanner",         url:"https://onioncore-scanner.pages.dev/" },
+  { id:"ocfiles",    icon:"🗄️", title:"Files",           url:"https://onioncore-files.pages.dev/" },
+  { id:"community",  icon:"👥", title:"Community",       url:"https://onioncore-community.pages.dev/" },
+  { id:"botforge",   icon:"🛠️", title:"Bot Forge",       url:"https://onioncore-botforge.pages.dev/" },
+  { id:"builder",    icon:"🏗️", title:"Website Builder", url:"https://onioncore-builder.pages.dev/" },
+  { id:"crypt",      icon:"🔐", title:"Cipher",          url:"https://onioncore-crypt.pages.dev/" },
+  { id:"chat",       icon:"💬", title:"Room Chat",       url:"https://onioncore-chat.pages.dev/" },
+  { id:"drop",       icon:"📦", title:"Dead Drop",       url:"https://onioncore-drop.pages.dev/" },
+  { id:"door",       icon:"🚪", title:"Vault Door",      url:"https://onioncore-door.pages.dev/" },
+  { id:"id",         icon:"🪪", title:"Onion ID",        url:"https://onioncore-id.pages.dev/" },
+  { id:"paper",      icon:"📄", title:"Paper Secrets",   url:"https://onioncore-paper.pages.dev/" },
+  { id:"scrub",      icon:"🧼", title:"Scrub",           url:"https://onioncore-scrub.pages.dev/" },
+  { id:"covered",    icon:"👁️", title:"Am I Covered?",   url:"https://onioncore-covered.pages.dev/" },
+  { id:"wire",       icon:"📝", title:"The Wire",        url:"https://onioncore-wire.pages.dev/" }
+];
+CORE_SITES.forEach(function(s){
+  APPS.push({ id:s.id, icon:s.icon, title:s.title });
+  RENDER[s.id] = frameRender(s.url);
+  INIT[s.id] = frameInit(s.url);
+  console.log("[onion-os] site app registered:", s.id, s.url);
+});
+
 /* ---- .oc Directory ---- */
 RENDER.directory = function(body){
   body.innerHTML = '<div class="pad"><p class="note" style="margin-top:0">Every name in <b>our own .oc registry</b> — ' +
