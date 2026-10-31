@@ -1,10 +1,65 @@
 {
   "gateway": "https://boo4blue.github.io/oc/",
   "names": {
+    "background.oc": {
+      "notes": "Onion Core Background Check \u2014 public-footprint reports (public web + RDAP + breach metadata only); admin deep tier pass-gated via Bridge /api/lookup",
+      "owner": "Blaze",
+      "target": "https://onioncore-background.pages.dev/"
+    },
     "blaze.oc": {
       "notes": "Blaze's poster page \u2014 the live gateway demo",
       "owner": "Blaze",
       "target": "https://boo4blue.github.io/oc/demo/blaze.html"
+    },
+    "bots.oc": {
+      "notes": "Bot Forge \u2014 admin-only bot-making workshop (website + engine)",
+      "owner": "Blaze",
+      "target": "https://onioncore-botforge.pages.dev/"
+    },
+    "breach.oc": {
+      "notes": "Onion Core Breach Check \u2014 password (HIBP k-anonymity) + email (XposedOrNot) lookup against known breaches; watchlist on-device only",
+      "owner": "Blaze",
+      "target": "https://onioncore-breach.pages.dev/"
+    },
+    "builder.oc": {
+      "notes": "Onion Core Website Builder \u2014 the front door for getting a site built",
+      "owner": "Blaze",
+      "target": "https://onioncore-builder.pages.dev/"
+    },
+    "chat.oc": {
+      "notes": "Onion Core Room Chat \u2014 code-word rooms, MQTT/WSS relay, client-side encrypted, no history",
+      "owner": "Blaze",
+      "target": "https://onioncore-chat.pages.dev/"
+    },
+    "community.oc": {
+      "notes": "Onion Core Community \u2014 forums, live chat, member accounts",
+      "owner": "Blaze",
+      "target": "https://onioncore-community.pages.dev/"
+    },
+    "covered.oc": {
+      "notes": "",
+      "owner": "Blaze",
+      "target": "https://onioncore-covered.pages.dev/"
+    },
+    "crypt.oc": {
+      "notes": "Onion Core Cipher \u2014 on-device message encryption (WebCrypto, client-side only)",
+      "owner": "Blaze",
+      "target": "https://onioncore-crypt.pages.dev/"
+    },
+    "data.oc": {
+      "notes": "Onion Core Open Data hub: Data.gov (GSA Catalog API v4), World Bank, NASA CMR connected; WHO GHO unreachable (API 500, Oct 31 2026); FRED graph tier, CDN-refused (520) at launch; master index 3,115 links (Awesome x2 + AWS registry + SNAP + DataHub). Pages slot pending account limit; Worker serves the site.",
+      "owner": "Blaze",
+      "target": "https://onioncore-data.blueblazer82.workers.dev/"
+    },
+    "door.oc": {
+      "notes": "The Vault Door \u2014 stash rooms behind an optional code word; wrong code or unknown room answers only 'no such room'. Bridge /api/door/*, 30-day rooms.",
+      "owner": "Blaze",
+      "target": "https://onioncore-door.pages.dev/"
+    },
+    "drop.oc": {
+      "notes": "Dead Drop + Secret Links \u2014 one-time drops that burn on first open",
+      "owner": "Blaze",
+      "target": "https://onioncore-drop.pages.dev/"
     },
     "files.oc": {
       "notes": "Onion Core Files \u2014 app written, not live yet (Cloudflare token wall); name held, target activates on deploy",
@@ -16,15 +71,45 @@
       "owner": "Blaze",
       "target": "https://boo4blue.github.io/app/"
     },
+    "id.oc": {
+      "notes": "Onion ID \u2014 client-side ECDSA P-256 identity cards: generate, sign, verify. Private key never leaves the browser.",
+      "owner": "Blaze",
+      "target": "https://onioncore-id.pages.dev/"
+    },
+    "map.oc": {
+      "notes": "Google-free Indiana map (opens on Fort Wayne). STATEWIDE since 2026-10-30: 707 verified live public cameras (704 INDOT 511 + 3 WeatherSTEM, all byte-verified; 704 with HLS) in cameras-in.json; FW's 55 stay baked as the default view. Addendum features: 'Can they see me?' (120 m ESTIMATED coverage, dead-zone answer, 6 s watch cycle), coverage/dead-zone layer, OSRM route planner with camera scoring. Plus RainViewer radar, police dispatch radio (OpenMHz), incidents, Open-Meteo weather. Tor .onion door serves a local copy incl. cameras-in.json.",
+      "owner": "Blaze",
+      "target": "https://onioncore-map.pages.dev/"
+    },
     "os.oc": {
       "notes": "Onion OS \u2014 the whole platform in one desktop",
       "owner": "Blaze",
       "target": "https://boo4blue.github.io/onion-os/"
     },
+    "paper.oc": {
+      "notes": "Onion Core Paper Secrets \u2014 encrypted secrets as printed QR codes (ONION1 blobs, crypt.oc-compatible)",
+      "owner": "Blaze",
+      "target": "https://onioncore-paper.pages.dev/"
+    },
     "proof.oc": {
       "notes": "End-to-end proof name \u2014 registered by the CLI, resolved by our resolver, served by the gateway",
       "owner": "Blaze",
       "target": "https://boo4blue.github.io/oc/demo/proof.html"
+    },
+    "scanner.oc": {
+      "notes": "Onion Core Scanner \u2014 Fort Wayne / Indiana police radio. Tor door: scanli5lreqbxvpoehzadefjxs2qjdfuixfn4tsnydymlg6gtxzkkhqd.onion",
+      "owner": "Blaze",
+      "target": "https://onioncore-scanner.pages.dev/"
+    },
+    "scrub.oc": {
+      "notes": "Onion Core Scrub \u2014 photo metadata (EXIF/GPS) viewer and stripper, all on-device",
+      "owner": "Blaze",
+      "target": "https://onioncore-scrub.pages.dev/"
+    },
+    "source.oc": {
+      "notes": "Onion Core Source Maker \u2014 paste a link or upload a file, it auto-builds a source card (HLS/snapshot/video/audio/YouTube/page/file) with honest LIVE/UNSTABLE/DEAD/REFUSED verdicts, token-only share pages, Map + Games export shapes. NOTE: front end is Worker-served \u2014 the Cloudflare account is at its 20-project Pages limit (all live products), so onioncore-source.pages.dev could not be created yet; deploy.py lights it up automatically when a slot frees.",
+      "owner": "Blaze",
+      "target": "https://onioncore-source.blueblazer82.workers.dev/"
     },
     "studio.oc": {
       "notes": "Onion Image Studio",
@@ -35,6 +120,26 @@
       "notes": "Neon Tower v1.0.0 \u2014 APK release page",
       "owner": "Blaze",
       "target": "https://github.com/boo4blue/boo4blue.github.io/releases/tag/neontower-v1.0.0"
+    },
+    "underground.oc": {
+      "notes": "Onion Underground \u2014 dark streaming: uploads, channels, shorts (Phase 1)",
+      "owner": "Blaze",
+      "target": "https://onioncore-underground.pages.dev/"
+    },
+    "undernet.oc": {
+      "notes": "Undernet \u2014 the hidden index of every .oc site",
+      "owner": "Blaze",
+      "target": "https://onioncore-undernet.pages.dev/"
+    },
+    "vouch.oc": {
+      "notes": "",
+      "owner": "Blaze",
+      "target": "https://onioncore-vouch.pages.dev/"
+    },
+    "wire.oc": {
+      "notes": "",
+      "owner": "Blaze",
+      "target": "https://onioncore-wire.pages.dev/"
     }
   },
   "tld": "oc"
