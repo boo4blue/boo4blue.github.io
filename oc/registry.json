@@ -101,6 +101,11 @@
       "owner": "Blaze",
       "target": "https://onion-id.blueblazer82.workers.dev/"
     },
+    "idcards.oc": {
+      "notes": "ID Cards tool folded into privacy.oc (#idcards tab) in the 2026-11-01 consolidation; alias registered to complete the folded-tools pattern (breach/covered/scrub/crypt/paper all have one).",
+      "owner": "Blaze",
+      "target": "https://onioncore-privacy.pages.dev/#idcards"
+    },
     "mail.oc": {
       "notes": "Onion Mail \u2014 your real mailbox in the Onion Core world: Gmail-shaped inbox, labels, search, Onion AI assistant, temp-address module. Sign in with Onion ID. Worker: onion-mail. LIVE 2026-11-01.",
       "owner": "Blaze",
