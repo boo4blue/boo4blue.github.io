@@ -397,6 +397,11 @@ body.pnames .emoji-pin .pname{display:block;}
   --r-sm:10px; --r-md:14px; --r-lg:20px; --r-pill:999px;
   --font-head:"Liberation Sans Narrow","Arial Narrow","Liberation Sans",sans-serif;
   --font-body:"Liberation Sans","Segoe UI",Roboto,sans-serif;
+  /* Layout scale (2026-11-01): one size system for both layouts.
+     <900px = phone layout; >=900px = desktop layout (the media
+     query at the end of this file re-scales these tokens). */
+  --tab-h:72px; --rail-w:216px; --sheet-w:420px;
+  --content-max:1120px; --header-h:71px;
   /* legacy aliases */
   --accent:var(--neon-cyan); --ok:var(--open); --warn:var(--neon-violet-soft); --danger:var(--crisis);
   --line:var(--border); --line2:#34345e;
@@ -827,3 +832,148 @@ h1,h2,h3,.sec-title,.places-title{font-family:var(--font-head);letter-spacing:.0
 .btn-row>.btn-primary:not(:first-child){background:var(--surface);border:1px solid var(--border);box-shadow:none;text-shadow:none;color:var(--text);}
 .slim-b[href="tel:211"]{background:var(--surface);border:1px solid var(--border-violet);color:var(--neon-violet-soft);}
 #places-open-toggle,#pt-open-toggle{background:var(--surface);border:1px solid var(--border);color:var(--text);}
+
+/* ============================================================
+   RESPONSIVE LAYOUT — mobile overlap fixes + desktop layout
+   (2026-11-01) Blaze: "Make a different layout and sizes for
+   mobile browser and desktop browser for the website."
+   <900px  = phone layout (bottom nav, bottom sheet) — the Neon
+             design above, with the recorded overlaps fixed.
+   >=900px = desktop layout (left rail nav, map + list side by
+             side, wider type/spacing from the token scale).
+   900px also catches phone browsers in "Desktop site" mode
+   (980px layout viewport), which used to render the phone
+   layout stretched into an overlapping mess.
+   ============================================================ */
+
+/* ---------- shared / phone fixes (all widths) ---------- */
+/* Defects 4+5: the header and the slim crisis bar were BOTH
+   sticky at top:0, so on non-map tabs the crisis bar painted
+   over the header and the "… — 1604 places" count text peeked
+   out from underneath it. The header now scrolls with the page;
+   only the slim crisis bar sticks. */
+.app-header{position:static;}
+/* Defect 5: the header line wrapped into as many as 3 lines at
+   some widths. One line, ellipsis if it truly cannot fit. */
+.header-sub{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.wordmark{white-space:nowrap;}
+/* Crisis strip: the title is never truncated or squeezed —
+   the row wraps whole buttons onto the next line instead
+   (the desktop media query below pins it to one row, where
+   there is room). The quick chips likewise reflow whole
+   instead of stacking their labels vertically. */
+.crisis-title{flex:none;}
+.crisis-tel{flex:none;}
+.crisis-chips{flex-wrap:wrap;}
+.crisis-chips .chip{white-space:nowrap;flex:1 1 30%;}
+/* Tonight / weather shortcut buttons reflow whole instead of
+   wrapping mid-label. */
+.tonight-row{flex-wrap:wrap;}
+.tonight-row .tonight-btn{flex:1.4 1 150px;}
+.tonight-row .charge-btn,.tonight-row .bus-btn{flex:1 1 110px;}
+/* Bottom nav fully opaque: page content no longer bleeds
+   through it while scrolling. */
+.tabbar{background:var(--page);}
+/* Defect 3: the floating Nearby pill sat bottom-left, directly
+   over the Tonight card's first-step buttons (its Call button
+   was hidden) and over the left end of the filter/button row
+   ("Can I go here?"). Dock it bottom-right, clear of the nav —
+   action rows are left-aligned, so nothing primary sits under
+   it now. */
+.places-fab{left:auto;right:16px;bottom:calc(var(--tab-h) + 12px + env(safe-area-inset-bottom));}
+/* Defect 2 support: the open-now badge is a flex item in the
+   (now flex) place-name row and must never shrink or wrap into
+   the name text. */
+.open-badge{flex:none;}
+/* Defect 4: the Plan card is injected at the top of the Saved
+   list and read as one stacked blob with the saved places.
+   Give it real separation, and a scroll offset so jumping to
+   it from the Plan nav button never tucks it under the sticky
+   crisis bar. */
+#p4-plan-card{margin-bottom:var(--sp-5);scroll-margin-top:76px;}
+#saved-list>.card:last-child{margin-bottom:0;}
+/* Every tab's content clears the fixed bottom nav at max scroll. */
+.tab .content{padding-bottom:calc(var(--tab-h) + 28px);}
+
+/* ---------- desktop layout (>=900px) ---------- */
+@media (min-width:900px){
+  :root{--header-h:78px;}
+  body{padding-bottom:0;font-size:16.5px;}
+
+  /* Left rail nav instead of the phone bottom bar. */
+  .tabbar{left:0;top:0;bottom:0;right:auto;width:var(--rail-w);
+    flex-direction:column;justify-content:flex-start;gap:6px;
+    padding:18px 12px;border-top:none;border-right:1px solid var(--border);
+    z-index:990;}
+  .tabbar-btn{flex:none;width:100%;flex-direction:row;justify-content:flex-start;
+    gap:12px;padding:0 16px;min-height:54px;margin:0;font-size:14.5px;
+    border-radius:var(--r-md);}
+  .tabbar-btn .tb-ico{font-size:20px;}
+
+  /* Content column sits right of the rail. The header becomes a
+     sticky top bar; the slim crisis bar sticks just below it —
+     the two can never overlap. */
+  .app-header,.slim-crisis,.tab{margin-left:var(--rail-w);}
+  .app-header{position:sticky;top:0;z-index:960;padding:14px 24px;}
+  .slim-crisis{top:calc(var(--header-h) - 2px);z-index:955;}
+  .wordmark{font-size:28px;}
+  .header-sub{font-size:14px;}
+  #p4-plan-card{scroll-margin-top:calc(var(--header-h) + 68px);}
+
+  /* Reading column for the list-style tabs. */
+  .content{max-width:var(--content-max);margin-left:auto;margin-right:auto;
+    padding:24px 28px 72px;}
+
+  /* Map tab: map + controls in the main column … */
+  #tab-map.active{display:grid;grid-template-columns:minmax(0,1fr);
+    align-content:start;padding-right:calc(var(--sheet-w) + 16px);}
+  #map{height:60vh;min-height:440px;}
+  .map-search{max-width:600px;}
+  .crisis-strip{padding:16px 20px;}
+  #tab-map #filters{padding-left:20px;padding-right:20px;}
+  .btn-row{padding-left:20px;padding-right:20px;}
+
+  /* … and the places sheet becomes the always-visible right
+     pane (same list, same filters — no bottom sheet covering
+     the map). It starts below the top bar. */
+  body:has(#tab-map.active) .places-sheet{top:var(--header-h);right:0;left:auto;
+    bottom:0 !important;width:var(--sheet-w);height:auto;max-height:none;
+    border-radius:0;border-top:none;border-left:1px solid var(--border-neon);
+    z-index:940;box-shadow:var(--shadow-pop);}
+  /* The floating Nearby pill is a phone control; the pane is
+     always open here. */
+  .places-fab{display:none !important;}
+
+  /* Card grids for the list tabs. */
+  #saved-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+    gap:14px;align-items:start;}
+  #saved-list .card{margin-bottom:0;}
+  #p4-plan-card{grid-column:1 / -1;}
+  #saved-list>.empty{grid-column:1 / -1;}
+  #jobs-list,#events-list,#gig-list,#learn-list,#program-list,#volunteer-list{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));
+    gap:14px;align-items:start;}
+  #jobs-list .card,#events-list .card,#gig-list .card,#learn-list .card,
+  #program-list .card,#volunteer-list .card{margin-bottom:0;}
+  #tab-settings .content{display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(330px,1fr));
+    gap:14px;align-items:start;}
+  #tab-settings .view-head{grid-column:1 / -1;}
+  #tab-settings .card{margin-bottom:0;}
+
+  /* Desktop type scale (token-driven sizes bump up a step). */
+  .view-head h2{font-size:31px;}
+  .card h3{font-size:18px;}
+  .chip{font-size:14px;}
+  .filter-btn{font-size:14px;padding:10px 16px;}
+
+  /* Sheets and panels sized/placed for a big screen. */
+  .more-sheet{left:calc(var(--rail-w) + 24px);right:auto;width:540px;
+    max-width:calc(100vw - var(--rail-w) - 48px);}
+  #sheet{left:50%;right:auto;transform:translateX(-50%);
+    width:min(620px,94vw);border-radius:var(--r-lg) var(--r-lg) 0 0;}
+  #peek{border-radius:var(--r-lg);border:1px solid var(--border-neon);
+    max-height:54vh;}
+  #peek.show{left:calc(var(--rail-w) + 20px);right:20px;bottom:20px !important;}
+  body:has(#tab-map.active) #peek.show{right:calc(var(--sheet-w) + 36px);}
+}
