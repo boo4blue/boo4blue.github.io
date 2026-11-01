@@ -1,0 +1,16 @@
+{
+  "id": "ob-shade",
+  "action": "shell",
+  "at": "2026-11-01T21:49:32Z",
+  "job": {
+    "id": "ob-shade",
+    "action": "shell",
+    "command": "bash emu/runob.sh shade"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "=== shade phase 21:49:29Z\npid_at_shade=NONE\nnotif_before_count=0\nshot3_bytes=111113\nSHADE_PHASE_SKIP (no notification to tap)\nlogcat_bytes=439970\nOK: killing emulator, bye bye\nOK\nSHADE_PHASE_DONE\n",
+    "stderr": ""
+  }
+}

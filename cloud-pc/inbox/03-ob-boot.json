@@ -1,1 +1,0 @@
-{"id": "ob-boot", "action": "shell", "command": "bash emu/runob.sh boot"}

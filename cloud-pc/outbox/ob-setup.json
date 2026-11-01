@@ -1,0 +1,16 @@
+{
+  "id": "ob-setup",
+  "action": "shell",
+  "at": "2026-11-01T21:48:29Z",
+  "job": {
+    "id": "ob-setup",
+    "action": "shell",
+    "command": "bash emu/run10.sh setup"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "attempt 1 sdkmanager exit=0\nSDK verified OK on attempt 1\nSETUP_DONE\n",
+    "stderr": ""
+  }
+}

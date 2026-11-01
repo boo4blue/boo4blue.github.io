@@ -1,0 +1,16 @@
+{
+  "id": "ob-boot",
+  "action": "shell",
+  "at": "2026-11-01T21:49:29Z",
+  "job": {
+    "id": "ob-boot",
+    "action": "shell",
+    "command": "bash emu/runob.sh boot"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "=== Onion Browser v0.40.0 emu test \u2014 boot phase 21:48:29Z\nAPK_SRC=share md5_ok=1 size=15685226\nboot_completed=1 after ~20s\nscreen=1080x2400\ninstall=\npid_after_launch=NONE\nshot1_bytes=1305190\nVERDICT=NAV_FAIL (menu button not in UI dump)\n",
+    "stderr": "* daemon not running; starting now at tcp:5037\n* daemon started successfully\n"
+  }
+}
