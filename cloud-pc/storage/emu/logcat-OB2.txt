@@ -1,0 +1,888 @@
+--------- beginning of main
+11-01 21:55:41.575   977   977 V MediaPlayerList: onActiveSessionsChanged: number of controllers: 0
+11-01 21:55:41.575   977   977 V MediaPlayerList: onActiveSessionsChanged: number of controllers: 0
+11-01 21:55:41.575   977   977 D AvrcpTargetJni: sendPlayerSettingsNative
+11-01 21:55:41.575   977   977 I bt_stack: [INFO:avrcp_service.cc(551)] virtual void bluetooth::avrcp::AvrcpService::SendPlayerSettingsChanged(std::vector<PlayerAttribute>, std::vector<uint8_t>)
+11-01 21:55:41.576   977   977 I bt_stack: [INFO:avrcp_service.cc(565)] attribute=PlayerAttribute::REPEAT : value=PlayerRepeatValue::OFF
+11-01 21:55:41.576   977   977 I bt_stack: attribute=PlayerAttribute::SHUFFLE : value=PlayerShuffleValue::OFF
+11-01 21:55:41.576   977   977 I bt_stack: 
+11-01 21:55:41.576   977   977 V MediaPlayerList: onActiveSessionsChanged: number of controllers: 0
+11-01 21:55:41.576   977   977 D AvrcpTargetJni: sendPlayerSettingsNative
+11-01 21:55:41.576   977   977 I bt_stack: [INFO:avrcp_service.cc(551)] virtual void bluetooth::avrcp::AvrcpService::SendPlayerSettingsChanged(std::vector<PlayerAttribute>, std::vector<uint8_t>)
+11-01 21:55:41.576   977   977 I bt_stack: [INFO:avrcp_service.cc(565)] attribute=PlayerAttribute::REPEAT : value=PlayerRepeatValue::OFF
+11-01 21:55:41.576   977   977 I bt_stack: attribute=PlayerAttribute::SHUFFLE : value=PlayerShuffleValue::OFF
+11-01 21:55:41.576   977   977 I bt_stack: 
+11-01 21:55:41.576   977   977 V MediaPlayerList: onActiveSessionsChanged: number of controllers: 0
+11-01 21:55:41.576   977   977 I BrowsedPlayerWrapper: onConnected: com.android.bluetooth is connected
+11-01 21:55:41.576   977   977 I BrowsedPlayerWrapper: getFolderItems: Connected to browsable player: com.android.bluetooth
+--------- beginning of system
+11-01 21:55:41.577   504   533 D CompatibilityChangeReporter: Compat change id reported: 143937733; UID 10078; state: ENABLED
+11-01 21:55:41.585   504   513 I system_server: Background concurrent copying GC freed 168518(8743KB) AllocSpace objects, 47(1676KB) LOS objects, 49% free, 17MB/35MB, paused 1.477ms,46us total 1.159s
+11-01 21:55:41.585   504   514 W JavaBinder: BinderProxy is being destroyed but the application did not call unlinkToDeath to unlink all of its death recipients beforehand.  Releasing leaked death recipient: com.android.server.am.ActivityManagerService$14
+11-01 21:55:41.585   504   514 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+11-01 21:55:41.587   504   522 W Looper  : Slow dispatch took 133ms android.ui h=com.android.server.am.ActivityManagerService$UiHandler c=null m=68
+11-01 21:55:41.587   504   785 D PackageManager: Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
+11-01 21:55:41.587   504   785 D PackageManager: Clear ephemeral installer activity
+11-01 21:55:41.588   504   785 D PackageManager: Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
+11-01 21:55:41.588   504   785 D PackageManager: Clear ephemeral installer activity
+11-01 21:55:41.588   504   785 D PackageManager: Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
+11-01 21:55:41.588   504   785 D PackageManager: Clear ephemeral installer activity
+11-01 21:55:41.589   504   785 D PackageManager: Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
+11-01 21:55:41.589   504   785 D PackageManager: Clear ephemeral installer activity
+11-01 21:55:41.589   504   785 D PackageManager: Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
+11-01 21:55:41.589   504   785 D PackageManager: Clear ephemeral installer activity
+11-01 21:55:41.590   504  1482 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Missing file: /data/system_ce/0/appsearch/icing/schema_dir/schema.pb
+11-01 21:55:41.591   504   860 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+11-01 21:55:41.593  1505  1505 D CompatibilityChangeReporter: Compat change id reported: 194532703; UID 10108; state: DISABLED
+11-01 21:55:41.593  1505  1505 D CompatibilityChangeReporter: Compat change id reported: 253665015; UID 10108; state: DISABLED
+11-01 21:55:41.594   504   860 D CompatibilityChangeReporter: Compat change id reported: 253665015; UID 10108; state: DISABLED
+11-01 21:55:41.595  1002  1002 W FeatureConnection: getRegistrationTech: ImsRegistration is null
+11-01 21:55:41.596   504   860 D CompatibilityChangeReporter: Compat change id reported: 194532703; UID 10108; state: DISABLED
+11-01 21:55:41.600   504   580 D CompatibilityChangeReporter: Compat change id reported: 265195908; UID 10075; state: ENABLED
+11-01 21:55:41.602  1002  1564 D MmsSmsDatabaseHelper: clearMmsParts: removing all attachments from: /data/user_de/0/com.android.providers.telephony/app_parts
+11-01 21:55:41.603   327   327 D Zygote  : Forked child process 1594
+11-01 21:55:41.609  1574  1574 I oid.documentsui: Using CollectorTypeCC GC.
+11-01 21:55:41.609  1574  1574 W oid.documentsui: Unexpected CPU variant for x86: x86_64.
+11-01 21:55:41.609  1574  1574 W oid.documentsui: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, tremont, kabylake, default
+11-01 21:55:41.612   504  1191 I WifiService: addOrUpdateNetwork uid=10110
+11-01 21:55:41.612   504  1191 I addOrUpdateNetworkInternal:  uid = 10110 SSID "AndroidWifi" nid=-1
+11-01 21:55:41.613   504   716 E WifiConfigManager: Cannot find network with networkId -1 or configKey "AndroidWifi"NONE or upgradable security type check
+11-01 21:55:41.613   504   716 E WifiConfigManager: Cannot find network with networkId -1 or configKey "AndroidWifi"NONE or upgradable security type check
+11-01 21:55:41.613   504   533 I ActivityManager: Start proc 1594:com.android.printspooler/u0a78 for service {com.android.printspooler/com.android.printspooler.model.PrintSpoolerService}
+11-01 21:55:41.616  1456  1580 I PhoneAccountHandleMigrationUtils_CallLogDatabaseHelper: updatePhoneAccountHandleMigrationPendingStatus false
+11-01 21:55:41.620   504   716 E WifiConfigManager: Cannot find network with configKey "AndroidWifi"NONE
+11-01 21:55:41.620   504   716 D WifiConfigurationUtil: Add upgradable OWE configuration.
+11-01 21:55:41.620   504   716 I WifiConfigManager: Credential changed for netId=0
+11-01 21:55:41.620   504   716 D WifiConfigManager: Enable disabled network: "AndroidWifi" num=0
+11-01 21:55:41.624   796   796 D KeyguardViewMediator: onSimStateChanged(subId=-1, slotId=0,state=6)
+11-01 21:55:41.625   796   880 W KeyguardUpdateMonitorLog: invalid subId in handleSimStateChange()
+11-01 21:55:41.625   796   796 D KeyguardViewMediator: ICC_ABSENT isn't showing, we need to show the keyguard since the device isn't provisioned yet.
+11-01 21:55:41.629   504   716 D WifiConfigStore: Writing to stores completed in 2 ms.
+11-01 21:55:41.631   504  1191 I WifiService: enableNetwork uid=10110 disableOthers=true
+11-01 21:55:41.631   504   716 D WifiConfigManager: Enable disabled network: "AndroidWifi" num=0
+11-01 21:55:41.634  1456  1590 I PhoneAccountHandleMigrationUtils_CallLogDatabaseHelper: updatePhoneAccountHandleMigrationPendingStatus false
+11-01 21:55:41.634   796   880 W KeyguardUpdateMonitorLog: invalid subId in handleServiceStateChange()
+11-01 21:55:41.635   134   134 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+11-01 21:55:41.635  1048  1560 I Gralloc4: mapper 4.x is not supported
+11-01 21:55:41.648   504   716 D WifiConfigStore: Writing to stores completed in 9 ms.
+11-01 21:55:41.650   504   716 D WifiClientModeImpl[20154:wlan0]: connectToUserSelectNetwork netId 0, uid 10110, package com.android.sdksetup, forceReconnect = false, isUserSelected = false
+11-01 21:55:41.652  1505  1505 D CompatibilityChangeReporter: Compat change id reported: 160794467; UID 10108; state: DISABLED
+11-01 21:55:41.655   796   796 D KeyguardViewMediator: onSimStateChanged(subId=-1, slotId=0,state=6)
+11-01 21:55:41.655   796   796 D KeyguardViewMediator: ICC_ABSENT isn't showing, we need to show the keyguard since the device isn't provisioned yet.
+11-01 21:55:41.662  1510  1510 I SdkSetup: Setting system screen_off_timeout to be 2147483647 ms
+11-01 21:55:41.665   504  1482 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Missing file: /data/system_ce/0/appsearch/icing/schema_dir/schema.pb
+11-01 21:55:41.668   504   785 D CountryDetector: The first listener is added
+11-01 21:55:41.668  1456  1456 I ContactsDatabaseHelper: updateUseStrictPhoneNumberComparison: US
+11-01 21:55:41.670   504   716 D WifiScoreReport: setShouldReduceNetworkScore=false mNetworkAgent is null? true
+11-01 21:55:41.671   504   716 D WifiClientModeImpl[20154:wlan0]: CMD_START_CONNECT  my state DisconnectedState nid=0 roam=false
+11-01 21:55:41.675   504   785 D PackageManager: Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
+11-01 21:55:41.675   504   785 D PackageManager: Clear ephemeral installer activity
+11-01 21:55:41.676   504   716 I WifiClientModeImpl[20154:wlan0]: Select the first available security params: 0
+11-01 21:55:41.679  1048  1560 E FrameEvents: updateAcquireFence: Did not find frame.
+11-01 21:55:41.680   504   716 W LastMileLogger: Failed to open free_buffer pseudo-file: /sys/kernel/debug/tracing/instances/wifi/free_buffer: open failed: ENOENT (No such file or directory)
+11-01 21:55:41.683  1002  1002 D nativeloader: Configuring clns-shared-11 for other apk /system/priv-app/ONS/ONS.apk. target_sdk_version=34, uses_libraries=, library_path=/system/priv-app/ONS/lib/x86_64:/system/lib64:/system_ext/lib64, permitted_path=/data:/mnt/expand:/data/user/0/com.android.ons:/system/priv-app/ONS:/system/lib64:/system_ext/lib64
+11-01 21:55:41.684   504   716 W LastMileLogger: Failed to arm fail-safe.
+11-01 21:55:41.685   504  1482 W AppSearchIcing: icing-search-engine.cc:283: Error: 5, Message: Missing file: /data/system_ce/0/appsearch/icing/schema_dir/schema.pb
+11-01 21:55:41.688  1591  1591 I abb     : StartCommandInProcess(73657474696e67730067657400676c6f settings.get.glo [truncated])
+11-01 21:55:41.691  1006  1028 D CompatibilityChangeReporter: Compat change id reported: 150939131; UID 1000; state: ENABLED
+11-01 21:55:41.696   504   855 D CompatibilityChangeReporter: Compat change id reported: 161145287; UID 10108; state: DISABLED
+11-01 21:55:41.697  1505  1613 I MessagingApp: Upgrading shared prefs from -1 to 1
+11-01 21:55:41.697  1508  1508 V GraphicsEnvironment: Currently set values for:
+11-01 21:55:41.697  1508  1508 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+11-01 21:55:41.697  1508  1508 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+11-01 21:55:41.698  1594  1594 I id.printspooler: Using CollectorTypeCC GC.
+11-01 21:55:41.698  1594  1594 W id.printspooler: Unexpected CPU variant for x86: x86_64.
+11-01 21:55:41.698  1594  1594 W id.printspooler: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, tremont, kabylake, default
+11-01 21:55:41.700   504   860 I ActivityManager: Flag disabled. Ignoring finishAttachApplication from uid: 10108. pid: 1505
+11-01 21:55:41.703   504   524 D ColorDisplayService: setUp: currentUser=0
+11-01 21:55:41.704  1574  1574 E oid.documentsui: Not starting debugger since process cannot load the jdwp agent.
+11-01 21:55:41.710  1591  1591 I abb     : StartCommandInProcess(7061636b61676500696e7374616c6c00 package.install. [truncated])
+11-01 21:55:41.713   504   504 I LockSettingsService: Reporting device setup complete to IGateKeeperService
+11-01 21:55:41.714   466   466 D PermissionCache: checking android.permission.ACCESS_KEYGUARD_SECURE_STORAGE for uid=1000 => granted (637 us)
+11-01 21:55:41.714   466   466 I gatekeeperd: cold boot: clearing state
+11-01 21:55:41.716   504   862 D CompatibilityChangeReporter: Compat change id reported: 168419799; UID 10075; state: DISABLED
+11-01 21:55:41.716   504   862 D CompatibilityChangeReporter: Compat change id reported: 273564678; UID 10075; state: DISABLED
+11-01 21:55:41.718   504   504 D LockSettingsService: Clearing FRP credential tied to user 0
+11-01 21:55:41.703   504   504 W binder:504_9: type=1400 audit(0.0:8): avc:  denied  { getopt } for  scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+11-01 21:55:41.724   504   580 D CompatibilityChangeReporter: Compat change id reported: 265195908; UID 10078; state: ENABLED
+11-01 21:55:41.726   504   532 I ActivityManager: com.android.devicelockcontroller is exempt from freezer
+11-01 21:55:41.726   504   532 D CompatibilityChangeReporter: Compat change id reported: 135634846; UID 10136; state: DISABLED
+11-01 21:55:41.726   504   532 D CompatibilityChangeReporter: Compat change id reported: 177438394; UID 10136; state: DISABLED
+11-01 21:55:41.726   504   532 D CompatibilityChangeReporter: Compat change id reported: 135772972; UID 10136; state: DISABLED
+11-01 21:55:41.726   504   532 D CompatibilityChangeReporter: Compat change id reported: 135754954; UID 10136; state: ENABLED
+11-01 21:55:41.727   504   533 D CompatibilityChangeReporter: Compat change id reported: 143937733; UID 10136; state: ENABLED
+11-01 21:55:41.727  1006  1028 D ActivityEmbeddingUtils: isEmbeddingActivityEnabled = true
+11-01 21:55:41.707   504   504 W binder:504_9: type=1400 audit(0.0:9): avc:  denied  { getopt } for  scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+11-01 21:55:41.739  1468  1468 D PickerSyncController: Cloud-Media-in-Photo-Picker feature is disabled during PickerSyncController construction.
+11-01 21:55:41.741   504   716 D SupplicantStaIfaceHalAidlImpl: connectToNetwork "AndroidWifi"NONE, actualSsid=null
+11-01 21:55:41.744   504   716 D SupplicantStaIfaceHalAidlImpl: Selecting supplicant SSID "AndroidWifi"
+11-01 21:55:41.707   504   504 W binder:504_9: type=1400 audit(0.0:10): avc:  denied  { getopt } for  scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+11-01 21:55:41.745  1508  1508 V GraphicsEnvironment: ANGLE GameManagerService for com.android.music: false
+11-01 21:55:41.745  1508  1508 V GraphicsEnvironment: com.android.music is not listed in per-application setting
+11-01 21:55:41.746  1508  1508 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+11-01 21:55:41.746  1002  1326 D CompatibilityChangeReporter: Compat change id reported: 150939131; UID 1001; state: ENABLED
+11-01 21:55:41.756   460   460 W wificond: Scan aborted
+11-01 21:55:41.759   327   327 D Zygote  : Forked child process 1629
+11-01 21:55:41.760  1574  1574 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10075; state: ENABLED
+11-01 21:55:41.760  1574  1574 D CompatibilityChangeReporter: Compat change id reported: 242716250; UID 10075; state: ENABLED
+11-01 21:55:41.763   504   533 I ActivityManager: Start proc 1629:com.android.devicelockcontroller/u0a136 for broadcast {com.android.devicelockcontroller/com.android.devicelockcontroller.receivers.LockedBootCompletedReceiver}
+11-01 21:55:41.765   504  1191 D CompatibilityChangeReporter: Compat change id reported: 265464455; UID 10114; state: DISABLED
+11-01 21:55:41.766   504   859 D CompatibilityChangeReporter: Compat change id reported: 170503758; UID 10075; state: ENABLED
+11-01 21:55:41.766   504  1191 D CompatibilityChangeReporter: Compat change id reported: 265452344; UID 10114; state: DISABLED
+11-01 21:55:41.766  1574  1574 D CompatibilityChangeReporter: Compat change id reported: 3400644; UID 10075; state: ENABLED
+11-01 21:55:41.767   504  1191 D CompatibilityChangeReporter: Compat change id reported: 266124927; UID 10114; state: DISABLED
+11-01 21:55:41.767   504  1191 D CompatibilityChangeReporter: Compat change id reported: 265451093; UID 10114; state: DISABLED
+11-01 21:55:41.767   504  1191 D CompatibilityChangeReporter: Compat change id reported: 265456536; UID 10114; state: DISABLED
+11-01 21:55:41.769   504  1191 D CompatibilityChangeReporter: Compat change id reported: 255940284; UID 10114; state: DISABLED
+11-01 21:55:41.769   504  1191 D CompatibilityChangeReporter: Compat change id reported: 236283604; UID 10114; state: DISABLED
+11-01 21:55:41.769   504  1191 D CompatibilityChangeReporter: Compat change id reported: 263959004; UID 10114; state: DISABLED
+11-01 21:55:41.769   504  1191 D CompatibilityChangeReporter: Compat change id reported: 264304459; UID 10114; state: DISABLED
+11-01 21:55:41.769   504  1191 D CompatibilityChangeReporter: Compat change id reported: 264301586; UID 10114; state: DISABLED
+11-01 21:55:41.769   504  1191 D CompatibilityChangeReporter: Compat change id reported: 254631730; UID 10114; state: DISABLED
+11-01 21:55:41.769   504  1191 D CompatibilityChangeReporter: Compat change id reported: 273509367; UID 10114; state: DISABLED
+11-01 21:55:41.769   504  1191 D CompatibilityChangeReporter: Compat change id reported: 263259275; UID 10114; state: DISABLED
+11-01 21:55:41.769   504  1191 D CompatibilityChangeReporter: Compat change id reported: 174042980; UID 10114; state: DISABLED
+11-01 21:55:41.770   504  1191 D CompatibilityChangeReporter: Compat change id reported: 174042936; UID 10114; state: DISABLED
+11-01 21:55:41.770   504  1191 D CompatibilityChangeReporter: Compat change id reported: 181136395; UID 10114; state: DISABLED
+11-01 21:55:41.776  1574  1574 D nativeloader: Configuring clns-shared-6 for other apk /system/priv-app/DocumentsUI/DocumentsUI.apk. target_sdk_version=34, uses_libraries=, library_path=/system/priv-app/DocumentsUI/lib/x86_64:/system/lib64:/system_ext/lib64, permitted_path=/data:/mnt/expand:/data/user/0/com.android.documentsui:/system/priv-app/DocumentsUI:/system/lib64:/system_ext/lib64
+11-01 21:55:41.778   504  1191 D CompatibilityChangeReporter: Compat change id reported: 184838306; UID 10114; state: DISABLED
+11-01 21:55:41.781   504  1191 D CompatibilityChangeReporter: Compat change id reported: 185004937; UID 10114; state: DISABLED
+11-01 21:55:41.784   504  1191 D CompatibilityChangeReporter: Compat change id reported: 194480991; UID 10114; state: ENABLED
+11-01 21:55:41.790   504  1191 D CompatibilityChangeReporter: Compat change id reported: 197654537; UID 10114; state: ENABLED
+11-01 21:55:41.791   504   504 I DevicePolicyManager: Set ro.organization_owned property to false
+11-01 21:55:41.791   504  1191 I ActivityTaskManager: START u0 {act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10000100 cmp=com.android.launcher3/.uioverrides.QuickstepLauncher (has extras)} with LAUNCH_SINGLE_TASK from uid 0 (BAL_ALLOW_ALLOWLISTED_UID) result code=0
+11-01 21:55:41.804   504   862 D WifiNl80211Manager: Scan failed event with error code: 3
+11-01 21:55:41.804   504   862 D WifiNative: Scan failed event: errorCode: -7
+11-01 21:55:41.804   504   720 W WificondScannerImpl: Scan failed: error code: -7
+11-01 21:55:41.820  1594  1594 E id.printspooler: Not starting debugger since process cannot load the jdwp agent.
+11-01 21:55:41.844   504   953 I ActivityManager: Flag disabled. Ignoring finishAttachApplication from uid: 10104. pid: 1508
+11-01 21:55:41.865  1574  1574 V GraphicsEnvironment: Currently set values for:
+11-01 21:55:41.865  1574  1574 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+11-01 21:55:41.865  1574  1574 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+11-01 21:55:41.865  1574  1574 V GraphicsEnvironment: ANGLE GameManagerService for com.android.documentsui: false
+11-01 21:55:41.868  1505  1617 W MessagingApp: Rebuilt databases: reseting related state
+11-01 21:55:41.876  1574  1574 V GraphicsEnvironment: com.android.documentsui is not listed in per-application setting
+11-01 21:55:41.876  1574  1574 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+11-01 21:55:41.889   796   828 E SingleInstanceRemoteListener: Failed remote call on null listener
+11-01 21:55:41.894  1048  1048 D b/254119092: destroyExistingTaskbar: null
+11-01 21:55:41.894  1048  1048 D b/254119092: mActivity and mContext agree taskbarIsPresent=false
+11-01 21:55:41.895  1048  1048 D b/254119092: recreateTaskbar: isTaskbarEnabled=false [dp != null (i.e. mUserUnlocked)]=true FLAG_HIDE_NAVBAR_WINDOW=false dp.isTaskbarPresent=false
+11-01 21:55:41.895  1048  1048 D b/254119092: mActivity and mContext agree taskbarIsPresent=false
+11-01 21:55:41.897  1456  1580 D CompatibilityChangeReporter: Compat change id reported: 183155436; UID 10057; state: ENABLED
+11-01 21:55:41.902   504   862 D CompatibilityChangeReporter: Compat change id reported: 168419799; UID 10078; state: DISABLED
+11-01 21:55:41.903   504   862 D CompatibilityChangeReporter: Compat change id reported: 273564678; UID 10078; state: DISABLED
+11-01 21:55:41.904  1629  1629 I elockcontroller: Using CollectorTypeCC GC.
+11-01 21:55:41.905  1629  1629 W elockcontroller: Unexpected CPU variant for x86: x86_64.
+11-01 21:55:41.905  1629  1629 W elockcontroller: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, tremont, kabylake, default
+11-01 21:55:41.927  1505  1613 W SubscriptionInfo: MCC string is not a number
+11-01 21:55:41.927  1505  1613 W SubscriptionInfo: MNC string is not a number
+11-01 21:55:41.928  1505  1613 W MessagingApp: canonicalizeMccMnc: invalid mccmnc:null ,null
+11-01 21:55:41.929  1505  1613 I MessagingApp: Carrier configs loaded: Bundle[{httpSocketTimeout=60000, aliasMinChars=2, smsToMmsTextThreshold=-1, enableSMSDeliveryReports=true, maxMessageTextSize=-1, supportMmsContentDisposition=true, enabledTransID=false, aliasEnabled=false, supportHttpCharsetHeader=false, allowAttachAudio=true, smsToMmsTextLengthThreshold=-1, recipientLimit=2147483647, uaProfTagName=x-wap-profile, aliasMaxChars=48, maxImageHeight=480, enableMMSDeliveryReports=false, userAgent=, mmsCloseConnection=false, config_cellBroadcastAppLinks=true, maxSubjectLength=40, httpParams=, enableGroupMms=true, emailGatewayNumber=, maxMessageSize=307200, naiSuffix=, enableMMSReadReports=false, maxImageWidth=640, uaProfUrl=, enabledMMS=true, enabledNotifyWapMMSC=false, sendMultipartSmsAsSeparateMessages=false, enableMultipartSMS=true}] from resources+system for subId=1
+11-01 21:55:41.933  1002  1002 W nsconfig: com.android.phone: New config does not match the previously set config.
+11-01 21:55:41.933   796   828 E SingleInstanceRemoteListener: Failed remote call on null listener
+11-01 21:55:41.934  1002  1002 D ONSAutoboot: Received android.intent.action.LOCKED_BOOT_COMPLETED
+11-01 21:55:41.939  1574  1574 D CompatibilityChangeReporter: Compat change id reported: 205919743; UID 10075; state: ENABLED
+11-01 21:55:41.940   504   860 I ActivityManager: Flag disabled. Ignoring finishAttachApplication from uid: 10057. pid: 1456
+11-01 21:55:41.944   504   860 D CompatibilityChangeReporter: Compat change id reported: 161145287; UID 10075; state: ENABLED
+11-01 21:55:41.945   461   461 W libgoldfish-rild: Multi-element reporting criteria are not supported with HIDL HAL
+11-01 21:55:41.946  1574  1574 D CompatibilityChangeReporter: Compat change id reported: 183155436; UID 10075; state: ENABLED
+11-01 21:55:41.950   504   729 D CompatibilityChangeReporter: Compat change id reported: 151105954; UID 1000; state: ENABLED
+11-01 21:55:41.950   504   729 E AppOps  : attributionTag VCN not declared in manifest of android
+11-01 21:55:41.955  1629  1629 E elockcontroller: Not starting debugger since process cannot load the jdwp agent.
+11-01 21:55:41.958  1002  1002 I PhoneGlobals: Dismissing depersonal panelREADY
+11-01 21:55:41.962   504   729 I VcnManagementService: new snapshot: TelephonySubscriptionSnapshot{ mActiveDataSubId=1, mSubIdToInfoMap={}, mSubIdToCarrierConfigMap={}, mPrivilegedPackages={} }
+11-01 21:55:41.962   955   975 W SubscriptionInfo: MCC string is not a number
+11-01 21:55:41.962   955   975 W SubscriptionInfo: MNC string is not a number
+11-01 21:55:41.970  1594  1594 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10078; state: ENABLED
+11-01 21:55:41.970  1594  1594 D CompatibilityChangeReporter: Compat change id reported: 242716250; UID 10078; state: ENABLED
+11-01 21:55:41.980  1574  1574 E StrictMode: Tried to access the API:LayoutInflater which needs to have proper configuration from a non-UI Context:com.android.documentsui.DocumentsApplication@d26b35c The API:LayoutInflater needs a proper configuration. Use UI contexts such as an activity or a context created via createWindowContext(Display, int, Bundle) or  createConfigurationContext(Configuration) with a proper configuration.
+11-01 21:55:41.980  1574  1574 E StrictMode: java.lang.IllegalAccessException: Tried to access the API:LayoutInflater which needs to have proper configuration from a non-UI Context:com.android.documentsui.DocumentsApplication@d26b35c
+11-01 21:55:41.980  1574  1574 E StrictMode: 	at android.os.StrictMode.assertConfigurationContext(StrictMode.java:2332)
+11-01 21:55:41.980  1574  1574 E StrictMode: 	at android.view.LayoutInflater.<init>(LayoutInflater.java:260)
+11-01 21:55:41.980  1574  1574 E StrictMode: 	at com.android.internal.policy.PhoneLayoutInflater.<init>(PhoneLayoutInflater.java:44)
+11-01 21:55:41.980  1574  1574 E StrictMode: 	at android.app.SystemServiceRegistry$33.createService(SystemServiceRegistry.java:560)
+11-01 21:55:41.980  1574  1574 E StrictMode: 	at android.app.SystemServiceRegistry$33.createService(SystemServiceRegistry.java:557)
+11-01 21:55:41.980  1574  1574 E StrictMode: 	at android.app.SystemServiceRegistry$CachedServiceFetcher.getService(SystemServiceRegistry.java:1971)
+11-01 21:55:41.980  1574  1574 E StrictMode: 	at android.app.SystemServiceRegistry.getSystemService(SystemServiceRegistry.java:1645)
+11-01 21:55:41.980  1574  1574 E StrictMode: 	at android.app.ContextImpl.getSystemService(ContextImpl.java:2212)
+11-01 21:55:41.980  1574  1574 E StrictMode: 	at android.content.ContextWrapper.getSystemService(ContextWrapper.java:934)
+11-01 21:55:41.980  1574  1574 E StrictMode: 	at android.view.LayoutInflater.from(LayoutInflater.java:288)
+11-01 21:55:41.980  1574  1574 E StrictMode: 	at com.android.documentsui.DragShadowBuilder.<init>(DragShadowBuilder.java:49)
+11-01 21:55:41.980  1574  1574 E StrictMode: 	at com.android.documentsui.DragAndDropManager$RuntimeDragAndDropManager.<init>(DragAndDropManager.java:195)
+11-01 21:55:41.980  1574  1574 E StrictMode: 	at com.android.documentsui.DragAndDropManager$RuntimeDragAndDropManager.<init>(DragAndDropManager.java:0)
+11-01 21:55:41.980  1574  1574 E StrictMode: 	at com.android.documentsui.DragAndDropManager.create(DragAndDropManager.java:163)
+11-01 21:55:41.980  1574  1574 E StrictMode: 	at com.android.documentsui.DocumentsApplication.onCreate(DocumentsApplication.java:147)
+11-01 21:55:41.980  1574  1574 E StrictMode: 	at android.app.Instrumentation.callApplicationOnCreate(Instrumentation.java:1316)
+11-01 21:55:41.980  1574  1574 E StrictMode: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:6998)
+11-01 21:55:41.980  1574  1574 E StrictMode: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown Source:0)
+11-01 21:55:41.980  1574  1574 E StrictMode: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2236)
+11-01 21:55:41.980  1574  1574 E StrictMode: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+11-01 21:55:41.980  1574  1574 E StrictMode: 	at android.os.Looper.loopOnce(Looper.java:205)
+11-01 21:55:41.980  1574  1574 E StrictMode: 	at android.os.Looper.loop(Looper.java:294)
+11-01 21:55:41.980  1574  1574 E StrictMode: 	at android.app.ActivityThread.main(ActivityThread.java:8177)
+11-01 21:55:41.980  1574  1574 E StrictMode: 	at java.lang.reflect.Method.invoke(Native Method)
+11-01 21:55:41.980  1574  1574 E StrictMode: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+11-01 21:55:41.980  1574  1574 E StrictMode: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+11-01 21:55:41.981  1505  1636 I MessagingAppDataModel: Fixup: Send failed - 0 Download failed - 0
+11-01 21:55:41.984  1574  1574 E StrictMode: Tried to access the API:ViewConfiguration which needs to have proper configuration from a non-UI Context:com.android.documentsui.DocumentsApplication@d26b35c The API:ViewConfiguration needs a proper configuration. Use UI contexts such as an activity or a context created via createWindowContext(Display, int, Bundle) or  createConfigurationContext(Configuration) with a proper configuration.
+11-01 21:55:41.984  1574  1574 E StrictMode: java.lang.IllegalAccessException: Tried to access the API:ViewConfiguration which needs to have proper configuration from a non-UI Context:com.android.documentsui.DocumentsApplication@d26b35c
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at android.os.StrictMode.assertConfigurationContext(StrictMode.java:2332)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at android.view.ViewConfiguration.get(ViewConfiguration.java:568)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at android.view.View.<init>(View.java:5493)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at android.view.View.<init>(View.java:5638)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at android.view.ViewGroup.<init>(ViewGroup.java:704)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at android.widget.LinearLayout.<init>(LinearLayout.java:254)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at android.widget.LinearLayout.<init>(LinearLayout.java:250)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at android.widget.LinearLayout.<init>(LinearLayout.java:246)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at java.lang.reflect.Constructor.newInstance0(Native Method)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at java.lang.reflect.Constructor.newInstance(Constructor.java:343)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at android.view.LayoutInflater.createView(LayoutInflater.java:866)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at android.view.LayoutInflater.createView(LayoutInflater.java:788)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at com.android.internal.policy.PhoneLayoutInflater.onCreateView(PhoneLayoutInflater.java:58)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at android.view.LayoutInflater.onCreateView(LayoutInflater.java:942)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at android.view.LayoutInflater.onCreateView(LayoutInflater.java:962)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at android.view.LayoutInflater.createViewFromTag(LayoutInflater.java:1016)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at android.view.LayoutInflater.createViewFromTag(LayoutInflater.java:973)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at android.view.LayoutInflater.inflate(LayoutInflater.java:667)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at android.view.LayoutInflater.inflate(LayoutInflater.java:538)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at android.view.LayoutInflater.inflate(LayoutInflater.java:485)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at com.android.documentsui.DragShadowBuilder.<init>(DragShadowBuilder.java:49)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at com.android.documentsui.DragAndDropManager$RuntimeDragAndDropManager.<init>(DragAndDropManager.java:195)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at com.android.documentsui.DragAndDropManager$RuntimeDragAndDropManager.<init>(DragAndDropManager.java:0)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at com.android.documentsui.DragAndDropManager.create(DragAndDropManager.java:163)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at com.android.documentsui.DocumentsApplication.onCreate(DocumentsApplication.java:147)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at android.app.Instrumentation.callApplicationOnCreate(Instrumentation.java:1316)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:6998)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown Source:0)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2236)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at android.os.Looper.loopOnce(Looper.java:205)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at android.os.Looper.loop(Looper.java:294)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at android.app.ActivityThread.main(ActivityThread.java:8177)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at java.lang.reflect.Method.invoke(Native Method)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+11-01 21:55:41.984  1574  1574 E StrictMode: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+11-01 21:55:41.985  1456  1603 I ContactsDatabaseHelper: Bootstrapping database contacts2.db version: 1604
+11-01 21:55:41.986  1456  1456 I ContactsDatabaseHelper: updateUseStrictPhoneNumberComparison: US
+11-01 21:55:41.979   504   504 W binder:504_5: type=1400 audit(0.0:11): avc:  denied  { getopt } for  scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+11-01 21:55:41.990   504   517 D CompatibilityChangeReporter: Compat change id reported: 170503758; UID 10078; state: ENABLED
+11-01 21:55:41.991  1468  1468 D PickerSyncController: Updated cloud provider to: null
+11-01 21:55:41.991  1468  1468 D PickerSyncController: Ignoring cache media info for null authority with bundle: null
+11-01 21:55:41.992  1574  1574 E StrictMode: Tried to access the API:ViewConfiguration which needs to have proper configuration from a non-UI Context:com.android.documentsui.DocumentsApplication@d26b35c The API:ViewConfiguration needs a proper configuration. Use UI contexts such as an activity or a context created via createWindowContext(Display, int, Bundle) or  createConfigurationContext(Configuration) with a proper configuration.
+11-01 21:55:41.992  1574  1574 E StrictMode: java.lang.IllegalAccessException: Tried to access the API:ViewConfiguration which needs to have proper configuration from a non-UI Context:com.android.documentsui.DocumentsApplication@d26b35c
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at android.os.StrictMode.assertConfigurationContext(StrictMode.java:2332)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at android.view.ViewConfiguration.get(ViewConfiguration.java:568)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at android.view.View.<init>(View.java:5493)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at android.view.View.<init>(View.java:5638)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at android.view.ViewGroup.<init>(ViewGroup.java:704)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at android.widget.LinearLayout.<init>(LinearLayout.java:254)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at android.widget.LinearLayout.<init>(LinearLayout.java:250)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at android.widget.LinearLayout.<init>(LinearLayout.java:246)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at java.lang.reflect.Constructor.newInstance0(Native Method)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at java.lang.reflect.Constructor.newInstance(Constructor.java:343)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at android.view.LayoutInflater.createView(LayoutInflater.java:866)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at android.view.LayoutInflater.createView(LayoutInflater.java:788)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at com.android.internal.policy.PhoneLayoutInflater.onCreateView(PhoneLayoutInflater.java:58)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at android.view.LayoutInflater.onCreateView(LayoutInflater.java:942)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at android.view.LayoutInflater.onCreateView(LayoutInflater.java:962)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at android.view.LayoutInflater.createViewFromTag(LayoutInflater.java:1016)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at android.view.LayoutInflater.createViewFromTag(LayoutInflater.java:973)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at android.view.LayoutInflater.rInflate(LayoutInflater.java:1135)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at android.view.LayoutInflater.rInflateChildren(LayoutInflater.java:1096)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at android.view.LayoutInflater.inflate(LayoutInflater.java:694)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at android.view.LayoutInflater.inflate(LayoutInflater.java:538)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at android.view.LayoutInflater.inflate(LayoutInflater.java:485)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at com.android.documentsui.DragShadowBuilder.<init>(DragShadowBuilder.java:49)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at com.android.documentsui.DragAndDropManager$RuntimeDragAndDropManager.<init>(DragAndDropManager.java:195)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at com.android.documentsui.DragAndDropManager$RuntimeDragAndDropManager.<init>(DragAndDropManager.java:0)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at com.android.documentsui.DragAndDropManager.create(DragAndDropManager.java:163)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at com.android.documentsui.DocumentsApplication.onCreate(DocumentsApplication.java:147)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at android.app.Instrumentation.callApplicationOnCreate(Instrumentation.java:1316)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:6998)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown Source:0)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2236)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at android.os.Looper.loopOnce(Looper.java:205)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at android.os.Looper.loop(Looper.java:294)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at android.app.ActivityThread.main(ActivityThread.java:8177)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at java.lang.reflect.Method.invoke(Native Method)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+11-01 21:55:41.992  1574  1574 E StrictMode: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+11-01 21:55:41.993  1574  1574 E StrictMode: Tried to access the API:ViewConfiguration which needs to have proper configuration from a non-UI Context:com.android.documentsui.DocumentsApplication@d26b35c The API:ViewConfiguration needs a proper configuration. Use UI contexts such as an activity or a context created via createWindowContext(Display, int, Bundle) or  createConfigurationContext(Configuration) with a proper configuration.
+11-01 21:55:41.993  1574  1574 E StrictMode: java.lang.IllegalAccessException: Tried to access the API:ViewConfiguration which needs to have proper configuration from a non-UI Context:com.android.documentsui.DocumentsApplication@d26b35c
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at android.os.StrictMode.assertConfigurationContext(StrictMode.java:2332)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at android.view.ViewConfiguration.get(ViewConfiguration.java:568)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at android.view.View.<init>(View.java:5493)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at android.view.View.<init>(View.java:5638)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at android.widget.ImageView.<init>(ImageView.java:196)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at android.widget.ImageView.<init>(ImageView.java:191)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at android.widget.ImageView.<init>(ImageView.java:187)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at com.android.documentsui.DropBadgeView.<init>(DropBadgeView.java:40)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at java.lang.reflect.Constructor.newInstance0(Native Method)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at java.lang.reflect.Constructor.newInstance(Constructor.java:343)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at android.view.LayoutInflater.createView(LayoutInflater.java:866)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at android.view.LayoutInflater.createViewFromTag(LayoutInflater.java:1018)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at android.view.LayoutInflater.parseInclude(LayoutInflater.java:1245)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at android.view.LayoutInflater.rInflate(LayoutInflater.java:1131)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at android.view.LayoutInflater.rInflateChildren(LayoutInflater.java:1096)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at android.view.LayoutInflater.rInflate(LayoutInflater.java:1138)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at android.view.LayoutInflater.rInflateChildren(LayoutInflater.java:1096)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at android.view.LayoutInflater.inflate(LayoutInflater.java:694)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at android.view.LayoutInflater.inflate(LayoutInflater.java:538)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at android.view.LayoutInflater.inflate(LayoutInflater.java:485)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at com.android.documentsui.DragShadowBuilder.<init>(DragShadowBuilder.java:49)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at com.android.documentsui.DragAndDropManager$RuntimeDragAndDropManager.<init>(DragAndDropManager.java:195)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at com.android.documentsui.DragAndDropManager$RuntimeDragAndDropManager.<init>(DragAndDropManager.java:0)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at com.android.documentsui.DragAndDropManager.create(DragAndDropManager.java:163)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at com.android.documentsui.DocumentsApplication.onCreate(DocumentsApplication.java:147)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at android.app.Instrumentation.callApplicationOnCreate(Instrumentation.java:1316)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:6998)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown Source:0)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2236)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at android.os.Looper.loopOnce(Looper.java:205)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at android.os.Looper.loop(Looper.java:294)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at android.app.ActivityThread.main(ActivityThread.java:8177)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at java.lang.reflect.Method.invoke(Native Method)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+11-01 21:55:41.993  1574  1574 E StrictMode: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+11-01 21:55:41.999  1574  1574 E StrictMode: Tried to access the API:ViewConfiguration which needs to have proper configuration from a non-UI Context:com.android.documentsui.DocumentsApplication@d26b35c The API:ViewConfiguration needs a proper configuration. Use UI contexts such as an activity or a context created via createWindowContext(Display, int, Bundle) or  createConfigurationContext(Configuration) with a proper configuration.
+11-01 21:55:41.999  1574  1574 E StrictMode: java.lang.IllegalAccessException: Tried to access the API:ViewConfiguration which needs to have proper configuration from a non-UI Context:com.android.documentsui.DocumentsApplication@d26b35c
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at android.os.StrictMode.assertConfigurationContext(StrictMode.java:2332)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at android.view.ViewConfiguration.get(ViewConfiguration.java:568)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at android.view.View.<init>(View.java:5493)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at android.view.View.<init>(View.java:5638)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at android.widget.TextView.<init>(TextView.java:1155)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at android.widget.TextView.<init>(TextView.java:1149)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at android.widget.TextView.<init>(TextView.java:1145)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at java.lang.reflect.Constructor.newInstance0(Native Method)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at java.lang.reflect.Constructor.newInstance(Constructor.java:343)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at android.view.LayoutInflater.createView(LayoutInflater.java:866)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at android.view.LayoutInflater.createView(LayoutInflater.java:788)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at com.android.internal.policy.PhoneLayoutInflater.onCreateView(PhoneLayoutInflater.java:58)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at android.view.LayoutInflater.onCreateView(LayoutInflater.java:942)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at android.view.LayoutInflater.onCreateView(LayoutInflater.java:962)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at android.view.LayoutInflater.createViewFromTag(LayoutInflater.java:1016)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at android.view.LayoutInflater.createViewFromTag(LayoutInflater.java:973)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at android.view.LayoutInflater.rInflate(LayoutInflater.java:1135)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at android.view.LayoutInflater.rInflateChildren(LayoutInflater.java:1096)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at android.view.LayoutInflater.rInflate(LayoutInflater.java:1138)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at android.view.LayoutInflater.rInflateChildren(LayoutInflater.java:1096)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at android.view.LayoutInflater.inflate(LayoutInflater.java:694)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at android.view.LayoutInflater.inflate(LayoutInflater.java:538)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at android.view.LayoutInflater.inflate(LayoutInflater.java:485)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at com.android.documentsui.DragShadowBuilder.<init>(DragShadowBuilder.java:49)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at com.android.documentsui.DragAndDropManager$RuntimeDragAndDropManager.<init>(DragAndDropManager.java:195)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at com.android.documentsui.DragAndDropManager$RuntimeDragAndDropManager.<init>(DragAndDropManager.java:0)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at com.android.documentsui.DragAndDropManager.create(DragAndDropManager.java:163)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at com.android.documentsui.DocumentsApplication.onCreate(DocumentsApplication.java:147)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at android.app.Instrumentation.callApplicationOnCreate(Instrumentation.java:1316)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:6998)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown Source:0)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2236)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at android.os.Looper.loopOnce(Looper.java:205)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at android.os.Looper.loop(Looper.java:294)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at android.app.ActivityThread.main(ActivityThread.java:8177)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at java.lang.reflect.Method.invoke(Native Method)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+11-01 21:55:41.999  1574  1574 E StrictMode: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+11-01 21:55:42.007  1456  1603 I ContactsProviderV1: Bootstrapping database legacy support
+11-01 21:55:42.007  1574  1574 D CompatibilityChangeReporter: Compat change id reported: 210923482; UID 10075; state: ENABLED
+11-01 21:55:42.014  1594  1594 D CompatibilityChangeReporter: Compat change id reported: 3400644; UID 10078; state: ENABLED
+11-01 21:55:42.021   504   523 I DropBoxManagerService: add tag=system_app_strictmode isTagEnabled=true flags=0x2
+11-01 21:55:42.022   504   518 D CompatibilityChangeReporter: Compat change id reported: 168419799; UID 10136; state: DISABLED
+11-01 21:55:42.022   504   518 D CompatibilityChangeReporter: Compat change id reported: 273564678; UID 10136; state: DISABLED
+11-01 21:55:42.026   504  1552 D CompatibilityChangeReporter: Compat change id reported: 135634846; UID 10070; state: DISABLED
+11-01 21:55:42.026   504  1552 D CompatibilityChangeReporter: Compat change id reported: 177438394; UID 10070; state: DISABLED
+11-01 21:55:42.027   504  1552 D CompatibilityChangeReporter: Compat change id reported: 135772972; UID 10070; state: DISABLED
+11-01 21:55:42.027   504  1552 D CompatibilityChangeReporter: Compat change id reported: 135754954; UID 10070; state: ENABLED
+11-01 21:55:42.027   504   533 D CompatibilityChangeReporter: Compat change id reported: 143937733; UID 10070; state: ENABLED
+11-01 21:55:42.029  1505  1636 I MessagingAppDataModel: ProcessPendingMessagesAction: Start queueing for subId 1
+11-01 21:55:42.030  1505  1636 I MessagingAppDataModel: ProcessPendingMessagesAction: No messages to send or download
+11-01 21:55:42.032   327   327 D Zygote  : Forked child process 1674
+11-01 21:55:42.033  1505  1633 D CompatibilityChangeReporter: Compat change id reported: 247079863; UID 10108; state: DISABLED
+11-01 21:55:42.034   504   859 I MediaSessionStack: addSession to bottom of stack | record: com.android.music/MediaPlaybackService (userId=0)
+11-01 21:55:42.034  1508  1508 D CompatibilityChangeReporter: Compat change id reported: 160794467; UID 10104; state: DISABLED
+11-01 21:55:42.035  1505  1633 E MessagingApp: PhoneUtils.getValidE164Number(): Not able to parse phone number Redacted-0 for country US
+11-01 21:55:42.035  1505  1630 W SubscriptionInfo: MCC string is not a number
+11-01 21:55:42.035  1505  1630 W SubscriptionInfo: MNC string is not a number
+11-01 21:55:42.035  1505  1630 W MessagingApp: canonicalizeMccMnc: invalid mccmnc:null ,null
+11-01 21:55:42.035  1505  1630 I MessagingApp: Carrier configs loaded: Bundle[{httpSocketTimeout=60000, aliasMinChars=2, smsToMmsTextThreshold=-1, enableSMSDeliveryReports=true, maxMessageTextSize=-1, supportMmsContentDisposition=true, enabledTransID=false, aliasEnabled=false, supportHttpCharsetHeader=false, allowAttachAudio=true, smsToMmsTextLengthThreshold=-1, recipientLimit=2147483647, uaProfTagName=x-wap-profile, aliasMaxChars=48, maxImageHeight=480, enableMMSDeliveryReports=false, userAgent=, mmsCloseConnection=false, config_cellBroadcastAppLinks=true, maxSubjectLength=40, httpParams=, enableGroupMms=true, emailGatewayNumber=, maxMessageSize=307200, naiSuffix=, enableMMSReadReports=false, maxImageWidth=640, uaProfUrl=, enabledMMS=true, enabledNotifyWapMMSC=false, sendMultipartSmsAsSeparateMessages=false, enableMultipartSMS=true}] from resources+system for subId=1
+11-01 21:55:42.037   977   977 V MediaPlayerList: onActiveSessionsChanged: number of controllers: 0
+11-01 21:55:42.037   977   977 D AvrcpTargetJni: sendPlayerSettingsNative
+11-01 21:55:42.037   977   977 I bt_stack: [INFO:avrcp_service.cc(551)] virtual void bluetooth::avrcp::AvrcpService::SendPlayerSettingsChanged(std::vector<PlayerAttribute>, std::vector<uint8_t>)
+11-01 21:55:42.037   977   977 I bt_stack: [INFO:avrcp_service.cc(565)] attribute=PlayerAttribute::REPEAT : value=PlayerRepeatValue::OFF
+11-01 21:55:42.037   977   977 I bt_stack: attribute=PlayerAttribute::SHUFFLE : value=PlayerShuffleValue::OFF
+11-01 21:55:42.037   977   977 I bt_stack: 
+11-01 21:55:42.037   977   977 V MediaPlayerList: onActiveSessionsChanged: number of controllers: 0
+11-01 21:55:42.039   504   580 D CompatibilityChangeReporter: Compat change id reported: 265195908; UID 10136; state: ENABLED
+11-01 21:55:42.039  1456  1580 I CallLogProvider: Syncing call composer pics -- source user=0, isShadow=true, forAllUser=false
+11-01 21:55:42.039  1456  1580 I CallLogProvider: Fetching list of Uris to sync
+11-01 21:55:42.040  1456  1580 I CallLogProvider: Will sync following Uris:[]
+11-01 21:55:42.040  1456  1580 I CallLogProvider: Syncing call composer pics -- got []
+11-01 21:55:42.042   504  1452 I Telecom : CallsManager: updateEmergencyCallNotificationAsync; show=false: CM.UEMCNA@ACE❗
+11-01 21:55:42.043   504   533 I ActivityManager: Start proc 1674:com.android.externalstorage/u0a70 for content provider {com.android.externalstorage/com.android.externalstorage.ExternalStorageProvider}
+11-01 21:55:42.045   504   860 I ActivityManager: Flag disabled. Ignoring finishAttachApplication from uid: 10075. pid: 1574
+11-01 21:55:42.046  1574  1574 W PreBootReceiver: Can't get valid overlay info
+11-01 21:55:42.046  1574  1574 D DocumentsApplication: OverlayManager.setEnabled() result: true
+11-01 21:55:42.050  1594  1594 D nativeloader: Configuring clns-shared-6 for other apk /system/app/PrintSpooler/PrintSpooler.apk. target_sdk_version=34, uses_libraries=, library_path=/system/app/PrintSpooler/lib/x86_64:/system/app/PrintSpooler/PrintSpooler.apk!/lib/x86_64:/system/lib64:/system_ext/lib64, permitted_path=/data:/mnt/expand:/data/user/0/com.android.printspooler:/system/app/PrintSpooler:/system/lib64:/system_ext/lib64
+11-01 21:55:42.050   796   796 D SbStateController: setIsDreaming:false
+11-01 21:55:42.056   955   975 E SystemServiceRegistry: No service published for: ethernet
+11-01 21:55:42.056   955   975 E SystemServiceRegistry: android.os.ServiceManager$ServiceNotFoundException: No service published for: ethernet
+11-01 21:55:42.056   955   975 E SystemServiceRegistry: 	at android.os.ServiceManager.getServiceOrThrow(ServiceManager.java:166)
+11-01 21:55:42.056   955   975 E SystemServiceRegistry: 	at android.app.SystemServiceRegistry$139.createService(SystemServiceRegistry.java:1872)
+11-01 21:55:42.056   955   975 E SystemServiceRegistry: 	at android.app.SystemServiceRegistry$CachedServiceFetcher.getService(SystemServiceRegistry.java:1971)
+11-01 21:55:42.056   955   975 E SystemServiceRegistry: 	at android.app.SystemServiceRegistry.getSystemService(SystemServiceRegistry.java:1645)
+11-01 21:55:42.056   955   975 E SystemServiceRegistry: 	at android.app.ContextImpl.getSystemService(ContextImpl.java:2212)
+11-01 21:55:42.056   955   975 E SystemServiceRegistry: 	at android.content.ContextWrapper.getSystemService(ContextWrapper.java:934)
+11-01 21:55:42.056   955   975 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.isEthernetSupported(Tethering.java:1582)
+11-01 21:55:42.056   955   975 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.makeSupportedDownstreams(Tethering.java:2550)
+11-01 21:55:42.056   955   975 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.updateSupportedDownstreams(Tethering.java:2524)
+11-01 21:55:42.056   955   975 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.updateConfiguration(Tethering.java:546)
+11-01 21:55:42.056   955   975 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering.-$$Nest$mupdateConfiguration(Tethering.java:0)
+11-01 21:55:42.056   955   975 E SystemServiceRegistry: 	at com.android.networkstack.tethering.Tethering$ActiveDataSubIdListener.onActiveDataSubscriptionIdChanged(Tethering.java:522)
+11-01 21:55:42.056   955   975 E SystemServiceRegistry: 	at android.telephony.PhoneStateListener$IPhoneStateListenerStub.lambda$onActiveDataSubIdChanged$56(PhoneStateListener.java:1621)
+11-01 21:55:42.056   955   975 E SystemServiceRegistry: 	at android.telephony.PhoneStateListener$IPhoneStateListenerStub$$ExternalSyntheticLambda38.run(Unknown Source:4)
+11-01 21:55:42.056   955   975 E SystemServiceRegistry: 	at android.os.Handler.handleCallback(Handler.java:958)
+11-01 21:55:42.056   955   975 E SystemServiceRegistry: 	at android.os.Handler.dispatchMessage(Handler.java:99)
+11-01 21:55:42.056   955   975 E SystemServiceRegistry: 	at android.os.Looper.loopOnce(Looper.java:205)
+11-01 21:55:42.056   955   975 E SystemServiceRegistry: 	at android.os.Looper.loop(Looper.java:294)
+11-01 21:55:42.056   955   975 E SystemServiceRegistry: 	at android.os.HandlerThread.run(HandlerThread.java:67)
+11-01 21:55:42.059  1468  1468 D MediaCodecList: codecHandlesFormat: no format, so no extra checks
+11-01 21:55:42.060  1468  1468 D MediaCodecList: codecHandlesFormat: no format, so no extra checks
+11-01 21:55:42.066  1629  1629 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10136; state: ENABLED
+11-01 21:55:42.066  1629  1629 D CompatibilityChangeReporter: Compat change id reported: 242716250; UID 10136; state: ENABLED
+11-01 21:55:42.069  1508  1508 I MediaBrowserService: No root for client com.android.bluetooth from service android.service.media.MediaBrowserService$ServiceBinder$1
+11-01 21:55:42.069   977   977 E MediaBrowser: onConnectFailed for ComponentInfo{com.android.music/com.android.music.MediaPlaybackService}
+11-01 21:55:42.076   977   977 W BrowsedPlayerWrapper: onConnectionFailed: Connection Failed with com.android.music
+11-01 21:55:42.076   977   977 D AvrcpBrowsablePlayerConnector: Browse player callback called: package=com.android.music : status=1
+11-01 21:55:42.076   977   977 D AvrcpBrowsablePlayerConnector: Received a message: msg.what=1
+11-01 21:55:42.076   977   977 I AvrcpBrowsablePlayerConnector: com.android.music is not browsable
+11-01 21:55:42.079   504   954 D CompatibilityChangeReporter: Compat change id reported: 170503758; UID 10136; state: ENABLED
+11-01 21:55:42.080  1629  1629 D CompatibilityChangeReporter: Compat change id reported: 3400644; UID 10136; state: ENABLED
+11-01 21:55:42.083   504   521 I PreBootBroadcaster: Pre-boot of {com.android.managedprovisioning/com.android.managedprovisioning.ota.PreBootListener} for user 0
+11-01 21:55:42.084   504   532 I ActivityManager: com.android.managedprovisioning is exempt from freezer
+11-01 21:55:42.085   504   532 D CompatibilityChangeReporter: Compat change id reported: 135634846; UID 10069; state: DISABLED
+11-01 21:55:42.085   504   532 D CompatibilityChangeReporter: Compat change id reported: 177438394; UID 10069; state: DISABLED
+11-01 21:55:42.085   504   532 D CompatibilityChangeReporter: Compat change id reported: 135772972; UID 10069; state: DISABLED
+11-01 21:55:42.085   504   532 D CompatibilityChangeReporter: Compat change id reported: 135754954; UID 10069; state: ENABLED
+11-01 21:55:42.085   504   533 D CompatibilityChangeReporter: Compat change id reported: 143937733; UID 10069; state: ENABLED
+11-01 21:55:42.086   504   564 W NativeHelper: Failure copying native libraries [errorCode=-113]
+11-01 21:55:42.087   504   564 D PackageInstallerSession: Marking session 1235027426 as failed: INSTALL_FAILED_NO_MATCHING_ABIS: Failed to extract native libraries, res=-113
+11-01 21:55:42.089   504   564 E PackageInstallerSession: Failed to verify session 1235027426
+11-01 21:55:42.090   504  1551 D CompatibilityChangeReporter: Compat change id reported: 207133734; UID 10057; state: ENABLED
+11-01 21:55:42.091   504   716 I SupplicantStaNetworkHalAidlImpl: Successfully set SSID
+11-01 21:55:42.092   504   716 D SupplicantStaNetworkHalAidlImpl: The target security params: Security Parameters:
+11-01 21:55:42.092   504   716 D SupplicantStaNetworkHalAidlImpl:  Type: 0
+11-01 21:55:42.092   504   716 D SupplicantStaNetworkHalAidlImpl:  Enabled: true
+11-01 21:55:42.092   504   716 D SupplicantStaNetworkHalAidlImpl:  KeyMgmt: NONE
+11-01 21:55:42.092   504   716 D SupplicantStaNetworkHalAidlImpl:  Protocols: WPA RSN
+11-01 21:55:42.092   504   716 D SupplicantStaNetworkHalAidlImpl:  AuthAlgorithms:
+11-01 21:55:42.092   504   716 D SupplicantStaNetworkHalAidlImpl:  PairwiseCiphers:
+11-01 21:55:42.092   504   716 D SupplicantStaNetworkHalAidlImpl:  GroupCiphers:
+11-01 21:55:42.092   504   716 D SupplicantStaNetworkHalAidlImpl:  GroupMgmtCiphers:
+11-01 21:55:42.092   504   716 D SupplicantStaNetworkHalAidlImpl:  SuiteBCiphers:
+11-01 21:55:42.092   504   716 D SupplicantStaNetworkHalAidlImpl:  RequirePmf: false
+11-01 21:55:42.092   504   716 D SupplicantStaNetworkHalAidlImpl:  IsAddedByAutoUpgrade: false
+11-01 21:55:42.092   504   716 D SupplicantStaNetworkHalAidlImpl:  IsSaeH2eOnlyMode: false
+11-01 21:55:42.092   504   716 D SupplicantStaNetworkHalAidlImpl:  IsSaePkOnlyMode: false
+11-01 21:55:42.095   783   783 I wpa_supplicant: wlan0: SME: Trying to authenticate with 02:15:b2:00:00:01 (SSID='AndroidWifi' freq=2437 MHz)
+11-01 21:55:42.095   783   783 I wpa_supplicant: assoc key_mgmt 0x4 network key_mgmt 0x4
+11-01 21:55:42.096   504   716 D WifiCountryCode: evaluateAllCmmStateAndApplyIfAllReady: {ConcreteClientModeManager{id=20016 iface=wlan0 role=ROLE_CLIENT_PRIMARY}=false}
+11-01 21:55:42.096   504   716 D WifiClientModeImpl[20154:wlan0]: Start Connecting Watchdog 1
+11-01 21:55:42.097  1674  1674 I externalstorage: Using CollectorTypeCC GC.
+11-01 21:55:42.098  1674  1674 W externalstorage: Unexpected CPU variant for x86: x86_64.
+11-01 21:55:42.098  1674  1674 W externalstorage: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, tremont, kabylake, default
+11-01 21:55:42.100  1468  1679 D CCodec  : allocate(c2.goldfish.hevc.decoder)
+11-01 21:55:42.100  1468  1679 I Codec2Client: Available Codec2 services: "default" "software"
+11-01 21:55:42.105   504   523 I DropBoxManagerService: add tag=system_app_strictmode isTagEnabled=true flags=0x2
+11-01 21:55:42.105   783   783 I wpa_supplicant: wlan0: Trying to associate with 02:15:b2:00:00:01 (SSID='AndroidWifi' freq=2437 MHz)
+11-01 21:55:42.105   783   783 I wpa_supplicant: assoc key_mgmt 0x4 network key_mgmt 0x4
+11-01 21:55:42.105  1468  1679 I CCodec  : setting up 'default' as default (vendor) store
+11-01 21:55:42.107   341   374 I GoldfishComponentStore: in init
+11-01 21:55:42.107   341   374 I GoldfishComponentStore: loading dll of path libcodec2_goldfish_hevcdec.so
+11-01 21:55:42.107   341   374 I GoldfishComponentStore: Create()
+11-01 21:55:42.107   341   374 I GoldfishComponentStore: created interface
+11-01 21:55:42.107   341   374 I GoldfishComponentStore: created component
+11-01 21:55:42.109  1468  1679 I CCodec  : Created component [c2.goldfish.hevc.decoder]
+11-01 21:55:42.109  1468  1679 D CCodecConfig: read media type: video/hevc
+11-01 21:55:42.111   327   327 D Zygote  : Forked child process 1691
+11-01 21:55:42.113   783   783 I wpa_supplicant: assoc key_mgmt 0x4 network key_mgmt 0x4
+11-01 21:55:42.113   783   783 I wpa_supplicant: wlan0: Associated with 02:15:b2:00:00:01
+11-01 21:55:42.109  1468  1679 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.max-count.values
+11-01 21:55:42.113   783   783 I wpa_supplicant: wlan0: CTRL-EVENT-CONNECTED - Connection to 02:15:b2:00:00:01 completed [id=0 id_str=%7B%22configKey%22%3A%22%5C%22AndroidWifi%5C%22NONE%22%2C%22creatorUid%22%3A%2210110%22%7D]
+11-01 21:55:42.113   783   783 I wpa_supplicant: assoc key_mgmt 0x4 network key_mgmt 0x4
+11-01 21:55:42.113   783   783 I wpa_supplicant: wlan0: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+11-01 21:55:42.113  1468  1679 D ReflectedParamUpdater: extent() != 1 for single value type: output.subscribed-indices.values
+11-01 21:55:42.113  1468  1679 D ReflectedParamUpdater: extent() != 1 for single value type: input.buffers.allocator-ids.values
+11-01 21:55:42.113  1468  1679 D ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.allocator-ids.values
+11-01 21:55:42.113  1468  1679 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.allocator-ids.values
+11-01 21:55:42.113  1468  1679 D ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.pool-ids.values
+11-01 21:55:42.113  1468  1679 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.pool-ids.values
+11-01 21:55:42.113  1468  1679 D ReflectedParamUpdater: ignored struct field coded.color-format.locations
+11-01 21:55:42.114  1468  1679 D CCodecConfig: ignoring local param raw.size (0xd2001800) as it is already supported
+11-01 21:55:42.114  1468  1679 D CCodecConfig: ignoring local param default.color (0x5200180b) as it is already supported
+11-01 21:55:42.114  1468  1679 D ReflectedParamUpdater: ignored struct field raw.hdr-static-info.mastering
+11-01 21:55:42.114  1468  1679 I CCodecConfig: query failed after returning 12 values (BAD_INDEX)
+11-01 21:55:42.114  1468  1679 D CCodecConfig: c2 config diff is Dict {
+11-01 21:55:42.114  1468  1679 D CCodecConfig:   c2::u32 coded.pl.level = 24584
+11-01 21:55:42.114  1468  1679 D CCodecConfig:   c2::u32 coded.pl.profile = 24576
+11-01 21:55:42.114  1468  1679 D CCodecConfig:   c2::u32 coded.vui.color.matrix = 0
+11-01 21:55:42.114  1468  1679 D CCodecConfig:   c2::u32 coded.vui.color.primaries = 0
+11-01 21:55:42.114  1468  1679 D CCodecConfig:   c2::u32 coded.vui.color.range = 2
+11-01 21:55:42.114  1468  1679 D CCodecConfig:   c2::u32 coded.vui.color.transfer = 0
+11-01 21:55:42.114  1468  1679 D CCodecConfig:   c2::u32 default.color.matrix = 0
+11-01 21:55:42.114  1468  1679 D CCodecConfig:   c2::u32 default.color.primaries = 0
+11-01 21:55:42.114  1468  1679 D CCodecConfig:   c2::u32 default.color.range = 0
+11-01 21:55:42.114  1468  1679 D CCodecConfig:   c2::u32 default.color.transfer = 0
+11-01 21:55:42.114  1468  1679 D CCodecConfig:   c2::u32 input.buffers.max-size.value = 6291456
+11-01 21:55:42.114  1468  1679 D CCodecConfig:   c2::u32 input.delay.value = 0
+11-01 21:55:42.114  1468  1679 D CCodecConfig:   string input.media-type.value = "video/hevc"
+11-01 21:55:42.114  1468  1679 D CCodecConfig:   c2::u32 output.delay.value = 8
+11-01 21:55:42.114  1468  1679 D CCodecConfig:   string output.media-type.value = "video/raw"
+11-01 21:55:42.114  1468  1679 D CCodecConfig:   c2::u32 raw.color.matrix = 0
+11-01 21:55:42.114  1468  1679 D CCodecConfig:   c2::u32 raw.color.primaries = 0
+11-01 21:55:42.114  1468  1679 D CCodecConfig:   c2::u32 raw.color.range = 2
+11-01 21:55:42.114  1468  1679 D CCodecConfig:   c2::u32 raw.color.transfer = 0
+11-01 21:55:42.114  1468  1679 D CCodecConfig:   c2::u32 raw.max-size.height = 240
+11-01 21:55:42.114  1468  1679 D CCodecConfig:   c2::u32 raw.max-size.width = 320
+11-01 21:55:42.114  1468  1679 D CCodecConfig:   c2::u32 raw.pixel-format.value = 35
+11-01 21:55:42.114  1468  1679 D CCodecConfig:   c2::i32 raw.rotation.flip = 0
+11-01 21:55:42.114  1468  1679 D CCodecConfig:   c2::i32 raw.rotation.value = 0
+11-01 21:55:42.114  1468  1679 D CCodecConfig:   c2::u32 raw.sar.height = 1
+11-01 21:55:42.114  1468  1679 D CCodecConfig:   c2::u32 raw.sar.width = 1
+11-01 21:55:42.114  1468  1679 D CCodecConfig:   c2::u32 raw.size.height = 240
+11-01 21:55:42.114  1468  1679 D CCodecConfig:   c2::u32 raw.size.width = 320
+11-01 21:55:42.114  1468  1679 D CCodecConfig:   c2
+11-01 21:55:42.114   504   716 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.sendStickyBroadcast:1626 com.android.server.wifi.ClientModeImpl.sendNetworkChangeBroadcast:3008 com.android.server.wifi.ClientModeImpl.lambda$sendNetworkChangeBroadcastWithCurrentState$14:2985 com.android.server.wifi.ClientModeImpl.$r8$lambda$q-j88Pjw4gROgoJFr8wBlBVbuJI:0 com.android.server.wifi.ClientModeImpl$$ExternalSyntheticLambda4.send:0 
+11-01 21:55:42.114  1468  1679 W ColorUtils: expected specified color aspects (2:0:0:0)
+11-01 21:55:42.117  1629  1629 D nativeloader: Configuring clns-shared-6 for other apk /system/framework/org.apache.http.legacy.jar. target_sdk_version=34, uses_libraries=ALL, library_path=/apex/com.android.devicelock/priv-app/DeviceLockController@UE1A.230829.036.A1/lib/x86_64:/system/lib64:/system_ext/lib64, permitted_path=/data:/mnt/expand:/data/user/0/com.android.devicelockcontroller:/apex/com.android.devicelock/priv-app/DeviceLockController@UE1A.230829.036.A1:/system/lib64:/system_ext/lib64
+11-01 21:55:42.118  1629  1629 D nativeloader: Configuring clns-shared-7 for other apk /apex/com.android.devicelock/priv-app/DeviceLockController@UE1A.230829.036.A1/DeviceLockController.apk. target_sdk_version=34, uses_libraries=, library_path=/apex/com.android.devicelock/priv-app/DeviceLockController@UE1A.230829.036.A1/lib/x86_64:/system/lib64:/system_ext/lib64, permitted_path=/data:/mnt/expand:/data/user/0/com.android.devicelockcontroller:/apex/com.android.devicelock/priv-app/DeviceLockController@UE1A.230829.036.A1:/system/lib64:/system_ext/lib64
+11-01 21:55:42.119  1629  1629 D nativeloader: InitApexLibraries:
+11-01 21:55:42.119  1629  1629 D nativeloader:   com_android_adservices: libhpke_jni.so:libtflite_support_classifiers_native.so
+11-01 21:55:42.119  1629  1629 D nativeloader:   com_android_appsearch: libicing.so
+11-01 21:55:42.119  1629  1629 D nativeloader:   com_android_art: libartservice.so
+11-01 21:55:42.119  1629  1629 D nativeloader:   com_android_btservices: libbluetooth_jni.so
+11-01 21:55:42.119  1629  1629 D nativeloader:   com_android_conscrypt: libjavacrypto.so
+11-01 21:55:42.119  1629  1629 D nativeloader:   com_android_extservices: libtflite_support_classifiers_native.so
+11-01 21:55:42.119  1629  1629 D nativeloader:   com_android_os_statsd: libstats_jni.so
+11-01 21:55:42.119  1629  1629 D nativeloader:   com_android_tethering: libandroid_net_connectivity_com_android_net_module_util_jni.so:libcronet.114.0.5735.84.so:libframework-connectivity-jni.so:libframework-connectivity-tiramisu-jni.so:libservice-connectivity.so
+11-01 21:55:42.119  1629  1629 D nativeloader:   com_android_uwb: libuwb_uci_jni_rust.so
+11-01 21:55:42.119  1629  1629 D nativeloader:   com_android_virt: libvirtualizationservice_jni.so:libvirtualmachine_jni.so
+11-01 21:55:42.123  1468  1678 D MediaCodec: flushMediametrics
+11-01 21:55:42.123   955   975 I Tethering: adding IpServer for: wlan0
+11-01 21:55:42.124   796   796 I Choreographer: Skipped 98 frames!  The application may be doing too much work on its main thread.
+--------- beginning of kernel
+11-01 21:55:42.295     0     0 I wlan0   : authenticate with 02:15:b2:00:00:01
+11-01 21:55:42.296     0     0 I wlan0   : No basic rates, using min rate instead
+11-01 21:55:42.298     0     0 I wlan0   : send auth to 02:15:b2:00:00:01 (try 1/3)
+11-01 21:55:42.301     0     0 I wlan0   : authenticated
+11-01 21:55:42.307     0     0 I wlan0   : associate with 02:15:b2:00:00:01 (try 1/3)
+11-01 21:55:42.309     0     0 I wlan0   : RX AssocResp from 02:15:b2:00:00:01 (capab=0x1 status=0 aid=1)
+11-01 21:55:42.310     0     0 I wlan0   : No basic rates, using min rate instead
+11-01 21:55:42.312     0     0 I wlan0   : associated
+11-01 21:55:42.091   504   504 W binder:504_5: type=1400 audit(0.0:12): avc:  denied  { getopt } for  scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+11-01 21:55:42.135  1468  1679 D CCodec  : [c2.goldfish.hevc.decoder] buffers are bound to CCodec for this session
+11-01 21:55:42.135  1468  1679 D CCodec  : Client requested ByteBuffer mode decoder w/o color format set: using default planar color format
+11-01 21:55:42.135  1468  1679 D CCodecConfig: no c2 equivalents for flags
+11-01 21:55:42.136  1468  1679 D CCodecConfig: c2 config diff is   c2::u32 raw.size.height = 1080
+11-01 21:55:42.136  1468  1679 D CCodecConfig:   c2::u32 raw.size.width = 1920
+11-01 21:55:42.136  1468  1679 W ColorUtils: expected specified color aspects (2:0:0:0)
+11-01 21:55:42.136  1468  1679 W Codec2Client: query -- param skipped: index = 1107298332.
+11-01 21:55:42.136  1468  1679 D CCodec  : encoding statistics level = 0
+11-01 21:55:42.136  1468  1679 D CCodec  : setup formats input: AMessage(what = 0x00000000) = {
+11-01 21:55:42.136  1468  1679 D CCodec  :   int32_t height = 1080
+11-01 21:55:42.136  1468  1679 D CCodec  :   int32_t level = 65536
+11-01 21:55:42.136  1468  1679 D CCodec  :   int32_t max-input-size = 6291456
+11-01 21:55:42.136  1468  1679 D CCodec  :   string mime = "video/hevc"
+11-01 21:55:42.136  1468  1679 D CCodec  :   int32_t profile = 1
+11-01 21:55:42.136  1468  1679 D CCodec  :   int32_t width = 1920
+11-01 21:55:42.136  1468  1679 D CCodec  :   Rect crop(0, 0, 1919, 1079)
+11-01 21:55:42.136  1468  1679 D CCodec  :   int32_t color-transfer-request = 0
+11-01 21:55:42.136  1468  1679 D CCodec  : }
+11-01 21:55:42.136  1468  1679 D CCodec  : setup formats output: AMessage(what = 0x00000000) = {
+11-01 21:55:42.136  1468  1679 D CCodec  :   int32_t android._color-format = 2135033992
+11-01 21:55:42.136  1468  1679 D CCodec  :   int32_t android._video-scaling = 1
+11-01 21:55:42.136  1468  1679 D CCodec  :   int32_t rotation-degrees = 0
+11-01 21:55:42.136  1468  1679 D CCodec  :   int32_t color-standard = 0
+11-01 21:55:42.136  1468  1679 D CCodec  :   int32_t color-range = 2
+11-01 21:55:42.136  1468  1679 D CCodec  :   int32_t color-transfer = 0
+11-01 21:55:42.136  1468  1679 D CCodec  :   int32_t sar-height = 1
+11-01 21:55:42.136  1468  1679 D CCodec  :   int32_t sar-width = 1
+11-01 21:55:42.136  1468  1679 D CCodec  :   Rect crop(0, 0, 1919, 1079)
+11-01 21:55:42.136  1468  1679 D CCodec  :   int32_t width = 1920
+11-01 21:55:42.136  1468  1679 D CCodec  :   int32_t height = 1080
+11-01 21:55:42.136  1468  1679 D CCodec  :   int32_t max-height = 240
+11-01 21:55:42.136  1468  1679 D CCodec  :   int32_t max-width = 320
+11-01 21:55:42.136  1468  1679 D CCodec  :   string mime = "video/raw"
+11-01 21:55:42.136  1468  1679 D CCodec  :   int32_t android._dataspace = 268435456
+11-01 21:55:42.136  1468  1679 D CCodec  :   int32_t color-format = 19
+11-01 21:55:42.136  1468  1679 D CCodec  : }
+11-01 21:55:42.136  1468  1679 I CCodecConfig: query failed after returning 12 values (BAD_INDEX)
+11-01 21:55:42.136  1468  1679 D CCodecConfig: c2 config diff is   c2::u32 raw.max-size.height = 1080
+11-01 21:55:42.136  1468  1679 D CCodecConfig:   c2::u32 raw.max-size.width = 1920
+11-01 21:55:42.136  1468  1679 W ColorUtils: expected specified color aspects (2:0:0:0)
+11-01 21:55:42.137   453   453 W ResourceManagerMetrics: notifyClientStopped: Start Config is missing!
+11-01 21:55:42.138   504   523 I DropBoxManagerService: add tag=system_app_strictmode isTagEnabled=true flags=0x2
+11-01 21:55:42.141  1456  1603 D ContactsDatabaseHelper: WAL enabled for contacts2.db: true
+11-01 21:55:42.142   504   533 W ActivityManager: Slow operation: 57ms so far, now at startProcess: done updating battery stats
+11-01 21:55:42.142   504   533 W ActivityManager: Slow operation: 57ms so far, now at startProcess: building log message
+11-01 21:55:42.142   504   533 I ActivityManager: Start proc 1691:com.android.managedprovisioning/u0a69 for broadcast {com.android.managedprovisioning/com.android.managedprovisioning.ota.PreBootListener}
+11-01 21:55:42.142   504   533 W ActivityManager: Slow operation: 57ms so far, now at startProcess: starting to update pids map
+11-01 21:55:42.142   504   533 W ActivityManager: Slow operation: 57ms so far, now at startProcess: done updating pids map
+11-01 21:55:42.142   504   716 I WifiClientModeImpl[20154:wlan0]: Update current security type to 0
+11-01 21:55:42.145   504   716 I WifiClientModeImpl[20154:wlan0]: Update current security type to 0
+11-01 21:55:42.148  1048  1048 D CompatibilityChangeReporter: Compat change id reported: 150939131; UID 10114; state: ENABLED
+11-01 21:55:42.149  1048  1048 D b/254119092: destroyExistingTaskbar: null
+11-01 21:55:42.149  1048  1048 D b/254119092: mActivity and mContext agree taskbarIsPresent=false
+11-01 21:55:42.149  1048  1048 D b/254119092: recreateTaskbar: isTaskbarEnabled=false [dp != null (i.e. mUserUnlocked)]=true FLAG_HIDE_NAVBAR_WINDOW=false dp.isTaskbarPresent=false
+11-01 21:55:42.149  1048  1048 D b/254119092: mActivity and mContext agree taskbarIsPresent=false
+11-01 21:55:42.152   504   716 I WifiClientModeImpl[20154:wlan0]: Update current security type to 0
+11-01 21:55:42.154   504   716 I WifiClientModeImpl[20154:wlan0]: Update current security type to 0 from network connection event.
+11-01 21:55:42.155   504   566 I WifiService: updateInterfaceIpState uid=1073
+11-01 21:55:42.157  1456  1603 I PhoneAccountHandleMigrationUtils_ContactsDatabaseHelper: updatePhoneAccountHandleMigrationPendingStatus false
+11-01 21:55:42.162  1629  1629 V GraphicsEnvironment: Currently set values for:
+11-01 21:55:42.162  1629  1629 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+11-01 21:55:42.162  1629  1629 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+11-01 21:55:42.163  1629  1629 V GraphicsEnvironment: ANGLE GameManagerService for com.android.devicelockcontroller: false
+11-01 21:55:42.167  1629  1629 V GraphicsEnvironment: com.android.devicelockcontroller is not listed in per-application setting
+11-01 21:55:42.167  1629  1629 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+11-01 21:55:42.091   504   504 W binder:504_5: type=1400 audit(0.0:13): avc:  denied  { getopt } for  scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+11-01 21:55:42.169  1674  1674 E externalstorage: Not starting debugger since process cannot load the jdwp agent.
+11-01 21:55:42.172   504   523 I DropBoxManagerService: add tag=system_app_strictmode isTagEnabled=true flags=0x2
+11-01 21:55:42.173  1468  1468 I TranscodeHelper: Device HDR Plugin is available: false
+11-01 21:55:42.173  1468  1468 I TranscodeHelper: Empty transcode compat stale
+11-01 21:55:42.173  1468  1468 I TranscodeHelper: Parsed 0 packages from resource
+11-01 21:55:42.173  1468  1468 I TranscodeHelper: Empty device config transcode compat manifest
+11-01 21:55:42.091   504   504 W binder:504_5: type=1400 audit(0.0:14): avc:  denied  { getopt } for  scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+11-01 21:55:42.176   504  1551 D CompatibilityChangeReporter: Compat change id reported: 161145287; UID 10122; state: ENABLED
+11-01 21:55:42.176   504   523 I DropBoxManagerService: add tag=system_app_strictmode isTagEnabled=true flags=0x2
+11-01 21:55:42.179   504   504 W Looper  : Slow dispatch took 126ms main h=com.android.providers.settings.SettingsProvider$SettingsRegistry$MyHandler c=null m=2
+11-01 21:55:42.180  1629  1629 I DeviceLockControllerApplication: onCreate
+11-01 21:55:42.181   504   716 I ConnectivityService: Update score for net 100 : +IS_UNMETERED
+11-01 21:55:42.181   504   716 D ConnectivityService: registerNetworkAgent NetworkAgentInfo{network{100}  handle{432902426637}  ni{WIFI CONNECTING extra: } created=2026-11-01T21:55:42.181Z Score(Policies : IS_UNMETERED ; KeepConnected : 0)   lp{{LinkAddresses: [ ] DnsAddresses: [ ] Domains: null MTU: 0 Routes: [ ]}}  nc{[ Transports: WIFI Capabilities: NOT_METERED&INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN&NOT_ROAMING&NOT_CONGESTED&NOT_SUSPENDED&NOT_VCN_MANAGED LinkUpBandwidth>=54000Kbps LinkDnBandwidth>=54000Kbps Specifier: <WifiNetworkAgentSpecifier [WifiConfiguration=, SSID="AndroidWifi", BSSID=02:15:b2:00:00:01, band=1, mMatchLocalOnlySpecifiers=false]> TransportInfo: <SSID: "AndroidWifi", BSSID: 02:15:b2:00:00:01, MAC: 02:15:b2:00:00:00, IP: null, Security type: 0, Supplicant state: ASSOCIATED, Wi-Fi standard: 1, RSSI: -127, Link speed: -1Mbps, Tx Link speed: -1Mbps, Max Supported Tx Link speed: 54Mbps, Rx Link speed: -1Mbps, Max Supported Rx Link speed: 54Mbps, Frequency: 2437MHz, Net ID: 0, Metered hint: false, score: 0, isUsable: true, CarrierMerged: false, SubscriptionId: -1, IsPrimary: 1, Trusted: true, Restricted: false, Ephemeral: false, OEM paid: false, OEM private: false, OSU AP: false, FQDN: <none>, Provider friendly name: <none>, Requesting package name: <none>"AndroidWifi"openMLO Information: , Is TID-To-Link negotiation supported by the AP: false, AP MLD Address: <none>, AP MLO Link Id: <none>, AP MLO Affiliated links: <none>> AllowedUids: <{10110}> OwnerUid: 10110 AdminUids: [10110] SSID: "AndroidWifi" UnderlyingNetworks: Null]}  factorySerialNumber=5}
+11-01 21:55:42.181  1468  1468 V MediaStore: Examining volume emulated;0 with name external_primary and state checking
+11-01 21:55:42.184   326   368 I netd    : getFwmarkForNetwork(100) -> {MarkMaskParcel{mark: 100, mask: 65535}} <0.00ms>
+11-01 21:55:42.185  1629  1629 I DeviceStateControllerImpl: Starting state is 0
+11-01 21:55:42.185   504   716 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.sendStickyBroadcast:1626 com.android.server.wifi.ClientModeImpl.sendNetworkChangeBroadcast:3008 com.android.server.wifi.ClientModeImpl.lambda$sendNetworkChangeBroadcastWithCurrentState$14:2985 com.android.server.wifi.ClientModeImpl.$r8$lambda$q-j88Pjw4gROgoJFr8wBlBVbuJI:0 com.android.server.wifi.ClientModeImpl$$ExternalSyntheticLambda4.send:0 
+11-01 21:55:42.187   955  1136 D CompatibilityChangeReporter: Compat change id reported: 186082280; UID 1073; state: ENABLED
+11-01 21:55:42.193   504   862 D CompatibilityChangeReporter: Compat change id reported: 171306433; UID 1073; state: ENABLED
+11-01 21:55:42.194   504   716 I WifiClientModeImpl[20154:wlan0]: Update current security type to 0
+11-01 21:55:42.201   504   862 D CompatibilityChangeReporter: Compat change id reported: 168419799; UID 10070; state: DISABLED
+11-01 21:55:42.201   504   862 D CompatibilityChangeReporter: Compat change id reported: 273564678; UID 10070; state: DISABLED
+11-01 21:55:42.210   504   580 D CompatibilityChangeReporter: Compat change id reported: 265195908; UID 10070; state: ENABLED
+11-01 21:55:42.212  1629  1629 I UserRestrictionsPolicyHandler: Build type DEBUG = true
+11-01 21:55:42.215  1048  1048 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-01 21:55:42.215  1048  1048 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-01 21:55:42.215   504   716 D WifiService: updateInterfaceIpState: ifaceName=wlan0 mode=-1 previous LOHS mode= -1
+11-01 21:55:42.233  1594  1594 V GraphicsEnvironment: Currently set values for:
+11-01 21:55:42.233  1594  1594 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+11-01 21:55:42.233  1594  1594 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+11-01 21:55:42.237   796  1201 D BufferPoolAccessor2.0: bufferpool2 0x7481e94c4508 : 0(0 size) total buffers - 0(0 size) used buffers - 1/7 (recycle/alloc) - 6/36 (fetch/transfer)
+11-01 21:55:42.237   796  1201 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 1
+11-01 21:55:42.239  1048  1048 V Launcher: LauncherAppState initiated
+11-01 21:55:42.240  1629  1629 D DevicePolicyControllerImpl: onStateChanged (0)
+11-01 21:55:42.242  1629  1629 V UserRestrictionsPolicyHandler: Setting restrictions for 0
+11-01 21:55:42.242   796   856 I OpenGLRenderer: Davey! duration=1667ms; Flags=0, FrameTimelineVsyncId=1581, IntendedVsync=25656206521, Vsync=27289539789, InputEventId=0, HandleInputStart=27295476123, AnimationStart=27295477014, PerformTraversalsStart=27298022959, DrawStart=27315530351, FrameDeadline=26439539823, FrameInterval=27293970852, FrameStartTime=16666666, SyncQueued=27315591245, SyncStart=27315662465, IssueDrawCommandsStart=27315692752, SwapBuffers=27316798326, FrameCompleted=27324182848, DequeueBufferDuration=3246, QueueBufferDuration=144209, GpuCompleted=27324182848, SwapBuffersCompleted=27317756956, DisplayPresentTime=0, CommandSubmissionCompleted=27316798326, 
+11-01 21:55:42.253  1629  1629 D CompatibilityChangeReporter: Compat change id reported: 183155436; UID 10136; state: ENABLED
+11-01 21:55:42.256  1468  1468 D CompatibilityChangeReporter: Compat change id reported: 148180766; UID 10122; state: ENABLED
+11-01 21:55:42.258  1468  1468 I MediaProvider: Changed PhotoPickerGetContentActivity component state to STATE_ENABLED ( 1 )
+11-01 21:55:42.258   504   566 D PackageManager: Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
+11-01 21:55:42.258   504   566 D PackageManager: Clear ephemeral installer activity
+11-01 21:55:42.260  1002  1002 D Telephony: isEmergencyPreferredAccount: subId=1, activeData=1
+11-01 21:55:42.260  1002  1002 D Telephony: isEmergencyPreferredAccount: Device does not require preference.
+11-01 21:55:42.261  1048  1048 D CompatibilityChangeReporter: Compat change id reported: 183155436; UID 10114; state: ENABLED
+11-01 21:55:42.261   977  1226 I HeadsetPhoneState: stopListenForPhoneState(), no listener indicates nothing is listening
+11-01 21:55:42.261   977  1226 W HeadsetPhoneState: startListenForPhoneState, no event to listen
+11-01 21:55:42.262  1468  1468 I MediaProvider: Changed PhotoPickerUserSelectActivity component state to STATE_ENABLED ( 1 )
+11-01 21:55:42.263  1594  1594 V GraphicsEnvironment: ANGLE GameManagerService for com.android.printspooler: false
+11-01 21:55:42.264  1594  1594 V GraphicsEnvironment: com.android.printspooler is not listed in per-application setting
+11-01 21:55:42.264  1594  1594 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+11-01 21:55:42.265   504   859 I ActivityManager: Flag disabled. Ignoring finishAttachApplication from uid: 10078. pid: 1594
+11-01 21:55:42.265   504   859 D PackageManager: Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
+11-01 21:55:42.266   504   859 D PackageManager: Clear ephemeral installer activity
+11-01 21:55:42.267  1468  1468 D PulledMetrics: Registering callback with StatsManager
+11-01 21:55:42.279  1505  1636 I MessagingAppDataModel: SyncMessagesAction: Starting batch for messages from -1 to 1793570141693 (message update limit = 80, message scan limit = 4000)
+11-01 21:55:42.281  1456  1603 I ContactLocale: AddressBook Labels [[en_US]]: […, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, Α, Β, Γ, Δ, Ε, Ζ, Η, Θ, Ι, Κ, Λ, Μ, Ν, Ξ, Ο, Π, Ρ, Σ, Τ, Υ, Φ, Χ, Ψ, Ω, …, А, Б, В, Г, Д, Ђ, Е, Є, Ж, З, И, І, Й, Ј, К, Л, Љ, М, Н, Њ, О, П, Р, С, Т, Ћ, У, Ф, Х, Ц, Ч, Џ, Ш, Щ, Ю, Я, …, א, ב, ג, ד, ה, ו, ז, ח, ט, י, כ, ל, מ, נ, ס, ע, פ, צ, ק, ר, ש, ת, …, ا, ب, ت, ث, ج, ح, خ, د, ذ, ر, ز, س, ش, ص, ض, ط, ظ, ع, غ, ف, ق, ك, ل, م, ن, ه, و, ي, …, ก, ข, ฃ, ค, ฅ, ฆ, ง, จ, ฉ, ช, ซ, ฌ, ญ, ฎ, ฏ, ฐ, ฑ, ฒ, ณ, ด, ต, ถ, ท, ธ, น, บ, ป, ผ, ฝ, พ, ฟ, ภ, ม, ย, ร, ฤ, ล, ฦ, ว, ศ, ษ, ส, ห, ฬ, อ, ฮ, …, ㄱ, ㄴ, ㄷ, ㄹ, ㅁ, ㅂ, ㅅ, ㅇ, ㅈ, ㅊ, ㅋ, ㅌ, ㅍ, ㅎ, …, あ, か, さ, た, な, は, ま, や, ら, わ, #, …]
+11-01 21:55:42.283   504   716 E WifiStaIfaceAidlImpl: installApfPacketFilter failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+11-01 21:55:42.286  1468  1678 D MediaCodec: flushMediametrics
+11-01 21:55:42.286  1468  1707 V MediaProvider: onConfigure() for external.db
+11-01 21:55:42.286   341   374 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+11-01 21:55:42.286   341   374 I GoldfishComponentStore: in ~ComponentModule
+11-01 21:55:42.287   341   374 I GoldfishComponentStore: unloading dll
+11-01 21:55:42.287  1468  1697 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+11-01 21:55:42.287  1468  1678 D MediaCodec: flushMediametrics
+11-01 21:55:42.287  1468  1678 W MediaCodec: no metrics handle found
+11-01 21:55:42.288   504   716 E WifiStaIfaceAidlImpl: installApfPacketFilter failed with service-specific exception: android.os.ServiceSpecificException:  (code 4)
+11-01 21:55:42.288   326   368 I netd    : interfaceGetCfg(wlan0) -> {InterfaceConfigurationParcel{ifName: wlan0, hwAddr: 02:15:b2:00:00:00, ipv4Addr: 0.0.0.0, prefixLength: 0, flags: [up, broadcast, running, multicast]}} <0.16ms>
+11-01 21:55:42.288   326   368 I netd    : interfaceGetCfg(wlan0) -> {InterfaceConfigurationParcel{ifName: wlan0, hwAddr: 02:15:b2:00:00:00, ipv4Addr: 0.0.0.0, prefixLength: 0, flags: [up, broadcast, running, multicast]}} <0.05ms>
+11-01 21:55:42.299   504   566 D CompatibilityChangeReporter: Compat change id reported: 261072174; UID 10136; state: ENABLED
+11-01 21:55:42.300  1629  1720 I DlcClient: Binding com.android.devicelockcontroller/.storage.SetupParametersService
+11-01 21:55:42.301   463   794 D BufferPoolAccessor2.0: bufferpool2 0x7b1bd415b068 : 0(0 size) total buffers - 0(0 size) used buffers - 12/16 (recycle/alloc) - 4/15 (fetch/transfer)
+11-01 21:55:42.301   463   794 D BufferPoolAccessor2.0: bufferpool2 0x7b1bd4161188 : 0(0 size) total buffers - 0(0 size) used buffers - 14/17 (recycle/alloc) - 3/16 (fetch/transfer)
+11-01 21:55:42.301   463   794 D BufferPoolAccessor2.0: evictor expired: 2, evicted: 2
+11-01 21:55:42.301   504  1692 I ActivityManager: Flag disabled. Ignoring finishAttachApplication from uid: 10136. pid: 1629
+11-01 21:55:42.302  1629  1629 D LockedBootCompletedReceiver: Locked Boot completed
+11-01 21:55:42.302   504   566 D PackageManager: Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
+11-01 21:55:42.302   504   566 D PackageManager: Clear ephemeral installer activity
+11-01 21:55:42.303   504   785 I BroadcastQueue: BOOT_COMPLETED_BROADCAST_COMPLETION_LATENCY_REPORTED action:android.intent.action.LOCKED_BOOT_COMPLETED dispatchLatency:46 completeLatency:2749 dispatchRealLatency:46 completeRealLatency:2749 receiversSize:4 userId:0 userType:android.os.usertype.full.SYSTEM
+11-01 21:55:42.304  1629  1629 D SetupParametersService: onCreate
+11-01 21:55:42.305  1629  1724 D PackagePolicyHandler: Kiosk package is not set for state: 0
+11-01 21:55:42.305  1674  1674 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10070; state: ENABLED
+11-01 21:55:42.305  1674  1674 D CompatibilityChangeReporter: Compat change id reported: 242716250; UID 10070; state: ENABLED
+11-01 21:55:42.306  1629  1629 E AggregateFuture: Got more than one input Future failure. Logging failures after the first
+11-01 21:55:42.306  1629  1629 E AggregateFuture: java.lang.IllegalStateException: Setup parameters does not exist!
+11-01 21:55:42.306  1629  1629 E AggregateFuture: 	at com.android.devicelockcontroller.policy.UserRestrictionsPolicyHandler.lambda$retrieveLockModeRestrictions$3(UserRestrictionsPolicyHandler.java:138)
+11-01 21:55:42.306  1629  1629 E AggregateFuture: 	at com.android.devicelockcontroller.policy.UserRestrictionsPolicyHandler.$r8$lambda$K4dazaAj4roA8BauvRaHZASMq6E(UserRestrictionsPolicyHandler.java:0)
+11-01 21:55:42.306  1629  1629 E AggregateFuture: 	at com.android.devicelockcontroller.policy.UserRestrictionsPolicyHandler$$ExternalSyntheticLambda4.call(R8$$SyntheticClass:0)
+11-01 21:55:42.306  1629  1629 E AggregateFuture: 	at com.google.common.util.concurrent.CombinedFuture$CallableInterruptibleTask.runInterruptibly(CombinedFuture.java:196)
+11-01 21:55:42.306  1629  1629 E AggregateFuture: 	at com.google.common.util.concurrent.InterruptibleTask.run(InterruptibleTask.java:74)
+11-01 21:55:42.306  1629  1629 E AggregateFuture: 	at android.os.Handler.handleCallback(Handler.java:958)
+11-01 21:55:42.306  1629  1629 E AggregateFuture: 	at android.os.Handler.dispatchMessage(Handler.java:99)
+11-01 21:55:42.306  1629  1629 E AggregateFuture: 	at android.os.Looper.loopOnce(Looper.java:205)
+11-01 21:55:42.306  1629  1629 E AggregateFuture: 	at android.os.Looper.loop(Looper.java:294)
+11-01 21:55:42.306  1629  1629 E AggregateFuture: 	at android.app.ActivityThread.main(ActivityThread.java:8177)
+11-01 21:55:42.306  1629  1629 E AggregateFuture: 	at java.lang.reflect.Method.invoke(Native Method)
+11-01 21:55:42.306  1629  1629 E AggregateFuture: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+11-01 21:55:42.306  1629  1629 E AggregateFuture: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+11-01 21:55:42.306  1629  1629 I DeviceLockControllerApplication: Policies enforced
+11-01 21:55:42.306   504   785 D CompatibilityChangeReporter: Compat change id reported: 170503758; UID 10070; state: ENABLED
+11-01 21:55:42.306  1674  1674 D CompatibilityChangeReporter: Compat change id reported: 3400644; UID 10070; state: ENABLED
+11-01 21:55:42.308  1691  1691 I gedprovisioning: Using CollectorTypeCC GC.
+11-01 21:55:42.308  1674  1674 D nativeloader: Configuring clns-shared-6 for other apk /system/priv-app/ExternalStorageProvider/ExternalStorageProvider.apk. target_sdk_version=34, uses_libraries=, library_path=/system/priv-app/ExternalStorageProvider/lib/x86_64:/system/lib64:/system_ext/lib64, permitted_path=/data:/mnt/expand:/data/user/0/com.android.externalstorage:/system/priv-app/ExternalStorageProvider:/system/lib64:/system_ext/lib64
+11-01 21:55:42.308  1691  1691 W gedprovisioning: Unexpected CPU variant for x86: x86_64.
+11-01 21:55:42.308  1691  1691 W gedprovisioning: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, tremont, kabylake, default
+11-01 21:55:42.311   504  1551 I DevicePolicyEngine: Couldn't find any receivers that handle ACTION_DEVICE_POLICY_SET_RESULT in package com.android.devicelockcontroller
+11-01 21:55:42.311   504  1551 D DevicePolicyEngine: Writing device policies to file.
+11-01 21:55:42.311   504  1551 D DevicePolicyEngine: Writing to /data/system/device_policy_state.xml
+11-01 21:55:42.322  1468  1707 V MediaProvider: onCreate() for external.db
+11-01 21:55:42.324  1048  1048 D CompatibilityChangeReporter: Compat change id reported: 171228096; UID 10114; state: ENABLED
+11-01 21:55:42.329   504   723 D ConnectivityService: [100 WIFI] EVENT_NETWORK_INFO_CHANGED, going from CONNECTING to CONNECTING
+11-01 21:55:42.329   504   723 I ConnectivityService: Update score for net 100 : +TRANSPORT_PRIMARY
+11-01 21:55:42.330   955  1709 D NetworkMonitor/100: checkAndRenewResourceConfig: update captive portal https urls to [https://www.google.com/generate_204]
+11-01 21:55:42.331   504   723 D ConnectivityService: NetReassign [no changes] [c 0] [a 1] [i 0]
+11-01 21:55:42.331   955  1709 D NetworkMonitor/100: checkAndRenewResourceConfig: update captive portal http urls to [http://connectivitycheck.gstatic.com/generate_204]
+11-01 21:55:42.331   955  1709 D NetworkMonitor/100: checkAndRenewResourceConfig: update captive portal fallback urls to[http://www.google.com/gen_204, http://play.googleapis.com/generate_204]
+11-01 21:55:42.332   955  1709 D NetworkMonitor: Starting on network 100 with capport HTTPS URL [https://www.google.com/generate_204] and HTTP URL [http://connectivitycheck.gstatic.com/generate_204]
+11-01 21:55:42.332   504   723 D ConnectivityService: NetReassign [no changes] [c 0] [a 0] [i 0]
+11-01 21:55:42.339  1048  1048 D CompatibilityChangeReporter: Compat change id reported: 210923482; UID 10114; state: ENABLED
+11-01 21:55:42.339  1674  1674 V GraphicsEnvironment: Currently set values for:
+11-01 21:55:42.339  1674  1674 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+11-01 21:55:42.339  1674  1674 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+11-01 21:55:42.339  1674  1674 V GraphicsEnvironment: ANGLE GameManagerService for com.android.externalstorage: false
+11-01 21:55:42.339  1674  1674 V GraphicsEnvironment: com.android.externalstorage is not listed in per-application setting
+11-01 21:55:42.339  1674  1674 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+11-01 21:55:42.340   504   785 D PackageManager: Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
+11-01 21:55:42.340   504   785 D PackageManager: Clear ephemeral installer activity
+11-01 21:55:42.340  1468  1468 I MediaApplication: PhotoPickerSettingsActivity is now disabled.
+11-01 21:55:42.341   504   785 I ActivityManager: Flag disabled. Ignoring finishAttachApplication from uid: 10122. pid: 1468
+11-01 21:55:42.346  1048  1048 D CompatibilityChangeReporter: Compat change id reported: 147798919; UID 10114; state: ENABLED
+11-01 21:55:42.349   504   785 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+11-01 21:55:42.350   504   785 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+11-01 21:55:42.351   504   785 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+11-01 21:55:42.356  1674  1674 D ExternalStorage: After updating volumes, found 0 active roots
+11-01 21:55:42.376  1456  1603 I ContactsDatabaseHelper: Bootstrapping database contacts2.db version: 1604
+11-01 21:55:42.380   504   785 D WallpaperManagerService: WPMS.saveSettingsLocked-0
+11-01 21:55:42.383   504   785 V WallpaperManagerService: WPMS.saveSettingsLocked-0 took to complete: 3ms
+11-01 21:55:42.385   326   368 I netd    : setProcSysNet(6, 1, wlan0, accept_ra, 2) <0.08ms>
+11-01 21:55:42.389   504   785 I ActivityManager: Flag disabled. Ignoring finishAttachApplication from uid: 10070. pid: 1674
+11-01 21:55:42.389  1574  1655 I ProvidersCache: Provider returned no roots. Possibly naughty: com.android.externalstorage.documents
+11-01 21:55:42.390  1574  1654 W oid.documentsui: Long monitor contention with owner pool-2-thread-2 (1655) at void com.android.documentsui.roots.ProvidersCache$MultiProviderUpdateTask.handleDocumentsProvider(android.content.pm.ProviderInfo, com.android.documentsui.base.UserId)(ProvidersCache.java:645) waiters=0 in void com.android.documentsui.roots.ProvidersCache$MultiProviderUpdateTask.handleDocumentsProvider(android.content.pm.ProviderInfo, com.android.documentsui.base.UserId) for 434ms
+11-01 21:55:42.392  1574  1656 W oid.documentsui: Long monitor contention with owner pool-2-thread-2 (1655) at void com.android.documentsui.roots.ProvidersCache$MultiProviderUpdateTask.handleDocumentsProvider(android.content.pm.ProviderInfo, com.android.documentsui.base.UserId)(ProvidersCache.java:645) waiters=1 in void com.android.documentsui.roots.ProvidersCache$MultiProviderUpdateTask.handleDocumentsProvider(android.content.pm.ProviderInfo, com.android.documentsui.base.UserId) for 436ms
+11-01 21:55:42.394   504  1551 D CompatibilityChangeReporter: Compat change id reported: 135634846; UID 10065; state: DISABLED
+11-01 21:55:42.394   504  1551 D CompatibilityChangeReporter: Compat change id reported: 177438394; UID 10065; state: DISABLED
+11-01 21:55:42.395   504  1551 D CompatibilityChangeReporter: Compat change id reported: 135772972; UID 10065; state: DISABLED
+11-01 21:55:42.395   504  1551 D CompatibilityChangeReporter: Compat change id reported: 135754954; UID 10065; state: ENABLED
+11-01 21:55:42.396   955  1727 D ApfFilter: (wlan0): begin monitoring
+11-01 21:55:42.396   504   751 W system_server: Long monitor contention with owner backup-0 (1470) at void com.android.server.backup.UserBackupManagerService.dataChangedImpl(java.lang.String, java.util.HashSet)(UserBackupManagerService.java:2502) waiters=0 in void com.android.server.backup.UserBackupManagerService.updateStateOnBackupEnabled(boolean, boolean) for 807ms
+11-01 21:55:42.398   504   533 D CompatibilityChangeReporter: Compat change id reported: 143937733; UID 10065; state: ENABLED
+11-01 21:55:42.398   504   531 D CompatibilityChangeReporter: Compat change id reported: 135634846; UID 1000; state: DISABLED
+11-01 21:55:42.404  1691  1691 E gedprovisioning: Not starting debugger since process cannot load the jdwp agent.
+11-01 21:55:42.405   327   327 D Zygote  : Forked child process 1744
+11-01 21:55:42.407   504   533 I ActivityManager: Start proc 1744:android.process.media/u0a65 for content provider {com.android.mtp/com.android.mtp.MtpDocumentsProvider}
+11-01 21:55:42.421   504   862 D CompatibilityChangeReporter: Compat change id reported: 168419799; UID 10069; state: DISABLED
+11-01 21:55:42.421   504   862 D CompatibilityChangeReporter: Compat change id reported: 273564678; UID 10069; state: DISABLED
+11-01 21:55:42.425  1002  1353 D MmsSmsDatabaseHelper: onCreate: Creating all SMS-MMS tables.
+11-01 21:55:42.455   504   580 D CompatibilityChangeReporter: Compat change id reported: 265195908; UID 10069; state: ENABLED
+11-01 21:55:42.456   504   580 D CompatibilityChangeReporter: Compat change id reported: 265195908; UID 10065; state: ENABLED
+11-01 21:55:42.465  1691  1691 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10069; state: ENABLED
+11-01 21:55:42.466   326   368 I netd    : interfaceSetIPv6PrivacyExtensions(wlan0, true) <0.10ms>
+11-01 21:55:42.477  1691  1691 D CompatibilityChangeReporter: Compat change id reported: 242716250; UID 10069; state: ENABLED
+11-01 21:55:42.484   326   368 I netd    : setIPv6AddrGenMode(wlan0, 2) <18.55ms>
+11-01 21:55:42.486   326   368 I netd    : interfaceSetEnableIPv6(wlan0, true) <0.09ms>
+11-01 21:55:42.505   796   796 V ActivityThread: getPackageInfo() caused update to cached ApplicationInfo for package android
+11-01 21:55:42.529   327   327 D Zygote  : Forked child process 1758
+11-01 21:55:42.531   504   533 W ActivityManager: Slow operation: 133ms so far, now at startProcess: returned from zygote!
+11-01 21:55:42.531   504   533 W ActivityManager: Slow operation: 134ms so far, now at startProcess: done updating battery stats
+11-01 21:55:42.531   504   533 W ActivityManager: Slow operation: 134ms so far, now at startProcess: building log message
+11-01 21:55:42.531   504   533 I ActivityManager: Start proc 1758:com.android.keychain/1000 for service {com.android.keychain/com.android.keychain.KeyChainService}
+11-01 21:55:42.531   504   533 W ActivityManager: Slow operation: 134ms so far, now at startProcess: starting to update pids map
+11-01 21:55:42.533   504   533 W ActivityManager: Slow operation: 135ms so far, now at startProcess: done updating pids map
+11-01 21:55:42.535   326   368 I netd    : setProcSysNet(4, 2, wlan0, retrans_time_ms, 750) <0.10ms>
+11-01 21:55:42.535   326   368 I netd    : setProcSysNet(4, 2, wlan0, ucast_solicit, 5) <0.05ms>
+11-01 21:55:42.537   504  1470 V BackupManagerConstants: getKeyValueBackupIntervalMilliseconds(...) returns 14400000
+11-01 21:55:42.537   504  1470 V BackupManagerConstants: getKeyValueBackupFuzzMilliseconds(...) returns 600000
+11-01 21:55:42.537   504  1470 V BackupManagerConstants: getKeyValueBackupRequiredNetworkType(...) returns 1
+11-01 21:55:42.537   504  1470 V BackupManagerConstants: getKeyValueBackupRequireCharging(...) returns true
+11-01 21:55:42.537   504  1470 V KeyValueBackupJob: Scheduling k/v pass in 246 minutes
+11-01 21:55:42.537   504   862 W AppWidgetServiceImpl: Failed to read state: java.io.FileNotFoundException: /data/system/users/0/appwidgets.xml: open failed: ENOENT (No such file or directory)
+11-01 21:55:42.538   504   862 V AppWidgetServiceImpl: Upgrading widget database from 0 to 1
+11-01 21:55:42.541   504  1451 I StorageUserConnection: Service: [ComponentInfo{com.android.providers.media.module/com.android.providers.media.fuse.ExternalStorageServiceImpl}] connected. User [0]
+11-01 21:55:42.547   504   566 D CompatibilityChangeReporter: Compat change id reported: 170503758; UID 10069; state: ENABLED
+11-01 21:55:42.548  1048  1048 D b/267448330: provider: ComponentInfo{com.android.quicksearchbox/com.android.quicksearchbox.SearchWidgetProvider}, paddedSizes: [382.09525x136.38095, 732.5714x62.095238, 732.5714x62.095238], getMinMaxSizes: Rect(382, 62 - 732, 136)
+11-01 21:55:42.549   504  1692 I AppWidgetServiceImpl: Bound widget 2 to provider ProviderId{user:0, app:10105, cmp:ComponentInfo{com.android.quicksearchbox/com.android.quicksearchbox.SearchWidgetProvider}}
+11-01 21:55:42.551  1468  1737 I ExternalStorageServiceImpl: Starting session for id: emulated;0
+11-01 21:55:42.552  1468  1737 V FuseDaemonThread: Waiting 1000ms for FUSE start. Count 4
+11-01 21:55:42.553  1048  1048 W System  : ClassLoader referenced unknown path: 
+11-01 21:55:42.554  1048  1048 D nativeloader: Configuring clns-7 for other apk . target_sdk_version=30, uses_libraries=, library_path=/product/app/QuickSearchBox/lib/x86_64, permitted_path=/data:/mnt/expand
+11-01 21:55:42.560   504   532 D CompatibilityChangeReporter: Compat change id reported: 135634846; UID 10105; state: DISABLED
+11-01 21:55:42.560   504   532 D CompatibilityChangeReporter: Compat change id reported: 177438394; UID 10105; state: DISABLED
+11-01 21:55:42.560   504   532 D CompatibilityChangeReporter: Compat change id reported: 135772972; UID 10105; state: DISABLED
+11-01 21:55:42.561   504   532 D CompatibilityChangeReporter: Compat change id reported: 135754954; UID 10105; state: ENABLED
+11-01 21:55:42.561   504   533 D CompatibilityChangeReporter: Compat change id reported: 143937733; UID 10105; state: ENABLED
+11-01 21:55:42.565  1002  1353 D MmsSmsDatabaseHelper: clearMmsParts: removing all attachments from: /data/user/0/com.android.providers.telephony/app_parts
+11-01 21:55:42.565  1002  1353 D MmsSmsDatabaseHelper: onCreate: broadcasting ACTION_SMS_MMS_DB_CREATED
+11-01 21:55:42.570  1691  1691 D CompatibilityChangeReporter: Compat change id reported: 3400644; UID 10069; state: ENABLED
+11-01 21:55:42.581  1744  1744 I d.process.media: Using CollectorTypeCC GC.
+11-01 21:55:42.582  1456  1603 I ContactsProviderV1: Bootstrapping database legacy support
+11-01 21:55:42.582  1744  1744 W d.process.media: Unexpected CPU variant for x86: x86_64.
+11-01 21:55:42.582  1744  1744 W d.process.media: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, tremont, kabylake, default
+11-01 21:55:42.586  1691  1691 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+11-01 21:55:42.586  1691  1691 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+11-01 21:55:42.590  1456  1603 D ContactsDatabaseHelper: WAL enabled for profile.db: false
+11-01 21:55:42.592   327   327 D Zygote  : Forked child process 1772
+11-01 21:55:42.593   504   533 I ActivityManager: Start proc 1772:com.android.quicksearchbox/u0a105 for broadcast {com.android.quicksearchbox/com.android.quicksearchbox.SearchWidgetProvider}
+11-01 21:55:42.597  1744  1744 E d.process.media: Not starting debugger since process cannot load the jdwp agent.
+11-01 21:55:42.603  1048  1048 I OverviewComponentObserver: updateOverviewTargets: mIsHomeDisabled=false, isDefaultHomeNull=true, mIsDefaultHome=false
+11-01 21:55:42.606  1691  1691 D nativeloader: Configuring clns-shared-6 for other apk /system/priv-app/ManagedProvisioning/ManagedProvisioning.apk. target_sdk_version=34, uses_libraries=, library_path=/system/priv-app/ManagedProvisioning/lib/x86_64:/system/lib64:/system_ext/lib64, permitted_path=/data:/mnt/expand:/data/user/0/com.android.managedprovisioning:/system/priv-app/ManagedProvisioning:/system/lib64:/system_ext/lib64
+11-01 21:55:42.607   326   368 I netd    : setProcSysNet(4, 2, wlan0, mcast_resolicit, 3) <0.08ms>
+11-01 21:55:42.608   326   368 I netd    : setProcSysNet(6, 2, wlan0, retrans_time_ms, 750) <0.06ms>
+11-01 21:55:42.609  1468  1707 I MediaProvider: Changed schema version on external from 0 to 1407, 0 items taking 286ms UUID e81e67de-f67c-40ea-9581-b6b3da3c284a
+11-01 21:55:42.609   326   368 I netd    : setProcSysNet(6, 2, wlan0, ucast_solicit, 5) <0.05ms>
+11-01 21:55:42.610   326   368 I netd    : setProcSysNet(6, 2, wlan0, mcast_resolicit, 3) <0.03ms>
+11-01 21:55:42.610   326   368 I netd    : setProcSysNet(4, 2, wlan0, retrans_time_ms, 750) <0.01ms>
+11-01 21:55:42.610   326   368 I netd    : setProcSysNet(4, 2, wlan0, ucast_solicit, 10) <0.01ms>
+11-01 21:55:42.610   326   368 I netd    : setProcSysNet(6, 2, wlan0, retrans_time_ms, 750) <0.02ms>
+11-01 21:55:42.610   326   368 I netd    : setProcSysNet(6, 2, wlan0, ucast_solicit, 10) <0.01ms>
+11-01 21:55:42.613  1758  1758 I ndroid.keychain: Using CollectorTypeCC GC.
+11-01 21:55:42.614  1758  1758 W ndroid.keychain: Unexpected CPU variant for x86: x86_64.
+11-01 21:55:42.614  1758  1758 W ndroid.keychain: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, tremont, kabylake, default
+11-01 21:55:42.615  1758  1758 E ndroid.keychain: Not starting debugger since process cannot load the jdwp agent.
+11-01 21:55:42.617  1468  1707 V MediaProvider: onOpen() for external.db
+11-01 21:55:42.618  1468  1707 W MediaProvider: Exception encountered while reading xattr:user.extdbsessionid0 from path:/data/user/0/com.android.providers.media.module/databases/external.db.
+11-01 21:55:42.618  1468  1707 W MediaProvider: Exception encountered while reading xattr:user.extdbsessionid0 from path:/data/media/0.
+11-01 21:55:42.618  1468  1707 E MediaProvider: Xattr:user.extdbnextrowid0 not found on external storage: android.system.ErrnoException: getxattr failed: ENODATA (No data available)
+11-01 21:55:42.618  1468  1707 W MediaProvider: external.db database inconsistent: isLastUsedDatabaseSession:false, nextRowIdOptionalPresent:false
+11-01 21:55:42.618  1468  1707 E MediaProvider: Xattr:user.extdbnextrowid0 not found on external storage: android.system.ErrnoException: getxattr failed: ENODATA (No data available)
+11-01 21:55:42.618   955  1136 D IpClient/wlan0: routeUpdated: fe80::/64 -> :: wlan0 mtu 0
+11-01 21:55:42.619   796  1234 W ndroid.systemui: Long monitor contention with owner LogBuffer-NotifLog (897) at boolean com.android.systemui.log.LogcatEchoTrackerDebug.isTagLoggable(java.lang.String, com.android.systemui.log.LogLevel)(go/retraceme bb0c85583bc8cef368173602f8ea06d241ec8a7fed6aca80388046fe2c5dd77a:20) waiters=1 in boolean com.android.systemui.log.LogcatEchoTrackerDebug.isBufferLoggable(java.lang.String, com.android.systemui.log.LogLevel) for 101ms
+11-01 21:55:42.820     0     0 I logd    : logdr: UID=2000 GID=2000 PID=1771 n tail=0 logMask=99 pid=0 start=0ns deadline=0ns
+11-01 21:55:42.623  1772  1772 I .quicksearchbox: Using CollectorTypeCC GC.
+11-01 21:55:42.624  1772  1772 W .quicksearchbox: Unexpected CPU variant for x86: x86_64.
+11-01 21:55:42.624  1772  1772 W .quicksearchbox: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, tremont, kabylake, default
+11-01 21:55:42.627  1468  1764 I FuseDaemonThread: Starting thread for emulated;0 ...
+11-01 21:55:42.628  1468  1764 I FuseDaemon: fuse-bpf is enabled because /sys/fs/fuse/features/fuse_bpf reads 'supported'
+11-01 21:55:42.628  1468  1764 I FuseDaemon: Using FUSE BPF, BPF prog fd fetched
+11-01 21:55:42.628  1468  1764 I FuseDaemon: Starting fuse...
+11-01 21:55:42.630   504  1692 D CompatibilityChangeReporter: Compat change id reported: 261072174; UID 10114; state: ENABLED

@@ -1,0 +1,16 @@
+{
+  "id": "ob2-diag",
+  "action": "shell",
+  "at": "2026-11-01T21:55:42Z",
+  "job": {
+    "id": "ob2-diag",
+    "action": "shell",
+    "command": "bash emu/runob.sh diag"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "=== diag phase 21:55:06Z\nAPK_SRC=share\nboot_completed=1 after ~20s\ninstall_exit=1\ninstall_output=Performing Streamed Install|adb: failed to install /tmp/ob.apk: Failure [INSTALL_FAILED_NO_MATCHING_ABIS: INSTALL_FAILED_NO_MATCHING_ABIS: Failed to extract native libraries, res=-113]||\npm_list_match=0\npm_path=NONE\nlogcat_bytes=111629\nOK: killing emulator, bye bye\nOK\nDIAG_DONE\n",
+    "stderr": "* daemon not running; starting now at tcp:5037\n* daemon started successfully\n"
+  }
+}

@@ -161,3 +161,49 @@ if [ "$mode" = shade ]; then
   adb emu kill 2>/dev/null
   say "SHADE_PHASE_DONE"
 fi
+
+if [ "$mode" = diag ]; then
+  V=emu/verdict-OB2.txt; : > $V
+  say "=== diag phase $(date -u +%H:%M:%S)Z"
+  if [ ! -x $SDK/emulator/emulator ]; then say "FATAL=no emulator"; exit 0; fi
+  pkill -f qemu-system 2>/dev/null; sleep 2; adb kill-server 2>/dev/null; sleep 1
+  src=""
+  curl -sL --retry 2 --max-time 120 -o /tmp/ob.apk "$APK_PRIMARY"
+  if [ "$(md5sum /tmp/ob.apk 2>/dev/null | cut -d' ' -f1)" = "$APK_MD5" ]; then src=share; fi
+  if [ -z "$src" ]; then
+    curl -sL --retry 2 --max-time 180 -o /tmp/ob.apk "$APK_FALLBACK"
+    if [ "$(md5sum /tmp/ob.apk 2>/dev/null | cut -d' ' -f1)" = "$APK_MD5" ]; then src=release; fi
+  fi
+  say "APK_SRC=$src"
+  [ -z "$src" ] && { say "VERDICT=APK_FETCH_FAIL"; exit 0; }
+  echo no | $SDK/cmdline-tools/latest/bin/avdmanager create avd -n obemu -k "system-images;android-34;default;x86_64" -d pixel_6 --force > emu/avd-OB2.log 2>&1
+  nohup $SDK/emulator/emulator -avd obemu -no-window -no-audio -no-boot-anim -gpu angle_indirect -feature -Vulkan -memory 2048 -accel on -no-snapshot > emu/boot-OB2.log 2>&1 &
+  timeout 150 adb wait-for-device
+  ok=0
+  for i in $(seq 1 30); do
+    b=$(adb shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')
+    if [ "$b" = "1" ]; then ok=1; say "boot_completed=1 after ~$((i*5))s"; break; fi
+    sleep 5
+  done
+  [ "$ok" != "1" ] && { say "VERDICT=BOOT_FAIL"; exit 0; }
+  adb logcat -c
+  adb install -r /tmp/ob.apk > emu/install-OB2.txt 2>&1
+  say "install_exit=$?"
+  say "install_output=$(tr '\n' '|' < emu/install-OB2.txt)"
+  pml=$(adb shell pm list packages 2>/dev/null | grep -c 'com.onion.browser'); say "pm_list_match=$pml"
+  pp=$(adb shell pm path com.onion.browser 2>/dev/null | tr -d '\r'); say "pm_path=${pp:-NONE}"
+  if [ "$pml" != "0" ]; then
+    comp=$(adb shell cmd package resolve-activity --brief -c android.intent.category.LAUNCHER $PKG 2>/dev/null | tail -1 | tr -d '\r')
+    say "launcher_component=$comp"
+    adb shell am start -W -n "$comp" > emu/amstart-OB2.txt 2>&1; say "am_start_exit=$?"
+    sleep 10
+    pid=$(adb shell pidof $PKG | tr -d '\r'); say "pid_after_amstart=${pid:-NONE}"
+    adb exec-out screencap -p > emu/shot-OB2-1.png; say "shot_bytes=$(stat -c%s emu/shot-OB2-1.png)"
+    uidump emu/ui-OB2.xml
+    if grep -q 'com.onion.browser' emu/ui-OB2.xml; then say "ui_package=APP_IN_FOREGROUND"; else say "ui_package=NOT_APP (see ui-OB2.xml)"; fi
+  fi
+  adb logcat -d > emu/logcat-OB2.txt 2>&1
+  say "logcat_bytes=$(stat -c%s emu/logcat-OB2.txt)"
+  adb emu kill 2>/dev/null
+  say "DIAG_DONE"
+fi

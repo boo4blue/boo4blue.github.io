@@ -1,0 +1,9 @@
+=== diag phase 21:55:06Z
+APK_SRC=share
+boot_completed=1 after ~20s
+install_exit=1
+install_output=Performing Streamed Install|adb: failed to install /tmp/ob.apk: Failure [INSTALL_FAILED_NO_MATCHING_ABIS: INSTALL_FAILED_NO_MATCHING_ABIS: Failed to extract native libraries, res=-113]||
+pm_list_match=0
+pm_path=NONE
+logcat_bytes=111629
+DIAG_DONE
