@@ -1,0 +1,1 @@
+{"id":"ob43-setup","action":"shell","command":"bash emu/run10.sh setup"}
