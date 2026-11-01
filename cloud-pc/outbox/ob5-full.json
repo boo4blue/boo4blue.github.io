@@ -1,0 +1,16 @@
+{
+  "id": "ob5-full",
+  "action": "shell",
+  "at": "2026-11-01T22:40:44Z",
+  "job": {
+    "id": "ob5-full",
+    "action": "shell",
+    "command": "OB_IMG=google_apis bash emu/runob.sh full"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "=== Onion Browser v0.40.0 emu test - full phase 22:36:59Z img=google_apis\nAPK_SRC=share md5_ok=1\nboot_completed=1 after ~20s\nscreen=1080x2400\ninstall_exit=0 install_last=Success\npm_list_match=1\npid_after_launch=2726\nshot1_bytes=157723\ndark_toggle_tapped=1\ndark_state=UNKNOWN\nshot2_bytes=170073\nNOTIF_PRESENT=0 after ~150s of polling\nnotif_before_count=0\nshot3_bytes=108696\npid_at_end=2726\nlogcat_bytes=6523615\nOK: killing emulator, bye bye\nOK\nFULL_PHASE_DONE\n",
+    "stderr": "* daemon not running; starting now at tcp:5037\n* daemon started successfully\n"
+  }
+}

@@ -1,15 +1,17 @@
-=== Onion Browser v0.40.0 emu test — boot phase 21:48:29Z
-APK_SRC=share md5_ok=1 size=15685226
+=== Onion Browser v0.40.0 emu test - full phase 22:36:59Z img=google_apis
+APK_SRC=share md5_ok=1
 boot_completed=1 after ~20s
 screen=1080x2400
-install=
-pid_after_launch=NONE
-shot1_bytes=1305190
-VERDICT=NAV_FAIL (menu button not in UI dump)
-=== shade phase 21:49:29Z
-pid_at_shade=NONE
+install_exit=0 install_last=Success
+pm_list_match=1
+pid_after_launch=2726
+shot1_bytes=157723
+dark_toggle_tapped=1
+dark_state=UNKNOWN
+shot2_bytes=170073
+NOTIF_PRESENT=0 after ~150s of polling
 notif_before_count=0
-shot3_bytes=111113
-SHADE_PHASE_SKIP (no notification to tap)
-logcat_bytes=439970
-SHADE_PHASE_DONE
+shot3_bytes=108696
+pid_at_end=2726
+logcat_bytes=6523615
+FULL_PHASE_DONE

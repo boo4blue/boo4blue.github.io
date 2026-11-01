@@ -1,0 +1,16 @@
+{
+  "id": "ob5-store",
+  "action": "store",
+  "at": "2026-11-01T22:35:44Z",
+  "job": {
+    "id": "ob5-store",
+    "action": "store",
+    "path": "emu/runob.sh",
+    "content_bytes": 13462
+  },
+  "result": {
+    "ok": true,
+    "path": "emu/runob.sh",
+    "bytes": 13462
+  }
+}
