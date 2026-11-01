@@ -1,0 +1,1 @@
+{"id": "ob3-boot", "action": "shell", "command": "OB_IMG=google_apis bash emu/runob.sh boot"}

@@ -1,0 +1,1 @@
+{"id": "ob3-shade", "action": "shell", "command": "bash emu/runob.sh shade"}
