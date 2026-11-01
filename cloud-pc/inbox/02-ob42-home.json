@@ -1,1 +1,0 @@
-{"id":"ob42-home","action":"shell","command":"OB_IMG=google_apis bash emu/runob42.sh home"}

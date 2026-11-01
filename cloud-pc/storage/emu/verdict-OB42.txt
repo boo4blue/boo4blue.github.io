@@ -1,0 +1,27 @@
+=== Onion Browser v0.42.0 emu screenshot run 23:23:49Z img=google_apis
+APK md5_ok=1 size=15694014
+boot_completed=1 after ~35s
+screen=1080x2400
+install_exit=0 install_last=Success
+pm_list_match=1
+pid_after_launch=2955
+shot1_bytes=163371
+ui_has=Dark Onion: Off
+ui_has=ONION CORE
+ui_has=Hub
+ui_has=Mail
+ui_has=Engine
+ui_has=Photos
+ui_missing=Drive
+ui_missing=Community
+ui_missing=Characters
+ui_missing=Map
+ui_missing=All sites
+ui_has=AI Mode
+ui_missing=SPEED DIAL
+ui_sparkles=absent
+shot2_bytes=127040
+shot3_bytes=83529
+pid_at_end=2955
+logcat_bytes=1462108
+HOME_PHASE_DONE

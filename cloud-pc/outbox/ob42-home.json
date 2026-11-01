@@ -1,0 +1,16 @@
+{
+  "id": "ob42-home",
+  "action": "shell",
+  "at": "2026-11-01T23:25:30Z",
+  "job": {
+    "id": "ob42-home",
+    "action": "shell",
+    "command": "OB_IMG=google_apis bash emu/runob42.sh home"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "=== Onion Browser v0.42.0 emu screenshot run 23:23:49Z img=google_apis\nAPK md5_ok=1 size=15694014\nboot_completed=1 after ~35s\nscreen=1080x2400\ninstall_exit=0 install_last=Success\npm_list_match=1\npid_after_launch=2955\nshot1_bytes=163371\nui_has=Dark Onion: Off\nui_has=ONION CORE\nui_has=Hub\nui_has=Mail\nui_has=Engine\nui_has=Photos\nui_missing=Drive\nui_missing=Community\nui_missing=Characters\nui_missing=Map\nui_missing=All sites\nui_has=AI Mode\nui_missing=SPEED DIAL\nui_sparkles=absent\nshot2_bytes=127040\nshot3_bytes=83529\npid_at_end=2955\nlogcat_bytes=1462108\nOK: killing emulator, bye bye\nOK\nHOME_PHASE_DONE\n",
+    "stderr": "* daemon not running; starting now at tcp:5037\n* daemon started successfully\n"
+  }
+}
