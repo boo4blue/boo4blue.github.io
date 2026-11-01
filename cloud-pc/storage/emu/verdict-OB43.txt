@@ -1,0 +1,2 @@
+=== Onion Browser v0.43.0 emu screenshot run 23:54:13Z img=google_apis
+FATAL=no emulator (setup missing)

@@ -1,0 +1,16 @@
+{
+  "id": "ob43-home",
+  "action": "shell",
+  "at": "2026-11-01T23:54:13Z",
+  "job": {
+    "id": "ob43-home",
+    "action": "shell",
+    "command": "OB_IMG=google_apis bash emu/runob43.sh home"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "=== Onion Browser v0.43.0 emu screenshot run 23:54:13Z img=google_apis\nFATAL=no emulator (setup missing)\n",
+    "stderr": ""
+  }
+}
