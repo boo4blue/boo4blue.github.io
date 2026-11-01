@@ -12,10 +12,10 @@
 <meta property="og:image" content="https://boo4blue.github.io/app/assets/og-image.png">
 <meta name="theme-color" content="#070714">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%23070714'/%3E%3Cpath%20d='M32%2054s-15-10.8-15-23.4a15%2015%200%200%201%2030%200C47%2043.2%2032%2054%2032%2054z'%20fill='none'%20stroke='%2300e5ff'%20stroke-width='4'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3Ccircle%20cx='32'%20cy='30'%20r='5.5'%20fill='%2300e5ff'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="vendor/leaflet.css?v=1793551576">
-<link rel="stylesheet" href="vendor/MarkerCluster.css?v=1793551576">
-<link rel="stylesheet" href="vendor/MarkerCluster.Default.css?v=1793551576">
-<link rel="stylesheet" href="styles.css?v=1793551576">
+<link rel="stylesheet" href="vendor/leaflet.css?v=1793553507">
+<link rel="stylesheet" href="vendor/MarkerCluster.css?v=1793553507">
+<link rel="stylesheet" href="vendor/MarkerCluster.Default.css?v=1793553507">
+<link rel="stylesheet" href="styles.css?v=1793553507">
 </head>
 <body>
 <svg class="svg-sprite" aria-hidden="true">
@@ -146,6 +146,7 @@
 </div>
 
 <div id="tab-map" class="tab active">
+<div id="dmp-nav-scrim" class="dmp-nav-scrim" onclick="closeDmpNav()"></div>
 <div id="wx-banner"></div>
 <div id="rain-banner"></div>
 <section class="crisis-strip" aria-label="Need help now">
@@ -179,6 +180,7 @@
 </div>
 <button id="map-filter-btn" class="map-icon-btn map-filter-btn" onclick="toggleFilterPanel()" aria-label="Filters"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M7 12h10M10 18h4"/></svg></button>
 <button id="map-open-toggle" class="map-icon-btn map-open-btn" onclick="toggleMapOpenNow(this)" aria-label="Toggle open now"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></button>
+<button id="dmp-menu-btn" class="dmp-menu-btn" onclick="toggleDmpNav()" aria-label="Open menu"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
 </div>
 <div id="tonight-strip"></div>
 <div id="filters" class="chip-row"></div>
@@ -389,15 +391,68 @@
 <div id="sheet-overlay" onclick="if(event.target===this)closeSheet()"><div id="sheet"><button id="sheet-close" onclick="closeSheet()" aria-label="Close">✕</button><div id="sheet-body"></div></div></div>
 <div id="peek"><div id="peek-content"></div></div>
 
-<script src="vendor/vendor.js?v=1793551576"></script>
-<script src="data.js?v=1793551576"></script>
-<script src="data-p2.js?v=1793551576"></script>
-<script src="data-p3.js?v=1793551576"></script>
-<script src="data-p4.js?v=1793551576"></script>
-<script src="data-p5.js?v=1793551576"></script>
-<script src="data-p6.js?v=1793551576"></script>
-<script src="data-p7.js?v=1793551576"></script>
-<script src="bundle-core.js?v=1793551576"></script>
+<script src="vendor/vendor.js?v=1793553507"></script>
+<script src="data.js?v=1793553507"></script>
+<script src="data-p2.js?v=1793553507"></script>
+<script src="data-p3.js?v=1793553507"></script>
+<script src="data-p4.js?v=1793553507"></script>
+<script src="data-p5.js?v=1793553507"></script>
+<script src="data-p6.js?v=1793553507"></script>
+<script src="data-p7.js?v=1793553507"></script>
+<script src="bundle-core.js?v=1793553507"></script>
 <script>try{document.getElementById("about-ver").textContent="v"+(typeof HAVEN_BUILD!=="undefined"?HAVEN_BUILD:"?");}catch(e){}</script>
+<script>
+/* Desktop-mode-on-mobile tier support (2026-11-01). Active ONLY
+   when the tier media query matches (wide layout viewport, coarse
+   pointer, no hover); completely inert in the phone and desktop
+   layouts.
+   1) The desktop stylesheet pins the Nearby places sheet open as
+      a side pane (bottom:0 !important) and the filter/place
+      panels are narrower than the closed offsets the app code
+      writes inline — both would defeat the toggles at this
+      tier's sizes. A MutationObserver re-drives those three
+      inline offsets as inline !important values (open value
+      passes through, anything else maps to the tier's closed
+      offset), so every existing toggle path keeps working.
+      Closed offsets must match styles.css: sheet -78dvh (the
+      --dmp-sheet-h token), filter panel -640px, place panel
+      -720px.
+   2) The map page's nav drawer: toggleDmpNav/closeDmpNav flip a
+      body class the tier CSS uses to slide the tab bar in from
+      the left; tapping any tab-bar button closes it again. */
+(function(){
+  var mq = window.matchMedia("(min-width:900px) and (pointer:coarse) and (hover:none)");
+  var WATCH = [
+    {id:"places-sheet", prop:"bottom", open:"0px", closed:"-78dvh"},
+    {id:"filter-panel", prop:"right",  open:"0px", closed:"-640px"},
+    {id:"place-panel",  prop:"right",  open:"0px", closed:"-720px"}
+  ];
+  function spec(id){ for(var i=0;i<WATCH.length;i++) if(WATCH[i].id===id) return WATCH[i]; return null; }
+  function fixEl(el){
+    var s = spec(el.id); if(!s) return;
+    if(mq.matches){
+      if(el.style.getPropertyPriority(s.prop) === "important") return;
+      var v = el.style.getPropertyValue(s.prop);
+      el.style.setProperty(s.prop, v === s.open ? s.open : s.closed, "important");
+    } else if(el.style.getPropertyPriority(s.prop) === "important"){
+      el.style.removeProperty(s.prop);
+    }
+  }
+  function fixAll(){ WATCH.forEach(function(s){ var el=document.getElementById(s.id); if(el) fixEl(el); }); }
+  var mo = new MutationObserver(function(muts){
+    muts.forEach(function(m){ fixEl(m.target); });
+  });
+  WATCH.forEach(function(s){
+    var el = document.getElementById(s.id);
+    if(el) mo.observe(el, {attributes:true, attributeFilter:["style"]});
+  });
+  fixAll();
+  if(mq.addEventListener) mq.addEventListener("change", fixAll);
+  window.toggleDmpNav = function(){ document.body.classList.toggle("dmp-nav-open"); };
+  window.closeDmpNav = function(){ document.body.classList.remove("dmp-nav-open"); };
+  var tb = document.querySelector(".tabbar");
+  if(tb) tb.addEventListener("click", function(){ document.body.classList.remove("dmp-nav-open"); });
+})();
+</script>
 </body>
 </html>

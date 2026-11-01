@@ -402,6 +402,18 @@ body.pnames .emoji-pin .pname{display:block;}
      query at the end of this file re-scales these tokens). */
   --tab-h:72px; --rail-w:216px; --sheet-w:420px;
   --content-max:1120px; --header-h:71px;
+  /* Desktop-mode-on-mobile tier (2026-11-01): a phone in "Desktop
+     site" mode gets a ~980px layout viewport that the browser
+     scales down to a ~412px physical screen (factor ~0.42), so
+     this tier's scale is the phone scale divided by that factor —
+     34px here reads like ~14px in the hand. Activated only by
+     the media query at the end of this file:
+     (min-width:900px) and (pointer:coarse) and (hover:none). */
+  --dmp-fs-base:34px; --dmp-fs-small:29px; --dmp-fs-chip:31px;
+  --dmp-fs-title:42px; --dmp-fs-view:62px; --dmp-fs-sec:48px;
+  --dmp-header-h:136px; --dmp-tab-h:150px;
+  --dmp-tap:104px; --dmp-tap-sm:88px; --dmp-pad:28px;
+  --dmp-search-h:96px; --dmp-sheet-h:78dvh;
   /* legacy aliases */
   --accent:var(--neon-cyan); --ok:var(--open); --warn:var(--neon-violet-soft); --danger:var(--crisis);
   --line:var(--border); --line2:#34345e;
@@ -976,4 +988,325 @@ h1,h2,h3,.sec-title,.places-title{font-family:var(--font-head);letter-spacing:.0
     max-height:54vh;}
   #peek.show{left:calc(var(--rail-w) + 20px);right:20px;bottom:20px !important;}
   body:has(#tab-map.active) #peek.show{right:calc(var(--sheet-w) + 36px);}
+}
+
+/* Desktop-mode-on-mobile helpers: hidden in every other layout.
+   The tier media query below switches them on for the map page. */
+.dmp-menu-btn,.dmp-nav-scrim{display:none;}
+
+/* ============================================================
+   DESKTOP-MODE-ON-MOBILE TIER (2026-11-01)
+   Blaze, on his phone with Chrome "Desktop site" on: "make a
+   different layout and stuff for desktop mode on mobile."
+   Detection: the layout viewport is desktop-wide (min-width:
+   900px, so this tier layers over the desktop layout above)
+   but the primary pointer is a finger — (pointer:coarse) that
+   cannot hover (hover:none). Chrome's desktop mode falsifies
+   the width signals to look like a desktop, but it does not
+   falsify the pointer type, so a real desktop (fine pointer +
+   hover) never matches, and the plain phone layout (<900px)
+   never reaches the min-width gate. Both stay untouched.
+   Shape: NO left rail, NO three-column squeeze. Bottom tab
+   bar with big type and targets on the list tabs; on the Map
+   page the tab bar becomes a slide-in LEFT drawer behind a
+   menu button, Places is a full-width bottom button opening
+   the slide-up places sheet, and the map itself is a fixed
+   full-page app shell (see the map section below).
+   All sizes come from the --dmp-* tokens in :root.
+   ============================================================ */
+@media (min-width:900px) and (pointer:coarse) and (hover:none){
+
+  html{overscroll-behavior:none;}
+  body{padding-bottom:0;font-size:var(--dmp-fs-base);overscroll-behavior:none;}
+  button{min-height:var(--dmp-tap-sm);}
+
+  /* --- bottom tab bar (list tabs): the desktop rail is gone --- */
+  .tabbar{top:auto;bottom:0;left:0;right:0;width:auto;min-height:var(--dmp-tab-h);
+    flex-direction:row;justify-content:stretch;gap:0;
+    padding:10px 8px calc(10px + env(safe-area-inset-bottom));
+    border-top:1px solid var(--border);border-right:none;z-index:900;}
+  .tabbar-btn{flex:1 1 0;width:auto;flex-direction:column;justify-content:center;
+    gap:6px;padding:10px 2px;min-height:calc(var(--dmp-tab-h) - 20px);margin:0;
+    font-size:26px;border-radius:var(--r-md);}
+  .tabbar-btn .ic{width:42px;height:42px;}
+  .tabbar-btn .tb-ico{font-size:40px;}
+
+  /* --- header: rail offset gone, back in flow, big type --- */
+  .app-header,.slim-crisis,.tab{margin-left:0;}
+  .app-header{position:static;padding:22px var(--dmp-pad);min-height:var(--dmp-header-h);}
+  .logomark{width:92px;height:92px;min-width:92px;min-height:92px;}
+  .logomark .ic{width:52px;height:52px;}
+  .wordmark{font-size:58px;}
+  .header-sub{font-size:var(--dmp-fs-small);}
+  .area-chip{font-size:28px;padding:14px 22px;min-height:var(--dmp-tap-sm);}
+  .area-chip .ic{width:30px;height:30px;}
+  .gear-btn{min-width:var(--dmp-tap-sm);min-height:var(--dmp-tap-sm);}
+  .gear-btn .ic{width:44px;height:44px;}
+  .slim-crisis{top:0;font-size:30px;padding:18px var(--dmp-pad);gap:14px;z-index:950;}
+  .slim-b{padding:14px 26px;font-size:30px;}
+
+  /* --- content: one wide reading column, two-column card grids --- */
+  .content{max-width:none;margin-left:0;margin-right:0;
+    padding:36px var(--dmp-pad) 48px;}
+  .tab .content{padding-bottom:calc(var(--dmp-tab-h) + 48px);}
+  #saved-list{grid-template-columns:repeat(auto-fill,minmax(430px,1fr));gap:20px;}
+  #jobs-list,#events-list,#gig-list,#learn-list,#program-list,#volunteer-list{
+    grid-template-columns:repeat(auto-fill,minmax(430px,1fr));gap:20px;}
+  #tab-settings .content{grid-template-columns:repeat(auto-fill,minmax(430px,1fr));gap:20px;}
+
+  /* --- type scale (token-driven) --- */
+  .view-head h2{font-size:var(--dmp-fs-view);}
+  .view-head p{font-size:var(--dmp-fs-base);}
+  .sec-h2{font-size:var(--dmp-fs-sec);}
+  .sec-title{font-size:var(--dmp-fs-title);}
+  .card{padding:30px;}
+  .card h3{font-size:var(--dmp-fs-title);padding-right:110px;}
+  .card p{font-size:var(--dmp-fs-base);line-height:1.45;}
+  .card .meta{font-size:var(--dmp-fs-small);gap:18px;}
+  .badge,.open-badge,.paypill,.newpill,.badge-unconfirmed{
+    font-size:var(--dmp-fs-small);padding:6px 16px;}
+  .fav-btn{width:var(--dmp-tap-sm);height:var(--dmp-tap-sm);font-size:38px;top:14px;right:14px;}
+  .chip{font-size:var(--dmp-fs-chip);padding:16px 24px;min-height:var(--dmp-tap-sm);}
+  .filter-btn{font-size:var(--dmp-fs-chip);padding:16px 26px;min-height:var(--dmp-tap-sm);}
+  .need-chip,.hsub-chip{font-size:var(--dmp-fs-chip);padding:16px 24px;min-height:var(--dmp-tap-sm);}
+  .field{font-size:var(--dmp-fs-base);padding:20px 22px;}
+  select.field{font-size:var(--dmp-fs-base);}
+  .btn-primary{font-size:var(--dmp-fs-base);padding:22px;min-height:var(--dmp-tap);}
+  .sheet-btn{font-size:var(--dmp-fs-base);padding:20px 30px;min-height:var(--dmp-tap-sm);}
+  .btn-card,.btn-sos{font-size:var(--dmp-fs-base);min-height:var(--dmp-tap);}
+  .hero-title{font-size:44px;}
+  .hero-sub{font-size:var(--dmp-fs-small);}
+  .tip-box,.nh-p,.nh-intro{font-size:var(--dmp-fs-base);}
+  .view-sub,.tip-sub,.card-sub{font-size:var(--dmp-fs-small);}
+  .crisis-title{font-size:38px;}
+  .crisis-tel{font-size:38px;padding:20px 30px;min-height:var(--dmp-tap-sm);}
+  .crisis-hint{font-size:26px;padding:14px;}
+  .need-label{font-size:var(--dmp-fs-small);}
+  .tonight-btn{font-size:33px;min-height:110px;padding:20px 22px;}
+  .tonight-sub{font-size:var(--dmp-fs-small);}
+  .charge-btn,.bus-btn{font-size:31px;min-height:110px;padding:20px 16px;}
+
+  /* --- sheets & panels: full-width bottom sheets, wide panels --- */
+  .more-sheet{left:0;right:0;width:auto;max-width:none;max-height:82dvh;}
+  .more-list{gap:16px;padding:10px var(--dmp-pad) 30px;}
+  .more-row{min-height:180px;padding:24px;}
+  .more-row .ml{font-size:33px;}
+  .more-row .mi{width:76px;height:76px;padding:14px;}
+  .more-crisis a{min-height:120px;padding:22px 26px;}
+  .more-crisis .mc-num{font-size:46px;}
+  .more-crisis .mc-lbl{font-size:26px;}
+  .more-sec{font-size:var(--dmp-fs-small);}
+  #sheet{left:0;right:0;transform:none;width:auto;max-height:86dvh;
+    padding:30px var(--dmp-pad) 44px;}
+  #sheet h2{font-size:46px;}
+  #sheet .row{font-size:var(--dmp-fs-base);}
+  #sheet-close{width:var(--dmp-tap-sm);height:var(--dmp-tap-sm);font-size:36px;}
+  .side-panel{width:min(620px,92vw);}
+  .side-panel.right{width:min(700px,94vw);right:-720px;}
+  #filter-panel{right:-640px;}
+  .side-panel-head h2{font-size:44px;}
+  .side-panel-head button{font-size:44px;min-width:var(--dmp-tap-sm);min-height:var(--dmp-tap-sm);}
+  .side-panel-h3{font-size:26px;}
+  #peek{left:var(--dmp-pad);right:var(--dmp-pad);bottom:-56dvh;
+    border-radius:var(--r-lg);max-height:52dvh;padding:18px 26px 26px;}
+  #peek.show{left:var(--dmp-pad);right:var(--dmp-pad);
+    bottom:calc(var(--dmp-tab-h) + 16px) !important;}
+  body:has(#tab-map.active) #peek.show{right:var(--dmp-pad);}
+  #peek .gm-t{font-size:40px;}
+  #peek .gm-s{font-size:var(--dmp-fs-small);}
+  #peek .gm-row{font-size:var(--dmp-fs-base);}
+  #peek .gm-desc{font-size:var(--dmp-fs-base);}
+  #peek .gm-a a,#peek .gm-a button{font-size:var(--dmp-fs-small);
+    padding:16px 26px;min-height:var(--dmp-tap-sm);}
+  #peek #gmClose{width:var(--dmp-tap-sm);height:var(--dmp-tap-sm);font-size:34px;}
+  #mini-toast{font-size:30px;bottom:calc(var(--dmp-tab-h) + 24px);padding:18px 30px;}
+
+  /* --- places sheet: a bottom sheet again (the desktop pane is
+     overridden in the map section below); its bottom offset is
+     driven by the tier script in index.html, because the desktop
+     pane rule pins it with !important, which would otherwise
+     defeat the sheet toggle's inline style. --- */
+  .places-title{font-size:38px;}
+  .sheet-grab{padding:20px;}
+  .sheet-grab .grab{width:88px;height:9px;}
+  .places-tools{padding:20px var(--dmp-pad);}
+  .places-list{padding:0 var(--dmp-pad) 30px;}
+  .btn-danger,.toggle-btn{font-size:var(--dmp-fs-small);
+    min-height:var(--dmp-tap-sm);padding:14px 24px;}
+
+  /* ==========================================================
+     MAP PAGE = FIXED APP SHELL (Blaze: "the map should be
+     taking up the whole page with buttons over the sides top
+     and bottom" + "You shouldnt be able to scroll and crap" +
+     "put the menu on the left in a side bar button and put
+     the places tab in a button at the bottom a slide up one").
+     The page never scrolls on the Map tab: body is locked and
+     the tab is a fixed full-viewport layer. Only the map pans
+     and zooms. Every control floats over the map — header bar
+     and search/filters across the top, a control stack down
+     the right edge, the menu button on the left edge, the
+     crisis/Tonight card and action dock along the bottom, and
+     the Places button as a full-width bottom bar opening the
+     slide-up places sheet. The navigation lives in a slide-in
+     LEFT drawer (the tab bar, restyled) behind the menu
+     button — no rail, no right places pane, no permanent
+     tab bar on this page.
+     ========================================================== */
+  body:has(#tab-map.active){overflow:hidden;height:100dvh;
+    position:fixed;inset:0;width:100%;}
+  body:has(#tab-map.active) .app-header{position:fixed;top:0;left:0;right:0;
+    z-index:965;background:rgba(7,7,20,.94);}
+  #tab-map.active{position:fixed;inset:0;z-index:840;display:flex;
+    flex-direction:column;
+    padding:calc(var(--dmp-header-h) + var(--dmp-search-h) + 44px) 0 0;
+    pointer-events:none;}
+  #tab-map.active>*{pointer-events:auto;flex:none;}
+  #map-wrap{position:absolute;inset:0;margin:0;z-index:0;}
+  #map-wrap #map{height:100%;min-height:0;width:100%;}
+  /* The in-flow overlays are static by default, so the
+     absolutely-positioned map layer would paint (and hit-test)
+     over them. Lift them above it. */
+  #wx-banner,#rain-banner,#recent-searches,#tonight-strip,
+  #tab-map #filters,#tab-map .crisis-strip,#tab-map .btn-row,#sortrow{
+    position:relative;z-index:10;}
+
+  /* top overlay: search floats over the map, under the header */
+  .map-search{top:calc(var(--dmp-header-h) + 18px);left:var(--dmp-pad);
+    right:var(--dmp-pad);max-width:none;gap:14px;}
+  .map-search-input{height:var(--dmp-search-h);
+    font-size:var(--dmp-fs-base);padding:0 30px;}
+  .map-icon-btn{width:var(--dmp-tap);height:var(--dmp-tap);font-size:40px;}
+  .map-icon-btn .ic{width:44px;height:44px;}
+
+  /* left edge: the menu button (opens the nav drawer) */
+  .dmp-menu-btn{display:flex;position:absolute;left:var(--dmp-pad);
+    top:calc(var(--dmp-header-h) + var(--dmp-search-h) + 44px);
+    width:var(--dmp-tap);height:var(--dmp-tap);align-items:center;
+    justify-content:center;background:rgba(12,12,33,.94);
+    border:1px solid var(--border-neon);border-radius:var(--r-md);
+    color:var(--neon-cyan);box-shadow:var(--shadow-card);
+    cursor:pointer;z-index:560;}
+  .dmp-nav-scrim{display:block;position:fixed;inset:0;
+    background:rgba(2,2,10,.6);opacity:0;visibility:hidden;
+    transition:opacity .3s,visibility .3s;z-index:1100;}
+  body.dmp-nav-open .dmp-nav-scrim{opacity:1;visibility:visible;}
+
+  /* the tab bar becomes the slide-in LEFT drawer on this page */
+  body:has(#tab-map.active) .tabbar{top:0;bottom:0;left:0;right:auto;
+    width:400px;min-height:0;flex-direction:column;
+    justify-content:flex-start;align-items:stretch;gap:10px;
+    padding:44px 22px;border-top:none;
+    border-right:1px solid var(--border-neon);
+    transform:translateX(-110%);transition:transform .3s ease;
+    z-index:1200;box-shadow:var(--shadow-pop);}
+  body.dmp-nav-open:has(#tab-map.active) .tabbar{transform:translateX(0);}
+  body:has(#tab-map.active) .tabbar-btn{flex:none;width:100%;
+    flex-direction:row;justify-content:flex-start;gap:20px;
+    padding:0 26px;min-height:118px;margin:0;font-size:34px;}
+  body:has(#tab-map.active) .tabbar-btn .ic{width:48px;height:48px;}
+
+  /* right-edge control stack: filters and open-now float at
+     the top; zoom + attribution sit in their own clear column
+     beside the bottom stack (see the leaflet rule below) */
+  .map-filter-btn{top:calc(var(--dmp-header-h) + var(--dmp-search-h) + 40px);
+    right:var(--dmp-pad);}
+  .map-open-btn{top:calc(var(--dmp-header-h) + var(--dmp-search-h) + 156px);
+    right:var(--dmp-pad);}
+  #map .leaflet-control-zoom{margin:0;}
+  #map .leaflet-bar a{width:84px;height:84px;line-height:84px;font-size:42px;}
+  /* This app parks zoom + attribution together in Leaflet's
+     bottom-right container. Anchor it in the clear control
+     column the bottom stack leaves on the right (below),
+     floating above the Places bottom bar — clear of the
+     stack at any viewport height. */
+  #map .leaflet-bottom.leaflet-right{top:auto;
+    bottom:calc(var(--dmp-tap) + 54px);right:var(--dmp-pad);}
+  .leaflet-control-attribution{font-size:20px;padding:6px 12px;}
+  .leaflet-popup-content{font-size:var(--dmp-fs-small);line-height:1.4;}
+  /* The tag-filter button is injected by tagfilter.js with
+     inline styles sized for the phone stack (top:172px, 44px).
+     Place + size it in this tier's right stack instead. */
+  #tagBtnMap{top:calc(var(--dmp-header-h) + var(--dmp-search-h) + 272px) !important;
+    right:var(--dmp-pad) !important;width:var(--dmp-tap) !important;
+    height:var(--dmp-tap) !important;font-size:40px !important;
+    border-radius:var(--r-md) !important;}
+  /* The map's pop-out action menu (bottom-right of the map in
+     the other layouts) would land on the Places bottom bar
+     here. Move it up the clear right column, above the
+     zoom/attribution cluster, and scale it to the tier. */
+  #hvFab{right:var(--dmp-pad);bottom:calc(var(--dmp-tap) + 286px);
+    width:96px;height:96px;}
+  #hvFabMain{width:96px;height:96px;font-size:46px;}
+  #hvFab>.hvf-it{width:84px !important;height:84px !important;
+    right:6px !important;bottom:6px !important;}
+  #hvFab.open>.hvf-it{transform:translateY(calc(var(--i)*-98px - 104px)) scale(1);}
+  #hvFab>.hvf-it::before{right:100px;font-size:24px;padding:10px 18px;}
+
+  /* in-flow overlays sit in the center column, clear of the
+     left menu button and the right control stack */
+  #wx-banner{order:1;margin:0 calc(var(--dmp-pad) + var(--dmp-tap) + 16px) 0 calc(var(--dmp-pad) + var(--dmp-tap) + 16px);}
+  #rain-banner{order:2;margin:8px calc(var(--dmp-pad) + var(--dmp-tap) + 16px) 0 calc(var(--dmp-pad) + var(--dmp-tap) + 16px);}
+  .wx-bar,.wx-cold,.wx-rain{font-size:var(--dmp-fs-small);padding:16px 20px;}
+  #tab-map #filters{order:3;margin:16px calc(var(--dmp-pad) + var(--dmp-tap) + 16px) 0 calc(var(--dmp-pad) + var(--dmp-tap) + 16px);padding:6px 4px;}
+  #recent-searches{order:4;margin:10px calc(var(--dmp-pad) + var(--dmp-tap) + 16px) 0 calc(var(--dmp-pad) + var(--dmp-tap) + 16px);}
+
+  /* bottom overlays: crisis + Tonight card, action dock, sort —
+     stacked above the Places bottom bar, never under it */
+  #tab-map .crisis-strip{order:5;flex:none;
+    margin:auto calc(var(--dmp-pad) + 240px) 0 var(--dmp-pad);
+    max-height:30dvh;overflow-y:auto;
+    border:1px solid var(--border-violet);border-radius:var(--r-lg);
+    padding:26px 28px;
+    background:linear-gradient(135deg,var(--crisis-deep),rgba(18,18,44,.97));}
+  #tonight-strip{order:6;flex:none;
+    margin:14px calc(var(--dmp-pad) + 240px) 0 var(--dmp-pad);padding:0;
+    max-height:24dvh;overflow-y:auto;}
+  #tab-map .btn-row{order:7;flex:none;
+    margin:14px calc(var(--dmp-pad) + 240px) 0 var(--dmp-pad);
+    padding:0;gap:14px;}
+  #sortrow{order:8;flex:none;
+    margin:14px calc(var(--dmp-pad) + 240px) calc(var(--dmp-tap) + 46px) var(--dmp-pad);
+    background:rgba(9,9,22,.94);border:1px solid var(--border);
+    border-radius:var(--r-md);padding:16px 22px;
+    font-size:var(--dmp-fs-small);}
+  #sortrow .field{padding:12px 18px;}
+
+  /* Places = full-width bottom bar button -> slide-up sheet.
+     (The desktop block hides this button with !important; the
+     :has selector outranks it on the map page only. On other
+     tabs the button stays hidden, as everywhere else.) */
+  body:has(#tab-map.active) .places-fab{top:auto;
+    left:var(--dmp-pad);right:var(--dmp-pad);bottom:22px;
+    height:var(--dmp-tap);display:inline-flex !important;
+    align-items:center;justify-content:center;font-size:36px;
+    border-radius:var(--r-lg);z-index:1001;}
+  body:has(#tab-map.active) .places-sheet{top:auto;left:0;right:0;
+    width:auto;height:var(--dmp-sheet-h);max-height:none;
+    border-radius:var(--r-lg) var(--r-lg) 0 0;border-left:none;
+    border-top:1px solid var(--border-neon);z-index:1002;}
+
+  /* --- type-scale stragglers: elements whose sizes are set by
+     higher-specificity rules earlier in this file (id selectors
+     and two-class compounds) get matching-specificity bumps --- */
+  #tab-map #search{font-size:var(--dmp-fs-base);}
+  #sortrow #sort{font-size:var(--dmp-fs-base);}
+  .crisis-chips .chip{font-size:var(--dmp-fs-chip);min-height:var(--dmp-tap-sm);}
+  .sheet-btn.small{font-size:var(--dmp-fs-small);min-height:76px;
+    padding:14px 22px;}
+  .tonight-head b{font-size:40px;}
+  #tonight-strip .tonight-head span{font-size:var(--dmp-fs-small);}
+  .tstep-icon{font-size:44px;}
+  .tstep-label{font-size:var(--dmp-fs-small);}
+  .tstep-name{font-size:33px;}
+  .tstep-sub,.ow-open,.ow-closed{font-size:var(--dmp-fs-small);}
+  /* The Places tab's chips and rows are rendered by webtabs.js
+     with inline styles sized for the phone layout; override
+     them at this tier's scale. */
+  #pt-filters .filter-btn{font-size:var(--dmp-fs-chip) !important;
+    min-height:var(--dmp-tap-sm) !important;padding:16px 26px !important;}
+  #pt-list>div{padding:22px 0 !important;gap:20px !important;}
+  #pt-list>div>div:first-child{width:84px !important;height:84px !important;
+    font-size:40px !important;}
+  #pt-list>div>div:nth-child(2)>div:nth-child(2){
+    font-size:var(--dmp-fs-small) !important;}
 }
