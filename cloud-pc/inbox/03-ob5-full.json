@@ -1,0 +1,1 @@
+{"id": "ob5-full", "action": "shell", "command": "OB_IMG=google_apis bash emu/runob.sh full"}
