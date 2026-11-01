@@ -2,7 +2,7 @@
   "gateway": "https://boo4blue.github.io/oc/",
   "names": {
     "agent.oc": {
-      "notes": "Onion AI Agent Console \u2014 brain-proposed tasks via the Bridge agent layer; web_search runs server-side, machine actions (bash/file) park at awaiting_approval for human approval, then dispatch to the Cloud PC agentrun service. Self-tune rules are proposals until approved.",
+      "notes": "ALIAS of onionai.oc \u2014 the Agent Console became the flagship Onion AI 2026-11-01 (Blaze's order); target stays live, onionai.oc is the canonical name.",
       "owner": "Blaze",
       "target": "https://onioncore-agent.blueblazer82.workers.dev/"
     },
@@ -12,17 +12,17 @@
       "target": "https://onioncore-background.pages.dev/"
     },
     "blaze.oc": {
-      "notes": "Blaze's poster page \u2014 the live gateway demo",
+      "notes": "ALIAS of os.oc (Demos) \u2014 Blaze's poster page became an Onion OS demo in the 2026-11-01 merge; standalone target stays live.",
       "owner": "Blaze",
       "target": "https://boo4blue.github.io/oc/demo/blaze.html"
     },
     "bots.oc": {
-      "notes": "Bot Forge \u2014 admin-only bot-making workshop (website + engine)",
+      "notes": "ALIAS of onionai.oc (Bot Forge workshop section) \u2014 folded into Onion AI 2026-11-01; standalone target stays live until the merged product ships.",
       "owner": "Blaze",
       "target": "https://onioncore-botforge.pages.dev/"
     },
     "breach.oc": {
-      "notes": "Onion Core Breach Check \u2014 password (HIBP k-anonymity) + email (XposedOrNot) lookup against known breaches; watchlist on-device only",
+      "notes": "ALIAS of privacy.oc (Breach Check section) \u2014 merged into Onion Privacy Tools 2026-11-01; standalone target stays live until the merged product ships, then resolves to privacy.oc's breach section.",
       "owner": "Blaze",
       "target": "https://onioncore-breach.pages.dev/"
     },
@@ -30,6 +30,11 @@
       "notes": "Onion Core Website Builder \u2014 the front door for getting a site built",
       "owner": "Blaze",
       "target": "https://onioncore-builder.pages.dev/"
+    },
+    "character.oc": {
+      "notes": "Character by Onion Core \u2014 characters with cloned voices (own voice / own original characters only), card V3 superset import/export, Bridge chat brain. Worker: onioncore-character; D1 tenant in onioncore-gamedata-index (account at 10-DB limit). Renamed from voice.oc 2026-11-01 before launch; voice.oc was never registered.",
+      "owner": "Blaze",
+      "target": "https://onioncore-character.blueblazer82.workers.dev/"
     },
     "chat.oc": {
       "notes": "Onion Core Room Chat \u2014 code-word rooms, MQTT/WSS relay, client-side encrypted, no history",
@@ -42,12 +47,12 @@
       "target": "https://onioncore-community.pages.dev/"
     },
     "covered.oc": {
-      "notes": "Am I Covered? \u2014 shows what a website can see about your connection and browser (your own facts only, via Bridge /api/echo)",
+      "notes": "ALIAS of privacy.oc (Covered section) \u2014 merged into Onion Privacy Tools 2026-11-01; standalone target stays live until the merged product ships.",
       "owner": "Blaze",
       "target": "https://onioncore-covered.pages.dev/"
     },
     "crypt.oc": {
-      "notes": "Onion Core Cipher \u2014 on-device message encryption (WebCrypto, client-side only)",
+      "notes": "ALIAS of privacy.oc (Cipher section) \u2014 merged into Onion Privacy Tools 2026-11-01; standalone target stays live until the merged product ships.",
       "owner": "Blaze",
       "target": "https://onioncore-crypt.pages.dev/"
     },
@@ -62,19 +67,29 @@
       "target": "https://onioncore-db.blueblazer82.workers.dev"
     },
     "door.oc": {
-      "notes": "The Vault Door \u2014 stash rooms behind an optional code word; wrong code or unknown room answers only 'no such room'. Bridge /api/door/*, 30-day rooms.",
+      "notes": "ALIAS of drop.oc (Vault Door section) \u2014 merged into Dead Drop 2026-11-01; standalone target stays live until the merged product ships.",
       "owner": "Blaze",
       "target": "https://onioncore-door.pages.dev/"
+    },
+    "drive.oc": {
+      "notes": "Onion Drive \u2014 your files in the Onion Core cloud (storage aggregator), sign in with Onion ID. Worker: onion-drive. Building 2026-11-01; hub lists as coming-soon until live.",
+      "owner": "Blaze",
+      "target": "https://onion-drive.blueblazer82.workers.dev/"
     },
     "drop.oc": {
       "notes": "Dead Drop + Secret Links \u2014 one-time drops that burn on first open",
       "owner": "Blaze",
       "target": "https://onioncore-drop.pages.dev/"
     },
-    "files.oc": {
-      "notes": "Onion Core Files \u2014 app written, not live yet (Cloudflare token wall); name held, target activates on deploy",
+    "engine.oc": {
+      "notes": "Onion Engine \u2014 Onion Core's own search engine (v1, 2026-11-01). Tor door: pecr7nfgrtm2grlawvzh4mkevehgbtsrsesjdiqouaac2chamc6tkuyd.onion",
       "owner": "Blaze",
-      "target": "https://onioncore-files.pages.dev/"
+      "target": "https://onion-engine.blueblazer82.workers.dev/"
+    },
+    "files.oc": {
+      "notes": "Onion Core Files \u2014 your own cloud: file shares and downloads for the whole platform, passcode-gated. Worker: onioncore-files. LIVE (repointed from the never-deployed pages.dev placeholder 2026-11-01).",
+      "owner": "Blaze",
+      "target": "https://onioncore-files.blueblazer82.workers.dev/"
     },
     "haven.oc": {
       "notes": "Haven FW site",
@@ -82,14 +97,24 @@
       "target": "https://boo4blue.github.io/app/"
     },
     "id.oc": {
-      "notes": "Onion ID \u2014 client-side ECDSA P-256 identity cards: generate, sign, verify. Private key never leaves the browser.",
+      "notes": "Onion ID \u2014 the one Onion Core account: username + password sign-in, member code OC-XXXXXX, recovery key, and SSO for every product (hub, character, community, builder, map, mail, drive, photos). Worker: onion-id. LIVE 2026-11-01. (Previously pointed at the retired standalone ECDSA card demo at onioncore-id.pages.dev.)",
       "owner": "Blaze",
-      "target": "https://onioncore-id.pages.dev/"
+      "target": "https://onion-id.blueblazer82.workers.dev/"
+    },
+    "mail.oc": {
+      "notes": "Onion Mail \u2014 your real mailbox in the Onion Core world: Gmail-shaped inbox, labels, search, Onion AI assistant, temp-address module. Sign in with Onion ID. Worker: onion-mail. LIVE 2026-11-01.",
+      "owner": "Blaze",
+      "target": "https://onion-mail.blueblazer82.workers.dev/"
     },
     "map.oc": {
       "notes": "Multi-state verified camera map (5,619 byte-verified DOT cameras: IN 711, GA 2864, NC 984, NY 231, NE 222, MI 217, IA 210, KY 180) with smart cluster renderer, per-state on-demand loading, See-Me/coverage/routes over all loaded states, EarthCam + directory link-out pins, community cameras with human approval, owner tier. VA/AL/CO documented zero (unverifiable from harvest network). Updated 2026-10-31. Tor door: blazez7igmrjr32tn5nxyfkbplp5jlvbq2zdasgb67mxehidi3anb7qd.onion",
       "owner": "Blaze",
       "target": "https://onioncore-map.pages.dev/"
+    },
+    "onionai.oc": {
+      "notes": "Onion AI \u2014 Blaze's own personal AI (FLAGSHIP, canonical since 2026-11-01): the product AI that lives inside Onion Core's products \u2014 chat with it, tune it, take it everywhere. Bot Forge is its workshop section (bots.oc); renamed from agent.oc, which stays as an alias. Target is the current agent Worker until the re-scoped product ships.",
+      "owner": "Blaze",
+      "target": "https://onioncore-agent.blueblazer82.workers.dev/"
     },
     "os.oc": {
       "notes": "Onion OS \u2014 the whole platform in one desktop",
@@ -97,22 +122,32 @@
       "target": "https://boo4blue.github.io/onion-os/"
     },
     "paper.oc": {
-      "notes": "Onion Core Paper Secrets \u2014 encrypted secrets as printed QR codes (ONION1 blobs, crypt.oc-compatible)",
+      "notes": "ALIAS of privacy.oc (Paper Secrets section) \u2014 merged into Onion Privacy Tools 2026-11-01; standalone target stays live until the merged product ships.",
       "owner": "Blaze",
       "target": "https://onioncore-paper.pages.dev/"
     },
+    "photos.oc": {
+      "notes": "Onion Photos \u2014 gallery over the Onion Core cloud with EXIF stripped on upload, sign in with Onion ID. Worker: onion-photos. Building 2026-11-01; hub lists as coming-soon until live.",
+      "owner": "Blaze",
+      "target": "https://onion-photos.blueblazer82.workers.dev/"
+    },
+    "privacy.oc": {
+      "notes": "Onion Privacy Tools \u2014 the merged privacy suite (canonical, 2026-11-01 merge): Breach Check, Am I Covered?, Scrub, Cipher and Paper Secrets as tabs of one product. Folds in breach.oc, covered.oc, scrub.oc, crypt.oc, paper.oc (kept as aliases). The retired id.oc ECDSA card toy is slated to join here as a tool card. Target is the convention-based Worker URL \u2014 consolidation builder confirms the final URL.",
+      "owner": "Blaze",
+      "target": "https://onion-privacy.blueblazer82.workers.dev/"
+    },
     "proof.oc": {
-      "notes": "End-to-end proof name \u2014 registered by the CLI, resolved by our resolver, served by the gateway",
+      "notes": "ALIAS of os.oc (Demos) \u2014 the proof/poster demo pages became Onion OS demos in the 2026-11-01 merge; standalone target stays live.",
       "owner": "Blaze",
       "target": "https://boo4blue.github.io/oc/demo/proof.html"
     },
     "scanner.oc": {
-      "notes": "Onion Core Scanner \u2014 Fort Wayne / Indiana police radio. Tor door: scanli5lreqbxvpoehzadefjxs2qjdfuixfn4tsnydymlg6gtxzkkhqd.onion",
+      "notes": "ALIAS of map.oc (Listen layer) \u2014 radio folded into Onion Map 2026-11-01; standalone target and Tor door stay live until the merged product ships. Tor door: scanli5lreqbxvpoehzadefjxs2qjdfuixfn4tsnydymlg6gtxzkkhqd.onion",
       "owner": "Blaze",
       "target": "https://onioncore-scanner.pages.dev/"
     },
     "scrub.oc": {
-      "notes": "Onion Core Scrub \u2014 photo metadata (EXIF/GPS) viewer and stripper, all on-device",
+      "notes": "ALIAS of privacy.oc (Scrub section) \u2014 merged into Onion Privacy Tools 2026-11-01; standalone target stays live until the merged product ships.",
       "owner": "Blaze",
       "target": "https://onioncore-scrub.pages.dev/"
     },
@@ -127,7 +162,7 @@
       "target": "https://boo4blue.github.io/image-studio/"
     },
     "tower.oc": {
-      "notes": "Neon Tower v1.0.0 \u2014 APK release page",
+      "notes": "ALIAS of files.oc (Downloads) \u2014 Neon Tower's release now lives in Onion Core Files downloads (merged 2026-11-01); GitHub release target kept until the Files listing is confirmed.",
       "owner": "Blaze",
       "target": "https://github.com/boo4blue/boo4blue.github.io/releases/tag/neontower-v1.0.0"
     },
@@ -137,17 +172,17 @@
       "target": "https://onioncore-underground.pages.dev/"
     },
     "undernet.oc": {
-      "notes": "Undernet \u2014 the hidden index of every .oc site",
+      "notes": "ALIAS of the Onion Core hub \u2014 RETIRED as a site 2026-11-01: its index job is now the hub Websites directory plus the Dark Onion homepage. Name kept registered, resolves to the hub.",
       "owner": "Blaze",
-      "target": "https://onioncore-undernet.pages.dev/"
+      "target": "https://onioncore-hub.blueblazer82.workers.dev/"
     },
     "vouch.oc": {
-      "notes": "Onion Core Vouch \u2014 consent-based background checks: the subject signs a Disclosure & Authorization, both sides get the identical public-sources report; eligibility purposes hard-blocked",
+      "notes": "ALIAS of background.oc (Vouch section) \u2014 merged into Background Check 2026-11-01; standalone target stays live until the merged product ships.",
       "owner": "Blaze",
       "target": "https://onioncore-vouch.pages.dev/"
     },
     "wire.oc": {
-      "notes": "The Wire \u2014 anonymous message board; posts burn after 24 hours",
+      "notes": "ALIAS of community.oc (The Wire board) \u2014 merged into Community 2026-11-01; standalone target stays live until the merged product ships.",
       "owner": "Blaze",
       "target": "https://onioncore-wire.pages.dev/"
     }

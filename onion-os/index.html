@@ -36,10 +36,11 @@ body{margin:0;color:var(--txt);overflow:hidden;
 /* ---------- desktop ---------- */
 #desktop{position:fixed;inset:0;padding-bottom:var(--taskbar)}
 #icons{position:absolute;top:12px;left:10px;display:flex;flex-direction:column;gap:4px;z-index:1}
-.icon{width:86px;padding:10px 2px 8px;text-align:center;border-radius:14px;cursor:pointer;
+.icon{width:102px;padding:10px 4px 8px;text-align:center;border-radius:14px;cursor:pointer;
   border:1px solid transparent;background:rgba(13,13,31,.45);-webkit-tap-highlight-color:transparent}
 .icon:active,.icon:hover{border-color:var(--line);background:rgba(20,20,42,.75)}
-.icon .e{font-size:31px;line-height:1.15}
+.icon .e svg{width:34px;height:34px;display:block;margin:0 auto}
+.icon .e{line-height:1}
 .icon .l{font-size:11.5px;font-weight:600;margin-top:2px;text-shadow:0 1px 6px #000}
 /* ---------- windows ---------- */
 #wins{position:absolute;inset:0;bottom:var(--taskbar)}
@@ -48,7 +49,8 @@ body{margin:0;color:var(--txt);overflow:hidden;
   display:flex;flex-direction:column;box-shadow:0 24px 60px rgba(0,0,0,.55)}
 .win-bar{display:flex;align-items:center;gap:8px;padding:9px 10px 9px 14px;background:var(--panel2);
   border-bottom:1px solid var(--line);cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none}
-.win-bar .wi{font-size:17px}
+.win-bar .wi{display:flex;align-items:center}
+.win-bar .wi svg{width:18px;height:18px;display:block}
 .win-bar .wt{font-weight:700;font-size:.95rem;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .wbtn{width:34px;height:30px;border-radius:9px;border:1px solid var(--line);background:#0d0d1f;
   color:var(--txt);font-size:14px;cursor:pointer;line-height:1}
@@ -68,7 +70,13 @@ body{margin:0;color:var(--txt);overflow:hidden;
 #taskbar{position:fixed;left:0;right:0;bottom:0;height:var(--taskbar);z-index:9000;
   display:flex;align-items:center;gap:8px;padding:6px 8px calc(6px + env(safe-area-inset-bottom));
   background:rgba(9,9,22,.94);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
-#onionbtn{width:44px;height:40px;border-radius:12px;border:1px solid var(--line);
+#onionbtn{width:44px;height:40px;border-radius:12px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;
+#onionbtn svg{width:26px;height:26px;display:block}
+.sm-head svg{width:20px;height:20px;display:inline-block;vertical-align:-4px;margin-right:6px}
+#boot .be svg{width:88px;height:88px;display:block}
+.aboutbox .ae svg{width:56px;height:56px;display:block;margin:0 auto}
+.taskbtn svg{width:15px;height:15px;display:block;flex:none}
+.taskbtn{display:inline-flex;align-items:center;gap:6px}
   background:#171730;font-size:22px;cursor:pointer;line-height:1}
 #onionbtn.on{border-color:var(--pop)}
 #tasks{flex:1;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:2px}
@@ -86,7 +94,7 @@ body{margin:0;color:var(--txt);overflow:hidden;
 .sm-head span{color:var(--pop)}
 .sm-item{display:flex;align-items:center;gap:12px;padding:11px 10px;border-radius:12px;cursor:pointer}
 .sm-item:active,.sm-item:hover{background:#1a1a36}
-.sm-item .e{font-size:23px}
+.sm-item .e svg{width:24px;height:24px;display:block}
 .sm-item .t{font-weight:600}
 .sm-foot{padding:10px;font-size:.75rem;opacity:.55;border-top:1px solid var(--line);margin-top:6px}
 /* ---------- generic app bits ---------- */
@@ -140,6 +148,13 @@ a.ext{color:var(--pop);font-weight:700;text-decoration:none;word-break:break-all
 .chip{font-size:.66rem;padding:3px 8px;border:1px solid var(--line);border-radius:99px;
   opacity:.85;white-space:nowrap;flex:none}
 .chip.live{border-color:#14532d;color:#86efac}
+.chip.soon{border-color:#5b2333;color:#ff9aa0}
+.chip.alias{border-color:#3b2f63;color:#a78bfa}
+.frow .ic svg{width:22px;height:22px;display:block}
+.dsearch{width:100%;box-sizing:border-box;background:#0d0d1f;border:1px solid var(--line);
+  border-radius:99px;color:var(--txt);padding:11px 16px;font:inherit;font-size:.92rem;margin:0 0 4px}
+.dsearch:focus{outline:none;border-color:var(--pop)}
+.dcat{margin:16px 0 2px;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;opacity:.6}
 .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(98px,1fr));gap:9px;margin-top:6px}
 .pgrid figure{margin:0;cursor:pointer}
 .pgrid img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px;border:1px solid var(--line);display:block;background:#0a0a18}
@@ -153,7 +168,7 @@ iframe.appframe{flex:1;width:100%;border:0;background:#0a0a18;min-height:200px}
 .framebar{display:flex;align-items:center;gap:8px;padding:7px 10px;background:#0b0b1c;
   border-bottom:1px solid var(--line);font-size:.8rem}
 .aboutbox{text-align:center;padding:22px 18px}
-.aboutbox .ae{font-size:56px}
+.aboutbox .ae{line-height:1}
 .aboutbox h2{margin:8px 0 2px}
 .specbox{text-align:left;background:#0d0d1f;border:1px solid var(--line);border-radius:12px;
   padding:12px 14px;margin:14px 0;font-size:.86rem;line-height:1.55}
@@ -162,11 +177,12 @@ iframe.appframe{flex:1;width:100%;border:0;background:#0a0a18;min-height:200px}
 <body>
 
 <div id="boot" aria-hidden="true">
-  <div class="be">🧅</div>
+  <div class="be"><svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 21c-4.5-1.2-7-3.8-7-7.5C5 9.5 8 7 12 7s7 2.5 7 6.5c0 3.7-2.5 6.3-7 7.5Z"/><path d="M12 7c0-2 1-3.5 3-4.5M12 7c0-2-1-3.5-3-4.5" stroke="#a78bfa"/><path d="M12 9.5v9M8.5 11.5c0 3 1.5 5 3.5 6M15.5 11.5c0 3-1.5 5-3.5 6" opacity=".65"/></svg></div>
   <div class="bn">Onion <span>OS</span></div>
   <div class="bs">by Onion Core</div>
   <div class="bbar"><i></i></div>
 </div>
+<script>try{ if (localStorage.getItem("onionos_booted")) document.getElementById("boot").style.display = "none"; }catch(e){}</script>
 
 <div id="desktop">
   <div id="icons"></div>
@@ -174,13 +190,13 @@ iframe.appframe{flex:1;width:100%;border:0;background:#0a0a18;min-height:200px}
 </div>
 
 <div id="startmenu" hidden>
-  <div class="sm-head">🧅 Onion <span>OS</span></div>
+  <div class="sm-head"><svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 21c-4.5-1.2-7-3.8-7-7.5C5 9.5 8 7 12 7s7 2.5 7 6.5c0 3.7-2.5 6.3-7 7.5Z"/><path d="M12 7c0-2 1-3.5 3-4.5M12 7c0-2-1-3.5-3-4.5" stroke="#a78bfa"/><path d="M12 9.5v9M8.5 11.5c0 3 1.5 5 3.5 6M15.5 11.5c0 3-1.5 5-3.5 6" opacity=".65"/></svg>Onion <span>OS</span></div>
   <div id="sm-items"></div>
   <div class="sm-foot">Onion OS v1 · Onion Core · made for Blaze</div>
 </div>
 
 <div id="taskbar">
-  <button id="onionbtn" title="Onion menu">🧅</button>
+  <button id="onionbtn" title="Onion menu" aria-label="Onion menu"><svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 21c-4.5-1.2-7-3.8-7-7.5C5 9.5 8 7 12 7s7 2.5 7 6.5c0 3.7-2.5 6.3-7 7.5Z"/><path d="M12 7c0-2 1-3.5 3-4.5M12 7c0-2-1-3.5-3-4.5" stroke="#a78bfa"/><path d="M12 9.5v9M8.5 11.5c0 3 1.5 5 3.5 6M15.5 11.5c0 3-1.5 5-3.5 6" opacity=".65"/></svg></button>
   <div id="tasks"></div>
   <div id="clock">--:--</div>
 </div>
@@ -210,30 +226,79 @@ function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g, function(c){
 function isPhone(){ return window.matchMedia("(max-width: 700px)").matches; }
 
 var SITES_HOME = "https://boo4blue.github.io";
-var DOWNLOADS = [{"name": "CultivationCraft RPG", "version": "v0.14.1", "url": "https://boo4blue.github.io/wild-cultivation/", "via": "Download page"}, {"name": "Flappy Frenzy", "version": "v0.2", "url": "https://gofile.io/d/eZvAS7k4", "via": "Gofile download"}, {"name": "Duskborn", "version": "v1.6", "url": "https://gofile.io/d/2lBMk2Dk", "via": "Gofile download"}, {"name": "Lumen Walk", "version": "v0.8", "url": "https://boo4blue.github.io/lumen-walk/", "via": "Download page"}, {"name": "Zeroblue Engine", "version": "v0.6", "url": "https://gofile.io/d/gqzSTJdg", "via": "Gofile download"}, {"name": "Scrapyard 2D", "version": "v2.0", "url": "https://gofile.io/d/Knm68zSL", "via": "Gofile download"}, {"name": "Scrapyard 3D", "version": "v3.0", "url": "https://gofile.io/d/dyveQRMd", "via": "Gofile download"}, {"name": "Lord Remote", "version": "v0.1", "url": "https://gofile.io/d/rrny6l5A", "via": "Gofile download"}, {"name": "Phone Watch", "version": "v0.1", "url": "https://gofile.io/d/oYKgJnjZ", "via": "Gofile download"}, {"name": "Haven FW anime ad (2 min)", "version": "v?", "url": "https://gofile.io/d/xpO93QZX", "via": "Gofile download"}, {"name": "Death Cart", "version": "v2.8", "url": "https://gofile.io/d/W3k4xuaM", "via": "Gofile download"}, {"name": "Neon Tower", "version": "v1.0.0", "url": "https://github.com/boo4blue/boo4blue.github.io/releases/tag/neontower-v1.0.0", "via": "GitHub release"}, {"name": "Haven FW", "version": "v1.0.5848", "url": "https://boo4blue.github.io/HavenFW.apk", "via": "Direct APK download"}];
+var DOWNLOADS = [{"name": "CultivationCraft RPG", "version": "v0.14.1", "url": "https://boo4blue.github.io/wild-cultivation/", "via": "Download page"}, {"name": "Flappy Frenzy", "version": "v0.2", "url": "https://gofile.io/d/eZvAS7k4", "via": "Gofile download"}, {"name": "Duskborn", "version": "v1.6", "url": "https://gofile.io/d/2lBMk2Dk", "via": "Gofile download"}, {"name": "Lumen Walk", "version": "v0.8", "url": "https://boo4blue.github.io/lumen-walk/", "via": "Download page"}, {"name": "Onion Browser", "version": "v0.40.0", "url": "https://onioncore-files.blueblazer82.workers.dev/s/658dea548d4c414e", "via": "Gofile download"}, {"name": "Zeroblue Engine", "version": "v0.6", "url": "https://gofile.io/d/gqzSTJdg", "via": "Gofile download"}, {"name": "Scrapyard 2D", "version": "v2.0", "url": "https://gofile.io/d/Knm68zSL", "via": "Gofile download"}, {"name": "Scrapyard 3D", "version": "v3.0", "url": "https://gofile.io/d/dyveQRMd", "via": "Gofile download"}, {"name": "Lord Remote", "version": "v0.1", "url": "https://gofile.io/d/rrny6l5A", "via": "Gofile download"}, {"name": "Phone Watch", "version": "v0.1", "url": "https://gofile.io/d/oYKgJnjZ", "via": "Gofile download"}, {"name": "Haven FW anime ad (2 min)", "version": "v?", "url": "https://gofile.io/d/xpO93QZX", "via": "Gofile download"}, {"name": "Death Cart", "version": "v2.8", "url": "https://gofile.io/d/W3k4xuaM", "via": "Gofile download"}, {"name": "Neon Tower", "version": "v1.0.0", "url": "https://github.com/boo4blue/boo4blue.github.io/releases/tag/neontower-v1.0.0", "via": "GitHub release"}, {"name": "Haven FW", "version": "v1.0.5848", "url": "https://boo4blue.github.io/HavenFW.apk", "via": "Direct APK download"}];
 var PC_SPECS = "4 CPU Xeon 2.20GHz / 31 GiB RAM / 20 GB disk / Python 3.13 / Node 20";
 var PC_SESSION = "Session status when this build shipped: online · sessions last ~12h; relaunch: relaunch.sh";
 
+/* ---- .oc registry presentation (2026-11-01 merge): canonical sites,
+   their categories, and the coming-soon set. Aliases are detected from
+   the registry notes ("ALIAS of x") at render time. ---- */
+var OC_CATS = ["Core", "Products", "Tools", "Community"];
+var OC_SITES = {
+  "id.oc":["Onion ID","Core"], "os.oc":["Onion OS","Core"], "files.oc":["Onion Core Files","Core"],
+  "engine.oc":["Onion Engine","Core"], "onionai.oc":["Onion AI","Core"],
+  "mail.oc":["Onion Mail","Products"], "drive.oc":["Onion Drive","Products"],
+  "photos.oc":["Onion Photos","Products"], "character.oc":["character.oc","Products"],
+  "map.oc":["Onion Map","Products"], "haven.oc":["Haven","Products"],
+  "studio.oc":["Onion Image Studio","Products"], "builder.oc":["Website Builder","Products"],
+  "db.oc":["Database Builder","Products"], "data.oc":["Open Data","Products"],
+  "source.oc":["Source Maker","Products"],
+  "privacy.oc":["Onion Privacy Tools","Tools"], "drop.oc":["Dead Drop","Tools"],
+  "background.oc":["Background Check","Tools"],
+  "community.oc":["Community","Community"], "chat.oc":["Room Chat","Community"],
+  "underground.oc":["Onion Underground","Community"],
+  "breach.oc":["Breach Check",""], "covered.oc":["Am I Covered?",""], "scrub.oc":["Scrub",""],
+  "crypt.oc":["Cipher",""], "paper.oc":["Paper Secrets",""], "door.oc":["The Vault Door",""],
+  "vouch.oc":["Vouch",""], "bots.oc":["Bot Forge",""], "agent.oc":["Onion AI (agent.oc)",""],
+  "scanner.oc":["Onion Scanner",""], "wire.oc":["The Wire",""], "tower.oc":["Neon Tower",""],
+  "proof.oc":["Proof",""], "blaze.oc":["Blaze poster",""], "undernet.oc":["Undernet (retired)",""]
+};
+var OC_SOON = { "drive.oc": 1, "photos.oc": 1, "privacy.oc": 1 };
+function ocAliasOf(rec){
+  var n = (rec && rec.notes) || "";
+  if (n.indexOf("ALIAS of ") !== 0) return "";
+  return n.slice(9).split(/[ (]/)[0];
+}
+
 /* ================= window manager ================= */
+var ONION_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 21c-4.5-1.2-7-3.8-7-7.5C5 9.5 8 7 12 7s7 2.5 7 6.5c0 3.7-2.5 6.3-7 7.5Z"/><path d="M12 7c0-2 1-3.5 3-4.5M12 7c0-2-1-3.5-3-4.5" stroke="#a78bfa"/><path d="M12 9.5v9M8.5 11.5c0 3 1.5 5 3.5 6M15.5 11.5c0 3-1.5 5-3.5 6" opacity=".65"/></svg>';
+var ICONS = {
+  cloudpc: '<svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4" width="19" height="12" rx="2"/><path d="M9 20h6M12 16v4" stroke="#a78bfa"/><path d="M7 8l1.8 1.8L7 11.6M11 11.5h3" stroke="#eaeaff"/></svg>',
+  files: '<svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/><path d="M3 7.5h18" stroke="#a78bfa"/></svg>',
+  studio: '<svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 20c4-1 5-3 5-6 0-4 3-7 8-7 1.5 0 3 1 3 2.5 0 3-3 4.5-5.5 4.5-1 0-2-.5-2.5-1.5C11 15 9 18 6.5 20H4Z"/><circle cx="8" cy="9.5" r="1.1" fill="#a78bfa" stroke="none"/><circle cx="13" cy="8" r="1.1" fill="#eaeaff" stroke="none"/></svg>',
+  websites: '<svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c-2.5 2.3-3.8 5.2-3.8 8.5s1.3 6.2 3.8 8.5c2.5-2.3 3.8-5.2 3.8-8.5S14.5 5.8 12 3.5Z" stroke="#a78bfa"/></svg>',
+  directory: '<svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 21c-4.5-1.2-7-3.8-7-7.5C5 9.5 8 7 12 7s7 2.5 7 6.5c0 3.7-2.5 6.3-7 7.5Z"/><path d="M12 7c0-2 1-3.5 3-4.5M12 7c0-2-1-3.5-3-4.5" stroke="#a78bfa"/><path d="M12 9.5v9M8.5 11.5c0 3 1.5 5 3.5 6M15.5 11.5c0 3-1.5 5-3.5 6" opacity=".65"/></svg>',
+  community: '<svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5c-1.5 0-3-.4-4.2-1.1L3 20l1.1-5.3A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8.5 10.5h.01M12.5 10.5h.01M16.5 10.5h.01" stroke="#a78bfa" stroke-width="2.4"/></svg>',
+  builder: '<svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2"/><path d="M3.5 9h17"/><path d="M6.5 6.8h.01M9.5 6.8h.01" stroke="#a78bfa" stroke-width="2.4"/><path d="M7 13h6M7 16h4" stroke="#a78bfa"/></svg>',
+  mail: '<svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6" stroke="#a78bfa"/></svg>',
+  onionai: '<svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="8" width="14" height="10" rx="2"/><path d="M12 8V4.8" stroke="#a78bfa"/><circle cx="12" cy="3.4" r="1.3" stroke="#a78bfa"/><circle cx="9.5" cy="13" r="1.1" fill="#eaeaff" stroke="none"/><circle cx="14.5" cy="13" r="1.1" fill="#eaeaff" stroke="none"/><path d="M3.5 12.5H5M19 12.5h1.5" stroke="#a78bfa"/></svg>',
+  about: '<svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3.2" stroke="#22d3ee"/><path d="M12 2.8v2.6M12 18.6v2.6M2.8 12h2.6M18.6 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M18.7 5.3l-1.8 1.8M7.1 16.9l-1.8 1.8"/></svg>',
+};
+function iconFor(id){ return ICONS[id] || ONION_SVG; }
+
 var APPS = [
-  { id:"cloudpc",   icon:"🖥️", title:"Cloud PC" },
-  { id:"files",     icon:"📁", title:"My Stuff" },
-  { id:"studio",    icon:"🎨", title:"Studio" },
-  { id:"websites",  icon:"🌐", title:"Websites" },
-  { id:"directory", icon:"🧅", title:".oc Directory" },
-  { id:"about",     icon:"⚙️", title:"About" }
+  { id:"cloudpc",   title:"Cloud PC" },
+  { id:"files",     title:"My Stuff" },
+  { id:"studio",    title:"Studio" },
+  { id:"websites",  title:"Websites" },
+  { id:"onionai",   title:"Onion AI" },
+  { id:"mail",      title:"Onion Mail" },
+  { id:"community", title:"Community" },
+  { id:"builder",   title:"Website Builder" },
+  { id:"directory", title:".oc Directory" },
+  { id:"about",     title:"About" }
 ];
 var wins = {}, zTop = 10, winCount = 0;
 
 function buildIcons(){
   var h = "";
   APPS.forEach(function(a){
-    h += '<div class="icon" data-open="'+a.id+'"><div class="e">'+a.icon+'</div><div class="l">'+esc(a.title)+'</div></div>';
+    h += '<div class="icon" data-open="'+a.id+'"><div class="e">'+iconFor(a.id)+'</div><div class="l">'+esc(a.title)+'</div></div>';
   });
   $("icons").innerHTML = h;
   var sh = "";
   APPS.forEach(function(a){
-    sh += '<div class="sm-item" data-open="'+a.id+'"><span class="e">'+a.icon+'</span><span class="t">'+esc(a.title)+'</span></div>';
+    sh += '<div class="sm-item" data-open="'+a.id+'"><span class="e">'+iconFor(a.id)+'</span><span class="t">'+esc(a.title)+'</span></div>';
   });
   $("sm-items").innerHTML = sh;
   document.querySelectorAll("[data-open]").forEach(function(el){
@@ -271,7 +336,7 @@ function openApp(id){
   el.style.left = (26 + off) + "px"; el.style.top = (18 + off) + "px";
   el.style.zIndex = ++zTop;
   el.innerHTML =
-    '<div class="win-bar"><span class="wi">'+app.icon+'</span><span class="wt">'+esc(app.title)+'</span>' +
+    '<div class="win-bar"><span class="wi">'+iconFor(id)+'</span><span class="wt">'+esc(app.title)+'</span>' +
     '<button class="wbtn" data-act="min" title="Minimize">–</button>' +
     '<button class="wbtn" data-act="close" title="Close">✕</button></div>' +
     '<div class="win-body"></div><div class="win-resize"></div>';
@@ -279,7 +344,7 @@ function openApp(id){
   winCount++;
   var tb = document.createElement("button");
   tb.className = "taskbtn active"; tb.setAttribute("data-win", id);
-  tb.textContent = app.icon + " " + app.title;
+  tb.innerHTML = iconFor(id) + "<span>" + esc(app.title) + "</span>";
   tb.addEventListener("click", function(){
     var w = wins[id]; if (!w) return;
     if (w.min || w.el.style.zIndex != zTop) focusWin(id);
@@ -346,15 +411,10 @@ RENDER.cloudpc = function(body){
   body.innerHTML =
     '<div class="tabs"><button class="tab" data-tab="desktop">🖥️ Desktop</button>' +
     '<button class="tab on" data-tab="term">⌨️ Terminal</button></div>' +
-    '<div class="pane" data-pane="desktop"><div class="pad">' +
-      '<p style="font-size:2rem;margin:6px 0">🖥️</p>' +
-      '<p class="note"><b>The streaming desktop plugs in right here.</b> A real Linux desktop ' +
-      'running on your Cloud PC — with Wine for Windows .exe files and a strip for the files on the machine — ' +
-      'is being built now. When it lands, this tab becomes the desktop itself.</p>' +
-      '<p class="note">Until then, your machine is fully reachable from the Terminal tab — ' +
-      'every command, right now.</p>' +
-      '<button class="bigbtn" id="pc-goterm">Open the Terminal</button>' +
-    '</div></div>' +
+    '<div class="pane" data-pane="desktop">' +
+      '<iframe id="pc-deskframe" src="desktop.html" title="Cloud PC desktop" allowfullscreen ' +
+      'style="flex:1;width:100%;border:0;min-height:0;background:#111"></iframe>' +
+    '</div>' +
     '<div class="pane on" data-pane="term">' +
       '<div class="gate" id="pc-gate">' +
         '<p style="font-size:2rem;margin:4px 0">🔑</p>' +
@@ -364,7 +424,7 @@ RENDER.cloudpc = function(body){
         '<button class="bigbtn" id="pc-unlock" style="width:100%">Unlock my machine</button>' +
       '</div>' +
       '<div class="errbox" id="pc-connerr">⚠️ Couldn’t reach the machine broker. The machine may be ' +
-      'asleep (sessions last ~12h) or the network hiccuped. <button class="ghostbtn" id="pc-retry" style="margin-top:8px">Retry</button></div>' +
+      'asleep (sessions last ~12h) or the network hiccuped. <button class="ghostbtn" id="pc-retry" style="margin-top:8px">Retry</button> <button class="ghostbtn" id="pc-changecode" style="margin-top:8px">Use a different code</button></div>' +
       '<div id="pc-termwrap" style="display:none;flex:1;flex-direction:column;min-height:0">' +
         '<div id="pc-status"><span id="pc-dot"></span><span id="pc-specs">connecting…</span></div>' +
         '<div id="pc-term"></div>' +
@@ -380,7 +440,8 @@ RENDER.cloudpc = function(body){
       body.querySelector('[data-pane="'+t.getAttribute("data-tab")+'"]').classList.add("on");
     });
   });
-  body.querySelector("#pc-goterm").addEventListener("click", function(){
+  var gt = body.querySelector("#pc-goterm");
+  if (gt) gt.addEventListener("click", function(){
     body.querySelector('[data-tab="term"]').click();
   });
 };
@@ -455,9 +516,28 @@ INIT.cloudpc = function(body){
   B("#pc-send").addEventListener("click", sendCmd);
   B("#pc-cmdin").addEventListener("keydown", function(e){ if (e.key === "Enter") sendCmd(); });
   B("#pc-retry").addEventListener("click", function(){ hideErr(); connect(); });
+  var termTab = body.querySelector('[data-tab="term"]');
+  if (termTab) termTab.addEventListener("click", function(){
+    if (B("#pc-gate").style.display !== "none"){
+      try {
+        var s2 = localStorage.getItem("cloudpc2_code");
+        if (s2 && s2.indexOf(":") > 3){ B("#pc-code").value = s2; unlock(); }
+      } catch (e) {}
+    }
+  });
+  B("#pc-changecode").addEventListener("click", function(){
+    try { localStorage.removeItem("cloudpc2_code"); } catch (e) {}
+    if (client){ try { client.end(true); } catch (e) {} client = null; }
+    hideErr();
+    B("#pc-termwrap").style.display = "none";
+    B("#pc-gate").style.display = "block";
+  });
   try {
     var saved = localStorage.getItem("cloudpc2_code");
-    if (saved) B("#pc-code").value = saved;
+    if (saved){
+      B("#pc-code").value = saved;
+      if (saved.indexOf(":") > 3) unlock();
+    }
   } catch (e) {}
 };
 
@@ -538,9 +618,12 @@ INIT.files = function(body){
     var names = Object.keys(r.names || {}).sort();
     B("#f-names").innerHTML = names.map(function(n){
       var rec = r.names[n];
+      var meta = OC_SITES[n] || [n, ""];
+      var alias = ocAliasOf(rec);
+      var sub = alias ? (n + ' · shortcut to ' + alias) : n;
       return '<a class="frow" href="'+SITES_HOME+'/oc/?n='+encodeURIComponent(n)+'" target="_blank" rel="noopener">' +
-        '<span class="ic">🧅</span><span class="tx"><span class="t">'+esc(n)+'</span>' +
-        '<div class="s">'+esc(rec.notes || rec.target)+'</div></span></a>';
+        '<span class="ic">'+ONION_SVG+'</span><span class="tx"><span class="t">'+esc(meta[0])+'</span>' +
+        '<div class="s">'+esc(sub)+'</div></span></a>';
     }).join("");
   }).catch(function(){
     B("#f-names").innerHTML = '<p class="err">Couldn’t load the registry just now.</p>';
@@ -563,57 +646,71 @@ RENDER.studio = frameRender(SITES_HOME + "/image-studio/");
 INIT.studio = frameInit(SITES_HOME + "/image-studio/");
 RENDER.websites = frameRender(SITES_HOME + "/my-websites/");
 INIT.websites = frameInit(SITES_HOME + "/my-websites/");
-
-/* ---- Onion Core sites (the .oc fleet, each opening its real live URL) ---- */
-var CORE_SITES = [
-  { id:"agent",      icon:"🤖", title:"Onion AI",        url:"https://onioncore-agent.blueblazer82.workers.dev/" },
-  { id:"map",        icon:"🗺️", title:"Map",             url:"https://onioncore-map.pages.dev/" },
-  { id:"data",       icon:"📊", title:"Open Data",       url:"https://onioncore-data.blueblazer82.workers.dev/" },
-  { id:"source",     icon:"🧲", title:"Source Maker",    url:"https://onioncore-source.blueblazer82.workers.dev/" },
-  { id:"db",         icon:"🗄️", title:"Database Builder", url:"https://onioncore-db.blueblazer82.workers.dev/" },
-  { id:"underground",icon:"📺", title:"Underground",     url:"https://onioncore-underground.pages.dev/" },
-  { id:"undernet",   icon:"🕸️", title:"Undernet",        url:"https://onioncore-undernet.pages.dev/" },
-  { id:"vouch",      icon:"🤝", title:"Vouch",           url:"https://onioncore-vouch.pages.dev/" },
-  { id:"background", icon:"🕵️", title:"Background Check", url:"https://onioncore-background.pages.dev/" },
-  { id:"breach",     icon:"🔓", title:"Breach Check",    url:"https://onioncore-breach.pages.dev/" },
-  { id:"scanner",    icon:"📻", title:"Scanner",         url:"https://onioncore-scanner.pages.dev/" },
-  { id:"ocfiles",    icon:"🗄️", title:"Files",           url:"https://onioncore-files.pages.dev/" },
-  { id:"community",  icon:"👥", title:"Community",       url:"https://onioncore-community.pages.dev/" },
-  { id:"botforge",   icon:"🛠️", title:"Bot Forge",       url:"https://onioncore-botforge.pages.dev/" },
-  { id:"builder",    icon:"🏗️", title:"Website Builder", url:"https://onioncore-builder.pages.dev/" },
-  { id:"crypt",      icon:"🔐", title:"Cipher",          url:"https://onioncore-crypt.pages.dev/" },
-  { id:"chat",       icon:"💬", title:"Room Chat",       url:"https://onioncore-chat.pages.dev/" },
-  { id:"drop",       icon:"📦", title:"Dead Drop",       url:"https://onioncore-drop.pages.dev/" },
-  { id:"door",       icon:"🚪", title:"Vault Door",      url:"https://onioncore-door.pages.dev/" },
-  { id:"id",         icon:"🪪", title:"Onion ID",        url:"https://onioncore-id.pages.dev/" },
-  { id:"paper",      icon:"📄", title:"Paper Secrets",   url:"https://onioncore-paper.pages.dev/" },
-  { id:"scrub",      icon:"🧼", title:"Scrub",           url:"https://onioncore-scrub.pages.dev/" },
-  { id:"covered",    icon:"👁️", title:"Am I Covered?",   url:"https://onioncore-covered.pages.dev/" },
-  { id:"wire",       icon:"📝", title:"The Wire",        url:"https://onioncore-wire.pages.dev/" }
-];
-CORE_SITES.forEach(function(s){
-  APPS.push({ id:s.id, icon:s.icon, title:s.title });
-  RENDER[s.id] = frameRender(s.url);
-  INIT[s.id] = frameInit(s.url);
-  console.log("[onion-os] site app registered:", s.id, s.url);
-});
+RENDER.mail = frameRender("https://onion-mail.blueblazer82.workers.dev/");
+INIT.mail = frameInit("https://onion-mail.blueblazer82.workers.dev/");
+RENDER.onionai = frameRender("https://onioncore-agent.blueblazer82.workers.dev/");
+INIT.onionai = frameInit("https://onioncore-agent.blueblazer82.workers.dev/");
+RENDER.community = frameRender("https://onioncore-community.pages.dev/");
+INIT.community = frameInit("https://onioncore-community.pages.dev/");
+RENDER.builder = frameRender("https://onioncore-builder.pages.dev/");
+INIT.builder = frameInit("https://onioncore-builder.pages.dev/");
 
 /* ---- .oc Directory ---- */
 RENDER.directory = function(body){
   body.innerHTML = '<div class="pad"><p class="note" style="margin-top:0">Every name in <b>our own .oc registry</b> — ' +
-    'no registrar, no rent. Tapping one opens it through the gateway until native .oc resolution lands in the browser.</p>' +
+    'no registrar, no rent. Canonical sites are grouped; folded names ride along as shortcuts to them. ' +
+    'Tapping one opens it through the gateway until native .oc resolution lands in the browser.</p>' +
+    '<input class="dsearch" id="d-q" type="search" placeholder="Search .oc sites…" autocomplete="off">' +
     '<div id="d-list"><p class="loading">loading the directory…</p></div></div>';
 };
 INIT.directory = function(body){
   fetchJson(SITES_HOME + "/oc/registry.json").then(function(r){
     var names = Object.keys(r.names || {}).sort();
-    body.querySelector("#d-list").innerHTML = names.map(function(n){
+    function row(n){
       var rec = r.names[n];
-      return '<a class="frow" href="'+SITES_HOME+'/oc/?n='+encodeURIComponent(n)+'" target="_blank" rel="noopener">' +
-        '<span class="ic">🧅</span><span class="tx"><span class="t">'+esc(n)+'</span>' +
-        '<div class="s">'+esc(rec.notes || "")+'</div><div class="s">'+esc(rec.target)+'</div></span>' +
-        '<span class="chip">open →</span></a>';
-    }).join("");
+      var meta = OC_SITES[n] || [n, ""];
+      var alias = ocAliasOf(rec);
+      var chip, sub;
+      if (alias){ chip = '<span class="chip alias">alias of '+esc(alias)+'</span>'; sub = n + ' · shortcut'; }
+      else if (OC_SOON[n]){ chip = '<span class="chip soon">coming soon</span>'; sub = n; }
+      else { chip = '<span class="chip live">live</span>'; sub = n; }
+      var q = (meta[0] + ' ' + n + ' ' + (alias || '')).toLowerCase();
+      return '<a class="frow" data-q="'+esc(q)+'" href="'+SITES_HOME+'/oc/?n='+encodeURIComponent(n)+'" target="_blank" rel="noopener">' +
+        '<span class="ic">'+ONION_SVG+'</span><span class="tx"><span class="t">'+esc(meta[0])+'</span>' +
+        '<div class="s">'+esc(sub)+'</div></span>' + chip + '</a>';
+    }
+    var html = "", counts = {};
+    OC_CATS.forEach(function(cat){
+      var inCat = names.filter(function(n){ var m = OC_SITES[n]; return m && m[1] === cat && !ocAliasOf(r.names[n]); });
+      if (!inCat.length) return;
+      counts[cat] = inCat.length;
+      html += '<h3 class="dcat" data-cat="'+esc(cat)+'">'+esc(cat)+'</h3>' + inCat.map(row).join("");
+    });
+    var aliases = names.filter(function(n){ return !!ocAliasOf(r.names[n]); });
+    if (aliases.length){
+      counts.aliases = aliases.length;
+      html += '<h3 class="dcat" data-cat="Aliases">Aliases &amp; shortcuts</h3>' + aliases.map(row).join("");
+    }
+    var rest = names.filter(function(n){ return !OC_SITES[n] && !ocAliasOf(r.names[n]); });
+    if (rest.length) html += '<h3 class="dcat" data-cat="More">More names</h3>' + rest.map(row).join("");
+    body.querySelector("#d-list").innerHTML = html;
+    console.info("[onionos] directory_render", JSON.stringify(counts));
+    var q = body.querySelector("#d-q");
+    q.addEventListener("input", function(){
+      var needle = q.value.trim().toLowerCase();
+      body.querySelectorAll("#d-list .frow").forEach(function(el){
+        el.style.display = (!needle || el.getAttribute("data-q").indexOf(needle) !== -1) ? "" : "none";
+      });
+      body.querySelectorAll("#d-list .dcat").forEach(function(h){
+        var next = h.nextElementSibling, any = false;
+        while (next && !next.classList.contains("dcat")){
+          if (next.style.display !== "none"){ any = true; break; }
+          next = next.nextElementSibling;
+        }
+        h.style.display = any ? "" : "none";
+      });
+      console.info("[onionos] directory_search", needle);
+    });
   }).catch(function(){
     body.querySelector("#d-list").innerHTML = '<p class="err">Couldn’t load the directory just now. ' +
       '<a class="ext" href="'+SITES_HOME+'/oc/" target="_blank" rel="noopener">Open the gateway ↗</a></p>';
@@ -622,7 +719,7 @@ INIT.directory = function(body){
 
 /* ---- About ---- */
 RENDER.about = function(body){
-  body.innerHTML = '<div class="aboutbox"><div class="ae">🧅</div><h2>Onion OS v1</h2>' +
+  body.innerHTML = '<div class="aboutbox"><div class="ae">' + ONION_SVG + '</div><h2>Onion OS v1</h2>' +
     '<p class="note" style="margin:2px 0">by <b>Onion Core</b> · made for Blaze</p>' +
     '<div class="specbox"><b>💻 Your Cloud PC</b><br>' + esc(PC_SPECS) + '<br>' +
     '<span style="opacity:.65">' + esc(PC_SESSION) + '</span></div>' +
@@ -634,6 +731,7 @@ RENDER.about = function(body){
 /* ================= boot ================= */
 buildIcons();
 window.addEventListener("load", function(){
+  try { localStorage.setItem("onionos_booted", "1"); } catch (e) {}
   setTimeout(function(){
     var b = $("boot");
     b.style.opacity = "0";
