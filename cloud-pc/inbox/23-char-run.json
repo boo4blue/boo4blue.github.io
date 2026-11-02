@@ -1,0 +1,1 @@
+{"id": "23-char-run", "action": "shell", "command": "bash emu/runchar.sh"}
