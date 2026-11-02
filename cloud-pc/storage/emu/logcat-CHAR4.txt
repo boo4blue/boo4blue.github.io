@@ -1,0 +1,40 @@
+11-02 17:22:53.161  6347  6347 D OnionCharacter: Load progress: 21%
+11-02 17:22:53.490  6347  6347 D OnionCharacter: Load progress: 22%
+11-02 17:22:53.609  6347  6347 D OnionCharacter: Load progress: 70%
+11-02 17:22:54.581  6347  6347 D OnionCharacter: Load progress: 70%
+11-02 17:22:54.693  6347  6347 D OnionCharacter: Load progress: 100%
+11-02 17:22:54.693  6347  6347 D OnionCharacter: Load progress: 100%
+11-02 17:22:54.694  6347  6347 I OnionCharacter: Page finished: https://onioncore-character.blueblazer82.workers.dev/ title=character.oc — Character by Onion Core
+11-02 17:23:14.921  6347  6347 I OnionCharacter: Nav: sign-in start — forcing app return flow
+11-02 17:23:14.922  6347  6347 D OnionCharacter: Load progress: 10%
+11-02 17:23:15.024  6347  6347 D OnionCharacter: Load progress: 10%
+11-02 17:23:15.395  6347  6347 I OnionCharacter: Nav external (browser): https://onion-id.blueblazer82.workers.dev/authorize?app=character&redirect=https%3A%2F%2Fonioncore-character.blueblazer82.workers.dev%2Fauth%2Fapp-callback&state=e2e3d05e5b5f6c0ef9001ecb8d388dbc3f15e897176cd42e
+11-02 17:23:15.566  6347  6347 D OnionCharacter: onPause: WebView paused, cookies flushed
+11-02 17:23:15.596  6347  6347 I OnionCharacter: Page finished: https://onion-id.blueblazer82.workers.dev/authorize?app=character&redirect=https%3A%2F%2Fonioncore-character.blueblazer82.workers.dev%2Fauth%2Fapp-callback&state=e2e3d05e5b5f6c0ef9001ecb8d388dbc3f15e897176cd42e title=character.oc — Character by Onion Core
+11-02 17:23:15.597  6347  6347 D OnionCharacter: Load progress: 100%
+11-02 17:23:17.463  6347  6347 D OnionCharacter: onSaveInstanceState: WebView state saved
+11-02 17:24:15.977  6347  6347 D OnionCharacter: onNewIntent: action=android.intent.action.VIEW, data=https://onioncore-character.blueblazer82.workers.dev/auth/app-return?h=6f9c7842a63beb9551a6c1ae8f0ffa0058cbc4cf0940b7a19c293c463327d1b0
+11-02 17:24:15.977  6347  6347 I OnionCharacter: Auth return received (app link) — redeeming handoff in WebView
+11-02 17:24:15.978  6347  6347 D OnionCharacter: onResume: WebView resumed, url=https://onioncore-character.blueblazer82.workers.dev/auth/app-redeem?h=6f9c7842a63beb9551a6c1ae8f0ffa0058cbc4cf0940b7a19c293c463327d1b0
+11-02 17:24:16.507  6347  6347 D OnionCharacter: Load progress: 10%
+11-02 17:24:17.976  6347  6347 D OnionCharacter: Nav in-app: https://onioncore-character.blueblazer82.workers.dev/
+11-02 17:24:18.376  6347  6347 D OnionCharacter: Page started: https://onioncore-character.blueblazer82.workers.dev/
+11-02 17:24:18.377  6347  6347 D OnionCharacter: Load progress: 22%
+11-02 17:24:18.657  6347  6347 D OnionCharacter: Load progress: 23%
+11-02 17:24:18.851  6347  6347 D OnionCharacter: Load progress: 28%
+11-02 17:24:19.352  6347  6347 D OnionCharacter: console[LOG] [sso] signed in as appflowtest3 via Onion ID (https://onioncore-character.blueblazer82.workers.dev/app.js:131)
+11-02 17:24:19.353  6347  6347 D OnionCharacter: console[LOG] [character.oc] state: entered character.oc (https://onioncore-character.blueblazer82.workers.dev/app.js:7)
+11-02 17:24:19.357  6347  6347 D OnionCharacter: console[LOG] [character.oc] net: GET /api/characters (https://onioncore-character.blueblazer82.workers.dev/app.js:7)
+11-02 17:24:19.359  6347  6347 D OnionCharacter: Load progress: 100%
+11-02 17:24:19.359  6347  6347 D OnionCharacter: Load progress: 100%
+11-02 17:24:19.359  6347  6347 I OnionCharacter: Page finished: https://onioncore-character.blueblazer82.workers.dev/ title=character.oc — Character by Onion Core
+11-02 17:24:19.566  6347  6347 D OnionCharacter: console[LOG] [character.oc] net: GET /api/voices (https://onioncore-character.blueblazer82.workers.dev/app.js:7)
+11-02 17:24:19.801  6347  6347 D OnionCharacter: console[LOG] [character.oc] net: GET /api/engine (https://onioncore-character.blueblazer82.workers.dev/app.js:7)
+11-02 17:24:20.142  6347  6347 D OnionCharacter: console[LOG] [character.oc] net: GET /api/plan (https://onioncore-character.blueblazer82.workers.dev/app.js:7)
+11-02 17:24:20.686  6347  6347 D OnionCharacter: console[LOG] [character.oc] net: GET /api/lorebooks (https://onioncore-character.blueblazer82.workers.dev/app.js:7)
+11-02 17:24:20.891  6347  6347 D OnionCharacter: console[LOG] [character.oc] net: GET /api/personas (https://onioncore-character.blueblazer82.workers.dev/app.js:7)
+11-02 17:24:21.081  6347  6347 D OnionCharacter: console[LOG] [character.oc] net: GET /api/presets (https://onioncore-character.blueblazer82.workers.dev/app.js:7)
+11-02 17:24:21.261  6347  6347 D OnionCharacter: console[LOG] [character.oc] net: GET /api/clips (https://onioncore-character.blueblazer82.workers.dev/app.js:7)
+11-02 17:24:21.438  6347  6347 D OnionCharacter: console[LOG] [character.oc] net: GET /api/scenes (https://onioncore-character.blueblazer82.workers.dev/app.js:7)
+11-02 17:24:21.678  6347  6347 D OnionCharacter: console[LOG] [character.oc] net: GET /api/clips (https://onioncore-character.blueblazer82.workers.dev/app.js:7)
+11-02 17:24:21.853  6347  6347 D OnionCharacter: console[LOG] [character.oc] net: GET /api/sessions?char=7b7e08b06ba9488bae53de1c (https://onioncore-character.blueblazer82.workers.dev/app.js:7)

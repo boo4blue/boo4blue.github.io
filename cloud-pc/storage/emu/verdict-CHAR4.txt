@@ -1,0 +1,32 @@
+=== character v1.1 sign-in round trip, attempt 4, 17:20:07Z
+apk bytes=58476
+boot_completed=1 after ~30s
+screen=1080x2400
+install: Success
+ping: 
+home not loaded (round 1) — texts: text="" text="" text="" text="" text="" text="" 
+home not loaded (round 2) — texts: text="" text="" text="" text="" text="" text="" 
+home not loaded (round 3) — texts: text="" text="" text="" text="" text="" text="" 
+home not loaded (round 4) — texts: text="" text="" text="" text="" text="" text="" text="" text="" text="" text="" text="" text="" text="" text="" text="Mon, Nov 2" text="" text="Gmail" text="Photos" text="YouTube" text="" text="" text
+shot shot-CHAR4-1-home.png bytes=356831
+sign-in not in dump — fraction tap
+authorize url captured: https://onion-id.blueblazer82.workers.dev/authorize?app=char...
+loop 1: tap 'Use without an account' at 540 2093
+loop 2: tap 'Use without an account' at 540 2093
+login form visible at loop 3
+shepherd done, stage=1
+shot shot-CHAR4-2-login.png bytes=445752
+login page texts: text="" text="" text="" text="" text="" text="" text="" text="" text="" text="" text="Sign in — Onion ID" text="" text="" text="Onion " text="ID" text="Sign in to Onion ID" text="" text="Username or member code" text="" text="Your username, or your member code (like OC-XXXXXX)." text="Password" text="" text="Sign in" text="" text="New here? " text="" text="Create an account" text=" · Forgot your password? " text="" text="Recover it" 
+shot shot-CHAR4-3-filled.png bytes=361874
+tap login BUTTON at 540 1312
+shot shot-CHAR4-4-consent.png bytes=456334
+consent page texts: text="" text="" text="" text="" text="" text="" text="" text="" text="" text="" text="Continue with Onion ID — Onion ID" text="" text="" text="Onion " text="ID" text="Continue with Onion ID" text="Signed in as appflowtest3 (OC-N6HSPJ)" text="character.oc wants you to sign in with your Onion ID. It will receive your username, display name, member code and .oc email address — nothing else." text="Continue as appflowtest3 to character.oc" text="" text="" text="Not you? Manage your account" text="Onion ID — one account for everything Onion Core." text="" text="" text="" text="" text="" text="" text="" 
+tap consent 'Continue as' at 540 1331
+shot shot-CHAR4-5-returned.png bytes=259122
+returned page texts: text="" text="" text="" text="" text="character.oc — Character by Onion Core" text="" text="" text="" text="character.oc" text="by Onion Core" text="Engine offline" text="The voice engine is offline. Browsing, editing, and writing still work — generating waits for your machines." text="" text="Welcome back" text="" text="Continue" text="" text="Test" text="Chat · 11/1/2026 02:45 PM" text="Chat" text="Quick actions" text="Clone a voice From a recording, any file, or a link" text="Speak Type it, hear it in any voice" text="New character A face, a voice, first words" text="New scene Two voices perform a script" text="Good to know" text="The best clones come from 30 seconds of clear, close speech. The clone flow offers a balanced script that covers every sound in English — read it and the voice learns fast." text="" text="Home" text="Voices" 
+final pid=6347
+shot shot-CHAR4-6-final.png bytes=259122
+final page texts: text="" text="" text="" text="" text="character.oc — Character by Onion Core" text="" text="" text="" text="character.oc" text="by Onion Core" text="Engine offline" text="The voice engine is offline. Browsing, editing, and writing still work — generating waits for your machines." text="" text="Welcome back" text="" text="Continue" text="" text="Test" text="Chat · 11/1/2026 02:45 PM" text="Chat" text="Quick actions" text="Clone a voice From a recording, any file, or a link" text="Speak Type it, hear it in any voice" text="New character A face, a voice, first words" text="New scene Two voices perform a script" text="Good to know" text="The best clones come from 30 seconds of clear, close speech. The clone flow offers a balanced script that covers every sound in English — read it and the voice learns fast." text="" text="Home" text="Voices" 
+auth-return log lines: 1
+LOG: 11-02 17:24:15.977  6347  6347 I OnionCharacter: Auth return received (app link) — redeeming handoff in WebView
+RUN_CHAR4_DONE
