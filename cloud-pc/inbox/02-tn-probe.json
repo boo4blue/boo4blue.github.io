@@ -1,0 +1,1 @@
+{"id": "02-tn-probe", "action": "shell", "command": "bash emu/runtn.sh probe"}
