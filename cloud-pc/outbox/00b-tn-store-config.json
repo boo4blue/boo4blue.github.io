@@ -1,0 +1,16 @@
+{
+  "id": "00b-tn-store-config",
+  "action": "store",
+  "at": "2026-11-02T03:42:39Z",
+  "job": {
+    "id": "00b-tn-store-config",
+    "action": "store",
+    "path": "emu/config.env",
+    "content_bytes": 143
+  },
+  "result": {
+    "ok": true,
+    "path": "emu/config.env",
+    "bytes": 143
+  }
+}

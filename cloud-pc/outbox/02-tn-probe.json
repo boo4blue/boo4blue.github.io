@@ -1,0 +1,16 @@
+{
+  "id": "02-tn-probe",
+  "action": "shell",
+  "at": "2026-11-02T03:45:22Z",
+  "job": {
+    "id": "02-tn-probe",
+    "action": "shell",
+    "command": "bash emu/runtn.sh probe"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "apk bytes: 108054766 md5: 4be3279fad2222c1a984bccc4c18e490\nbooted after ~20s\nscreen=1080x2400\ninstall: 0 success marker; 0 package listed\ns0 texts: Gallery|Phone|Messaging|WebView Browser Tester|Camera|\nPROBE: form NOT reached\nprobe-end texts: Gallery|Phone|Messaging|WebView Browser Tester|Camera|\nprobe-end fields: \nOK: killing emulator, bye bye\nOK\nRUN_DONE_TW mode=probe result=PROBE_DONE\nRUN_DONE_TW PROBE_DONE\n",
+    "stderr": "* daemon not running; starting now at tcp:5037\n* daemon started successfully\n"
+  }
+}

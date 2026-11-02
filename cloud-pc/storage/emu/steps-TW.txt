@@ -1,0 +1,10 @@
+[03:43:45] apk bytes: 108054766 md5: 4be3279fad2222c1a984bccc4c18e490
+[03:44:15] booted after ~20s
+boot_completed=1
+[03:44:15] screen=1080x2400
+[03:44:20] install: 0 success marker; 0 package listed
+[03:44:44] s0 texts: Gallery|Phone|Messaging|WebView Browser Tester|Camera|
+[03:45:19] PROBE: form NOT reached
+[03:45:22] probe-end texts: Gallery|Phone|Messaging|WebView Browser Tester|Camera|
+[03:45:22] probe-end fields: 
+[03:45:22] RUN_DONE_TW mode=probe result=PROBE_DONE
