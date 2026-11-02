@@ -12,7 +12,7 @@ mkdir -p $SDK emu $ANDROID_AVD_HOME
 AVDM="$SDK/cmdline-tools/latest/bin/avdmanager"
 export PATH=$SDK/platform-tools:$SDK/emulator:$PATH
 PACKAGE=com.enflick.android.TextNow
-APKURL=https://github.com/boo4blue/boo4blue.github.io/releases/download/emu-assets/TextNow.apk
+APKURL=https://github.com/boo4blue/boo4blue.github.io/releases/download/emu-assets/TextNow.xapk
 TAG=TW
 MODE=${1:-probe}
 STEPS=emu/steps-$TAG.txt
@@ -108,7 +108,7 @@ tap_text() { # $1 = dump suffix, $2 = regex ; returns 0 if tapped
 }
 
 # ---------- SDK fast path ----------
-if [ ! -x $SDK/emulator/emulator ] || [ ! -f $SDK/system-images/android-34/default/x86_64/system.img ]; then
+if [ ! -x $SDK/emulator/emulator ] || [ ! -f $SDK/system-images/android-34/google_apis/x86_64/system.img ]; then
   log "SDK missing -> inline setup"
   bash emu/run10.sh setup >> emu/setup-$TAG.log 2>&1
 fi
@@ -116,9 +116,9 @@ if [ ! -x $SDK/emulator/emulator ]; then log "FATAL: emulator missing after setu
 
 # ---------- boot / install / launch ----------
 pkill -f qemu-system 2>/dev/null; sleep 2; adb kill-server 2>/dev/null; sleep 1
-curl -sL --retry 2 -o /tmp/test-$TAG.apk "$APKURL"
-log "apk bytes: $(stat -c%s /tmp/test-$TAG.apk 2>/dev/null) md5: $(md5sum /tmp/test-$TAG.apk 2>/dev/null | cut -d' ' -f1)"
-echo no | $AVDM create avd -n dc$TAG -k "system-images;android-34;default;x86_64" -d pixel_6 --force > emu/avd-$TAG.log 2>&1
+curl -sL --retry 2 -o /tmp/test-$TAG.xapk "$APKURL"
+log "xapk bytes: $(stat -c%s /tmp/test-$TAG.xapk 2>/dev/null) md5: $(md5sum /tmp/test-$TAG.xapk 2>/dev/null | cut -d' ' -f1)"
+echo no | $AVDM create avd -n dc$TAG -k "system-images;android-34;google_apis;x86_64" -d pixel_6 --force > emu/avd-$TAG.log 2>&1
 nohup $SDK/emulator/emulator -avd dc$TAG -no-window -no-audio -no-boot-anim -gpu angle_indirect -feature -Vulkan -memory 2048 -accel on -no-snapshot > emu/boot-$TAG.log 2>&1 &
 timeout 150 adb wait-for-device
 ok=0
@@ -131,7 +131,8 @@ echo "boot_completed=$ok" >> $STEPS
 if [ "$ok" != "1" ]; then log "BOOT FAILED"; tail -8 emu/boot-$TAG.log >> $STEPS; exit 0; fi
 SZ=$(adb shell wm size | grep -o '[0-9]*x[0-9]*' | head -1); W=${SZ%x*}; H=${SZ#*x}
 log "screen=${W}x${H}"
-adb install -r /tmp/test-$TAG.apk > emu/install-$TAG.txt 2>&1
+mkdir -p /tmp/tnx && cd /tmp/tnx && unzip -o -q /tmp/test-$TAG.xapk && cd - >/dev/null
+adb install-multiple /tmp/tnx/com.enflick.android.TextNow.apk /tmp/tnx/config.arm64_v8a.apk /tmp/tnx/config.xxhdpi.apk > emu/install-$TAG.txt 2>&1
 log "install: $(grep -c Success emu/install-$TAG.txt) success marker; $(adb shell pm list packages | grep -c $PACKAGE) package listed"
 adb logcat -c
 adb shell monkey -p $PACKAGE -c android.intent.category.LAUNCHER 1 >/dev/null 2>&1
@@ -144,7 +145,7 @@ log "s0 texts: $(python3 /tmp/uifind.py texts emu/ui-$TAG-s0.xml | head -12 | tr
 finish() {
   adb logcat -d > emu/logcat-$TAG.txt 2>&1
   adb emu kill 2>/dev/null
-  rm -f /tmp/test-$TAG.apk
+  rm -f /tmp/test-$TAG.xapk; rm -rf /tmp/tnx
   log "RUN_DONE_$TAG mode=$MODE result=$1"
   echo "RUN_DONE_$TAG $1"
   exit 0

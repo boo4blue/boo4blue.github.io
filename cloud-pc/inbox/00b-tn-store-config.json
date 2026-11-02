@@ -1,1 +1,0 @@
-{"id": "00b-tn-store-config", "action": "store", "path": "emu/config.env", "content": "PACKAGE=com.enflick.android.TextNow\nAPKURL=https://github.com/boo4blue/boo4blue.github.io/releases/download/emu-assets/TextNow.xapk\nTAP1=\nTAP2=\n"}

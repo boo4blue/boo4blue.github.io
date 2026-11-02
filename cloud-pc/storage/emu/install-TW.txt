@@ -1,3 +1,1 @@
-Performing Streamed Install
-adb: failed to install /tmp/test-TW.apk: Failure [INSTALL_FAILED_MISSING_SPLIT: Missing split for com.enflick.android.TextNow]
-
+Success

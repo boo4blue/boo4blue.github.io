@@ -1,10 +1,10 @@
-[03:43:45] apk bytes: 108054766 md5: 4be3279fad2222c1a984bccc4c18e490
-[03:44:15] booted after ~20s
+[03:55:57] xapk bytes: 160070880 md5: 66e42f5db9f1edf1b83bbc305a45b089
+[03:56:32] booted after ~25s
 boot_completed=1
-[03:44:15] screen=1080x2400
-[03:44:20] install: 0 success marker; 0 package listed
-[03:44:44] s0 texts: Gallery|Phone|Messaging|WebView Browser Tester|Camera|
-[03:45:19] PROBE: form NOT reached
-[03:45:22] probe-end texts: Gallery|Phone|Messaging|WebView Browser Tester|Camera|
-[03:45:22] probe-end fields: 
-[03:45:22] RUN_DONE_TW mode=probe result=PROBE_DONE
+[03:56:32] screen=1080x2400
+[03:56:54] install: 1 success marker; 1 package listed
+[03:57:19] s0 texts: Something went wrong|Check that Google Play is enabled on your device and that you're using an up-to-date version before opening the app. If the problem persists try reinstalling the app.|CLOSE|
+[03:57:53] PROBE: form NOT reached
+[03:57:56] probe-end texts: Something went wrong|Check that Google Play is enabled on your device and that you're using an up-to-date version before opening the app. If the problem persists try reinstalling the app.|CLOSE|
+[03:57:56] probe-end fields: 
+[03:57:56] RUN_DONE_TW mode=probe result=PROBE_DONE

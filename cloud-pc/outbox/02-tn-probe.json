@@ -1,7 +1,7 @@
 {
   "id": "02-tn-probe",
   "action": "shell",
-  "at": "2026-11-02T03:45:22Z",
+  "at": "2026-11-02T03:57:56Z",
   "job": {
     "id": "02-tn-probe",
     "action": "shell",
@@ -10,7 +10,7 @@
   "result": {
     "ok": true,
     "exit": 0,
-    "stdout": "apk bytes: 108054766 md5: 4be3279fad2222c1a984bccc4c18e490\nbooted after ~20s\nscreen=1080x2400\ninstall: 0 success marker; 0 package listed\ns0 texts: Gallery|Phone|Messaging|WebView Browser Tester|Camera|\nPROBE: form NOT reached\nprobe-end texts: Gallery|Phone|Messaging|WebView Browser Tester|Camera|\nprobe-end fields: \nOK: killing emulator, bye bye\nOK\nRUN_DONE_TW mode=probe result=PROBE_DONE\nRUN_DONE_TW PROBE_DONE\n",
+    "stdout": "xapk bytes: 160070880 md5: 66e42f5db9f1edf1b83bbc305a45b089\nbooted after ~25s\nscreen=1080x2400\ninstall: 1 success marker; 1 package listed\ns0 texts: Something went wrong|Check that Google Play is enabled on your device and that you're using an up-to-date version before opening the app. If the problem persists try reinstalling the app.|CLOSE|\nPROBE: form NOT reached\nprobe-end texts: Something went wrong|Check that Google Play is enabled on your device and that you're using an up-to-date version before opening the app. If the problem persists try reinstalling the app.|CLOSE|\nprobe-end fields: \nOK: killing emulator, bye bye\nOK\nRUN_DONE_TW mode=probe result=PROBE_DONE\nRUN_DONE_TW PROBE_DONE\n",
     "stderr": "* daemon not running; starting now at tcp:5037\n* daemon started successfully\n"
   }
 }
