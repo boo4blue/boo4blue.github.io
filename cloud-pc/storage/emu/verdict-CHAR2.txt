@@ -1,0 +1,21 @@
+=== character v1.1 sign-in round trip, attempt 2, 17:00:47Z
+apk bytes=58476
+boot_completed=1 after ~20s
+screen=1080x2400
+install: Success
+shot shot-CHAR2-1-home.png bytes=59681
+sign-in not in dump — fraction tap
+authorize url captured: ...
+shepherd done, stage=0
+shot shot-CHAR2-2-login.png bytes=59878
+login page texts: text="" text="" text="" text="" text="Webpage not available" text="x+AAAAAElFTkSuQmCC" text="Webpage not available" text="The webpage at https://onioncore-character.blueblazer82.workers.dev/ could not be loaded because:" text="net::ERR_INTERNET_DISCONNECTED" text="" text="" 
+shot shot-CHAR2-4-consent.png bytes=59878
+consent page texts: text="" text="" text="" text="" text="Webpage not available" text="x+AAAAAElFTkSuQmCC" text="Webpage not available" text="The webpage at https://onioncore-character.blueblazer82.workers.dev/ could not be loaded because:" text="net::ERR_INTERNET_DISCONNECTED" text="" text="" 
+consent button NOT found
+shot shot-CHAR2-5-returned.png bytes=59931
+returned page texts: text="" text="" text="" text="" text="Webpage not available" text="x+AAAAAElFTkSuQmCC" text="Webpage not available" text="The webpage at https://onioncore-character.blueblazer82.workers.dev/ could not be loaded because:" text="net::ERR_INTERNET_DISCONNECTED" text="" text="" 
+final pid=2575
+shot shot-CHAR2-6-final.png bytes=59931
+final page texts: text="" text="" text="" text="" text="Webpage not available" text="x+AAAAAElFTkSuQmCC" text="Webpage not available" text="The webpage at https://onioncore-character.blueblazer82.workers.dev/ could not be loaded because:" text="net::ERR_INTERNET_DISCONNECTED" text="" text="" 
+auth-return log lines: 0
+RUN_CHAR2_DONE

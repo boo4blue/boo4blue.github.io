@@ -1,0 +1,16 @@
+{
+  "id": "32-char-run2",
+  "action": "shell",
+  "at": "2026-11-02T17:04:38Z",
+  "job": {
+    "id": "32-char-run2",
+    "action": "shell",
+    "command": "bash emu/runchar.sh"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "=== character v1.1 sign-in round trip, attempt 2, 17:00:47Z\napk bytes=58476\nboot_completed=1 after ~20s\nscreen=1080x2400\ninstall: Success\nshot shot-CHAR2-1-home.png bytes=59681\nsign-in not in dump \u2014 fraction tap\nauthorize url captured: ...\nshepherd done, stage=0\nshot shot-CHAR2-2-login.png bytes=59878\nlogin page texts: text=\"\" text=\"\" text=\"\" text=\"\" text=\"Webpage not available\" text=\"x+AAAAAElFTkSuQmCC\" text=\"Webpage not available\" text=\"The webpage at https://onioncore-character.blueblazer82.workers.dev/ could not be loaded because:\" text=\"net::ERR_INTERNET_DISCONNECTED\" text=\"\" text=\"\" \nshot shot-CHAR2-4-consent.png bytes=59878\nconsent page texts: text=\"\" text=\"\" text=\"\" text=\"\" text=\"Webpage not available\" text=\"x+AAAAAElFTkSuQmCC\" text=\"Webpage not available\" text=\"The webpage at https://onioncore-character.blueblazer82.workers.dev/ could not be loaded because:\" text=\"net::ERR_INTERNET_DISCONNECTED\" text=\"\" text=\"\" \nconsent button NOT found\nshot shot-CHAR2-5-returned.png bytes=59931\nreturned page texts: text=\"\" text=\"\" text=\"\" text=\"\" text=\"Webpage not available\" text=\"x+AAAAAElFTkSuQmCC\" text=\"Webpage not available\" text=\"The webpage at https://onioncore-character.blueblazer82.workers.dev/ could not be loaded because:\" text=\"net::ERR_INTERNET_DISCONNECTED\" text=\"\" text=\"\" \nfinal pid=2575\nshot shot-CHAR2-6-final.png bytes=59931\nfinal page texts: text=\"\" text=\"\" text=\"\" text=\"\" text=\"Webpage not available\" text=\"x+AAAAAElFTkSuQmCC\" text=\"Webpage not available\" text=\"The webpage at https://onioncore-character.blueblazer82.workers.dev/ could not be loaded because:\" text=\"net::ERR_INTERNET_DISCONNECTED\" text=\"\" text=\"\" \nauth-return log lines: 0\nOK: killing emulator, bye bye\nOK\nRUN_CHAR2_DONE\n",
+    "stderr": "* daemon not running; starting now at tcp:5037\n* daemon started successfully\n"
+  }
+}

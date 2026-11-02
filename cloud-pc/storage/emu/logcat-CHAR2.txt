@@ -1,0 +1,13 @@
+11-02 17:01:22.852  2575  2575 I OnionCharacter: onCreate: shell starting, home=https://onioncore-character.blueblazer82.workers.dev/
+11-02 17:01:24.515  2575  2575 I OnionCharacter: WebView configured: JS on, DOM storage on, UA suffix='OnioncoreCharacter/1.1'
+11-02 17:01:24.515  2575  2575 I OnionCharacter: Cookies: persistent, third-party accepted for the app origin
+11-02 17:01:24.516  2575  2575 I OnionCharacter: onCreate: loading home URL
+11-02 17:01:24.554  2575  2575 D OnionCharacter: onResume: WebView resumed, url=https://onioncore-character.blueblazer82.workers.dev/
+11-02 17:01:24.721  2575  2575 D OnionCharacter: Load progress: 10%
+11-02 17:01:25.115  2575  2575 D OnionCharacter: Page started: https://onioncore-character.blueblazer82.workers.dev/
+11-02 17:01:25.118  2575  2575 E OnionCharacter: Page error: url=https://onioncore-character.blueblazer82.workers.dev/, code=-2, desc=net::ERR_INTERNET_DISCONNECTED, mainFrame=true
+11-02 17:01:25.136  2575  2575 I OnionCharacter: Page finished: https://onioncore-character.blueblazer82.workers.dev/ title=
+11-02 17:01:25.770  2575  2575 D OnionCharacter: Load progress: 70%
+11-02 17:01:25.890  2575  2575 D OnionCharacter: Load progress: 80%
+11-02 17:01:26.015  2575  2575 D OnionCharacter: Load progress: 100%
+11-02 17:01:26.016  2575  2575 D OnionCharacter: Load progress: 100%

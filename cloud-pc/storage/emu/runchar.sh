@@ -1,17 +1,17 @@
 #!/bin/bash
-# runchar.sh — Onioncore Character v1.1 sign-in round-trip test (Cloud PC).
-# Boots the google_apis image (Chrome present), installs the shell APK,
-# taps "Continue with Onion ID", signs in on Onion ID in Chrome with a
-# throwaway test account, confirms consent, and verifies the browser
-# bounces back into the app, which redeems the handoff and lands signed in.
-# Artifacts in emu/ (cloud-pc/storage/emu). Verdict: emu/verdict-CHAR.txt
+# runchar2.sh — Onioncore Character v1.1 sign-in round trip, attempt 2.
+# Attempt 1 proved the app side (client=app pinned, authorize handed to
+# the browser with the app-callback) but died inside Chrome's first-run
+# gauntlet (account page -> notifications page -> system permission
+# dialog). This attempt shepherds Chrome through every first-run stage
+# with a dump-driven loop before filling the Onion ID login form.
 SDK=$HOME/.cache/cloudpc-models/android-sdk
 export ANDROID_HOME=$SDK ANDROID_SDK_ROOT=$SDK
 export ANDROID_AVD_HOME=$HOME/emu-avd-home
 export PATH=$SDK/platform-tools:$SDK/emulator:$PATH
 mkdir -p emu $ANDROID_AVD_HOME
 PKG=com.onioncore.character
-V=emu/verdict-CHAR.txt
+V=emu/verdict-CHAR2.txt
 IDUSER=appflowtest3
 IDPASS=appflow99xq
 say() { echo "$1" | tee -a $V; }
@@ -21,7 +21,7 @@ uidump() {
   adb exec-out cat /sdcard/ui.xml > "$1" 2>/dev/null
   if [ ! -s "$1" ]; then sleep 2; adb shell uiautomator dump /sdcard/ui.xml > /dev/null 2>&1; adb exec-out cat /sdcard/ui.xml > "$1" 2>/dev/null; fi
 }
-tapfind() { # $1 = ui xml, $2 = substring; echoes "x y"
+tapfind() {
   python3 - "$1" "$2" << 'PYEOF'
 import re, sys
 try: xml = open(sys.argv[1], encoding='utf-8', errors='replace').read()
@@ -36,7 +36,7 @@ for m in re.finditer(r'<node[^>]*>', xml):
             print((x1 + x2) // 2, (y1 + y2) // 2); sys.exit(0)
 PYEOF
 }
-editfields() { # echoes centers of all EditText nodes, one per line, in order
+editfields() {
   python3 - "$1" << 'PYEOF'
 import re, sys
 try: xml = open(sys.argv[1], encoding='utf-8', errors='replace').read()
@@ -49,16 +49,16 @@ for m in re.finditer(r'<node[^>]*class="android.widget.EditText"[^>]*>', xml):
 PYEOF
 }
 tapxy() { adb shell input tap $1 $2; }
-focuspkg() { adb shell dumpsys window windows 2>/dev/null | grep -m1 mCurrentFocus | grep -o '[a-z0-9_.]*/' | head -1 | tr -d '/'; }
+dumptext() { grep -o 'text="[^"]*"' "$1" 2>/dev/null | head -30 | tr '\n' ' '; }
 
 : > $V
-say "=== character v1.1 sign-in round trip $(date -u +%H:%M:%S)Z"
+say "=== character v1.1 sign-in round trip, attempt 2, $(date -u +%H:%M:%S)Z"
 if [ ! -x $SDK/emulator/emulator ]; then say "FATAL=no emulator (setup missing)"; exit 0; fi
 pkill -f qemu-system 2>/dev/null; sleep 2; adb kill-server 2>/dev/null; sleep 1
 base64 -d emu/character.apk.b64 > /tmp/char.apk 2>/dev/null
-say "apk bytes=$(stat -c%s /tmp/char.apk) md5=$(md5sum /tmp/char.apk | cut -d' ' -f1)"
-echo no | $SDK/cmdline-tools/latest/bin/avdmanager create avd -n charemu -k "system-images;android-34;google_apis;x86_64" -d pixel_6 --force > emu/avd-CHAR.log 2>&1
-nohup $SDK/emulator/emulator -avd charemu -no-window -no-audio -no-boot-anim -gpu angle_indirect -feature -Vulkan -memory 2048 -accel on -no-snapshot > emu/boot-CHAR.log 2>&1 &
+say "apk bytes=$(stat -c%s /tmp/char.apk)"
+echo no | $SDK/cmdline-tools/latest/bin/avdmanager create avd -n charemu -k "system-images;android-34;google_apis;x86_64" -d pixel_6 --force > emu/avd-CHAR2.log 2>&1
+nohup $SDK/emulator/emulator -avd charemu -no-window -no-audio -no-boot-anim -gpu angle_indirect -feature -Vulkan -memory 2048 -accel on -no-snapshot > emu/boot-CHAR2.log 2>&1 &
 timeout 150 adb wait-for-device
 ok=0
 for i in $(seq 1 40); do
@@ -66,68 +66,84 @@ for i in $(seq 1 40); do
   if [ "$b" = "1" ]; then ok=1; say "boot_completed=1 after ~$((i*5))s"; break; fi
   sleep 5
 done
-if [ "$ok" != "1" ]; then say "VERDICT=BOOT_FAIL"; tail -8 emu/boot-CHAR.log >> $V; exit 0; fi
+if [ "$ok" != "1" ]; then say "VERDICT=BOOT_FAIL"; exit 0; fi
 SZ=$(adb shell wm size | grep -o '[0-9]*x[0-9]*' | head -1); W=${SZ%x*}; H=${SZ#*x}; say "screen=${W}x${H}"
-adb install -r /tmp/char.apk > emu/install-CHAR.log 2>&1
-say "install: $(grep -o 'Success\|Failure\|FAILED[^ ]*' emu/install-CHAR.log | head -1)"
+adb install -r /tmp/char.apk > emu/install-CHAR2.log 2>&1
+say "install: $(grep -o 'Success\|Failure' emu/install-CHAR2.log | head -1)"
 adb logcat -c
 adb shell monkey -p $PKG -c android.intent.category.LAUNCHER 1 > /dev/null 2>&1
 sleep 14
-adb shell input tap $((W*80/100)) $((H*27/100)) # dismiss immersive toast
+adb shell input tap $((W*80/100)) $((H*27/100))
 sleep 10
-say "focus after launch: $(focuspkg) pid=$(adb shell pidof $PKG)"
-shot shot-CHAR-1-home.png
-uidump emu/ui-CHAR-1.xml
-# --- tap the site sign-in button inside the WebView ---
-XY=$(tapfind emu/ui-CHAR-1.xml "Onion ID")
-if [ -z "$XY" ]; then XY=$(tapfind emu/ui-CHAR-1.xml "Sign in"); fi
-if [ -n "$XY" ]; then say "tap sign-in at $XY"; tapxy $XY; else say "sign-in button not in dump — fraction tap"; adb shell input tap $((W/2)) $((H*60/100)); fi
-sleep 10
-say "focus after sign-in tap: $(focuspkg)"
-shot shot-CHAR-2-browser.png
-uidump emu/ui-CHAR-2.xml
-# --- Chrome first-run / chooser handling ---
-for label in "Use without an account" "No thanks" "Skip"; do
-  XY=$(tapfind emu/ui-CHAR-2.xml "$label")
-  if [ -n "$XY" ]; then say "tap chrome first-run '$label' at $XY"; tapxy $XY; sleep 5; uidump emu/ui-CHAR-2.xml; break; fi
+shot shot-CHAR2-1-home.png
+uidump emu/ui-CHAR2-1.xml
+XY=$(tapfind emu/ui-CHAR2-1.xml "Onion ID")
+if [ -z "$XY" ]; then XY=$(tapfind emu/ui-CHAR2-1.xml "Sign in"); fi
+if [ -n "$XY" ]; then say "tap sign-in at $XY"; tapxy $XY; else say "sign-in not in dump — fraction tap"; adb shell input tap $((W/2)) $((H*60/100)); fi
+sleep 8
+AUTHURL=$(adb logcat -d 2>/dev/null | grep -o 'https://onion-id[^ ]*authorize[^ ]*' | head -1)
+say "authorize url captured: ${AUTHURL:0:60}..."
+# ---- shepherd Chrome through first-run until the ID login form shows ----
+STAGE=0
+for i in $(seq 1 22); do
+  uidump emu/ui-CHAR2-loop.xml
+  N=$(editfields emu/ui-CHAR2-loop.xml | grep -c .)
+  if [ "$N" -ge 2 ]; then say "login form visible at loop $i"; STAGE=1; break; fi
+  if grep -q "Continue as" emu/ui-CHAR2-loop.xml; then say "already at consent (session persisted) loop $i"; STAGE=2; break; fi
+  DID=""
+  for label in "Don’t allow" "Don't allow" "Use without an account" "No thanks" "Skip" "Not now"; do
+    XY=$(tapfind emu/ui-CHAR2-loop.xml "$label")
+    if [ -n "$XY" ]; then say "loop $i: tap '$label' at $XY"; tapxy $XY; DID=1; sleep 4; break; fi
+  done
+  if [ -z "$DID" ] && grep -q "Chrome notifications" emu/ui-CHAR2-loop.xml; then
+    XY=$(tapfind emu/ui-CHAR2-loop.xml "Continue")
+    if [ -n "$XY" ]; then say "loop $i: tap notifications-page Continue at $XY"; tapxy $XY; DID=1; sleep 4; fi
+  fi
+  if [ -z "$DID" ]; then
+    # nothing actionable: maybe a new-tab page swallowed the intent — refire it once, mid-loop
+    if [ "$i" = "10" ] && [ -n "$AUTHURL" ]; then
+      say "loop 10: refiring authorize url in browser"
+      adb shell am start -a android.intent.action.VIEW -d "$AUTHURL" > /dev/null 2>&1
+    fi
+    sleep 4
+  fi
 done
-# --- fill the Onion ID login form (web content nodes) ---
-FIELDS=$(editfields emu/ui-CHAR-2.xml)
-N=$(echo "$FIELDS" | grep -c .)
-say "edit fields found: $N"
-if [ "$N" -ge 2 ]; then
+say "shepherd done, stage=$STAGE"
+shot shot-CHAR2-2-login.png
+uidump emu/ui-CHAR2-2.xml
+say "login page texts: $(dumptext emu/ui-CHAR2-2.xml)"
+# ---- fill + submit ----
+if [ "$STAGE" = "1" ]; then
+  FIELDS=$(editfields emu/ui-CHAR2-2.xml)
   UXY=$(echo "$FIELDS" | sed -n '1p'); PXY=$(echo "$FIELDS" | sed -n '2p')
   tapxy $UXY; sleep 1; adb shell input text "$IDUSER"; sleep 1
   tapxy $PXY; sleep 1; adb shell input text "$IDPASS"; sleep 1
-  shot shot-CHAR-3-filled.png
-  uidump emu/ui-CHAR-3.xml
-  XY=$(tapfind emu/ui-CHAR-3.xml "Sign in")
-  if [ -z "$XY" ]; then XY=$(tapfind emu/ui-CHAR-3.xml "Log in"); fi
-  if [ -n "$XY" ]; then say "tap login submit at $XY"; tapxy $XY; else say "submit not found — ENTER key"; adb shell input keyevent 66; fi
-else
-  say "login form fields NOT found in dump"
+  shot shot-CHAR2-3-filled.png
+  uidump emu/ui-CHAR2-3.xml
+  XY=$(tapfind emu/ui-CHAR2-3.xml "Sign in")
+  if [ -z "$XY" ]; then XY=$(tapfind emu/ui-CHAR2-3.xml "Log in"); fi
+  if [ -n "$XY" ]; then say "tap login submit at $XY"; tapxy $XY; else say "submit not found — ENTER"; adb shell input keyevent 66; fi
+  sleep 10
 fi
-sleep 10
-say "focus after login: $(focuspkg)"
-shot shot-CHAR-4-consent.png
-uidump emu/ui-CHAR-4.xml
-# --- consent page: continue/allow ---
-for label in "Continue" "Allow" "Authorize" "Yes"; do
-  XY=$(tapfind emu/ui-CHAR-4.xml "$label")
-  if [ -n "$XY" ]; then say "tap consent '$label' at $XY"; tapxy $XY; break; fi
-done
+# ---- consent ----
+uidump emu/ui-CHAR2-4.xml
+shot shot-CHAR2-4-consent.png
+say "consent page texts: $(dumptext emu/ui-CHAR2-4.xml)"
+XY=$(tapfind emu/ui-CHAR2-4.xml "Continue as")
+if [ -n "$XY" ]; then say "tap consent 'Continue as' at $XY"; tapxy $XY; else say "consent button NOT found"; fi
 sleep 12
-say "focus after consent: $(focuspkg)"
-shot shot-CHAR-5-returned.png
-uidump emu/ui-CHAR-5.xml
-# --- if a link disambiguation dialog is showing, pick the app ---
-XY=$(tapfind emu/ui-CHAR-5.xml "Onioncore Character")
-if [ -n "$XY" ]; then say "tap app in chooser at $XY"; tapxy $XY; sleep 8; shot shot-CHAR-5b-after-chooser.png; fi
+uidump emu/ui-CHAR2-5.xml
+shot shot-CHAR2-5-returned.png
+say "returned page texts: $(dumptext emu/ui-CHAR2-5.xml)"
+XY=$(tapfind emu/ui-CHAR2-5.xml "Onioncore Character")
+if [ -n "$XY" ]; then say "tap app in chooser at $XY"; tapxy $XY; sleep 8; shot shot-CHAR2-5b-after-chooser.png; fi
 sleep 6
-say "final focus: $(focuspkg) pid=$(adb shell pidof $PKG)"
-shot shot-CHAR-6-final.png
-adb shell logcat -d 2>/dev/null | grep -i "OnionCharacter" | grep -i "auth\|redeem\|app link\|Nav\|Page finished" | tail -30 > emu/logcat-CHAR.txt
-say "logcat auth lines: $(grep -c . emu/logcat-CHAR.txt)"
-grep -i "auth return" emu/logcat-CHAR.txt | head -3 | while read -r l; do say "LOG: $l"; done
+say "final pid=$(adb shell pidof $PKG)"
+shot shot-CHAR2-6-final.png
+uidump emu/ui-CHAR2-6.xml
+say "final page texts: $(dumptext emu/ui-CHAR2-6.xml)"
+adb shell logcat -d 2>/dev/null | grep -i "OnionCharacter" | tail -40 > emu/logcat-CHAR2.txt
+say "auth-return log lines: $(grep -ci 'auth return' emu/logcat-CHAR2.txt)"
+grep -i "auth return" emu/logcat-CHAR2.txt | head -2 | while read -r l; do say "LOG: $l"; done
 adb emu kill 2>/dev/null
-say "RUN_CHAR_DONE"
+say "RUN_CHAR2_DONE"
