@@ -1,2 +1,27 @@
-=== Onion Browser v0.43.0 emu screenshot run 23:58:36Z img=google_apis
-FATAL=no emulator (setup missing)
+=== Onion Browser v0.43.0 emu screenshot run 00:04:25Z img=google_apis
+APK md5_ok=1 size=15698110
+boot_completed=1 after ~30s
+screen=1080x2400
+install_exit=0 install_last=Success
+pm_list_match=1
+pid_after_launch=2844
+shot1_bytes=162480
+ui_has=Dark Onion: Off
+ui_has=ONION CORE
+ui_has=Hub
+ui_has=Mail
+ui_has=Engine
+ui_has=Photos
+ui_missing=Drive
+ui_missing=Community
+ui_missing=Characters
+ui_missing=Map
+ui_missing=All sites
+ui_has=AI Mode
+ui_missing=SPEED DIAL
+ui_sparkles=absent
+shot2_bytes=158343
+shot3_bytes=143094
+pid_at_end=2844
+logcat_bytes=1463537
+HOME_PHASE_DONE

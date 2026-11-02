@@ -1,1 +1,0 @@
-{"id":"ob43-full","action":"shell","command":"bash emu/run10.sh setup && OB_IMG=google_apis bash emu/runob43.sh home"}

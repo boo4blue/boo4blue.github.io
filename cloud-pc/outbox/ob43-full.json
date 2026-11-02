@@ -1,0 +1,16 @@
+{
+  "id": "ob43-full",
+  "action": "shell",
+  "at": "2026-11-02T00:05:54Z",
+  "job": {
+    "id": "ob43-full",
+    "action": "shell",
+    "command": "bash emu/run10.sh setup && OB_IMG=google_apis bash emu/runob43.sh home"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "attempt 1 sdkmanager exit=0\nSDK verified OK on attempt 1\nSETUP_DONE\n=== Onion Browser v0.43.0 emu screenshot run 00:04:25Z img=google_apis\nAPK md5_ok=1 size=15698110\nboot_completed=1 after ~30s\nscreen=1080x2400\ninstall_exit=0 install_last=Success\npm_list_match=1\npid_after_launch=2844\nshot1_bytes=162480\nui_has=Dark Onion: Off\nui_has=ONION CORE\nui_has=Hub\nui_has=Mail\nui_has=Engine\nui_has=Photos\nui_missing=Drive\nui_missing=Community\nui_missing=Characters\nui_missing=Map\nui_missing=All sites\nui_has=AI Mode\nui_missing=SPEED DIAL\nui_sparkles=absent\nshot2_bytes=158343\nshot3_bytes=143094\npid_at_end=2844\nlogcat_bytes=1463537\nOK: killing emulator, bye bye\nOK\nHOME_PHASE_DONE\n",
+    "stderr": "* daemon not running; starting now at tcp:5037\n* daemon started successfully\n"
+  }
+}
