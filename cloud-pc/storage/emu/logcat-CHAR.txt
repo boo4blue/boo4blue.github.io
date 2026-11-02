@@ -1,0 +1,4 @@
+11-02 16:48:08.601  2558  2558 I OnionCharacter: Page finished: https://onioncore-character.blueblazer82.workers.dev/ title=character.oc — Character by Onion Core
+11-02 16:48:30.107  2558  2558 I OnionCharacter: Nav: sign-in start — forcing app return flow
+11-02 16:48:30.478  2558  2558 I OnionCharacter: Nav external (browser): https://onion-id.blueblazer82.workers.dev/authorize?app=character&redirect=https%3A%2F%2Fonioncore-character.blueblazer82.workers.dev%2Fauth%2Fapp-callback&state=95ef6427dc61922f1f1a6c227fdef3ef24f4c946ea453792
+11-02 16:48:30.782  2558  2558 I OnionCharacter: Page finished: https://onion-id.blueblazer82.workers.dev/authorize?app=character&redirect=https%3A%2F%2Fonioncore-character.blueblazer82.workers.dev%2Fauth%2Fapp-callback&state=95ef6427dc61922f1f1a6c227fdef3ef24f4c946ea453792 title=character.oc — Character by Onion Core

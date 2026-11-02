@@ -1,0 +1,16 @@
+{
+  "id": "20-char-store-apk",
+  "action": "store",
+  "at": "2026-11-02T16:45:49Z",
+  "job": {
+    "id": "20-char-store-apk",
+    "action": "store",
+    "path": "emu/character.apk.b64",
+    "content_bytes": 77968
+  },
+  "result": {
+    "ok": true,
+    "path": "emu/character.apk.b64",
+    "bytes": 77968
+  }
+}

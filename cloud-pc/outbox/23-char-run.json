@@ -1,0 +1,16 @@
+{
+  "id": "23-char-run",
+  "action": "shell",
+  "at": "2026-11-02T16:49:30Z",
+  "job": {
+    "id": "23-char-run",
+    "action": "shell",
+    "command": "bash emu/runchar.sh"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "=== character v1.1 sign-in round trip 16:47:11Z\napk bytes=58476 md5=ad602c04d3802603ce01f141f2864c08\nboot_completed=1 after ~30s\nscreen=1080x2400\ninstall: Success\nfocus after launch:  pid=2558\nshot shot-CHAR-1-home.png bytes=355809\ntap sign-in at 542 1528\nfocus after sign-in tap: \nshot shot-CHAR-2-browser.png bytes=128154\ntap chrome first-run 'Use without an account' at 540 2093\nedit fields found: 0\nlogin form fields NOT found in dump\nfocus after login: \nshot shot-CHAR-4-consent.png bytes=205508\ntap consent 'Continue' at 869 1743\nfocus after consent: \nshot shot-CHAR-5-returned.png bytes=222633\nfinal focus:  pid=2558\nshot shot-CHAR-6-final.png bytes=222633\nlogcat auth lines: 4\nOK: killing emulator, bye bye\nOK\nRUN_CHAR_DONE\n",
+    "stderr": "* daemon not running; starting now at tcp:5037\n* daemon started successfully\n"
+  }
+}

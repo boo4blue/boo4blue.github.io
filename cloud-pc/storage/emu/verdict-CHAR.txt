@@ -1,0 +1,22 @@
+=== character v1.1 sign-in round trip 16:47:11Z
+apk bytes=58476 md5=ad602c04d3802603ce01f141f2864c08
+boot_completed=1 after ~30s
+screen=1080x2400
+install: Success
+focus after launch:  pid=2558
+shot shot-CHAR-1-home.png bytes=355809
+tap sign-in at 542 1528
+focus after sign-in tap: 
+shot shot-CHAR-2-browser.png bytes=128154
+tap chrome first-run 'Use without an account' at 540 2093
+edit fields found: 0
+login form fields NOT found in dump
+focus after login: 
+shot shot-CHAR-4-consent.png bytes=205508
+tap consent 'Continue' at 869 1743
+focus after consent: 
+shot shot-CHAR-5-returned.png bytes=222633
+final focus:  pid=2558
+shot shot-CHAR-6-final.png bytes=222633
+logcat auth lines: 4
+RUN_CHAR_DONE
