@@ -1,0 +1,40 @@
+11-02 17:12:28.115  6020  6020 D OnionCharacter: Load progress: 22%
+11-02 17:12:28.903  6020  6020 D OnionCharacter: Load progress: 23%
+11-02 17:12:28.974  6020  6020 D OnionCharacter: Load progress: 70%
+11-02 17:12:29.194  6020  6020 D OnionCharacter: Load progress: 100%
+11-02 17:12:29.194  6020  6020 D OnionCharacter: Load progress: 100%
+11-02 17:12:29.194  6020  6020 I OnionCharacter: Page finished: https://onioncore-character.blueblazer82.workers.dev/ title=character.oc — Character by Onion Core
+11-02 17:12:50.041  6272  6272 I OnionCharacter: onCreate: shell starting, home=https://onioncore-character.blueblazer82.workers.dev/
+11-02 17:12:50.437  6272  6272 I OnionCharacter: WebView configured: JS on, DOM storage on, UA suffix='OnioncoreCharacter/1.1'
+11-02 17:12:50.437  6272  6272 I OnionCharacter: Cookies: persistent, third-party accepted for the app origin
+11-02 17:12:50.438  6272  6272 I OnionCharacter: onCreate: loading home URL
+11-02 17:12:50.443  6272  6272 D OnionCharacter: onResume: WebView resumed, url=https://onioncore-character.blueblazer82.workers.dev/
+11-02 17:12:50.461  6272  6272 D OnionCharacter: Load progress: 10%
+11-02 17:12:51.134  6272  6272 D OnionCharacter: Page started: https://onioncore-character.blueblazer82.workers.dev/
+11-02 17:12:51.136  6272  6272 D OnionCharacter: Load progress: 22%
+11-02 17:12:51.247  6272  6272 D OnionCharacter: Load progress: 22%
+11-02 17:12:51.369  6272  6272 D OnionCharacter: Load progress: 70%
+11-02 17:12:51.381  6272  6272 D OnionCharacter: Load progress: 100%
+11-02 17:12:51.381  6272  6272 D OnionCharacter: Load progress: 100%
+11-02 17:12:51.382  6272  6272 I OnionCharacter: Page finished: https://onioncore-character.blueblazer82.workers.dev/ title=character.oc — Character by Onion Core
+11-02 17:13:15.040  6493  6493 I OnionCharacter: onCreate: shell starting, home=https://onioncore-character.blueblazer82.workers.dev/
+11-02 17:13:15.528  6493  6493 I OnionCharacter: WebView configured: JS on, DOM storage on, UA suffix='OnioncoreCharacter/1.1'
+11-02 17:13:15.528  6493  6493 I OnionCharacter: Cookies: persistent, third-party accepted for the app origin
+11-02 17:13:15.528  6493  6493 I OnionCharacter: onCreate: loading home URL
+11-02 17:13:15.549  6493  6493 D OnionCharacter: onResume: WebView resumed, url=https://onioncore-character.blueblazer82.workers.dev/
+11-02 17:13:15.780  6493  6493 D OnionCharacter: Load progress: 10%
+11-02 17:13:16.576  6493  6493 D OnionCharacter: Page started: https://onioncore-character.blueblazer82.workers.dev/
+11-02 17:13:16.602  6493  6493 D OnionCharacter: Load progress: 22%
+11-02 17:13:17.012  6493  6493 D OnionCharacter: Load progress: 23%
+11-02 17:13:17.129  6493  6493 D OnionCharacter: Load progress: 70%
+11-02 17:13:17.141  6493  6493 D OnionCharacter: Load progress: 100%
+11-02 17:13:17.141  6493  6493 D OnionCharacter: Load progress: 100%
+11-02 17:13:17.142  6493  6493 I OnionCharacter: Page finished: https://onioncore-character.blueblazer82.workers.dev/ title=character.oc — Character by Onion Core
+11-02 17:13:36.695  6493  6493 I OnionCharacter: Nav: sign-in start — forcing app return flow
+11-02 17:13:36.697  6493  6493 D OnionCharacter: Load progress: 10%
+11-02 17:13:36.796  6493  6493 D OnionCharacter: Load progress: 10%
+11-02 17:13:37.234  6493  6493 I OnionCharacter: Nav external (browser): https://onion-id.blueblazer82.workers.dev/authorize?app=character&redirect=https%3A%2F%2Fonioncore-character.blueblazer82.workers.dev%2Fauth%2Fapp-callback&state=24c9935369a73f8772884989ebadf44ac1d643ba3b72bd16
+11-02 17:13:37.249  6493  6493 D OnionCharacter: onPause: WebView paused, cookies flushed
+11-02 17:13:37.261  6493  6493 I OnionCharacter: Page finished: https://onion-id.blueblazer82.workers.dev/authorize?app=character&redirect=https%3A%2F%2Fonioncore-character.blueblazer82.workers.dev%2Fauth%2Fapp-callback&state=24c9935369a73f8772884989ebadf44ac1d643ba3b72bd16 title=character.oc — Character by Onion Core
+11-02 17:13:37.261  6493  6493 D OnionCharacter: Load progress: 100%
+11-02 17:13:38.552  6493  6493 D OnionCharacter: onSaveInstanceState: WebView state saved

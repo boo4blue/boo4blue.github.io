@@ -1,0 +1,16 @@
+{
+  "id": "34-char-setup3",
+  "action": "shell",
+  "at": "2026-11-02T17:10:41Z",
+  "job": {
+    "id": "34-char-setup3",
+    "action": "shell",
+    "command": "bash emu/run10.sh setup"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "attempt 1 sdkmanager exit=0\nSDK verified OK on attempt 1\nSETUP_DONE\n",
+    "stderr": ""
+  }
+}

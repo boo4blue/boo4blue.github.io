@@ -1,0 +1,16 @@
+{
+  "id": "33-char-store-script3",
+  "action": "store",
+  "at": "2026-11-02T17:09:26Z",
+  "job": {
+    "id": "33-char-store-script3",
+    "action": "store",
+    "path": "emu/runchar.sh",
+    "content_bytes": 7993
+  },
+  "result": {
+    "ok": true,
+    "path": "emu/runchar.sh",
+    "bytes": 7993
+  }
+}
