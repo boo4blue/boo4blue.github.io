@@ -1,5 +1,0 @@
-{
-  "id": "voice-prog-1255",
-  "action": "shell",
-  "command": "base64 -d voice-clone/refs/calm/BV3_1_21_piir_c011.wav.b64 > voice-clone/refs/calm/BV3_1_21_piir_c011.wav && base64 -d voice-clone/refs/excited/BV2_19_tndw_c005.wav.b64 > voice-clone/refs/excited/BV2_19_tndw_c005.wav && pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu && pip install -q chatterbox-tts psutil && VOICE_CLONE_STAGE=voice-clone python3 voice-clone/cloud_synth_long.py && ls -la voice-clone/out/"
-}
