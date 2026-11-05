@@ -1,0 +1,1 @@
+{"id": "f07-setup", "action": "shell", "command": "bash emu/runfast.sh setup"}
