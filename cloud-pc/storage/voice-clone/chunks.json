@@ -1,0 +1,16 @@
+{
+  "chunks": [
+    {
+      "i": 0,
+      "text": "Alright you two, settle in. Movie night at the house \u2014 big couch, extra mac and cheese, and no arguing. That's the rule now.",
+      "tag": "calm",
+      "ref": "refs/calm/BV3_1_21_piir_c011.wav"
+    },
+    {
+      "i": 1,
+      "text": "Okay listen listen listen \u2014 this is my voice and we are just getting started! If we can dream it up, we can build it. Watch and see!",
+      "tag": "excited",
+      "ref": "refs/excited/BV2_19_tndw_c005.wav"
+    }
+  ]
+}
