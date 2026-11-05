@@ -1,0 +1,5 @@
+{
+ "id": "clone-model-001",
+ "action": "shell",
+ "command": "export HF_HOME=$HOME/.cache/cloudpc-models/hf; python3 -c \"from chatterbox.tts import ChatterboxTTS; m=ChatterboxTTS.from_pretrained(device='cpu'); print('model loaded, sr', m.sr)\""
+}
