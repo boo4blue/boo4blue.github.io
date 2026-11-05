@@ -24,7 +24,7 @@ INFO         |      Ok: Hardware GPU compatibility checks are not required
 INFO         |   Checking: hasSufficientSystem
 INFO         |      Ok: System requirements to run avd: `fastlane34` are met
 WARNING      | Feature QuickbootFileBacked is disabled due to stability issues, if you really want that, the environment variable ANDROID_EMU_FORCE_QUICKBOOT_FILE_BACKED need to set to 1
-INFO         | Storing crashdata in: /tmp/android-runner/emu-crash-37.2.13.db, detection is enabled for process: 3415
+INFO         | Storing crashdata in: /tmp/android-runner/emu-crash-37.2.13.db, detection is enabled for process: 3122
 INFO         | Initializing gfxstream backend
 INFO         | startOpenglesRendererImpl: gpu info
 INFO         | 
@@ -41,7 +41,7 @@ INFO         | Graphics API Extensions GL_OES_EGL_sync GL_OES_EGL_image GL_OES_E
 INFO         | Graphics Device Extensions N/A
 ERROR        | Setting read-only feature 'GLAsyncSwap' to '0'
 INFO         | Feature 'GLAsyncSwap' (50) is overridden to 'disabled'
-INFO         | Sending adb public key [QAAAACPaCTR1WmUbQvbjvGJXRkXxRpmE0+rM+s19oqO62zmI4DHfnHkm2fSahgj6mrvHc2hNa2llDHH+/aPiUISxhKjSCLFS2lpx8HdjZUV1rdZe/pbh94Ds6jznU413Ujk4oqfgoYRQWI1OEIAAO0PiO0n7E+D7EK2Q1NyTKv1vdju1yNqPpRBBDHRHxj4Tr8o4ihsChmC6KeWCUzfjgpvZZVTLAIUEzdzCvQPz2lM8NbakVet+L5xuHdrTF+f7LnOnjUXdEmSROZ7zCq4r8X61Wj4/XcRMF3xVBIR7zpMuGMDwoNYciAtDCvZHrfVzcpapoBTd399cS1HlcH+zsTm9LlfR5xLYEY3pAnrbcWk7TvFI4lBKGl0UyCd7VR+Tg+MoAmLRAmSnZo4JjiqUlB+ojNQkQNhz6kFuNED1Px0LPNmXxytvcpKGPMk2lBTeHVMAtDvZXsxqsp/0RS1fW9R/bUX1j0wOFvwO+fbCmeW+Cxyl0kff8RtyLkzhNvnAhQaDdaKIQ4effLo9cnPKpWxGOssD0QqpCph6EEDEYlqhQeYeCqZn/hBoSgVwgwWS0Kuvst59UcMT3BMkrXFh7f+OESL01kpoGbcHyZ0VfVWeiJe5hybD7K/z+1w+FKcsNURnKJ79E5ad67MjuMNVhXJSSpbm/CvLnsn1S/1VZPh4JFUuezhBCAEAAQA= runner@unknown]
+INFO         | Sending adb public key [QAAAALm7aYF3JXiZJVN4EejUcna/lk0EUmbY4XPcTzvUTGFHCww/dnx+YMbCn1jRqq4cbObZgDL9WKVa+COLap9ntcDl+8Ql1fr1u3HxWF2nDLSV9lPuTeAI75JoeDr6+WvdAOWbzkn3RgZhVShWBhYrN5JJ71n2ahDtwUmJLwrd+HKcCkSapbpOIAx21yJsHT4vRMn+it2swGlsmYBkERki5ADJHglCsrXXbY8FP5aMJj04a+EBIS70ZTNTco+ftMG8FaE+EUGNXHJ8jvkqhe+CbroRVEqOKYvstsVhn1lkvR30cDOpi0joYJ4LW6i0762ImrGwQelQrvpalDH06oGBIVeQSGDEIh4krEvxYZDBM+nxIFofCa2R9Wql+crtDVDgb2xS4cPa+jOk8cYzSvKVKdgjfp0HhZdrpHEE55eTKSNY5RjJ1A9H/l4Zy5v7mvMnIoRNduXopbNfk3/EP1Kc8vKrA3vlP035AVZsOw5jlLrlH2NyMSDNasps5sCcpooRUXgA8q2bnhUWMRmRi5PxF8NrGOvR1utnUBd2aVHh2NNhp7iAr7wHw7jkzszwqSdWwLjHjpVFkYVP/DukBK/ZgKW1bZhd25BOceCCzAQOU2T7QhFIi0X2pFJSWpxdZwh1ktW1J5EFVdpLgGmET/bcT6BM05v4uiaV+OtdyE8gK4tDOdbLUwEAAQA= runner@unknown]
 INFO         | Userspace boot properties:
 INFO         |   androidboot.boot_devices=pci0000:00/0000:00:03.0 pci0000:00/0000:00:06.0
 INFO         |   androidboot.dalvik.vm.heapsize=576m
@@ -52,7 +52,7 @@ INFO         |   androidboot.hardware.gltransport=pipe
 INFO         |   androidboot.logcat=*:V
 INFO         |   androidboot.opengles.version=196609
 INFO         |   androidboot.qemu=1
-INFO         |   androidboot.qemu.adb.pubkey=QAAAACPaCTR1WmUbQvbjvGJXRkXxRpmE0+rM+s19oqO62zmI4DHfnHkm2fSahgj6mrvHc2hNa2llDHH+/aPiUISxhKjSCLFS2lpx8HdjZUV1rdZe/pbh94Ds6jznU413Ujk4oqfgoYRQWI1OEIAAO0PiO0n7E+D7EK2Q1NyTKv1vdju1yNqPpRBBDHRHxj4Tr8o4ihsChmC6KeWCUzfjgpvZZVTLAIUEzdzCvQPz2lM8NbakVet+L5xuHdrTF+f7LnOnjUXdEmSROZ7zCq4r8X61Wj4/XcRMF3xVBIR7zpMuGMDwoNYciAtDCvZHrfVzcpapoBTd399cS1HlcH+zsTm9LlfR5xLYEY3pAnrbcWk7TvFI4lBKGl0UyCd7VR+Tg+MoAmLRAmSnZo4JjiqUlB+ojNQkQNhz6kFuNED1Px0LPNmXxytvcpKGPMk2lBTeHVMAtDvZXsxqsp/0RS1fW9R/bUX1j0wOFvwO+fbCmeW+Cxyl0kff8RtyLkzhNvnAhQaDdaKIQ4effLo9cnPKpWxGOssD0QqpCph6EEDEYlqhQeYeCqZn/hBoSgVwgwWS0Kuvst59UcMT3BMkrXFh7f+OESL01kpoGbcHyZ0VfVWeiJe5hybD7K/z+1w+FKcsNURnKJ79E5ad67MjuMNVhXJSSpbm/CvLnsn1S/1VZPh4JFUuezhBCAEAAQA= runner@unknown
+INFO         |   androidboot.qemu.adb.pubkey=QAAAALm7aYF3JXiZJVN4EejUcna/lk0EUmbY4XPcTzvUTGFHCww/dnx+YMbCn1jRqq4cbObZgDL9WKVa+COLap9ntcDl+8Ql1fr1u3HxWF2nDLSV9lPuTeAI75JoeDr6+WvdAOWbzkn3RgZhVShWBhYrN5JJ71n2ahDtwUmJLwrd+HKcCkSapbpOIAx21yJsHT4vRMn+it2swGlsmYBkERki5ADJHglCsrXXbY8FP5aMJj04a+EBIS70ZTNTco+ftMG8FaE+EUGNXHJ8jvkqhe+CbroRVEqOKYvstsVhn1lkvR30cDOpi0joYJ4LW6i0762ImrGwQelQrvpalDH06oGBIVeQSGDEIh4krEvxYZDBM+nxIFofCa2R9Wql+crtDVDgb2xS4cPa+jOk8cYzSvKVKdgjfp0HhZdrpHEE55eTKSNY5RjJ1A9H/l4Zy5v7mvMnIoRNduXopbNfk3/EP1Kc8vKrA3vlP035AVZsOw5jlLrlH2NyMSDNasps5sCcpooRUXgA8q2bnhUWMRmRi5PxF8NrGOvR1utnUBd2aVHh2NNhp7iAr7wHw7jkzszwqSdWwLjHjpVFkYVP/DukBK/ZgKW1bZhd25BOceCCzAQOU2T7QhFIi0X2pFJSWpxdZwh1ktW1J5EFVdpLgGmET/bcT6BM05v4uiaV+OtdyE8gK4tDOdbLUwEAAQA= runner@unknown
 INFO         |   androidboot.qemu.avd_name=fastlane34
 INFO         |   androidboot.qemu.camera_hq_edge_processing=0
 INFO         |   androidboot.qemu.camera_protocol_ver=1
@@ -71,15 +71,15 @@ INFO         |   androidboot.vbmeta.digest=451e57ed688ff746d2c636d52169ade253e2b
 INFO         |   androidboot.vbmeta.hash_alg=sha256
 INFO         |   androidboot.vbmeta.size=6656
 INFO         |   androidboot.veritymode=enforcing
-WARNING: cannnot unmap ptr 0x7f1b9d201000 as it is in the protected range from 0x7f1a9d200000 to 0x7f1b9d400000
+WARNING: cannnot unmap ptr 0x7efbf5c01000 as it is in the protected range from 0x7efaf5c00000 to 0x7efbf5e00000
 pc_memory_init: above 4g size: 40000000
 INFO         | Monitoring duration of emulator setup.
 WARNING      | The emulator now requires a signed jwt token for gRPC access! Use the -grpc flag if you really want an open unprotected grpc port
 INFO         | Using security allow list from: /home/runner/.cache/cloudpc-models/android-sdk/emulator/lib/emulator_access.json
-INFO         | The active JSON Web Key Sets can be found here: /run/user/1001/avd/running/3415/jwks/75a8f8ab-e3c4-4e6a-9c20-05b53667fefd/active.jwk
-INFO         | Scanning /run/user/1001/avd/running/3415/jwks/75a8f8ab-e3c4-4e6a-9c20-05b53667fefd for jwk keys.
+INFO         | The active JSON Web Key Sets can be found here: /run/user/1001/avd/running/3122/jwks/d1bc60ee-974a-4d0e-9495-3c4f7f334cf1/active.jwk
+INFO         | Scanning /run/user/1001/avd/running/3122/jwks/d1bc60ee-974a-4d0e-9495-3c4f7f334cf1 for jwk keys.
 INFO         | Started GRPC server at 127.0.0.1:8554, security: Local, auth: +token
-INFO         | Advertising in: /run/user/1001/avd/running/pid_3415.ini
+INFO         | Advertising in: /run/user/1001/avd/running/pid_3122.ini
 INFO         | Successfully initialized netsim WiFi
 INFO         | Activated packet streamer for bluetooth emulation
 INFO         | Setting display: 0 configuration to: 1080x2400, dpi: 420x420 
@@ -91,15 +91,16 @@ WARNING      | Failed to create process resource for puid 2.
 WARNING      | Failed to create process resource for puid 3.
 WARNING      | Failed to create process resource for puid 4.
 WARNING      | Failed to create process resource for puid 5.
-WARNING      | Failed to create process resource for puid 6.
-WARNING      | Failed to create process resource for puid 8.
-WARNING      | Failed to create process resource for puid 7.
-WARNING      | Failed to create process resource for puid 10.
-WARNING      | Failed to create process resource for puid 11.
 WARNING      | Failed to create process resource for puid 12.
-WARNING      | Failed to create process resource for puid 14.
-INFO         | Successfully loaded snapshot 'fastlane' using 5463 ms
-INFO         | Wait for emulator (pid 3415) 20 seconds to shutdown gracefully before kill;you can set environment variable ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL(in seconds) to change the default value (20 seconds)
+WARNING      | Failed to create process resource for puid 8.
+WARNING      | Failed to create process resource for puid 6.
+WARNING      | Failed to create process resource for puid 15.
+WARNING      | Failed to create process resource for puid 7.
+WARNING      | Failed to create process resource for puid 9.
+WARNING      | Failed to create process resource for puid 13.
+WARNING      | Failed to create process resource for puid 11.
+INFO         | Successfully loaded snapshot 'fastlane' using 5744 ms
+/buildbot/src/googleplex-android/emu-37-2-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v30_imp.cpp:glClientWaitSync:542 error 0x501
+/buildbot/src/googleplex-android/emu-37-2-release/hardware/google/gfxstream/host/gl/glestranslator/gles_v2/gles_v30_imp.cpp:glDeleteSync:562 error 0x501
+INFO         | Wait for emulator (pid 3122) 20 seconds to shutdown gracefully before kill;you can set environment variable ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL(in seconds) to change the default value (20 seconds)
 
-USER_INFO    | Snapshots have been disabled by the user, save request is ignored.
-INFO         | Saving snapshot 'default_boot' took 0 ms

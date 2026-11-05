@@ -1,0 +1,16 @@
+{
+  "id": "f08-cold",
+  "action": "shell",
+  "at": "2026-11-05T16:38:44Z",
+  "job": {
+    "id": "f08-cold",
+    "action": "shell",
+    "command": "bash emu/runfast.sh cold"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "mode=cold gpu=swangle_indirect img=google_apis package=com.roblox.client\n-rw-r--r-- 1 runner runner 236553822 Nov  5 16:36 /tmp/fastlane.apk\ne3b9337646ae93ea7ae69b843935534c  /tmp/fastlane.apk\naapt=/usr/local/lib/android/sdk/build-tools/37.0.0/aapt\nAAPT_BADGING: package: name='com.roblox.client' versionCode='20836' versionName='2.746.1266' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'\nPKG_VERIFY_OK\nboot_completed_rc=0 BOOT_COLD_SECONDS=38\nANIM_SCALES_SET\nscreen=1080x2400\n--- install log:\nPerforming Streamed Install\nSuccess\nPKG_PRESENT=1\n-rw-r--r-- 1 runner runner 1366433 Nov  5 16:37 emu/shot-fast-home.png\n-rw-r--r-- 1 runner runner 139356 Nov  5 16:38 emu/shot-fast-drawer.png\n## Network stats: elapsed time=823ms (0ms mobile, 0ms wifi, 823ms not connected)\n--- pid@launch:\n4701\n-rw-r--r-- 1 runner runner 36505 Nov  5 16:38 emu/shot-fast-login1.png\nLOGIN_BUTTON_NOT_IN_UIDUMP (Roblox renders its own UI; login1 shot stands)\n--- pid@end:\n4701\nOK\nsnapshot save exit=0 SNAPSHOT_SAVE_SECONDS=5\nOK: killing emulator, bye bye\nOK\nCOLD_DONE\n",
+    "stderr": ""
+  }
+}

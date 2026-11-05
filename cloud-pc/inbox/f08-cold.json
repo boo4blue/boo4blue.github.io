@@ -1,1 +1,0 @@
-{"id": "f08-cold", "action": "shell", "command": "bash emu/runfast.sh cold"}

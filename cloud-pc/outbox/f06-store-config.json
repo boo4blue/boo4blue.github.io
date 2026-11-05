@@ -1,0 +1,16 @@
+{
+  "id": "f06-store-config",
+  "action": "store",
+  "at": "2026-11-05T16:35:31Z",
+  "job": {
+    "id": "f06-store-config",
+    "action": "store",
+    "path": "emu/config.env",
+    "content_bytes": 356
+  },
+  "result": {
+    "ok": true,
+    "path": "emu/config.env",
+    "bytes": 356
+  }
+}

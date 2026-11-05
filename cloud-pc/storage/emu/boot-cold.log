@@ -25,7 +25,7 @@ INFO         |      Ok: Hardware GPU compatibility checks are not required
 INFO         |   Checking: hasSufficientSystem
 INFO         |      Ok: System requirements to run avd: `fastlane34` are met
 WARNING      | Feature QuickbootFileBacked is disabled due to stability issues, if you really want that, the environment variable ANDROID_EMU_FORCE_QUICKBOOT_FILE_BACKED need to set to 1
-INFO         | Storing crashdata in: /tmp/android-runner/emu-crash-37.2.13.db, detection is enabled for process: 2969
+INFO         | Storing crashdata in: /tmp/android-runner/emu-crash-37.2.13.db, detection is enabled for process: 2648
 INFO         | Initializing gfxstream backend
 INFO         | startOpenglesRendererImpl: gpu info
 INFO         | 
@@ -42,7 +42,7 @@ INFO         | Graphics API Extensions GL_OES_EGL_sync GL_OES_EGL_image GL_OES_E
 INFO         | Graphics Device Extensions N/A
 ERROR        | Setting read-only feature 'GLAsyncSwap' to '0'
 INFO         | Feature 'GLAsyncSwap' (50) is overridden to 'disabled'
-INFO         | Sending adb public key [QAAAACPaCTR1WmUbQvbjvGJXRkXxRpmE0+rM+s19oqO62zmI4DHfnHkm2fSahgj6mrvHc2hNa2llDHH+/aPiUISxhKjSCLFS2lpx8HdjZUV1rdZe/pbh94Ds6jznU413Ujk4oqfgoYRQWI1OEIAAO0PiO0n7E+D7EK2Q1NyTKv1vdju1yNqPpRBBDHRHxj4Tr8o4ihsChmC6KeWCUzfjgpvZZVTLAIUEzdzCvQPz2lM8NbakVet+L5xuHdrTF+f7LnOnjUXdEmSROZ7zCq4r8X61Wj4/XcRMF3xVBIR7zpMuGMDwoNYciAtDCvZHrfVzcpapoBTd399cS1HlcH+zsTm9LlfR5xLYEY3pAnrbcWk7TvFI4lBKGl0UyCd7VR+Tg+MoAmLRAmSnZo4JjiqUlB+ojNQkQNhz6kFuNED1Px0LPNmXxytvcpKGPMk2lBTeHVMAtDvZXsxqsp/0RS1fW9R/bUX1j0wOFvwO+fbCmeW+Cxyl0kff8RtyLkzhNvnAhQaDdaKIQ4effLo9cnPKpWxGOssD0QqpCph6EEDEYlqhQeYeCqZn/hBoSgVwgwWS0Kuvst59UcMT3BMkrXFh7f+OESL01kpoGbcHyZ0VfVWeiJe5hybD7K/z+1w+FKcsNURnKJ79E5ad67MjuMNVhXJSSpbm/CvLnsn1S/1VZPh4JFUuezhBCAEAAQA= runner@unknown]
+INFO         | Sending adb public key [QAAAALm7aYF3JXiZJVN4EejUcna/lk0EUmbY4XPcTzvUTGFHCww/dnx+YMbCn1jRqq4cbObZgDL9WKVa+COLap9ntcDl+8Ql1fr1u3HxWF2nDLSV9lPuTeAI75JoeDr6+WvdAOWbzkn3RgZhVShWBhYrN5JJ71n2ahDtwUmJLwrd+HKcCkSapbpOIAx21yJsHT4vRMn+it2swGlsmYBkERki5ADJHglCsrXXbY8FP5aMJj04a+EBIS70ZTNTco+ftMG8FaE+EUGNXHJ8jvkqhe+CbroRVEqOKYvstsVhn1lkvR30cDOpi0joYJ4LW6i0762ImrGwQelQrvpalDH06oGBIVeQSGDEIh4krEvxYZDBM+nxIFofCa2R9Wql+crtDVDgb2xS4cPa+jOk8cYzSvKVKdgjfp0HhZdrpHEE55eTKSNY5RjJ1A9H/l4Zy5v7mvMnIoRNduXopbNfk3/EP1Kc8vKrA3vlP035AVZsOw5jlLrlH2NyMSDNasps5sCcpooRUXgA8q2bnhUWMRmRi5PxF8NrGOvR1utnUBd2aVHh2NNhp7iAr7wHw7jkzszwqSdWwLjHjpVFkYVP/DukBK/ZgKW1bZhd25BOceCCzAQOU2T7QhFIi0X2pFJSWpxdZwh1ktW1J5EFVdpLgGmET/bcT6BM05v4uiaV+OtdyE8gK4tDOdbLUwEAAQA= runner@unknown]
 INFO         | Userspace boot properties:
 INFO         |   androidboot.boot_devices=pci0000:00/0000:00:03.0 pci0000:00/0000:00:06.0
 INFO         |   androidboot.dalvik.vm.heapsize=576m
@@ -53,7 +53,7 @@ INFO         |   androidboot.hardware.gltransport=pipe
 INFO         |   androidboot.logcat=*:V
 INFO         |   androidboot.opengles.version=196609
 INFO         |   androidboot.qemu=1
-INFO         |   androidboot.qemu.adb.pubkey=QAAAACPaCTR1WmUbQvbjvGJXRkXxRpmE0+rM+s19oqO62zmI4DHfnHkm2fSahgj6mrvHc2hNa2llDHH+/aPiUISxhKjSCLFS2lpx8HdjZUV1rdZe/pbh94Ds6jznU413Ujk4oqfgoYRQWI1OEIAAO0PiO0n7E+D7EK2Q1NyTKv1vdju1yNqPpRBBDHRHxj4Tr8o4ihsChmC6KeWCUzfjgpvZZVTLAIUEzdzCvQPz2lM8NbakVet+L5xuHdrTF+f7LnOnjUXdEmSROZ7zCq4r8X61Wj4/XcRMF3xVBIR7zpMuGMDwoNYciAtDCvZHrfVzcpapoBTd399cS1HlcH+zsTm9LlfR5xLYEY3pAnrbcWk7TvFI4lBKGl0UyCd7VR+Tg+MoAmLRAmSnZo4JjiqUlB+ojNQkQNhz6kFuNED1Px0LPNmXxytvcpKGPMk2lBTeHVMAtDvZXsxqsp/0RS1fW9R/bUX1j0wOFvwO+fbCmeW+Cxyl0kff8RtyLkzhNvnAhQaDdaKIQ4effLo9cnPKpWxGOssD0QqpCph6EEDEYlqhQeYeCqZn/hBoSgVwgwWS0Kuvst59UcMT3BMkrXFh7f+OESL01kpoGbcHyZ0VfVWeiJe5hybD7K/z+1w+FKcsNURnKJ79E5ad67MjuMNVhXJSSpbm/CvLnsn1S/1VZPh4JFUuezhBCAEAAQA= runner@unknown
+INFO         |   androidboot.qemu.adb.pubkey=QAAAALm7aYF3JXiZJVN4EejUcna/lk0EUmbY4XPcTzvUTGFHCww/dnx+YMbCn1jRqq4cbObZgDL9WKVa+COLap9ntcDl+8Ql1fr1u3HxWF2nDLSV9lPuTeAI75JoeDr6+WvdAOWbzkn3RgZhVShWBhYrN5JJ71n2ahDtwUmJLwrd+HKcCkSapbpOIAx21yJsHT4vRMn+it2swGlsmYBkERki5ADJHglCsrXXbY8FP5aMJj04a+EBIS70ZTNTco+ftMG8FaE+EUGNXHJ8jvkqhe+CbroRVEqOKYvstsVhn1lkvR30cDOpi0joYJ4LW6i0762ImrGwQelQrvpalDH06oGBIVeQSGDEIh4krEvxYZDBM+nxIFofCa2R9Wql+crtDVDgb2xS4cPa+jOk8cYzSvKVKdgjfp0HhZdrpHEE55eTKSNY5RjJ1A9H/l4Zy5v7mvMnIoRNduXopbNfk3/EP1Kc8vKrA3vlP035AVZsOw5jlLrlH2NyMSDNasps5sCcpooRUXgA8q2bnhUWMRmRi5PxF8NrGOvR1utnUBd2aVHh2NNhp7iAr7wHw7jkzszwqSdWwLjHjpVFkYVP/DukBK/ZgKW1bZhd25BOceCCzAQOU2T7QhFIi0X2pFJSWpxdZwh1ktW1J5EFVdpLgGmET/bcT6BM05v4uiaV+OtdyE8gK4tDOdbLUwEAAQA= runner@unknown
 INFO         |   androidboot.qemu.avd_name=fastlane34
 INFO         |   androidboot.qemu.camera_hq_edge_processing=0
 INFO         |   androidboot.qemu.camera_protocol_ver=1
@@ -72,30 +72,137 @@ INFO         |   androidboot.vbmeta.digest=451e57ed688ff746d2c636d52169ade253e2b
 INFO         |   androidboot.vbmeta.hash_alg=sha256
 INFO         |   androidboot.vbmeta.size=6656
 INFO         |   androidboot.veritymode=enforcing
-WARNING: cannnot unmap ptr 0x7f24ac801000 as it is in the protected range from 0x7f23ac800000 to 0x7f24aca00000
+WARNING: cannnot unmap ptr 0x7f6d73c01000 as it is in the protected range from 0x7f6c73c00000 to 0x7f6d73e00000
 pc_memory_init: above 4g size: 40000000
 INFO         | Monitoring duration of emulator setup.
 WARNING      | The emulator now requires a signed jwt token for gRPC access! Use the -grpc flag if you really want an open unprotected grpc port
 INFO         | Using security allow list from: /home/runner/.cache/cloudpc-models/android-sdk/emulator/lib/emulator_access.json
-INFO         | The active JSON Web Key Sets can be found here: /run/user/1001/avd/running/2969/jwks/90815eb9-93cc-4e1f-9a96-c39f525564c5/active.jwk
-INFO         | Scanning /run/user/1001/avd/running/2969/jwks/90815eb9-93cc-4e1f-9a96-c39f525564c5 for jwk keys.
+INFO         | The active JSON Web Key Sets can be found here: /run/user/1001/avd/running/2648/jwks/e11897ed-e96f-4515-938f-1c262e975045/active.jwk
+INFO         | Scanning /run/user/1001/avd/running/2648/jwks/e11897ed-e96f-4515-938f-1c262e975045 for jwk keys.
 INFO         | Started GRPC server at 127.0.0.1:8554, security: Local, auth: +token
-INFO         | Advertising in: /run/user/1001/avd/running/pid_2969.ini
-INFO         | Activated packet streamer for bluetooth emulation
+INFO         | Advertising in: /run/user/1001/avd/running/pid_2648.ini
 INFO         | Successfully initialized netsim WiFi
+INFO         | Activated packet streamer for bluetooth emulation
 INFO         | Setting display: 0 configuration to: 1080x2400, dpi: 420x420 
 INFO         | setDisplayActiveConfig: id:0, 1080x2400
 INFO         | emulatorSetupEnvironment: Environment scene is not required
 USER_INFO    | Emulator is performing a full startup. This may take upto two minutes, or more.
 WARNING      | Failed to process .ini file /home/runner/.android/emu-update-last-check.ini for reading.
 WARNING      | Failed to process .ini file /home/runner/.android/emu-update-last-check.ini for reading.
-INFO         | Boot completed in 35007 ms
+INFO         | Boot completed in 36627 ms
 INFO         | Increasing screen off timeout, logcat buffer size to 2M.
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+s_computePixelSize:316 unknown format/type 0x7f6d 0x8dbace9f
+glTexImage2D: got err pre :( 0x502 internal 0x1907 format 0x1907 type 0x1401
 INFO         | Saving with gfxstream=1
-INFO         | Wait for emulator (pid 2969) 20 seconds to shutdown gracefully before kill;you can set environment variable ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL(in seconds) to change the default value (20 seconds)
+INFO         | Wait for emulator (pid 2648) 20 seconds to shutdown gracefully before kill;you can set environment variable ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL(in seconds) to change the default value (20 seconds)
 
 USER_INFO    | Snapshots have been disabled by the user, save request is ignored.
 INFO         | Saving snapshot 'default_boot' took 0 ms
 ERROR        | stop: Not implemented
 INFO         | removeAll
-WARNING      | Netsim Wifi dns:///localhost:35507 is gone due to Stream removed (CANCELLED)
+WARNING      | Netsim Wifi dns:///localhost:35601 is gone due to Stream removed (CANCELLED)

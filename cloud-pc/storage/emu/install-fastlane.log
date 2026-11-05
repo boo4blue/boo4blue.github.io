@@ -1,3 +1,2 @@
 Performing Streamed Install
-adb: failed to install /tmp/fastlane.apk: Failure [INSTALL_PARSE_FAILED_NOT_APK: Failed to parse /data/app/vmdl1321546176.tmp/base.apk: Failed to load asset path /data/app/vmdl1321546176.tmp/base.apk]
-
+Success

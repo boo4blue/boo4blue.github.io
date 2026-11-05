@@ -1,0 +1,16 @@
+{
+  "id": "f07-setup",
+  "action": "shell",
+  "at": "2026-11-05T16:36:42Z",
+  "job": {
+    "id": "f07-setup",
+    "action": "shell",
+    "command": "bash emu/runfast.sh setup"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "attempt 1 sdkmanager exit=0\nSDK verified OK on attempt 1\nFAST_SETUP_DONE\n",
+    "stderr": ""
+  }
+}

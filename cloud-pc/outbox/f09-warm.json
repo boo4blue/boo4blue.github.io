@@ -1,0 +1,16 @@
+{
+  "id": "f09-warm",
+  "action": "shell",
+  "at": "2026-11-05T16:39:03Z",
+  "job": {
+    "id": "f09-warm",
+    "action": "shell",
+    "command": "bash emu/runfast.sh warm"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "mode=warm gpu=swangle_indirect img=google_apis package=com.roblox.client\nboot_completed_rc=0 BOOT_WARM_SECONDS=10\n--- pid@warm:\n4701\n-rw-r--r-- 1 runner runner 41409 Nov  5 16:39 emu/shot-fast-warm.png\nOK: killing emulator, bye bye\nOK\nWARM_DONE\n",
+    "stderr": ""
+  }
+}
