@@ -1,0 +1,5 @@
+{
+ "id": "clone-synthprep-001",
+ "action": "shell",
+ "command": "export HF_HOME=$HOME/.cache/cloudpc-models/hf; pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu 2>&1 | tail -1; pip install -q chatterbox-tts psutil numpy 2>&1 | tail -1; python3 -c \"import chatterbox, torch; print('prep OK, torch', torch.__version__)\""
+}
