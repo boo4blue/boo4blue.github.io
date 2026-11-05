@@ -1,0 +1,16 @@
+{
+  "id": "clone-install-001",
+  "action": "shell",
+  "at": "2026-11-05T17:12:07Z",
+  "job": {
+    "id": "clone-install-001",
+    "action": "shell",
+    "command": "cd voices && base64 -d blaze-ref.wav.b64 > blaze-ref.wav && ls -la blaze-ref.wav && cd ..; export HF_HOME=$HOME/.cache/cloudpc-models/hf; pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu 2>&1 | tail -2; pip install -q chatterbox-tts psutil numpy 2>&1 | tail -2; python3 -c \"import chatterbox, torch; print('chatterbox OK, torch', torch.__version__)\""
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "-rw-r--r-- 1 runner runner 2205044 Nov  5 17:09 blaze-ref.wav\n[notice] A new release of pip is available: 26.2.2 -> 26.3\n[notice] To update, run: pip install --upgrade pip\nchatterbox OK, torch 2.6.0+cu124\n",
+    "stderr": ""
+  }
+}

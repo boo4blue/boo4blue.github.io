@@ -1,0 +1,16 @@
+{
+  "id": "clone-model-001",
+  "action": "shell",
+  "at": "2026-11-05T17:12:39Z",
+  "job": {
+    "id": "clone-model-001",
+    "action": "shell",
+    "command": "export HF_HOME=$HOME/.cache/cloudpc-models/hf; python3 -c \"from chatterbox.tts import ChatterboxTTS; m=ChatterboxTTS.from_pretrained(device='cpu'); print('model loaded, sr', m.sr)\""
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "loaded PerthNet (Implicit) at step 250,000\nmodel loaded, sr 24000\n",
+    "stderr": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/diffusers/models/lora.py:393: FutureWarning: `LoRACompatibleLinear` is deprecated and will be removed in version 1.0.0. Use of `LoRACompatibleLinear` is deprecated. Please switch to PEFT backend by installing PEFT: `pip install peft`.\n  deprecate(\"LoRACompatibleLinear\", \"1.0.0\", deprecation_message)\n"
+  }
+}
