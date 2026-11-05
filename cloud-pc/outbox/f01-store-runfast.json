@@ -1,0 +1,16 @@
+{
+  "id": "f01-store-runfast",
+  "action": "store",
+  "at": "2026-11-05T16:26:38Z",
+  "job": {
+    "id": "f01-store-runfast",
+    "action": "store",
+    "path": "emu/runfast.sh",
+    "content_bytes": 7161
+  },
+  "result": {
+    "ok": true,
+    "path": "emu/runfast.sh",
+    "bytes": 7161
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "f04-cold",
+  "action": "shell",
+  "at": "2026-11-05T16:29:39Z",
+  "job": {
+    "id": "f04-cold",
+    "action": "shell",
+    "command": "bash emu/runfast.sh cold"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "mode=cold gpu=swangle_indirect img=google_apis package=com.roblox.client\n-rw-r--r-- 1 runner runner 5671 Nov  5 16:28 /tmp/fastlane.apk\n383b6f844cf5d27737c975bde3a7a854  /tmp/fastlane.apk\naapt=/usr/local/lib/android/sdk/build-tools/37.0.0/aapt\nAAPT_BADGING: \nPKG_VERIFY_FAIL\nboot_completed_rc=0 BOOT_COLD_SECONDS=36\nANIM_SCALES_SET\nscreen=1080x2400\n--- install log:\nPerforming Streamed Install\nadb: failed to install /tmp/fastlane.apk: Failure [INSTALL_PARSE_FAILED_NOT_APK: Failed to parse /data/app/vmdl1321546176.tmp/base.apk: Failed to load asset path /data/app/vmdl1321546176.tmp/base.apk]\n\nPKG_PRESENT=0\n-rw-r--r-- 1 runner runner 18219 Nov  5 16:28 emu/shot-fast-home.png\n-rw-r--r-- 1 runner runner 981666 Nov  5 16:29 emu/shot-fast-drawer.png\n** No activities found to run, monkey aborted.\n--- pid@launch:\n-rw-r--r-- 1 runner runner 981085 Nov  5 16:29 emu/shot-fast-login1.png\nLOGIN_BUTTON_NOT_IN_UIDUMP (Roblox renders its own UI; login1 shot stands)\n--- pid@end:\nOK\nsnapshot save exit=0 SNAPSHOT_SAVE_SECONDS=5\nOK: killing emulator, bye bye\nOK\nCOLD_DONE\n",
+    "stderr": ""
+  }
+}
