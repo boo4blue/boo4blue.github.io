@@ -1,5 +1,0 @@
-{
- "id": "clone-synth-001",
- "action": "shell",
- "command": "export HF_HOME=$HOME/.cache/cloudpc-models/hf; mkdir -p voices; python3 clone_synth.py --ref voices/blaze-ref.wav --text \"Hey, this is Blaze \u2014 and this is my cloned voice talking. If you can dream it up, we can build it. Watch and see.\" --out voices/blaze-clone-test.wav && ls -la voices/blaze-clone-test.wav && echo SYNTH_DONE"
-}
