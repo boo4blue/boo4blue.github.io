@@ -2,13 +2,13 @@
   "chunks": [
     {
       "i": 0,
-      "text": "Alright you two, settle in. Movie night at the house \u2014 big couch, extra mac and cheese, and no arguing. That's the rule now.",
+      "text": "Callie, Mia \u2014 come here, food's ready. Yes, the mac and cheese. Come get it before I eat all of it myself. Hurry up, I ain't calling y'all twice.",
       "tag": "calm",
       "ref": "refs/calm/BV3_1_21_piir_c011.wav"
     },
     {
       "i": 1,
-      "text": "Okay listen listen listen \u2014 this is my voice and we are just getting started! If we can dream it up, we can build it. Watch and see!",
+      "text": "Merlin, bro, listen \u2014 tell Heaven don't cook nothing, I got the food handled tonight. And that bunker? Bro, when we're done with it, it's gonna be sick. Just watch.",
       "tag": "excited",
       "ref": "refs/excited/BV2_19_tndw_c005.wav"
     }
