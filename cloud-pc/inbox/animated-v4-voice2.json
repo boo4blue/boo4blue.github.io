@@ -1,1 +1,0 @@
-{"id": "animated-v4-voice2", "action": "shell", "command": "pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu && pip install -q chatterbox-tts && cd voice-clone && python3 anim_v4_runner.py --ex 0.7 --cfg 0.35 --ref refs/excited/BV2_19_tndw_c005.wav --name animated_v4_voice && ls -la anim_out/"}
