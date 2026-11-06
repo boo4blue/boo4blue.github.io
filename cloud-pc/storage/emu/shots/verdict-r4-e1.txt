@@ -1,0 +1,47 @@
+boot_completed=1 after ~20s
+screen=1080x2400
+fetch_ok cap-OnionAPKEditor.apk md5=4f1f19422e171adabc45248c1720ca75 size=246619
+fetch_ok cap-OnionBrowser.apk md5=897528dc0f65cb16221c9b906483ddb5 size=15710468
+install e4 pm_match=1
+install e4b pm_match=1
+e1_e4x_lib texts=text="Onion APK Editor"|text="Editor + Installer"|text="Library"|text="Inspect any app or APK file — contents, resources and code — and queue it in the Installer."|text="Pick an installed app"|text="Browse everything installed on this device and open its APK facts."|text="Browse installed apps"|text="Pick an APK file"|text="Choose a .apk from storage. The file is copied into the library first."|text="Choose APK file"|text="Search library"|text="Nothing here yet. Pick an installed app or an APK file above and it will live here."|text="Library"|text="Projects"|text="Installer"|text="Settings"|
+tap[browse installed apps] -> 540 827
+e1_e4x_apps texts=text="Onion APK Editor"|text="Editor + Installer"|text="Add an app"|text="Pick from installed apps, or choose an APK file."|text="Choose APK file"|text="Search installed apps"|text="Grouped"|text="A–Z"|text="Size"|text="Productivity — 5"|text="Calendar"|text="com.google.android.calendar"|text="Chrome"|text="com.android.chrome"|text="Drive"|text="com.google.android.apps.docs"|text="Gmail"|text="com.google.android.gm"|text="Print Service Recommendation Service"|text="com.google.android.printservice.recommendation"|text="Apps — 220"|text="2 Button Navigation Bar"|text="Library"|text="Projects"|text="Installer"|text="Settings"|
+tap[search installed apps] -> 540 699
+e1_e4x_results texts=text="Onion APK Editor"|text="Editor + Installer"|text="Add an app"|text="Pick from installed apps, or choose an APK file."|text="Choose APK file"|text="Onion Browser"|text="Grouped"|text="A–Z"|text="Size"|text="Apps — 1"|text="Onion Browser"|text="com.onion.browser"|text="Library"|text="Projects"|text="Installer"|text="Settings"|
+tap[com.onion.browser] -> 372 1119
+e1_e4x_insp texts=text="Onion APK Editor"|text="Editor + Installer"|text="Onion Browser"|text="com.onion.browser"|text="Overview"|text="Manifest"|text="Files"|text="Resources"|text="Code"|text="Extract"|text="Perms"|text="Cert"|text="Gallery"|text="Facts"|text="Package&#10;com.onion.browser"|text="Version&#10;0.44.0  (code 54)"|text="SDK range&#10;min 24  ·  target 34"|text="APK size&#10;15.0 MB  (15710468 bytes)"|text="Source&#10;INSTALLED — /data/app/~~rREs88mjA2rtbNScPp-bwA==/com.onion.browser-14hvNhBQdv2A3zDDgsExLQ==/base.apk"|text="Signer SHA-256&#10;c3ab5fdd00a72ec6a77f1e582a388eb6ebf759612e4e02002a63b2c693e92aff"|text="Permissions&#10;9"|text="Library"|text="Projects"|text="Installer"|text="Settings"|
+e1_e4x INSPECTOR_OK
+EXPLORE_OPEN_OK
+tap[code] -> 166 789
+e1_e4x_deep_via=code
+e1_e4x_deep texts=text="Onion APK Editor"|text="Editor + Installer"|text="Code"|text="Extract"|text="Perms"|text="Cert"|text="Gallery"|text="Code"|text="Search all dex — classes, methods, strings"|text="Find &amp; replace a word across the whole app"|text="849 classes · 7855 strings in classes.dex"|text="Search classes in this dex"|text="com.onion.browser.AdBlock"|text="4 fields · 7 methods"|text="com.onion.browser.AdminMode$CoreAdminBridge"|text="1 fields · 5 methods"|text="com.onion.browser.AdminMode"|text="18 fields · 26 methods"|text="com.onion.browser.AgentActions$Action"|text="3 fields · 1 methods"|text="com.onion.browser.AgentActions$Parsed"|text="2 fields · 1 methods"|text="com.onion.browser.AgentActions"|text="15 fields · 8 methods"|text="Library"|text="Projects"|text="Installer"|text="Settings"|
+tap[extract] -> 415 313
+e1_e4x_extract_via=extract
+e1_e4x_extract texts=text="Onion APK Editor"|text="Editor + Installer"|text="Onion Browser"|text="com.onion.browser"|text="Overview"|text="Manifest"|text="Files"|text="Resources"|text="Code"|text="Extract"|text="Perms"|text="Cert"|text="Gallery"|text="Extract — Send to Onion"|text="Pick the parts of this app you want, build one zip bundle, then send it or save it. The source APK is only read — extraction never changes it. Every file in the bundle is size-checked against the source while it is built, and the finished bundle is verified again before it is handed over."|text="Whole app"|text="The complete APK, streamed in as one file · 15.0 MB"|text="OFF"|text="Manifest"|text="Decoded manifest tree + XML text (readable, not binary)"|text="INCLUDED"|text="Strings"|text="Every decoded string value from resources.arsc"|text="INCLUDED"|text="Code (smali)"|text="Smali for every class in every dex. Can be large — capped per dex and the cap is stated in the bundle."|text="OFF"|text="Library"|text="Projects"|text="Installer"|text="Settings"|
+editor_pid=3130
+rec_start /sdcard/E1.mp4 pid=6139
+e1_e4r_lib texts=text="Onion APK Editor"|text="Editor + Installer"|text="Library"|text="Inspect any app or APK file — contents, resources and code — and queue it in the Installer."|text="Pick an installed app"|text="Browse everything installed on this device and open its APK facts."|text="Browse installed apps"|text="Pick an APK file"|text="Choose a .apk from storage. The file is copied into the library first."|text="Choose APK file"|text="Search library"|text="Onion Browser&#10;com.onion.browser"|text="Library"|text="Projects"|text="Installer"|text="Settings"|
+tap[browse installed apps] -> 540 827
+e1_e4r_apps texts=text="Onion APK Editor"|text="Editor + Installer"|text="Add an app"|text="Pick from installed apps, or choose an APK file."|text="Choose APK file"|text="Search installed apps"|text="Grouped"|text="A–Z"|text="Size"|text="Productivity — 5"|text="Calendar"|text="com.google.android.calendar"|text="Chrome"|text="com.android.chrome"|text="Drive"|text="com.google.android.apps.docs"|text="Gmail"|text="com.google.android.gm"|text="Print Service Recommendation Service"|text="com.google.android.printservice.recommendation"|text="Apps — 220"|text="2 Button Navigation Bar"|text="Library"|text="Projects"|text="Installer"|text="Settings"|
+tap[search installed apps] -> 540 699
+e1_e4r_results texts=text="Onion APK Editor"|text="Editor + Installer"|text="Add an app"|text="Pick from installed apps, or choose an APK file."|text="Choose APK file"|text="Onion Browser"|text="Grouped"|text="A–Z"|text="Size"|text="Apps — 1"|text="Onion Browser"|text="com.onion.browser"|text="Library"|text="Projects"|text="Installer"|text="Settings"|
+tap[com.onion.browser] -> 372 1119
+e1_e4r_insp texts=text="Onion APK Editor"|text="Editor + Installer"|text="Onion Browser"|text="com.onion.browser"|text="Overview"|text="Manifest"|text="Files"|text="Resources"|text="Code"|text="Extract"|text="Perms"|text="Cert"|text="Gallery"|text="Facts"|text="Package&#10;com.onion.browser"|text="Version&#10;0.44.0  (code 54)"|text="SDK range&#10;min 24  ·  target 34"|text="APK size&#10;15.0 MB  (15710468 bytes)"|text="Source&#10;INSTALLED — /data/app/~~rREs88mjA2rtbNScPp-bwA==/com.onion.browser-14hvNhBQdv2A3zDDgsExLQ==/base.apk"|text="Signer SHA-256&#10;c3ab5fdd00a72ec6a77f1e582a388eb6ebf759612e4e02002a63b2c693e92aff"|text="Permissions&#10;9"|text="Library"|text="Projects"|text="Installer"|text="Settings"|
+e1_e4r INSPECTOR_OK
+REC_OPEN_OK
+tap[code] -> 166 789
+e1_e4r_deep_via=code
+e1_e4r_deep texts=text="Onion APK Editor"|text="Editor + Installer"|text="Find &amp; replace a word across the whole app"|text="849 classes · 7855 strings in classes.dex"|text="Search classes in this dex"|text="com.onion.browser.AdBlock"|text="4 fields · 7 methods"|text="com.onion.browser.AdminMode$CoreAdminBridge"|text="1 fields · 5 methods"|text="com.onion.browser.AdminMode"|text="18 fields · 26 methods"|text="com.onion.browser.AgentActions$Action"|text="3 fields · 1 methods"|text="com.onion.browser.AgentActions$Parsed"|text="2 fields · 1 methods"|text="com.onion.browser.AgentActions"|text="15 fields · 8 methods"|text="com.onion.browser.AgentControl$Checkpoint"|text="3 fields · 2 methods"|text="com.onion.browser.AgentControl"|text="7 fields · 13 methods"|text="com.onion.browser.AiLink$1"|text="1 fields · 2 methods"|text="Library"|text="Projects"|text="Installer"|text="Settings"|
+tap[extract] -> 415 789
+e1_e4r_extract_via_insp=extract
+e1_e4r_extract texts=text="Onion APK Editor"|text="Editor + Installer"|text="Back to code"|text="Lcom/onion/browser/AdBlock;"|text="4 fields · 7 methods · 212 instructions · 0 unknown opcodes · rendered by Onion's own disassembler (no annotations/debug info)"|text="Find in this class"|text="Library"|text="Projects"|text="Installer"|text="Settings"|
+rec_stop SIGINT pid=6139
+-rw-rw---- 1 u0_a173 media_rw 3091998 2026-11-06 17:20 /sdcard/E1.mp4
+video_pulled emu/shots/E1.mp4 bytes=3091998
+ffprobe: NOT_INSTALLED (mvhd fallback)
+verify emu/shots/E1.mp4 moov=1 duration_s=48.62 bytes=3091998
+VIDEO_OK emu/shots/E1.mp4
+editor_pid_end=6033
+fatal_e1=0
+E1_R4_DONE

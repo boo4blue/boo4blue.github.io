@@ -1,0 +1,16 @@
+{
+  "id": "00-cap4-script",
+  "action": "store",
+  "at": "2026-11-06T17:10:51Z",
+  "job": {
+    "id": "00-cap4-script",
+    "action": "store",
+    "path": "emu/capture4.sh",
+    "content_bytes": 17738
+  },
+  "result": {
+    "ok": true,
+    "path": "emu/capture4.sh",
+    "bytes": 17738
+  }
+}
