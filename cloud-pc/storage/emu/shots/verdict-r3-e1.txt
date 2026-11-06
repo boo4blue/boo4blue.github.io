@@ -1,0 +1,47 @@
+boot_completed=1 after ~20s
+screen=1080x2400
+fetch_ok cap-OnionAPKEditor.apk md5=4f1f19422e171adabc45248c1720ca75 size=246619
+fetch_ok cap-OnionBrowser.apk md5=897528dc0f65cb16221c9b906483ddb5 size=15710468
+install e3 pm_match=1
+install e3b pm_match=1
+e1_e3x_lib texts=text="Onion APK Editor"|text="Editor + Installer"|text="Library"|text="Inspect any app or APK file — contents, resources and code — and queue it in the Installer."|text="Pick an installed app"|text="Browse everything installed on this device and open its APK facts."|text="Browse installed apps"|text="Pick an APK file"|text="Choose a .apk from storage. The file is copied into the library first."|text="Choose APK file"|text="Search library"|text="Nothing here yet. Pick an installed app or an APK file above and it will live here."|text="Library"|text="Projects"|text="Installer"|text="Settings"|
+tap[browse installed apps] -> 540 827
+e1_e3x_apps texts=text="Onion APK Editor"|text="Editor + Installer"|text="Add an app"|text="Pick from installed apps, or choose an APK file."|text="Choose APK file"|text="Search installed apps"|text="Grouped"|text="A–Z"|text="Size"|text="Productivity — 5"|text="Calendar"|text="com.google.android.calendar"|text="Chrome"|text="com.android.chrome"|text="Drive"|text="com.google.android.apps.docs"|text="Gmail"|text="com.google.android.gm"|text="Print Service Recommendation Service"|text="com.google.android.printservice.recommendation"|text="Apps — 220"|text="2 Button Navigation Bar"|text="Library"|text="Projects"|text="Installer"|text="Settings"|
+tap[search installed apps] -> 540 699
+e1_e3x_results texts=text="Onion APK Editor"|text="Editor + Installer"|text="Add an app"|text="Pick from installed apps, or choose an APK file."|text="Choose APK file"|text="Onion Browser"|text="Grouped"|text="A–Z"|text="Size"|text="Apps — 1"|text="Onion Browser"|text="com.onion.browser"|text="Library"|text="Projects"|text="Installer"|text="Settings"|
+tap[browser] -> 540 699
+e1_e3x_insp texts=text="Onion APK Editor"|text="Editor + Installer"|text="Add an app"|text="Pick from installed apps, or choose an APK file."|text="Choose APK file"|text="Onion Browser"|text="Grouped"|text="A–Z"|text="Size"|text="Apps — 1"|text="Onion Browser"|text="com.onion.browser"|text="Library"|text="Projects"|text="Installer"|text="Settings"|
+e1_e3x INSPECTOR_OK
+EXPLORE_OPEN_OK
+e1_e3x NO_DEEP_TAB (may already be on facts view)
+e1_e3x_deep texts=text="Onion APK Editor"|text="Editor + Installer"|text="Add an app"|text="Pick from installed apps, or choose an APK file."|text="Choose APK file"|text="Onion Browser too"|text="Grouped"|text="A–Z"|text="Size"|text="No installed apps match that search."|text="Library"|text="Projects"|text="Installer"|text="Settings"|
+tap[more options] NOT FOUND
+tap[more] NOT FOUND
+e1_e3x EXTRACT_NOT_FOUND
+e1_e3x_extract texts=text="Onion APK Editor"|text="Editor + Installer"|text="Add an app"|text="Pick from installed apps, or choose an APK file."|text="Choose APK file"|text="Onion Browser too"|text="Grouped"|text="A–Z"|text="Size"|text="No installed apps match that search."|text="Library"|text="Projects"|text="Installer"|text="Settings"|
+editor_pid=3227
+rec_start /sdcard/E1.mp4 pid=6194
+e1_e3r_lib texts=text="Onion APK Editor"|text="Editor + Installer"|text="Library"|text="Inspect any app or APK file — contents, resources and code — and queue it in the Installer."|text="Pick an installed app"|text="Browse everything installed on this device and open its APK facts."|text="Browse installed apps"|text="Pick an APK file"|text="Choose a .apk from storage. The file is copied into the library first."|text="Choose APK file"|text="Search library"|text="Nothing here yet. Pick an installed app or an APK file above and it will live here."|text="Library"|text="Projects"|text="Installer"|text="Settings"|
+tap[browse installed apps] -> 540 827
+e1_e3r_apps texts=text="Onion APK Editor"|text="Editor + Installer"|text="Add an app"|text="Pick from installed apps, or choose an APK file."|text="Choose APK file"|text="Search installed apps"|text="Grouped"|text="A–Z"|text="Size"|text="Productivity — 5"|text="Calendar"|text="com.google.android.calendar"|text="Chrome"|text="com.android.chrome"|text="Drive"|text="com.google.android.apps.docs"|text="Gmail"|text="com.google.android.gm"|text="Print Service Recommendation Service"|text="com.google.android.printservice.recommendation"|text="Apps — 220"|text="2 Button Navigation Bar"|text="Library"|text="Projects"|text="Installer"|text="Settings"|
+tap[search installed apps] -> 540 699
+e1_e3r_results texts=text="Onion APK Editor"|text="Editor + Installer"|text="Add an app"|text="Pick from installed apps, or choose an APK file."|text="Choose APK file"|text="Onion Browser"|text="Grouped"|text="A–Z"|text="Size"|text="Apps — 1"|text="Onion Browser"|text="com.onion.browser"|text="Library"|text="Projects"|text="Installer"|text="Settings"|
+tap[browser] -> 540 699
+e1_e3r_insp texts=text="Onion APK Editor"|text="Editor + Installer"|text="Add an app"|text="Pick from installed apps, or choose an APK file."|text="Choose APK file"|text="Onion Browser"|text="Grouped"|text="A–Z"|text="Size"|text="Apps — 1"|text="Onion Browser"|text="com.onion.browser"|text="Library"|text="Projects"|text="Installer"|text="Settings"|
+e1_e3r INSPECTOR_OK
+REC_OPEN_OK
+e1_e3r NO_DEEP_TAB (may already be on facts view)
+e1_e3r_deep texts=text="Onion APK Editor"|text="Editor + Installer"|text="Add an app"|text="Pick from installed apps, or choose an APK file."|text="Choose APK file"|text="Onion Browser to"|text="Grouped"|text="A–Z"|text="Size"|text="No installed apps match that search."|text="Library"|text="Projects"|text="Installer"|text="Settings"|
+tap[more options] NOT FOUND
+tap[more] NOT FOUND
+e1_e3r EXTRACT_NOT_FOUND
+e1_e3r_extract texts=text="Onion APK Editor"|text="Editor + Installer"|text="Add an app"|text="Pick from installed apps, or choose an APK file."|text="Choose APK file"|text="Onion Browser to"|text="Grouped"|text="A–Z"|text="Size"|text="No installed apps match that search."|text="Library"|text="Projects"|text="Installer"|text="Settings"|
+rec_stop SIGINT pid=6194
+-rw-rw---- 1 u0_a179 media_rw 2098390 2026-11-06 17:04 /sdcard/E1.mp4
+video_pulled emu/shots/E1.mp4 bytes=2098390
+ffprobe: NOT_INSTALLED (mvhd fallback)
+verify emu/shots/E1.mp4 moov=1 duration_s=44.74 bytes=2098390
+VIDEO_OK emu/shots/E1.mp4
+editor_pid_end=6069
+fatal_e1=0
+E1_R3_DONE
