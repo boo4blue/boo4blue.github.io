@@ -1,0 +1,1 @@
+{"id": "02-cap4-h1", "action": "shell", "command": "bash emu/capture4.sh h1"}
