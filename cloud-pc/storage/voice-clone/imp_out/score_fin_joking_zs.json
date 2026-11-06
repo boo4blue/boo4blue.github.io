@@ -1,0 +1,11 @@
+{
+  "name": "fin_joking_zs",
+  "clip": "joking",
+  "exaggeration": 0.7,
+  "cfg_weight": 0.35,
+  "ref": "imp_work/imp_excited_long25.wav",
+  "ge2e": 0.7497,
+  "duration_s": 11.0,
+  "rms_db": -18.97,
+  "peak_db": -1.01
+}

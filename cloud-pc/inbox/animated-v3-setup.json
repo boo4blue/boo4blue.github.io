@@ -1,1 +1,0 @@
-{"action":"shell","command":"pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu && pip install -q chatterbox-tts && python3 -c \"import torch, chatterbox; print('ANIMV3_SETUP_OK')\" && mkdir -p voice-clone/anim_out","id":"animated-v3-setup"}

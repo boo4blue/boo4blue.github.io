@@ -1,1 +1,0 @@
-{"id": "imp-20-joking", "action": "shell", "command": "cd voice-clone && python3 imp_runner.py synth --clip joking --ex 0.7 --cfg 0.35 --ref imp_work/imp_excited_long25.wav --name fin_joking_zs"}
