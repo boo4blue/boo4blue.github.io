@@ -1,0 +1,16 @@
+{
+  "id": "r2-11-wrm-b",
+  "action": "shell",
+  "at": "2026-11-06T17:53:17Z",
+  "job": {
+    "id": "r2-11-wrm-b",
+    "action": "shell",
+    "command": "cd voice-clone && python3 r2_runner.py --line warm --part b"
+  },
+  "result": {
+    "ok": true,
+    "exit": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/runner/work/boo4blue.github.io/boo4blue.github.io/cloud-pc/storage/voice-clone/r2_runner.py\", line 21, in <module>\n    import numpy as np\nModuleNotFoundError: No module named 'numpy'\n"
+  }
+}
