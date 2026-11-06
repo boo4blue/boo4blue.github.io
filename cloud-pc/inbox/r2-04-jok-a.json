@@ -1,1 +1,0 @@
-{"id": "r2-04-jok-a", "action": "shell", "command": "cd voice-clone && python3 r2_runner.py --line joking --part a"}
