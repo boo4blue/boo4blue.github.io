@@ -1,0 +1,1 @@
+{"id": "r2-13-clm-a", "action": "shell", "command": "cd voice-clone && python3 r2_runner.py --line calm --part a"}
