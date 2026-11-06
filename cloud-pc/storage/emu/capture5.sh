@@ -8,6 +8,7 @@
 #    coords), then Code tab, then a class — so stage-extract is the real
 #    Extract screen this time.
 # Recording: graceful SIGINT stop + settle + in-job verify (as cap2-cap4).
+SDK=$HOME/.cache/cloudpc-models/android-sdk
 export ANDROID_HOME=$SDK ANDROID_SDK_ROOT=$SDK
 export ANDROID_AVD_HOME=$HOME/emu-avd-home
 export PATH=$SDK/platform-tools:$SDK/emulator:$PATH
