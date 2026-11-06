@@ -1,0 +1,1 @@
+{"id": "imp-01-scorebase", "action": "shell", "command": "cd voice-clone && python3 imp_runner.py scorebase"}

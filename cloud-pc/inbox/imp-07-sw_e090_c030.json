@@ -1,0 +1,1 @@
+{"id": "imp-07-sw_e090_c030", "action": "shell", "command": "cd voice-clone && python3 imp_runner.py synth --clip hype --ex 0.9 --cfg 0.3 --ref refs/excited/BV2_19_tndw_c005.wav --name sw_e090_c030"}
