@@ -1,0 +1,16 @@
+{
+  "id": "03-cap5-e1",
+  "action": "shell",
+  "at": "2026-11-06T17:29:22Z",
+  "job": {
+    "id": "03-cap5-e1",
+    "action": "shell",
+    "command": "bash emu/capture5.sh e1"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "FATAL emulator missing (setup did not run)\n",
+    "stderr": ""
+  }
+}
