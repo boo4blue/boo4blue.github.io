@@ -1,0 +1,16 @@
+{
+  "id": "02-emu-runA",
+  "action": "shell",
+  "at": "2026-11-06T14:11:04Z",
+  "job": {
+    "action": "shell",
+    "command": "bash emu/runbatch.sh A",
+    "id": "02-emu-runA"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "booted after ~20s\nboot_completed=1\nscreen=1080x2400\n=== tv com.onioncore.oniontv\n=== launcher com.onioncore.launcher\n=== calculator com.onioncore.calculator\n=== clock com.onioncore.clock\n=== notes com.onioncore.notes\n=== files com.onioncore.files\n=== gallery com.onioncore.gallery\n=== weather com.onioncore.weather\n=== camera com.onioncore.camera\n=== videoplayer com.onioncore.videoplayer\nBATCH A DONE\ntv pkg=com.onioncore.oniontv install_success=1 pid=2098 shot1=172634 shot2=191507\nlauncher pkg=com.onioncore.launcher install_success=1 pid=2453 shot1=390048 shot2=366941\ncalculator pkg=com.onioncore.calculator install_success=1 pid=2540 shot1=74348 shot2=74360\nclock pkg=com.onioncore.clock install_success=1 pid=2621 shot1=92080 shot2=59315\nnotes pkg=com.onioncore.notes install_success=1 pid=2702 shot1=49451 shot2=49451\nfiles pkg=com.onioncore.files install_success=1 pid=2782 shot1=89416 shot2=93180\ngallery pkg=com.onioncore.gallery install_success=1 pid=2869 shot1=92300 shot2=47081\nweather pkg=com.onioncore.weather install_success=1 pid=2945 shot1=143598 shot2=143598\ncamera pkg=com.onioncore.camera install_success=1 pid=3027 shot1=101753 shot2=101753\nvideoplayer pkg=com.onioncore.videoplayer install_success=1 pid=3106 shot1=90107 shot2=42617\n",
+    "stderr": "* daemon not running; starting now at tcp:5037\n* daemon started successfully\n"
+  }
+}

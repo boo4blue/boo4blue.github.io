@@ -1,0 +1,10 @@
+contacts pkg=com.onioncore.contacts install_success=1 pid=2297 shot1=95078 shot2=62343
+calendar pkg=com.onioncore.calendar install_success=1 pid=2472 shot1=80781 shot2=46430
+phone pkg=com.onioncore.phone install_success=1 pid=2552 shot1=104635 shot2=72835
+messages pkg=com.onioncore.messages install_success=1 pid=2635 shot1=131120 shot2=115972
+devicecare pkg=com.onioncore.devicecare install_success=1 pid=2716 shot1=146224 shot2=146224
+wellbeing pkg=com.onioncore.wellbeing install_success=1 pid=2790 shot1=95940 shot2=62542
+quickshare pkg=com.onioncore.quickshare install_success=1 pid=2869 shot1=63257 shot2=63257
+macro pkg=com.onioncore.macro install_success=1 pid=2944 shot1=118900 shot2=137180
+securespace pkg=com.onioncore.securespace install_success=1 pid=3026 shot1=94136 shot2=63643
+wallet pkg=com.onioncore.wallet install_success=1 pid=3103 shot1=79253 shot2=79253

@@ -1,0 +1,10 @@
+tv pkg=com.onioncore.oniontv install_success=1 pid=2098 shot1=172634 shot2=191507
+launcher pkg=com.onioncore.launcher install_success=1 pid=2453 shot1=390048 shot2=366941
+calculator pkg=com.onioncore.calculator install_success=1 pid=2540 shot1=74348 shot2=74360
+clock pkg=com.onioncore.clock install_success=1 pid=2621 shot1=92080 shot2=59315
+notes pkg=com.onioncore.notes install_success=1 pid=2702 shot1=49451 shot2=49451
+files pkg=com.onioncore.files install_success=1 pid=2782 shot1=89416 shot2=93180
+gallery pkg=com.onioncore.gallery install_success=1 pid=2869 shot1=92300 shot2=47081
+weather pkg=com.onioncore.weather install_success=1 pid=2945 shot1=143598 shot2=143598
+camera pkg=com.onioncore.camera install_success=1 pid=3027 shot1=101753 shot2=101753
+videoplayer pkg=com.onioncore.videoplayer install_success=1 pid=3106 shot1=90107 shot2=42617

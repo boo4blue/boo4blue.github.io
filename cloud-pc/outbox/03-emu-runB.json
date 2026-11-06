@@ -1,0 +1,16 @@
+{
+  "id": "03-emu-runB",
+  "action": "shell",
+  "at": "2026-11-06T14:14:06Z",
+  "job": {
+    "action": "shell",
+    "command": "bash emu/runbatch.sh B",
+    "id": "03-emu-runB"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "booted after ~20s\nboot_completed=1\nscreen=1080x2400\n=== contacts com.onioncore.contacts\n=== calendar com.onioncore.calendar\n=== phone com.onioncore.phone\n=== messages com.onioncore.messages\n=== devicecare com.onioncore.devicecare\n=== wellbeing com.onioncore.wellbeing\n=== quickshare com.onioncore.quickshare\n=== macro com.onioncore.macro\n=== securespace com.onioncore.securespace\n=== wallet com.onioncore.wallet\nBATCH B DONE\ncontacts pkg=com.onioncore.contacts install_success=1 pid=2297 shot1=95078 shot2=62343\ncalendar pkg=com.onioncore.calendar install_success=1 pid=2472 shot1=80781 shot2=46430\nphone pkg=com.onioncore.phone install_success=1 pid=2552 shot1=104635 shot2=72835\nmessages pkg=com.onioncore.messages install_success=1 pid=2635 shot1=131120 shot2=115972\ndevicecare pkg=com.onioncore.devicecare install_success=1 pid=2716 shot1=146224 shot2=146224\nwellbeing pkg=com.onioncore.wellbeing install_success=1 pid=2790 shot1=95940 shot2=62542\nquickshare pkg=com.onioncore.quickshare install_success=1 pid=2869 shot1=63257 shot2=63257\nmacro pkg=com.onioncore.macro install_success=1 pid=2944 shot1=118900 shot2=137180\nsecurespace pkg=com.onioncore.securespace install_success=1 pid=3026 shot1=94136 shot2=63643\nwallet pkg=com.onioncore.wallet install_success=1 pid=3103 shot1=79253 shot2=79253\n",
+    "stderr": "* daemon not running; starting now at tcp:5037\n* daemon started successfully\n"
+  }
+}
