@@ -1,1 +1,0 @@
-{"id": "remake-02", "action": "shell", "command": "cd voice-clone && python3 remake_runner.py V6a V6b V7a V7b"}

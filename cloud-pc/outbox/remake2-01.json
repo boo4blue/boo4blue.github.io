@@ -1,0 +1,16 @@
+{
+  "id": "remake2-01",
+  "action": "shell",
+  "at": "2026-11-06T22:29:37Z",
+  "job": {
+    "id": "remake2-01",
+    "action": "shell",
+    "command": "cd voice-clone && python3 remake_runner.py V1a V1b V2a V2b V3a V3b"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "loaded PerthNet (Implicit) at step 250,000\n[remake-voice] model loaded in 8.3s sr=24000 takes=['V1a', 'V1b', 'V2a', 'V2b', 'V3a', 'V3b']\n[remake-voice] skip H-V1a.wav (exists)\n[remake-voice] skip H-V1b.wav (exists)\n[remake-voice] skip H-V2a.wav (exists)\n[remake-voice] skip H-V2b.wav (exists)\n[remake-voice] skip H-V3a.wav (exists)\n[remake-voice] skip H-V3b.wav (exists)\n[remake-voice] REMAKE PART DONE\n",
+    "stderr": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/diffusers/models/lora.py:393: FutureWarning: `LoRACompatibleLinear` is deprecated and will be removed in version 1.0.0. Use of `LoRACompatibleLinear` is deprecated. Please switch to PEFT backend by installing PEFT: `pip install peft`.\n  deprecate(\"LoRACompatibleLinear\", \"1.0.0\", deprecation_message)\n"
+  }
+}
