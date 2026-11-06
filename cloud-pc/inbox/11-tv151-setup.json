@@ -1,0 +1,1 @@
+{"id": "11-tv151-setup", "action": "shell", "command": "bash emu/run10.sh setup"}
