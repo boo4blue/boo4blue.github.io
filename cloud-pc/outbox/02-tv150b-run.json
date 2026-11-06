@@ -1,0 +1,16 @@
+{
+  "id": "02-tv150b-run",
+  "action": "shell",
+  "at": "2026-11-06T15:27:02Z",
+  "job": {
+    "action": "shell",
+    "command": "bash emu/runtv150b.sh",
+    "id": "02-tv150b-run"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "booted after ~20s\nTV150B DONE\napk_md5=b9e51a06b29b2b4cb963e56029815c09\nboot_completed=1\ninstall_success=1\nresolved_launcher=com.onioncore.oniontv/.phone.PhoneHomeActivity\npid_first=2067\npid_warm=2463\nui_texts=text=\"ONION TV\"|text=\"Blaze\"|\ntop_activity=    topResumedActivity=ActivityRecord{b0bd895 u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t9}\nremote=not_found\npid_end=2463\nfatal_count=0\nshot_w1=26831\nshot_w2=26831\nshot_w2b=26831\nshot_w3=26831\n",
+    "stderr": "* daemon not running; starting now at tcp:5037\n* daemon started successfully\n"
+  }
+}

@@ -1,0 +1,15 @@
+apk_md5=b9e51a06b29b2b4cb963e56029815c09
+boot_completed=1
+install_success=1
+resolved_launcher=com.onioncore.oniontv/.phone.PhoneHomeActivity
+pid_first=2067
+pid_warm=2463
+ui_texts=text="ONION TV"|text="Blaze"|
+top_activity=    topResumedActivity=ActivityRecord{b0bd895 u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t9}
+remote=not_found
+pid_end=2463
+fatal_count=0
+shot_w1=26831
+shot_w2=26831
+shot_w2b=26831
+shot_w3=26831
