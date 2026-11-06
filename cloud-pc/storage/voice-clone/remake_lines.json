@@ -1,0 +1,112 @@
+{
+ "V1a": {
+  "out": "H-V1a",
+  "text": "Oh \u2014 hey. Didn't see you there.",
+  "seed": 1000
+ },
+ "V1b": {
+  "out": "H-V1b",
+  "text": "Oh \u2014 hey. Didn't see you there.",
+  "seed": 5000
+ },
+ "V2a": {
+  "out": "H-V2a",
+  "text": "Come here, I wanna show you something.",
+  "seed": 1017
+ },
+ "V2b": {
+  "out": "H-V2b",
+  "text": "Come here, I wanna show you something.",
+  "seed": 5031
+ },
+ "V3a": {
+  "out": "H-V3a",
+  "text": "I'm Blaze. I build apps \u2014 like, a LOT of apps \u2014 with my AI.",
+  "seed": 1034
+ },
+ "V3b": {
+  "out": "H-V3b",
+  "text": "I'm Blaze. I build apps \u2014 like, a LOT of apps \u2014 with my AI.",
+  "seed": 5062
+ },
+ "V4a": {
+  "out": "H-V4a",
+  "text": "Her name's Onion. She's my Muse \u2014 and honestly, she's basically my whole dev team in one.",
+  "seed": 1051
+ },
+ "V4b": {
+  "out": "H-V4b",
+  "text": "Her name's Onion. She's my Muse \u2014 and honestly, she's basically my whole dev team in one.",
+  "seed": 5093
+ },
+ "V5a": {
+  "out": "H-V5a",
+  "text": "Everything on this phone that matters? We built it. Look \u2014",
+  "seed": 1068
+ },
+ "V5b": {
+  "out": "H-V5b",
+  "text": "Everything on this phone that matters? We built it. Look \u2014",
+  "seed": 5124
+ },
+ "V6a": {
+  "out": "H-V6a",
+  "text": "Onion Browser \u2014 my own browser. Fast, private, and it even checks if your accounts ever got leaked.",
+  "seed": 1085
+ },
+ "V6b": {
+  "out": "H-V6b",
+  "text": "Onion Browser \u2014 my own browser. Fast, private, and it even checks if your accounts ever got leaked.",
+  "seed": 5155
+ },
+ "V7a": {
+  "out": "H-V7a",
+  "text": "Haven \u2014 the app. It helps people find food, shelter, real help near them. That one matters to me.",
+  "seed": 1102
+ },
+ "V7b": {
+  "out": "H-V7b",
+  "text": "Haven \u2014 the app. It helps people find food, shelter, real help near them. That one matters to me.",
+  "seed": 5186
+ },
+ "V8a": {
+  "out": "H-V8a",
+  "text": "Onion APK Editor \u2014 my secret weapon. Open any app up, look inside it, pull out what I need, rebuild it.",
+  "seed": 1119
+ },
+ "V8b": {
+  "out": "H-V8b",
+  "text": "Onion APK Editor \u2014 my secret weapon. Open any app up, look inside it, pull out what I need, rebuild it.",
+  "seed": 5217
+ },
+ "V9a": {
+  "out": "H-V9a",
+  "text": "Care Circle \u2014 helps families run childcare. Schedules, check-ins, payments, all in one place.",
+  "seed": 1136
+ },
+ "V9b": {
+  "out": "H-V9b",
+  "text": "Care Circle \u2014 helps families run childcare. Schedules, check-ins, payments, all in one place.",
+  "seed": 5248
+ },
+ "V10a": {
+  "out": "H-V10a",
+  "text": "All real. All mine. Built by me and Onion \u2014 so if you got an idea, we can build it. Onion Core. Let's go.",
+  "seed": 1153
+ },
+ "V10b": {
+  "out": "H-V10b",
+  "text": "All real. All mine. Built by me and Onion \u2014 so if you got an idea, we can build it. Onion Core. Let's go.",
+  "seed": 5279
+ },
+ "V11a": {
+  "out": "H-V11a",
+  "text": "[laugh] 'ppreciate you.",
+  "seed": 1170
+ },
+ "V11b": {
+  "out": "H-V11b",
+  "text": "[laugh] 'ppreciate you.",
+  "seed": 5310
+ }
+}
