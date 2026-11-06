@@ -164,7 +164,7 @@ def crossfade_concat(parts, sr, fade_ms=CROSSFADE_MS):
 def mode_scorebase():
     decode()
     OUT.mkdir(parents=True, exist_ok=True)
-    ref_emb = embed(WORK / "ref.wav")
+    ref_emb = embed(WORK / "ref")
     results = {}
     for key in ("base1", "base2", "base3", "heldout", "neg"):
         p = WORK / f"{key}.wav"
@@ -210,7 +210,7 @@ def mode_synth(args):
     out_wav = OUT / f"{args.name}.wav"
     write_wav(out_wav, final, sr)
     st = stats_of(out_wav)
-    ref_emb = embed(WORK / "ref.wav")
+    ref_emb = embed(WORK / "ref")
     score = cosine(ref_emb, embed(out_wav))
     rec = {"name": args.name, "clip": args.clip, "exaggeration": args.ex,
            "cfg_weight": args.cfg, "ref": args.ref, "ge2e": round(score, 4), **st}
