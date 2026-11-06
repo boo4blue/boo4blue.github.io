@@ -1,0 +1,1 @@
+{"id": "r2-00-setup", "action": "shell", "command": "pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu && pip install -q chatterbox-tts resemblyzer && python3 -c \"import torch, chatterbox, resemblyzer; print('SETUP_OK')\" && mkdir -p voice-clone/r2_out"}

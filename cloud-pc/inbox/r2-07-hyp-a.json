@@ -1,0 +1,1 @@
+{"id": "r2-07-hyp-a", "action": "shell", "command": "cd voice-clone && python3 r2_runner.py --line hype --part a"}
