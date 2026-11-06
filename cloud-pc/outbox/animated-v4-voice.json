@@ -1,0 +1,16 @@
+{
+  "id": "animated-v4-voice",
+  "action": "shell",
+  "at": "2026-11-06T03:24:11Z",
+  "job": {
+    "id": "animated-v4-voice",
+    "action": "shell",
+    "command": "cd voice-clone && python3 anim_v4_runner.py --ex 0.7 --cfg 0.35 --ref refs/excited/BV2_19_tndw_c005.wav --name animated_v4_voice && ls -la anim_out/"
+  },
+  "result": {
+    "ok": true,
+    "exit": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/runner/work/boo4blue.github.io/boo4blue.github.io/cloud-pc/storage/voice-clone/anim_v4_runner.py\", line 12, in <module>\n    import numpy as np\nModuleNotFoundError: No module named 'numpy'\n"
+  }
+}
