@@ -1,0 +1,16 @@
+boot_completed=1 after ~25s
+screen=1080x2400
+fetch_ok cap-OnionBrowser.apk md5=897528dc0f65cb16221c9b906483ddb5 size=15710468
+install b2 pm_match=1
+browser_pid=3295
+b1_b2x_home texts=
+b1_b2x menu_xy=1012 2263
+b1_b2x_menu0 texts=text="Guest"|text="Personalize your browser"|text="Sync off"|text="○ Dark Onion: OFF"|text="VPN"|text="Off"|text="Data Saver"|text="Off"|text="Ad Blocker"|text="On"|text="Night mode"|text="Off"|text="VPN uses free public servers — slower than paid VPNs"|text="Ask AI"|text="Bookmarks"|text="Downloads"|text="History"|text="Offline pages"|text="Check a link"|text="Blocked elements"|text="Block mode: OFF"|text="Save offline"|text="Find in page"|text="Search text on this page"|text="Page info"|text="Start page"|
+b1_b2x_menu1 texts=text="Ask AI"|text="Bookmarks"|text="Downloads"|text="History"|text="Offline pages"|text="Check a link"|text="Blocked elements"|text="Block mode: OFF"|text="Save offline"|text="Find in page"|text="Search text on this page"|text="Page info"|text="Start page"|text="Keyboard shortcuts"|text="Quick keys for a physical keyboard"|text="Dev Tools"|text="Console, page source and remote debugging"|text="Appearance"|text="Customize your browser"|text="Cloud PC"|text="Onion OS desktop, built in"|text="Games"|text="Cloud gaming — your library on the PC"|
+b1_b2x_menu2 texts=text="Block mode: OFF"|text="Save offline"|text="Find in page"|text="Search text on this page"|text="Page info"|text="Start page"|text="Keyboard shortcuts"|text="Quick keys for a physical keyboard"|text="Dev Tools"|text="Console, page source and remote debugging"|text="Appearance"|text="Customize your browser"|text="Cloud PC"|text="Onion OS desktop, built in"|text="Games"|text="Cloud gaming — your library on the PC"|text="Onion AI"|text="Agent status, approvals and fleet"|text="Sync"|text="No accounts — everything stays on your device"|text="Passwords"|text="0 saved"|text="Cards"|text="0 saved"|
+b1_b2x_menu3 texts=text="Dev Tools"|text="Console, page source and remote debugging"|text="Appearance"|text="Customize your browser"|text="Cloud PC"|text="Onion OS desktop, built in"|text="Games"|text="Cloud gaming — your library on the PC"|text="Onion AI"|text="Agent status, approvals and fleet"|text="Sync"|text="No accounts — everything stays on your device"|text="Passwords"|text="0 saved"|text="Cards"|text="0 saved"|text="Addresses"|text="0 saved"|text="Personal Info"|text="Not set up"|text="API Keys"|text="0 saved"|
+b1_b2x_menu4 texts=text="Dev Tools"|text="Console, page source and remote debugging"|text="Appearance"|text="Customize your browser"|text="Cloud PC"|text="Onion OS desktop, built in"|text="Games"|text="Cloud gaming — your library on the PC"|text="Onion AI"|text="Agent status, approvals and fleet"|text="Sync"|text="No accounts — everything stays on your device"|text="Passwords"|text="0 saved"|text="Cards"|text="0 saved"|text="Addresses"|text="0 saved"|text="Personal Info"|text="Not set up"|text="API Keys"|text="0 saved"|
+b1_b2x MENU_PASS_EXHAUSTED (no Settings, no Leak Check)
+EXPLORE_LEAK_NOT_REACHABLE (bounded attempt exhausted)
+VERDICT=LEAK_NOT_REACHABLE
+B1LEAK_DONE

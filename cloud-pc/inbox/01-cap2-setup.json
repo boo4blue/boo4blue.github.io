@@ -1,1 +1,0 @@
-{"id": "01-cap2-setup", "action": "shell", "command": "bash emu/run10.sh setup"}

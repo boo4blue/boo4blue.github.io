@@ -1,0 +1,33 @@
+boot_completed=1 after ~20s
+screen=1080x2400
+geo_fix set (Fort Wayne) + location_mode=3
+fetch_ok cap-HavenFW.apk md5=2203a0b2b286cdac889ce5778e2fb5df size=3085931
+install h2 pm_match=1
+h1_h2x_step1 texts=text="Allow Haven FW to access this device’s location?"|text="Precise"|text="Approximate"|text="While using the app"|text="Only this time"|text="Don’t allow"|
+tap[while using the app] -> 540 1463
+h1_h2x_step2 texts=
+h1_h2x LIST_REACHED at step 2
+EXPLORE_LIST_OK
+h1_scrolled texts=text="Haven · Fort Wayne Resources"|text="&#128156;"|text="Haven"|text="Fort Wayne · Map"|text="Theme: dark"|text="Help info"|text="&#127858; &#128703; &#128138; &#127858; &#128156; &#128156; &#128156; &#129387; &#128722; &#128156; &#127858; &#129504; &#129489;‍&#127891; &#128156; &#129387; &#129504; &#128715;️ &#129658;"|text="&#127858;"|text="&#128703;"|text="&#128138;"|text="&#127858;"|text="&#128156;"|text="&#128156;"|text="&#128156;"|text="&#129387;"|text="&#128722;"|text="&#128156;"|text="&#127858;"|text="&#129504;"|text="&#129489;‍&#127891;"|text="&#128156;"|text="&#129387;"|text="&#129504;"|text="&#128715;️"|text="&#129658;"|text="&#129406;"|text="&#129530;"|text="&#129658;"|text="&#129504;"|text="&#128699;"|text="&#128156;"|text="&#127973;"|text="&#129504;"|text="&#129658;"|text="Zoom in"|text="Zoom out"|text="© "|text="OpenStreetMap"|text="☰ အမျိုးအစားများ"|text="&#127991;️ Tags"|
+tap[health] -> 540 933
+h1_h2x_card_via=health texts=text="Haven · Fort Wayne Resources"|text="&#128156;"|text="Haven"|text="Fort Wayne · Map"|text="Theme: dark"|text="Help info"|text="Hope Alive Shepherd's House &#128138; Neighborhood Health Clinics &#128703; &#127858; &#128085; quarksmarket &#129387; &#128156; AA 901 Big Book Group &#128156; AA Upon Awakening Group &#128268; Conjure Coffee — Phone Charging &#127858; &#127795; Old Fort Park &#127963;️ USPS General Delivery — Mail Without an Address &#129504;"|text="Hope Alive"|text="Shepherd's House"|text="&#128138; Neighborhood Health Clinics"|text="&#128703;"|text="&#127858;"|text="&#128085; quarksmarket"|text="&#129387;"|text="&#128156; AA 901 Big Book Group"|text="&#128156; AA Upon Awakening Group"|text="&#128268; Conjure Coffee — Phone Charging"|text="&#127858;"|text="&#127795; Old Fort Park"|text="&#127963;️ USPS General Delivery — Mail Without an Address"|text="&#129504;"|text="&#127795;"|text="&#128156; The Potter's Recovery House"|text="&#128156; Victory House for Women"|text="&#128246;"|text="&#129489;‍&#127891; Children's Health Collaborative"|text="&#128166;"|text="&#128118; FW Fire Station 1 — Safe Haven Surrender"|text="&#128156;"|text="&#128137;"|text="&#128181;"|text="&#127858;"|text="&#128703;"|text="&#127963;️"|text="&#127858;"|text="&#127963;️"|text="&#129658;"|text="&#129504;"|text="&#128156;"|text="&#127858;"|
+h1_h2x CARD_OK via health
+EXPLORE_CARD_OK needle=health
+haven_pid=2802
+rec_start /sdcard/H1.mp4 pid=6649
+h1_h2r_step1 texts=
+h1_h2r LIST_REACHED at step 1
+REC_LIST_OK
+tap[health] -> 540 959
+h1_h2r_card_via=health texts=text="Haven · Fort Wayne Resources"|text="&#128156;"|text="Haven"|text="Fort Wayne · မြေပုံ"|text="Theme: dark"|text="Help info"|text="&#128085; quarksmarket &#129387; &#128156; AA 901 Big Book Group &#128156; AA Upon Awakening Group &#128085; &#128268; Conjure Coffee — Phone Charging &#127858; &#127795; Old Fort Park &#127963;️ USPS General Delivery — Mail Without an Address &#129504; &#127795; &#128156; The Potter's Recovery House &#128156; Victory House for Women &#128246; &#129489;‍&#127891; Children's Health Collaborative"|text="&#128085; quarksmarket"|text="&#129387;"|text="&#128156; AA 901 Big Book Group"|text="&#128156; AA Upon Awakening Group"|text="&#128085;"|text="&#128268; Conjure Coffee — Phone Charging"|text="&#127858;"|text="&#127795; Old Fort Park"|text="&#127963;️ USPS General Delivery — Mail Without an Address"|text="&#129504;"|text="&#127795;"|text="&#128156; The Potter's Recovery House"|text="&#128156; Victory House for Women"|text="&#128246;"|text="&#129489;‍&#127891; Children's Health Collaborative"|text="&#128166;"|text="&#128118; FW Fire Station 1 — Safe Haven Surrender"|text="&#128156;"|text="&#128137;"|text="&#128181;"|text="&#127858;"|text="&#128703;"|text="&#127963;️"|text="&#127858;"|text="&#127963;️"|text="&#129658;"|text="&#129504;"|text="&#128167; Lawton Park — Drinking Water"|text="&#128699;"|text="&#128167;"|text="&#128156;"|text="&#129658; FWCS Health Clinic @ FACE"|text="&#127858;"|
+h1_h2r CARD_OK via health
+REC_CARD_OK needle=health
+rec_stop SIGINT pid=6649
+-rw-rw---- 1 u0_a188 media_rw 3562715 2026-11-06 16:45 /sdcard/H1.mp4
+video_pulled emu/shots/H1.mp4 bytes=3562715
+ffprobe: NOT_INSTALLED (mvhd fallback)
+verify emu/shots/H1.mp4 moov=1 duration_s=95.88 bytes=3562715
+VIDEO_OK emu/shots/H1.mp4
+haven_pid_end=6693
+fatal_h1=0
+H1_REPAIR_DONE
