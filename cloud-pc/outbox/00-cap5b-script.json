@@ -1,0 +1,16 @@
+{
+  "id": "00-cap5b-script",
+  "action": "store",
+  "at": "2026-11-06T17:32:58Z",
+  "job": {
+    "id": "00-cap5b-script",
+    "action": "store",
+    "path": "emu/capture5.sh",
+    "content_bytes": 17740
+  },
+  "result": {
+    "ok": true,
+    "path": "emu/capture5.sh",
+    "bytes": 17740
+  }
+}
