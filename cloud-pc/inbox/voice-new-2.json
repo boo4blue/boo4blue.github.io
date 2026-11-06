@@ -1,0 +1,1 @@
+{"action":"shell","command":"HF_HOME=$HOME/.cache/cloudpc-models/hf python3 voice-clone/synth3.py --only voice-clone-new-2-family && ls -la voice-clone/out/","id":"voice-new-2"}

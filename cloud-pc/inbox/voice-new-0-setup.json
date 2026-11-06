@@ -1,0 +1,1 @@
+{"action":"shell","command":"pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu && pip install -q chatterbox-tts psutil numpy && python3 -c \"import chatterbox, torch; print('chatterbox ok, torch', torch.__version__)\"","id":"voice-new-0-setup"}
