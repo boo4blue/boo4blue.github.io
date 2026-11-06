@@ -1,0 +1,1 @@
+{"id": "imp-14-rf_fam_stitch", "action": "shell", "command": "cd voice-clone && python3 imp_runner.py synth --clip family --ex 0.7 --cfg 0.35 --ref imp_work/imp_calm_stitch.wav --name rf_fam_stitch"}

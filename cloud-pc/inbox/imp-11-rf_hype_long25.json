@@ -1,0 +1,1 @@
+{"id": "imp-11-rf_hype_long25", "action": "shell", "command": "cd voice-clone && python3 imp_runner.py synth --clip hype --ex 0.7 --cfg 0.35 --ref imp_work/imp_excited_long25.wav --name rf_hype_long25"}
