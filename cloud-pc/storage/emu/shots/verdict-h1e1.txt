@@ -1,0 +1,22 @@
+boot_completed=1 after ~20s
+screen=1080x2400
+fetch_ok cap-HavenFW.apk md5=2203a0b2b286cdac889ce5778e2fb5df size=3085931
+fetch_ok cap-OnionAPKEditor.apk md5=4f1f19422e171adabc45248c1720ca75 size=246619
+install h1 pm_match=1
+install e1 pm_match=1
+haven_texts=text="Allow Haven FW to access this device’s location?"|text="Precise"|text="Approximate"|text="While using the app"|text="Only this time"|text="Don’t allow"|
+haven_pid=3066
+haven_item_via=mission xy=540 1232
+haven_card_texts=text="Allow Haven FW to access this device’s location?"|text="Precise"|text="Approximate"|text="While using the app"|text="Only this time"|text="Don’t allow"|
+video emu/shots/H1.mp4 bytes=227650
+haven_pid_end=3066
+editor_lib_texts=text="Onion APK Editor"|text="Editor + Installer"|text="Library"|text="Inspect any app or APK file — contents, resources and code — and queue it in the Installer."|text="Pick an installed app"|text="Browse everything installed on this device and open its APK facts."|text="Browse installed apps"|text="Pick an APK file"|text="Choose a .apk from storage. The file is copied into the library first."|text="Choose APK file"|text="Search library"|text="Nothing here yet. Pick an installed app or an APK file above and it will live here."|text="Library"|text="Projects"|text="Installer"|text="Settings"|
+editor_app_via=onion xy=540 195
+editor_app_texts=text="Onion APK Editor"|text="Editor + Installer"|text="Library"|text="Inspect any app or APK file — contents, resources and code — and queue it in the Installer."|text="Pick an installed app"|text="Browse everything installed on this device and open its APK facts."|text="Browse installed apps"|text="Pick an APK file"|text="Choose a .apk from storage. The file is copied into the library first."|text="Choose APK file"|text="Search library"|text="Nothing here yet. Pick an installed app or an APK file above and it will live here."|text="Library"|text="Projects"|text="Installer"|text="Settings"|
+editor_insp_texts=text="Onion APK Editor"|text="Editor + Installer"|text="Library"|text="Inspect any app or APK file — contents, resources and code — and queue it in the Installer."|text="Pick an installed app"|text="Browse everything installed on this device and open its APK facts."|text="Browse installed apps"|text="Pick an APK file"|text="Choose a .apk from storage. The file is copied into the library first."|text="Choose APK file"|text="Search library"|text="Nothing here yet. Pick an installed app or an APK file above and it will live here."|text="Library"|text="Projects"|text="Installer"|text="Settings"|
+editor_file_texts=text="Onion APK Editor"|text="Editor + Installer"|text="Library"|text="Inspect any app or APK file — contents, resources and code — and queue it in the Installer."|text="Pick an installed app"|text="Browse everything installed on this device and open its APK facts."|text="Browse installed apps"|text="Pick an APK file"|text="Choose a .apk from storage. The file is copied into the library first."|text="Choose APK file"|text="Search library"|text="Nothing here yet. Pick an installed app or an APK file above and it will live here."|text="Library"|text="Projects"|text="Installer"|text="Settings"|
+editor_extract_NOT_FOUND
+video emu/shots/E1.mp4 bytes=240840
+editor_pid_end=6139
+fatal_h1e1=0
+H1E1_DONE

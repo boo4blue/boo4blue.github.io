@@ -1,0 +1,16 @@
+{
+  "id": "04-cap1-c1m1",
+  "action": "shell",
+  "at": "2026-11-06T16:14:36Z",
+  "job": {
+    "id": "04-cap1-c1m1",
+    "action": "shell",
+    "command": "bash emu/capture1.sh c1m1"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "boot_completed=1 after ~20s\nscreen=1080x2400\nfetch_ok cap-CareCircle.apk md5=7184a323ee317681428a2089c735c051 size=95098\nfetch_ok cap-OnionTV.apk md5=b9e51a06b29b2b4cb963e56029815c09 size=197372\ninstall c1 pm_match=1\ninstall m1 pm_match=1\ncare_texts=text=\"Care Circle \u2014 by Onion Core\"|text=\"Care Circle\"|text=\"One shared, live circle for the kids \u2014 schedules, tasks,&#10;pickups and updates that everyone sees the moment they change.\"|text=\"Already have an account?\"|text=\"Yes \u2014 sign me in\"|text=\"No \u2014 I'm new here\"|text=\"Got a code from a parent or an invite? \"|text=\"Use a code\"|text=\"By Onion Core. Private to your circle \u2014 nothing here is public.\"|text=\"Quick Add\"|text=\"The day, kept up to date by everyone.\"|text=\"Add a note\"|text=\"Add a task\"|text=\"Add a shift\"|text=\"Add an expense\"|text=\"Add a kid\"|text=\"Invite someone\"|text=\"Report incident\"|text=\"Announcement\"|text=\"Close\"|text=\"Emergency\"|text=\"Allergies, medical notes and tap-to-call contacts for every kid you can see. For a life-threatening emergency, call 911 first.\"|text=\"Close\"|text=\"Edit\"|\ncare_pid=3181\nvideo emu/shots/C1.mp4 bytes=74672\ncare_end_texts=text=\"Care Circle \u2014 by Onion Core\"|text=\"Care Circle\"|text=\"One shared, live circle for the kids \u2014 schedules, tasks,&#10;pickups and updates that everyone sees the moment they change.\"|text=\"Already have an account?\"|text=\"Yes \u2014 sign me in\"|text=\"No \u2014 I'm new here\"|text=\"Got a code from a parent or an invite? \"|text=\"Use a code\"|text=\"By Onion Core. Private to your circle \u2014 nothing here is public.\"|text=\"Quick Add\"|text=\"The day, kept up to date by everyone.\"|text=\"Add a note\"|text=\"Add a task\"|text=\"Add a shift\"|text=\"Add an expense\"|text=\"Add a kid\"|text=\"Invite someone\"|text=\"Report incident\"|text=\"Announcement\"|text=\"Close\"|text=\"Emergency\"|text=\"Allergies, medical notes and tap-to-call contacts for every kid you can see. For a life-threatening emergency, call 911 first.\"|text=\"Close\"|text=\"Edit\"|\ncare_pid_end=3181\ntv_launcher=com.onioncore.oniontv/.phone.PhoneHomeActivity\ntv_texts=text=\"ONION TV\"|text=\"Blaze\"|\nvideo emu/shots/M1.mp4 bytes=17029\ntv_pid_end=5934\nfatal_c1m1=0\nOK: killing emulator, bye bye\nOK\nC1M1_DONE\n",
+    "stderr": "* daemon not running; starting now at tcp:5037\n* daemon started successfully\n"
+  }
+}

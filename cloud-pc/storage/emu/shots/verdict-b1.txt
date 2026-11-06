@@ -1,0 +1,16 @@
+boot_completed=1 after ~20s
+screen=1080x2400
+fetch_ok cap-OnionBrowser.apk md5=897528dc0f65cb16221c9b906483ddb5 size=15710468
+install b1 pm_match=1
+pid_launch=3031
+home_texts=text="4:08"|text="Friday, November 6"|text="Fort Wayne · 46° Partly cloudy"|text="Onion"|text="A fast private browser"|text="Search or ask anything"|text="Tip: split view lives in the onion menu"|text="Private tab"|text="Vault"|text="Downloads"|text="Watched"|text="Cloud PC"|text="Games"|text="Onion AI"|text="AI Mode"|text="Private"|text="Dark Onion: Off"|text="ONION CORE"|text="Hub"|text="Mail"|text="Engine"|text="Photos"|text="1"|
+url_bar_xy=563 857
+loaded_texts=text="Example Domain"|text="This domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes."|text="هذا النطاق مُخصص للاستخدام في أمثلة التوثيق دون الحاجة إلى إذن. هذه ليست خدمة، يُرجى تجنب الاعتماد عليها لأغراض الاختبار والمراقبة."|text="该域名仅用于文档示例，无需获得许可。这并非一项服务，请勿将其用于测试和监控目的。"|text="L’usage de ce domaine est réservé à des exemples de documentation, sans autorisation préalable. Il ne s’agit pas d’un service ; son utilisation à des fins de test ou de surveillance est à éviter."|text="Данный домен предназначен для использования в примерах документации без необходимости получения предварительного разрешения. Это не сервис; не рекомендуется его использование для тестирования и мониторинга."|text="Este dominio está destinado al uso en ejemplos de documentación sin necesidad de permiso. Esto no es un servicio; evitar utilizarlo para realizar pruebas o monitoreos."|text="Learn more"|text="1"|
+menu_xy=1012 2263
+menu_texts=text="Guest"|text="Personalize your browser"|text="Sync off"|text="○ Dark Onion: OFF"|text="VPN"|text="Off"|text="Data Saver"|text="Off"|text="Ad Blocker"|text="On"|text="Night mode"|text="Off"|text="VPN uses free public servers — slower than paid VPNs"|text="Ask AI"|text="Bookmarks"|text="Downloads"|text="History"|text="Offline pages"|text="Check a link"|text="Blocked elements"|text="Block mode: OFF"|text="Save offline"|text="Find in page"|text="Search text on this page"|text="Page info"|text="example.com"|
+SETTINGS_NOT_FOUND_IN_MENU
+path menu=1012 2263 settings= leak= leak_swipes=0
+video emu/shots/B1.mp4 bytes=1195059
+pid_end=5190
+fatal_b1=0
+B1_DONE
