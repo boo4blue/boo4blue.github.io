@@ -1,0 +1,66 @@
+{
+  "calm": {
+    "cfg": 0.35,
+    "chunks": [
+      "Alright, deep breath. Everything's saved, everything's backed up, nothing's on fire.",
+      "We can slow down tonight, sit on the porch, and just watch the sky for a bit."
+    ],
+    "ex": 0.7,
+    "mood": "calm",
+    "num": 5,
+    "ref": "imp_work/imp_calm_long25.wav",
+    "text": "Alright, deep breath. Everything's saved, everything's backed up, nothing's on fire. We can slow down tonight, sit on the porch, and just watch the sky for a bit."
+  },
+  "explaining": {
+    "cfg": 0.35,
+    "chunks": [
+      "Okay so here's how the screenshots work.",
+      "The computer in the cloud turns the app on, takes a picture of the first screen, and sends it back to me.",
+      "That way you can see exactly what an app looks like before you ever install it on your phone."
+    ],
+    "ex": 0.7,
+    "mood": "explaining",
+    "num": 1,
+    "ref": "imp_work/imp_calm_long25.wav",
+    "text": "Okay so here's how the screenshots work. The computer in the cloud turns the app on, takes a picture of the first screen, and sends it back to me. That way you can see exactly what an app looks like before you ever install it on your phone."
+  },
+  "hype": {
+    "cfg": 0.35,
+    "chunks": [
+      "We just built eighteen apps in one night! Eighteen!",
+      "Camera, phone, messages, all of it, ours.",
+      "Nobody else is doing this from a phone in Texas, I'm telling you right now, this is only the beginning!"
+    ],
+    "ex": 0.7,
+    "mood": "hype",
+    "num": 3,
+    "ref": "imp_work/imp_excited_long25.wav",
+    "text": "We just built eighteen apps in one night! Eighteen! Camera, phone, messages, all of it, ours. Nobody else is doing this from a phone in Texas, I'm telling you right now, this is only the beginning!"
+  },
+  "joking": {
+    "cfg": 0.35,
+    "chunks": [
+      "So Callie heard the clone and goes, that doesn't sound like you.",
+      "I said, give it time, it's still learning.",
+      "Next thing you know it's gonna be telling her to go to bed, watch."
+    ],
+    "ex": 0.7,
+    "mood": "joking",
+    "num": 2,
+    "ref": "imp_work/imp_excited_long25.wav",
+    "text": "So Callie heard the clone and goes, that doesn't sound like you. I said, give it time, it's still learning. Next thing you know it's gonna be telling her to go to bed, watch."
+  },
+  "warm": {
+    "cfg": 0.35,
+    "chunks": [
+      "Merlin, Heaven, I just wanna say thanks for real.",
+      "Letting me stay here while I get everything built, that means more than I can explain.",
+      "This family's the reason any of this works."
+    ],
+    "ex": 0.7,
+    "mood": "warm",
+    "num": 4,
+    "ref": "imp_work/imp_calm_long25.wav",
+    "text": "Merlin, Heaven, I just wanna say thanks for real. Letting me stay here while I get everything built, that means more than I can explain. This family's the reason any of this works."
+  }
+}
