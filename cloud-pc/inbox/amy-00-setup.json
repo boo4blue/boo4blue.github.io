@@ -1,1 +1,0 @@
-{"id": "amy-00-setup", "action": "shell", "command": "pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu && pip install -q chatterbox-tts && python3 -c \"import torch, chatterbox; print('SETUP_OK')\" && mkdir -p voice-clone/amy_out"}

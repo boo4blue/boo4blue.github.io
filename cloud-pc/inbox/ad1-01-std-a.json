@@ -1,1 +1,0 @@
-{"id": "ad1-01-std-a", "action": "shell", "command": "cd voice-clone && python3 ad_runner.py V1 V2 V3 V4 V5"}
