@@ -1,0 +1,16 @@
+{
+  "id": "02-tv150-run",
+  "action": "shell",
+  "at": "2026-11-06T14:52:36Z",
+  "job": {
+    "action": "shell",
+    "command": "bash emu/runtv150.sh",
+    "id": "02-tv150-run"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "apk_md5=b9e51a06b29b2b4cb963e56029815c09\nbooted after ~20s\nboot_completed=1\nscreen=1080x2400\ninstall_success=1 pm_listed=1\nresolved_launcher=com.onioncore.oniontv/.phone.PhoneHomeActivity\ntop_activity=    topResumedActivity=ActivityRecord{3d8aabf u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t8}\nremote=not_found\nTV150 DONE\napk_md5=b9e51a06b29b2b4cb963e56029815c09\nboot_completed=1\nscreen=1080x2400\ninstall_success=1\npm_listed=1\nresolved_launcher=com.onioncore.oniontv/.phone.PhoneHomeActivity\ntop_activity=    topResumedActivity=ActivityRecord{3d8aabf u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t8}\npid_shot=2038\nremote=not_found\npid_end=2038\nfatal_count=0\nshot_a=26831 shot_b=26831\n",
+    "stderr": "* daemon not running; starting now at tcp:5037\n* daemon started successfully\n"
+  }
+}

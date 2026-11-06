@@ -1,0 +1,12 @@
+apk_md5=b9e51a06b29b2b4cb963e56029815c09
+boot_completed=1
+screen=1080x2400
+install_success=1
+pm_listed=1
+resolved_launcher=com.onioncore.oniontv/.phone.PhoneHomeActivity
+top_activity=    topResumedActivity=ActivityRecord{3d8aabf u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t8}
+pid_shot=2038
+remote=not_found
+pid_end=2038
+fatal_count=0
+shot_a=26831 shot_b=26831
