@@ -1,0 +1,17 @@
+apk_md5=826315fd5bcc3b6ad577e75e5a6f64a5
+boot_completed=1
+install_success=1
+resolved_launcher=com.onioncore.oniontv/.phone.PhoneHomeActivity
+pid_first=2064
+pid_warm=2412
+ui_texts=text="ONION TV"|text="Blaze"|text="Onion ID: not linked yet - tap to see profile options"|text="Search movies and shows"|text="Ask Onion AI"|text="Good sources come pre-installed, so Play just works. You can remove any of them in the Catalog, any time."|text="2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller"|text="Play"|text="More Info"|text="Trending Movies"|text="Obsession"|text="Hocus Pocus"|text="Verity"|text="Top 10 Today"|text="Home"|text="Search"|text="TV Remote"|text="Profile"|
+top_activity=    topResumedActivity=ActivityRecord{8b4ce8e u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t9}
+pid_end=2412
+fatal_count=0
+11-06 16:21:05.648  2064  2064 I oniontv : [oniontv] phone home rendered [catalog rails]: cards=0 railsBoxHeight=126px hero=hidden
+11-06 16:21:28.685  2412  2412 I oniontv : [oniontv] phone home rendered [catalog rails]: cards=222 railsBoxHeight=4758px hero=visible
+11-06 16:21:28.653  2412  2412 I oniontv : [oniontv] phone hero showing: Obsession
+shot_w1=80407
+shot_w2=1335960
+shot_w2b=1335960
+shot_w3=1236756
