@@ -1,0 +1,16 @@
+{
+  "id": "imp-00-setup",
+  "action": "shell",
+  "at": "2026-11-06T00:54:38Z",
+  "job": {
+    "id": "imp-00-setup",
+    "action": "shell",
+    "command": "pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu && pip install -q chatterbox-tts resemblyzer && python3 -c \"import torch, chatterbox, resemblyzer; print('SETUP_OK')\" && mkdir -p voice-clone/imp_out voice-clone/imp_work"
+  },
+  "result": {
+    "ok": true,
+    "exit": 0,
+    "stdout": "SETUP_OK\n",
+    "stderr": "\n[notice] A new release of pip is available: 26.2.2 -> 26.3\n[notice] To update, run: pip install --upgrade pip\n"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "imp-01-scorebase",
+  "action": "shell",
+  "at": "2026-11-06T00:54:40Z",
+  "job": {
+    "id": "imp-01-scorebase",
+    "action": "shell",
+    "command": "cd voice-clone && python3 imp_runner.py scorebase"
+  },
+  "result": {
+    "ok": true,
+    "exit": 1,
+    "stdout": "[imp] decoded ref (800078 B)\n[imp] decoded heldout (640078 B)\n[imp] decoded neg (119886 B)\n[imp] decoded base1 (367438 B)\n[imp] decoded base2 (291918 B)\n[imp] decoded base3 (289358 B)\n[imp] decoded imp_excited_short.wav (133838 B)\n[imp] decoded imp_excited_long25.wav (800078 B)\n[imp] decoded imp_excited_stitch.wav (876878 B)\n[imp] decoded imp_calm_long25.wav (800078 B)\n[imp] decoded imp_calm_stitch.wav (808078 B)\n[imp] decode done, 11 new file(s)\n",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/runner/work/boo4blue.github.io/boo4blue.github.io/cloud-pc/storage/voice-clone/imp_runner.py\", line 244, in <module>\n    sys.exit(main())\n             ^^^^^^\n  File \"/home/runner/work/boo4blue.github.io/boo4blue.github.io/cloud-pc/storage/voice-clone/imp_runner.py\", line 237, in main\n    return mode_scorebase()\n           ^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/boo4blue.github.io/boo4blue.github.io/cloud-pc/storage/voice-clone/imp_runner.py\", line 167, in mode_scorebase\n    ref_emb = embed(WORK / \"ref.wav\")\n              ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/boo4blue.github.io/boo4blue.github.io/cloud-pc/storage/voice-clone/imp_runner.py\", line 100, in embed\n    x = load_audio_16k(path)\n        ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/boo4blue.github.io/boo4blue.github.io/cloud-pc/storage/voice-clone/imp_runner.py\", line 78, in load_audio_16k\n    sr, data = wavfile.read(str(path))\n               ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/scipy/io/wavfile.py\", line 721, in read\n    fid = open(filename, 'rb')\n          ^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/home/runner/work/boo4blue.github.io/boo4blue.github.io/cloud-pc/storage/voice-clone/imp_work/ref.wav'\n"
+  }
+}
