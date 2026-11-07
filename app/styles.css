@@ -1310,3 +1310,6 @@ h1,h2,h3,.sec-title,.places-title{font-family:var(--font-head);letter-spacing:.0
   #pt-list>div>div:nth-child(2)>div:nth-child(2){
     font-size:var(--dmp-fs-small) !important;}
 }
+
+/* HV-ICONS: inline SVG icon sizing (replaces emoji glyphs) */
+.hvi{width:1.15em;height:1.15em;vertical-align:-.18em;display:inline-block}
