@@ -2,7 +2,7 @@
 /* ===== guides.js ===== */
 const GUIDES = [
   {
-    audited: "2026-10-11", id: "snap", title: "SNAP / EBT (Food Stamps)", icon: "🛒",
+    audited: "2026-10-11", id: "snap", title: "SNAP / EBT (Food Stamps)", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><circle cx='9' cy='21' r='1'/><circle cx='20' cy='21' r='1'/><path d='M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6'/></svg>",
     intro: "Monthly money on an EBT card for groceries. If your income is low, you likely qualify.",
     where: "Allen County Division of Family Resources", whereId: "dfr",
     bring: [
@@ -21,7 +21,7 @@ const GUIDES = [
     tips: "No income at all? Say so on the application — you can still qualify. Report income or address changes to keep your benefits coming.",
   },
   {
-    id: "medicaid", title: "Medicaid (HIP & Hoosier Healthwise)", icon: "🩺",
+    id: "medicaid", title: "Medicaid (HIP & Hoosier Healthwise)", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M9 3h6v6h6v6h-6v6H9v-6H3V9h6z'/></svg>",
     audited: "2026-10-10",
     intro: "Free or nearly-free health insurance from the state of Indiana.",
     where: "Same DFR office — or call 877-438-4479 (877-GET-HIP9)", whereId: "dfr",
@@ -41,7 +41,7 @@ const GUIDES = [
     tips: "Already on Medicaid? Keep your address updated with DFR or you can lose coverage at renewal time. HEADS UP: Indiana's new HIP work rules take effect Jan 2027 — non-disabled adults 19-64 must show 80 hrs/month of work, school, training, or volunteering (or earn $580+/month) to keep coverage; enrolling in January means proving work back to October 2026.",
   },
   {
-    id: "medicare", title: "Medicare", icon: "🏥",
+    id: "medicare", title: "Medicare", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><rect x='5' y='3' width='14' height='18'/><path d='M3 21h18'/><path d='M12 8v6M9 11h6'/></svg>",
     audited: "2026-10-09",
     intro: "Federal health insurance if you're 65 or older, or have a qualifying disability.",
     where: "Social Security office", whereId: "ssa",
@@ -59,7 +59,7 @@ const GUIDES = [
     tips: "Low income? Ask about Medicare Savings Programs — they can pay your premiums and more.",
   },
   {
-    id: "wic", audited: "2026-10-09", title: "WIC (Moms & Young Kids)", icon: "🍼",
+    id: "wic", audited: "2026-10-09", title: "WIC (Moms & Young Kids)", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><circle cx='12' cy='9' r='4'/><path d='M12 5a2.2 2.2 0 0 1 2.2-2'/><path d='M5.5 21c.8-3.2 3.4-5 6.5-5s5.7 1.8 6.5 5'/></svg>",
     intro: "Free healthy food, nutrition help, and breastfeeding support.",
     where: "WIC clinic — call (260) 458-2641 for an appointment", whereId: "wic-calhoun",
     bring: [
@@ -76,7 +76,7 @@ const GUIDES = [
     tips: "Pregnant, postpartum, breastfeeding, or have kids under 5? If money is tight, apply — WIC is separate from SNAP and you can have both.",
   },
   {
-    audited: "2026-10-11", id: "ssi", title: "SSI & Disability (SSDI)", icon: "♿",
+    audited: "2026-10-11", id: "ssi", title: "SSI & Disability (SSDI)", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><circle cx='12' cy='4.5' r='1.8'/><path d='M12 7.5V14h5.5l2 5'/><path d='M15.5 19.5a6.5 6.5 0 1 1-8-8.7'/></svg>",
     intro: "Monthly checks if a disability keeps you from working.",
     where: "Social Security office", whereId: "ssa",
     bring: [
@@ -94,7 +94,7 @@ const GUIDES = [
     tips: "Keep copies of everything you submit and write down the date of every appointment and call.",
   },
   {
-    audited: "2026-10-11", id: "indiana-free-id", title: "Free Indiana ID for Voting", icon: "🪪",
+    audited: "2026-10-11", id: "indiana-free-id", title: "Free Indiana ID for Voting", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><rect x='2' y='5' width='20' height='14' rx='2'/><circle cx='8.5' cy='11' r='2'/><path d='M5.5 16.5c.6-1.6 1.7-2.3 3-2.3s2.4.7 3 2.3'/><path d='M14.5 9.5H19M14.5 13H19'/></svg>",
     intro: "If you're 18 or older and a U.S. citizen, Indiana issues your state photo ID FREE for voting purposes — at any BMV branch. Re-verified 2026-10-11.",
     where: "Any BMV license branch — no appointment needed", whereId: "bmv-waynedale",
     bring: [
@@ -113,7 +113,7 @@ const GUIDES = [
     tips: "Need a birth certificate first? Get a certified copy at [[allen-county-vital-records]] (Allen County Vital Records) and bring it to the BMV. No driver's license needed — this ID also works for jobs, housing applications, and anywhere a photo ID is required.",
   },
   {
-    audited: "2026-10-11", id: "legal", title: "Free Legal Help", icon: "⚖️",
+    audited: "2026-10-11", id: "legal", title: "Free Legal Help", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M12 3v18'/><path d='M4 7h16'/><path d='M5 7l-2.5 6a3.6 3.6 0 0 0 5 0L5 7z'/><path d='M19 7l-2.5 6a3.6 3.6 0 0 0 5 0L19 7z'/><path d='M8 21h8'/></svg>",
     intro: "Real lawyers who work for free when you're low-income.",
     where: "Indiana Legal Services", whereId: "indiana-legal-services",
     bring: [
@@ -130,7 +130,7 @@ const GUIDES = [
     tips: "Got an eviction notice? Call immediately — the deadlines to respond are short.",
   },
   {
-    id: "bus", audited: "2026-10-08", title: "Getting Around Free", icon: "🚌",
+    id: "bus", audited: "2026-10-08", title: "Getting Around Free", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><rect x='4' y='3' width='16' height='15' rx='2'/><path d='M4 10h16'/><path d='M8 21l1-3M16 21l-1-3'/><circle cx='8.5' cy='14' r='0.5'/><circle cx='15.5' cy='14' r='0.5'/></svg>",
     intro: "How to ride Citilink without paying full fare.",
     where: "Citilink Central Station downtown", whereId: "central-station",
     bring: [
@@ -147,7 +147,7 @@ const GUIDES = [
     tips: "A monthly pass is about $45 — if you ride every day, it pays for itself in two weeks.",
   },
   {
-    id: "meds", title: "Free Medication", icon: "💊",
+    id: "meds", title: "Free Medication", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M10.5 20.5L3.5 13.5a4.95 4.95 0 1 1 7-7l7 7a4.95 4.95 0 1 1-7 7z'/><path d='M8.5 8.5l7 7'/></svg>",
     audited: "2026-10-09",
     intro: "Real ways to get your prescriptions filled in Fort Wayne when you can't pay.",
     where: "Matthew 25 Health and Care — free meds for patients", whereId: "matthew-25-clinic",
@@ -167,7 +167,7 @@ const GUIDES = [
     tips: "Never skip doses to stretch your pills — tell the clinic first. They can often switch you to something cheaper or free.",
   },
   {
-    id: "therapy", audited: "2026-10-10", title: "Free & Low-Cost Therapy", icon: "🧠",
+    id: "therapy", audited: "2026-10-10", title: "Free & Low-Cost Therapy", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z'/><path d='M4 12h4l2-3 3 5 2-2h5'/></svg>",
     intro: "Counseling and mental-health help in Fort Wayne, even with no money and no insurance.",
     where: "Park Center — sliding-scale therapy", whereId: "park-center",
     bring: [
@@ -184,7 +184,7 @@ const GUIDES = [
     tips: "In crisis, call or text 988 any time — it's free, 24/7, and you don't need insurance or an appointment.",
   },
   {
-    id: "bus-passes", title: "Free Bus Passes", icon: "🎫",
+    id: "bus-passes", title: "Free Bus Passes", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M3 9V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2a2 2 0 0 0 0 6v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2a2 2 0 0 0 0-6z'/><path d='M13 5v2M13 11v2M13 17v2'/></svg>",
     audited: "2026-10-08",
     intro: "Where to actually get your hands on free Citilink passes.",
     where: "Citilink Central Station downtown", whereId: "central-station",
@@ -202,7 +202,7 @@ const GUIDES = [
     tips: "Be specific about what you need the rides for — work, medical appointments, interviews. Programs prioritize trips with a purpose.",
   },
   {
-    id: "gift-cards", audited: "2026-10-10", title: "Free Food Gift Cards", icon: "🍔",
+    id: "gift-cards", audited: "2026-10-10", title: "Free Food Gift Cards", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M4 10a8 7.5 0 0 1 16 0z'/><path d='M3 14.5c2 1.6 4-1 6 .3s4-1.2 6-.2 4-1.4 6-.1'/><path d='M4 19.5h16'/></svg>",
     intro: "There's no government program for these — but churches and charities do hand out grocery and fast-food gift cards. Here's where to ask.",
     where: "Salvation Army", whereId: "salvation-army",
     bring: [
@@ -220,7 +220,7 @@ const GUIDES = [
     tips: "Most cards are for grocery stores, not fast food — and it's usually one per household, not a regular thing. Be polite, be honest, and don't ask the same place twice in a row.",
   },
   {
-    id: "addiction", audited: "2026-10-11", title: "Getting Help for Addiction", icon: "💜",
+    id: "addiction", audited: "2026-10-11", title: "Getting Help for Addiction", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='#c084fc' stroke='none' aria-hidden='true'><path d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z'/></svg>",
     intro: "Help for alcohol or drug problems in Fort Wayne — detox, rehab, and free support groups. Asking for help is the hard part; the rest is just showing up.",
     where: "SAMHSA National Helpline — free referrals 24/7", whereId: "parkview-behavioral",
     bring: [
@@ -241,7 +241,7 @@ const GUIDES = [
     tips: "You don't have to be 'ready' or hit rock bottom — call while you're thinking about it. If you use and you're scared about overdosing, Indiana's Lifeline Law protects people who call 911 for help.",
   },
   {
-    audited: "2026-10-11", id: "freephone", title: "Getting a Free Phone (Lifeline)", icon: "📱",
+    audited: "2026-10-11", id: "freephone", title: "Getting a Free Phone (Lifeline)", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><rect x='6' y='2' width='12' height='20' rx='2'/><path d='M12 18h.01'/></svg>",
     intro: "The federal Lifeline program gives low-income households a $9.25/month discount on phone or internet service — and several providers in Indiana throw in a free basic smartphone to go with it.",
     where: "Apply online or by phone — no store visit needed",
     bring: [
@@ -259,7 +259,7 @@ const GUIDES = [
     tips: "The old Affordable Connectivity Program (ACP) ENDED in June 2024 — if anyone tries to sign you up for ACP, it's a scam or outdated info. Lifeline is the program that's active now.",
   },
   {
-    audited: "2026-10-10", id: "freedata", title: "Free Internet & WiFi", icon: "📶",
+    audited: "2026-10-10", id: "freedata", title: "Free Internet & WiFi", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M5 12.55a11 11 0 0 1 14.08 0'/><path d='M1.42 9a16 16 0 0 1 21.16 0'/><path d='M8.53 16.11a6 6 0 0 1 6.95 0'/><path d='M12 20h.01'/></svg>",
     intro: "Free WiFi spots all over Fort Wayne — libraries, coffee shops, and fast-food places — plus a free data discount if you qualify.",
     where: "Any of the spots below — no purchase needed at the library",
     steps: [
@@ -273,7 +273,7 @@ const GUIDES = [
     tips: "Public WiFi is fine for browsing and job applications, but avoid logging into bank accounts on it. Libraries also have free computers and printers if you don't have a device.",
   },
   {
-    audited: "2026-10-11", id: "lgbtq", title: "LGBTQ+ Support in Fort Wayne", icon: "🌈",
+    audited: "2026-10-11", id: "lgbtq", title: "LGBTQ+ Support in Fort Wayne", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M3 19a9 9 0 0 1 18 0'/><path d='M6.5 19a5.5 5.5 0 0 1 11 0'/><path d='M2 19h20'/></svg>",
     intro: "Affirming places in Fort Wayne where you can be yourself — community, health care, legal help, and crisis lines that get it.",
     where: "Fort Wayne Pride Center — the year-round LGBTQ+ hub downtown", whereId: "fw-pride-center",
     steps: [
@@ -286,7 +286,7 @@ const GUIDES = [
     tips: "You don't have to explain or justify who you are to get help at any of these places — that's the whole point of them.",
   },
   {
-    id: "freefood", title: "Free Food in Fort Wayne", icon: "🍲",
+    id: "freefood", title: "Free Food in Fort Wayne", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M3 11h18'/><path d='M4 11a8 8 0 0 0 16 0'/><path d='M9 6.5c0-1.6 1.2-1.9 1.2-3.5M14 6.5c0-1.6 1.2-1.9 1.2-3.5'/><path d='M7 21h10'/></svg>",
     intro: "Three ways to eat free in Fort Wayne: food banks for groceries, hot meals served daily, and grab-and-go bag lunches.",
     where: "The Franciscan Center gives out 1,200+ free sack lunches every Saturday", whereId: "franciscan-food",
     steps: [
@@ -298,7 +298,7 @@ const GUIDES = [
     tips: "Most food places are first-come, first-served — going early in the day usually means the best selection. Hours can change, so calling ahead never hurts.",
   },
   {
-    id: "safehaven", title: "Safe Haven for Newborns", icon: "👶",
+    id: "safehaven", title: "Safe Haven for Newborns", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><circle cx='12' cy='9' r='4'/><path d='M12 5a2.2 2.2 0 0 1 2.2-2'/><path d='M5.5 21c.8-3.2 3.4-5 6.5-5s5.7 1.8 6.5 5'/></svg>",
     audited: "2026-10-10",
     intro: "If you can't care for a newborn, Indiana law lets you surrender the baby safely, anonymously, and legally.",
     where: "Safe Haven Baby Boxes", whereId: "safehaven-hq",
@@ -326,7 +326,7 @@ const GUIDES = [
     tips: "If this app shows the \u2744\uFE0F cold alert, emergency beds are likely open tonight. If you think you're barred from the Rescue Mission, call (260) 426-7357 ext. 156 between 2\u20133pm to check your status.",
   },
   {
-    id: "ride-bus", title: "Riding Citilink (Bus)", icon: "🚌",
+    id: "ride-bus", title: "Riding Citilink (Bus)", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><rect x='4' y='3' width='16' height='15' rx='2'/><path d='M4 10h16'/><path d='M8 21l1-3M16 21l-1-3'/><circle cx='8.5' cy='14' r='0.5'/><circle cx='15.5' cy='14' r='0.5'/></svg>",
     audited: "2026-10-10",
     intro: "Fort Wayne's bus system \u2014 $1.50 a ride covers most stops in this app.",
     where: "Citilink Central Station, 121 W Baker St",
@@ -339,12 +339,12 @@ const GUIDES = [
       "Plan your trip: use the Transit Royale app, or call Citilink at (260) 432-4546 for personal trip planning",
       "Track your bus live in the DoubleMap app so you're not waiting out in the cold",
       "New to buses? Free travel training \u2014 in person or virtual \u2014 at fwcitilink.com/travel-training or (260) 432-4546",
-      "Tap the 🚌 Bus button on any place in this app for turn-by-turn bus directions",
+      "Tap the Bus button on any place in this app for turn-by-turn bus directions",
     ],
     tips: "No transfers \u2014 each boarding is a new fare. An all-day pass pays for itself after 3 rides.",
   },
   {
-    audited: "2026-10-11", id: "free-bike", title: "Getting a Free Bike", icon: "🚴",
+    audited: "2026-10-11", id: "free-bike", title: "Getting a Free Bike", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><circle cx='5.5' cy='17.5' r='3.5'/><circle cx='18.5' cy='17.5' r='3.5'/><circle cx='15' cy='5' r='1'/><path d='M12 17.5V14l-3-3 4-3 2 3h2'/></svg>",
     intro: "There is a real, verified way to get a free bike in Fort Wayne: earn one through a bike ministry. The bikes are free — you just put in a few hours first.",
     where: "Heart of the City Bike Ministry", whereId: "hotc-bike-ministry",
     bring: [
@@ -361,7 +361,7 @@ const GUIDES = [
     tips: "They stopped simply handing bikes out \u2014 the effort requirement is intentional, so the bike has real value. Bike availability depends on donations, and Friday hours can change, so call (260) 444-2901 ahead.",
   },
   {
-    audited: "2026-10-10", id: "free-vouchers", title: "Getting Free Vouchers (Gas, Food & More)", icon: "\ud83c\udfab",
+    audited: "2026-10-10", id: "free-vouchers", title: "Getting Free Vouchers (Gas, Food & More)", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M3 9V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2a2 2 0 0 0 0 6v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2a2 2 0 0 0 0-6z'/><path d='M13 5v2M13 11v2M13 17v2'/></svg>",
     intro: "Real places in Fort Wayne that hand out vouchers and gift cards for free food, clothes, bus rides, and more. Everything below is verified — but voucher funds run out fast, so call ahead and ask early in the month.",
     where: "St. Vincent de Paul — Free Vouchers", whereId: "svdp-clothing-vouchers",
     bring: [
@@ -378,7 +378,7 @@ const GUIDES = [
     tips: "Voucher money is limited everywhere — the start of the month is the best time to ask. Always call before traveling, and tell them what you need (gas, bus pass, clothes, food) so they can point you to the right fund.",
   },
   {
-    audited: "2026-10-11", id: "banking", title: "Opening a bank account without a stable address", icon: "\ud83c\udfe6",
+    audited: "2026-10-11", id: "banking", title: "Opening a bank account without a stable address", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M3 21h18'/><path d='M5 18h14'/><path d='M6 18v-8M10 18v-8M14 18v-8M18 18v-8'/><path d='M12 3L2 10h20z'/></svg>",
     intro: "Four Fort Wayne banks and credit unions offer truly free checking - $0 monthly fee, no direct-deposit tricks. You still need an ID and a Social Security number, plus an address for mail. Here's how to get each piece.",
     where: "Fifth Third Bank - Downtown (Express Banking)", whereId: "53-downtown-berry",
     bring: [
@@ -398,7 +398,7 @@ const GUIDES = [
     tips: "Look for the 'Bank On certified' label - it means no overdraft fees, ever. We checked and excluded: Chase Secure Banking ($4.95/month with no easy waiver), Huntington (the account is free but there are no Fort Wayne branches - the Mill Lake Rd branch is closed), Centra Credit Union (no Fort Wayne branches), and Summit Choice Credit Union (membership restricted to fire/police/city/county employees). USPS General Delivery works at the Fort Wayne Main Post Office, 1501 S Clinton St - address mail as YOUR NAME / GENERAL DELIVERY / FORT WAYNE, IN 46802-9999; bring photo ID to pick up; mail is held up to 30 days.",
   },
   {
-    audited: "2026-10-11", id: "free-backpacks", title: "Free Backpacks & School Supplies", icon: "\ud83c\udf92",
+    audited: "2026-10-11", id: "free-backpacks", title: "Free Backpacks & School Supplies", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><rect x='6' y='5' width='12' height='16' rx='3'/><path d='M9 5a3 3 0 0 1 6 0'/><rect x='9.5' y='12' width='5' height='4.5' rx='1'/></svg>",
     intro: "Five verified Fort Wayne programs give out free backpacks \u2014 every one is seasonal (late July / early August), so mark your calendar and call ahead.",
     where: "Salvation Army \u2014 Tools for School", whereId: "salvation-army-tools-for-school",
     bring: [
@@ -416,7 +416,7 @@ const GUIDES = [
     tips: "Supplies run out fast at every one of these \u2014 go early. Missed the season? Ask [[salvation-army-aid]] (Salvation Army, 2901 N Clinton St, (260) 744-2311) whether any supplies remain.",
   },
   {
-    audited: "2026-10-10", id: "free-water-bottles", title: "Free Reusable Water Bottles", icon: "\ud83d\udca7",
+    audited: "2026-10-10", id: "free-water-bottles", title: "Free Reusable Water Bottles", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M12 2.7l5.66 5.66a8 8 0 1 1-11.31 0z'/></svg>",
     intro: "Free reusable water bottles are harder to find than you'd think \u2014 here are the two verified sources in Fort Wayne, both with honest caveats.",
     where: "Food Not Bombs Fort Wayne", whereId: "food-not-bombs-fw",
     bring: [
@@ -429,7 +429,7 @@ const GUIDES = [
     tips: "No verified spot in Fort Wayne hands out reusable bottles year-round as a walk-in item. For drinking water any time, check the Drinking Water pins on the map \u2014 and every library branch has water fountains.",
   },
   {
-    audited: "2026-10-10", id: "free-hygiene", title: "Free Hygiene Products", icon: "\ud83e\uddfc",
+    audited: "2026-10-10", id: "free-hygiene", title: "Free Hygiene Products", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M12 2.7l5.66 5.66a8 8 0 1 1-11.31 0z'/></svg>",
     intro: "Four verified Fort Wayne spots that hand out free soap, shampoo, deodorant, toothbrushes, and more \u2014 no purchase, no catch.",
     where: "Ave Maria House", whereId: "ave-maria",
     bring: [
@@ -444,7 +444,7 @@ const GUIDES = [
     tips: "Hygiene supplies go fast at walk-in spots \u2014 go early in the day. If supplies are out, ask the staff when the next restock lands.",
   },
   {
-    audited: "2026-10-11", id: "free-clothes", title: "Free Clothes, Shoes & Socks", icon: "\ud83d\udc55",
+    audited: "2026-10-11", id: "free-clothes", title: "Free Clothes, Shoes & Socks", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M20.4 3.5L16 2a4 4 0 0 1-8 0L3.6 3.5a2 2 0 0 0-1.3 2.2l.6 3.5A1 1 0 0 0 3.8 10H6v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V10h2.2a1 1 0 0 0 1-.8l.6-3.5a2 2 0 0 0-1.4-2.2z'/></svg>",
     intro: "Free clothes, shoes, and socks in Fort Wayne \u2014 not thrift stores, actually free. Some need a referral, some are walk-in.",
     where: "FWCS Clothing Bank", whereId: "fwcs-clothing-bank",
     bring: [
@@ -461,7 +461,7 @@ const GUIDES = [
     tips: "Need winter coats? The Christmas giveaways ([[blessing-our-community]] and Angel Tree) are the best bet \u2014 both seasonal, so plan ahead. Just outside Fort Wayne: Woodburn Community Clothing Bank (4707 Lynnwood, Woodburn, ~15 min east) gives free shoes, socks, and winter gear to Allen County residents.",
   },
   {
-    id: "oregon-snap", audited: "2026-10-10", title: "SNAP / EBT (Oregon)", icon: "🛒", area: "portland",
+    id: "oregon-snap", audited: "2026-10-10", title: "SNAP / EBT (Oregon)", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><circle cx='9' cy='21' r='1'/><circle cx='20' cy='21' r='1'/><path d='M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6'/></svg>", area: "portland",
     intro: "Monthly money on an EBT card for groceries, run by the Oregon Dept. of Human Services (ODHS). If your income is low, you likely qualify.",
     where: "ODHS Five Oak Self-Sufficiency Office — 290 SW 5th Ave", whereId: "odhs-five-oak-portland",
     bring: [
@@ -479,7 +479,7 @@ const GUIDES = [
     tips: "You can apply with no ID and no address — just tell them you're homeless. ODHS verifies what you can't document. Older adults and people with disabilities can also start by calling their local Senior Services office and do the interview by phone.",
   },
   {
-    id: "oregon-ohp", audited: "2026-10-10", title: "Oregon Health Plan (OHP)", icon: "🩺", area: "portland",
+    id: "oregon-ohp", audited: "2026-10-10", title: "Oregon Health Plan (OHP)", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M9 3h6v6h6v6h-6v6H9v-6H3V9h6z'/></svg>", area: "portland",
     intro: "Oregon's Medicaid — free health coverage for low-income Oregonians: doctor visits, prescriptions, mental health and addiction treatment, plus dental.",
     where: "Outside In — 1132 SW 13th Ave (OHP enrollment help for homeless youth)", whereId: "outside-in",
     bring: [
@@ -498,7 +498,7 @@ const GUIDES = [
     tips: "All kids and teens 19 and under qualify regardless of immigration status. Renew every year or you lose coverage — keep your address updated with OHP.",
   },
   {
-    id: "oregon-legal", audited: "2026-10-10", title: "Free Legal Help (Portland)", icon: "⚖️", area: "portland",
+    id: "oregon-legal", audited: "2026-10-10", title: "Free Legal Help (Portland)", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M12 3v18'/><path d='M4 7h16'/><path d='M5 7l-2.5 6a3.6 3.6 0 0 0 5 0L5 7z'/><path d='M19 7l-2.5 6a3.6 3.6 0 0 0 5 0L19 7z'/><path d='M8 21h8'/></svg>", area: "portland",
     intro: "Two nonprofits give free civil legal help to low-income Portlanders — housing and eviction, benefits appeals, domestic violence, and consumer debt.",
     where: "Legal Aid Services of Oregon — Portland, 621 SW Morrison St, Suite 900", whereId: "legal-aid-services-oregon-portland",
     bring: [
@@ -515,7 +515,7 @@ const GUIDES = [
     tips: "Call early in the day — intake lines fill up. Got an eviction notice? You usually have very little time to respond in Oregon, so call the day you get it.",
   },
   {
-    id: "oregon-freephone", audited: "2026-10-10", title: "Free / Discounted Phone (Oregon Lifeline)", icon: "📱", area: "portland",
+    id: "oregon-freephone", audited: "2026-10-10", title: "Free / Discounted Phone (Oregon Lifeline)", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><rect x='6' y='2' width='12' height='20' rx='2'/><path d='M12 18h.01'/></svg>", area: "portland",
     intro: "Oregon Lifeline is a federal-plus-state program giving low-income Oregonians a monthly discount on phone or internet — and free wireless minutes and data through Access Wireless.",
     where: "Apply at lifeline.oregon.gov or call (800) 848-4442 (weekdays 9 AM–4 PM)",
     bring: [
@@ -531,7 +531,7 @@ const GUIDES = [
     tips: "Discounts run up to about $20/month off phone or $24/month off high-speed internet — check lifeline.oregon.gov for current amounts. On Tribal lands there's an extra ~$25/month.",
   },
   {
-    audited: "2026-10-10", id: "oregon-id", title: "Free Oregon ID (Homeless)", icon: "🪪", area: "portland",
+    audited: "2026-10-10", id: "oregon-id", title: "Free Oregon ID (Homeless)", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><rect x='2' y='5' width='20' height='14' rx='2'/><circle cx='8.5' cy='11' r='2'/><path d='M5.5 16.5c.6-1.6 1.7-2.3 3-2.3s2.4.7 3 2.3'/><path d='M14.5 9.5H19M14.5 13H19'/></svg>", area: "portland",
     intro: "Oregon law (HB 3026, in effect since 2022) makes the DMV waive ID card fees for people experiencing homelessness.",
     where: "Downtown Portland DMV", whereId: "dmv-downtown-portland",
     bring: [
@@ -547,7 +547,7 @@ const GUIDES = [
     tips: "Don't pay a third party for this — the form and the ID are free. Ask your caseworker or day center staff; they do these regularly.",
   },
   {
-    id: "trimet-fare", title: "TriMet Reduced Fare (Honored Citizen)", icon: "🚌", area: "portland", audited: "2026-10-10",
+    id: "trimet-fare", title: "TriMet Reduced Fare (Honored Citizen)", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><rect x='4' y='3' width='16' height='15' rx='2'/><path d='M4 10h16'/><path d='M8 21l1-3M16 21l-1-3'/><circle cx='8.5' cy='14' r='0.5'/><circle cx='15.5' cy='14' r='0.5'/></svg>", area: "portland", audited: "2026-10-10",
     intro: "TriMet's Honored Citizen fare cuts bus, MAX, and WES fares roughly in half — for low-income riders, seniors 65+, people on Medicare, people with disabilities, and veterans.",
     where: "TriMet Honored Citizen Reduced Fare", whereId: "trimet-honored-citizen",
     bring: [
@@ -564,7 +564,7 @@ const GUIDES = [
     tips: "With a Hop card you never pay more than $28/month — after that, rides are free the rest of the month.",
   },
   {
-    audited: "2026-10-11", id: "oregon-211", title: "211info (Oregon Helpline)", icon: "📞", area: "portland",
+    audited: "2026-10-11", id: "oregon-211", title: "211info (Oregon Helpline)", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.6 2.81.72A2 2 0 0 1 22 16.92z'/></svg>", area: "portland",
     intro: "211info is Oregon's free, confidential helpline and searchable directory for housing, shelter, food, utilities, health care, and more — covering all 36 Oregon counties.",
     where: "211info", whereId: "211info-oregon",
     bring: [
@@ -579,7 +579,7 @@ const GUIDES = [
     tips: "211 is for non-emergency help finding services — always call 911 for emergencies. Top requests are utility help, rent help, food, and shelter, so call early in the day.",
   },
   {
-    id: "oregon-winter", title: "Staying Warm in Winter (Portland)", icon: "❄️", area: "portland",
+    id: "oregon-winter", title: "Staying Warm in Winter (Portland)", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M12 2v20M3.3 7l17.4 10M20.7 7L3.3 17'/><path d='M12 2l-2 3m2-3 2 3M12 22l-2-3m2 3 2-3'/></svg>", area: "portland",
     intro: "When winter thresholds hit (around 25°F or snow/ice, roughly Nov–Mar), Multnomah County opens extra severe-weather shelters across the county — on top of nearly 3,000 year-round shelter beds (per county releases, Feb 2025) plus 200 winter-only beds at Salvation Army shelters.",
     where: "Multnomah County Severe Weather Shelters (via 211)", whereId: "multnomah-severe-weather-shelters",
     steps: [
@@ -594,7 +594,7 @@ const GUIDES = [
     audited: "2026-10-10",
   },
   {
-    id: "lost-id", title: "Replacing Lost ID & Papers", icon: "🪪", area: "fort-wayne",
+    id: "lost-id", title: "Replacing Lost ID & Papers", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><rect x='2' y='5' width='20' height='14' rx='2'/><circle cx='8.5' cy='11' r='2'/><path d='M5.5 16.5c.6-1.6 1.7-2.3 3-2.3s2.4.7 3 2.3'/><path d='M14.5 9.5H19M14.5 13H19'/></svg>", area: "fort-wayne",
     intro: "No ID makes everything harder. Here is the usual order to get your papers back.",
     where: "Inasmuch Ministry — help with ID and birth certificates", whereId: "inasmuch-ministry",
     bring: ["Any ID or paper you still have, even expired", "A letter from a shelter or mission saying you stay there, if you can get one"],
@@ -608,7 +608,7 @@ const GUIDES = [
     audited: "2026-10-12",
   },
   {
-    id: "rights-police", title: "If Police Tell You to Move", icon: "⚖️", area: "fort-wayne",
+    id: "rights-police", title: "If Police Tell You to Move", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M12 3v18'/><path d='M4 7h16'/><path d='M5 7l-2.5 6a3.6 3.6 0 0 0 5 0L5 7z'/><path d='M19 7l-2.5 6a3.6 3.6 0 0 0 5 0L19 7z'/><path d='M8 21h8'/></svg>", area: "fort-wayne",
     intro: "General information, not legal advice. Staying calm keeps you safest.",
     where: "Indiana Legal Help (indianalegalhelp.org) or call 211",
     steps: [
@@ -622,7 +622,7 @@ const GUIDES = [
     audited: "2026-10-12",
   },
   {
-    id: "veterans", title: "Veterans: Where to Start", icon: "🎖\uFE0F", area: "fort-wayne",
+    id: "veterans", title: "Veterans: Where to Start", icon: "\uFE0F", area: "fort-wayne",
     intro: "Veterans have extra help for housing, health care and benefits.",
     where: "Call 211 and ask for the Allen County Veterans Service Office",
     bring: ["DD-214 or any discharge papers if you have them", "Photo ID"],
@@ -636,7 +636,7 @@ const GUIDES = [
     audited: "2026-10-12",
   },
   {
-    id: "reentry", title: "After Prison or a Record", icon: "🔓", area: "fort-wayne",
+    id: "reentry", title: "After Prison or a Record", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><rect x='3' y='11' width='18' height='11' rx='2'/><path d='M7 11V7a5 5 0 0 1 9.9-1'/></svg>", area: "fort-wayne",
     intro: "A record does not end your options. Many people get housing, work and a clean record back.",
     where: "Call 211 and ask for reentry help",
     steps: [
@@ -649,7 +649,7 @@ const GUIDES = [
     audited: "2026-10-12",
   },
   {
-    id: "quit-nicotine", title: "Quit Smoking or Vaping (Free)", icon: "🌬\uFE0F", area: "fort-wayne",
+    id: "quit-nicotine", title: "Quit Smoking or Vaping (Free)", icon: "\uFE0F", area: "fort-wayne",
     intro: "Free coaching and often free patches or gum.",
     where: "Indiana Quitline: 1-800-QUIT-NOW (1-800-784-8669)",
     steps: [
@@ -661,7 +661,7 @@ const GUIDES = [
     audited: "2026-10-12",
   },
   {
-    id: "call-script", title: "What to Say When You Call", icon: "☎️", area: "fort-wayne",
+    id: "call-script", title: "What to Say When You Call", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.6 2.81.72A2 2 0 0 1 22 16.92z'/></svg>", area: "fort-wayne",
     intro: "A short script for calling a shelter, pantry or agency.",
     where: "Any shelter, pantry or agency in the Places tab",
     steps: [
@@ -675,7 +675,7 @@ const GUIDES = [
     audited: "2026-10-12",
   },
   {
-    id: "storms", title: "Tornado, Flood & Power Outage", icon: "🌪\uFE0F", area: "fort-wayne",
+    id: "storms", title: "Tornado, Flood & Power Outage", icon: "\uFE0F", area: "fort-wayne",
     intro: "What to do when severe weather hits and you don't have a home to shelter in.",
     where: "Call 211 to find open emergency shelters",
     steps: [
@@ -689,7 +689,7 @@ const GUIDES = [
     audited: "2026-10-12",
   },
   {
-    id: "heat", title: "Staying Cool in Summer", icon: "🥵", area: "fort-wayne",
+    id: "heat", title: "Staying Cool in Summer", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M14 4a2 2 0 0 0-4 0v9.3a4.5 4.5 0 1 0 4 0z'/><circle cx='12' cy='17.5' r='1.6'/></svg>", area: "fort-wayne",
     intro: "Heat can be dangerous. Plan your day around shade, water and air conditioning.",
     where: "Libraries, day centers and water spots on the map",
     steps: [
@@ -703,7 +703,7 @@ const GUIDES = [
     audited: "2026-10-12",
   },
   {
-    id: "scams", title: "Scams to Watch For", icon: "🚨", area: "fort-wayne",
+    id: "scams", title: "Scams to Watch For", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z'/><path d='M12 9v4M12 17h.01'/></svg>", area: "fort-wayne",
     intro: "People in tough spots are often targeted. These are common signs of a scam.",
     where: "Not sure? Call 211 to check before you pay or share anything",
     steps: [
@@ -726,7 +726,7 @@ const GUIDES = [
    Uses the same 'hvgp' localStorage store as the old Guide tab, so existing
    check-off progress is kept. English-only per site convention. */
 "use strict";
-var SG_CH=[["all","✨","All"],["food","🛒","Food"],["health","🩺","Health"],["money","💳","Money & ID"],["home","🏠","Housing & safety"],["move","🚌","Getting around"],["phone","📱","Phone & internet"]];
+var SG_CH=[["all","<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z'/><path d='M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z'/></svg>","All"],["food","<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><circle cx='9' cy='21' r='1'/><circle cx='20' cy='21' r='1'/><path d='M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6'/></svg>","Food"],["health","<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M9 3h6v6h6v6h-6v6H9v-6H3V9h6z'/></svg>","Health"],["money","<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><rect x='2' y='5' width='20' height='14' rx='2'/><circle cx='8.5' cy='11' r='2'/><path d='M5.5 16.5c.6-1.6 1.7-2.3 3-2.3s2.4.7 3 2.3'/><path d='M14.5 9.5H19M14.5 13H19'/></svg>","Money & ID"],["home","<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/><path d='M9 22V12h6v10'/></svg>","Housing & safety"],["move","<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><rect x='4' y='3' width='16' height='15' rx='2'/><path d='M4 10h16'/><path d='M8 21l1-3M16 21l-1-3'/><circle cx='8.5' cy='14' r='0.5'/><circle cx='15.5' cy='14' r='0.5'/></svg>","Getting around"],["phone","<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><rect x='6' y='2' width='12' height='20' rx='2'/><path d='M12 18h.01'/></svg>","Phone & internet"]];
 function sgCatOf(g){var s=String((g.id||"")+" "+(g.title||"")).toLowerCase();
   if(/snap|wic|food|ebt|meal|gift/.test(s))return"food";
   if(/medic|meds|therap|addict|health|dental|glass|walker|mental/.test(s))return"health";
@@ -762,12 +762,12 @@ function sgRich(s){var x=(typeof escapeHtml==="function")?escapeHtml(String(s==n
 function sgProg(g){var p=sgGet("hvgp")[g.id]||{},n=((g.bring)||[]).length;
   return{done:(p.b||[]).length,n:n,b:p.b||[],s:p.s||[]};}
 function sgOpenBadge(r){var s=null;try{s=(typeof isOpenNow==="function")?isOpenNow(r):null;}catch(e){}
-  if(s===true)return '<span class="sg-open">🟢 Open now</span>';
-  if(s===false)return '<span class="sg-closed">🔴 Closed now</span>';
+  if(s===true)return '<span class="sg-open"><svg class="hvi" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7" fill="#4ade80"/></svg> Open now</span>';
+  if(s===false)return '<span class="sg-closed"><svg class="hvi" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7" fill="#f87171"/></svg> Closed now</span>';
   return "";}
 function sgDist(r){try{
   if(typeof userLoc!=="undefined"&&userLoc&&r&&r.lat&&typeof distMi==="function"){
-    return ' <span class="sg-dist">📍 '+distMi(userLoc.lat,userLoc.lng,r.lat,r.lng).toFixed(1)+' mi</span>';}
+    return ' <span class="sg-dist"><svg class="hvi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> '+distMi(userLoc.lat,userLoc.lng,r.lat,r.lng).toFixed(1)+' mi</span>';}
   }catch(e){}
   return "";}
 function sgTelHref(r){try{
@@ -779,15 +779,15 @@ function sgCard(g){var r=sgPlace(g),p=sgProg(g);
   var open=sgOpenBadge(r),dist=sgDist(r);
   var pill=p.n?'<span class="sg-pill" data-pill="'+g.id+'">'+p.done+'/'+p.n+' ready</span>':"";
   var gid=(typeof escapeAttr==="function")?escapeAttr(g.id):g.id;
-  var head='<button class="sg-head"><div class="sg-ic">'+(g.icon||"📖")+'</div>'+
+  var head='<button class="sg-head"><div class="sg-ic">'+(g.icon||"<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z'/><path d='M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z'/></svg>")+'</div>'+
     '<div class="sg-main"><h3>'+sgRich(g.title)+'</h3><p>'+sgRich(g.intro)+'</p>'+
     '<div class="sg-meta">'+open+dist+pill+'</div></div><div class="sg-chev">›</div></button>';
-  var where=(g.where?'<div class="sg-where">📍 <b>'+sgRich(g.where)+'</b></div>':"");
+  var where=(g.where?'<div class="sg-where"><svg class="hvi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> <b>'+sgRich(g.where)+'</b></div>':"");
   var btns="";
   if(r){btns='<div class="sg-btns">';
-    if(r.lat)btns+='<button class="sg-b" data-sgmap="'+gid+'">🗺️ View map</button>';
-    if(r.lat)btns+='<a class="sg-b" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination='+r.lat+','+r.lng+'">➤ Directions</a>';
-    var tel=sgTelHref(r);if(tel)btns+='<a class="sg-b" href="'+tel+'">📞 Call</a>';
+    if(r.lat)btns+='<button class="sg-b" data-sgmap="'+gid+'"><svg class="hvi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4z"/><path d="M8 2v16M16 6v16"/></svg> View map</button>';
+    if(r.lat)btns+='<a class="sg-b" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination='+r.lat+','+r.lng+'"><svg class="hvi" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M5 3.5L19 12 5 20.5z"/></svg> Directions</a>';
+    var tel=sgTelHref(r);if(tel)btns+='<a class="sg-b" href="'+tel+'"><svg class="hvi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.6 2.81.72A2 2 0 0 1 22 16.92z"/></svg> Call</a>';
     btns+='</div>';}
   var bring="";
   if(g.bring&&g.bring.length){
@@ -799,7 +799,7 @@ function sgCard(g){var r=sgPlace(g),p=sgProg(g);
     steps+='<ol class="sg-steps">'+g.steps.map(function(s,i){var done=p.s.indexOf("s"+i)>=0;
       return '<li data-k="s" data-i="'+i+'" class="'+(done?"done":"")+'"><i>'+(i+1)+'</i><span>'+sgRich(s)+'</span></li>';}).join("")+'</ol>';}
   else steps="";
-  var tips=g.tips?'<div class="sg-tip">💡 '+sgRich(g.tips)+'</div>':"";
+  var tips=g.tips?'<div class="sg-tip"><svg class="hvi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-3.9 12.7c.6.5.9 1.3.9 2.3h6c0-1 .3-1.8.9-2.3A7 7 0 0 0 12 2z"/></svg> '+sgRich(g.tips)+'</div>':"";
   return '<div class="sg-card" data-g="'+gid+'" data-cat="'+sgCatOf(g)+'">'+head+
     '<div class="sg-body">'+where+btns+bring+steps+tips+'</div></div>';}
 function sgSuggest(list){var m=new Date().getMonth()+1,ids=[];
@@ -823,11 +823,11 @@ function sgPaint(){var box=document.getElementById("ggCards");if(!box)return;
   var sg=(!sgQ&&sgCat==="all")?sgSuggest(list):[];
   var html="";
   if(sg.length){
-    html+='<div class="sg-sug"><div class="sg-sh">⭐ Suggested for today</div><div class="sg-sr">'+
-      sg.map(function(g){var ic=g.icon||"📖";
+    html+='<div class="sg-sug"><div class="sg-sh"><svg class="hvi" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg> Suggested for today</div><div class="sg-sr">'+
+      sg.map(function(g){var ic=g.icon||"<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z'/><path d='M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z'/></svg>";
         return '<button data-go="'+((typeof escapeAttr==="function")?escapeAttr(g.id):g.id)+'"><span>'+ic+'</span>'+sgRich(g.title)+'</button>';}).join("")+'</div></div>';}
   if(L.length)html+='<div class="sg-grid">'+L.map(function(x){return sgCard(x.g);}).join("")+'</div>';
-  else html+='<div class="sg-empty">😕 No guide found for &ldquo;'+sgRich(sgQ)+'&rdquo;.<br>Try &ldquo;food&rdquo;, &ldquo;rent&rdquo;, &ldquo;doctor&rdquo; or &ldquo;phone&rdquo;.</div>';
+  else html+='<div class="sg-empty"><svg class="hvi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2.5 4 2.5 4-2.5 4-2.5"/><path d="M9 9h.01M15 9h.01"/></svg> No guide found for &ldquo;'+sgRich(sgQ)+'&rdquo;.<br>Try &ldquo;food&rdquo;, &ldquo;rent&rdquo;, &ldquo;doctor&rdquo; or &ldquo;phone&rdquo;.</div>';
   box.innerHTML=html;
   sgBind(box);}
 function sgToggle(box,gid,k,i){var P=sgGet("hvgp"),o=P[gid]=P[gid]||{b:[],s:[]};
@@ -900,31 +900,31 @@ function jobOpenBadge(j) {
   if (typeof isOpenNow !== 'function') return '';
   var st = null;
   try { st = isOpenNow(j); } catch (e) { return ''; }
-  if (st === true) return ' <span style="background:#14532d;color:#4ade80;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;">🟢 Open now</span>';
-  if (st === false) return ' <span style="background:#3f1d1d;color:#f87171;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;">🔴 Closed</span>';
+  if (st === true) return ' <span style="background:#14532d;color:#4ade80;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;"><svg class="hvi" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7" fill="#4ade80"/></svg> Open now</span>';
+  if (st === false) return ' <span style="background:#3f1d1d;color:#f87171;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;"><svg class="hvi" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7" fill="#f87171"/></svg> Closed</span>';
   return '';
 }
 function jobCardHtml(j) {
-  var ty = (typeof JOB_TYPES !== 'undefined' && JOB_TYPES[j.type]) || { label: j.type || 'Job', icon: '💼', color: '#5cc8ff' };
+  var ty = (typeof JOB_TYPES !== 'undefined' && JOB_TYPES[j.type]) || { label: j.type || 'Job', icon: '<svg class="hvi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>', color: '#5cc8ff' };
   var E = (typeof escapeHtml === 'function') ? escapeHtml : function (s) { return String(s); };
   var EA = (typeof escapeAttr === 'function') ? escapeAttr : function (s) { return String(s); };
   var color = EA(ty.color || '#5cc8ff');
   var h = '<div style="background:#1a1f2e;border:1px solid #2a2f3e;border-radius:12px;padding:12px;margin-bottom:8px;border-left:4px solid ' + color + ';">';
-  h += '<div style="display:flex;gap:10px;align-items:flex-start;"><div style="font-size:24px;flex:none;">' + E(ty.icon || '💼') + '</div><div style="flex:1;min-width:0;">';
+  h += '<div style="display:flex;gap:10px;align-items:flex-start;"><div style="font-size:24px;flex:none;">' + E(ty.icon || '<svg class="hvi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>') + '</div><div style="flex:1;min-width:0;">';
   h += '<div style="font-weight:700;color:#fff;font-size:15px;">' + E(j.name || 'Job') + '</div>';
   h += '<div style="margin:4px 0;display:flex;gap:6px;flex-wrap:wrap;align-items:center;">';
   h += '<span style="background:' + color + '22;color:' + color + ';padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;">' + E(ty.icon || '') + ' ' + E(ty.label || '') + '</span>' + jobOpenBadge(j) + '</div>';
-  if (j.addr) h += '<div style="font-size:13px;color:#888;">📌 ' + E(j.addr) + '</div>';
-  if (j.phone) h += '<div style="font-size:13px;color:#888;">📞 ' + E(j.phone) + '</div>';
-  if (j.hoursText) h += '<div style="font-size:12px;color:#888;margin-top:2px;">🕐 ' + E(j.hoursText) + '</div>';
+  if (j.addr) h += '<div style="font-size:13px;color:#888;"><svg class="hvi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> ' + E(j.addr) + '</div>';
+  if (j.phone) h += '<div style="font-size:13px;color:#888;"><svg class="hvi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.6 2.81.72A2 2 0 0 1 22 16.92z"/></svg> ' + E(j.phone) + '</div>';
+  if (j.hoursText) h += '<div style="font-size:12px;color:#888;margin-top:2px;"><svg class="hvi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> ' + E(j.hoursText) + '</div>';
   if (j.desc) h += '<div style="font-size:13px;color:#ccc;margin-top:6px;">' + E(j.desc) + '</div>';
-  if (j.tags && j.tags.length) h += '<div style="margin-top:6px;">' + j.tags.map(function (t) { return '<span style="background:#2a2f3e;padding:2px 8px;border-radius:10px;font-size:11px;color:#aaa;margin:2px;display:inline-block;">✓ ' + E(t) + '</span>'; }).join('') + '</div>';
+  if (j.tags && j.tags.length) h += '<div style="margin-top:6px;">' + j.tags.map(function (t) { return '<span style="background:#2a2f3e;padding:2px 8px;border-radius:10px;font-size:11px;color:#aaa;margin:2px;display:inline-block;"><svg class="hvi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> ' + E(t) + '</span>'; }).join('') + '</div>';
   h += '<div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap;">';
-  if (j.phoneHref || j.phone) h += '<a class="sheet-btn" href="tel:' + EA(j.phoneHref || j.phone) + '">📞 Call</a>';
-  if (j.web) h += '<a class="sheet-btn" href="' + EA(j.web) + '" target="_blank" rel="noopener">🌐 Apply</a>';
+  if (j.phoneHref || j.phone) h += '<a class="sheet-btn" href="tel:' + EA(j.phoneHref || j.phone) + '"><svg class="hvi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.6 2.81.72A2 2 0 0 1 22 16.92z"/></svg> Call</a>';
+  if (j.web) h += '<a class="sheet-btn" href="' + EA(j.web) + '" target="_blank" rel="noopener"><svg class="hvi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></svg> Apply</a>';
   if (j.lat && j.lng) {
-    h += '<a class="sheet-btn" href="https://www.google.com/maps/dir/?api=1&destination=' + j.lat + ',' + j.lng + '" target="_blank" rel="noopener">🗺️ Directions</a>';
-    h += '<button class="sheet-btn" onclick="jobShowOnMap(\'' + EA(j.id || '') + '\')">📍 Map</button>';
+    h += '<a class="sheet-btn" href="https://www.google.com/maps/dir/?api=1&destination=' + j.lat + ',' + j.lng + '" target="_blank" rel="noopener"><svg class="hvi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4z"/><path d="M8 2v16M16 6v16"/></svg> Directions</a>';
+    h += '<button class="sheet-btn" onclick="jobShowOnMap(\'' + EA(j.id || '') + '\')"><svg class="hvi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Map</button>';
   }
   h += '</div></div></div></div>';
   return h;
@@ -939,7 +939,7 @@ function renderJobsReal() {
   if (chipsEl) {
     var ch = '<button class="filter-btn' + (jobTypeFilter === 'all' ? ' active' : '') + '" data-jt="all">All</button>';
     types.forEach(function (t) {
-      var ty = (typeof JOB_TYPES !== 'undefined' && JOB_TYPES[t]) || { label: t, icon: '💼' };
+      var ty = (typeof JOB_TYPES !== 'undefined' && JOB_TYPES[t]) || { label: t, icon: '<svg class="hvi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>' };
       ch += '<button class="filter-btn' + (jobTypeFilter === t ? ' active' : '') + '" data-jt="' + t + '">' + ty.icon + ' ' + ty.label + '</button>';
     });
     chipsEl.innerHTML = ch;
@@ -1000,7 +1000,7 @@ function jobShowOnMap(id) {
 })();
 
 /* ===== wiki.js ===== */
-/* Haven FW website wiki (#38): port of the Android app's wiki.js — 📚 "Wikipedia for the app",
+/* Haven FW website wiki (#38): port of the Android app's wiki.js —  "Wikipedia for the app",
    a plain-language encyclopedia of practical know-how. General information only:
    not legal advice, not medical advice. When in doubt, call 211. Never fabricate:
    no made-up hours, addresses, or program names — links go to real site categories,
@@ -1014,18 +1014,18 @@ function jobShowOnMap(id) {
   var stripTags = function (s) { return String(s).replace(/<[^>]*>/g, " "); };
 
   var CATS = [
-    ["rights",  "🛡️", "Know your rights"],
-    ["health",  "🏥", "Health & safety"],
-    ["docs",    "🆔", "ID & documents"],
-    ["daily",   "🧰", "Day to day"],
-    ["housing", "🏠", "Shelter & housing"],
-    ["sos",     "🆘", "Emergencies"]
+    ["rights",  "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/></svg>", "Know your rights"],
+    ["health",  "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><rect x='5' y='3' width='14' height='18'/><path d='M3 21h18'/><path d='M12 8v6M9 11h6'/></svg>", "Health & safety"],
+    ["docs",    "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><rect x='2' y='5' width='20' height='14' rx='2'/><circle cx='8.5' cy='11' r='2'/><path d='M5.5 16.5c.6-1.6 1.7-2.3 3-2.3s2.4.7 3 2.3'/><path d='M14.5 9.5H19M14.5 13H19'/></svg>", "ID & documents"],
+    ["daily",   "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z'/></svg>", "Day to day"],
+    ["housing", "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/><path d='M9 22V12h6v10'/></svg>", "Shelter & housing"],
+    ["sos",     "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><circle cx='12' cy='12' r='9'/><circle cx='12' cy='12' r='4'/><path d='M4.93 4.93l4.24 4.24M14.83 9.17l4.24-4.24M14.83 14.83l4.24 4.24M9.17 14.83l-4.24 4.24'/></svg>", "Emergencies"]
   ];
 
   /* [id, cat, icon, title, body_html, links]
      links: {cat:"shelter",label} | {tab:"guide",label} | {tel:"211",label} */
   var ARTICLES = [
-    ["wiki-police", "rights", "🚔", "If police tell you to move",
+    ["wiki-police", "rights", "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M5.5 11L7 6.6A2 2 0 0 1 8.9 5.2h6.2A2 2 0 0 1 17 6.6L18.5 11'/><rect x='3' y='11' width='18' height='6' rx='1'/><circle cx='7.5' cy='17.5' r='1.6'/><circle cx='16.5' cy='17.5' r='1.6'/><path d='M9.1 17.5h5.8'/></svg>", "If police tell you to move",
       "<p>Stay calm and keep your hands visible. You can ask: <b>\"Am I free to leave?\"</b> If the answer is yes, you can walk away calmly.</p>" +
       "<ul><li>Indiana law bans camping on public property, so police can order you to move from parks, sidewalks, and underpasses. You don't have to argue the law on the spot — move first, then get help.</li>" +
       "<li>You don't have to consent to a search of your bags. You can say <b>\"I don't consent to a search.\"</b> Stay polite and never resist physically.</li>" +
@@ -1033,22 +1033,22 @@ function jobShowOnMap(id) {
       "<p>Need somewhere to go? Check the map for shelters and day centers, or call 211.</p>",
       [{ cat: "shelter", label: "See shelters" }, { tel: "211", label: "Call 211" }]],
 
-    ["wiki-cold", "health", "🥶", "Cold nights: hypothermia & frostbite",
+    ["wiki-cold", "health", "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M12 2v20M3.3 7l17.4 10M20.7 7L3.3 17'/><path d='M12 2l-2 3m2-3 2 3M12 22l-2-3m2 3 2-3'/></svg>", "Cold nights: hypothermia & frostbite",
       "<p>Hypothermia can start <b>well above freezing</b>, especially if you're wet or it's windy.</p>" +
       "<ul><li><b>Hypothermia signs:</b> violent shivering that then <i>stops</i>, confusion, clumsiness, drowsiness.</li>" +
       "<li><b>Frostbite signs:</b> skin turns white or gray, waxy and numb — usually fingers, toes, ears, nose. Don't rub it. Get inside and warm up slowly.</li>" +
       "<li>Layers beat one heavy coat. Keep feet dry — wet socks are dangerous. A hat matters more than you'd think.</li></ul>" +
-      "<p>If someone is confused, slurring, or can't stay awake in the cold, <b>call 911</b> — that's an emergency. The app shows a ❄️ alert on the map when freezing weather is coming, with a button to find warm places.</p>",
+      "<p>If someone is confused, slurring, or can't stay awake in the cold, <b>call 911</b> — that's an emergency. The app shows a <svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M12 2v20M3.3 7l17.4 10M20.7 7L3.3 17'/><path d='M12 2l-2 3m2-3 2 3M12 22l-2-3m2 3 2-3'/></svg> alert on the map when freezing weather is coming, with a button to find warm places.</p>",
       [{ cat: "shelter", label: "Find a warm place" }, { tel: "911", label: "Call 911" }]],
 
-    ["wiki-heat", "health", "🥵", "Hot days: beating the heat",
+    ["wiki-heat", "health", "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M14 4a2 2 0 0 0-4 0v9.3a4.5 4.5 0 1 0 4 0z'/><circle cx='12' cy='17.5' r='1.6'/></svg>", "Hot days: beating the heat",
       "<ul><li><b>Heat exhaustion:</b> heavy sweating, weakness, headache, nausea. Move to shade, drink water, cool your skin with water.</li>" +
       "<li><b>Heat stroke is an emergency:</b> hot or dry skin, confusion, fainting. <b>Call 911</b> immediately and cool the person as fast as you can.</li>" +
       "<li>Drink water <i>before</i> you're thirsty. Libraries, malls, and day centers are free air conditioning.</li>" +
       "<li>Never leave kids or pets in a car — not even for a minute.</li></ul>",
       [{ cat: "water", label: "Find water" }, { cat: "day", label: "Day centers" }]],
 
-    ["wiki-id", "docs", "🪪", "Getting an Indiana ID",
+    ["wiki-id", "docs", "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><rect x='2' y='5' width='20' height='14' rx='2'/><circle cx='8.5' cy='11' r='2'/><path d='M5.5 16.5c.6-1.6 1.7-2.3 3-2.3s2.4.7 3 2.3'/><path d='M14.5 9.5H19M14.5 13H19'/></svg>", "Getting an Indiana ID",
       "<p>An ID unlocks almost everything: shelter beds, jobs, benefits, housing lists. It's worth the effort.</p>" +
       "<ul><li>The Indiana BMV decides which documents it accepts — usually proof of who you are, your Social Security number, and Indiana residency. The exact list is on the BMV website and changes, so <b>confirm before you go</b>.</li>" +
       "<li>No birth certificate? You can order one from the state where you were born (there's usually a fee — ask 211 about help paying).</li>" +
@@ -1056,68 +1056,68 @@ function jobShowOnMap(id) {
       "<li>Tip: keep copies or photos of every document on your phone.</li></ul>",
       [{ cat: "day", label: "Day centers" }, { tel: "211", label: "Call 211" }]],
 
-    ["wiki-docs", "docs", "📄", "Replacing lost documents",
+    ["wiki-docs", "docs", "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><path d='M14 2v6h6'/><path d='M16 13H8M16 17H8'/></svg>", "Replacing lost documents",
       "<ul><li><b>Birth certificate:</b> order it from the vital-records office of the state where you were born. There's usually a fee.</li>" +
       "<li><b>Social Security card:</b> free to replace at ssa.gov or a Social Security office — you can only get a few replacements per year, so keep it safe.</li>" +
       "<li>If everything was stolen, file a police report — the report number helps when agencies ask what happened.</li>" +
       "<li>Ask 211 or a day center about funds that help pay document fees.</li></ul>",
       [{ tel: "211", label: "Call 211" }]],
 
-    ["wiki-mail", "daily", "📬", "Getting mail without an address",
+    ["wiki-mail", "daily", "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><rect x='2' y='4' width='20' height='16' rx='2'/><path d='M22 6l-10 7L2 6'/></svg>", "Getting mail without an address",
       "<ul><li><b>USPS General Delivery:</b> the post office will hold mail for you. Address it as: YOUR FULL NAME, General Delivery, then the post office's city, state, and ZIP. Ask the main post office (or 211) which ZIP to use, and bring ID to pick it up.</li>" +
       "<li>Some shelters and day centers let clients receive mail there — <b>ask first</b> before you address anything to them.</li>" +
       "<li>For benefits and official mail, keep one consistent mailing address everywhere so nothing gets lost.</li></ul>",
       [{ tel: "211", label: "Call 211" }]],
 
-    ["wiki-phone", "daily", "🔋", "Keeping your phone charged & connected",
+    ["wiki-phone", "daily", "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M13 2L3 14h9l-1 8 10-12h-9l1-8z'/></svg>", "Keeping your phone charged & connected",
       "<p>Your phone is your lifeline: maps, 211, job callbacks. Protect its charge.</p>" +
       "<ul><li><b>Free Wi-Fi + outlets:</b> libraries, fast-food lobbies, laundromats while you wash. The map shows free Wi-Fi and charging spots.</li>" +
       "<li>Battery-saver mode, lower screen brightness, and closing unused apps can double your day.</li>" +
       "<li>Ask 211 about free or low-cost phone programs (like Lifeline) — eligibility is usually based on benefits you already get.</li></ul>",
       [{ cat: "charge", label: "Charging spots" }, { cat: "wifi", label: "Free Wi-Fi" }]],
 
-    ["wiki-laundry", "daily", "👕", "Clean clothes for free or cheap",
+    ["wiki-laundry", "daily", "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M20.4 3.5L16 2a4 4 0 0 1-8 0L3.6 3.5a2 2 0 0 0-1.3 2.2l.6 3.5A1 1 0 0 0 3.8 10H6v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V10h2.2a1 1 0 0 0 1-.8l.6-3.5a2 2 0 0 0-1.4-2.2z'/></svg>", "Clean clothes for free or cheap",
       "<ul><li>The map lists free laundry programs and low-cost laundromats — <b>check hours</b> before you haul everything over.</li>" +
       "<li>Some churches and ministries run free laundry days each month; ask 211 what's coming up.</li>" +
       "<li>A sink, a bar of soap, and a clothesline work in a pinch. Dry completely — damp clothes in a bag grow mildew fast.</li>" +
       "<li>Thrift stores on the map often have the cheapest replacement clothes in town.</li></ul>",
       [{ cat: "laundry", label: "Laundry spots" }, { cat: "freeclothes", label: "Free clothes" }]],
 
-    ["wiki-belongings", "daily", "🎒", "If your belongings are stolen",
+    ["wiki-belongings", "daily", "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><rect x='6' y='5' width='12' height='16' rx='3'/><path d='M9 5a3 3 0 0 1 6 0'/><rect x='9.5' y='12' width='5' height='4.5' rx='1'/></svg>", "If your belongings are stolen",
       "<ul><li><b>Report it:</b> a police report listing what was taken helps with replacements and some aid programs.</li>" +
       "<li>Some shelters and day centers have lockers or storage — ask when you check in.</li>" +
       "<li>Keep the irreplaceable stuff on you or photographed: ID, papers, photos of anything sentimental.</li>" +
       "<li>Don't try to get things back by force — it can turn a theft report into a charge against you.</li></ul>",
       [{ cat: "day", label: "Day centers" }]],
 
-    ["wiki-bus", "daily", "🚌", "Riding the bus",
+    ["wiki-bus", "daily", "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><rect x='4' y='3' width='16' height='15' rx='2'/><path d='M4 10h16'/><path d='M8 21l1-3M16 21l-1-3'/><circle cx='8.5' cy='14' r='0.5'/><circle cx='15.5' cy='14' r='0.5'/></svg>", "Riding the bus",
       "<ul><li>Citilink runs Fort Wayne's buses. Routes and schedules are on their site — or plan a trip right on this site's map.</li>" +
       "<li>Fares and pass prices change, so <b>check before you ride</b>; drivers can answer questions, and carry exact change if you pay cash.</li>" +
       "<li>Free or reduced passes exist for some situations — ask 211 or a day center what's current.</li>" +
       "<li>Plan to arrive early. Buses run on schedules, not on your emergency.</li></ul>",
       [{ cat: "bus", label: "Transit info" }, { tab: "guide", label: "Open Guides" }]],
 
-    ["wiki-intake", "housing", "🛏️", "What to expect at a shelter intake",
+    ["wiki-intake", "housing", "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M2 4v16'/><path d='M2 8h18a2 2 0 0 1 2 2v10'/><path d='M2 17h20'/><path d='M6 8v9'/></svg>", "What to expect at a shelter intake",
       "<p>Intake is just questions: name, ID if you have it, why you need shelter, health or medication needs. Answer honestly — it gets you the right bed.</p>" +
       "<ul><li><b>Bring:</b> ID, medications in their bottles, phone charger. Leave valuables elsewhere if you can.</li>" +
       "<li><b>Ask about:</b> curfew, chores, how long you can stay, storage for your things, and what help they offer next — case workers are gold.</li>" +
       "<li>Rules exist because dozens of strangers share one building. Breaking curfew or fighting usually means losing the bed.</li></ul>",
       [{ cat: "shelter", label: "See shelters" }]],
 
-    ["wiki-vouchers", "housing", "🏘️", "Housing help: the short version",
+    ["wiki-vouchers", "housing", "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/><path d='M9 22V12h6v10'/></svg>", "Housing help: the short version",
       "<p>The full step-by-step lives in the Guides tab — <b>\"Housing Vouchers (Section 8)\"</b>: where to apply, what to bring, the waitlist reality, and alternatives while you wait.</p>" +
       "<ul><li><b>Short version:</b> apply everywhere you're eligible, keep your contact info current with every housing authority, and answer every letter fast — missed mail is the #1 way people lose their spot.</li>" +
       "<li>While you wait: shelters, transitional programs, and roommate situations bridge the gap.</li></ul>",
       [{ tab: "guide", label: "Open Guides" }]],
 
-    ["wiki-numbers", "sos", "📞", "Who to call in an emergency",
+    ["wiki-numbers", "sos", "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.6 2.81.72A2 2 0 0 1 22 16.92z'/></svg>", "Who to call in an emergency",
       "<ul><li><b>911</b> — danger right now: crime, fire, medical emergency, overdose. Always free, even with no plan or minutes.</li>" +
       "<li><b>211</b> — not an emergency but you need help: shelter tonight, food, bills, ID help. Real humans, local referrals.</li>" +
       "<li><b>988</b> — you're in crisis or thinking about suicide: call or text 988, any time. Free and confidential.</li></ul>" +
       "<p><b>Save all three in your phone today.</b></p>",
       [{ tel: "911", label: "Call 911" }, { tel: "211", label: "Call 211" }, { tel: "988", label: "Call or text 988" }]],
 
-    ["wiki-overdose", "sos", "💊", "Overdose: how to help",
+    ["wiki-overdose", "sos", "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M10.5 20.5L3.5 13.5a4.95 4.95 0 1 1 7-7l7 7a4.95 4.95 0 1 1-7 7z'/><path d='M8.5 8.5l7 7'/></svg>", "Overdose: how to help",
       "<ul><li><b>Signs:</b> can't be woken up, slow or stopped breathing, blue or gray lips or nails.</li>" +
       "<li><b>Call 911 first.</b> Indiana law protects people who call for help during an overdose when they act in good faith — don't let fear stop the call.</li>" +
       "<li>If naloxone (Narcan) is around, use it — it can't hurt someone who isn't overdosing. Then rescue breathing if you know how, and roll them onto their side (recovery position).</li>" +
@@ -1176,7 +1176,7 @@ function jobShowOnMap(id) {
     document.getElementById("wikiBody").innerHTML = list.length
       ? list.map(card).join("") +
         '<p class="wikifoot">Wiki is general information, not legal or medical advice. When in doubt, call 211.</p>'
-      : '<div class="empty"><div class="big">📚</div><h3>No articles found</h3><p>Try a different search.</p></div>'
+      : '<div class="empty"><div class="big"><svg class="hvi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div><h3>No articles found</h3><p>Try a different search.</p></div>'
         + '<p class="wikifoot">Wiki is general information, not legal or medical advice. When in doubt, call 211.</p>';
     bind(el);
   }
@@ -1217,9 +1217,9 @@ function jobShowOnMap(id) {
   if (host && !document.getElementById("tab-wiki")) {
     var sec = document.createElement("div");
     sec.id = "tab-wiki"; sec.className = "tab";
-    sec.innerHTML = '<div class="content"><div class="secHead"><h2>📚 Wiki</h2>'
+    sec.innerHTML = '<div class="content"><div class="secHead"><h2><svg class="hvi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> Wiki</h2>'
       + "<p>A mini-Wikipedia: practical know-how, written plainly</p></div>"
-      + '<div class="searchbar" style="margin:0 16px 10px"><span class="mag">🔍</span><input id="wikiQ" type="search" autocomplete="off" placeholder="Search police, ID, cold, mail, overdose…"><button class="iconbtn" id="wikiClear" aria-label="Clear search">✕</button></div>'
+      + '<div class="searchbar" style="margin:0 16px 10px"><span class="mag"><svg class="hvi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg></span><input id="wikiQ" type="search" autocomplete="off" placeholder="Search police, ID, cold, mail, overdose…"><button class="iconbtn" id="wikiClear" aria-label="Clear search"><svg class="hvi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div>'
       + '<div class="chips" id="wikiChips"></div>'
       + '<div class="scroll" id="wikiBody" style="padding-top:2px"></div></div>';
     host.parentNode.insertBefore(sec, host.nextSibling);
