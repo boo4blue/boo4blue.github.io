@@ -4660,3 +4660,244 @@ window.renderTonightStrip = renderTonightStrip;
 window.computeTonightPicks = computeTonightPicks;
 
 })();
+
+/* ===== night-signal.js ===== */
+/* Haven FW website -- Night Signal layouts (2026-11-07).
+   Additive only: builds three layout helpers on top of the DOM the
+   existing render code already produces. No existing module is
+   edited, no area/FAB/menu control is touched, and no click is ever
+   dispatched on an area control.
+   - Command Deck smart strips (Map, Gigs): a live clone of the
+     tab's first result card, pinned above the results. Clicking
+     the strip forwards to the original card.
+   - One Thing First (Guide, Help): a toggle that collapses the
+     tab to its first card (class ns-collapsed on the tab element,
+     on by default). In Help the first card is the hero crisis
+     card, so crisis help is never tucked away; the .crisis-strip
+     element itself is never hidden or touched.
+   - Side Rail (Volunteer, Settings): a rail built from the tab's
+     own chips (Volunteer) or section headings (Settings). Rail
+     clicks click the matching chip or scroll to the section.
+     Settings gets arrangement only -- no content is changed,
+     nothing is removed from the DOM.
+   Classic script, IIFE, matching the other bundle modules. */
+(function () {
+  "use strict";
+  function log(msg) { try { console.log("[HAVEN] night-signal: " + msg); } catch (e) {} }
+  function debounce(fn, ms) {
+    var t = null;
+    return function () { clearTimeout(t); t = setTimeout(fn, ms); };
+  }
+  function stripIds(node) {
+    if (node.removeAttribute) { node.removeAttribute("id"); node.removeAttribute("onclick"); }
+    var kids = node.querySelectorAll ? node.querySelectorAll("[id],[onclick]") : [];
+    kids.forEach(function (k) { k.removeAttribute("id"); k.removeAttribute("onclick"); });
+  }
+
+  /* ---------- Command Deck smart strips ---------- */
+  function makeStrip(tabId, label) {
+    var tab = document.getElementById(tabId);
+    if (!tab || tab.querySelector(".ns-smart-strip")) return null;
+    var strip = document.createElement("div");
+    strip.className = "ns-smart-strip";
+    strip.style.display = "none";
+    strip.innerHTML = '<div class="ns-smart-label"></div><div class="ns-smart-body"></div>';
+    strip.querySelector(".ns-smart-label").textContent = label;
+    return strip;
+  }
+  function watchStrip(strip, sourceEl, cardSel) {
+    if (!strip || !sourceEl) return;
+    var current = null;
+    function refresh() {
+      var first = sourceEl.querySelector(cardSel);
+      if (!first) {
+        if (current) { current = null; strip.style.display = "none"; strip.querySelector(".ns-smart-body").innerHTML = ""; }
+        return;
+      }
+      if (first === current && strip.style.display !== "none") return;
+      current = first;
+      var body = strip.querySelector(".ns-smart-body");
+      body.innerHTML = "";
+      var clone = first.cloneNode(true);
+      stripIds(clone);
+      clone.style.pointerEvents = "none";
+      body.appendChild(clone);
+      strip.style.display = "";
+    }
+    strip.addEventListener("click", function () {
+      if (!current) return;
+      log("smart strip click -> first card of " + sourceEl.id);
+      try { current.scrollIntoView({ behavior: "smooth", block: "center" }); } catch (e) {}
+      try { current.click(); } catch (e) {}
+      refreshSoon();
+    });
+    var refreshSoon = debounce(refresh, 250);
+    try {
+      new MutationObserver(refreshSoon).observe(sourceEl, { childList: true, subtree: true });
+    } catch (e) {}
+    refresh();
+  }
+  function initStrips() {
+    /* Map: first result card lives in the places sheet list (#list);
+       the strip itself sits in the tab under the Tonight strip. */
+    var mapTab = document.getElementById("tab-map");
+    var listEl = document.getElementById("list");
+    if (mapTab && listEl) {
+      var s1 = makeStrip("tab-map", "Nearest right now");
+      if (s1) {
+        var anchor = document.getElementById("tonight-strip");
+        if (anchor && anchor.parentNode === mapTab) anchor.parentNode.insertBefore(s1, anchor.nextSibling);
+        else mapTab.appendChild(s1);
+        watchStrip(s1, listEl, ".card");
+      }
+    }
+    /* Gigs: first card of #gig-list; strip goes just above the list. */
+    var gigTab = document.getElementById("tab-gigs");
+    var gigList = document.getElementById("gig-list");
+    if (gigTab && gigList) {
+      var s2 = makeStrip("tab-gigs", "Fastest cash first");
+      if (s2) {
+        gigList.parentNode.insertBefore(s2, gigList);
+        watchStrip(s2, gigList, ".card");
+      }
+    }
+  }
+
+  /* ---------- One Thing First (Guide / Help) ---------- */
+  function initFocusToggle(tabId) {
+    var tab = document.getElementById(tabId);
+    if (!tab || tab.querySelector(".ns-toggle")) return;
+    tab.classList.add("ns-collapsed");
+    var btn = document.createElement("button");
+    btn.className = "ns-toggle";
+    btn.type = "button";
+    function paint() { btn.textContent = tab.classList.contains("ns-collapsed") ? "Show everything" : "Show less"; }
+    btn.addEventListener("click", function () {
+      var on = tab.classList.toggle("ns-collapsed");
+      log(tabId + " One Thing First " + (on ? "collapsed" : "expanded"));
+      paint();
+    });
+    paint();
+    var content = tab.querySelector(".content") || tab;
+    var head = content.querySelector(".view-head");
+    if (head && head.parentNode === content) content.insertBefore(btn, head.nextSibling);
+    else content.insertBefore(btn, content.firstChild);
+  }
+
+  /* ---------- Side Rail (Volunteer / Settings) ---------- */
+  function railShell(tab) {
+    var content = tab.querySelector(".content");
+    if (!content) return null;
+    var rail = content.querySelector(":scope > .ns-rail");
+    if (!rail) {
+      rail = document.createElement("nav");
+      rail.className = "ns-rail";
+      rail.setAttribute("aria-label", "Sections");
+      var head = content.querySelector(".view-head");
+      if (head && head.parentNode === content) content.insertBefore(rail, head.nextSibling);
+      else content.insertBefore(rail, content.firstChild);
+    }
+    content.classList.add("ns-railed");
+    return rail;
+  }
+  function railButton(label, onClick) {
+    var b = document.createElement("button");
+    b.className = "ns-rail-btn";
+    b.type = "button";
+    b.textContent = label;
+    b.addEventListener("click", onClick);
+    return b;
+  }
+  /* Volunteer: rail mirrors the live .vl-chip set in #volChips. */
+  var volSig = "";
+  function buildVolRail() {
+    var tab = document.getElementById("tab-volunteer");
+    if (!tab) return;
+    var chips = tab.querySelectorAll("#volChips .vl-chip");
+    if (!chips.length) return;
+    var sig = Array.prototype.map.call(chips, function (c) { return c.getAttribute("data-vg") || c.textContent; }).join("|");
+    var firstCard = tab.querySelector("#volList .vl-card");
+    sig += firstCard ? "+pick" : "";
+    if (sig === volSig && tab.querySelector(".ns-rail")) return;
+    volSig = sig;
+    var rail = railShell(tab);
+    if (!rail) return;
+    rail.innerHTML = "";
+    if (firstCard) {
+      rail.appendChild(railButton("Top pick", function () {
+        log("volunteer rail -> top pick");
+        tab.querySelectorAll("#volList .vl-card").forEach(function (c) { c.classList.remove("ns-pick"); });
+        firstCard.classList.add("ns-pick");
+        try { firstCard.scrollIntoView({ behavior: "smooth", block: "center" }); } catch (e) {}
+      }));
+    }
+    chips.forEach(function (chip) {
+      var key = chip.getAttribute("data-vg");
+      var label = (chip.textContent || "").trim().replace(/\s+/g, " ");
+      var btn = railButton(label, function () {
+        log("volunteer rail -> chip " + (key || label));
+        var live = tab.querySelector('#volChips .vl-chip[data-vg="' + key + '"]');
+        if (live) live.click();
+        rail.querySelectorAll(".ns-rail-btn").forEach(function (x) { x.classList.remove("on"); });
+        btn.classList.add("on");
+      });
+      if (chip.classList.contains("on")) btn.classList.add("on");
+      rail.appendChild(btn);
+    });
+  }
+  /* Settings: rail mirrors the .card section headings; arrangement
+     only -- cards stay exactly where and what they are. */
+  var setSig = "";
+  function buildSettingsRail() {
+    var tab = document.getElementById("tab-settings");
+    if (!tab) return;
+    var cards = tab.querySelectorAll(".content > .card");
+    if (!cards.length) return;
+    var sig = cards.length + ":" + Array.prototype.map.call(cards, function (c) {
+      var h = c.querySelector("h3"); return h ? h.textContent.trim() : "";
+    }).join("|");
+    if (sig === setSig && tab.querySelector(".ns-rail")) return;
+    setSig = sig;
+    var rail = railShell(tab);
+    if (!rail) return;
+    rail.innerHTML = "";
+    cards.forEach(function (card, i) {
+      var h = card.querySelector("h3");
+      var label = h ? h.textContent.trim().replace(/\s+/g, " ") : "Section " + (i + 1);
+      if (label.length > 26) label = label.slice(0, 25) + "...";
+      var btn = railButton(label, function () {
+        log("settings rail -> " + label);
+        tab.querySelectorAll(".card").forEach(function (c) { c.classList.remove("ns-pick"); });
+        card.classList.add("ns-pick");
+        rail.querySelectorAll(".ns-rail-btn").forEach(function (x) { x.classList.remove("on"); });
+        btn.classList.add("on");
+        try { card.scrollIntoView({ behavior: "smooth", block: "start" }); } catch (e) {}
+      });
+      rail.appendChild(btn);
+    });
+    var first = tab.querySelector(".content > .card");
+    if (first && !tab.querySelector(".card.ns-pick")) first.classList.add("ns-pick");
+  }
+  function initRails() {
+    buildVolRail();
+    buildSettingsRail();
+    var volTab = document.getElementById("tab-volunteer");
+    if (volTab) {
+      try { new MutationObserver(debounce(buildVolRail, 250)).observe(volTab, { childList: true, subtree: true }); } catch (e) {}
+    }
+    var setTab = document.getElementById("tab-settings");
+    if (setTab) {
+      try { new MutationObserver(debounce(buildSettingsRail, 250)).observe(setTab, { childList: true, subtree: true }); } catch (e) {}
+    }
+  }
+
+  function init() {
+    initStrips();
+    initFocusToggle("tab-guide");
+    initFocusToggle("tab-help");
+    initRails();
+    log("layouts ready (map/gigs deck, places/jobs/events/saved tiles, guide/help focus, volunteer/settings rail)");
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
+})();
