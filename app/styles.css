@@ -381,17 +381,20 @@ body.hc :focus-visible{outline:3px solid #fff!important;}
 body.pnames .emoji-pin .pname{display:block;}
 /* ===== haven-fix design system (2026-10-22, website team) ===== */
 :root{
-  /* ===== MIDNIGHT NEON tokens (Blaze's picked style, 2026-11-01) =====
-     One source of truth for the site's chrome; components consume these
-     variables. Legacy names are kept as aliases to the neon values. */
-  --page:#070714; --bg:#0c0c21; --bg2:#090916; --surface:#12122c;
-  --surface-inset:#090916; --map-land:#0a0a1e;
-  --border:#26264d; --border-neon:rgba(0,229,255,.42); --border-violet:rgba(139,92,246,.45);
-  --neon-cyan:#00e5ff; --neon-cyan-soft:#7df3ff; --neon-violet:#8b5cf6; --neon-violet-soft:#c4b5fd;
+  /* ===== NIGHT SIGNAL tokens (Blaze's picked style, 2026-11-07) =====
+     Dark mono + glowing teal. One source of truth for the site's
+     chrome; components consume these variables. Same variable names
+     as the old Midnight Neon block: the violet names are kept as
+     aliases but now resolve to deep teal, so every violet consumer
+     becomes deep teal -- mono + teal only, no violet anywhere. */
+  --page:#05080a; --bg:#070b0d; --bg2:#05080a; --surface:#0c1114;
+  --surface-inset:#070b0d; --map-land:#060a0c;
+  --border:#1e2a2e; --border-neon:rgba(44,232,200,.42); --border-violet:rgba(14,124,107,.45);
+  --neon-cyan:#2ce8c8; --neon-cyan-soft:#8ff5e2; --neon-violet:#0e7c6b; --neon-violet-soft:#5ec9b6;
   --grad-neon:linear-gradient(92deg,var(--neon-cyan) 0%,var(--neon-violet) 100%);
-  --text:#f5f7ff; --text2:#a9add4; --text3:#a9add4;
+  --text:#f2f7f5; --text2:#a8b8b4; --text3:#a8b8b4;
   --open:#2fe673; --crisis:#ff2d4d; --crisis-deep:#450b18;
-  --glow-cyan:0 0 18px rgba(0,229,255,.38); --glow-violet:0 0 18px rgba(139,92,246,.42); --glow-crisis:0 0 20px rgba(255,45,77,.40);
+  --glow-cyan:0 0 18px rgba(44,232,200,.38); --glow-violet:0 0 18px rgba(14,124,107,.42); --glow-crisis:0 0 20px rgba(255,45,77,.40);
   --shadow-card:0 10px 28px rgba(0,0,0,.55); --shadow-pop:0 16px 40px rgba(0,0,0,.65);
   --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px; --sp-5:20px; --sp-6:24px; --sp-8:32px;
   --r-sm:10px; --r-md:14px; --r-lg:20px; --r-pill:999px;
@@ -416,7 +419,7 @@ body.pnames .emoji-pin .pname{display:block;}
   --dmp-search-h:96px; --dmp-sheet-h:78dvh;
   /* legacy aliases */
   --accent:var(--neon-cyan); --ok:var(--open); --warn:var(--neon-violet-soft); --danger:var(--crisis);
-  --line:var(--border); --line2:#34345e;
+  --line:var(--border); --line2:#243239;
 }
 .svg-sprite{position:absolute;width:0;height:0;overflow:hidden;}
 .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
@@ -588,7 +591,7 @@ button{min-height:44px;}
 /* ================= VISUAL REFRESH 2026-10-23 =================
    Wren (layout) + Ink (art) + Lens (QA) briefs.
    Visual language: blue = where you are, green = what you can do, red = crisis only. */
-:root{--action:#00e5ff;--text3:#a9add4;}
+:root{--action:var(--neon-cyan);--text3:#a8b8b4;}
 body{line-height:1.45;}
 h1,h2,h3{letter-spacing:-.01em;}
 
@@ -1313,3 +1316,138 @@ h1,h2,h3,.sec-title,.places-title{font-family:var(--font-head);letter-spacing:.0
 
 /* HV-ICONS: inline SVG icon sizing (replaces emoji glyphs) */
 .hvi{width:1.15em;height:1.15em;vertical-align:-.18em;display:inline-block}
+
+/* ===== NIGHT SIGNAL LAYOUTS (2026-11-07) =====
+   Per-tab layouts from LAYOUT-PICKS-2026-11-07.md, in the Night
+   Signal style (dark mono + glowing teal, tokens above). Scoped by
+   tab id. This tree has NO chat / plan / profile tabs -- nothing
+   here invents them. tab-learn / tab-programs / tab-ptools are not
+   in the picks: they take the tokens + chrome only, no layout.
+   JS hooks live in night-signal.js (smart strips, One Thing First
+   toggles, side rails); everything else below is pure CSS on the
+   containers the render code already uses:
+     Places  #pt-list (rows from webtabs.js ptRowHtml)
+     Jobs    #jobs-list (cards from jobs.js jobCardHtml)
+     Events  #events-list (cards from app.js paintEventsList)
+     Saved   #saved-list (.card from app.js renderSaved)
+     Gigs    #gig-list (.card from app.js renderGigs)
+     Guide   #ggCards .sg-grid > .sg-card (gguides.js sgPaint)
+     Help    .helpsub > * (static index.html + phonelines.js)
+     Volunteer #volunteer-list > #volList > .vl-card (volunteer.js)
+     Settings  #tab-settings .card (static index.html)          */
+
+/* --- chrome: active tab glows teal; violet-era hero/tip tints
+       re-pointed at the teal tokens --- */
+.tabbar-btn.active{color:var(--neon-cyan);background:rgba(44,232,200,.08);
+  box-shadow:inset 0 0 0 1px rgba(44,232,200,.30),0 0 14px rgba(44,232,200,.18);}
+.tabbar-btn.active .ic{filter:drop-shadow(0 0 6px rgba(44,232,200,.8));}
+.hero-blue{background:var(--grad-neon);}
+.tip-box{background:rgba(44,232,200,.08);}
+.newhere-card{border-color:var(--border-violet);}
+.newhere-card.tonight-card{border-color:var(--border-violet);
+  background:linear-gradient(135deg,#0a1512,var(--bg));}
+.newhere-card.charge-card{border-color:var(--border-neon);}
+.share-url{color:var(--neon-cyan-soft);}
+
+/* ============ Quick Tiles (Places / Jobs / Events / Saved) ====
+   2-column tile grid; each tab's search/filter bar stays pinned
+   (sticky) while the tiles scroll under it. */
+#pt-list,#jobs-list,#events-list,#saved-list{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:var(--sp-3);align-items:start;}
+#pt-list>div{background:var(--bg);border:1px solid var(--border);
+  border-radius:var(--r-md);box-shadow:var(--shadow-card);
+  padding:var(--sp-3) !important;min-width:0;}
+#jobs-list>*,#events-list>*{margin-bottom:0 !important;min-width:0;
+  overflow-wrap:break-word;}
+#saved-list>.card{margin-bottom:0;min-width:0;}
+#tab-places .search-row{position:sticky;top:0;z-index:60;
+  background:var(--page);padding:var(--sp-2) 0;margin-bottom:0;}
+#tab-places #pt-filters{position:sticky;top:60px;z-index:59;
+  background:var(--page);}
+#tab-jobs #jobs-search{position:sticky;top:0;z-index:60;
+  background:var(--surface-inset);}
+#tab-jobs #job-chips{position:sticky;top:52px;z-index:59;
+  background:var(--page);}
+#tab-events .view-head{position:sticky;top:0;z-index:60;
+  background:var(--page);padding:var(--sp-2) 0;}
+#tab-saved .view-head{position:sticky;top:0;z-index:60;
+  background:var(--page);padding:var(--sp-2) 0;}
+
+/* ============ Command Deck (Map / Gigs) =======================
+   Quick-access row styled as a deck + the smart strip that
+   night-signal.js builds (a live clone of the tab's first
+   result card; hidden while the tab has no cards). */
+#tab-map #filters{background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--r-md);padding-top:var(--sp-2);margin:0 var(--sp-4) var(--sp-3);}
+#tab-map .btn-row{background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--r-md);margin:0 var(--sp-4) var(--sp-3);
+  padding:var(--sp-3) var(--sp-3);}
+#tab-gigs #gig-chips{background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--r-md);padding:var(--sp-2);margin-bottom:var(--sp-3);}
+.ns-smart-strip{margin:0 var(--sp-4) var(--sp-3);background:var(--surface);
+  border:1px solid var(--border-neon);border-radius:var(--r-md);
+  box-shadow:var(--glow-cyan),var(--shadow-card);padding:var(--sp-3);}
+#tab-gigs .ns-smart-strip{margin:0 0 var(--sp-3);}
+.ns-smart-label{font-size:12px;font-weight:800;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--neon-cyan);margin-bottom:var(--sp-2);}
+.ns-smart-body>*{margin-bottom:0 !important;}
+.ns-smart-body .card{box-shadow:none;border-color:var(--border);}
+
+/* ============ One Thing First (Guide / Help) ==================
+   One focus card up front; .ns-collapsed (added by
+   night-signal.js, on by default) hides every later card in the
+   tab. The focus card is the first card; in Help that is the
+   hero crisis card, so crisis help is never tucked away. The
+   slim crisis bar lives outside the tab and is never touched. */
+.ns-toggle{display:flex;align-items:center;justify-content:center;gap:var(--sp-2);
+  width:100%;margin:0 0 var(--sp-3);padding:var(--sp-3);
+  background:var(--surface);border:1px solid var(--border-neon);
+  border-radius:var(--r-pill);color:var(--neon-cyan);
+  font-size:14px;font-weight:800;cursor:pointer;min-height:48px;}
+#tab-guide .sg-grid>.sg-card:first-child,
+#tab-help .helpsub>.hero-card{
+  border:1px solid var(--border-neon);
+  box-shadow:var(--glow-cyan),var(--shadow-card);}
+#tab-guide.ns-collapsed .sg-grid>.sg-card:not(:first-child){display:none;}
+#tab-guide.ns-collapsed .sg-sug{display:none;}
+#tab-help.ns-collapsed .helpsub>*:not(:first-child){display:none;}
+#tab-help.ns-collapsed .helpsub>.hero-card{display:block;}
+
+/* ============ Side Rail (Volunteer / Settings) ================
+   Rail element (.ns-rail) is built by night-signal.js from the
+   tab's own chips / section headings. Phone widths get the true
+   rail (sticky left column, content in the second column);
+   wider layouts keep the rail as a full-width strip on top --
+   the desktop stylesheet's own grids stay in charge there.
+   Settings/Help rule: arrangement only, no content changes. */
+.ns-rail{display:flex;gap:var(--sp-2);overflow-x:auto;
+  padding:var(--sp-2) 0 var(--sp-3);}
+.ns-rail-btn{flex:none;display:inline-flex;align-items:center;gap:6px;
+  padding:10px 14px;min-height:44px;border:1px solid var(--border);
+  border-radius:var(--r-pill);background:var(--surface);
+  color:var(--text2);font-size:13px;font-weight:700;cursor:pointer;}
+.ns-rail-btn.on{border-color:var(--border-neon);color:var(--neon-cyan);
+  box-shadow:var(--glow-cyan);}
+.ns-pick{border-color:var(--border-neon) !important;
+  box-shadow:var(--glow-cyan),var(--shadow-card);}
+@media (max-width:899px){
+  #tab-volunteer .content.ns-railed,
+  #tab-settings .content.ns-railed{
+    display:grid;grid-template-columns:88px minmax(0,1fr);
+    column-gap:var(--sp-3);align-items:start;}
+  #tab-volunteer .content.ns-railed>.view-head,
+  #tab-settings .content.ns-railed>.view-head{grid-column:1 / -1;}
+  #tab-volunteer .content.ns-railed>.ns-rail,
+  #tab-settings .content.ns-railed>.ns-rail{
+    grid-column:1;grid-row:2 / span 99;position:sticky;top:var(--sp-2);
+    flex-direction:column;overflow-x:visible;overflow-y:auto;
+    max-height:calc(100dvh - 120px);padding:0;}
+  #tab-volunteer .content.ns-railed .ns-rail-btn,
+  #tab-settings .content.ns-railed .ns-rail-btn{
+    flex-direction:column;justify-content:center;text-align:center;
+    border-radius:var(--r-md);padding:10px 6px;font-size:12px;
+    white-space:normal;overflow-wrap:break-word;width:100%;}
+  #tab-volunteer .content.ns-railed>#volunteer-list{grid-column:2;min-width:0;}
+  #tab-settings .content.ns-railed>.card{grid-column:2;min-width:0;}
+}
