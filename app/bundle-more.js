@@ -313,7 +313,7 @@ const GUIDES = [
     tips: "There is no button that sends a hospital to your location \u2014 the boxes are fixed, staffed locations. In an emergency, call 911.",
   },
   {
-    id: "winter", audited: "2026-10-10", title: "Staying Warm in Winter", icon: "\u2744\uFE0F",
+    id: "winter", audited: "2026-10-10", title: "Staying Warm in Winter", icon: "\uFE0F",
     intro: "Fort Wayne's winter shelter plan (Dec 1 \u2013 Mar 31): warming centers by day, emergency beds at night when it's freezing.",
     where: "Fort Wayne Rescue Mission", whereId: "fwrm",
     steps: [
@@ -323,7 +323,7 @@ const GUIDES = [
       "Families: call [[just-neighbors]] (Just Neighbors, 2925 E State Blvd, (260) 458-9772); single women: call [[josephines]] (Josephine's Place, 3505 Lake Ave, (260) 426-7358) — if full, check in at the Rescue Mission 4:30–6:30pm",
       "Daytime extra: [[inasmuch-ministry]] (Inasmuch Ministry, 930 Broadway) — Mon–Fri 7:30–11:30am, plus Mon evenings 4:30–6:30pm",
     ],
-    tips: "If this app shows the \u2744\uFE0F cold alert, emergency beds are likely open tonight. If you think you're barred from the Rescue Mission, call (260) 426-7357 ext. 156 between 2\u20133pm to check your status.",
+    tips: "If this app shows the \uFE0F cold alert, emergency beds are likely open tonight. If you think you're barred from the Rescue Mission, call (260) 426-7357 ext. 156 between 2\u20133pm to check your status.",
   },
   {
     id: "ride-bus", title: "Riding Citilink (Bus)", icon: "<svg class='hvi' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><rect x='4' y='3' width='16' height='15' rx='2'/><path d='M4 10h16'/><path d='M8 21l1-3M16 21l-1-3'/><circle cx='8.5' cy='14' r='0.5'/><circle cx='15.5' cy='14' r='0.5'/></svg>",
