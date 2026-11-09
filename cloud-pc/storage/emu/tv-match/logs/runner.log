@@ -97,3 +97,12 @@ To https://github.com/boo4blue/boo4blue.github.io
 served-by: tv36 (API-36 android-tv x86_64)
 -rw-r--r-- 1 runner runner 63296611 Nov  9 10:47 /tmp/tv-W2.apk
 074fe85c353078b508a87d15981f8159  /tmp/tv-W2.apk
+To https://github.com/boo4blue/boo4blue.github.io
+   b1b94ad..a1a2b82  main -> main
+[run-tv 10:54:31] tv34 boot_completed=0
+[run-tv 10:55:12] tv36 booted after ~25s
+[run-tv 10:55:12] tv36 boot_completed=1
+[run-tv 10:55:13] installing APK on tv36
+served-by: tv36 (API-36 android-tv x86_64)
+-rw-r--r-- 1 runner runner 63296611 Nov  9 10:57 /tmp/tv-MX.apk
+074fe85c353078b508a87d15981f8159  /tmp/tv-MX.apk

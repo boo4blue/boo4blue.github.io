@@ -20,3 +20,10 @@
 [nav-tv 10:09:44] focus reached ['Search titles', 'Search'] in 6 presses
 [nav-tv 10:09:47] WALK search: entered=True
 [nav-tv 10:09:47] WALK search: starting coverage walk
+[nav-tv 10:55:27] nav-tv.py batch W2 starting; top before: topResumedActivity=ActivityRecord{6291961 u0 com.google.android.tvlauncher/.MainActivity t5}
+[nav-tv 10:55:39] launched; top: topResumedActivity=ActivityRecord{214826858 u0 com.onioncore.oniontv/.ProfileActivity t6}
+[nav-tv 10:55:42] visible: ["Who's watching?", 'Blaze', 'MAIN', 'Edit', '+', 'Add profile']
+[nav-tv 10:55:53] after pick; top: topResumedActivity=ActivityRecord{93061564 u0 com.onioncore.oniontv/.HomeActivity t6} visible: ['FEATURED', 'Obsession', '★ 7.8  2026 · 109 min · Horror, Thriller', 'After breaking the mysterious "One Wish Willow" to win his crush\'s heart, a hopeless romantic finds himself getting exactly what he asked for but soon discovers that some desires come at a dark, sinister price.', 'Play', 'More Info', 'My List', 'Onion TV', 'Home', 'Movies', 'Series', 'Anime', 'Search titles...', 'Talk - use your phone as the microphone', 'Profile: Blaze - open Settings']
+[nav-tv 10:56:31] focus reached ['Profile:', 'profile picture'] in 7 presses
+[nav-tv 10:56:36] WALK settings-general: entered=True
+[nav-tv 10:56:36] WALK settings-general: starting coverage walk

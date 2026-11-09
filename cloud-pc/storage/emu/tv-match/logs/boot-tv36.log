@@ -26,7 +26,7 @@ INFO         |      Ok: Hardware GPU compatibility checks are not required
 INFO         |   Checking: hasSufficientSystem
 INFO         |      Ok: System requirements to run avd: `tv36` are met
 WARNING      | Feature QuickbootFileBacked is disabled due to stability issues, if you really want that, the environment variable ANDROID_EMU_FORCE_QUICKBOOT_FILE_BACKED need to set to 1
-INFO         | Storing crashdata in: /tmp/android-runner/emu-crash-37.2.13.db, detection is enabled for process: 5619
+INFO         | Storing crashdata in: /tmp/android-runner/emu-crash-37.2.13.db, detection is enabled for process: 7496
 INFO         | Initializing gfxstream backend
 INFO         | startOpenglesRendererImpl: gpu info
 INFO         | 
@@ -71,31 +71,31 @@ INFO         |   androidboot.vbmeta.digest=911f6c6d410dac0830bce6b3a0270b413fd87
 INFO         |   androidboot.vbmeta.hash_alg=sha256
 INFO         |   androidboot.vbmeta.size=6720
 INFO         |   androidboot.veritymode=enforcing
-WARNING: cannnot unmap ptr 0x70357bc01000 as it is in the protected range from 0x7034fbc00000 to 0x70357be00000
+WARNING: cannnot unmap ptr 0x750b21201000 as it is in the protected range from 0x750aa1200000 to 0x750b21400000
 INFO         | Monitoring duration of emulator setup.
 WARNING      | The emulator now requires a signed jwt token for gRPC access! Use the -grpc flag if you really want an open unprotected grpc port
 INFO         | Using security allow list from: /home/runner/.cache/cloudpc-models/android-sdk/emulator/lib/emulator_access.json
-INFO         | The active JSON Web Key Sets can be found here: /run/user/1001/avd/running/5619/jwks/4cc5d145-3ed4-4d6c-b79e-c2f192044d4a/active.jwk
-INFO         | Scanning /run/user/1001/avd/running/5619/jwks/4cc5d145-3ed4-4d6c-b79e-c2f192044d4a for jwk keys.
+INFO         | The active JSON Web Key Sets can be found here: /run/user/1001/avd/running/7496/jwks/f12ae83c-a5fe-402c-bf71-3b3d53264e0e/active.jwk
+INFO         | Scanning /run/user/1001/avd/running/7496/jwks/f12ae83c-a5fe-402c-bf71-3b3d53264e0e for jwk keys.
 INFO         | Started GRPC server at 127.0.0.1:8554, security: Local, auth: +token
-INFO         | Advertising in: /run/user/1001/avd/running/pid_5619.ini
+INFO         | Advertising in: /run/user/1001/avd/running/pid_7496.ini
+INFO         | Successfully initialized netsim WiFi
 INFO         | Activated packet streamer for uwb emulation
 INFO         | Activated packet streamer for bluetooth emulation
-INFO         | Successfully initialized netsim WiFi
 INFO         | Setting display: 0 configuration to: 1920x1080, dpi: 320x320 
 INFO         | setDisplayActiveConfig: id:0, 1920x1080
 INFO         | emulatorSetupEnvironment: Environment scene is not required
 USER_INFO    | Emulator is performing a full startup. This may take upto two minutes, or more.
-INFO         | Boot completed in 33805 ms
+INFO         | Boot completed in 33812 ms
 INFO         | Increasing screen off timeout, logcat buffer size to 2M.
 WARNING      | adb command '/home/runner/.cache/cloudpc-models/android-sdk/platform-tools/adb -s emulator-5554 shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: device 'emulator-5554' not found'
 WARNING      | adb command '/home/runner/.cache/cloudpc-models/android-sdk/platform-tools/adb -s emulator-5554 shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: device 'emulator-5554' not found'
 ERROR        | Failed to find ColorBuffer: 25
 ERROR        | Failed to bind to texture: invalid color buffer.
-INFO         | Wait for emulator (pid 5619) 20 seconds to shutdown gracefully before kill;you can set environment variable ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL(in seconds) to change the default value (20 seconds)
+INFO         | Wait for emulator (pid 7496) 20 seconds to shutdown gracefully before kill;you can set environment variable ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL(in seconds) to change the default value (20 seconds)
 
 USER_INFO    | Snapshots have been disabled by the user, save request is ignored.
-INFO         | Saving snapshot 'default_boot' took 0 ms
+INFO         | Saving snapshot 'default_boot' took 1 ms
 ERROR        | stop: Not implemented
 INFO         | removeAll
-WARNING      | Netsim Wifi dns:///localhost:46675 is gone due to CANCELLED
+WARNING      | Netsim Wifi dns:///localhost:36791 is gone due to CANCELLED
