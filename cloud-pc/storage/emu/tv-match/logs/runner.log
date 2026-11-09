@@ -72,3 +72,7 @@ To https://github.com/boo4blue/boo4blue.github.io
    a0025cb..8fe305e  main -> main
 [run-tv 10:25:16] push_captures: PUSHED cap setup-a
 [run-tv 10:26:17] setup-b done
+To https://github.com/boo4blue/boo4blue.github.io
+   8fe305e..5a1d464  main -> main
+[run-tv 10:26:18] push_captures: PUSHED cap setup-b
+[run-tv 10:27:15] setup-c done
