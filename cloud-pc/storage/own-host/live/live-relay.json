@@ -1,11 +1,11 @@
 {
  "service": "onion-relay",
- "url": "https://artist-surveillance-thumb-podcast.trycloudflare.com",
- "wss": "wss://artist-surveillance-thumb-podcast.trycloudflare.com",
- "key": "290c2750ca5cf0960436ea3374404d6a4b327aa849c556db",
- "egressIp": "20.120.253.121",
+ "url": "https://money-podcast-paul-panels.trycloudflare.com",
+ "wss": "wss://money-podcast-paul-panels.trycloudflare.com",
+ "key": "53da8a3839cb066e606b12b504f4f541a398d43161b09e3e",
+ "egressIp": "52.165.101.81",
  "tcpTracker443": "OK",
  "udpDns": "OK",
- "started": 1794232438,
+ "started": 1794233708,
  "job": "ownhost-relay1"
 }
