@@ -116,3 +116,7 @@ served-by: tv36 (API-36 android-tv x86_64)
 -rw-r--r-- 1 runner runner 63296611 Nov  9 11:07 /tmp/tv-FEAT.apk
 074fe85c353078b508a87d15981f8159  /tmp/tv-FEAT.apk
 [run-tv 11:18:36] setup-a done
+To https://github.com/boo4blue/boo4blue.github.io
+   59cc901..cd1ed07  main -> main
+[run-tv 11:18:38] push_captures: PUSHED cap setup-a
+[run-tv 11:19:42] setup-b done
