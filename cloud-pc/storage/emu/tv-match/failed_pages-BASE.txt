@@ -1,0 +1,14 @@
+08-see-all frame duplicates another page's frame
+09-sort-genres frame duplicates another page's frame
+11-series-title frame duplicates another page's frame
+07-anime frame duplicates another page's frame
+13-player-sources frame duplicates another page's frame
+14-player-subtitles frame duplicates another page's frame
+15-player-audio frame duplicates another page's frame
+16-player-connect frame duplicates another page's frame
+18-talk frame duplicates another page's frame
+20-pair-code frame duplicates another page's frame
+22-addons frame duplicates another page's frame
+24-downloads frame duplicates another page's frame
+25-watch-party frame duplicates another page's frame
+02-pin-pad frame duplicates another page's frame
