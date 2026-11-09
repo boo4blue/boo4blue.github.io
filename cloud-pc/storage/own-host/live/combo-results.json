@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794254016,
- "egressIp": "172.206.39.215",
+ "at": 1794256054,
+ "egressIp": "172.172.237.65",
  "own": {
-  "base": "https://italiano-corner-geographic-wooden.trycloudflare.com",
+  "base": "https://ads-fits-listings-commercial.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://diana-telephone-chips-organisms.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
