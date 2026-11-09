@@ -1,0 +1,22 @@
+{
+ "job": "ownhost-combo1",
+ "at": 1794249415,
+ "egressIp": "134.33.77.45",
+ "own": {
+  "base": "https://palace-juice-putting-independence.trycloudflare.com",
+  "state": "live"
+ },
+ "torrserver": {
+  "base": "",
+  "state": "not-started"
+ },
+ "rqbit": {
+  "base": "",
+  "state": "not-started"
+ },
+ "webtorrent": {
+  "base": "",
+  "state": "not-started",
+  "note": "proof only \u2014 NOT published to the router (no adapter yet)"
+ }
+}
