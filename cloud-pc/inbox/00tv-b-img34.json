@@ -1,0 +1,1 @@
+{"id":"00tv-b-img34","action":"shell","command":"bash emu/tv-match/run-tv.sh setup-b"}

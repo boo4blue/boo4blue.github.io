@@ -29,7 +29,7 @@ push_captures() {
   local batch=$1
   git config user.name "cloudpc" 2>/dev/null
   git config user.email "cloudpc@local" 2>/dev/null
-  git add emu/tv-match/real emu/tv-match/logs emu/tv-match/work emu/tv-match/failed_pages-*.txt emu/tv-match/dup-md5.txt 2>/dev/null
+  git add emu/tv-match/real emu/tv-match/real40 emu/tv-match/logs emu/tv-match/work emu/tv-match/failed_pages-*.txt emu/tv-match/dup-md5.txt 2>/dev/null
   if git diff --cached --quiet; then log "push_captures: nothing new for $batch"; return 0; fi
   git commit -m "tv-match: cap $batch captures (mid-run)" 2>&1 | tail -1
   git fetch --deepen=100 origin main 2>/dev/null || git fetch origin main 2>/dev/null
@@ -43,7 +43,13 @@ push_captures() {
 }
 
 mode=${1:-}
-if [ "$mode" = setup ]; then
+# Split setup (v2, 2026-11-09): the one-shot setup installs ~3 GB
+# (emulator + platform + TWO TV images) inside pc.py's 600 s job cap
+# and died mid-download on the first run — no captures, no logs.
+# Chained single-purpose jobs in one workflow run share the runner
+# filesystem, so: setup-a (tools) -> setup-b (API-34 image) ->
+# setup-c (API-36 fallback image, optional) -> cap.
+if [ "$mode" = setup-a ] || [ "$mode" = setup ]; then
   if [ ! -d $SDK/cmdline-tools/latest ]; then
     mkdir -p $SDK/cmdline-tools
     cp -r /usr/local/lib/android/sdk/cmdline-tools/latest $SDK/cmdline-tools/latest
@@ -51,15 +57,19 @@ if [ "$mode" = setup ]; then
   echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules >/dev/null
   sudo udevadm control --reload-rules; sudo udevadm trigger --name-match=kvm; sleep 1
   yes | $SDKM --licenses > emu/tv-match/logs/licenses.log 2>&1
-  for attempt in 1 2 3; do
-    $SDKM "emulator" "platform-tools" "platforms;android-34" "$IMG34" "$IMG36" > emu/tv-match/logs/sdk.log 2>&1
-    echo "attempt $attempt sdkmanager exit=$?"
-    if [ -x $SDK/emulator/emulator ] && [ -f $SDK/system-images/android-34/android-tv/x86/system.img ]; then
-      echo "SDK verified OK on attempt $attempt (API-34 TV x86 present)"; break
-    fi
-    rm -rf $SDK/emulator $SDK/.temp; sleep 5
-  done
-  ls $SDK/system-images/android-36/android-tv/x86_64/system.img 2>/dev/null && echo "API-36 TV x86_64 image present" || echo "API-36 TV x86_64 image MISSING (fallback unavailable)"
+  $SDKM "emulator" "platform-tools" "platforms;android-34" > emu/tv-match/logs/sdk-a.log 2>&1
+  echo "setup-a sdkmanager exit=$?"
+  [ -x $SDK/emulator/emulator ] && echo "SETUP_A_OK" || echo "SETUP_A_INCOMPLETE"
+fi
+if [ "$mode" = setup-b ] || [ "$mode" = setup ]; then
+  $SDKM "$IMG34" > emu/tv-match/logs/sdk-b.log 2>&1
+  echo "setup-b sdkmanager exit=$?"
+  [ -f $SDK/system-images/android-34/android-tv/x86/system.img ] && echo "SETUP_B_OK" || echo "SETUP_B_INCOMPLETE"
+fi
+if [ "$mode" = setup-c ] || [ "$mode" = setup ]; then
+  $SDKM "$IMG36" > emu/tv-match/logs/sdk-c.log 2>&1
+  echo "setup-c sdkmanager exit=$?"
+  ls $SDK/system-images/android-36/android-tv/x86_64/system.img 2>/dev/null && echo "SETUP_C_OK" || echo "API-36 TV x86_64 image MISSING (fallback unavailable)"
   echo SETUP_DONE
 fi
 
@@ -139,7 +149,7 @@ if [ "$mode" = cap ]; then
   fi
   echo "served-by: ${SERVED:-NONE}" | tee emu/tv-match/logs/avd-info-$BATCH.txt | tee -a $TVLOG
   if [ -z "$SERVED" ]; then log "FATAL: APK would not install on either TV image"; push_captures "$BATCH"; exit 0; fi
-  TV_BATCH=$BATCH python3 emu/tv-match/nav-tv.py 2>&1 | tee -a emu/tv-match/logs/nav-$BATCH.log
+  TV_BATCH=$BATCH TV_OUT_SUFFIX=${TV_OUT_SUFFIX:-} python3 emu/tv-match/nav-tv.py 2>&1 | tee -a emu/tv-match/logs/nav-$BATCH.log
   adb shell logcat -d > emu/tv-match/logs/logcat-$BATCH.txt 2>/dev/null
   adb emu kill 2>/dev/null
   push_captures "$BATCH"

@@ -39,7 +39,7 @@ import xml.etree.ElementTree as ET
 SERIAL = "emulator-5554"
 PKG = "com.onioncore.oniontv"
 BASE = "emu/tv-match"
-OUT = f"{BASE}/real"
+OUT = f"{BASE}/real" + os.environ.get("TV_OUT_SUFFIX", "")
 DUMPS = f"{BASE}/logs/dumps"
 WORK = f"{BASE}/work"
 BATCH = os.environ.get("TV_BATCH", "BASE")
