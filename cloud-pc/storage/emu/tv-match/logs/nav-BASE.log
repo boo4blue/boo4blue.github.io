@@ -365,3 +365,11 @@
 [nav-tv 11:23:00] ROUTE-MISS recorded for 09-sort-genres
 [nav-tv 11:23:00] CAPTURE-FAILED 09-sort-genres: verify failed; frame quarantined to dumps/miss-
 [nav-tv 11:23:09] activate_direct ['Movies']: tapped (680,76)
+[nav-tv 11:28:41] goto ['Trending Movies']: step budget exhausted
+[nav-tv 11:28:48] settle 10-detail-cold[0] at 0.93s md5 e7359ae41f5b
+[nav-tv 11:28:50] settle 10-detail-cold[1] at 2.45s md5 e7359ae41f5b
+[nav-tv 11:28:52] settle 10-detail-cold[2] at 4.51s md5 e7359ae41f5b
+[nav-tv 11:28:55] settle 10-detail-cold[3] at 7.45s md5 e7359ae41f5b
+[nav-tv 11:28:59] settle 10-detail-cold[4] at 11.45s md5 e7359ae41f5b
+[nav-tv 11:29:02] verify 10-movie-title: {"page": "10-movie-title", "alive": true, "activity": "topResumedActivity=ActivityRecord{306ca1b u0 com.onioncore.oniontv/.BrowseActivity t6}", "text_nodes": 21, "focused": "android.widget.FrameLayout", "marker": true, "pass": true}
+[nav-tv 11:29:02] shot emu/tv-match/real/10-movie-title.png md5 e7359ae41f5b distinct
