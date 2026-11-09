@@ -44,3 +44,5 @@
 23-signin sideways frame duplicates another page's frame
 24-downloads upright frame duplicates another page's frame
 24-downloads sideways frame duplicates another page's frame
+24-downloads upright frame duplicates another page's frame
+24-downloads sideways frame duplicates another page's frame
