@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794258687,
+ "at": 1794258699,
  "egressIp": "52.183.219.58",
  "own": {
   "base": "https://polls-native-powered-baby.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "live noauth-http=401"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://lying-asset-sheffield-medline.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
