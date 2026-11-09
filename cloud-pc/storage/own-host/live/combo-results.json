@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794251510,
+ "at": 1794251523,
  "egressIp": "172.171.13.61",
  "own": {
   "base": "https://trout-beast-characterized-heading.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://resolved-cornell-prepaid-hour.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
