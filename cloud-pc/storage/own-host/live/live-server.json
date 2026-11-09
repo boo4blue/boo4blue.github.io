@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
  "server": "stream-server (from-scratch)",
- "url": "https://shaved-charms-purple-cited.trycloudflare.com",
- "egressIp": "40.76.182.240",
- "started": 1794244392,
+ "url": "https://pillow-anyone-organizer-saw.trycloudflare.com",
+ "egressIp": "52.188.86.149",
+ "started": 1794244809,
  "job": "ownhost-server1"
 }
