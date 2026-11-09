@@ -1,11 +1,11 @@
 {
  "service": "onion-relay",
- "url": "https://causes-institution-blond-effectively.trycloudflare.com",
- "wss": "wss://causes-institution-blond-effectively.trycloudflare.com",
- "key": "e5b86f85222c4c93f00d29e6c5767abcecb9a97dacb1ca03",
- "egressIp": "51.57.87.181",
+ "url": "https://bat-everyday-ipod-jesus.trycloudflare.com",
+ "wss": "wss://bat-everyday-ipod-jesus.trycloudflare.com",
+ "key": "bf26d5f8e0fc252975d4ed9695a73aedd7a86eaecb0d3a17",
+ "egressIp": "68.220.62.181",
  "tcpTracker443": "OK",
  "udpDns": "OK",
- "started": 1794234467,
+ "started": 1794239806,
  "job": "ownhost-relay1"
 }
