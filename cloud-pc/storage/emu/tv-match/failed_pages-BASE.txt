@@ -36,3 +36,5 @@
 07-anime verify failed; frame quarantined to dumps/miss-
 08-see-all verify failed; frame quarantined to dumps/miss-
 09-sort-genres verify failed; frame quarantined to dumps/miss-
+08-see-all verify failed; frame quarantined to dumps/miss-
+09-sort-genres verify failed; frame quarantined to dumps/miss-
