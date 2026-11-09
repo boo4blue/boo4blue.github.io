@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://mandatory-three-contributed-bufing.trycloudflare.com",
- "egressIp": "20.55.127.224",
+ "url": "https://thu-border-fixed-stuffed.trycloudflare.com",
+ "egressIp": "134.33.77.45",
  "port": 8090,
- "started": 1794245919,
- "job": "ownhost-multi2"
+ "started": 1794249422,
+ "job": "ownhost-combo1"
 }
