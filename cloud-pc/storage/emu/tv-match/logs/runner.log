@@ -216,3 +216,16 @@ To https://github.com/boo4blue/boo4blue.github.io
 -rw-r--r-- 1 runner runner 63296611 Nov  9 12:58 /tmp/tv-FEAT.apk
 c1e853d5e05ba4864f36a190bb1d249d  /tmp/tv-FEAT.apk
 [run-tv 13:03:37] setup-a done
+To https://github.com/boo4blue/boo4blue.github.io
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/boo4blue/boo4blue.github.io'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+   5b91b9c..daccd4c  main       -> origin/main
+To https://github.com/boo4blue/boo4blue.github.io
+   daccd4c..843a10c  main -> main
+[run-tv 13:03:44] push_captures: PUSHED cap setup-a
+[run-tv 13:04:21] setup-b done
