@@ -459,3 +459,31 @@
 [nav-tv 12:51:16] shot emu/tv-match/real46/09-sort-genres.png md5 f70581625f3c distinct
 [nav-tv 12:51:16] ROUTE-MISS recorded for 09-sort-genres
 [nav-tv 12:51:16] CAPTURE-FAILED 09-sort-genres: verify failed; frame quarantined to dumps/miss-
+[nav-tv 13:05:52] nav-tv.py batch BASE starting; top before: topResumedActivity=ActivityRecord{3ccaeb6 u0 com.google.android.tvlauncher/.MainActivity t5}
+[nav-tv 13:06:05] launched; top: topResumedActivity=ActivityRecord{fa45562 u0 com.onioncore.oniontv/.ProfileActivity t6}
+[nav-tv 13:06:07] visible: ["Who's watching?", 'Blaze', 'MAIN', 'Edit', '+', 'Add profile']
+[nav-tv 13:06:13] verify 01-profile-picker: {"page": "01-profile-picker", "alive": true, "activity": "topResumedActivity=ActivityRecord{fa45562 u0 com.onioncore.oniontv/.ProfileActivity t6}", "text_nodes": 6, "focused": "android.widget.FrameLayout", "marker": true, "pass": true}
+[nav-tv 13:06:13] shot emu/tv-match/real47/01-profile-picker.png md5 3fdfd2dd64d7 distinct
+[nav-tv 13:06:22] settle 04-home-cold[0] at 1.63s md5 76ba995df715
+[nav-tv 13:06:22] settle 04-home-cold[1] at 2.45s md5 76ba995df715
+[nav-tv 13:06:24] settle 04-home-cold[2] at 3.91s md5 76ba995df715
+[nav-tv 13:06:25] settle 04-home-cold[3] at 5.42s md5 76ba995df715
+[nav-tv 13:06:28] settle 04-home-cold[4] at 8.29s md5 76ba995df715
+[nav-tv 13:06:32] settle 04-home-cold[5] at 12.26s md5 76ba995df715
+[nav-tv 13:06:36] verify 04-tv-home: {"page": "04-tv-home", "alive": true, "activity": "topResumedActivity=ActivityRecord{972b208 u0 com.onioncore.oniontv/.HomeActivity t6}", "text_nodes": 15, "focused": "Play", "marker": true, "topbar_pills": 5, "topbar": true, "profile_pic": true, "pass": true}
+[nav-tv 13:06:37] shot emu/tv-match/real47/04-tv-home.png md5 76ba995df715 distinct
+[nav-tv 13:06:45] focus reached ['Movies'] in 1 presses
+[nav-tv 13:06:55] verify 05-movies: {"page": "05-movies", "alive": true, "activity": "topResumedActivity=ActivityRecord{b86e513 u0 com.onioncore.oniontv/.BrowseActivity t6}", "text_nodes": 16, "focused": "android.widget.ScrollView", "marker": true, "topbar_pills": 5, "topbar": true, "profile_pic": true, "pass": true}
+[nav-tv 13:06:55] shot emu/tv-match/real47/05-movies.png md5 3044af60afd8 distinct
+[nav-tv 13:07:03] activate_direct ['See all']: tapped (1657,916)
+[nav-tv 13:07:13] verify 08-see-all: {"page": "08-see-all", "alive": true, "activity": "topResumedActivity=ActivityRecord{5bed99c u0 com.onioncore.oniontv/.SeeAllActivity t6}", "text_nodes": 14, "focused": null, "marker": true, "pass": false}
+[nav-tv 13:07:13] shot emu/tv-match/real47/08-see-all.png md5 53a947160dcf distinct
+[nav-tv 13:07:13] ROUTE-MISS recorded for 08-see-all
+[nav-tv 13:07:13] CAPTURE-FAILED 08-see-all: verify failed; frame quarantined to dumps/miss-
+[nav-tv 13:07:19] activate_direct ['Sort & Genres']: tapped (340,285)
+[nav-tv 13:07:23] focus reached ['Sort & Genres'] in 0 presses
+[nav-tv 13:07:28] open_sort_panel: panel did not arrive
+[nav-tv 13:07:35] verify 09-sort-genres: {"page": "09-sort-genres", "alive": true, "activity": "topResumedActivity=ActivityRecord{5bed99c u0 com.onioncore.oniontv/.SeeAllActivity t6}", "text_nodes": 4, "focused": "Close", "marker": true, "pass": false}
+[nav-tv 13:07:36] shot emu/tv-match/real47/09-sort-genres.png md5 f70581625f3c distinct
+[nav-tv 13:07:36] ROUTE-MISS recorded for 09-sort-genres
+[nav-tv 13:07:36] CAPTURE-FAILED 09-sort-genres: verify failed; frame quarantined to dumps/miss-
