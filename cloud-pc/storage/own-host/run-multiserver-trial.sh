@@ -91,7 +91,7 @@ import json, sys, time
 def num(x):
     try: return int(x)
     except Exception: return x
-doc = {"job": "ownhost-multi3", "at": int(time.time()), "egressIp": ip,
+doc = {"job": "ownhost-multi4", "at": int(time.time()), "egressIp": ip,
   "torrserver": {"base": "https://mandatory-three-contributed-bufing.trycloudflare.com",
                  "proven": "yes (v2 session, sandbox-verified through tunnel; session expired)",
                  "range": "http=206 bytes=1048576 magic=ftypisom", "peers": 21,
@@ -111,10 +111,9 @@ PY
 API=$(curl -s -m 30 "https://api.github.com/repos/ikatson/rqbit/releases/latest")
 RQ_ASSETS=$(printf '%s' "$API" | grep -oE '"browser_download_url": "[^"]+"' | cut -d'"' -f4)
 log "rqbit assets: $(printf '%s' "$RQ_ASSETS" | tr '\n' ' ')"
-RQ_URL_DL=$(printf '%s' "$RQ_ASSETS" | grep -iE 'linux' | grep -iE 'amd64|x86_64' \
-  | grep -ivE '\.deb$|\.rpm$|\.AppImage$|\.dmg$|\.zip$|\.tar|\.sig$|\.sha' | head -1)
+RQ_URL_DL=$(printf '%s' "$RQ_ASSETS" | grep -E '/rqbit-linux-amd64$' | head -1)
 if [ -z "$RQ_URL_DL" ]; then
-  RQ_URL_DL=$(printf '%s' "$RQ_ASSETS" | grep -iE 'amd64|x86_64' | grep -ivE '\.deb$|\.rpm$|\.sig$|\.sha' | head -1)
+  RQ_URL_DL=$(printf '%s' "$RQ_ASSETS" | grep -iE 'linux' | grep -iE 'amd64|x86_64' | grep -ivE 'desktop|\.deb$|\.rpm$|\.AppImage$|\.dmg$|\.zip$|\.tar|\.sig$|\.sha' | head -1)
 fi
 RQ_DIAG="assets: $(printf '%s' "$RQ_ASSETS" | tr '\n' ' ' | head -c 400) | chosen: $RQ_URL_DL"
 log "rqbit chosen asset: $RQ_URL_DL"
@@ -150,7 +149,7 @@ if [ "$RQ_DL" = "0" ]; then
     python3 - "$RQ_URL" "$IP" <<'PY'
 import json, sys, time
 doc = {"service": "rqbit", "url": sys.argv[1], "egressIp": sys.argv[2],
-       "port": 3030, "started": int(time.time()), "job": "ownhost-multi3"}
+       "port": 3030, "started": int(time.time()), "job": "ownhost-multi4"}
 open("own-host/live/live-rqbit.json", "w").write(json.dumps(doc, indent=1))
 PY
     push_files cloud-pc/storage/own-host/live/live-rqbit.json
@@ -167,9 +166,9 @@ fi
 # ---------- WebTorrent: install + start EARLY (warms during rqbit proof) ----------
 WT_T0=$(date +%s)
 mkdir -p /tmp/wt
-cat > /tmp/wt/server.js <<'JS'
-const http = require('http');
-const WebTorrent = require('webtorrent');
+cat > /tmp/wt/server.mjs <<'JS'
+import http from 'node:http';
+import WebTorrent from 'webtorrent';
 const client = new WebTorrent();
 let tor = null;
 client.add(process.env.MAGNET, { path: '/tmp/wt-data' }, t => { tor = t; console.log('wt ready', t.files.map(f => f.path).join(',')); });
@@ -199,18 +198,18 @@ WT_DIAG="node: $(node --version 2>&1 | head -c 40)"
 ( cd /tmp/wt && npm init -y >/dev/null 2>&1 && timeout 150 npm install --no-audit --no-fund webtorrent > /tmp/wt-npm.log 2>&1 ) \
   && log "webtorrent npm install ok" || { log "webtorrent npm install FAILED"; WT_DIAG="$WT_DIAG | npm tail: $(tail -c 300 /tmp/wt-npm.log 2>/dev/null | tr '\n' ' ')"; }
 if [ -d /tmp/wt/node_modules/webtorrent ]; then
-  ( cd /tmp/wt && MAGNET="$MAGNET" WTU="$WT_USER" WTP="$WT_PASS" node server.js > /tmp/wt.log 2>&1 & )
+  ( cd /tmp/wt && MAGNET="$MAGNET" WTU="$WT_USER" WTP="$WT_PASS" node server.mjs > /tmp/wt.log 2>&1 & )
   sleep 6
-  WT_CODE=$(curl -s -o /dev/null -w "%{http_code}" -m 5 http://127.0.0.1:8080/status || echo 000)
+  WT_CODE=$(curl -s -o /dev/null -w "%{http_code}" -m 5 http://127.0.0.1:8080/status)
   log "webtorrent noauth /status http=$WT_CODE (401 = listening, auth wall up)"
   WT_DIAG="$WT_DIAG | noauth-status-http=$WT_CODE | wtlog: $(tail -c 250 /tmp/wt.log 2>/dev/null | tr '\n' ' ')"
-  if [ "$WT_CODE" != "000" ]; then
+  if [ "$WT_CODE" = "401" ] || [ "$WT_CODE" = "200" ]; then
     WT_URL=$(tunnel 8080 /tmp/wt-tunnel.log)
     log "webtorrent tunnel: $WT_URL"
     python3 - "$WT_URL" "$IP" <<'PY'
 import json, sys, time
 doc = {"service": "webtorrent", "url": sys.argv[1], "egressIp": sys.argv[2],
-       "port": 8080, "started": int(time.time()), "job": "ownhost-multi3"}
+       "port": 8080, "started": int(time.time()), "job": "ownhost-multi4"}
 open("own-host/live/live-webtorrent.json", "w").write(json.dumps(doc, indent=1))
 PY
     push_files cloud-pc/storage/own-host/live/live-webtorrent.json
