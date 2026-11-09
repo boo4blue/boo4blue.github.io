@@ -1,0 +1,17 @@
+[nav-tv 09:52:36] nav-tv.py batch W1 starting; top before: topResumedActivity=ActivityRecord{3ee286c u0 com.google.android.tvlauncher/.MainActivity t5}
+[nav-tv 09:52:48] launched; top: topResumedActivity=ActivityRecord{e90af00 u0 com.onioncore.oniontv/.ProfileActivity t6}
+[nav-tv 09:52:51] visible: ["Who's watching?", 'Blaze', 'MAIN', 'Edit', '+', 'Add profile']
+[nav-tv 09:52:53] WALK picker: entered=True
+[nav-tv 09:52:53] WALK picker: starting coverage walk
+[nav-tv 09:53:33] WALK picker: graph exhausted after 8 presses
+[nav-tv 09:53:33] WALK picker: visited=2 seen=4 unreached=2 dead_ends=0 focus_lost=0
+[nav-tv 09:53:46] launched; top: topResumedActivity=ActivityRecord{a8d7c6 u0 com.onioncore.oniontv/.ProfileActivity t7}
+[nav-tv 09:53:48] visible: ["Who's watching?", 'Blaze', 'MAIN', 'Edit', '+', 'Add profile']
+[nav-tv 09:53:59] after pick; top: topResumedActivity=ActivityRecord{4ce6f47 u0 com.onioncore.oniontv/.HomeActivity t7} visible: ['FEATURED', 'Obsession', '★ 7.8  2026 · 109 min · Horror, Thriller', 'After breaking the mysterious "One Wish Willow" to win his crush\'s heart, a hopeless romantic finds himself getting exactly what he asked for but soon discovers that some desires come at a dark, sinister price.', 'Play', 'More Info', 'My List', 'Onion TV', 'Home', 'Movies', 'Series', 'Anime', 'Search titles...', 'Talk - use your phone as the microphone', 'Profile: Blaze - open Settings']
+[nav-tv 09:54:01] WALK home: entered=False
+[nav-tv 09:54:14] launched; top: topResumedActivity=ActivityRecord{853dd79 u0 com.onioncore.oniontv/.ProfileActivity t8}
+[nav-tv 09:54:16] visible: ["Who's watching?", 'Blaze', 'MAIN', 'Edit', '+', 'Add profile']
+[nav-tv 09:54:27] after pick; top: topResumedActivity=ActivityRecord{5d8fdf4 u0 com.onioncore.oniontv/.HomeActivity t8} visible: ['FEATURED', 'Obsession', '★ 7.8  2026 · 109 min · Horror, Thriller', 'After breaking the mysterious "One Wish Willow" to win his crush\'s heart, a hopeless romantic finds himself getting exactly what he asked for but soon discovers that some desires come at a dark, sinister price.', 'Play', 'More Info', 'My List', 'Onion TV', 'Home', 'Movies', 'Series', 'Anime', 'Search titles...', 'Talk - use your phone as the microphone', 'Profile: Blaze - open Settings']
+[nav-tv 09:54:33] focus reached ['Movies'] in 1 presses
+[nav-tv 09:54:36] WALK movies: entered=True
+[nav-tv 09:54:36] WALK movies: starting coverage walk
