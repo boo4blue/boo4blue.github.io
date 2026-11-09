@@ -95,33 +95,39 @@ def shot(name, ori):
     'dup' = frame is byte-identical to a DIFFERENT page's frame (route
     never landed, or a duplicated write). 'rot' = PNG dimensions don't
     match the requested orientation (rotation never took effect).
-    On 'dup' the file is moved to dumps/ as forensics and NO file is
-    left under the page's name; the failure is recorded in failed_pages.txt.
+    The capture is written to a TEMP file and validated FIRST — a
+    rejected capture never touches the previous file at the real path
+    (the first version of this gate overwrote then deleted, which
+    destroyed the old 24-downloads frames on a dup). On 'dup' the temp
+    file is moved to dumps/ as forensics and the failure is recorded in
+    failed_pages.txt.
     """
     path = os.path.join(OUT, f"{name}-{ori}.png")
+    tmp = os.path.join(OUT, f".tmp-{name}-{ori}.png")
     r = subprocess.run(["adb", "-s", SERIAL, "exec-out", "screencap", "-p"],
                        capture_output=True, timeout=60)
     if r.returncode != 0 or len(r.stdout) < 1000:
         log(f"SHOT FAILED {path} rc={r.returncode} bytes={len(r.stdout)}")
         return "fail"
-    with open(path, "wb") as f:
+    with open(tmp, "wb") as f:
         f.write(r.stdout)
-    size = _png_size(path)
+    size = _png_size(tmp)
     want = (1080, 2280) if ori == "upright" else (2280, 1080)
     if size != want:
         log(f"ROTATION-FAIL {path}: got {size}, want {want}")
-        os.remove(path)
+        os.remove(tmp)
         return "rot"
     digest = hashlib.md5(r.stdout).hexdigest()
     if digest in BLOCKED:
         log(f"DEDUP-FAIL {path}: md5 {digest} is a blocklisted batch-A duplicate")
-        os.rename(path, os.path.join(DUMPS, f"dup-{name}-{ori}.png"))
+        os.rename(tmp, os.path.join(DUMPS, f"dup-{name}-{ori}.png"))
         return "dup"
     other = SEEN.get(digest)
     if other is not None and other != name:
         log(f"DEDUP-FAIL {path}: md5 {digest} == {other}'s frame")
-        os.rename(path, os.path.join(DUMPS, f"dup-{name}-{ori}.png"))
+        os.rename(tmp, os.path.join(DUMPS, f"dup-{name}-{ori}.png"))
         return "dup"
+    os.replace(tmp, path)
     SEEN[digest] = name
     log(f"shot {path} ({len(r.stdout)} B) md5 {digest[:12]} distinct")
     return "ok"
@@ -226,6 +232,11 @@ def launch(wait=9):
 
 def capture(name, route_ok=True):
     """Shot both orientations of the current screen (gated)."""
+    # Image settle: posters/backdrops decode slowly on the swiftshader
+    # emulator — captures taken immediately after navigation show blank
+    # tiles (05/08/10/11), while the same screens minutes later show
+    # loaded posters (09). Wait for images before the first shot.
+    time.sleep(4)
     rotate("upright")
     time.sleep(1.5)
     _shot_once(name, "upright")
