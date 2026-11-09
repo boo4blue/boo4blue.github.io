@@ -54,3 +54,29 @@
 [nav 02:58:53] shot emu/phone-match/real/09-sort-genres-upright.png (693250 B) md5 663d88ae9641 distinct
 [nav 02:58:57] shot emu/phone-match/real/09-sort-genres-sideways.png (403193 B) md5 145288a96f8c distinct
 [nav 02:59:04] nav.py done
+[nav 05:18:09] nav.py batch B1 starting; top before: topResumedActivity=ActivityRecord{e87c3da u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t7}
+[nav 05:18:21] launched; top: topResumedActivity=ActivityRecord{c4f5d57 u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t8}
+[nav 05:18:29] visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all', '1', '2']
+[nav 05:18:42] tap 'Movies' at (400,271)
+[nav 05:19:02] shot emu/phone-match/real/05-movies-upright.png (1582809 B) md5 47f4e46e8189 distinct
+[nav 05:19:08] shot emu/phone-match/real/05-movies-sideways.png (1265910 B) md5 48c9ff5c02e9 distinct
+[nav 05:19:22] launched; top: topResumedActivity=ActivityRecord{7871ab7 u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t9}
+[nav 05:19:28] visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all', '1', '2']
+[nav 05:19:36] tap 'Shows' at (352,477)
+[nav 05:19:57] shot emu/phone-match/real/06-shows-upright.png (117567 B) md5 4f1e01c8140d distinct
+[nav 05:20:01] shot emu/phone-match/real/06-shows-sideways.png (114393 B) md5 6beb1ef4bf2f distinct
+[nav 05:20:15] launched; top: topResumedActivity=ActivityRecord{cf90f3d u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t10}
+[nav 05:20:18] visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all', '1', '2']
+[nav 05:20:26] tap 'Anime' at (873,271)
+[nav 05:20:43] shot emu/phone-match/real/07-anime-upright.png (2117091 B) md5 b1dbdc6b8002 distinct
+[nav 05:20:48] shot emu/phone-match/real/07-anime-sideways.png (1403838 B) md5 c05cc5a94c78 distinct
+[nav 05:21:01] launched; top: topResumedActivity=ActivityRecord{8241a42 u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t11}
+[nav 05:21:04] visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all', '1', '2']
+[nav 05:21:11] tap 'Movies' at (400,271)
+[nav 05:21:20] tap 'See all' at (949,1173)
+[nav 05:21:37] shot emu/phone-match/real/08-see-all-upright.png (1381396 B) md5 c6bfe88a5407 distinct
+[nav 05:21:41] shot emu/phone-match/real/08-see-all-sideways.png (539488 B) md5 aff555a01303 distinct
+[nav 05:21:46] tap 'Sort & Genres' at (405,530)
+[nav 05:22:01] shot emu/phone-match/real/09-sort-genres-upright.png (843806 B) md5 418e6bc8676f distinct
+[nav 05:22:05] shot emu/phone-match/real/09-sort-genres-sideways.png (437553 B) md5 3ff01358c94d distinct
+[nav 05:22:11] nav.py done
