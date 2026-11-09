@@ -124,3 +124,12 @@ To https://github.com/boo4blue/boo4blue.github.io
    cd1ed07..0c59930  main -> main
 [run-tv 11:19:43] push_captures: PUSHED cap setup-b
 [run-tv 11:20:40] setup-c done
+To https://github.com/boo4blue/boo4blue.github.io
+   0c59930..6e87e87  main -> main
+[run-tv 11:20:41] push_captures: PUSHED cap setup-c
+-rw-r--r-- 1 runner runner 63296611 Nov  9 11:20 /tmp/tv-BASE.apk
+074fe85c353078b508a87d15981f8159  /tmp/tv-BASE.apk
+[run-tv 11:21:20] tv34 booted after ~5s
+[run-tv 11:21:20] tv34 boot_completed=1
+[run-tv 11:21:20] installing APK on tv34
+served-by: tv34 (API-34 android-tv x86)

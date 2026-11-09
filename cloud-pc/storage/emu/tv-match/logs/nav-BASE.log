@@ -336,3 +336,32 @@
 [nav-tv 10:37:02] ROUTE-MISS recorded for 09-sort-genres
 [nav-tv 10:37:08] focus reached ['Movies'] in 0 presses
 [nav-tv 10:37:15] focus reached ['Trending Movies'] in 0 presses
+[nav-tv 11:21:32] nav-tv.py batch BASE starting; top before: topResumedActivity=ActivityRecord{da2bc20 u0 com.google.android.tvlauncher/.MainActivity t5}
+[nav-tv 11:21:45] launched; top: topResumedActivity=ActivityRecord{20cc4c2 u0 com.onioncore.oniontv/.ProfileActivity t6}
+[nav-tv 11:21:48] visible: ["Who's watching?", 'Blaze', 'MAIN', 'Edit', '+', 'Add profile']
+[nav-tv 11:21:53] verify 01-profile-picker: {"page": "01-profile-picker", "alive": true, "activity": "topResumedActivity=ActivityRecord{20cc4c2 u0 com.onioncore.oniontv/.ProfileActivity t6}", "text_nodes": 6, "focused": "android.widget.FrameLayout", "marker": true, "pass": true}
+[nav-tv 11:21:53] shot emu/tv-match/real/01-profile-picker.png md5 51c5f7619260 distinct
+[nav-tv 11:22:01] settle 04-home-cold[0] at 1.22s md5 e4112018cde0
+[nav-tv 11:22:02] settle 04-home-cold[1] at 2.36s md5 e4112018cde0
+[nav-tv 11:22:03] settle 04-home-cold[2] at 3.3s md5 e4112018cde0
+[nav-tv 11:22:05] settle 04-home-cold[3] at 5.2s md5 e4112018cde0
+[nav-tv 11:22:08] settle 04-home-cold[4] at 8.22s md5 e4112018cde0
+[nav-tv 11:22:12] settle 04-home-cold[5] at 12.23s md5 e4112018cde0
+[nav-tv 11:22:16] verify 04-tv-home: {"page": "04-tv-home", "alive": true, "activity": "topResumedActivity=ActivityRecord{d5ac2fe u0 com.onioncore.oniontv/.HomeActivity t6}", "text_nodes": 15, "focused": "Play", "marker": true, "topbar_pills": 5, "topbar": true, "profile_pic": true, "pass": true}
+[nav-tv 11:22:16] shot emu/tv-match/real/04-tv-home.png md5 e4112018cde0 distinct
+[nav-tv 11:22:23] activate_direct ['Movies']: tapped (680,76)
+[nav-tv 11:22:29] verify 05-movies: {"page": "05-movies", "alive": true, "activity": "topResumedActivity=ActivityRecord{d5ac2fe u0 com.onioncore.oniontv/.HomeActivity t6}", "text_nodes": 15, "focused": "Movies", "marker": false, "topbar_pills": 5, "topbar": true, "profile_pic": true, "pass": false}
+[nav-tv 11:22:30] shot emu/tv-match/real/05-movies.png md5 fee8aeef54d1 distinct
+[nav-tv 11:22:30] ROUTE-MISS recorded for 05-movies
+[nav-tv 11:22:30] CAPTURE-FAILED 05-movies: verify failed; frame quarantined to dumps/miss-
+[nav-tv 11:22:36] activate_direct ['See all']: not present; visible: ['FEATURED', 'Verity', '2026 · 117 min · Crime, Drama, Mystery', "Lowen Ashleigh gets hired by Jeremy Crawford to ghostwrite novels for his bestselling author wife Verity, who's unable to finish after an accident. Lowen uncovers Verity's disturbing truths while residing at the Crawfords' home to...", 'Play', 'More Info', 'My List', 'Onion TV', 'Home', 'Movies', 'Series', 'Anime', 'Search titles...', 'Talk - use your phone as the microphone']
+[nav-tv 11:22:45] verify 08-see-all: {"page": "08-see-all", "alive": true, "activity": "topResumedActivity=ActivityRecord{d5ac2fe u0 com.onioncore.oniontv/.HomeActivity t6}", "text_nodes": 15, "focused": "Movies", "marker": false, "pass": false}
+[nav-tv 11:22:45] shot emu/tv-match/real/08-see-all.png md5 6e6f7a8cfe8c distinct
+[nav-tv 11:22:45] ROUTE-MISS recorded for 08-see-all
+[nav-tv 11:22:45] CAPTURE-FAILED 08-see-all: verify failed; frame quarantined to dumps/miss-
+[nav-tv 11:22:51] activate_direct ['Sort & Genres']: not present; visible: ['FEATURED', 'Halloween', '★ 7.7  1978 · 91 min · Horror, Thriller', 'Fifteen years after murdering his sister on Halloween night 1963, Michael Myers escapes from a mental hospital and returns to the small town of Haddonfield, Illinois, to kill again.', 'Play', 'More Info', 'My List', 'Onion TV', 'Home', 'Movies', 'Series', 'Anime', 'Search titles...', 'Talk - use your phone as the microphone']
+[nav-tv 11:22:59] verify 09-sort-genres: {"page": "09-sort-genres", "alive": true, "activity": "topResumedActivity=ActivityRecord{d5ac2fe u0 com.onioncore.oniontv/.HomeActivity t6}", "text_nodes": 15, "focused": "Movies", "marker": false, "pass": false}
+[nav-tv 11:23:00] shot emu/tv-match/real/09-sort-genres.png md5 ccaca2a03e63 distinct
+[nav-tv 11:23:00] ROUTE-MISS recorded for 09-sort-genres
+[nav-tv 11:23:00] CAPTURE-FAILED 09-sort-genres: verify failed; frame quarantined to dumps/miss-
+[nav-tv 11:23:09] activate_direct ['Movies']: tapped (680,76)
