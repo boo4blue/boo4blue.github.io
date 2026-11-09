@@ -1,1 +1,14 @@
 [run-tv 09:32:16] setup-a done
+To https://github.com/boo4blue/boo4blue.github.io
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/boo4blue/boo4blue.github.io'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+   1c4a782..bbcbec2  main       -> origin/main
+To https://github.com/boo4blue/boo4blue.github.io
+   bbcbec2..96b9f32  main -> main
+[run-tv 09:32:23] push_captures: PUSHED cap setup-a
+[run-tv 09:32:27] setup-a done
