@@ -16,7 +16,7 @@ set -u
 SDK=$HOME/.cache/cloudpc-models/android-sdk
 export ANDROID_HOME=$SDK ANDROID_SDK_ROOT=$SDK
 export ANDROID_AVD_HOME=$HOME/emu-avd-home
-mkdir -p $SDK emu/tv-match/real emu/tv-match/logs emu/tv-match/work $ANDROID_AVD_HOME
+mkdir -p $SDK emu/tv-match/real emu/tv-match/real40 emu/tv-match/logs emu/tv-match/logs/dumps emu/tv-match/work $ANDROID_AVD_HOME
 SDKM="$SDK/cmdline-tools/latest/bin/sdkmanager --sdk_root=$SDK"
 AVDM="$SDK/cmdline-tools/latest/bin/avdmanager"
 TVLOG=emu/tv-match/logs/runner.log
@@ -29,7 +29,15 @@ push_captures() {
   local batch=$1
   git config user.name "cloudpc" 2>/dev/null
   git config user.email "cloudpc@local" 2>/dev/null
-  git add emu/tv-match/real emu/tv-match/real40 emu/tv-match/logs emu/tv-match/work emu/tv-match/failed_pages-*.txt emu/tv-match/dup-md5.txt 2>/dev/null
+  # v4 (2026-11-09): the v1–v3 add line was poisoned two ways —
+  # (1) it named emu/tv-match/real40, a dir that exists only after
+  # a BASE40 run: git add with a missing pathspec stages NOTHING,
+  # so no commit ever formed and three runs reported total silence;
+  # (2) it added the whole logs dir including runner.log, a shared
+  # append-log that conflicts on every rebase. Mirror run-pm.sh:
+  # only per-batch files; runner.log belongs to the final step.
+  git add emu/tv-match/real emu/tv-match/logs/dumps emu/tv-match/work emu/tv-match/dup-md5.txt 2>/dev/null
+  git add emu/tv-match/real40 emu/tv-match/logs/nav-*.log emu/tv-match/logs/boot-*.log emu/tv-match/logs/avd-*.log emu/tv-match/logs/sdk-*.log emu/tv-match/logs/install-*.log emu/tv-match/logs/licenses.log emu/tv-match/failed_pages-*.txt 2>/dev/null || true
   if git diff --cached --quiet; then log "push_captures: nothing new for $batch"; return 0; fi
   git commit -m "tv-match: cap $batch captures (mid-run)" 2>&1 | tail -1
   # v3 (2026-11-09): the old loop rebased with a DIRTY tree — the
