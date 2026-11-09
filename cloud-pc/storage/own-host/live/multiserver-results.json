@@ -1,0 +1,29 @@
+{
+ "job": "ownhost-multi1",
+ "at": 1794245436,
+ "egressIp": "20.64.155.215",
+ "torrserver": {
+  "base": "https://smell-clearance-halifax-documents.trycloudflare.com",
+  "proven": "no (http=200 bytes=0 magic=other:)",
+  "peers": "",
+  "range": "http=200 bytes=0 magic=other:",
+  "startLatencySec": 6
+ },
+ "rqbit": {
+  "base": "https://focal-trade-heated-mud.trycloudflare.com",
+  "proven": "no (no file index \u2014 metadata never arrived)",
+  "peers": "",
+  "range": "",
+  "startLatencySec": ""
+ },
+ "webtorrent": {
+  "base": "",
+  "proven": "not-attempted",
+  "peers": "",
+  "range": "",
+  "startLatencySec": ""
+ },
+ "own": {
+  "proven": "live-via-s-chain (S7, not re-run here)"
+ }
+}
