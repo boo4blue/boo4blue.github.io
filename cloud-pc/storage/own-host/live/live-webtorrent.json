@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://door-study-conclusions-despite.trycloudflare.com",
- "egressIp": "20.64.155.215",
+ "url": "https://southern-nova-removable-classroom.trycloudflare.com",
+ "egressIp": "20.55.127.224",
  "port": 8080,
- "started": 1794245453,
- "job": "ownhost-multi1"
+ "started": 1794246082,
+ "job": "ownhost-multi2"
 }
