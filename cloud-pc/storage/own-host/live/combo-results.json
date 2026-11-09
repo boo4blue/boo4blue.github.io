@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794266620,
- "egressIp": "57.151.137.151",
+ "at": 1794268598,
+ "egressIp": "4.246.86.195",
  "own": {
-  "base": "https://soc-gabriel-neck-products.trycloudflare.com",
+  "base": "https://examples-reserve-vsnet-october.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://benjamin-switches-innovation-charleston.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
