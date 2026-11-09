@@ -1,1 +1,1 @@
-served-by: tv34 (API-34 android-tv x86)
+served-by: tv36 (API-36 android-tv x86_64)

@@ -15,3 +15,16 @@
 [nav-tv 09:54:33] focus reached ['Movies'] in 1 presses
 [nav-tv 09:54:36] WALK movies: entered=True
 [nav-tv 09:54:36] WALK movies: starting coverage walk
+[nav-tv 10:45:28] nav-tv.py batch W1 starting; top before: topResumedActivity=ActivityRecord{44573714 u0 com.google.android.tvlauncher/.MainActivity t5}
+[nav-tv 10:45:42] launched; top: topResumedActivity=ActivityRecord{198853968 u0 com.onioncore.oniontv/.ProfileActivity t6}
+[nav-tv 10:45:44] visible: ["Who's watching?", 'Blaze', 'MAIN', 'Edit', '+', 'Add profile']
+[nav-tv 10:45:46] WALK picker: entered=True
+[nav-tv 10:45:46] WALK picker: starting coverage walk
+[nav-tv 10:46:26] WALK picker: graph exhausted after 8 presses
+[nav-tv 10:46:26] WALK picker: visited=2 seen=4 unreached=2 dead_ends=0 focus_lost=0
+[nav-tv 10:46:39] launched; top: topResumedActivity=ActivityRecord{10958726 u0 com.onioncore.oniontv/.ProfileActivity t7}
+[nav-tv 10:46:41] visible: ["Who's watching?", 'Blaze', 'MAIN', 'Edit', '+', 'Add profile']
+[nav-tv 10:46:52] after pick; top: topResumedActivity=ActivityRecord{162327582 u0 com.onioncore.oniontv/.HomeActivity t7} visible: ['FEATURED', 'Obsession', '★ 7.8  2026 · 109 min · Horror, Thriller', 'After breaking the mysterious "One Wish Willow" to win his crush\'s heart, a hopeless romantic finds himself getting exactly what he asked for but soon discovers that some desires come at a dark, sinister price.', 'Play', 'More Info', 'My List', 'Onion TV', 'Home', 'Movies', 'Series', 'Anime', 'Search titles...', 'Talk - use your phone as the microphone', 'Profile: Blaze - open Settings']
+[nav-tv 10:46:54] WALK home: entered=False
+[nav-tv 10:47:07] launched; top: topResumedActivity=ActivityRecord{157017347 u0 com.onioncore.oniontv/.ProfileActivity t8}
+[nav-tv 10:47:09] visible: ["Who's watching?", 'Blaze', 'MAIN', 'Edit', '+', 'Add profile']

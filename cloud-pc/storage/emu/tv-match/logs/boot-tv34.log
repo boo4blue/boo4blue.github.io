@@ -89,3 +89,7 @@ INFO         | Wait for emulator (pid 4904) 20 seconds to shutdown gracefully be
 
 USER_INFO    | Snapshots have been disabled by the user, save request is ignored.
 INFO         | Saving snapshot 'default_boot' took 0 ms
+ERROR        | stop: Not implemented
+INFO         | removeAll
+WARNING      | Netsim Wifi dns:///localhost:38841 is gone due to CANCELLED
+INFO         | ipv6:%5B::1%5D:38841: Got goaway [2] err=UNAVAILABLE:GOAWAY received; Error code: 2; Debug Text: Cancelling all calls {http2_error:2}
