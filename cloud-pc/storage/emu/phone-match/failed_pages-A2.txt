@@ -46,3 +46,8 @@
 24-downloads sideways frame duplicates another page's frame
 24-downloads upright frame duplicates another page's frame
 24-downloads sideways frame duplicates another page's frame
+26-profile-page sideways frame duplicates another page's frame
+03-add-edit-profile upright frame duplicates another page's frame
+03-add-edit-profile sideways frame duplicates another page's frame
+24-downloads upright frame duplicates another page's frame
+24-downloads sideways frame duplicates another page's frame
