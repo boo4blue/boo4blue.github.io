@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794256611,
+ "at": 1794256612,
  "egressIp": "172.172.237.65",
  "own": {
   "base": "https://celebrity-passengers-gathering-spyware.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
