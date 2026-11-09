@@ -1,1 +1,1 @@
-{"id":"00tv-d6-base2","action":"shell","command":"TV_APK=emu/tv-match/app47.apk TV_OUT_SUFFIX=47 bash emu/tv-match/run-tv.sh cap BASE2"}
+{"id":"00tv-d6-base2","action":"shell","command":"TV_APK=emu/tv-match/app48.apk TV_OUT_SUFFIX=48 bash emu/tv-match/run-tv.sh cap BASE2"}
