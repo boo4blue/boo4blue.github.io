@@ -257,3 +257,8 @@ To https://github.com/boo4blue/boo4blue.github.io
 To https://github.com/boo4blue/boo4blue.github.io
    a93d956..5bb122b  main -> main
 [run-tv 13:11:01] push_captures: PUSHED cap BASE-wd
+To https://github.com/boo4blue/boo4blue.github.io
+   5bb122b..a14cfc4  main -> main
+[run-tv 13:13:33] push_captures: PUSHED cap BASE-wd
+-rw-r--r-- 1 runner runner 63296611 Nov  9 13:15 /tmp/tv-FEAT.apk
+0aaf61a4e24024f0d1b2556642ccc269  /tmp/tv-FEAT.apk
