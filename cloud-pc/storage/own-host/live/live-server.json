@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://trout-beast-characterized-heading.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://stylish-kansas-valve-primarily.trycloudflare.com",
  "egressIp": "172.171.13.61",
- "port": 11470,
- "started": 1794251505,
- "job": "ownhost-combo1"
+ "started": 1794252669,
+ "job": "ownhost-server1"
 }
