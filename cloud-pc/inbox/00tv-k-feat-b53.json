@@ -1,0 +1,1 @@
+{"jobs": [{"name": "cap-feat-b53", "shell": "TV_APK=emu/tv-match/app53.apk TV_OUT_SUFFIX=53 TV_RESET_PROFILE=1 bash emu/tv-match/run-tv.sh cap FEAT 2/2", "timeout_s": 600}]}

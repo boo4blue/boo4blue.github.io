@@ -711,7 +711,7 @@ def batch_pick():
     res = capture("01-profile-picker", ["Who's watching", "Who’s watching"], settle=3)
     dump("pick-picker")
     if on_picker():
-        walk("picker-v2")
+        walk("picker-v3")
     else:
         with open(os.path.join(WORK, "walk-picker-v2.json"), "w") as f:
             json.dump({"screen": "picker-v2", "entered": False}, f)
