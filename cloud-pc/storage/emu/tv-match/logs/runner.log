@@ -267,3 +267,7 @@ To https://github.com/boo4blue/boo4blue.github.io
    31a840e..ea705ec  main -> main
 [run-tv 13:38:01] push_captures: PUSHED cap setup-a
 [run-tv 13:38:59] setup-b done
+To https://github.com/boo4blue/boo4blue.github.io
+   ea705ec..babf3de  main -> main
+[run-tv 13:39:01] push_captures: PUSHED cap setup-b
+[run-tv 13:40:01] setup-c done
