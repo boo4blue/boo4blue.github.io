@@ -154,3 +154,7 @@ To https://github.com/boo4blue/boo4blue.github.io
    9fd3d98..a95c9de  main -> main
 [run-tv 11:33:54] push_captures: PUSHED cap FEAT-wd
 [run-tv 12:30:22] setup-a done
+To https://github.com/boo4blue/boo4blue.github.io
+   a380e7d..5c06d4a  main -> main
+[run-tv 12:30:23] push_captures: PUSHED cap setup-a
+[run-tv 12:31:16] setup-b done
