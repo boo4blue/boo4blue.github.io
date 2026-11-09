@@ -245,10 +245,337 @@ def batch_a():
     log("batch A complete")
 
 
+def scroll_down():
+    sh("input swipe 540 1700 540 700 300")
+    time.sleep(1.0)
+
+
+def on_home(xml=None):
+    return bool(find("Onion ID:", xml)) or bool(find("Search movies and shows", xml))
+
+
+def tap_home_avatar():
+    """PhoneHomeActivity's own header: the avatar ImageView has NO
+    content-desc; it sits at [912,42][1017,147] on a 1080-wide screen."""
+    log("tap home avatar at (964,94)")
+    tap_xy(964, 94, wait=2.5)
+
+
+def goto_profile():
+    xml = dump()
+    if find("Who's watching", xml):
+        return True
+    pics = [n for n in nodes(xml) if n["desc"].startswith("Profile:")]
+    if pics:
+        tap_xy(pics[0]["cx"], pics[0]["cy"], wait=2.5)
+    elif on_home(xml):
+        tap_home_avatar()
+    else:
+        go_home()
+        tap_home_avatar()
+    xml = dump()
+    ok = bool(find("Who's watching", xml))
+    log("goto_profile ->", "profile page" if ok else f"UNKNOWN; visible: {visible_texts(xml)[:16]}")
+    return ok
+
+
+def goto_settings():
+    if not goto_profile():
+        return False
+    xml = dump()
+    gears = [n for n in nodes(xml) if n["desc"] == "Settings"]
+    if not gears:
+        log("goto_settings: no gear on profile page")
+        return False
+    tap_xy(gears[0]["cx"], gears[0]["cy"], wait=2.5)
+    xml = dump()
+    ok = bool(find("Profile PIN", xml)) or bool(find("Settings tab:", xml)) or bool(find("Playback", xml))
+    log("goto_settings ->", "settings" if ok else f"UNKNOWN; visible: {visible_texts(xml)[:16]}")
+    return ok
+
+
+# ------------- batch A2: corrected routes for the settings/profile cluster -------------
+
+def batch_a2():
+    ok = goto_profile()
+    dump("a2-profile")
+    capture("26-profile-page", ok)
+    # add / edit profile (03): the Add a profile dialog
+    ok = tap_text("Add a profile", wait=2)
+    time.sleep(1.5)
+    dump("a2-add-edit")
+    capture("03-add-edit-profile", ok)
+    key(4)
+    time.sleep(1)
+    # settings (21)
+    ok = goto_settings()
+    dump("a2-settings")
+    capture("21-settings", ok)
+    # profile picker (01): Settings Profile tab -> Switch profile
+    ok = tap_text("Switch profile", wait=2.5)
+    time.sleep(2)
+    dump("a2-picker")
+    capture("01-profile-picker", ok)
+    key(4)
+    time.sleep(1)
+    # add-ons (22): profile page -> Add-ons button (CatalogActivity)
+    ok = goto_profile()
+    ok = (tap_text("Add-ons", wait=2.5) or (scroll_down(), tap_text("Add-ons", wait=2.5))[1]) and ok
+    time.sleep(2)
+    dump("a2-addons")
+    capture("22-addons", ok)
+    key(4)
+    time.sleep(1)
+    # sign-in (23): profile page -> Link Onion ID
+    ok = goto_profile()
+    ok = tap_text("Link Onion ID", wait=2.5) and ok
+    time.sleep(2)
+    dump("a2-signin")
+    capture("23-signin", ok)
+    key(4)
+    time.sleep(1)
+    # downloads (24): settings -> Device tab -> Downloads
+    ok = goto_settings()
+    ok = tap_text("Device", wait=2) and ok
+    dump("a2-settings-device")
+    ok = tap_text("Downloads", wait=2.5) and ok
+    time.sleep(2)
+    dump("a2-downloads")
+    capture("24-downloads", ok)
+    key(4)
+    time.sleep(1)
+    # streaming server (27): profile page -> scroll -> Streaming server settings
+    ok = goto_profile()
+    scroll_down()
+    ok = tap_text("Streaming server settings", wait=2.5) and ok
+    time.sleep(2)
+    dump("a2-streaming")
+    capture("27-streaming-server", ok)
+    log("batch A2 complete")
+
+
+def tap_first_tile_after(anchor, dy=170):
+    """Tap the first poster tile below a rail/section anchor text."""
+    xml = dump()
+    hits = find(anchor, xml)
+    if not hits:
+        log(f"tile anchor MISS {anchor!r}")
+        return False
+    y = hits[0]["cy"] + dy
+    log(f"tap first tile after {anchor!r} at (170,{y})")
+    tap_xy(170, y, wait=3)
+    return True
+
+
+def open_section(pill):
+    # The series pill is labelled 'Series' on Home's own header and
+    # 'Shows' in PhoneTopNav; try both spellings when navigating.
+    alts = {pill}
+    if pill == "Shows":
+        alts.add("Series")
+    if pill == "Series":
+        alts.add("Shows")
+    go_home()
+    ok = False
+    for lab in alts:
+        if tap_text(lab, wait=3):
+            ok = True
+            break
+    time.sleep(3)
+    return ok
+
+
+# ---------------- batch B: sections / detail / search / talk ----------------
+
+def batch_b():
+    ok = open_section("Movies")
+    dump("movies")
+    capture("05-movies", ok)
+    ok = open_section("Shows")
+    dump("shows")
+    capture("06-shows", ok)
+    ok = open_section("Anime")
+    dump("anime")
+    capture("07-anime", ok)
+    # see-all (08): from Movies section, tap a 'See all'
+    ok = open_section("Movies")
+    ok = tap_text("See all", wait=3) and ok
+    time.sleep(2)
+    dump("see-all")
+    capture("08-see-all", ok)
+    # sort & genres (09): control on the see-all page
+    ok = tap_text("Sort & Genres", wait=2) or tap_text("Sort", wait=2) or tap_text("Genres", wait=2)
+    time.sleep(1.5)
+    dump("sort-genres")
+    capture("09-sort-genres", ok)
+    key(4)
+    time.sleep(1)
+    key(4)
+    time.sleep(1)
+    # movie title page (10): first tile of the Movies section
+    ok = open_section("Movies")
+    ok = tap_first_tile_after("Trending Movies") and ok
+    time.sleep(3)
+    dump("movie-title")
+    capture("10-movie-title", ok)
+    key(4)
+    time.sleep(1)
+    # series title page (11): first tile of the Shows section
+    ok = open_section("Shows")
+    ok = tap_first_tile_after("Trending Shows") and ok
+    time.sleep(3)
+    dump("series-title")
+    capture("11-series-title", ok)
+    key(4)
+    time.sleep(1)
+    # search (17): the search bar at the top of Home
+    go_home()
+    ok = tap_text("Search titles", wait=2.5)
+    time.sleep(2)
+    dump("search")
+    capture("17-search", ok)
+    # talk (18): mic inside search (desc or text mentions mic/voice/talk)
+    xml = dump("search2")
+    mics = [n for n in nodes(xml)
+            if any(k in (n["desc"] + n["text"]).lower() for k in ("mic", "voice", "talk", "listen"))]
+    ok = False
+    if mics:
+        tap_xy(mics[0]["cx"], mics[0]["cy"], wait=0.6)
+        ok = True
+        # listening state is transient: capture immediately, both orientations fast
+        shot("18-talk", "upright")
+        rotate("sideways")
+        shot("18-talk", "sideways")
+        rotate("upright")
+    else:
+        log("no mic control found in search; visible:", visible_texts()[:24])
+        capture("18-talk", False)
+    log("batch B complete")
+
+
+# ------------- batch C: tv control / pairing / player / pin / party -------------
+
+def open_player_from_section():
+    ok = open_section("Movies")
+    ok = tap_first_tile_after("Trending Movies") and ok
+    time.sleep(3)
+    ok = tap_text("Play", wait=2) and ok
+    # source chain can take a while (5s hop per source, several sources)
+    time.sleep(14)
+    dump("player")
+    log("player top:", top_activity())
+    return ok
+
+
+def open_player_menu(labels):
+    xml = dump()
+    for lab in labels:
+        hits = [n for n in nodes(xml) if lab.lower() in (n["text"] + " " + n["desc"]).lower()]
+        if hits:
+            tap_xy(hits[0]["cx"], hits[0]["cy"], wait=2.5)
+            return True
+    log(f"player menu MISS {labels}; visible: {visible_texts()[:24]}")
+    return False
+
+
+def batch_c():
+    # tv control (19)
+    go_home()
+    ok = tap_text("TV Control", wait=3)
+    time.sleep(3)
+    dump("tv-control")
+    capture("19-tv-control", ok)
+    # tv pairing (20): companion Settings tab (TV list + code entry)
+    ok = tap_text("Settings", wait=2.5)
+    time.sleep(2)
+    dump("tv-pairing")
+    capture("20-tv-pairing", ok)
+    key(4)
+    time.sleep(1)
+    # player cluster (12-16)
+    ok = open_player_from_section()
+    # show controls: tap center of the video area
+    tap_xy(540, 1000, wait=1.2)
+    dump("player-controls")
+    capture("12-player-controls", ok)
+    ok = open_player_menu(["Sources", "Source"])
+    time.sleep(1.5)
+    dump("player-sources")
+    capture("13-player-sources", ok)
+    key(4)
+    time.sleep(1)
+    tap_xy(540, 1000, wait=1)
+    ok = open_player_menu(["Subtitles", "Subtitle", "Captions"])
+    time.sleep(1.5)
+    dump("player-subtitles")
+    capture("14-player-subtitles", ok)
+    key(4)
+    time.sleep(1)
+    tap_xy(540, 1000, wait=1)
+    ok = open_player_menu(["Audio"])
+    time.sleep(1.5)
+    dump("player-audio")
+    capture("15-player-audio", ok)
+    key(4)
+    time.sleep(1)
+    tap_xy(540, 1000, wait=1)
+    ok = open_player_menu(["Connect", "Cast"])
+    time.sleep(1.5)
+    dump("player-connect")
+    capture("16-player-connect", ok)
+    key(4)
+    time.sleep(1)
+    key(4)  # leave player
+    time.sleep(1)
+    # pin pad (02): add a PIN'd profile, then switch to it
+    goto_profile()
+    ok = tap_text("Add a profile", wait=2)
+    time.sleep(1.5)
+    dump("c-add-profile")
+    # dialog fields: type a name, set PIN fields if present
+    xml = dump()
+    edits = [n for n in nodes(xml) if "EditText" in n["cls"]]
+    edits.sort(key=lambda n: n["y1"])
+    log(f"add-profile dialog EditTexts: {len(edits)}")
+    if edits:
+        tap_xy(edits[0]["cx"], edits[0]["cy"], wait=0.8)
+        sh("input text PinTest")
+        time.sleep(0.6)
+    for n in list(nodes()):
+        if "pin" in (n["text"] + n["desc"]).lower() and "EditText" in n["cls"]:
+            tap_xy(n["cx"], n["cy"], wait=0.6)
+            sh("input text 1234")
+            time.sleep(0.5)
+    ok2 = tap_text("Save", wait=2) or tap_text("Add", wait=2) or tap_text("OK", wait=2)
+    time.sleep(2)
+    dump("c-after-add")
+    ok3 = tap_text("PinTest", wait=2.5)  # switching to it should raise the pad
+    time.sleep(2)
+    dump("pin-pad")
+    capture("02-pin-pad", ok and ok3)
+    key(4)
+    time.sleep(1)
+    # watch party (25): Settings -> Playback -> Watch party card
+    goto_settings()
+    tap_text("Playback", wait=2)
+    dump("c-settings-playback")
+    ok = tap_text("Watch party", wait=2.5)
+    time.sleep(2)
+    dump("watch-party")
+    capture("25-watch-party", ok)
+    log("batch C complete")
+
+
 if __name__ == "__main__":
     log(f"nav.py batch {BATCH} starting; top before: {top_activity()}")
     if BATCH == "A":
         batch_a()
+    elif BATCH == "A2":
+        batch_a2()
+    elif BATCH == "B":
+        batch_b()
+    elif BATCH == "C":
+        batch_c()
     else:
         log(f"batch {BATCH} has no routes yet")
     log("nav.py done")
