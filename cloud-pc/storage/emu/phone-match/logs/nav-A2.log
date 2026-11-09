@@ -285,3 +285,43 @@
 [nav 05:36:32] shot emu/phone-match/real/27-streaming-server-sideways.png (176733 B) md5 57402610f35a distinct
 [nav 05:36:34] batch A2 complete
 [nav 05:36:34] nav.py done
+[nav 06:24:51] nav.py batch A2 starting; top before: topResumedActivity=ActivityRecord{f4f6d9d u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t7}
+[nav 06:25:06] launched; top: topResumedActivity=ActivityRecord{5c026fa u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t8}
+[nav 06:25:11] visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all', '1', '2']
+[nav 06:25:19] tap home avatar at (964,94)
+[nav 06:25:25] goto_profile -> profile page
+[nav 06:25:37] shot emu/phone-match/real/26-profile-page-upright.png (197335 B) md5 97999dc1fb66 distinct
+[nav 06:25:42] shot emu/phone-match/real/26-profile-page-sideways.png (116389 B) md5 3f637d18d440 distinct
+[nav 06:25:47] tap 'Add a profile' at (246,728)
+[nav 06:26:02] shot emu/phone-match/real/03-add-edit-profile-upright.png (189691 B) md5 91a4947ef71e distinct
+[nav 06:26:06] shot emu/phone-match/real/03-add-edit-profile-sideways.png (137466 B) md5 10cf2a2c0572 distinct
+[nav 06:26:20] goto_settings -> settings
+[nav 06:26:30] shot emu/phone-match/real/21-settings-upright.png (244823 B) md5 8b647a02b612 distinct
+[nav 06:26:35] shot emu/phone-match/real/21-settings-sideways.png (143086 B) md5 ff21a36e55e8 distinct
+[nav 06:26:39] tap 'Switch profile' at (340,944)
+[nav 06:26:54] shot emu/phone-match/real/01-profile-picker-upright.png (132606 B) md5 d6b8b2a2f461 distinct
+[nav 06:26:58] shot emu/phone-match/real/01-profile-picker-sideways.png (134587 B) md5 5069b0abada8 distinct
+[nav 06:27:09] goto_profile -> UNKNOWN; visible: ['ONION TV', 'Home', 'Movies', 'Talk - use your phone as the microphone', 'Profile: Blaze - open Settings', 'Blaze', 'Profile', 'Playback', 'Sources', 'Accounts', 'Profile', 'Watching as Blaze. Continue Watching, voice settings and progress follow the profile.', 'Switch profile', 'Change picture', 'Profile PIN', 'Not set for Blaze. This profile opens on a tap. Set a PIN and opening it asks for the PIN first. PINs live only on this device - they never back up or sync.']
+[nav 06:27:13] tap MISS 'Add-ons'; visible: ['ONION TV', 'Home', 'Movies', 'Talk - use your phone as the microphone', 'Profile: Blaze - open Settings', 'Blaze', 'Profile', 'Playback', 'Sources', 'Accounts', 'Profile', 'Watching as Blaze. Continue Watching, voice settings and progress follow the profile.', 'Switch profile', 'Change picture', 'Profile PIN', 'Not set for Blaze. This profile opens on a tap. Set a PIN and opening it asks for the PIN first. PINs live only on this device - they never back up or sync.', 'Set a PIN', "If an adult profile's PIN is forgotten, the only way back in is deleting that profile from the profile screen. Kid profiles have a rescue below instead.", 'Family Pick', "Each profile picks one title; the most-picked becomes Tonight's Pick on the home screen.", 'Open Family Pick']
+[nav 06:27:18] tap MISS 'Add-ons'; visible: ['ONION TV', 'Home', 'Movies', 'Talk - use your phone as the microphone', 'Profile: Blaze - open Settings', 'Blaze', 'Profile', 'Playback', 'Sources', 'Accounts', 'Profile PIN', 'Not set for Blaze. This profile opens on a tap. Set a PIN and opening it asks for the PIN first. PINs live only on this device - they never back up or sync.', 'Set a PIN', "If an adult profile's PIN is forgotten, the only way back in is deleting that profile from the profile screen. Kid profiles have a rescue below instead.", 'Family Pick', "Each profile picks one title; the most-picked becomes Tonight's Pick on the home screen.", 'Open Family Pick', 'Guests Tonight', "Having people over? Guest mode hides Continue Watching, New Episodes, and Because You Watched, and nothing guests watch is saved to anyone's history. It turns itself off tomorrow.", 'Turn guest mode on for tonight']
+[nav 06:27:30] shot emu/phone-match/real/22-addons-upright.png (229915 B) md5 b7715f87c2f5 distinct
+[nav 06:27:35] shot emu/phone-match/real/22-addons-sideways.png (145410 B) md5 834e681db277 distinct
+[nav 06:27:37] ROUTE-MISS recorded for 22-addons
+[nav 06:27:43] tap 'Link Onion ID' at (251,1732)
+[nav 06:27:58] shot emu/phone-match/real/23-signin-upright.png (109715 B) md5 7fb455eff297 distinct
+[nav 06:28:02] shot emu/phone-match/real/23-signin-sideways.png (107200 B) md5 d1cd0b5486fe distinct
+[nav 06:28:15] goto_settings -> settings
+[nav 06:28:16] tap 'Device' at (540,1312)
+[nav 06:28:24] tap MISS 'Downloads'; visible: ['ONION TV', 'Home', 'Movies', 'Talk - use your phone as the microphone', 'Profile: Blaze - open Settings', 'Blaze', 'Profile', 'Playback', 'Sources', 'Accounts', 'Profile', 'Watching as Blaze. Continue Watching, voice settings and progress follow the profile.', 'Switch profile', 'Change picture', 'Profile PIN', 'Not set for Blaze. This profile opens on a tap. Set a PIN and opening it asks for the PIN first. PINs live only on this device - they never back up or sync.', 'Set a PIN', "If an adult profile's PIN is forgotten, the only way back in is deleting that profile from the profile screen. Kid profiles have a rescue below instead.", 'Family Pick', "Each profile picks one title; the most-picked becomes Tonight's Pick on the home screen.", 'Open Family Pick']
+[nav 06:28:37] DEDUP-FAIL emu/phone-match/real/24-downloads-upright.png: md5 8b647a02b61231d87f53c9185c820c81 == 21-settings's frame
+[nav 06:28:39] DEDUP-FAIL emu/phone-match/real/24-downloads-upright.png: md5 8b647a02b61231d87f53c9185c820c81 == 21-settings's frame
+[nav 06:28:39] CAPTURE-FAILED 24-downloads: upright frame duplicates another page's frame (recorded in failed_pages.txt)
+[nav 06:28:43] DEDUP-FAIL emu/phone-match/real/24-downloads-sideways.png: md5 ff21a36e55e8cf8190535988499082d2 == 21-settings's frame
+[nav 06:28:45] DEDUP-FAIL emu/phone-match/real/24-downloads-sideways.png: md5 ff21a36e55e8cf8190535988499082d2 == 21-settings's frame
+[nav 06:28:45] CAPTURE-FAILED 24-downloads: sideways frame duplicates another page's frame (recorded in failed_pages.txt)
+[nav 06:28:48] ROUTE-MISS recorded for 24-downloads
+[nav 06:28:55] tap 'Streaming server settings' at (370,1609)
+[nav 06:29:09] shot emu/phone-match/real/27-streaming-server-upright.png (133751 B) md5 9f1e651e211d distinct
+[nav 06:29:14] shot emu/phone-match/real/27-streaming-server-sideways.png (176733 B) md5 57402610f35a distinct
+[nav 06:29:16] batch A2 complete
+[nav 06:29:16] nav.py done
