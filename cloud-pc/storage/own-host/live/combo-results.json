@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794253998,
+ "at": 1794253999,
  "egressIp": "172.206.39.215",
  "own": {
   "base": "https://italiano-corner-geographic-wooden.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
