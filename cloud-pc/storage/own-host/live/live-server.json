@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://britney-including-moon-changing.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://politics-fundamental-col-operate.trycloudflare.com",
  "egressIp": "52.176.67.192",
- "port": 11470,
- "started": 1794264153,
- "job": "ownhost-combo1"
+ "started": 1794265316,
+ "job": "ownhost-server1"
 }
