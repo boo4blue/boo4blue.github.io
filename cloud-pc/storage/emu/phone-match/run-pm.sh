@@ -14,6 +14,32 @@ AVDM="$SDK/cmdline-tools/latest/bin/avdmanager"
 PMLOG=emu/phone-match/logs/runner.log
 log() { echo "[run-pm $(date +%H:%M:%S)] $*" | tee -a $PMLOG; }
 
+push_captures() {
+  # Mid-run push (added 2026-11-09): the workflow's final "Commit
+  # results" step is a plain `git push` that loses the whole run
+  # whenever a heartbeat push lands first (runs #133-#136 finished
+  # with no results commit). Push the captures HERE, rebase + retry,
+  # so they survive even if the final step fails. Only regular files
+  # are touched, so GitHub's OAuth-App workflow-scope block does not
+  # apply. Only per-batch files are added (runner.log is a shared
+  # append-log and would conflict on rebase — the final step owns it).
+  local batch=$1
+  git config user.name "cloudpc" 2>/dev/null
+  git config user.email "cloudpc@local" 2>/dev/null
+  git add emu/phone-match/real emu/phone-match/logs/dumps emu/phone-match/dup-md5.txt 2>/dev/null
+  git add emu/phone-match/logs/nav-*.log emu/phone-match/logs/boot-*.log emu/phone-match/logs/avd-*.log emu/phone-match/failed_pages-*.txt 2>/dev/null || true
+  if git diff --cached --quiet; then log "push_captures: nothing new for $batch"; return 0; fi
+  git commit -m "phone-match: cap $batch captures (mid-run)" 2>&1 | tail -1
+  git fetch --deepen=100 origin main 2>/dev/null || git fetch origin main 2>/dev/null
+  for i in 1 2 3 4 5; do
+    if git push 2>&1 | tee -a $PMLOG; then log "push_captures: PUSHED cap $batch"; return 0; fi
+    git pull --rebase origin main 2>&1 | tail -2 | tee -a $PMLOG || break
+    sleep 15
+  done
+  log "push_captures: PUSH FAILED for cap $batch (final commit step is the second chance)"
+  return 0
+}
+
 mode=${1:-}
 if [ "$mode" = setup ]; then
   if [ ! -d $SDK/cmdline-tools/latest ]; then
@@ -65,5 +91,6 @@ if [ "$mode" = cap ]; then
   adb shell pm list packages | grep -q com.onioncore.oniontv && log "package present" || log "PACKAGE MISSING AFTER INSTALL"
   PM_BATCH=$BATCH python3 emu/phone-match/nav.py 2>&1 | tee -a emu/phone-match/logs/nav-$BATCH.log
   adb emu kill 2>/dev/null
+  push_captures "$BATCH"
   log "cap $BATCH done"
 fi
