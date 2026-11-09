@@ -280,3 +280,6 @@ bdc072505ea602005dc8f596b95f5c15  /tmp/tv-BASE.apk
 [run-tv 13:40:37] tv34 boot_completed=1
 [run-tv 13:40:38] installing APK on tv34
 served-by: tv34 (API-34 android-tv x86)
+To https://github.com/boo4blue/boo4blue.github.io
+   a74d952..ea1e37c  main -> main
+[run-tv 13:43:23] push_captures: PUSHED cap BASE-wd
