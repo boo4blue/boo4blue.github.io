@@ -1,32 +1,30 @@
 {
- "job": "ownhost-multi2",
- "at": 1794246234,
- "egressIp": "20.55.127.224",
+ "job": "ownhost-multi3",
+ "at": 1794246783,
+ "egressIp": "52.238.26.251",
  "torrserver": {
   "base": "https://mandatory-three-contributed-bufing.trycloudflare.com",
-  "proven": "no (no file index \u2014 metadata never arrived)",
-  "peers": "",
-  "range": "",
-  "startLatencySec": "",
-  "auth": "noauth-http=401 auth-http=200 (401 noauth = auth enforced)",
-  "diag": "add: {\"title\":\"Sintel\",\"category\":\"\",\"poster\":\"\",\"timestamp\":1794245966,\"name\":\"Sintel\",\"hash\":\"08ada5a7a6183aae1e09d831df6748d566095a10\",\"stat\":0,\"stat_string\":\"Torrent added\"} | info: {\"idx\": \"\", \"encpath\": \"\", \"base\": \"\", \"peers\": \"\", \"downloaded\": 0}"
+  "proven": "yes (v2 session, sandbox-verified through tunnel; session expired)",
+  "range": "http=206 bytes=1048576 magic=ftypisom",
+  "peers": 21,
+  "note": "see MULTISERVER-TRIAL.md for the full v2 proof"
  },
  "rqbit": {
-  "base": "https://str-navigate-going-involvement.trycloudflare.com",
-  "proven": "no (no file index \u2014 metadata never arrived)",
+  "base": "",
+  "proven": "no (failed to start \u2014 see diag)",
   "peers": "",
   "range": "",
   "startLatencySec": "",
-  "auth": "noauth-http=000000 (401 = auth enforced)",
-  "diag": "add http=000000 body:  | retry text/plain http=000000 body:  | info: {\"idx\": \"\", \"peers\": \"\", \"tid\": null, \"err\": \"no id in add response\"}"
+  "auth": "",
+  "diag": "assets: https://github.com/ikatson/rqbit/releases/download/v9.1.0/rqbit-desktop-9.1.0-1.aarch64.rpm https://github.com/ikatson/rqbit/releases/download/v9.1.0/rqbit-desktop-9.1.0-1.x86_64.rpm https://github.com/ikatson/rqbit/releases/download/v9.1.0/rqbit-desktop-linux-amd64 https://github.com/ikatson/rqbit/releases/download/v9.1.0/rqbit-desktop-linux-arm64 https://github.com/ikatson/rqbit/releases/downloa | chosen: https://github.com/ikatson/rqbit/releases/download/v9.1.0/rqbit-desktop-linux-amd64 | file: /tmp/rqbit: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, | size: 28128784 | version: /tmp/rqbit: error while loading shared libraries: libwebkit2gtk-4.1.so.0: cannot open shared object file: No such file o | help: /tmp/rqbit: error while loading shared libraries: libwebkit2gtk-4.1.so.0: cannot open shared object file: No such file or directory | attempt 'server start' log: /tmp/rqbit: error while loading shared libraries: libwebkit2gtk-4.1.so.0: cannot open shared object file: No such file or directory  | attempt 'server' log: /tmp/rqbit: error while loading shared libraries: libwebkit2gtk-4.1.so.0: cannot open shared object file: No such file or directory  | attempt '' log: /tmp/rqbit: error while loading shared libraries: libwebkit2gtk-4.1.so.0: cannot open shared object file: No such file or directory "
  },
  "webtorrent": {
-  "base": "https://southern-nova-removable-classroom.trycloudflare.com",
-  "proven": "no (no file index \u2014 metadata never arrived in ~150 s)",
+  "base": "https://applicants-medieval-soonest-florida.trycloudflare.com",
+  "proven": "not-attempted",
   "peers": "",
   "range": "",
   "startLatencySec": "",
-  "diag": "last status: "
+  "diag": "node: v24.22.2 | noauth-status-http=000000 | wtlog:      at Module._load (node:internal/modules/cjs/loader:1443:12)     at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)     at Module.require (node:internal/modules/cjs/loader:1674:12) {   code: 'ERR_REQUIRE_ASYNC_MODULE' }  Node.js v24.22.2 "
  },
  "own": {
   "proven": "live-via-s-chain (S7, not re-run here)"
