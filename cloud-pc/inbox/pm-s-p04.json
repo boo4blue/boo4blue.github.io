@@ -1,0 +1,1 @@
+{"id":"pm-s-p04","action":"shell","command":"bash emu/phone-match/run-pm.sh setup"}

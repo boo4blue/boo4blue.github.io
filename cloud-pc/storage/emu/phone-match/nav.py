@@ -7,9 +7,21 @@ text/desc search + taps, and captures every reached page into
 emu/phone-match/real/NN-slug-ORIENTATION.png (1080x2280 @ 420dpi).
 Every step is logged; a failed route still captures where it landed
 (evidence) and logs ROUTE-MISS so the route can be fixed next batch.
+
+DEDUPE GATE (added 2026-11-09 after the parent's md5 audit): batch A
+produced byte-identical frames filed under different pages (routes that
+never left Home). Every shot is now md5-checked against all frames
+already in real/ (this run + previous runs): a frame identical to a
+DIFFERENT page's frame is rejected — one re-shot after a 2 s settle,
+then the page is recorded in failed_pages.txt and NO file is left under
+its name. A capture must be distinct to count as proof. The gate also
+checks PNG dimensions (upright must be 1080x2280, sideways 2280x1080)
+so a failed rotation can never file a portrait frame as sideways.
 """
+import hashlib
 import os
 import re
+import struct
 import subprocess
 import sys
 import time
@@ -19,9 +31,49 @@ SERIAL = "emulator-5554"
 PKG = "com.onioncore.oniontv"
 OUT = "emu/phone-match/real"
 DUMPS = "emu/phone-match/logs/dumps"
+FAILED = "emu/phone-match/failed_pages.txt"
 BATCH = os.environ.get("PM_BATCH", "A")
 os.makedirs(OUT, exist_ok=True)
 os.makedirs(DUMPS, exist_ok=True)
+
+
+def _png_size(path):
+    with open(path, "rb") as f:
+        head = f.read(33)
+    if len(head) < 29 or head[1:4] != b"PNG":
+        return None
+    w, h = struct.unpack(">II", head[16:24])
+    return (w, h)
+
+
+def _page_key(filename):
+    base = filename[:-4] if filename.endswith(".png") else filename
+    for suf in ("-upright", "-sideways"):
+        if base.endswith(suf):
+            return base[: -len(suf)]
+    return base
+
+
+# md5 -> page key of every frame already captured (this checkout).
+SEEN = {}
+for _f in os.listdir(OUT):
+    if _f.endswith(".png"):
+        try:
+            SEEN[hashlib.md5(open(os.path.join(OUT, _f), "rb").read()).hexdigest()] = _page_key(_f)
+        except OSError:
+            pass
+# Blocklisted md5s: quarantined batch-A duplicates. A re-capture that
+# reproduces one is rejected even for the page it was filed under.
+BLOCKED = set()
+for _p in ("emu/phone-match/dup-md5.txt", "dup-md5.txt"):
+    if os.path.exists(_p):
+        BLOCKED = {l.strip() for l in open(_p)
+                   if l.strip() and not l.startswith("#")}
+        break
+def _fail_page(name, why):
+    with open(FAILED, "a") as f:
+        f.write(f"{name} {why}\n")
+    log(f"CAPTURE-FAILED {name}: {why} (recorded in failed_pages.txt)")
 
 
 def log(*a):
@@ -38,16 +90,60 @@ def sh(cmd, t=30):
 
 
 def shot(name, ori):
+    """One screencap with the dedupe gate. Returns 'ok' | 'dup' | 'rot' | 'fail'.
+
+    'dup' = frame is byte-identical to a DIFFERENT page's frame (route
+    never landed, or a duplicated write). 'rot' = PNG dimensions don't
+    match the requested orientation (rotation never took effect).
+    On 'dup' the file is moved to dumps/ as forensics and NO file is
+    left under the page's name; the failure is recorded in failed_pages.txt.
+    """
     path = os.path.join(OUT, f"{name}-{ori}.png")
     r = subprocess.run(["adb", "-s", SERIAL, "exec-out", "screencap", "-p"],
                        capture_output=True, timeout=60)
     if r.returncode != 0 or len(r.stdout) < 1000:
         log(f"SHOT FAILED {path} rc={r.returncode} bytes={len(r.stdout)}")
-        return False
+        return "fail"
     with open(path, "wb") as f:
         f.write(r.stdout)
-    log(f"shot {path} ({len(r.stdout)} B)")
-    return True
+    size = _png_size(path)
+    want = (1080, 2280) if ori == "upright" else (2280, 1080)
+    if size != want:
+        log(f"ROTATION-FAIL {path}: got {size}, want {want}")
+        os.remove(path)
+        return "rot"
+    digest = hashlib.md5(r.stdout).hexdigest()
+    if digest in BLOCKED:
+        log(f"DEDUP-FAIL {path}: md5 {digest} is a blocklisted batch-A duplicate")
+        os.rename(path, os.path.join(DUMPS, f"dup-{name}-{ori}.png"))
+        return "dup"
+    other = SEEN.get(digest)
+    if other is not None and other != name:
+        log(f"DEDUP-FAIL {path}: md5 {digest} == {other}'s frame")
+        os.rename(path, os.path.join(DUMPS, f"dup-{name}-{ori}.png"))
+        return "dup"
+    SEEN[digest] = name
+    log(f"shot {path} ({len(r.stdout)} B) md5 {digest[:12]} distinct")
+    return "ok"
+
+
+def _shot_once(name, ori):
+    """shot() with one retry on dup (settle) or rot (re-rotate)."""
+    res = shot(name, ori)
+    if res == "dup":
+        time.sleep(2)
+        res = shot(name, ori)
+        if res == "dup":
+            _fail_page(name, f"{ori} frame duplicates another page's frame")
+    elif res == "rot":
+        rotate(ori)
+        time.sleep(1.5)
+        res = shot(name, ori)
+        if res == "rot":
+            _fail_page(name, f"{ori} rotation never took effect")
+    elif res == "fail":
+        _fail_page(name, f"{ori} screencap failed")
+    return res
 
 
 def rotate(ori):
@@ -129,13 +225,13 @@ def launch(wait=9):
 
 
 def capture(name, route_ok=True):
-    """Shot both orientations of the current screen."""
+    """Shot both orientations of the current screen (gated)."""
     rotate("upright")
     time.sleep(1.5)
-    shot(name, "upright")
+    _shot_once(name, "upright")
     rotate("sideways")
     time.sleep(1.5)
-    shot(name, "sideways")
+    _shot_once(name, "sideways")
     rotate("upright")
     if not route_ok:
         log(f"ROUTE-MISS recorded for {name}")
@@ -575,6 +671,21 @@ def batch_c3():
     pass
     log("batch C3 complete")
 
+# ---------------- batch P04: Home re-proof (gated) ----------------
+# Page 04's batch-A frames were byte-identical to page 03's and were
+# quarantined. This batch re-captures Home alone, with the dedupe gate
+# proving the frames are distinct before they count as proof.
+
+def batch_p04():
+    landing = go_home()
+    dump("home-p04")
+    if landing == "picker":
+        capture("01-profile-picker")
+        return
+    capture("04-home")
+    log("batch P04 complete")
+
+
 if __name__ == "__main__":
     log(f"nav.py batch {BATCH} starting; top before: {top_activity()}")
     if BATCH == "A":
@@ -591,6 +702,8 @@ if __name__ == "__main__":
         batch_c2()
     elif BATCH == "C3":
         batch_c3()
+    elif BATCH == "P04":
+        batch_p04()
     else:
         log(f"batch {BATCH} has no routes yet")
     log("nav.py done")

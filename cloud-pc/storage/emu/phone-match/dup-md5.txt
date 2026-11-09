@@ -1,0 +1,10 @@
+# Blocklisted frame md5s — quarantined batch-A duplicates (2026-11-09).
+# A capture whose md5 is in this list is NEVER accepted as proof, even
+# for the page the file was once filed under: the frame is a duplicated
+# write or a route that never left another screen.
+# ec2037d1... = Home upright filed under 03 + 04
+ec2037d12b4ec78f3b5a129bc8f1566f
+# 3f1bb889... = Home upright filed under 21 + 22 + 27
+3f1bb889228e62fc8227a714ab88de07
+# 1267d2b4... = Home sideways filed under 03 + 04 + 21 + 22 + 24 + 27
+1267d2b46a41eb00fb024ff5957deab9
