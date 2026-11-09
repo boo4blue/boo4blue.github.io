@@ -304,3 +304,30 @@ To https://github.com/boo4blue/boo4blue.github.io
    4e19d28..6e61cce  main -> main
 [run-tv 14:47:44] push_captures: PUSHED cap setup-b
 [run-tv 14:48:21] setup-c done
+To https://github.com/boo4blue/boo4blue.github.io
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/boo4blue/boo4blue.github.io'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+   6e61cce..8d089de  main       -> origin/main
+To https://github.com/boo4blue/boo4blue.github.io
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/boo4blue/boo4blue.github.io'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+   8d089de..999b59e  main       -> origin/main
+To https://github.com/boo4blue/boo4blue.github.io
+   999b59e..9d43934  main -> main
+[run-tv 14:48:35] push_captures: PUSHED cap setup-c
+-rw-r--r-- 1 runner runner 63300707 Nov  9 14:48 /tmp/tv-PICK.apk
+97b933783e01ef600cc547152a1ff685  /tmp/tv-PICK.apk
+[run-tv 14:49:24] tv34 booted after ~5s
+[run-tv 14:49:24] tv34 boot_completed=1
+[run-tv 14:49:25] installing APK on tv34
+served-by: tv34 (API-34 android-tv x86)

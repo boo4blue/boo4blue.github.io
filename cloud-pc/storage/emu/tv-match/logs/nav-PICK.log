@@ -1,0 +1,10 @@
+[nav-tv 14:49:39] nav-tv.py batch PICK starting; top before: topResumedActivity=ActivityRecord{2aa8a45 u0 com.google.android.tvlauncher/.MainActivity t5}
+[nav-tv 14:49:52] launched; top: topResumedActivity=ActivityRecord{d650c2d u0 com.onioncore.oniontv/.ProfileActivity t6}
+[nav-tv 14:49:55] visible: ["Who's watching?", 'MAIN', 'Edit', 'Blaze', '+', 'Add profile']
+[nav-tv 14:50:01] verify 01-profile-picker: {"page": "01-profile-picker", "alive": true, "activity": "topResumedActivity=ActivityRecord{d650c2d u0 com.onioncore.oniontv/.ProfileActivity t6}", "text_nodes": 6, "focused": "android.widget.FrameLayout", "marker": true, "pass": true}
+[nav-tv 14:50:01] shot emu/tv-match/real51/01-profile-picker.png md5 7ba356bf01e0 distinct
+[nav-tv 14:50:07] WALK picker-v2: starting coverage walk
+[nav-tv 14:50:49] WALK picker-v2: graph exhausted after 8 presses
+[nav-tv 14:50:49] WALK picker-v2: visited=2 seen=4 unreached=2 dead_ends=0 focus_lost=0
+[nav-tv 14:50:49] batch PICK complete
+[nav-tv 14:50:49] nav-tv.py done

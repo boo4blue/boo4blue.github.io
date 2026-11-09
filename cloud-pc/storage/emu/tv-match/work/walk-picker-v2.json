@@ -1,0 +1,15 @@
+{
+ "screen": "picker-v2",
+ "visited_count": 2,
+ "visited": [
+  "android.widget.FrameLayout"
+ ],
+ "seen_focusable_count": 4,
+ "unreached": [
+  "Edit",
+  "android.widget.HorizontalScrollView"
+ ],
+ "dead_ends": [],
+ "focus_lost_events": 0,
+ "presses": 8
+}
