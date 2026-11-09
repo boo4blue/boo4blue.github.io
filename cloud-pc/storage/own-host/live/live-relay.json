@@ -1,0 +1,11 @@
+{
+ "service": "onion-relay",
+ "url": "https://strict-dude-ruled-matches.trycloudflare.com",
+ "wss": "wss://strict-dude-ruled-matches.trycloudflare.com",
+ "key": "3bab53405bea94ad2038561bba6d5ec65f9a26b03c6834af",
+ "egressIp": "52.165.86.211",
+ "tcpTracker443": "OK",
+ "udpDns": "OK",
+ "started": 1794229517,
+ "job": "ownhost-relay1"
+}
