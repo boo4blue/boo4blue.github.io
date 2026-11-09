@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794264170,
- "egressIp": "52.176.67.192",
+ "at": 1794266048,
+ "egressIp": "57.151.137.151",
  "own": {
-  "base": "https://britney-including-moon-changing.trycloudflare.com",
+  "base": "https://defined-maintain-sheets-harvey.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://interference-ton-slides-strongly.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
