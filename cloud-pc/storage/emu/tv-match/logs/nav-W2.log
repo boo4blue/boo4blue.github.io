@@ -1,0 +1,22 @@
+[nav-tv 10:02:37] nav-tv.py batch W2 starting; top before: topResumedActivity=ActivityRecord{f2cce2a u0 com.google.android.tvlauncher/.MainActivity t5}
+[nav-tv 10:02:48] launched; top: topResumedActivity=ActivityRecord{5376536 u0 com.onioncore.oniontv/.ProfileActivity t6}
+[nav-tv 10:02:51] visible: ["Who's watching?", 'Blaze', 'MAIN', 'Edit', '+', 'Add profile']
+[nav-tv 10:03:03] after pick; top: topResumedActivity=ActivityRecord{128d40d u0 com.onioncore.oniontv/.HomeActivity t6} visible: ['FEATURED', 'Obsession', '★ 7.8  2026 · 109 min · Horror, Thriller', 'After breaking the mysterious "One Wish Willow" to win his crush\'s heart, a hopeless romantic finds himself getting exactly what he asked for but soon discovers that some desires come at a dark, sinister price.', 'Play', 'More Info', 'My List', 'Onion TV', 'Home', 'Movies', 'Series', 'Anime', 'Search titles...', 'Talk - use your phone as the microphone', 'Profile: Blaze - open Settings']
+[nav-tv 10:03:41] focus reached ['Profile:', 'profile picture'] in 7 presses
+[nav-tv 10:03:46] WALK settings-general: entered=True
+[nav-tv 10:03:46] WALK settings-general: starting coverage walk
+[nav-tv 10:05:45] WALK settings-general: visited=15 seen=40 unreached=8 dead_ends=0 focus_lost=0
+[nav-tv 10:05:58] launched; top: topResumedActivity=ActivityRecord{435e9e9 u0 com.onioncore.oniontv/.ProfileActivity t7}
+[nav-tv 10:06:00] visible: ["Who's watching?", 'Blaze', 'MAIN', 'Edit', '+', 'Add profile']
+[nav-tv 10:06:11] after pick; top: topResumedActivity=ActivityRecord{a52f448 u0 com.onioncore.oniontv/.HomeActivity t7} visible: ['FEATURED', 'Obsession', '★ 7.8  2026 · 109 min · Horror, Thriller', 'After breaking the mysterious "One Wish Willow" to win his crush\'s heart, a hopeless romantic finds himself getting exactly what he asked for but soon discovers that some desires come at a dark, sinister price.', 'Play', 'More Info', 'My List', 'Onion TV', 'Home', 'Movies', 'Series', 'Anime', 'Search titles...', 'Talk - use your phone as the microphone', 'Profile: Blaze - open Settings']
+[nav-tv 10:06:47] focus reached ['Profile:', 'profile picture'] in 7 presses
+[nav-tv 10:07:12] focus reached ['Playback'] in 4 presses
+[nav-tv 10:07:15] WALK settings-playback: entered=True
+[nav-tv 10:07:15] WALK settings-playback: starting coverage walk
+[nav-tv 10:08:49] WALK settings-playback: visited=10 seen=20 unreached=4 dead_ends=0 focus_lost=0
+[nav-tv 10:09:02] launched; top: topResumedActivity=ActivityRecord{1bbfdfb u0 com.onioncore.oniontv/.ProfileActivity t8}
+[nav-tv 10:09:04] visible: ["Who's watching?", 'Blaze', 'MAIN', 'Edit', '+', 'Add profile']
+[nav-tv 10:09:15] after pick; top: topResumedActivity=ActivityRecord{a3bd48f u0 com.onioncore.oniontv/.HomeActivity t8} visible: ['FEATURED', 'Obsession', '★ 7.8  2026 · 109 min · Horror, Thriller', 'After breaking the mysterious "One Wish Willow" to win his crush\'s heart, a hopeless romantic finds himself getting exactly what he asked for but soon discovers that some desires come at a dark, sinister price.', 'Play', 'More Info', 'My List', 'Onion TV', 'Home', 'Movies', 'Series', 'Anime', 'Search titles...', 'Talk - use your phone as the microphone', 'Profile: Blaze - open Settings']
+[nav-tv 10:09:44] focus reached ['Search titles', 'Search'] in 6 presses
+[nav-tv 10:09:47] WALK search: entered=True
+[nav-tv 10:09:47] WALK search: starting coverage walk
