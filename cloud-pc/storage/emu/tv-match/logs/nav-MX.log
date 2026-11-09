@@ -1,0 +1,20 @@
+[nav-tv 11:05:26] nav-tv.py batch MX starting; top before: topResumedActivity=ActivityRecord{67317806 u0 com.google.android.tvlauncher/.MainActivity t5}
+[nav-tv 11:05:40] launched; top: topResumedActivity=ActivityRecord{38327524 u0 com.onioncore.oniontv/.ProfileActivity t6}
+[nav-tv 11:05:42] visible: ["Who's watching?", 'Blaze', 'MAIN', 'Edit', '+', 'Add profile']
+[nav-tv 11:05:54] after pick; top: topResumedActivity=ActivityRecord{157810411 u0 com.onioncore.oniontv/.HomeActivity t6} visible: ['FEATURED', 'Obsession', '★ 7.8  2026 · 109 min · Horror, Thriller', 'After breaking the mysterious "One Wish Willow" to win his crush\'s heart, a hopeless romantic finds himself getting exactly what he asked for but soon discovers that some desires come at a dark, sinister price.', 'Play', 'More Info', 'My List', 'Onion TV', 'Home', 'Movies', 'Series', 'Anime', 'Search titles...', 'Talk - use your phone as the microphone', 'Profile: Blaze - open Settings']
+[nav-tv 11:06:00] focus reached ['Movies'] in 1 presses
+[nav-tv 11:06:07] verify 05-movies: {"page": "05-movies", "alive": true, "activity": "topResumedActivity=ActivityRecord{258466553 u0 com.onioncore.oniontv/.BrowseActivity t6}", "text_nodes": 16, "focused": "android.widget.ScrollView", "marker": true, "topbar_pills": 5, "topbar": true, "profile_pic": true, "pass": true}
+[nav-tv 11:06:07] MATRIX to-05-movies: PASS
+[nav-tv 11:06:09] focus reached ['Series'] in 0 presses
+[nav-tv 11:06:16] verify 06-shows: {"page": "06-shows", "alive": true, "activity": "topResumedActivity=ActivityRecord{258466553 u0 com.onioncore.oniontv/.BrowseActivity t6}", "text_nodes": 16, "focused": "android.widget.ScrollView", "marker": false, "topbar_pills": 5, "topbar": true, "profile_pic": true, "pass": false}
+[nav-tv 11:06:16] MATRIX to-06-shows: FAIL
+[nav-tv 11:06:18] focus reached ['Anime'] in 0 presses
+[nav-tv 11:06:25] verify 07-anime: {"page": "07-anime", "alive": true, "activity": "topResumedActivity=ActivityRecord{258466553 u0 com.onioncore.oniontv/.BrowseActivity t6}", "text_nodes": 16, "focused": "android.widget.ScrollView", "marker": true, "topbar_pills": 5, "topbar": true, "profile_pic": true, "pass": true}
+[nav-tv 11:06:25] MATRIX to-07-anime: PASS
+[nav-tv 11:06:27] focus reached ['Home'] in 0 presses
+[nav-tv 11:06:34] verify 04-tv-home: {"page": "04-tv-home", "alive": true, "activity": "topResumedActivity=ActivityRecord{258466553 u0 com.onioncore.oniontv/.BrowseActivity t6}", "text_nodes": 16, "focused": "android.widget.ScrollView", "marker": true, "topbar_pills": 5, "topbar": true, "profile_pic": true, "pass": true}
+[nav-tv 11:06:34] MATRIX to-04-tv-home: PASS
+[nav-tv 11:06:42] focus reached ['Profile:', 'profile picture'] in 1 presses
+[nav-tv 11:07:00] focus reached ['Movies'] in 2 presses
+[nav-tv 11:07:07] verify 05-movies: {"page": "05-movies", "alive": true, "activity": "topResumedActivity=ActivityRecord{77279392 u0 com.onioncore.oniontv/.SearchActivity t6}", "text_nodes": 10, "focused": "Keyboard", "marker": false, "topbar_pills": 5, "topbar": true, "profile_pic": true, "pass": false}
+[nav-tv 11:07:07] MATRIX settings-to-05-movies: FAIL
