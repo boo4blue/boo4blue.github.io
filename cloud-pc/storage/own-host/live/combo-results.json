@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794256054,
+ "at": 1794256063,
  "egressIp": "172.172.237.65",
  "own": {
   "base": "https://ads-fits-listings-commercial.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://elements-fragrances-newsletters-enb.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
