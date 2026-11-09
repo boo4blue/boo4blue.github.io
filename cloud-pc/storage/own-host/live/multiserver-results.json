@@ -1,6 +1,6 @@
 {
  "job": "ownhost-multi5",
- "at": 1794247503,
+ "at": 1794247505,
  "egressIp": "134.138.42.36",
  "torrserver": {
   "base": "https://mandatory-three-contributed-bufing.trycloudflare.com",
@@ -28,11 +28,11 @@
  },
  "webtorrent": {
   "base": "https://iii-cowboy-concentrations-synthetic.trycloudflare.com",
-  "proven": "not-attempted",
-  "peers": "",
-  "range": "",
-  "startLatencySec": "",
-  "diag": "node: v24.22.2 | noauth-status-http=401 | wtlog: wt http on 8080 wt ready Sintel/Sintel.de.srt,Sintel/Sintel.en.srt,Sintel/Sintel.es.srt,Sintel/Sintel.fr.srt,Sintel/Sintel.it.srt,Sintel/Sintel.mp4,Sintel/Sintel.nl.srt,Sintel/Sintel.pl.srt,Sintel/Sintel.pt.srt,Sintel/Sintel.ru.srt,Sintel/poster.jpg "
+  "proven": "yes",
+  "peers": 13,
+  "range": "http=206 bytes=1048576 magic=ftypisom",
+  "startLatencySec": 25,
+  "diag": "node: v24.22.2 | noauth-status-http=401 | wtlog: wt http on 8080 wt ready Sintel/Sintel.de.srt,Sintel/Sintel.en.srt,Sintel/Sintel.es.srt,Sintel/Sintel.fr.srt,Sintel/Sintel.it.srt,Sintel/Sintel.mp4,Sintel/Sintel.nl.srt,Sintel/Sintel.pl.srt,Sintel/Sintel.pt.srt,Sintel/Sintel.ru.srt,Sintel/poster.jpg  | last status: {\"ready\":true,\"peers\":13,\"files\":[\"Sintel/Sintel.de.srt\",\"Sintel/Sintel.en.srt\",\"Sintel/Sintel.es.srt\",\"Sintel/Sintel.fr.srt\",\"Sintel/Sintel.it.srt\",\"Sintel/Sintel.mp4\",\"Sintel/Sintel.nl.srt\",\"Sintel/Sintel.pl.srt\",\"Sintel/Sintel.pt.srt\",\"Sintel/Sintel.ru.srt\",\"Sintel/poster.jpg\"]}"
  },
  "own": {
   "proven": "live-via-s-chain (S7, not re-run here)"
