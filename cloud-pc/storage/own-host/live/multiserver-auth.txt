@@ -1,5 +1,5 @@
-# Multiserver trial credentials — generated on the Cloud PC runner 2026-11-09T17:29:26Z
+# Multiserver trial credentials — generated on the Cloud PC runner 2026-11-09T17:38:32Z
 # Trial only. These protect the trycloudflare-exposed trial servers.
-torrserver user=onion pass=4db47d3c62428a62ff2ae5be
-rqbit user=onion pass=c0323cc6757d7d8a8f822a22
-webtorrent user=onion pass=a8d5348842a9dcd42e8d8bdf
+torrserver user=onion pass=732dbd93f0059ff7f9cb0e20
+rqbit user=onion pass=94e2da6b3c974383d896cfd6
+webtorrent user=onion pass=a0881c36d0fc04e7b4dc3639
