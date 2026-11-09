@@ -387,7 +387,7 @@ def open_section(pill):
 
 # ---------------- batch B: sections / detail / search / talk ----------------
 
-def batch_b():
+def batch_b1():
     ok = open_section("Movies")
     dump("movies")
     capture("05-movies", ok)
@@ -412,6 +412,8 @@ def batch_b():
     time.sleep(1)
     key(4)
     time.sleep(1)
+
+def batch_b2():
     # movie title page (10): first tile of the Movies section
     ok = open_section("Movies")
     ok = tap_first_tile_after("Trending Movies") and ok
@@ -452,7 +454,6 @@ def batch_b():
         capture("18-talk", False)
     log("batch B complete")
 
-
 # ------------- batch C: tv control / pairing / player / pin / party -------------
 
 def open_player_from_section():
@@ -478,7 +479,7 @@ def open_player_menu(labels):
     return False
 
 
-def batch_c():
+def batch_c1():
     # tv control (19)
     go_home()
     ok = tap_text("TV Control", wait=3)
@@ -498,6 +499,11 @@ def batch_c():
     tap_xy(540, 1000, wait=1.2)
     dump("player-controls")
     capture("12-player-controls", ok)
+    log("batch C1 complete")
+
+def batch_c2():
+    ok = open_player_from_section()
+    tap_xy(540, 1000, wait=1.2)
     ok = open_player_menu(["Sources", "Source"])
     time.sleep(1.5)
     dump("player-sources")
@@ -527,6 +533,9 @@ def batch_c():
     time.sleep(1)
     key(4)  # leave player
     time.sleep(1)
+    log("batch C2 complete")
+
+def batch_c3():
     # pin pad (02): add a PIN'd profile, then switch to it
     goto_profile()
     ok = tap_text("Add a profile", wait=2)
@@ -563,8 +572,8 @@ def batch_c():
     time.sleep(2)
     dump("watch-party")
     capture("25-watch-party", ok)
-    log("batch C complete")
-
+    pass
+    log("batch C3 complete")
 
 if __name__ == "__main__":
     log(f"nav.py batch {BATCH} starting; top before: {top_activity()}")
@@ -572,10 +581,16 @@ if __name__ == "__main__":
         batch_a()
     elif BATCH == "A2":
         batch_a2()
-    elif BATCH == "B":
-        batch_b()
-    elif BATCH == "C":
-        batch_c()
+    elif BATCH == "B1":
+        batch_b1()
+    elif BATCH == "B2":
+        batch_b2()
+    elif BATCH == "C1":
+        batch_c1()
+    elif BATCH == "C2":
+        batch_c2()
+    elif BATCH == "C3":
+        batch_c3()
     else:
         log(f"batch {BATCH} has no routes yet")
     log("nav.py done")
