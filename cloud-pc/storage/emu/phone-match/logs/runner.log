@@ -7,3 +7,5 @@ Performing Streamed Install
 Success
 [run-pm 01:14:03] package present
 [run-pm 01:19:38] cap A done
+[run-pm 01:31:16] FATAL: emulator missing (run setup first)
+[run-pm 01:31:16] FATAL: emulator missing (run setup first)

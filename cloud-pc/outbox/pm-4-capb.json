@@ -1,0 +1,16 @@
+{
+  "id": "pm-4-capb",
+  "action": "shell",
+  "at": "2026-11-09T01:31:16Z",
+  "job": {
+    "id": "pm-4-capb",
+    "action": "shell",
+    "command": "bash emu/phone-match/run-pm.sh cap B"
+  },
+  "result": {
+    "ok": true,
+    "exit": 1,
+    "stdout": "[run-pm 01:31:16] FATAL: emulator missing (run setup first)\n",
+    "stderr": ""
+  }
+}
