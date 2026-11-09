@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794268605,
+ "at": 1794268613,
  "egressIp": "4.246.86.195",
  "own": {
   "base": "https://examples-reserve-vsnet-october.trycloudflare.com",
@@ -11,8 +11,8 @@
   "state": "live noauth-http=401"
  },
  "rqbit": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://camera-farm-concentrations-ideal.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "webtorrent": {
   "base": "",
