@@ -1,27 +1,32 @@
 {
- "job": "ownhost-multi1",
- "at": 1794245527,
- "egressIp": "20.64.155.215",
+ "job": "ownhost-multi2",
+ "at": 1794246062,
+ "egressIp": "20.55.127.224",
  "torrserver": {
-  "base": "https://smell-clearance-halifax-documents.trycloudflare.com",
-  "proven": "no (http=200 bytes=0 magic=other:)",
+  "base": "https://mandatory-three-contributed-bufing.trycloudflare.com",
+  "proven": "no (no file index \u2014 metadata never arrived)",
   "peers": "",
-  "range": "http=200 bytes=0 magic=other:",
-  "startLatencySec": 6
+  "range": "",
+  "startLatencySec": "",
+  "auth": "noauth-http=401 auth-http=200 (401 noauth = auth enforced)",
+  "diag": "add: {\"title\":\"Sintel\",\"category\":\"\",\"poster\":\"\",\"timestamp\":1794245966,\"name\":\"Sintel\",\"hash\":\"08ada5a7a6183aae1e09d831df6748d566095a10\",\"stat\":0,\"stat_string\":\"Torrent added\"} | info: {\"idx\": \"\", \"encpath\": \"\", \"base\": \"\", \"peers\": \"\", \"downloaded\": 0}"
  },
  "rqbit": {
-  "base": "https://focal-trade-heated-mud.trycloudflare.com",
+  "base": "https://str-navigate-going-involvement.trycloudflare.com",
   "proven": "no (no file index \u2014 metadata never arrived)",
   "peers": "",
   "range": "",
-  "startLatencySec": ""
+  "startLatencySec": "",
+  "auth": "noauth-http=000000 (401 = auth enforced)",
+  "diag": "add http=000000 body:  | retry text/plain http=000000 body:  | info: {\"idx\": \"\", \"peers\": \"\", \"tid\": null, \"err\": \"no id in add response\"}"
  },
  "webtorrent": {
-  "base": "https://door-study-conclusions-despite.trycloudflare.com",
-  "proven": "no (no file index \u2014 metadata never arrived)",
+  "base": "",
+  "proven": "not-attempted",
   "peers": "",
   "range": "",
-  "startLatencySec": ""
+  "startLatencySec": "",
+  "diag": ""
  },
  "own": {
   "proven": "live-via-s-chain (S7, not re-run here)"
