@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794253437,
+ "at": 1794253445,
  "egressIp": "172.206.39.215",
  "own": {
   "base": "https://skirts-settlement-computed-argue.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://arrivals-knight-upgrade-doc.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
