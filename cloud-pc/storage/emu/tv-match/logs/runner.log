@@ -133,3 +133,6 @@ To https://github.com/boo4blue/boo4blue.github.io
 [run-tv 11:21:20] tv34 boot_completed=1
 [run-tv 11:21:20] installing APK on tv34
 served-by: tv34 (API-34 android-tv x86)
+To https://github.com/boo4blue/boo4blue.github.io
+   6e87e87..64fb044  main -> main
+[run-tv 11:24:05] push_captures: PUSHED cap BASE-wd
