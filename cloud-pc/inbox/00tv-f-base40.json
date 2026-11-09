@@ -1,1 +1,0 @@
-{"id":"00tv-f-base40","action":"shell","command":"TV_APK=emu/tv-match/app40.apk TV_OUT_SUFFIX=40 bash emu/tv-match/run-tv.sh cap BASE"}

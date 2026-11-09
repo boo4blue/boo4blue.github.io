@@ -1,1 +1,0 @@
-{"id":"00tv-k3-mx51-1","action":"shell","command":"TV_APK=emu/tv-match/app51.apk TV_PART=1 bash emu/tv-match/run-tv.sh cap MX"}

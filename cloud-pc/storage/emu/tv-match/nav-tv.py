@@ -701,6 +701,24 @@ def open_overlay_activity(cls, tag):
     return xml
 
 
+def batch_pick():
+    """Picker-first evidence batch (code 51): ONLY the two WIN items —
+    the 01 picker capture (card-border ring verdict) and the picker
+    focus walk. The full-page batches kept dying in the queue before
+    their results could push (cancelled/wedged runs all afternoon),
+    so this batch is exactly as big as the picker and nothing else."""
+    launch()
+    res = capture("01-profile-picker", ["Who's watching", "Who’s watching"], settle=3)
+    dump("pick-picker")
+    if on_picker():
+        walk("picker-v2")
+    else:
+        with open(os.path.join(WORK, "walk-picker-v2.json"), "w") as f:
+            json.dump({"screen": "picker-v2", "entered": False}, f)
+        log("PICK: not on the picker after launch - walk skipped")
+    log("batch PICK complete")
+
+
 # ---------------- BASE batch: gated captures, code-40 baseline ----------------
 
 def batch_base():
@@ -1713,7 +1731,9 @@ def batch_base2():
 if __name__ == "__main__":
     log(f"nav-tv.py batch {BATCH} starting; top before: {top_activity()}")
     try:
-        if BATCH == "BASE":
+        if BATCH == "PICK":
+            batch_pick()
+        elif BATCH == "BASE":
             batch_base()
         elif BATCH == "BASE2":
             batch_base2()
