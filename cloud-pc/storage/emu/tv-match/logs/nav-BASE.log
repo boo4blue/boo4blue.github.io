@@ -307,3 +307,32 @@
 [nav-tv 09:51:42] ROUTE-MISS recorded for 02-pin-pad
 [nav-tv 09:51:42] batch BASE complete; alive: 3023 top: topResumedActivity=ActivityRecord{f081963 u0 com.google.android.tvlauncher/.MainActivity t5}
 [nav-tv 09:51:42] nav-tv.py done
+[nav-tv 10:35:26] nav-tv.py batch BASE starting; top before: topResumedActivity=ActivityRecord{91064091 u0 com.google.android.tvlauncher/.MainActivity t5}
+[nav-tv 10:35:38] launched; top: topResumedActivity=ActivityRecord{153160391 u0 com.onioncore.oniontv/.ProfileActivity t6}
+[nav-tv 10:35:43] visible: ["Who's watching?", 'Blaze', 'MAIN', 'Edit', '+', 'Add profile']
+[nav-tv 10:35:48] verify 01-profile-picker: {"page": "01-profile-picker", "alive": true, "activity": "topResumedActivity=ActivityRecord{153160391 u0 com.onioncore.oniontv/.ProfileActivity t6}", "text_nodes": 6, "focused": "android.widget.FrameLayout", "marker": true, "pass": true}
+[nav-tv 10:35:48] shot emu/tv-match/real/01-profile-picker.png md5 51c5f7619260 distinct
+[nav-tv 10:35:55] settle 04-home-cold[0] at 1.01s md5 f5533ee99bf6
+[nav-tv 10:35:56] settle 04-home-cold[1] at 1.7s md5 f5533ee99bf6
+[nav-tv 10:35:58] settle 04-home-cold[2] at 3.19s md5 f5533ee99bf6
+[nav-tv 10:36:00] settle 04-home-cold[3] at 5.21s md5 f5533ee99bf6
+[nav-tv 10:36:03] settle 04-home-cold[4] at 8.19s md5 f5533ee99bf6
+[nav-tv 10:36:07] settle 04-home-cold[5] at 12.2s md5 f5533ee99bf6
+[nav-tv 10:36:11] verify 04-tv-home: {"page": "04-tv-home", "alive": true, "activity": "topResumedActivity=ActivityRecord{133301290 u0 com.onioncore.oniontv/.HomeActivity t6}", "text_nodes": 15, "focused": "Play", "marker": true, "topbar_pills": 5, "topbar": true, "profile_pic": true, "pass": true}
+[nav-tv 10:36:11] shot emu/tv-match/real/04-tv-home.png md5 f5533ee99bf6 distinct
+[nav-tv 10:36:20] focus reached ['Movies'] in 1 presses
+[nav-tv 10:36:29] verify 05-movies: {"page": "05-movies", "alive": true, "activity": "topResumedActivity=ActivityRecord{35494021 u0 com.onioncore.oniontv/.BrowseActivity t6}", "text_nodes": 16, "focused": "android.widget.ScrollView", "marker": true, "topbar_pills": 5, "topbar": true, "profile_pic": true, "pass": true}
+[nav-tv 10:36:29] shot emu/tv-match/real/05-movies.png md5 3891a9d3216e distinct
+[nav-tv 10:36:33] focus reached ['See all'] in 0 presses
+[nav-tv 10:36:44] verify 08-see-all: {"page": "08-see-all", "alive": true, "activity": "topResumedActivity=ActivityRecord{35494021 u0 com.onioncore.oniontv/.BrowseActivity t6}", "text_nodes": 16, "focused": "android.widget.ScrollView", "marker": true, "pass": true}
+[nav-tv 10:36:45] DEDUP-FAIL emu/tv-match/real/08-see-all.png: md5 == 05-movies's frame
+[nav-tv 10:36:47] DEDUP-FAIL emu/tv-match/real/08-see-all.png: md5 == 05-movies's frame
+[nav-tv 10:36:47] CAPTURE-FAILED 08-see-all: frame duplicates another page's frame
+[nav-tv 10:36:52] goto ['Sort & Genres']: label not present on screen; visible: ['TOP RATED', 'Tenzing', '★ 7.7  2026 · 126 min · Adventure, Biography, Drama', 'Play', 'More Info', 'My List', 'Trending Movies', 'See all', 'Onion TV', 'Home', 'Movies', 'Series', 'Anime', 'Search titles...', 'Talk - use your phone as the microphone', 'Profile: Blaze - open Settings']
+[nav-tv 10:36:59] verify 09-sort-genres: {"page": "09-sort-genres", "alive": true, "activity": "topResumedActivity=ActivityRecord{35494021 u0 com.onioncore.oniontv/.BrowseActivity t6}", "text_nodes": 16, "focused": "android.widget.ScrollView", "marker": false, "pass": false}
+[nav-tv 10:37:00] DEDUP-FAIL emu/tv-match/real/09-sort-genres.png: md5 == 05-movies's frame
+[nav-tv 10:37:02] DEDUP-FAIL emu/tv-match/real/09-sort-genres.png: md5 == 05-movies's frame
+[nav-tv 10:37:02] CAPTURE-FAILED 09-sort-genres: frame duplicates another page's frame
+[nav-tv 10:37:02] ROUTE-MISS recorded for 09-sort-genres
+[nav-tv 10:37:08] focus reached ['Movies'] in 0 presses
+[nav-tv 10:37:15] focus reached ['Trending Movies'] in 0 presses

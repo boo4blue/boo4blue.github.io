@@ -25,3 +25,5 @@
 24-downloads frame duplicates another page's frame
 03-add-edit-profile frame duplicates another page's frame
 02-pin-pad frame duplicates another page's frame
+08-see-all frame duplicates another page's frame
+09-sort-genres frame duplicates another page's frame
