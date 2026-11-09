@@ -29,3 +29,34 @@
 [nav 02:41:13] ROUTE-MISS recorded for 18-talk
 [nav 02:41:13] batch B complete
 [nav 02:41:13] nav.py done
+[nav 02:59:59] nav.py batch B2 starting; top before: topResumedActivity=ActivityRecord{ad07102 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t7}
+[nav 03:00:11] launched; top: topResumedActivity=ActivityRecord{73074b6 u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t8}
+[nav 03:00:17] visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all']
+[nav 03:00:31] tap 'Movies' at (400,393)
+[nav 03:00:41] tile anchor MISS 'Trending Movies'
+[nav 03:00:53] shot emu/phone-match/real/10-movie-title-upright.png (1343853 B) md5 3a24fe4fa965 distinct
+[nav 03:01:00] shot emu/phone-match/real/10-movie-title-sideways.png (1218523 B) md5 154b7bebd5da distinct
+[nav 03:01:03] ROUTE-MISS recorded for 10-movie-title
+[nav 03:01:17] launched; top: topResumedActivity=ActivityRecord{f07af15 u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t9}
+[nav 03:01:20] visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all']
+[nav 03:01:30] tap 'Shows' at (352,599)
+[nav 03:01:40] tile anchor MISS 'Trending Shows'
+[nav 03:01:54] shot emu/phone-match/real/11-series-title-upright.png (112931 B) md5 bf6962b6242f distinct
+[nav 03:01:59] shot emu/phone-match/real/11-series-title-sideways.png (116743 B) md5 9428ffb075c1 distinct
+[nav 03:02:02] ROUTE-MISS recorded for 11-series-title
+[nav 03:02:15] launched; top: topResumedActivity=ActivityRecord{6fceb77 u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t10}
+[nav 03:02:23] visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all']
+[nav 03:02:33] tap MISS 'Search titles'; visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all']
+[nav 03:02:45] shot emu/phone-match/real/17-search-upright.png (1321956 B) md5 bc47b5e1760c distinct
+[nav 03:02:51] shot emu/phone-match/real/17-search-sideways.png (961251 B) md5 58af2bf78c12 distinct
+[nav 03:02:54] ROUTE-MISS recorded for 17-search
+[nav 03:02:59] no mic control found in search; visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all']
+[nav 03:03:04] DEDUP-FAIL emu/phone-match/real/18-talk-upright.png: md5 bc47b5e1760cb393a27c2157463c8ba8 == 17-search's frame
+[nav 03:03:06] DEDUP-FAIL emu/phone-match/real/18-talk-upright.png: md5 bc47b5e1760cb393a27c2157463c8ba8 == 17-search's frame
+[nav 03:03:06] CAPTURE-FAILED 18-talk: upright frame duplicates another page's frame (recorded in failed_pages.txt)
+[nav 03:03:11] DEDUP-FAIL emu/phone-match/real/18-talk-sideways.png: md5 58af2bf78c1232ebe2bd280675c1c639 == 17-search's frame
+[nav 03:03:13] DEDUP-FAIL emu/phone-match/real/18-talk-sideways.png: md5 58af2bf78c1232ebe2bd280675c1c639 == 17-search's frame
+[nav 03:03:13] CAPTURE-FAILED 18-talk: sideways frame duplicates another page's frame (recorded in failed_pages.txt)
+[nav 03:03:16] ROUTE-MISS recorded for 18-talk
+[nav 03:03:16] batch B complete
+[nav 03:03:16] nav.py done

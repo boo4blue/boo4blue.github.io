@@ -1,2 +1,4 @@
 18-talk upright frame duplicates another page's frame
 18-talk sideways frame duplicates another page's frame
+18-talk upright frame duplicates another page's frame
+18-talk sideways frame duplicates another page's frame
