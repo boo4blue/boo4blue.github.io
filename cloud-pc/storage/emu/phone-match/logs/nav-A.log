@@ -1,0 +1,50 @@
+[nav 01:14:03] nav.py batch A starting; top before: topResumedActivity=ActivityRecord{f8b3b47 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t7}
+[nav 01:14:14] launched; top: topResumedActivity=ActivityRecord{3b58260 u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t8}
+[nav 01:14:19] visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all', '1', '2']
+[nav 01:14:40] shot emu/phone-match/real/04-home-upright.png (1478283 B)
+[nav 01:14:47] shot emu/phone-match/real/04-home-sideways.png (1106509 B)
+[nav 01:14:56] no profile picture found on home
+[nav 01:15:07] shot emu/phone-match/real/26-profile-page-upright.png (1478283 B)
+[nav 01:15:13] shot emu/phone-match/real/26-profile-page-sideways.png (1106509 B)
+[nav 01:15:15] ROUTE-MISS recorded for 26-profile-page
+[nav 01:15:21] tap MISS 'Add profile'; visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all', '1', '2']
+[nav 01:15:25] tap MISS 'Add a profile'; visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all', '1', '2']
+[nav 01:15:34] shot emu/phone-match/real/03-add-edit-profile-upright.png (1478283 B)
+[nav 01:15:39] shot emu/phone-match/real/03-add-edit-profile-sideways.png (1106509 B)
+[nav 01:15:42] ROUTE-MISS recorded for 03-add-edit-profile
+[nav 01:15:54] launched; top: topResumedActivity=ActivityRecord{d9985c9 u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t9}
+[nav 01:15:57] visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all', '1', '2']
+[nav 01:16:05] no gear found on home
+[nav 01:16:13] shot emu/phone-match/real/21-settings-upright.png (1481843 B)
+[nav 01:16:19] shot emu/phone-match/real/21-settings-sideways.png (1106509 B)
+[nav 01:16:22] ROUTE-MISS recorded for 21-settings
+[nav 01:16:29] tap MISS 'Sources'; visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all', '1', '2']
+[nav 01:16:36] tap MISS 'Add-ons'; visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all', '1', '2']
+[nav 01:16:40] tap MISS 'Add-ons & sources'; visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all', '1', '2']
+[nav 01:16:44] tap MISS 'Plugins'; visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all', '1', '2']
+[nav 01:16:53] shot emu/phone-match/real/22-addons-upright.png (1481843 B)
+[nav 01:16:57] shot emu/phone-match/real/22-addons-sideways.png (1106509 B)
+[nav 01:17:00] ROUTE-MISS recorded for 22-addons
+[nav 01:17:12] launched; top: topResumedActivity=ActivityRecord{74a2ae2 u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t10}
+[nav 01:17:16] visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all', '1', '2']
+[nav 01:17:30] tap MISS 'Accounts'; visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all', '1', '2']
+[nav 01:17:37] tap 'Onion ID' at (432,359)
+[nav 01:17:48] shot emu/phone-match/real/23-signin-upright.png (197335 B)
+[nav 01:17:52] shot emu/phone-match/real/23-signin-sideways.png (116389 B)
+[nav 01:17:55] ROUTE-MISS recorded for 23-signin
+[nav 01:18:07] launched; top: topResumedActivity=ActivityRecord{6be2793 u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t11}
+[nav 01:18:10] visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all', '1', '2']
+[nav 01:18:22] tap MISS 'Device'; visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all', '1', '2']
+[nav 01:18:32] tap MISS 'Downloads'; visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all', '1', '2']
+[nav 01:18:40] shot emu/phone-match/real/24-downloads-upright.png (1469463 B)
+[nav 01:18:45] shot emu/phone-match/real/24-downloads-sideways.png (1106509 B)
+[nav 01:18:47] ROUTE-MISS recorded for 24-downloads
+[nav 01:18:59] launched; top: topResumedActivity=ActivityRecord{d2abcf0 u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t12}
+[nav 01:19:03] visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all', '1', '2']
+[nav 01:19:14] tap MISS 'Streaming server'; visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all', '1', '2']
+[nav 01:19:21] tap MISS 'Stream server'; visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all', '1', '2']
+[nav 01:19:31] shot emu/phone-match/real/27-streaming-server-upright.png (1481843 B)
+[nav 01:19:35] shot emu/phone-match/real/27-streaming-server-sideways.png (1106509 B)
+[nav 01:19:38] ROUTE-MISS recorded for 27-streaming-server
+[nav 01:19:38] batch A complete
+[nav 01:19:38] nav.py done

@@ -1,0 +1,9 @@
+-rw-r--r-- 1 runner runner 63280227 Nov  9 01:13 /tmp/pm-A.apk
+eff80169c72e93003f79105981909f03  /tmp/pm-A.apk
+[run-pm 01:13:56] booted after ~25s
+[run-pm 01:13:56] boot_completed=1
+[run-pm 01:13:57] installing APK
+Performing Streamed Install
+Success
+[run-pm 01:14:03] package present
+[run-pm 01:19:38] cap A done
