@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://arrivals-knight-upgrade-doc.trycloudflare.com",
- "egressIp": "172.206.39.215",
+ "url": "https://elements-fragrances-newsletters-enb.trycloudflare.com",
+ "egressIp": "172.172.237.65",
  "port": 8090,
- "started": 1794253444,
+ "started": 1794256062,
  "job": "ownhost-combo1"
 }
