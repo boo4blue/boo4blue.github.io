@@ -94,3 +94,6 @@ INFO         | Wait for emulator (pid 8238) 20 seconds to shutdown gracefully be
 
 USER_INFO    | Snapshots have been disabled by the user, save request is ignored.
 INFO         | Saving snapshot 'default_boot' took 0 ms
+ERROR        | stop: Not implemented
+INFO         | removeAll
+WARNING      | Netsim Wifi dns:///localhost:33707 is gone due to Stream removed (CANCELLED)
