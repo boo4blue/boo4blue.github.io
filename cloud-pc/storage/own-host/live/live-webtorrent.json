@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://valuable-helena-acrobat-compiled.trycloudflare.com",
- "egressIp": "172.172.237.65",
+ "url": "https://lying-asset-sheffield-medline.trycloudflare.com",
+ "egressIp": "52.183.219.58",
  "port": 8080,
- "started": 1794257195,
- "job": "ownhost-multi5"
+ "started": 1794258698,
+ "job": "ownhost-combo1"
 }
