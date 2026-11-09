@@ -1,11 +1,11 @@
 {
  "service": "onion-relay",
- "url": "https://money-podcast-paul-panels.trycloudflare.com",
- "wss": "wss://money-podcast-paul-panels.trycloudflare.com",
- "key": "53da8a3839cb066e606b12b504f4f541a398d43161b09e3e",
- "egressIp": "52.165.101.81",
+ "url": "https://causes-institution-blond-effectively.trycloudflare.com",
+ "wss": "wss://causes-institution-blond-effectively.trycloudflare.com",
+ "key": "e5b86f85222c4c93f00d29e6c5767abcecb9a97dacb1ca03",
+ "egressIp": "51.57.87.181",
  "tcpTracker443": "OK",
  "udpDns": "OK",
- "started": 1794233708,
+ "started": 1794234467,
  "job": "ownhost-relay1"
 }
