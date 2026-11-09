@@ -1,1 +1,1 @@
-{"id":"00tv-g-feat2","action":"shell","command":"TV_APK=emu/tv-match/app46.apk TV_PART=2 bash emu/tv-match/run-tv.sh cap FEAT"}
+{"id":"00tv-g-feat2","action":"shell","command":"TV_APK=emu/tv-match/app47.apk TV_PART=2 bash emu/tv-match/run-tv.sh cap FEAT"}
