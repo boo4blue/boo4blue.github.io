@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://survivors-catalog-sheep-postal.trycloudflare.com",
- "egressIp": "64.236.134.229",
+ "url": "https://differ-scuba-washing-benjamin.trycloudflare.com",
+ "egressIp": "52.176.67.192",
  "port": 3030,
- "started": 1794261229,
+ "started": 1794263613,
  "job": "ownhost-combo1"
 }
