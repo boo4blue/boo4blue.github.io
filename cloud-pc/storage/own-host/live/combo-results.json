@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794249423,
+ "at": 1794249432,
  "egressIp": "134.33.77.45",
  "own": {
   "base": "https://palace-juice-putting-independence.trycloudflare.com",
@@ -11,8 +11,8 @@
   "state": "live noauth-http=401"
  },
  "rqbit": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://beverly-latitude-everyday-chart.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "webtorrent": {
   "base": "",
