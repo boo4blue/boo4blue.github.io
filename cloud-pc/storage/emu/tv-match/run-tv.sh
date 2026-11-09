@@ -29,15 +29,21 @@ push_captures() {
   local batch=$1
   git config user.name "cloudpc" 2>/dev/null
   git config user.email "cloudpc@local" 2>/dev/null
-  # v4 (2026-11-09): the v1–v3 add line was poisoned two ways —
-  # (1) it named emu/tv-match/real40, a dir that exists only after
-  # a BASE40 run: git add with a missing pathspec stages NOTHING,
-  # so no commit ever formed and three runs reported total silence;
-  # (2) it added the whole logs dir including runner.log, a shared
-  # append-log that conflicts on every rebase. Mirror run-pm.sh:
-  # only per-batch files; runner.log belongs to the final step.
-  git add emu/tv-match/real emu/tv-match/logs/dumps emu/tv-match/work emu/tv-match/dup-md5.txt 2>/dev/null
-  git add emu/tv-match/real40 emu/tv-match/logs/nav-*.log emu/tv-match/logs/boot-*.log emu/tv-match/logs/avd-*.log emu/tv-match/logs/sdk-*.log emu/tv-match/logs/install-*.log emu/tv-match/logs/licenses.log emu/tv-match/failed_pages-*.txt 2>/dev/null || true
+  # v5 (2026-11-09): git add is ATOMIC per invocation — one
+  # missing pathspec (or one unmatched glob, which stays literal)
+  # stages NOTHING. v1–v4 all carried at least one not-yet-existing
+  # path (real40, dup-md5.txt, logs/nav-*.log during setup, ...),
+  # so no commit ever formed across four runs, while a hand-rolled
+  # single-file push (diag probe) landed instantly. Stage
+  # path-by-path, only what exists. runner.log stays excluded
+  # (shared append-log — the final step owns it, per run-pm.sh).
+  local p
+  for p in emu/tv-match/real emu/tv-match/real40 emu/tv-match/logs/dumps emu/tv-match/work \
+           emu/tv-match/dup-md5.txt emu/tv-match/logs/nav-*.log emu/tv-match/logs/boot-*.log \
+           emu/tv-match/logs/avd-*.log emu/tv-match/logs/sdk-*.log emu/tv-match/logs/install-*.log \
+           emu/tv-match/logs/licenses.log emu/tv-match/failed_pages-*.txt; do
+    [ -e "$p" ] && git add "$p" 2>/dev/null
+  done
   if git diff --cached --quiet; then log "push_captures: nothing new for $batch"; return 0; fi
   git commit -m "tv-match: cap $batch captures (mid-run)" 2>&1 | tail -1
   # v3 (2026-11-09): the old loop rebased with a DIRTY tree — the
@@ -48,7 +54,12 @@ push_captures() {
   # the fresh origin, push, restore the dirt.
   local i
   for i in 1 2 3 4 5 6; do
-    if git push origin main 2>&1 | tee -a $TVLOG; then log "push_captures: PUSHED cap $batch"; return 0; fi
+    # NOT a pipeline: `git push | tee` reports TEE's exit code and
+    # masked every failed push as success in v1–v4.
+    if git push origin main > /tmp/tv-push.log 2>&1; then
+      cat /tmp/tv-push.log >> $TVLOG; log "push_captures: PUSHED cap $batch"; return 0
+    fi
+    cat /tmp/tv-push.log >> $TVLOG
     git fetch origin main 2>&1 | tail -1 | tee -a $TVLOG
     git stash push -q --include-untracked 2>/dev/null
     if git rebase origin/main 2>&1 | tail -1 | tee -a $TVLOG; then
