@@ -515,3 +515,5 @@
 [nav-tv 13:42:31] shot emu/tv-match/real48/09-sort-genres.png md5 cf46b38bc283 distinct
 [nav-tv 13:42:31] ROUTE-MISS recorded for 09-sort-genres
 [nav-tv 13:42:31] CAPTURE-FAILED 09-sort-genres: verify failed; frame quarantined to dumps/miss-
+[nav-tv 13:48:13] goto ['Movies']: step budget exhausted
+[nav-tv 13:48:20] activate_direct ['Movies']: tapped (344,187)
