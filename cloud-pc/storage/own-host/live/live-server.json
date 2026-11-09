@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
  "server": "stream-server (from-scratch)",
- "url": "https://publications-textbooks-video-thinkpad.trycloudflare.com",
+ "url": "https://faq-printers-mouth-fits.trycloudflare.com",
  "egressIp": "68.220.62.181",
- "started": 1794237532,
+ "started": 1794238067,
  "job": "ownhost-server1"
 }
