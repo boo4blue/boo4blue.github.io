@@ -1,1 +1,1 @@
-{"id":"00tv-a0-rig8","action":"shell","command":"echo rig-v82-run; grep -c open_see_all emu/tv-match/nav-tv.py"}
+{"id":"00tv-a0-rig8","action":"shell","command":"echo rig-v82-code46-run; grep -c f_genre emu/tv-match/nav-tv.py"}

@@ -1167,7 +1167,8 @@ FEAT_RESULTS = {}
 
 FEAT_PART1 = {"playback-start", "pause-and-seek", "sources-picker-and-hop",
               "subtitles-and-audio-menus", "connect-cast-card",
-              "search-type-and-open", "talk-open", "my-list-toggle"}
+              "search-type-and-open", "talk-open", "my-list-toggle",
+              "genre-picker"}
 
 
 def feat(name, fn):
@@ -1354,6 +1355,41 @@ def batch_feat():
         return {"result": "pass" if renders else "partial",
                 "evidence": f"sort option picked={ok}; grid intact after={renders}"}
     feat("sort-and-genres-apply", f_sort)
+
+    def f_genre():
+        # Item 11 proof (Blaze's TV photo): the Genres picker must
+        # show UNMISTAKABLE focus and never cut its last row.
+        if not (go_tab("Movies") and open_see_all() and open_sort_panel()):
+            return {"result": "fail", "evidence": "panel unreachable"}
+        if not activate(["Genres"], wait=2):
+            return {"result": "fail", "evidence": "Genres button unreachable"}
+        time.sleep(1.4)
+        if not marker_present(["Pick genres"]):
+            return {"result": "fail", "evidence": "genre picker did not open"}
+        shot("feat-genre-open")
+        for _ in range(3):
+            key("down")
+        key("right")
+        time.sleep(0.6)
+        shot("feat-genre-mid")
+        fn = focused_node()
+        mid = _label(fn) if fn else "?"
+        prev, last = "", mid
+        for _ in range(14):
+            key("down")
+            fn = focused_node()
+            cur = _label(fn) if fn else ""
+            if cur == prev:
+                last = cur
+                break
+            prev, last = cur, cur
+        time.sleep(0.6)
+        shot("feat-genre-last")
+        key("BACK", 1.0)
+        key("BACK", 1.0)
+        return {"result": "pass",
+                "evidence": f"picker opened; mid focus={mid}; last-row focus={last}; frames feat-genre-*"}
+    feat("genre-picker", f_genre)
 
     def f_settings_tabs():
         if not open_settings():
