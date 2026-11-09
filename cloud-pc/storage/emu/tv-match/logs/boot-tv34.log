@@ -92,3 +92,11 @@ INFO         | Increasing screen off timeout, logcat buffer size to 2M.
 WARNING      | adb command '/home/runner/.cache/cloudpc-models/android-sdk/platform-tools/adb -s emulator-5554 shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: device offline'
 WARNING      | adb command '/home/runner/.cache/cloudpc-models/android-sdk/platform-tools/adb -s emulator-5554 shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: device offline'
 WARNING      | adb command '/home/runner/.cache/cloudpc-models/android-sdk/platform-tools/adb -s emulator-5554 shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: device offline'
+INFO         | Wait for emulator (pid 3334) 20 seconds to shutdown gracefully before kill;you can set environment variable ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL(in seconds) to change the default value (20 seconds)
+
+USER_INFO    | Snapshots have been disabled by the user, save request is ignored.
+INFO         | Saving snapshot 'default_boot' took 0 ms
+ERROR        | stop: Not implemented
+INFO         | removeAll
+ERROR        | Unable to write to file /home/runner/emu-avd-home/tv34.avd/modem_simulator/modem_nvram.json
+WARNING      | Netsim Wifi dns:///localhost:34345 is gone due to Stream removed (CANCELLED)
