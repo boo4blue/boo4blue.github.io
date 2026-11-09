@@ -26,7 +26,7 @@ INFO         |      Ok: Hardware GPU compatibility checks are not required
 INFO         |   Checking: hasSufficientSystem
 INFO         |      Ok: System requirements to run avd: `pmA2` are met
 WARNING      | Feature QuickbootFileBacked is disabled due to stability issues, if you really want that, the environment variable ANDROID_EMU_FORCE_QUICKBOOT_FILE_BACKED need to set to 1
-INFO         | Storing crashdata in: /tmp/android-runner/emu-crash-37.2.13.db, detection is enabled for process: 10267
+INFO         | Storing crashdata in: /tmp/android-runner/emu-crash-37.2.13.db, detection is enabled for process: 11446
 INFO         | Initializing gfxstream backend
 INFO         | startOpenglesRendererImpl: gpu info
 INFO         | 
@@ -71,27 +71,27 @@ INFO         |   androidboot.vbmeta.digest=451e57ed688ff746d2c636d52169ade253e2b
 INFO         |   androidboot.vbmeta.hash_alg=sha256
 INFO         |   androidboot.vbmeta.size=6656
 INFO         |   androidboot.veritymode=enforcing
-WARNING: cannnot unmap ptr 0x78d259801000 as it is in the protected range from 0x78d1b9800000 to 0x78d259a00000
+WARNING: cannnot unmap ptr 0x77f50b801000 as it is in the protected range from 0x77f46b800000 to 0x77f50ba00000
 INFO         | Monitoring duration of emulator setup.
 WARNING      | The emulator now requires a signed jwt token for gRPC access! Use the -grpc flag if you really want an open unprotected grpc port
 INFO         | Using security allow list from: /home/runner/.cache/cloudpc-models/android-sdk/emulator/lib/emulator_access.json
-INFO         | The active JSON Web Key Sets can be found here: /run/user/1001/avd/running/10267/jwks/68d67099-c3cc-450d-b69c-d964c34f187e/active.jwk
-INFO         | Scanning /run/user/1001/avd/running/10267/jwks/68d67099-c3cc-450d-b69c-d964c34f187e for jwk keys.
+INFO         | The active JSON Web Key Sets can be found here: /run/user/1001/avd/running/11446/jwks/48d20b86-298e-4322-8aa9-3c2949070f53/active.jwk
+INFO         | Scanning /run/user/1001/avd/running/11446/jwks/48d20b86-298e-4322-8aa9-3c2949070f53 for jwk keys.
 INFO         | Started GRPC server at 127.0.0.1:8554, security: Local, auth: +token
-INFO         | Advertising in: /run/user/1001/avd/running/pid_10267.ini
-INFO         | Successfully initialized netsim WiFi
+INFO         | Advertising in: /run/user/1001/avd/running/pid_11446.ini
 INFO         | Activated packet streamer for bluetooth emulation
+INFO         | Successfully initialized netsim WiFi
 INFO         | Setting display: 0 configuration to: 1080x2400, dpi: 420x420 
 INFO         | setDisplayActiveConfig: id:0, 1080x2400
 INFO         | emulatorSetupEnvironment: Environment scene is not required
 USER_INFO    | Emulator is performing a full startup. This may take upto two minutes, or more.
-INFO         | Boot completed in 26490 ms
+INFO         | Boot completed in 26770 ms
 INFO         | Increasing screen off timeout, logcat buffer size to 2M.
-ERROR        | adb protocol fault (couldn't read status length)
-ERROR        | bad color buffer handle 261
-ERROR        | bad color buffer handle 329
-ERROR        | bad color buffer handle 542
-ERROR        | bad color buffer handle 638
-ERROR        | bad color buffer handle 707
-INFO         | Wait for emulator (pid 10267) 20 seconds to shutdown gracefully before kill;you can set environment variable ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL(in seconds) to change the default value (20 seconds)
+ERROR        | bad color buffer handle 201
+ERROR        | bad color buffer handle 358
+ERROR        | bad color buffer handle 403
+ERROR        | bad color buffer handle 497
+ERROR        | bad color buffer handle 623
+ERROR        | bad color buffer handle 645
+INFO         | Wait for emulator (pid 11446) 20 seconds to shutdown gracefully before kill;you can set environment variable ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL(in seconds) to change the default value (20 seconds)
 
