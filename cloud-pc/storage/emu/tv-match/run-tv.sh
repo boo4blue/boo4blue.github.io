@@ -38,7 +38,7 @@ push_captures() {
   # path-by-path, only what exists. runner.log stays excluded
   # (shared append-log — the final step owns it, per run-pm.sh).
   local p
-  for p in emu/tv-match/real emu/tv-match/real40 emu/tv-match/logs/dumps emu/tv-match/work \
+  for p in emu/tv-match/real*/ emu/tv-match/logs/dumps emu/tv-match/work*/ \
            emu/tv-match/dup-md5.txt emu/tv-match/logs/nav-*.log emu/tv-match/logs/boot-*.log \
            emu/tv-match/logs/avd-*.log emu/tv-match/logs/sdk-*.log emu/tv-match/logs/install-*.log \
            emu/tv-match/logs/avd-info-*.txt emu/tv-match/logs/logcat-*.txt emu/tv-match/logs/runner.log \
