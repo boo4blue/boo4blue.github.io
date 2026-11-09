@@ -1,0 +1,29 @@
+[nav 05:49:50] nav.py batch C2 starting; top before: topResumedActivity=ActivityRecord{f6754c6 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t7}
+[nav 05:50:01] launched; top: topResumedActivity=ActivityRecord{360b164 u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t8}
+[nav 05:50:08] visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all']
+[nav 05:50:16] tap 'Movies' at (400,393)
+[nav 05:50:26] tile anchor MISS 'Trending Movies'
+[nav 05:50:33] tap 'Play' at (229,1098)
+[nav 05:50:52] player top: topResumedActivity=ActivityRecord{bb3f3d2 u0 com.onioncore.oniontv/.PlayerActivity t8}
+[nav 05:51:14] DEDUP-FAIL emu/phone-match/real/13-player-sources-upright.png: md5 2768a5a9f2b39a7f4dceddbbc2007c28 == 12-player-controls's frame
+[nav 05:51:16] DEDUP-FAIL emu/phone-match/real/13-player-sources-upright.png: md5 2768a5a9f2b39a7f4dceddbbc2007c28 == 12-player-controls's frame
+[nav 05:51:16] CAPTURE-FAILED 13-player-sources: upright frame duplicates another page's frame (recorded in failed_pages.txt)
+[nav 05:51:22] shot emu/phone-match/real/13-player-sources-sideways.png (12537 B) md5 d32f83d44c64 distinct
+[nav 05:51:37] player menu MISS ['Subtitles', 'Subtitle', 'Captions']; visible: ['ONION TV', 'Movies', 'Home', 'Movies', 'Shows', 'Anime', 'Settings', 'Profile: Blaze - open profiles', 'Search movies, shows, anime…', 'Obsession', '2026  -  IMDb 7.8  -  Horror, Thriller', 'Play', 'More Info', 'Trending', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'New', 'See all']
+[nav 05:51:52] shot emu/phone-match/real/14-player-subtitles-upright.png (1426170 B) md5 c8efa833e583 distinct
+[nav 05:51:58] DEDUP-FAIL emu/phone-match/real/14-player-subtitles-sideways.png: md5 154b7bebd5da6d771a8003e831dbb52d == 10-movie-title's frame
+[nav 05:52:01] DEDUP-FAIL emu/phone-match/real/14-player-subtitles-sideways.png: md5 154b7bebd5da6d771a8003e831dbb52d == 10-movie-title's frame
+[nav 05:52:01] CAPTURE-FAILED 14-player-subtitles: sideways frame duplicates another page's frame (recorded in failed_pages.txt)
+[nav 05:52:04] ROUTE-MISS recorded for 14-player-subtitles
+[nav 05:52:15] player menu MISS ['Audio']; visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all']
+[nav 05:52:29] shot emu/phone-match/real/15-player-audio-upright.png (1375763 B) md5 699c900c711d distinct
+[nav 05:52:33] shot emu/phone-match/real/15-player-audio-sideways.png (1073128 B) md5 e3d85b5efae0 distinct
+[nav 05:52:36] ROUTE-MISS recorded for 15-player-audio
+[nav 05:52:43] player menu MISS ['Connect', 'Cast']; visible: ['Mon, Nov 9', 'Gmail', 'Photos', 'YouTube', 'Home', 'Phone', 'Messages', 'Chrome', 'Onion TV', 'Search', 'Google app', 'Voice search', 'Google Lens']
+[nav 05:52:56] shot emu/phone-match/real/16-player-connect-upright.png (1344994 B) md5 5d72dc250390 distinct
+[nav 05:53:00] ROTATION-FAIL emu/phone-match/real/16-player-connect-sideways.png: got (1080, 2280), want (2280, 1080)
+[nav 05:53:05] ROTATION-FAIL emu/phone-match/real/16-player-connect-sideways.png: got (1080, 2280), want (2280, 1080)
+[nav 05:53:05] CAPTURE-FAILED 16-player-connect: sideways rotation never took effect (recorded in failed_pages.txt)
+[nav 05:53:08] ROUTE-MISS recorded for 16-player-connect
+[nav 05:53:11] batch C2 complete
+[nav 05:53:11] nav.py done

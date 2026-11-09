@@ -1,0 +1,3 @@
+13-player-sources upright frame duplicates another page's frame
+14-player-subtitles sideways frame duplicates another page's frame
+16-player-connect sideways rotation never took effect
