@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794263597,
+ "at": 1794263605,
  "egressIp": "52.176.67.192",
  "own": {
   "base": "https://kelly-influenced-disco-themes.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://clock-coordinator-rider-continued.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
