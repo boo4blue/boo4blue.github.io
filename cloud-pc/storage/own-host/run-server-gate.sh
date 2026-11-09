@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
-# Own-host SERVER gate — runs on a Cloud PC runner (cwd = cloud-pc/storage).
+# Own-host SERVER gate v2 — runs on a Cloud PC runner (cwd = cloud-pc/storage).
 #
-# Builds the existing Onion Stream server from own-host/server-src,
-# runs it, opens a cloudflared quick tunnel, publishes the URL mid-run
-# (own-host/live/live-server.json), then runs the Sintel gate against
-# the LOCAL server: /health -> /api/start -> poll /api/status for
-# infoReady + activePeers>0 -> /play/<hash>/5 Range 0-1023 expecting
-# media bytes (ftyp). Results land in own-host/live/gate-server.json.
-# Holds the tunnel open until the 600 s shell budget is nearly spent
-# so the parent can verify the public URL from the sandbox too.
+# Uses the NEW from-scratch Onion Stream Server (source staged in
+# own-host/stream-server-src, copied from ~/workspace/onion-tv/stream-server
+# — build/vet clean, 16/16 tests, loopback swarm gate passed there).
+# Builds it, runs it on 127.0.0.1:11470, opens a cloudflared quick
+# tunnel, publishes the URL mid-run (own-host/live/live-server.json,
+# git push), runs the Sintel gate server-side (health -> start ->
+# status poll -> /play Range), publishes results
+# (own-host/live/gate-server.json), then holds the tunnel open until
+# the pc.py 600 s shell budget is nearly spent so the parent can
+# verify the public URL from the sandbox too.
 set -u
 T0=$(date +%s)
 el() { echo $(( $(date +%s) - T0 )); }
@@ -29,22 +31,16 @@ GO_BIN=$(command -v go || true)
 if [ -z "$GO_BIN" ]; then log "FATAL no go toolchain"; exit 3; fi
 log "go: $($GO_BIN version)"
 
-if command -v ffmpeg >/dev/null; then
-  log "ffmpeg present: $(ffmpeg -version 2>/dev/null | head -1)"
-else
-  log "ffmpeg missing; installing"
-  sudo apt-get update -qq >/dev/null 2>&1
-  sudo apt-get install -y -qq ffmpeg >/dev/null 2>&1
-  log "ffmpeg now: $(ffmpeg -version 2>/dev/null | head -1 || echo STILL-MISSING)"
-fi
-
-( cd "$OH/server-src" && GOTOOLCHAIN=auto GOFLAGS=-mod=mod GOPROXY=https://proxy.golang.org,direct \
-    "$GO_BIN" build -o /tmp/onion-stream . ) || { log "FATAL server build failed"; exit 4; }
+( cd "$OH/stream-server-src" && GOTOOLCHAIN=auto GOFLAGS=-mod=mod GOPROXY=https://proxy.golang.org,direct \
+    CGO_ENABLED=0 "$GO_BIN" build -buildvcs=false -o /tmp/onion-stream . ) \
+  || { log "FATAL server build failed"; exit 4; }
 log "server built"
 
 mkdir -p /tmp/oscache
-ONION_STREAM_ADDR=":11470" ONION_STREAM_CACHE=/tmp/oscache /tmp/onion-stream > /tmp/server.log 2>&1 &
-for i in $(seq 1 25); do curl -s -m 2 $SRV/health >/dev/null && break; sleep 1; done
+ONION_STREAM_ADDR="127.0.0.1:11470" ONION_STREAM_CACHE_DIR=/tmp/oscache \
+ONION_STREAM_CACHE_MAX_BYTES=8589934592 \
+  /tmp/onion-stream > /tmp/server.log 2>&1 &
+for i in $(seq 1 30); do curl -s -m 2 $SRV/health >/dev/null && break; sleep 1; done
 log "server health: $(curl -s -m 2 $SRV/health)"
 
 if [ ! -x /tmp/cloudflared ]; then
@@ -60,14 +56,16 @@ for i in $(seq 1 45); do
 done
 if [ -z "$URL" ]; then log "FATAL no tunnel URL"; tail -5 /tmp/tunnel.log; exit 6; fi
 log "tunnel url: $URL"
+printf '%s\n' "$URL" > "$OH/live/stream-url.txt"
 python3 - "$URL" "$IP" <<'PY'
 import json, sys, time
-doc = {"service": "onion-stream", "url": sys.argv[1], "egressIp": sys.argv[2],
+doc = {"service": "onion-stream", "server": "stream-server (from-scratch)",
+       "url": sys.argv[1], "egressIp": sys.argv[2],
        "started": int(time.time()), "job": "ownhost-server1"}
 open("own-host/live/live-server.json", "w").write(json.dumps(doc, indent=1))
 PY
 ( cd "$REPO" && git config user.name cloudpc && git config user.email cloudpc@local \
-  && git add cloud-pc/storage/own-host/live/live-server.json \
+  && git add cloud-pc/storage/own-host/live/live-server.json cloud-pc/storage/own-host/live/stream-url.txt \
   && (git diff --cached --quiet || git commit -q -m "own-host: stream server session live") \
   && (git push -q origin HEAD:main || (git pull -q --rebase origin main && git push -q origin HEAD:main)) ) \
   && log "published live-server.json" || log "WARN mid-run publish failed"
@@ -86,9 +84,9 @@ while time.time() - t0 < 200:
     except Exception:
         time.sleep(8); continue
     maxpeers = max(maxpeers, int(st.get("activePeers") or 0))
-    files = st.get("files") or []
-    if len(files) > 5:
-        file5 = files[5].get("length")
+    fl = st.get("fileLengths") or []
+    if len(fl) > 5:
+        file5 = fl[5]
     if st.get("infoReady"):
         info = True; waited = int(time.time() - t0); break
     time.sleep(8)
@@ -97,25 +95,25 @@ print(json.dumps({"infoReady": info, "maxPeers": maxpeers, "file5Length": file5,
 PY
 )
 log "gate status poll: $GATE"
-probe_play() { # $1 = path prefix (/play or /raw)
-  local code
-  code=$(curl -s -o /tmp/play.bin -w "%{http_code}" -r 0-1023 --max-time 150 "$SRV$1/$HASH/5" || echo 000)
-  local ftyp="no"
-  python3 -c "
-d = open('/tmp/play.bin','rb').read() if __import__('os').path.exists('/tmp/play.bin') else b''
-import sys; sys.exit(0 if len(d) >= 8 and d[4:8] == b'ftyp' else 1)" && ftyp="yes"
-  echo "$code/$ftyp"
-}
-PLAY=$(probe_play /play)
-RAW=$(probe_play /raw)
-log "gate play: HTTP/ftyp=$PLAY raw: HTTP/ftyp=$RAW"
-python3 - "$GATE" "$PLAY" "$RAW" "$IP" <<'PY'
+CODE=$(curl -s -o /tmp/play.bin -w "%{http_code}" -H "Range: bytes=0-1023" --max-time 150 "$SRV/play/$HASH/5" || echo 000)
+MAGIC=$(python3 - <<'PY'
+import os
+d = open('/tmp/play.bin','rb').read() if os.path.exists('/tmp/play.bin') else b''
+if len(d) >= 8 and d[4:8] == b'ftyp':
+    print('ftyp')
+elif len(d) >= 4 and d[:4] == bytes.fromhex('1a45dfa3'):
+    print('ebml-matroska')
+else:
+    print('other:' + d[:8].hex())
+PY
+)
+log "gate play: HTTP=$CODE magic=$MAGIC bytes=$(stat -c%s /tmp/play.bin 2>/dev/null || echo 0)"
+python3 - "$GATE" "$CODE" "$MAGIC" "$IP" <<'PY'
 import json, sys, time
 g = json.loads(sys.argv[1])
-pc, pf = sys.argv[2].split("/"); rc, rf = sys.argv[3].split("/")
-g.update({"playHttp": int(pc), "playFtyp": pf == "yes",
-          "rawHttp": int(rc), "rawFtyp": rf == "yes",
-          "egressIp": sys.argv[4], "at": int(time.time()), "hash": "08ada5a7a6183aae1e09d831df6748d566095a10"})
+g.update({"playHttp": int(sys.argv[2]), "playMagic": sys.argv[3],
+          "egressIp": sys.argv[4], "at": int(time.time()),
+          "hash": "08ada5a7a6183aae1e09d831df6748d566095a10"})
 open("own-host/live/gate-server.json", "w").write(json.dumps(g, indent=1))
 print("gate-server.json:", json.dumps(g))
 PY
