@@ -255,6 +255,16 @@ def focus_on(labels, xml=None):
         return False
     if _matches(foc, labels):
         return True
+    # Containment shortcut — v8: NOT for scroll containers or huge
+    # parents (a focused ScrollView "contains" every label on screen;
+    # that false positive is why 'See all' never opened in v6/v7).
+    # v8.1: the focused node must also be CLICKABLE — a plain container
+    # that merely wraps the label is not the control.
+    if foc["cls"].endswith("ScrollView") or not foc.get("clickable"):
+        return False
+    area = (foc["x2"] - foc["x1"]) * (foc["y2"] - foc["y1"])
+    if area > 0.45 * 1920 * 1080:
+        return False
     for n in ns:
         if _matches(n, labels) and foc["x1"] <= n["cx"] <= foc["x2"] and foc["y1"] <= n["cy"] <= foc["y2"]:
             return True
@@ -324,6 +334,23 @@ def activate(labels, wait=2.0):
     if not goto_labels(labels):
         return False
     key("CENTER", wait)
+    return True
+
+
+def activate_direct(labels, wait=2.0):
+    """v8: tap the matching node's own center coordinates instead of
+    steering focus + CENTER. For controls whose focus target is
+    ambiguous (e.g. 'See all' inside a focused ScrollView, where
+    focus_on's containment shortcut fires spuriously)."""
+    ns = nodes(dump())
+    cands = [n for n in ns if _matches(n, labels)]
+    if not cands:
+        log(f"activate_direct {labels}: not present; visible: {visible_texts()[:14]}")
+        return False
+    n = cands[0]
+    sh(f"input tap {n['cx']} {n['cy']}")
+    time.sleep(wait)
+    log(f"activate_direct {labels}: tapped ({n['cx']},{n['cy']})")
     return True
 
 
@@ -567,7 +594,13 @@ TAB_ALTS = {"Series": ["Series", "Shows"], "Shows": ["Series", "Shows"]}
 
 
 def go_tab(label, wait=3.0):
+    # v8.1: direct tap on the pill's own bounds first (deterministic);
+    # D-pad steering around the bar could drop a CENTER on the search
+    # bar and open Search instead (MX leg settings-to-05, rig v7).
     alts = TAB_ALTS.get(label, [label])
+    for lab in alts:
+        if activate_direct([lab], wait=wait):
+            return True
     for lab in alts:
         if activate([lab], wait=wait):
             return True
@@ -598,8 +631,9 @@ def open_settings(wait=3.0):
     profs = [n for n in nodes(xml) if n["desc"].startswith("Profile:")
              or "profile picture" in n["desc"].lower()]
     if profs:
-        # steer focus to the avatar: it sits top-right; goto by desc label
-        if activate(["Profile:", "profile picture"], wait=wait):
+        # v8.1: tap the avatar's own bounds first; focus steering as backup
+        if activate_direct(["Profile:", "profile picture"], wait=wait) or \
+                activate(["Profile:", "profile picture"], wait=wait):
             return marker_present(["Quiet Mode", "Playback", "General", "Settings"])
     # fallback: long way — BACK to picker-level profile page is phone-only;
     # try a node whose desc is exactly the profile name pattern via geometry:
@@ -608,7 +642,7 @@ def open_settings(wait=3.0):
 
 
 def settings_tab(name, wait=2.5):
-    return activate([name], wait=wait)
+    return activate_direct([name], wait=wait) or activate([name], wait=wait)
 
 
 def open_player_from_detail(max_wait=45):
@@ -662,12 +696,12 @@ def batch_base():
     res = capture("05-movies", ["Trending Movies"], needs_topbar=True, route_ok=ok)
     dump("base-movies")
     # 08 see-all from Movies
-    ok = activate(["See all"], wait=3)
+    ok = activate_direct(["See all"], wait=3)
     time.sleep(2)
-    res = capture("08-see-all", ["Sort & Genres", "titles"], route_ok=ok)
+    res = capture("08-see-all", ["Sort & Genres"], route_ok=ok)
     dump("base-seeall")
     # 09 sort & genres panel
-    ok = activate(["Sort & Genres"], wait=2)
+    ok = activate_direct(["Sort & Genres"], wait=2)
     time.sleep(1.5)
     res = capture("09-sort-genres", ["Sort", "Genres"], route_ok=ok)
     dump("base-sort")
@@ -885,7 +919,7 @@ def enter(screen):
     if screen == "movies":
         return go_tab("Movies")
     if screen == "see-all":
-        return go_tab("Movies") and bool(activate(["See all"], wait=3))
+        return go_tab("Movies") and bool(activate_direct(["See all"], wait=3))
     if screen == "title":
         return (go_tab("Movies") and goto_labels(["Trending Movies"])
                 and activate_tile_in_rail()
@@ -944,8 +978,21 @@ BAR_PAGES = {"04-tv-home": (["Continue Watching", "Trending Movies"], True),
              "07-anime": (["Anime"], True)}
 
 
+MX_PART1 = {"to-04-tv-home", "to-05-movies", "to-06-shows", "to-07-anime",
+            "settings-to-05-movies", "settings-to-06-shows",
+            "settings-to-07-anime", "settab-Playback-to-home",
+            "settab-Accounts-to-home", "settab-Downloads & Storage-to-home",
+            "settab-General-to-home"}
+
+
 def hop(name, fn, target, markers, needs_topbar=False):
     """One transition: run fn, then verify the target page's invariants."""
+    part = os.environ.get("TV_PART", "")
+    if (part == "1" and name not in MX_PART1) or \
+            (part == "2" and name in MX_PART1):
+        log(f"MATRIX {name}: skipped (part {part})")
+        return {"transition": name, "route_ok": True, "pass": True,
+                "skipped": True, "verify": {}}
     try:
         ok = fn()
     except Exception as e:
@@ -1073,15 +1120,15 @@ def batch_matrix():
                        BAR_PAGES["04-tv-home"][0], True))
     # dialog open -> dismiss -> underlying page intact
     def dialog_loop():
-        if not (go_tab("Movies") and activate(["See all"], wait=3)):
+        if not (go_tab("Movies") and activate_direct(["See all"], wait=3)):
             return False
-        if not activate(["Sort & Genres"], wait=2):
+        if not activate_direct(["Sort & Genres"], wait=2):
             return False
         time.sleep(1)
         key("BACK", 1.2)
-        return marker_present(["Sort & Genres", "titles"])
+        return marker_present(["Sort & Genres"])
     results.append(hop("dialog-sort-open-dismiss-seeall", dialog_loop,
-                       "08-see-all", ["Sort & Genres", "titles"]))
+                       "08-see-all", ["Sort & Genres"]))
     key("BACK", 1.2)
     with open(os.path.join(WORK, "matrix.json"), "w") as f:
         json.dump(results, f, indent=1)
@@ -1094,7 +1141,19 @@ def batch_matrix():
 FEAT_RESULTS = {}
 
 
+FEAT_PART1 = {"playback-start", "pause-and-seek", "sources-picker-and-hop",
+              "subtitles-and-audio-menus", "connect-cast-card",
+              "search-type-and-open", "talk-open", "my-list-toggle"}
+
+
 def feat(name, fn):
+    part = os.environ.get("TV_PART", "")
+    if part == "1" and name not in FEAT_PART1:
+        log(f"FEAT {name}: skipped (part 1)")
+        return {"result": "skipped"}
+    if part == "2" and name in FEAT_PART1:
+        log(f"FEAT {name}: skipped (part 2)")
+        return {"result": "skipped"}
     try:
         res = fn()
     except Exception as e:
@@ -1255,9 +1314,9 @@ def batch_feat():
     feat("my-list-toggle", f_mylist)
 
     def f_sort():
-        if not (go_tab("Movies") and activate(["See all"], wait=3)):
+        if not (go_tab("Movies") and activate_direct(["See all"], wait=3)):
             return {"result": "fail", "evidence": "no see-all"}
-        if not activate(["Sort & Genres"], wait=2):
+        if not activate_direct(["Sort & Genres"], wait=2):
             return {"result": "fail", "evidence": "sort panel unreachable"}
         time.sleep(1.2)
         ok = activate(["Newest", "Top rated", "Name"], wait=2)

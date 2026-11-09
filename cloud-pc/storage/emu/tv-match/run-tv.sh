@@ -201,7 +201,12 @@ if [ "$mode" = cap ]; then
   fi
   echo "served-by: ${SERVED:-NONE}" | tee emu/tv-match/logs/avd-info-$BATCH.txt | tee -a $TVLOG
   if [ -z "$SERVED" ]; then log "FATAL: APK would not install on either TV image"; push_captures "$BATCH"; exit 0; fi
-  TV_BATCH=$BATCH TV_WARM_HOME=1 TV_OUT_SUFFIX=${TV_OUT_SUFFIX:-} python3 emu/tv-match/nav-tv.py 2>&1 | tee -a emu/tv-match/logs/nav-$BATCH.log
+  # v8.1: periodic push watchdog — a cancelled run or a 600 s job kill
+  # must not take the batch's partial results with it (FEAT/MX v7 loss).
+  ( while sleep 150; do push_captures "$BATCH-wd" >/dev/null 2>&1; done ) &
+  WDPID=$!
+  TV_BATCH=$BATCH TV_PART=${TV_PART:-} TV_WARM_HOME=1 TV_OUT_SUFFIX=${TV_OUT_SUFFIX:-} python3 emu/tv-match/nav-tv.py 2>&1 | tee -a emu/tv-match/logs/nav-$BATCH.log
+  kill $WDPID 2>/dev/null
   adb shell logcat -d > emu/tv-match/logs/logcat-$BATCH.txt 2>/dev/null
   adb emu kill 2>/dev/null
   push_captures "$BATCH"

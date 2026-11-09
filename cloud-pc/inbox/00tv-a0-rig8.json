@@ -1,0 +1,1 @@
+{"id":"00tv-a0-rig8","action":"shell","command":"echo rig-v8-run; grep -c activate_direct emu/tv-match/nav-tv.py"}

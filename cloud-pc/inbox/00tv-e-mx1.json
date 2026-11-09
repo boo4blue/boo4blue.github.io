@@ -1,0 +1,1 @@
+{"id":"00tv-e-mx1","action":"shell","command":"TV_PART=1 bash emu/tv-match/run-tv.sh cap MX"}
