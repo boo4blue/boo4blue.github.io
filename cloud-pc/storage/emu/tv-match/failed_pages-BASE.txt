@@ -34,3 +34,5 @@
 11-series-title verify failed; frame quarantined to dumps/miss-
 07-anime frame duplicates another page's frame
 07-anime verify failed; frame quarantined to dumps/miss-
+08-see-all verify failed; frame quarantined to dumps/miss-
+09-sort-genres verify failed; frame quarantined to dumps/miss-

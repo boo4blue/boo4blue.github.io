@@ -401,3 +401,31 @@
 [nav-tv 11:30:21] CAPTURE-FAILED 07-anime: verify failed; frame quarantined to dumps/miss-
 [nav-tv 11:30:28] activate_direct ['Movies']: tapped (680,76)
 [nav-tv 11:30:32] goto ['Trending Movies']: label not present on screen; visible: ['FEATURED', 'Obsession', '★ 7.8  2026 · 109 min · Horror, Thriller', 'After breaking the mysterious "One Wish Willow" to win his crush\'s heart, a hopeless romantic finds himself getting exactly what he asked for but soon discovers that some desires come at a dark, sinister price.', 'Play', 'More Info', 'My List', 'Onion TV', 'Home', 'Movies', 'Series', 'Anime', 'Search titles...', 'Talk - use your phone as the microphone', 'Profile: Blaze - open Settings']
+[nav-tv 12:32:52] nav-tv.py batch BASE starting; top before: topResumedActivity=ActivityRecord{699083e u0 com.google.android.tvlauncher/.MainActivity t5}
+[nav-tv 12:33:04] launched; top: topResumedActivity=ActivityRecord{cabaf2f u0 com.onioncore.oniontv/.ProfileActivity t6}
+[nav-tv 12:33:06] visible: ["Who's watching?", 'Blaze', 'MAIN', 'Edit', '+', 'Add profile']
+[nav-tv 12:33:11] verify 01-profile-picker: {"page": "01-profile-picker", "alive": true, "activity": "topResumedActivity=ActivityRecord{cabaf2f u0 com.onioncore.oniontv/.ProfileActivity t6}", "text_nodes": 6, "focused": "android.widget.FrameLayout", "marker": true, "pass": true}
+[nav-tv 12:33:11] shot emu/tv-match/real46/01-profile-picker.png md5 2edbb348560a distinct
+[nav-tv 12:33:18] settle 04-home-cold[0] at 0.68s md5 76ba995df715
+[nav-tv 12:33:19] settle 04-home-cold[1] at 1.69s md5 76ba995df715
+[nav-tv 12:33:21] settle 04-home-cold[2] at 3.19s md5 76ba995df715
+[nav-tv 12:33:23] settle 04-home-cold[3] at 5.19s md5 76ba995df715
+[nav-tv 12:33:26] settle 04-home-cold[4] at 8.18s md5 76ba995df715
+[nav-tv 12:33:30] settle 04-home-cold[5] at 12.21s md5 76ba995df715
+[nav-tv 12:33:34] verify 04-tv-home: {"page": "04-tv-home", "alive": true, "activity": "topResumedActivity=ActivityRecord{21a8ef1 u0 com.onioncore.oniontv/.HomeActivity t6}", "text_nodes": 15, "focused": "Play", "marker": true, "topbar_pills": 5, "topbar": true, "profile_pic": true, "pass": true}
+[nav-tv 12:33:34] shot emu/tv-match/real46/04-tv-home.png md5 76ba995df715 distinct
+[nav-tv 12:33:42] focus reached ['Movies'] in 1 presses
+[nav-tv 12:33:51] verify 05-movies: {"page": "05-movies", "alive": true, "activity": "topResumedActivity=ActivityRecord{9c2552b u0 com.onioncore.oniontv/.BrowseActivity t6}", "text_nodes": 16, "focused": "android.widget.ScrollView", "marker": true, "topbar_pills": 5, "topbar": true, "profile_pic": true, "pass": true}
+[nav-tv 12:33:52] shot emu/tv-match/real46/05-movies.png md5 d1e7570f3053 distinct
+[nav-tv 12:33:59] activate_direct ['See all']: tapped (1657,916)
+[nav-tv 12:34:09] verify 08-see-all: {"page": "08-see-all", "alive": true, "activity": "topResumedActivity=ActivityRecord{f333ad u0 com.onioncore.oniontv/.SeeAllActivity t6}", "text_nodes": 14, "focused": null, "marker": true, "pass": false}
+[nav-tv 12:34:09] shot emu/tv-match/real46/08-see-all.png md5 e78c183bbe3c distinct
+[nav-tv 12:34:09] ROUTE-MISS recorded for 08-see-all
+[nav-tv 12:34:09] CAPTURE-FAILED 08-see-all: verify failed; frame quarantined to dumps/miss-
+[nav-tv 12:34:15] activate_direct ['Sort & Genres']: tapped (340,285)
+[nav-tv 12:34:19] focus reached ['Sort & Genres'] in 0 presses
+[nav-tv 12:34:23] open_sort_panel: panel did not arrive
+[nav-tv 12:34:31] verify 09-sort-genres: {"page": "09-sort-genres", "alive": true, "activity": "topResumedActivity=ActivityRecord{f333ad u0 com.onioncore.oniontv/.SeeAllActivity t6}", "text_nodes": 4, "focused": "Close", "marker": true, "pass": false}
+[nav-tv 12:34:31] shot emu/tv-match/real46/09-sort-genres.png md5 addc9805f971 distinct
+[nav-tv 12:34:31] ROUTE-MISS recorded for 09-sort-genres
+[nav-tv 12:34:31] CAPTURE-FAILED 09-sort-genres: verify failed; frame quarantined to dumps/miss-
