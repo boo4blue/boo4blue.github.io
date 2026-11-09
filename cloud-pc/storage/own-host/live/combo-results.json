@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794266605,
+ "at": 1794266607,
  "egressIp": "57.151.137.151",
  "own": {
   "base": "https://soc-gabriel-neck-products.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
