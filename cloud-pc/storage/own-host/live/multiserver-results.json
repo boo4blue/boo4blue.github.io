@@ -1,6 +1,6 @@
 {
  "job": "ownhost-multi2",
- "at": 1794246062,
+ "at": 1794246234,
  "egressIp": "20.55.127.224",
  "torrserver": {
   "base": "https://mandatory-three-contributed-bufing.trycloudflare.com",
@@ -21,12 +21,12 @@
   "diag": "add http=000000 body:  | retry text/plain http=000000 body:  | info: {\"idx\": \"\", \"peers\": \"\", \"tid\": null, \"err\": \"no id in add response\"}"
  },
  "webtorrent": {
-  "base": "",
-  "proven": "not-attempted",
+  "base": "https://southern-nova-removable-classroom.trycloudflare.com",
+  "proven": "no (no file index \u2014 metadata never arrived in ~150 s)",
   "peers": "",
   "range": "",
   "startLatencySec": "",
-  "diag": ""
+  "diag": "last status: "
  },
  "own": {
   "proven": "live-via-s-chain (S7, not re-run here)"
