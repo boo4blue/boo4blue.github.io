@@ -2,3 +2,4 @@
 05-movies sideways frame duplicates another page's frame
 06-shows upright frame duplicates another page's frame
 06-shows sideways frame duplicates another page's frame
+06-shows sideways frame duplicates another page's frame
