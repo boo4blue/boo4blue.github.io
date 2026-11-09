@@ -32,11 +32,26 @@ push_captures() {
   git add emu/tv-match/real emu/tv-match/real40 emu/tv-match/logs emu/tv-match/work emu/tv-match/failed_pages-*.txt emu/tv-match/dup-md5.txt 2>/dev/null
   if git diff --cached --quiet; then log "push_captures: nothing new for $batch"; return 0; fi
   git commit -m "tv-match: cap $batch captures (mid-run)" 2>&1 | tail -1
-  git fetch --deepen=100 origin main 2>/dev/null || git fetch origin main 2>/dev/null
-  for i in 1 2 3 4 5; do
-    if git push 2>&1 | tee -a $TVLOG; then log "push_captures: PUSHED cap $batch"; return 0; fi
-    git pull --rebase origin main 2>&1 | tail -2 | tee -a $TVLOG || break
-    sleep 15
+  # v3 (2026-11-09): the old loop rebased with a DIRTY tree — the
+  # workflow deletes inbox files as it runs (unstaged deletions),
+  # so every rebase refused and every push failed while a sibling
+  # run kept moving origin/main. Two full runs produced ZERO tv
+  # commits this way. Now: stash the unstaged dirt, rebase onto
+  # the fresh origin, push, restore the dirt.
+  local i
+  for i in 1 2 3 4 5 6; do
+    if git push origin main 2>&1 | tee -a $TVLOG; then log "push_captures: PUSHED cap $batch"; return 0; fi
+    git fetch origin main 2>&1 | tail -1 | tee -a $TVLOG
+    git stash push -q --include-untracked 2>/dev/null
+    if git rebase origin/main 2>&1 | tail -1 | tee -a $TVLOG; then
+      git stash pop -q 2>/dev/null
+    else
+      git rebase --abort 2>/dev/null
+      git stash pop -q 2>/dev/null
+      log "push_captures: rebase conflict for $batch (keeping local commit for the final step)"
+      return 0
+    fi
+    sleep 5
   done
   log "push_captures: PUSH FAILED for cap $batch (final commit step is the second chance)"
   return 0
@@ -60,17 +75,25 @@ if [ "$mode" = setup-a ] || [ "$mode" = setup ]; then
   $SDKM "emulator" "platform-tools" "platforms;android-34" > emu/tv-match/logs/sdk-a.log 2>&1
   echo "setup-a sdkmanager exit=$?"
   [ -x $SDK/emulator/emulator ] && echo "SETUP_A_OK" || echo "SETUP_A_INCOMPLETE"
+  # Report immediately (v3): setup verdicts used to be invisible
+  # until a cap batch pushed — a dead chain looked like silence.
+  log "setup-a done"
+  push_captures "setup-a"
 fi
 if [ "$mode" = setup-b ] || [ "$mode" = setup ]; then
   $SDKM "$IMG34" > emu/tv-match/logs/sdk-b.log 2>&1
   echo "setup-b sdkmanager exit=$?"
   [ -f $SDK/system-images/android-34/android-tv/x86/system.img ] && echo "SETUP_B_OK" || echo "SETUP_B_INCOMPLETE"
+  log "setup-b done"
+  push_captures "setup-b"
 fi
 if [ "$mode" = setup-c ] || [ "$mode" = setup ]; then
   $SDKM "$IMG36" > emu/tv-match/logs/sdk-c.log 2>&1
   echo "setup-c sdkmanager exit=$?"
   ls $SDK/system-images/android-36/android-tv/x86_64/system.img 2>/dev/null && echo "SETUP_C_OK" || echo "API-36 TV x86_64 image MISSING (fallback unavailable)"
   echo SETUP_DONE
+  log "setup-c done"
+  push_captures "setup-c"
 fi
 
 boot_avd() {
