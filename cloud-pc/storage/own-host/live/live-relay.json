@@ -1,11 +1,11 @@
 {
  "service": "onion-relay",
- "url": "https://strict-dude-ruled-matches.trycloudflare.com",
- "wss": "wss://strict-dude-ruled-matches.trycloudflare.com",
- "key": "3bab53405bea94ad2038561bba6d5ec65f9a26b03c6834af",
- "egressIp": "52.165.86.211",
+ "url": "https://dot-critical-self-kit.trycloudflare.com",
+ "wss": "wss://dot-critical-self-kit.trycloudflare.com",
+ "key": "f904f91d2fb9777eda59227270532cce5ecd1bd70870d332",
+ "egressIp": "40.124.164.201",
  "tcpTracker443": "OK",
  "udpDns": "OK",
- "started": 1794229517,
+ "started": 1794230335,
  "job": "ownhost-relay1"
 }
