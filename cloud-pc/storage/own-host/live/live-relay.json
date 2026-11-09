@@ -1,11 +1,11 @@
 {
  "service": "onion-relay",
- "url": "https://dot-critical-self-kit.trycloudflare.com",
- "wss": "wss://dot-critical-self-kit.trycloudflare.com",
- "key": "f904f91d2fb9777eda59227270532cce5ecd1bd70870d332",
- "egressIp": "40.124.164.201",
+ "url": "https://artist-surveillance-thumb-podcast.trycloudflare.com",
+ "wss": "wss://artist-surveillance-thumb-podcast.trycloudflare.com",
+ "key": "290c2750ca5cf0960436ea3374404d6a4b327aa849c556db",
+ "egressIp": "20.120.253.121",
  "tcpTracker443": "OK",
  "udpDns": "OK",
- "started": 1794230335,
+ "started": 1794232438,
  "job": "ownhost-relay1"
 }
