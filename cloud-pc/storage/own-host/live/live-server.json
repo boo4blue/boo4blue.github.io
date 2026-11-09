@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
  "server": "stream-server (from-scratch)",
- "url": "https://escape-exclude-protein-specification.trycloudflare.com",
- "egressIp": "20.64.183.92",
- "started": 1794235689,
+ "url": "https://publications-textbooks-video-thinkpad.trycloudflare.com",
+ "egressIp": "68.220.62.181",
+ "started": 1794237532,
  "job": "ownhost-server1"
 }
