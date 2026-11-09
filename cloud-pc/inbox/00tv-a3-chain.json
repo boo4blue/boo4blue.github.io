@@ -1,1 +1,0 @@
-{"id":"00tv-a3-chain","action":"shell","command":"bash emu/tv-match/run-tv.sh setup-a"}
