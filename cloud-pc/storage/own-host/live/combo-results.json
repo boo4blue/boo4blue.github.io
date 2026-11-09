@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794253465,
+ "at": 1794253998,
  "egressIp": "172.206.39.215",
  "own": {
-  "base": "https://skirts-settlement-computed-argue.trycloudflare.com",
+  "base": "https://italiano-corner-geographic-wooden.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "https://arrivals-knight-upgrade-doc.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://fed-installation-marion-persistent.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://smart-released-spyware-snap.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
