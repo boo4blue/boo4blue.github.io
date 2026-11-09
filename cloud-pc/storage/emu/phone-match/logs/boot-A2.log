@@ -26,7 +26,7 @@ INFO         |      Ok: Hardware GPU compatibility checks are not required
 INFO         |   Checking: hasSufficientSystem
 INFO         |      Ok: System requirements to run avd: `pmA2` are met
 WARNING      | Feature QuickbootFileBacked is disabled due to stability issues, if you really want that, the environment variable ANDROID_EMU_FORCE_QUICKBOOT_FILE_BACKED need to set to 1
-INFO         | Storing crashdata in: /tmp/android-runner/emu-crash-37.2.13.db, detection is enabled for process: 3648
+INFO         | Storing crashdata in: /tmp/android-runner/emu-crash-37.2.13.db, detection is enabled for process: 6693
 INFO         | Initializing gfxstream backend
 INFO         | startOpenglesRendererImpl: gpu info
 INFO         | 
@@ -71,31 +71,26 @@ INFO         |   androidboot.vbmeta.digest=451e57ed688ff746d2c636d52169ade253e2b
 INFO         |   androidboot.vbmeta.hash_alg=sha256
 INFO         |   androidboot.vbmeta.size=6656
 INFO         |   androidboot.veritymode=enforcing
-WARNING: cannnot unmap ptr 0x75b042001000 as it is in the protected range from 0x75afa2000000 to 0x75b042200000
+WARNING: cannnot unmap ptr 0x7c1613201000 as it is in the protected range from 0x7c1573200000 to 0x7c1613400000
 INFO         | Monitoring duration of emulator setup.
 WARNING      | The emulator now requires a signed jwt token for gRPC access! Use the -grpc flag if you really want an open unprotected grpc port
 INFO         | Using security allow list from: /home/runner/.cache/cloudpc-models/android-sdk/emulator/lib/emulator_access.json
-INFO         | The active JSON Web Key Sets can be found here: /run/user/1001/avd/running/3648/jwks/f3d871ee-1fe1-4a67-84ac-b5fb1ef5d977/active.jwk
-INFO         | Scanning /run/user/1001/avd/running/3648/jwks/f3d871ee-1fe1-4a67-84ac-b5fb1ef5d977 for jwk keys.
+INFO         | The active JSON Web Key Sets can be found here: /run/user/1001/avd/running/6693/jwks/64e522d5-512e-407d-838d-0850053109b8/active.jwk
+INFO         | Scanning /run/user/1001/avd/running/6693/jwks/64e522d5-512e-407d-838d-0850053109b8 for jwk keys.
 INFO         | Started GRPC server at 127.0.0.1:8554, security: Local, auth: +token
-INFO         | Advertising in: /run/user/1001/avd/running/pid_3648.ini
+INFO         | Advertising in: /run/user/1001/avd/running/pid_6693.ini
 INFO         | Activated packet streamer for bluetooth emulation
 INFO         | Successfully initialized netsim WiFi
 INFO         | Setting display: 0 configuration to: 1080x2400, dpi: 420x420 
 INFO         | setDisplayActiveConfig: id:0, 1080x2400
 INFO         | emulatorSetupEnvironment: Environment scene is not required
 USER_INFO    | Emulator is performing a full startup. This may take upto two minutes, or more.
-INFO         | Boot completed in 27499 ms
+INFO         | Boot completed in 26315 ms
 INFO         | Increasing screen off timeout, logcat buffer size to 2M.
-ERROR        | bad color buffer handle 240
-ERROR        | bad color buffer handle 346
-ERROR        | bad color buffer handle 411
-ERROR        | bad color buffer handle 512
-ERROR        | bad color buffer handle 655
-INFO         | Wait for emulator (pid 3648) 20 seconds to shutdown gracefully before kill;you can set environment variable ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL(in seconds) to change the default value (20 seconds)
+ERROR        | bad color buffer handle 271
+ERROR        | bad color buffer handle 295
+ERROR        | bad color buffer handle 497
+ERROR        | bad color buffer handle 623
+ERROR        | bad color buffer handle 720
+INFO         | Wait for emulator (pid 6693) 20 seconds to shutdown gracefully before kill;you can set environment variable ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL(in seconds) to change the default value (20 seconds)
 
-USER_INFO    | Snapshots have been disabled by the user, save request is ignored.
-INFO         | Saving snapshot 'default_boot' took 0 ms
-ERROR        | stop: Not implemented
-INFO         | removeAll
-WARNING      | Netsim Wifi dns:///localhost:42155 is gone due to Stream removed (CANCELLED)
