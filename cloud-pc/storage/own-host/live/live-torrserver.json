@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://unified-val-newbie-scanners.trycloudflare.com",
- "egressIp": "64.236.134.229",
+ "url": "https://clock-coordinator-rider-continued.trycloudflare.com",
+ "egressIp": "52.176.67.192",
  "port": 8090,
- "started": 1794261221,
+ "started": 1794263603,
  "job": "ownhost-combo1"
 }
