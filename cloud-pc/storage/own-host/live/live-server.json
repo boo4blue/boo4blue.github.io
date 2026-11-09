@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://pmid-greatly-doors-clusters.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://thou-aged-recommendations-proxy.trycloudflare.com",
  "egressIp": "64.236.134.229",
- "port": 11470,
- "started": 1794261767,
- "job": "ownhost-combo1"
+ "started": 1794262931,
+ "job": "ownhost-server1"
 }
