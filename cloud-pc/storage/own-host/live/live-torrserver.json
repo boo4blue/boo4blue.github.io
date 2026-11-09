@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://tracks-martin-kerry-admit.trycloudflare.com",
- "egressIp": "172.171.13.61",
+ "url": "https://arrivals-knight-upgrade-doc.trycloudflare.com",
+ "egressIp": "172.206.39.215",
  "port": 8090,
- "started": 1794250954,
+ "started": 1794253444,
  "job": "ownhost-combo1"
 }
