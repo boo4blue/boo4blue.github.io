@@ -207,3 +207,6 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 To https://github.com/boo4blue/boo4blue.github.io
    8803ea0..ee5a438  main -> main
 [run-tv 12:52:11] push_captures: PUSHED cap BASE-wd
+To https://github.com/boo4blue/boo4blue.github.io
+   ee5a438..8d16bba  main -> main
+[run-tv 12:54:43] push_captures: PUSHED cap BASE-wd
