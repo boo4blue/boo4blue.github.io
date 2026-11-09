@@ -485,3 +485,86 @@
 [nav 08:32:51] shot emu/phone-match/real/27-streaming-server-sideways.png (176733 B) md5 57402610f35a distinct
 [nav 08:32:53] batch A2 complete
 [nav 08:32:53] nav.py done
+[nav 08:43:38] nav.py batch A2 starting; top before: topResumedActivity=ActivityRecord{182f53a u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t7}
+[nav 08:43:52] launched; top: topResumedActivity=ActivityRecord{4d99af7 u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t8}
+[nav 08:43:58] visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all']
+[nav 08:44:02] tap home avatar at (964,94)
+[nav 08:44:12] goto_profile -> UNKNOWN; visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession']
+[nav 08:44:29] DEDUP-FAIL emu/phone-match/real/26-profile-page-upright.png: md5 699c900c711d72c1db376f4aa9f3510b == 15-player-audio's frame
+[nav 08:44:33] DEDUP-FAIL emu/phone-match/real/26-profile-page-upright.png: md5 699c900c711d72c1db376f4aa9f3510b == 15-player-audio's frame
+[nav 08:44:33] CAPTURE-FAILED 26-profile-page: upright frame duplicates another page's frame (recorded in failed_pages.txt)
+[nav 08:44:40] DEDUP-FAIL emu/phone-match/real/26-profile-page-sideways.png: md5 e3d85b5efae08155740f8b25b55ce6a6 == 15-player-audio's frame
+[nav 08:44:44] DEDUP-FAIL emu/phone-match/real/26-profile-page-sideways.png: md5 e3d85b5efae08155740f8b25b55ce6a6 == 15-player-audio's frame
+[nav 08:44:45] CAPTURE-FAILED 26-profile-page: sideways frame duplicates another page's frame (recorded in failed_pages.txt)
+[nav 08:44:47] ROUTE-MISS recorded for 26-profile-page
+[nav 08:44:58] tap MISS 'Add a profile'; visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all']
+[nav 08:45:12] DEDUP-FAIL emu/phone-match/real/03-add-edit-profile-upright.png: md5 699c900c711d72c1db376f4aa9f3510b == 15-player-audio's frame
+[nav 08:45:16] DEDUP-FAIL emu/phone-match/real/03-add-edit-profile-upright.png: md5 699c900c711d72c1db376f4aa9f3510b == 15-player-audio's frame
+[nav 08:45:16] CAPTURE-FAILED 03-add-edit-profile: upright frame duplicates another page's frame (recorded in failed_pages.txt)
+[nav 08:45:21] DEDUP-FAIL emu/phone-match/real/03-add-edit-profile-sideways.png: md5 e3d85b5efae08155740f8b25b55ce6a6 == 15-player-audio's frame
+[nav 08:45:24] DEDUP-FAIL emu/phone-match/real/03-add-edit-profile-sideways.png: md5 e3d85b5efae08155740f8b25b55ce6a6 == 15-player-audio's frame
+[nav 08:45:24] CAPTURE-FAILED 03-add-edit-profile: sideways frame duplicates another page's frame (recorded in failed_pages.txt)
+[nav 08:45:26] ROUTE-MISS recorded for 03-add-edit-profile
+[nav 08:45:41] launched; top: topResumedActivity=ActivityRecord{a9bb266 u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t9}
+[nav 08:45:45] visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all']
+[nav 08:45:48] tap home avatar at (964,94)
+[nav 08:45:53] goto_profile -> UNKNOWN; visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession']
+[nav 08:46:07] DEDUP-FAIL emu/phone-match/real/21-settings-upright.png: md5 699c900c711d72c1db376f4aa9f3510b == 15-player-audio's frame
+[nav 08:46:11] DEDUP-FAIL emu/phone-match/real/21-settings-upright.png: md5 699c900c711d72c1db376f4aa9f3510b == 15-player-audio's frame
+[nav 08:46:11] CAPTURE-FAILED 21-settings: upright frame duplicates another page's frame (recorded in failed_pages.txt)
+[nav 08:46:18] DEDUP-FAIL emu/phone-match/real/21-settings-sideways.png: md5 e3d85b5efae08155740f8b25b55ce6a6 == 15-player-audio's frame
+[nav 08:46:22] DEDUP-FAIL emu/phone-match/real/21-settings-sideways.png: md5 e3d85b5efae08155740f8b25b55ce6a6 == 15-player-audio's frame
+[nav 08:46:22] CAPTURE-FAILED 21-settings: sideways frame duplicates another page's frame (recorded in failed_pages.txt)
+[nav 08:46:25] ROUTE-MISS recorded for 21-settings
+[nav 08:46:33] tap MISS 'Switch profile'; visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all']
+[nav 08:46:47] DEDUP-FAIL emu/phone-match/real/01-profile-picker-upright.png: md5 699c900c711d72c1db376f4aa9f3510b == 15-player-audio's frame
+[nav 08:46:50] DEDUP-FAIL emu/phone-match/real/01-profile-picker-upright.png: md5 699c900c711d72c1db376f4aa9f3510b == 15-player-audio's frame
+[nav 08:46:50] CAPTURE-FAILED 01-profile-picker: upright frame duplicates another page's frame (recorded in failed_pages.txt)
+[nav 08:46:54] DEDUP-FAIL emu/phone-match/real/01-profile-picker-sideways.png: md5 e3d85b5efae08155740f8b25b55ce6a6 == 15-player-audio's frame
+[nav 08:46:57] DEDUP-FAIL emu/phone-match/real/01-profile-picker-sideways.png: md5 e3d85b5efae08155740f8b25b55ce6a6 == 15-player-audio's frame
+[nav 08:46:57] CAPTURE-FAILED 01-profile-picker: sideways frame duplicates another page's frame (recorded in failed_pages.txt)
+[nav 08:47:00] ROUTE-MISS recorded for 01-profile-picker
+[nav 08:47:14] launched; top: topResumedActivity=ActivityRecord{4f6e7b5 u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t10}
+[nav 08:47:17] visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all']
+[nav 08:47:20] tap home avatar at (964,94)
+[nav 08:47:27] goto_profile -> UNKNOWN; visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession']
+[nav 08:47:33] tap MISS 'Add-ons'; visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all']
+[nav 08:47:41] tap MISS 'Add-ons'; visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all', '1', '2']
+[nav 08:47:56] shot emu/phone-match/real/22-addons-upright.png (1275024 B) md5 7df7778369e3 distinct
+[nav 08:48:01] shot emu/phone-match/real/22-addons-sideways.png (525956 B) md5 cecbbee927d9 distinct
+[nav 08:48:03] ROUTE-MISS recorded for 22-addons
+[nav 08:48:18] launched; top: topResumedActivity=ActivityRecord{28bcb9c u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t11}
+[nav 08:48:20] visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all']
+[nav 08:48:24] tap home avatar at (964,94)
+[nav 08:48:30] goto_profile -> UNKNOWN; visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession']
+[nav 08:48:36] tap MISS 'Link Onion ID'; visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all']
+[nav 08:48:51] DEDUP-FAIL emu/phone-match/real/23-signin-upright.png: md5 699c900c711d72c1db376f4aa9f3510b == 15-player-audio's frame
+[nav 08:48:54] DEDUP-FAIL emu/phone-match/real/23-signin-upright.png: md5 699c900c711d72c1db376f4aa9f3510b == 15-player-audio's frame
+[nav 08:48:54] CAPTURE-FAILED 23-signin: upright frame duplicates another page's frame (recorded in failed_pages.txt)
+[nav 08:49:01] DEDUP-FAIL emu/phone-match/real/23-signin-sideways.png: md5 e3d85b5efae08155740f8b25b55ce6a6 == 15-player-audio's frame
+[nav 08:49:05] DEDUP-FAIL emu/phone-match/real/23-signin-sideways.png: md5 e3d85b5efae08155740f8b25b55ce6a6 == 15-player-audio's frame
+[nav 08:49:05] CAPTURE-FAILED 23-signin: sideways frame duplicates another page's frame (recorded in failed_pages.txt)
+[nav 08:49:07] ROUTE-MISS recorded for 23-signin
+[nav 08:49:22] launched; top: topResumedActivity=ActivityRecord{e35b99 u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t12}
+[nav 08:49:25] visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all']
+[nav 08:49:28] tap home avatar at (964,94)
+[nav 08:49:34] goto_profile -> UNKNOWN; visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession']
+[nav 08:49:40] tap MISS 'Device'; visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all']
+[nav 08:49:49] tap MISS 'Downloads'; visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all']
+[nav 08:50:05] DEDUP-FAIL emu/phone-match/real/24-downloads-upright.png: md5 699c900c711d72c1db376f4aa9f3510b == 15-player-audio's frame
+[nav 08:50:08] DEDUP-FAIL emu/phone-match/real/24-downloads-upright.png: md5 699c900c711d72c1db376f4aa9f3510b == 15-player-audio's frame
+[nav 08:50:08] CAPTURE-FAILED 24-downloads: upright frame duplicates another page's frame (recorded in failed_pages.txt)
+[nav 08:50:13] DEDUP-FAIL emu/phone-match/real/24-downloads-sideways.png: md5 e3d85b5efae08155740f8b25b55ce6a6 == 15-player-audio's frame
+[nav 08:50:16] DEDUP-FAIL emu/phone-match/real/24-downloads-sideways.png: md5 e3d85b5efae08155740f8b25b55ce6a6 == 15-player-audio's frame
+[nav 08:50:16] CAPTURE-FAILED 24-downloads: sideways frame duplicates another page's frame (recorded in failed_pages.txt)
+[nav 08:50:19] ROUTE-MISS recorded for 24-downloads
+[nav 08:50:33] launched; top: topResumedActivity=ActivityRecord{619b7f u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t13}
+[nav 08:50:37] visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all']
+[nav 08:50:39] tap home avatar at (964,94)
+[nav 08:50:45] goto_profile -> UNKNOWN; visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession']
+[nav 08:50:54] tap MISS 'Streaming server settings'; visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all', '1', '2']
+[nav 08:51:10] shot emu/phone-match/real/27-streaming-server-upright.png (1309960 B) md5 122465776180 distinct
+[nav 08:51:15] shot emu/phone-match/real/27-streaming-server-sideways.png (572386 B) md5 7964bc1ddb1f distinct
+[nav 08:51:18] ROUTE-MISS recorded for 27-streaming-server
+[nav 08:51:18] batch A2 complete
+[nav 08:51:18] nav.py done
