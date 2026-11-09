@@ -1,6 +1,6 @@
 {
  "job": "ownhost-multi1",
- "at": 1794245436,
+ "at": 1794245527,
  "egressIp": "20.64.155.215",
  "torrserver": {
   "base": "https://smell-clearance-halifax-documents.trycloudflare.com",
@@ -17,8 +17,8 @@
   "startLatencySec": ""
  },
  "webtorrent": {
-  "base": "",
-  "proven": "not-attempted",
+  "base": "https://door-study-conclusions-despite.trycloudflare.com",
+  "proven": "no (no file index \u2014 metadata never arrived)",
   "peers": "",
   "range": "",
   "startLatencySec": ""
