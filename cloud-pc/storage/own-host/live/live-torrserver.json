@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://internal-boulevard-blocks-surfaces.trycloudflare.com",
- "egressIp": "52.183.219.58",
+ "url": "https://unified-val-newbie-scanners.trycloudflare.com",
+ "egressIp": "64.236.134.229",
  "port": 8090,
- "started": 1794258677,
+ "started": 1794261221,
  "job": "ownhost-combo1"
 }
