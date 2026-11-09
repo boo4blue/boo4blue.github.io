@@ -201,7 +201,7 @@ if [ "$mode" = cap ]; then
   fi
   echo "served-by: ${SERVED:-NONE}" | tee emu/tv-match/logs/avd-info-$BATCH.txt | tee -a $TVLOG
   if [ -z "$SERVED" ]; then log "FATAL: APK would not install on either TV image"; push_captures "$BATCH"; exit 0; fi
-  TV_BATCH=$BATCH TV_OUT_SUFFIX=${TV_OUT_SUFFIX:-} python3 emu/tv-match/nav-tv.py 2>&1 | tee -a emu/tv-match/logs/nav-$BATCH.log
+  TV_BATCH=$BATCH TV_WARM_HOME=1 TV_OUT_SUFFIX=${TV_OUT_SUFFIX:-} python3 emu/tv-match/nav-tv.py 2>&1 | tee -a emu/tv-match/logs/nav-$BATCH.log
   adb shell logcat -d > emu/tv-match/logs/logcat-$BATCH.txt 2>/dev/null
   adb emu kill 2>/dev/null
   push_captures "$BATCH"

@@ -514,11 +514,50 @@ def verify(page, markers, needs_topbar=False):
     return res
 
 
+def ensure_app():
+    """v7: if the app is not foreground (an earlier route backed out to
+    the launcher), relaunch and re-enter via the picker if it shows.
+    Returns True when our package is on top afterwards."""
+    if PKG in top_activity():
+        return True
+    log("ensure_app: app not foreground; top:", top_activity())
+    launch()
+    if on_picker():
+        pick_first_profile()
+    ok = PKG in top_activity()
+    log("ensure_app: recovered =", ok, "; top:", top_activity())
+    return ok
+
+
+def back_to_bar(max_backs=3):
+    """v7: press BACK until the TV top bar pills are visible again —
+    never a blind fixed count (blind BACKs exited the app in BASE v6)."""
+    for _ in range(max_backs):
+        xml = dump()
+        if find("Movies", xml) and find("Anime", xml) and find("Search", xml):
+            return True
+        if PKG not in top_activity():
+            return ensure_app()
+        key("BACK", 1.2)
+    xml = dump()
+    return bool(find("Movies", xml) and find("Anime", xml))
+
+
 def capture(page_id, markers, settle=4.0, needs_topbar=False, route_ok=True):
+    ensure_app()
     if settle:
         time.sleep(settle)
     res = verify(page_id, markers, needs_topbar)
-    shot_gated(page_id, route_ok and res["pass"])
+    ok_all = bool(route_ok and res["pass"])
+    shot_gated(page_id, ok_all)
+    if not ok_all:
+        # v7 gate: an unverified frame never stays in real/ — quarantine
+        # it under dumps/ so downstream tooling can't mistake it for the
+        # page (BASE v6 saved Android TV launcher frames as pages).
+        p = os.path.join(OUT, f"{page_id}.png")
+        if os.path.exists(p):
+            os.replace(p, os.path.join(DUMPS, f"miss-{page_id}.png"))
+            _fail_page(page_id, "verify failed; frame quarantined to dumps/miss-")
     return res
 
 
@@ -632,8 +671,7 @@ def batch_base():
     time.sleep(1.5)
     res = capture("09-sort-genres", ["Sort", "Genres"], route_ok=ok)
     dump("base-sort")
-    key("BACK", 1.2)
-    key("BACK", 1.2)
+    back_to_bar()
     # 10 movie title: back to Movies, first tile of Trending rail
     ok = go_tab("Movies")
     time.sleep(2)
@@ -809,6 +847,15 @@ def batch_base():
     else:
         capture("03-add-edit-profile", ["Add a profile"], settle=0, route_ok=False)
         capture("02-pin-pad", ["PIN"], settle=0, route_ok=False)
+    # v7: warm-home re-shot (same process, caches warm after the full
+    # route loop) — discriminates a cold first-load backdrop failure
+    # from a title- or page-specific one on 04.
+    if os.environ.get("TV_WARM_HOME") == "1":
+        back_home()
+        time.sleep(3)
+        res = capture("04b-tv-home-warm", ["Continue Watching", "Trending Movies", "FEATURED", "Featured"],
+                      settle=2, needs_topbar=True)
+        dump("base-home-warm")
     log("batch BASE complete; alive:", app_pid(), "top:", top_activity())
 
 

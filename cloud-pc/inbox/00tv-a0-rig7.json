@@ -1,0 +1,1 @@
+{"id":"00tv-a0-rig7","action":"shell","command":"echo rig-v7-run; grep -c ensure_app emu/tv-match/nav-tv.py"}
