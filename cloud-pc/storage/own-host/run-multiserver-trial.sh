@@ -91,11 +91,15 @@ import json, sys, time
 def num(x):
     try: return int(x)
     except Exception: return x
-doc = {"job": "ownhost-multi4", "at": int(time.time()), "egressIp": ip,
+doc = {"job": "ownhost-multi5", "at": int(time.time()), "egressIp": ip,
   "torrserver": {"base": "https://mandatory-three-contributed-bufing.trycloudflare.com",
                  "proven": "yes (v2 session, sandbox-verified through tunnel; session expired)",
                  "range": "http=206 bytes=1048576 magic=ftypisom", "peers": 21,
                  "note": "see MULTISERVER-TRIAL.md for the full v2 proof"},
+  "webtorrent_carryover": {"base": "https://violation-idle-wherever-walks.trycloudflare.com",
+                 "proven": "yes (v4 session, runner-verified; session expired)",
+                 "range": "http=206 bytes=1048576 magic=ftypisom", "peers": 5, "startLatencySec": 23,
+                 "note": "the webtorrent key below is this v5 run's fresh attempt if any; carryover records the v4 proof"},
   "rqbit":      {"base": rq_url, "proven": rq_res, "peers": num(rq_peers), "range": rq_range,
                  "startLatencySec": num(rq_lat), "auth": rq_auth, "diag": rq_diag[:1500]},
   "webtorrent": {"base": wt_url, "proven": wt_res, "peers": num(wt_peers), "range": wt_range,
@@ -129,7 +133,7 @@ log "rqbit diag: $RQ_DIAG"
 RQ_UP=""
 if [ "$RQ_DL" = "0" ]; then
   mkdir -p /tmp/rqdata
-  for MODE in "server start" "server" ""; do
+  for MODE in "server start /tmp/rqdata" "server start"; do
     log "rqbit start attempt: rqbit $MODE"
     ( cd /tmp/rqdata && RQBIT_HTTP_BASIC_AUTH_USERPASS="$RQ_USER:$RQ_PASS" /tmp/rqbit $MODE > /tmp/rq.log 2>&1 & )
     for i in $(seq 1 15); do
@@ -149,7 +153,7 @@ if [ "$RQ_DL" = "0" ]; then
     python3 - "$RQ_URL" "$IP" <<'PY'
 import json, sys, time
 doc = {"service": "rqbit", "url": sys.argv[1], "egressIp": sys.argv[2],
-       "port": 3030, "started": int(time.time()), "job": "ownhost-multi4"}
+       "port": 3030, "started": int(time.time()), "job": "ownhost-multi5"}
 open("own-host/live/live-rqbit.json", "w").write(json.dumps(doc, indent=1))
 PY
     push_files cloud-pc/storage/own-host/live/live-rqbit.json
@@ -209,7 +213,7 @@ if [ -d /tmp/wt/node_modules/webtorrent ]; then
     python3 - "$WT_URL" "$IP" <<'PY'
 import json, sys, time
 doc = {"service": "webtorrent", "url": sys.argv[1], "egressIp": sys.argv[2],
-       "port": 8080, "started": int(time.time()), "job": "ownhost-multi4"}
+       "port": 8080, "started": int(time.time()), "job": "ownhost-multi5"}
 open("own-host/live/live-webtorrent.json", "w").write(json.dumps(doc, indent=1))
 PY
     push_files cloud-pc/storage/own-host/live/live-webtorrent.json
