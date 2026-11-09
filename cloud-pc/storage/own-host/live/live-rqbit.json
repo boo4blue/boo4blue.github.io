@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://fed-installation-marion-persistent.trycloudflare.com",
- "egressIp": "172.206.39.215",
+ "url": "https://mighty-sleep-ease-surprising.trycloudflare.com",
+ "egressIp": "172.172.237.65",
  "port": 3030,
- "started": 1794253451,
+ "started": 1794256072,
  "job": "ownhost-combo1"
 }
