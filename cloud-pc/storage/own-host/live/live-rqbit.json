@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://acquisitions-overnight-publishers-volunteers.trycloudflare.com",
- "egressIp": "52.183.219.58",
+ "url": "https://survivors-catalog-sheep-postal.trycloudflare.com",
+ "egressIp": "64.236.134.229",
  "port": 3030,
- "started": 1794258684,
+ "started": 1794261229,
  "job": "ownhost-combo1"
 }
