@@ -80,3 +80,33 @@
 [nav 05:22:01] shot emu/phone-match/real/09-sort-genres-upright.png (843806 B) md5 418e6bc8676f distinct
 [nav 05:22:05] shot emu/phone-match/real/09-sort-genres-sideways.png (437553 B) md5 3ff01358c94d distinct
 [nav 05:22:11] nav.py done
+[nav 05:37:20] nav.py batch B1 starting; top before: topResumedActivity=ActivityRecord{f8b2349 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t7}
+[nav 05:37:31] launched; top: topResumedActivity=ActivityRecord{ad62e33 u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t8}
+[nav 05:37:37] visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all', '1', '2']
+[nav 05:37:50] tap 'Movies' at (400,271)
+[nav 05:38:11] shot emu/phone-match/real/05-movies-upright.png (1582809 B) md5 47f4e46e8189 distinct
+[nav 05:38:18] shot emu/phone-match/real/05-movies-sideways.png (1265910 B) md5 48c9ff5c02e9 distinct
+[nav 05:38:32] launched; top: topResumedActivity=ActivityRecord{e851d38 u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t9}
+[nav 05:38:38] visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all', '1', '2']
+[nav 05:38:46] tap 'Series' at (641,271)
+[nav 05:39:05] DEDUP-FAIL emu/phone-match/real/06-shows-upright.png: md5 475beb3af6bb5326519aa9658a7e748c == 11-series-title's frame
+[nav 05:39:08] DEDUP-FAIL emu/phone-match/real/06-shows-upright.png: md5 475beb3af6bb5326519aa9658a7e748c == 11-series-title's frame
+[nav 05:39:08] CAPTURE-FAILED 06-shows: upright frame duplicates another page's frame (recorded in failed_pages.txt)
+[nav 05:39:15] DEDUP-FAIL emu/phone-match/real/06-shows-sideways.png: md5 b957f233e10fbbbfd2911df5740ef3da == 11-series-title's frame
+[nav 05:39:19] DEDUP-FAIL emu/phone-match/real/06-shows-sideways.png: md5 b957f233e10fbbbfd2911df5740ef3da == 11-series-title's frame
+[nav 05:39:19] CAPTURE-FAILED 06-shows: sideways frame duplicates another page's frame (recorded in failed_pages.txt)
+[nav 05:39:33] launched; top: topResumedActivity=ActivityRecord{622974f u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t10}
+[nav 05:39:36] visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all', '1', '2']
+[nav 05:39:42] tap 'Anime' at (873,271)
+[nav 05:39:59] shot emu/phone-match/real/07-anime-upright.png (2117091 B) md5 b1dbdc6b8002 distinct
+[nav 05:40:04] shot emu/phone-match/real/07-anime-sideways.png (1403838 B) md5 c05cc5a94c78 distinct
+[nav 05:40:17] launched; top: topResumedActivity=ActivityRecord{9160c83 u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t11}
+[nav 05:40:20] visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all', '1', '2']
+[nav 05:40:26] tap 'Movies' at (400,271)
+[nav 05:40:36] tap 'See all' at (949,1173)
+[nav 05:40:53] shot emu/phone-match/real/08-see-all-upright.png (1363475 B) md5 2dbe85383091 distinct
+[nav 05:40:57] shot emu/phone-match/real/08-see-all-sideways.png (521931 B) md5 041a08baffe3 distinct
+[nav 05:41:02] tap 'Sort & Genres' at (405,530)
+[nav 05:41:16] shot emu/phone-match/real/09-sort-genres-upright.png (828747 B) md5 25781ef2f39d distinct
+[nav 05:41:21] shot emu/phone-match/real/09-sort-genres-sideways.png (424271 B) md5 360ef3db5da6 distinct
+[nav 05:41:27] nav.py done
