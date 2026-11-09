@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://beverly-latitude-everyday-chart.trycloudflare.com",
- "egressIp": "134.33.77.45",
+ "url": "https://hugo-malpractice-flux-picks.trycloudflare.com",
+ "egressIp": "172.171.13.61",
  "port": 3030,
- "started": 1794249430,
+ "started": 1794250962,
  "job": "ownhost-combo1"
 }
