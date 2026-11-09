@@ -1,0 +1,1 @@
+{"id":"pm-c2-c1","action":"shell","command":"bash emu/phone-match/run-pm.sh cap C1"}
