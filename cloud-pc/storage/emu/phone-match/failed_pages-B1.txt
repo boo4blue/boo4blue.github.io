@@ -1,0 +1,2 @@
+05-movies upright frame duplicates another page's frame
+05-movies sideways frame duplicates another page's frame
