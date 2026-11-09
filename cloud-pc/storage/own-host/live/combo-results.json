@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794261214,
+ "at": 1794261222,
  "egressIp": "64.236.134.229",
  "own": {
   "base": "https://rhythm-earned-shapes-bay.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://unified-val-newbie-scanners.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
