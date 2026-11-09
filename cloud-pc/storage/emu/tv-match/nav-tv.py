@@ -337,6 +337,28 @@ def activate(labels, wait=2.0):
     return True
 
 
+def open_see_all(wait=3):
+    """v8.2: See all — try tap, check arrival (Sort & Genres button is
+    SeeAll's marker), else focus-steer + CENTER, check again."""
+    if activate_direct(["See all"], wait=wait) and marker_present(["Sort & Genres"]):
+        return True
+    if activate(["See all"], wait=wait) and marker_present(["Sort & Genres"]):
+        return True
+    log("open_see_all: SeeAll did not arrive")
+    return False
+
+
+def open_sort_panel(wait=2):
+    """v8.2: Sort & Genres panel — tap first, focus as fallback; the
+    arrival marker is the panel's Sort-by row."""
+    if activate_direct(["Sort & Genres"], wait=wait) and marker_present(["Sort by", "Match:"]):
+        return True
+    if activate(["Sort & Genres"], wait=wait) and marker_present(["Sort by", "Match:"]):
+        return True
+    log("open_sort_panel: panel did not arrive")
+    return False
+
+
 def activate_direct(labels, wait=2.0):
     """v8: tap the matching node's own center coordinates instead of
     steering focus + CENTER. For controls whose focus target is
@@ -594,15 +616,17 @@ TAB_ALTS = {"Series": ["Series", "Shows"], "Shows": ["Series", "Shows"]}
 
 
 def go_tab(label, wait=3.0):
-    # v8.1: direct tap on the pill's own bounds first (deterministic);
-    # D-pad steering around the bar could drop a CENTER on the search
-    # bar and open Search instead (MX leg settings-to-05, rig v7).
+    # v8.2: focus-steer + CENTER first (proven on this app+emulator in
+    # the v6/v7 BASE passes); direct tap is the FALLBACK — a tap on the
+    # pills only moves focus without firing the click here (v8.1 BASE:
+    # tapped (680,76), pill focused, Browse never opened). The v7 MX
+    # search-bar accident is handled by focus_on's clickable rule.
     alts = TAB_ALTS.get(label, [label])
     for lab in alts:
-        if activate_direct([lab], wait=wait):
+        if activate([lab], wait=wait):
             return True
     for lab in alts:
-        if activate([lab], wait=wait):
+        if activate_direct([lab], wait=wait):
             return True
     log(f"go_tab {label} FAILED; visible: {visible_texts()[:16]}")
     return False
@@ -642,7 +666,7 @@ def open_settings(wait=3.0):
 
 
 def settings_tab(name, wait=2.5):
-    return activate_direct([name], wait=wait) or activate([name], wait=wait)
+    return activate([name], wait=wait) or activate_direct([name], wait=wait)
 
 
 def open_player_from_detail(max_wait=45):
@@ -696,12 +720,12 @@ def batch_base():
     res = capture("05-movies", ["Trending Movies"], needs_topbar=True, route_ok=ok)
     dump("base-movies")
     # 08 see-all from Movies
-    ok = activate_direct(["See all"], wait=3)
+    ok = open_see_all()
     time.sleep(2)
     res = capture("08-see-all", ["Sort & Genres"], route_ok=ok)
     dump("base-seeall")
     # 09 sort & genres panel
-    ok = activate_direct(["Sort & Genres"], wait=2)
+    ok = open_sort_panel()
     time.sleep(1.5)
     res = capture("09-sort-genres", ["Sort", "Genres"], route_ok=ok)
     dump("base-sort")
@@ -919,7 +943,7 @@ def enter(screen):
     if screen == "movies":
         return go_tab("Movies")
     if screen == "see-all":
-        return go_tab("Movies") and bool(activate_direct(["See all"], wait=3))
+        return go_tab("Movies") and open_see_all()
     if screen == "title":
         return (go_tab("Movies") and goto_labels(["Trending Movies"])
                 and activate_tile_in_rail()
@@ -1120,9 +1144,9 @@ def batch_matrix():
                        BAR_PAGES["04-tv-home"][0], True))
     # dialog open -> dismiss -> underlying page intact
     def dialog_loop():
-        if not (go_tab("Movies") and activate_direct(["See all"], wait=3)):
+        if not (go_tab("Movies") and open_see_all()):
             return False
-        if not activate_direct(["Sort & Genres"], wait=2):
+        if not open_sort_panel():
             return False
         time.sleep(1)
         key("BACK", 1.2)
@@ -1314,9 +1338,9 @@ def batch_feat():
     feat("my-list-toggle", f_mylist)
 
     def f_sort():
-        if not (go_tab("Movies") and activate_direct(["See all"], wait=3)):
+        if not (go_tab("Movies") and open_see_all()):
             return {"result": "fail", "evidence": "no see-all"}
-        if not activate_direct(["Sort & Genres"], wait=2):
+        if not open_sort_panel():
             return {"result": "fail", "evidence": "sort panel unreachable"}
         time.sleep(1.2)
         ok = activate(["Newest", "Top rated", "Name"], wait=2)
@@ -1493,11 +1517,170 @@ def batch_feat():
     log("batch FEAT complete")
 
 
+def batch_base2():
+    """v8.2 split: BASE part 2 — player cluster (12-16), search/talk
+    (17-18), overlays (19-20), settings cluster (21-25), profiles
+    (03/02). Self-contained: launches and enters via the picker."""
+    launch()
+    if on_picker():
+        pick_first_profile()
+    # player cluster from a movie title
+    ok = go_tab("Movies")
+    time.sleep(2)
+    ok = goto_labels(["Trending Movies"]) and activate_tile_in_rail()
+    time.sleep(3)
+    okp = open_player_from_detail()
+    if okp:
+        player_show_controls()
+        res = capture("12-player-controls", ["Subtitles", "Audio", "Sources", "Speed"],
+                      settle=0, route_ok=okp)
+        dump("base-player-controls")
+        # 13 sources
+        okm = activate(["Sources"], wait=2)
+        time.sleep(1.5)
+        res = capture("13-player-sources", ["Playable", "Torrent", "Top pick", "Sources"],
+                      settle=0, route_ok=okm)
+        dump("base-player-sources")
+        key("BACK", 1.2)
+        player_show_controls()
+        # 14 subtitles
+        okm = activate(["Subtitles", "Subtitle"], wait=2)
+        time.sleep(1.5)
+        res = capture("14-player-subtitles", ["Subtitles", "Subtitle", "Off", "English"],
+                      settle=0, route_ok=okm)
+        dump("base-player-subs")
+        key("BACK", 1.2)
+        player_show_controls()
+        # 15 audio
+        okm = activate(["Audio"], wait=2)
+        time.sleep(1.5)
+        res = capture("15-player-audio", ["Audio", "Normalize", "Night", "Track"],
+                      settle=0, route_ok=okm)
+        dump("base-player-audio")
+        key("BACK", 1.2)
+        player_show_controls()
+        # 16 connect & cast
+        okm = activate(["Connect", "Cast"], wait=2)
+        time.sleep(1.5)
+        res = capture("16-player-connect", ["Connect", "Cast", "Watch party", "party"],
+                      settle=0, route_ok=okm)
+        dump("base-player-connect")
+        key("BACK", 1.2)
+        key("BACK", 1.5)  # leave player
+    else:
+        for p, m in (("12-player-controls", ["Subtitles"]), ("13-player-sources", ["Sources"]),
+                     ("14-player-subtitles", ["Subtitles"]), ("15-player-audio", ["Audio"]),
+                     ("16-player-connect", ["Connect"])):
+            capture(p, m, settle=0, route_ok=False)
+    back_home()
+    # 17 search
+    ok = activate(["Search titles", "Search"], wait=2.5)
+    time.sleep(2)
+    res = capture("17-search", ["Search"], route_ok=ok)
+    dump("base-search")
+    # 18 talk: mic inside search
+    xml = dump()
+    mics = [n for n in nodes(xml) if any(k in (n["desc"] + n["text"]).lower()
+                                         for k in ("mic", "voice", "talk", "listen"))]
+    okt = False
+    if mics:
+        okt = goto_labels(["Talk", "Voice", "Mic", "Listen"])
+        if okt:
+            key("CENTER", 0.3)
+            time.sleep(0.7)
+            shot_gated("18-talk", True)
+            dump("base-talk")
+        else:
+            capture("18-talk", ["Talk", "Listening"], settle=0, route_ok=False)
+    else:
+        capture("18-talk", ["Talk", "Listening"], settle=0, route_ok=False)
+    key("BACK", 1.2)
+    key("BACK", 1.2)
+    back_home()
+    # 19 live typing overlay (companion-triggered; try direct start)
+    xml = open_overlay_activity("TypingOverlayActivity", "base-typing")
+    res = capture("19-live-typing", ["Type", "Send", "Talk"],
+                  settle=0, route_ok=marker_present(["Type", "Send"], xml))
+    key("BACK", 1.0)
+    # 20 pair code overlay (companion-triggered; try direct start)
+    xml = open_overlay_activity("PairCodeOverlayActivity", "base-paircode")
+    res = capture("20-pair-code", ["Pair", "code", "Code"],
+                  settle=0, route_ok=marker_present(["Pair", "code", "Code"], xml))
+    key("BACK", 1.0)
+    back_home()
+    # 21 settings (General/first tab)
+    ok = open_settings()
+    res = capture("21-settings", ["Settings", "Quiet Mode", "General", "Playback"],
+                  route_ok=ok)
+    dump("base-settings")
+    # 22 add-ons from Settings
+    ok = activate(["Add-ons"], wait=3)
+    time.sleep(2)
+    res = capture("22-addons", ["Add-ons", "Onion Connect"], route_ok=ok)
+    dump("base-addons")
+    key("BACK", 1.2)
+    # 23 sign-in: Settings Accounts tab -> Onion ID
+    if not marker_present(["Settings", "Quiet Mode", "Accounts"]):
+        open_settings()
+    settings_tab("Accounts")
+    time.sleep(1.5)
+    ok = activate(["Onion ID", "Sign in"], wait=2.5)
+    time.sleep(2)
+    res = capture("23-signin", ["Sign in", "Onion ID", "Username"], route_ok=ok)
+    dump("base-signin")
+    key("BACK", 1.2)
+    key("BACK", 1.2)
+    # 24 downloads: Settings -> Downloads & Storage -> Downloads
+    open_settings()
+    settings_tab("Downloads & Storage") or settings_tab("Downloads") or settings_tab("Device")
+    time.sleep(1.5)
+    ok = activate(["Downloads"], wait=2.5)
+    time.sleep(2)
+    res = capture("24-downloads", ["Downloads", "GB"], route_ok=ok)
+    dump("base-downloads")
+    key("BACK", 1.2)
+    key("BACK", 1.2)
+    # 25 watch party: Settings -> Playback -> Watch party
+    open_settings()
+    settings_tab("Playback")
+    time.sleep(1.5)
+    ok = activate(["Watch party"], wait=2.5)
+    time.sleep(2)
+    res = capture("25-watch-party", ["Watch party", "party", "Party"], route_ok=ok)
+    dump("base-party")
+    key("BACK", 1.2)
+    # 02 pin pad + 03 add/edit profile: via picker (switch profile)
+    open_settings()
+    settings_tab("General") or settings_tab("Profile")
+    time.sleep(1)
+    ok = activate(["Profiles", "Open profiles", "Switch profile"], wait=2.5)
+    time.sleep(2)
+    if on_picker():
+        # 03 add / edit profile
+        ok3 = activate(["Add profile", "Add a profile"], wait=2.5)
+        time.sleep(2)
+        res = capture("03-add-edit-profile", ["Add a profile", "Profile name", "Kids"],
+                      route_ok=ok3)
+        dump("base-add-edit")
+        key("BACK", 1.2)
+        # 02 pin pad: needs a PIN'd profile; FEAT batch creates one. Here:
+        # record picker state only.
+        capture("02-pin-pad", ["PIN", "Enter"], settle=0, route_ok=False)
+        log("02 pin pad deferred to FEAT (needs a PIN'd profile)")
+        pick_first_profile()
+    else:
+        capture("03-add-edit-profile", ["Add a profile"], settle=0, route_ok=False)
+        capture("02-pin-pad", ["PIN"], settle=0, route_ok=False)
+    log("batch BASE2 complete; alive:", app_pid(), "top:", top_activity())
+
+
 if __name__ == "__main__":
     log(f"nav-tv.py batch {BATCH} starting; top before: {top_activity()}")
     try:
         if BATCH == "BASE":
             batch_base()
+        elif BATCH == "BASE2":
+            batch_base2()
         elif BATCH == "W1":
             batch_walk(["picker", "home", "movies", "see-all", "title"])
         elif BATCH == "W2":
