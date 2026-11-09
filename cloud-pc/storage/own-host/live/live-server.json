@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://thou-aged-recommendations-proxy.trycloudflare.com",
- "egressIp": "64.236.134.229",
- "started": 1794262931,
- "job": "ownhost-server1"
+ "url": "https://kelly-influenced-disco-themes.trycloudflare.com",
+ "egressIp": "52.176.67.192",
+ "port": 11470,
+ "started": 1794263595,
+ "job": "ownhost-combo1"
 }
