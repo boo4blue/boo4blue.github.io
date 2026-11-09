@@ -1,0 +1,1 @@
+{"id":"00-host-server","action":"shell","command":"bash own-host/run-server-gate.sh"}
