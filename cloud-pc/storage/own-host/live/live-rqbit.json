@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://differ-scuba-washing-benjamin.trycloudflare.com",
- "egressIp": "52.176.67.192",
+ "url": "https://admission-lens-previews-additionally.trycloudflare.com",
+ "egressIp": "57.151.137.151",
  "port": 3030,
- "started": 1794263613,
+ "started": 1794266062,
  "job": "ownhost-combo1"
 }
