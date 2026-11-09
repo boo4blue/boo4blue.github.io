@@ -38,3 +38,23 @@
 [nav 05:49:05] ROUTE-MISS recorded for 12-player-controls
 [nav 05:49:05] batch C1 complete
 [nav 05:49:05] nav.py done
+[nav 06:58:27] nav.py batch C1 starting; top before: topResumedActivity=ActivityRecord{8a54f01 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity t7}
+[nav 06:58:39] launched; top: topResumedActivity=ActivityRecord{c5e7f58 u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t8}
+[nav 06:58:46] visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all', '1', '2']
+[nav 06:59:04] tap 'TV Control' at (1009,271)
+[nav 06:59:22] shot emu/phone-match/real/19-tv-control-upright.png (165954 B) md5 3ff93c04262b distinct
+[nav 06:59:27] shot emu/phone-match/real/19-tv-control-sideways.png (88288 B) md5 ba0f54c1b51b distinct
+[nav 06:59:32] tap 'Settings' at (945,2186)
+[nav 06:59:48] shot emu/phone-match/real/20-tv-pairing-upright.png (129475 B) md5 2e69e02979db distinct
+[nav 06:59:52] shot emu/phone-match/real/20-tv-pairing-sideways.png (77827 B) md5 3bcc797caf04 distinct
+[nav 07:00:08] launched; top: topResumedActivity=ActivityRecord{c3f596d u0 com.onioncore.oniontv/.phone.PhoneHomeActivity t9}
+[nav 07:00:11] visible: ['ONION TV', 'Blaze', 'Home', 'Movies', 'Series', 'Anime', 'TV Control', 'Onion ID: not linked yet - tap to see profile options', 'Search movies and shows', 'Ask Onion AI', '2026  -  IMDb 7.8  -  109 min  -  Horror, Thriller', 'Play', 'More Info', 'Trending Movies', 'See all', 'Obsession', 'Hocus Pocus', 'Verity', 'Top 10 Today', 'See all', '1', '2']
+[nav 07:00:17] tap 'Movies' at (400,271)
+[nav 07:00:26] tile anchor MISS 'Trending Movies'
+[nav 07:00:33] tap 'Play' at (229,976)
+[nav 07:00:52] player top: topResumedActivity=ActivityRecord{4a23adb u0 com.onioncore.oniontv/.PlayerActivity t9}
+[nav 07:01:04] shot emu/phone-match/real/12-player-controls-upright.png (15113 B) md5 2768a5a9f2b3 distinct
+[nav 07:01:09] shot emu/phone-match/real/12-player-controls-sideways.png (12526 B) md5 c176874a4cb8 distinct
+[nav 07:01:11] ROUTE-MISS recorded for 12-player-controls
+[nav 07:01:11] batch C1 complete
+[nav 07:01:11] nav.py done
