@@ -1,0 +1,1 @@
+{"id":"00tv-d2-capbase","action":"shell","command":"bash emu/tv-match/run-tv.sh cap BASE"}

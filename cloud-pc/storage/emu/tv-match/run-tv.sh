@@ -41,6 +41,7 @@ push_captures() {
   for p in emu/tv-match/real emu/tv-match/real40 emu/tv-match/logs/dumps emu/tv-match/work \
            emu/tv-match/dup-md5.txt emu/tv-match/logs/nav-*.log emu/tv-match/logs/boot-*.log \
            emu/tv-match/logs/avd-*.log emu/tv-match/logs/sdk-*.log emu/tv-match/logs/install-*.log \
+           emu/tv-match/logs/avd-info-*.txt emu/tv-match/logs/logcat-*.txt emu/tv-match/logs/runner.log \
            emu/tv-match/logs/licenses.log emu/tv-match/failed_pages-*.txt; do
     [ -e "$p" ] && git add "$p" 2>/dev/null
   done
@@ -136,9 +137,18 @@ boot_avd() {
     > emu/tv-match/logs/boot-$name.log 2>&1 &
   timeout 150 adb wait-for-device
   local ok=0 i b
-  for i in $(seq 1 40); do
+  for i in $(seq 1 56); do
     b=$(adb shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')
-    if [ "$b" = "1" ]; then ok=1; log "$name booted after ~$((i*5))s"; break; fi
+    if [ "$b" = "1" ]; then
+      ok=1
+      # v6: this line must NOT go to stdout — boot_avd is called
+      # as ok=$(boot_avd ...), and for five runs the captured log
+      # line made ok != "1" even on a good boot, so the install
+      # check failed every time and every cap died on the FATAL
+      # path. File-only logging here; echo $ok is the sole stdout.
+      echo "[run-tv $(date +%H:%M:%S)] $name booted after ~$((i*5))s" >> $TVLOG
+      break
+    fi
     sleep 5
   done
   echo $ok
