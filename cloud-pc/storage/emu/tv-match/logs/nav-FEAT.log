@@ -1,0 +1,8 @@
+[nav-tv 11:31:23] nav-tv.py batch FEAT starting; top before: topResumedActivity=ActivityRecord{78967cb u0 com.google.android.tvlauncher/.MainActivity t5}
+[nav-tv 11:31:35] launched; top: topResumedActivity=ActivityRecord{cb37649 u0 com.onioncore.oniontv/.ProfileActivity t6}
+[nav-tv 11:31:38] visible: ["Who's watching?", 'Blaze', 'MAIN', 'Edit', '+', 'Add profile']
+[nav-tv 11:31:49] after pick; top: topResumedActivity=ActivityRecord{8947491 u0 com.onioncore.oniontv/.HomeActivity t6} visible: ['FEATURED', 'Nocturne', '2026– · 52 min · Crime, Drama, Thriller', "Ex-soldier Jonah Lynn leaves Philadelphia for a quiet life. When serial killer Jurek Walter threatens his new home and family, Jonah must protect them, even as he sends his FBI agent daughter Saga to track the killer's last victim.", 'Play', 'More Info', 'My List', 'Onion TV', 'Home', 'Movies', 'Series', 'Anime', 'Search titles...', 'Talk - use your phone as the microphone', 'Profile: Blaze - open Settings']
+[nav-tv 11:31:54] activate_direct ['Movies']: tapped (680,76)
+[nav-tv 11:31:56] goto ['Trending Movies']: label not present on screen; visible: ['FEATURED', 'Nocturne', '2026– · 52 min · Crime, Drama, Thriller', "Ex-soldier Jonah Lynn leaves Philadelphia for a quiet life. When serial killer Jurek Walter threatens his new home and family, Jonah must protect them, even as he sends his FBI agent daughter Saga to track the killer's last victim.", 'Play', 'More Info', 'My List', 'Onion TV', 'Home', 'Movies', 'Series', 'Anime', 'Search titles...', 'Talk - use your phone as the microphone', 'Profile: Blaze - open Settings']
+[nav-tv 11:31:56] FEAT playback-start: fail — could not open a movie title
+[nav-tv 11:32:01] activate_direct ['Movies']: tapped (680,76)

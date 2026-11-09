@@ -144,3 +144,9 @@ To https://github.com/boo4blue/boo4blue.github.io
 [run-tv 11:29:08] push_captures: PUSHED cap BASE-wd
 -rw-r--r-- 1 runner runner 63296611 Nov  9 11:30 /tmp/tv-FEAT.apk
 074fe85c353078b508a87d15981f8159  /tmp/tv-FEAT.apk
+To https://github.com/boo4blue/boo4blue.github.io
+   34ed8cb..9fd3d98  main -> main
+[run-tv 11:31:13] tv34 booted after ~5s
+[run-tv 11:31:13] tv34 boot_completed=1
+[run-tv 11:31:14] installing APK on tv34
+served-by: tv34 (API-34 android-tv x86)

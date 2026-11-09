@@ -26,7 +26,7 @@ INFO         |      Ok: Hardware GPU compatibility checks are not required
 INFO         |   Checking: hasSufficientSystem
 INFO         |      Ok: System requirements to run avd: `tv34` are met
 WARNING      | Feature QuickbootFileBacked is disabled due to stability issues, if you really want that, the environment variable ANDROID_EMU_FORCE_QUICKBOOT_FILE_BACKED need to set to 1
-INFO         | Storing crashdata in: /tmp/android-runner/emu-crash-37.2.13.db, detection is enabled for process: 3334
+INFO         | Storing crashdata in: /tmp/android-runner/emu-crash-37.2.13.db, detection is enabled for process: 5475
 INFO         | Initializing gfxstream backend
 INFO         | startOpenglesRendererImpl: gpu info
 INFO         | 
@@ -71,32 +71,22 @@ INFO         |   androidboot.vbmeta.digest=950a5afc43f13c7eacbe3369f4a9a70b670b0
 INFO         |   androidboot.vbmeta.hash_alg=sha256
 INFO         |   androidboot.vbmeta.size=6592
 INFO         |   androidboot.veritymode=enforcing
-WARNING: cannnot unmap ptr 0x7761b5e01000 as it is in the protected range from 0x776135e00000 to 0x7761b6000000
+WARNING: cannnot unmap ptr 0x746c0ce01000 as it is in the protected range from 0x746b8ce00000 to 0x746c0d000000
 INFO         | Monitoring duration of emulator setup.
 WARNING      | The emulator now requires a signed jwt token for gRPC access! Use the -grpc flag if you really want an open unprotected grpc port
 INFO         | Using security allow list from: /home/runner/.cache/cloudpc-models/android-sdk/emulator/lib/emulator_access.json
-INFO         | The active JSON Web Key Sets can be found here: /run/user/1001/avd/running/3334/jwks/1c3b2da8-4e09-4fce-8e3e-55f668abb75c/active.jwk
-INFO         | Scanning /run/user/1001/avd/running/3334/jwks/1c3b2da8-4e09-4fce-8e3e-55f668abb75c for jwk keys.
+INFO         | The active JSON Web Key Sets can be found here: /run/user/1001/avd/running/5475/jwks/8960a62a-01e4-4618-b8a3-960ce9039acb/active.jwk
+INFO         | Scanning /run/user/1001/avd/running/5475/jwks/8960a62a-01e4-4618-b8a3-960ce9039acb for jwk keys.
 INFO         | Started GRPC server at 127.0.0.1:8554, security: Local, auth: +token
-INFO         | Advertising in: /run/user/1001/avd/running/pid_3334.ini
-INFO         | Activated packet streamer for bluetooth emulation
+INFO         | Advertising in: /run/user/1001/avd/running/pid_5475.ini
 INFO         | Successfully initialized netsim WiFi
+INFO         | Activated packet streamer for bluetooth emulation
 INFO         | Setting display: 0 configuration to: 1920x1080, dpi: 320x320 
 INFO         | setDisplayActiveConfig: id:0, 1920x1080
 INFO         | emulatorSetupEnvironment: Environment scene is not required
 USER_INFO    | Emulator is performing a full startup. This may take upto two minutes, or more.
-WARNING      | Failed to process .ini file /home/runner/.android/emu-update-last-check.ini for reading.
-WARNING      | Failed to process .ini file /home/runner/.android/emu-update-last-check.ini for reading.
-INFO         | Boot completed in 32284 ms
+INFO         | Boot completed in 25875 ms
 INFO         | Increasing screen off timeout, logcat buffer size to 2M.
 WARNING      | adb command '/home/runner/.cache/cloudpc-models/android-sdk/platform-tools/adb -s emulator-5554 shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: device offline'
 WARNING      | adb command '/home/runner/.cache/cloudpc-models/android-sdk/platform-tools/adb -s emulator-5554 shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: device offline'
 WARNING      | adb command '/home/runner/.cache/cloudpc-models/android-sdk/platform-tools/adb -s emulator-5554 shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: device offline'
-INFO         | Wait for emulator (pid 3334) 20 seconds to shutdown gracefully before kill;you can set environment variable ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL(in seconds) to change the default value (20 seconds)
-
-USER_INFO    | Snapshots have been disabled by the user, save request is ignored.
-INFO         | Saving snapshot 'default_boot' took 0 ms
-ERROR        | stop: Not implemented
-INFO         | removeAll
-ERROR        | Unable to write to file /home/runner/emu-avd-home/tv34.avd/modem_simulator/modem_nvram.json
-WARNING      | Netsim Wifi dns:///localhost:34345 is gone due to Stream removed (CANCELLED)
