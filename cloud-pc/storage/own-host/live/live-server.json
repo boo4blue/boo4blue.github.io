@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
  "server": "stream-server (from-scratch)",
- "url": "https://redeem-dat-rules-agreement.trycloudflare.com",
+ "url": "https://procurement-contacted-kerry-knowing.trycloudflare.com",
  "egressIp": "52.183.219.58",
- "started": 1794260399,
+ "started": 1794260977,
  "job": "ownhost-server1"
 }
