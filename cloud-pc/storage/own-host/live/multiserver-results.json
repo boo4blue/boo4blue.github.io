@@ -1,7 +1,7 @@
 {
  "job": "ownhost-multi5",
- "at": 1794247505,
- "egressIp": "134.138.42.36",
+ "at": 1794250566,
+ "egressIp": "134.33.77.45",
  "torrserver": {
   "base": "https://mandatory-three-contributed-bufing.trycloudflare.com",
   "proven": "yes (v2 session, sandbox-verified through tunnel; session expired)",
@@ -18,21 +18,21 @@
   "note": "the webtorrent key below is this v5 run's fresh attempt if any; carryover records the v4 proof"
  },
  "rqbit": {
-  "base": "https://alias-junction-meat-popularity.trycloudflare.com",
-  "proven": "yes",
+  "base": "",
+  "proven": "not-started",
   "peers": "",
-  "range": "http=206 bytes=1048576 magic=ftypisom",
-  "startLatencySec": 23,
-  "auth": "noauth-http=401 (401 = auth enforced)",
-  "diag": "assets: https://github.com/ikatson/rqbit/releases/download/v9.1.0/rqbit-desktop-9.1.0-1.aarch64.rpm https://github.com/ikatson/rqbit/releases/download/v9.1.0/rqbit-desktop-9.1.0-1.x86_64.rpm https://github.com/ikatson/rqbit/releases/download/v9.1.0/rqbit-desktop-linux-amd64 https://github.com/ikatson/rqbit/releases/download/v9.1.0/rqbit-desktop-linux-arm64 https://github.com/ikatson/rqbit/releases/downloa | chosen: https://github.com/ikatson/rqbit/releases/download/v9.1.0/rqbit-linux-amd64 | file: /tmp/rqbit: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), static-pie linked, BuildID[sha1]=65d0a286f9ea2775c4af67e7c5613b44aae2b52a, not st | size: 28630928 | version: rqbit 9.1.0 | help: A bittorrent command line client and server.\n\nUsage: rqbit [OPTIONS] <COMMAND>\n\nCommands:\n  server       Start rqbit server with HTTP API\n  share        Create a torrent from a given path and announce it. Stateless\n  download     Download a single torrent, stateless\n  completions  Shell completions. | add http=200 body: {\"id\":0,\"details\":{\"id\":0,\"info_hash\":\"08ada5a7a6183aae1e09d831df6748d566095a10\",\"name\":\"Sintel\",\"output_folder\":\"/tmp/rqdata/Sintel\",\"total_pieces\":987,\"files\":[{\"name\":\"Sintel.de.srt\",\"components\":[\"Sintel.de.srt\"],\"length\":1652,\"included\":true,\"at | info: {\"idx\": 5, \"peers\": \"\", \"tid\": 0, \"err\": \"\"}"
+  "range": "",
+  "startLatencySec": "",
+  "auth": "",
+  "diag": "assets: https://github.com/ikatson/rqbit/releases/download/v9.1.0/rqbit-desktop-9.1.0-1.aarch64.rpm https://github.com/ikatson/rqbit/releases/download/v9.1.0/rqbit-desktop-9.1.0-1.x86_64.rpm https://github.com/ikatson/rqbit/releases/download/v9.1.0/rqbit-desktop-linux-amd64 https://github.com/ikatson/rqbit/releases/download/v9.1.0/rqbit-desktop-linux-arm64 https://github.com/ikatson/rqbit/releases/downloa | chosen: https://github.com/ikatson/rqbit/releases/download/v9.1.0/rqbit-linux-amd64 | file: /tmp/rqbit: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), static-pie linked, BuildID[sha1]=65d0a286f9ea2775c4af67e7c5613b44aae2b52a, not st | size: 28630928 | version: rqbit 9.1.0 | help: A bittorrent command line client and server.\n\nUsage: rqbit [OPTIONS] <COMMAND>\n\nCommands:\n  server       Start rqbit server with HTTP API\n  share        Create a torrent from a given path and announce it. Stateless\n  download     Download a single torrent, stateless\n  completions  Shell completions."
  },
  "webtorrent": {
-  "base": "https://iii-cowboy-concentrations-synthetic.trycloudflare.com",
-  "proven": "yes",
-  "peers": 13,
-  "range": "http=206 bytes=1048576 magic=ftypisom",
-  "startLatencySec": 25,
-  "diag": "node: v24.22.2 | noauth-status-http=401 | wtlog: wt http on 8080 wt ready Sintel/Sintel.de.srt,Sintel/Sintel.en.srt,Sintel/Sintel.es.srt,Sintel/Sintel.fr.srt,Sintel/Sintel.it.srt,Sintel/Sintel.mp4,Sintel/Sintel.nl.srt,Sintel/Sintel.pl.srt,Sintel/Sintel.pt.srt,Sintel/Sintel.ru.srt,Sintel/poster.jpg  | last status: {\"ready\":true,\"peers\":13,\"files\":[\"Sintel/Sintel.de.srt\",\"Sintel/Sintel.en.srt\",\"Sintel/Sintel.es.srt\",\"Sintel/Sintel.fr.srt\",\"Sintel/Sintel.it.srt\",\"Sintel/Sintel.mp4\",\"Sintel/Sintel.nl.srt\",\"Sintel/Sintel.pl.srt\",\"Sintel/Sintel.pt.srt\",\"Sintel/Sintel.ru.srt\",\"Sintel/poster.jpg\"]}"
+  "base": "https://surprising-tolerance-happened-question.trycloudflare.com",
+  "proven": "not-attempted",
+  "peers": "",
+  "range": "",
+  "startLatencySec": "",
+  "diag": "node: v24.22.2 | noauth-status-http=401 | wtlog:  instance at:     at emitErrorNT (node:net:2478:8)     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {   code: 'EADDRINUSE',   errno: -98,   syscall: 'listen',   address: '127.0.0.1',   port: 8080 }  Node.js v24.22.2 "
  },
  "own": {
   "proven": "live-via-s-chain (S7, not re-run here)"
