@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://alias-junction-meat-popularity.trycloudflare.com",
- "egressIp": "134.138.42.36",
+ "url": "https://beverly-latitude-everyday-chart.trycloudflare.com",
+ "egressIp": "134.33.77.45",
  "port": 3030,
- "started": 1794247478,
- "job": "ownhost-multi5"
+ "started": 1794249430,
+ "job": "ownhost-combo1"
 }
