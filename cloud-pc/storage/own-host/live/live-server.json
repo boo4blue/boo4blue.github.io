@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://stylish-kansas-valve-primarily.trycloudflare.com",
- "egressIp": "172.171.13.61",
- "started": 1794252669,
- "job": "ownhost-server1"
+ "url": "https://skirts-settlement-computed-argue.trycloudflare.com",
+ "egressIp": "172.206.39.215",
+ "port": 11470,
+ "started": 1794253436,
+ "job": "ownhost-combo1"
 }
