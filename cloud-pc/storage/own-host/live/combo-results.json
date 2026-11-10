@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794321542,
+ "at": 1794321554,
  "egressIp": "20.55.222.86",
  "own": {
   "base": "https://numeric-founded-praise-say.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "live noauth-http=401"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://type-webmasters-activity-lightning.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
