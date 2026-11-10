@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794271746,
+ "at": 1794271760,
  "egressIp": "135.119.237.76",
  "own": {
   "base": "https://mystery-differently-had-bringing.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://partly-allergy-option-lit.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
