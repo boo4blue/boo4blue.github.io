@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://quite-assembly-stick-win.trycloudflare.com",
- "egressIp": "13.86.196.202",
- "started": 1794286190,
- "job": "ownhost-server1"
+ "url": "https://childhood-locally-responded-proper.trycloudflare.com",
+ "egressIp": "132.196.22.184",
+ "port": 11470,
+ "started": 1794286420,
+ "job": "ownhost-combo1"
 }
