@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://writings-auburn-kits-thermal.trycloudflare.com",
+ "url": "https://gsm-experiment-accordingly-does.trycloudflare.com",
  "egressIp": "172.208.127.203",
  "port": 11470,
- "started": 1794332066,
+ "started": 1794332621,
  "job": "ownhost-combo1"
 }
