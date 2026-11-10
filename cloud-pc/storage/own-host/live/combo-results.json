@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794319295,
+ "at": 1794319296,
  "egressIp": "52.176.137.210",
  "own": {
   "base": "https://critical-sink-consideration-oakland.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
