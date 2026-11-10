@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794335297,
+ "at": 1794335310,
  "egressIp": "172.203.255.192",
  "own": {
   "base": "https://page-commission-resource-peninsula.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://stan-voices-granny-landing.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
