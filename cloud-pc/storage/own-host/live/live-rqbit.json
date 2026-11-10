@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://connect-subsequent-letter-declared.trycloudflare.com",
- "egressIp": "13.71.229.102",
+ "url": "https://physiology-fisher-broadcast-ages.trycloudflare.com",
+ "egressIp": "20.106.231.81",
  "port": 3030,
- "started": 1794313693,
+ "started": 1794316105,
  "job": "ownhost-combo1"
 }
