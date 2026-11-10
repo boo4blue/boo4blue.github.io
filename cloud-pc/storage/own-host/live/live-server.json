@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://orleans-maryland-speaker-micro.trycloudflare.com",
+ "url": "https://buildings-surrounded-candles-considering.trycloudflare.com",
  "egressIp": "172.174.190.239",
  "port": 11470,
- "started": 1794326643,
+ "started": 1794327201,
  "job": "ownhost-combo1"
 }
