@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
  "server": "stream-server (from-scratch)",
- "url": "https://dodge-bachelor-doom-adaptation.trycloudflare.com",
+ "url": "https://athletic-membership-emissions-anytime.trycloudflare.com",
  "egressIp": "20.120.164.97",
- "started": 1794346698,
+ "started": 1794347276,
  "job": "ownhost-server1"
 }
