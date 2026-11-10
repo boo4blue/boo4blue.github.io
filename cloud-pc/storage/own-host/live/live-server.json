@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://observe-relocation-unfortunately-father.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://decisions-sms-ratings-vertex.trycloudflare.com",
  "egressIp": "13.71.229.102",
- "port": 11470,
- "started": 1794314237,
- "job": "ownhost-combo1"
+ "started": 1794315402,
+ "job": "ownhost-server1"
 }
