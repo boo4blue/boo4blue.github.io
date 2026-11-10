@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794303699,
+ "at": 1794303707,
  "egressIp": "172.214.110.96",
  "own": {
   "base": "https://heat-joe-plaintiff-proceed.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://seas-shaped-elegant-visitor.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
