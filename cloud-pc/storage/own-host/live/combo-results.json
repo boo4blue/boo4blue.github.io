@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794350651,
+ "at": 1794350663,
  "egressIp": "20.120.253.173",
  "own": {
   "base": "https://cancer-limiting-atlas-productivity.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://relaxation-dicke-universe-facilitate.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
