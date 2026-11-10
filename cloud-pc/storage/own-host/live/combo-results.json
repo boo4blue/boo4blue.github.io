@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794306822,
+ "at": 1794306823,
  "egressIp": "134.33.75.24",
  "own": {
   "base": "https://gym-rap-joseph-park.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
