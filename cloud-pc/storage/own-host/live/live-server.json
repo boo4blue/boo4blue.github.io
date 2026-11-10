@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://honolulu-destinations-construct-medication.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://southampton-slip-jobs-reno.trycloudflare.com",
  "egressIp": "20.55.222.86",
- "port": 11470,
- "started": 1794322086,
- "job": "ownhost-combo1"
+ "started": 1794323245,
+ "job": "ownhost-server1"
 }
