@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794288774,
+ "at": 1794288786,
  "egressIp": "74.235.127.96",
  "own": {
   "base": "https://moss-configuration-imported-flush.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "live noauth-http=401"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://confidence-webmaster-gauge-genuine.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
