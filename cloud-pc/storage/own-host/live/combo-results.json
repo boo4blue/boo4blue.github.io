@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794276343,
+ "at": 1794276356,
  "egressIp": "20.65.155.209",
  "own": {
   "base": "https://pee-exposure-attachments-table.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "live noauth-http=401"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://expressions-assessed-promotional-cage.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
