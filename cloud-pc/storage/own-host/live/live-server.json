@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://bond-attachment-elizabeth-facilities.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://counsel-genesis-bristol-depot.trycloudflare.com",
  "egressIp": "20.106.231.81",
- "port": 11470,
- "started": 1794316643,
- "job": "ownhost-combo1"
+ "started": 1794317808,
+ "job": "ownhost-server1"
 }
