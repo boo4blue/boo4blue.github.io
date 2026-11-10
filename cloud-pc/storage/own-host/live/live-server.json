@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://responding-jacksonville-tales-perform.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://interpretation-label-iron-manuals.trycloudflare.com",
  "egressIp": "48.217.109.211",
- "port": 11470,
- "started": 1794311541,
- "job": "ownhost-combo1"
+ "started": 1794312703,
+ "job": "ownhost-server1"
 }
