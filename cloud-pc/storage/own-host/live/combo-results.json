@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794347571,
+ "at": 1794347579,
  "egressIp": "52.190.182.229",
  "own": {
   "base": "https://arab-spice-debian-north.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://savannah-impossible-subjects-universe.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
