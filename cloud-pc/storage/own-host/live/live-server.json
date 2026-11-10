@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://slides-lender-surgeons-maximize.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://auckland-lower-empirical-occurring.trycloudflare.com",
  "egressIp": "9.234.23.119",
- "port": 11470,
- "started": 1794337751,
- "job": "ownhost-combo1"
+ "started": 1794338916,
+ "job": "ownhost-server1"
 }
