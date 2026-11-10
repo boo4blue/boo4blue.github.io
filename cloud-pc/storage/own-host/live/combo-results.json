@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794278677,
+ "at": 1794278684,
  "egressIp": "20.161.70.188",
  "own": {
   "base": "https://marvel-knowing-anymore-establish.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://signing-compiler-matched-hydraulic.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
