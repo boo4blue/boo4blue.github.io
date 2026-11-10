@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794353267,
+ "at": 1794353268,
  "egressIp": "135.233.102.77",
  "own": {
   "base": "https://large-est-requests-condos.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
