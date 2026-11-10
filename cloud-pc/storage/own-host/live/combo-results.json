@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794314238,
+ "at": 1794314240,
  "egressIp": "13.71.229.102",
  "own": {
   "base": "https://observe-relocation-unfortunately-father.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
