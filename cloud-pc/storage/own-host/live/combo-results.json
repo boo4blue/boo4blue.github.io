@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794345531,
+ "at": 1794345532,
  "egressIp": "20.120.164.97",
  "own": {
   "base": "https://booth-loose-hats-ordering.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
