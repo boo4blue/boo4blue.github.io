@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794324218,
+ "at": 1794324231,
  "egressIp": "57.154.5.38",
  "own": {
   "base": "https://ten-cheapest-workshops-licensing.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "live noauth-http=401"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://fall-synthetic-tramadol-gave.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
