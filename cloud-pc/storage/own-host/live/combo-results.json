@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794324197,
+ "at": 1794324208,
  "egressIp": "57.154.5.38",
  "own": {
   "base": "https://ten-cheapest-workshops-licensing.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://scholarship-joyce-arrivals-prepared.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
