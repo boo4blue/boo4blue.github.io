@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794310991,
+ "at": 1794310999,
  "egressIp": "48.217.109.211",
  "own": {
   "base": "https://manga-updating-marilyn-americas.trycloudflare.com",
@@ -11,8 +11,8 @@
   "state": "live noauth-http=401"
  },
  "rqbit": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://loved-reasonable-lung-radius.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "webtorrent": {
   "base": "",
