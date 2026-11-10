@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://refurbished-styles-inputs-tomato.trycloudflare.com",
- "egressIp": "172.203.94.128",
+ "url": "https://listen-tutorials-qualification-moore.trycloudflare.com",
+ "egressIp": "57.151.128.221",
  "port": 8090,
- "started": 1794299032,
+ "started": 1794301259,
  "job": "ownhost-combo1"
 }
