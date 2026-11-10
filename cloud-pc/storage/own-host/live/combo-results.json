@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794306836,
- "egressIp": "134.33.75.24",
+ "at": 1794308357,
+ "egressIp": "134.138.41.2",
  "own": {
-  "base": "https://gym-rap-joseph-park.trycloudflare.com",
+  "base": "https://maine-unexpected-bench-site.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://buffer-pricing-seconds-ave.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
