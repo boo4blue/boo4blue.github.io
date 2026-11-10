@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://goal-turned-those-shots.trycloudflare.com",
- "egressIp": "172.212.169.154",
+ "url": "https://counties-wildlife-soon-thumbzilla.trycloudflare.com",
+ "egressIp": "4.246.119.197",
  "port": 8090,
- "started": 1794291320,
+ "started": 1794293892,
  "job": "ownhost-combo1"
 }
