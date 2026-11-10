@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://jets-education-transmit-putting.trycloudflare.com",
- "egressIp": "172.203.94.128",
+ "url": "https://almost-tried-already-serves.trycloudflare.com",
+ "egressIp": "57.151.128.221",
  "port": 8080,
- "started": 1794300164,
- "job": "ownhost-multi5"
+ "started": 1794301284,
+ "job": "ownhost-combo1"
 }
