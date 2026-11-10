@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://interference-major-wilson-painting.trycloudflare.com",
- "egressIp": "130.131.205.180",
+ "url": "https://leader-drums-receiving-dallas.trycloudflare.com",
+ "egressIp": "172.203.94.128",
  "port": 8080,
- "started": 1794297447,
- "job": "ownhost-multi5"
+ "started": 1794299054,
+ "job": "ownhost-combo1"
 }
