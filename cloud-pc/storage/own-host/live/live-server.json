@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://bias-midlands-cloud-sections.trycloudflare.com",
- "egressIp": "52.190.182.119",
- "started": 1794283510,
- "job": "ownhost-server1"
+ "url": "https://delhi-motors-surround-distinguished.trycloudflare.com",
+ "egressIp": "13.86.196.202",
+ "port": 11470,
+ "started": 1794283894,
+ "job": "ownhost-combo1"
 }
