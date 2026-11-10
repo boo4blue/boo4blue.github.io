@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://positive-you-none-sake.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://orange-reward-inquiry-argued.trycloudflare.com",
  "egressIp": "130.131.205.180",
- "port": 11470,
- "started": 1794296862,
- "job": "ownhost-combo1"
+ "started": 1794298024,
+ "job": "ownhost-server1"
 }
