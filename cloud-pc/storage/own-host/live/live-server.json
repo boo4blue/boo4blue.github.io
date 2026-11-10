@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://genre-guidelines-nearby-grammar.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://preserve-youth-manager-indicator.trycloudflare.com",
  "egressIp": "57.154.5.38",
- "port": 11470,
- "started": 1794324742,
- "job": "ownhost-combo1"
+ "started": 1794325914,
+ "job": "ownhost-server1"
 }
