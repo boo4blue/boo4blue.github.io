@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://stability-hawaii-wall-melbourne.trycloudflare.com",
- "egressIp": "74.235.127.96",
+ "url": "https://division-seal-storm-incentive.trycloudflare.com",
+ "egressIp": "172.212.169.154",
  "port": 8080,
- "started": 1794289901,
- "job": "ownhost-multi5"
+ "started": 1794291342,
+ "job": "ownhost-combo1"
 }
