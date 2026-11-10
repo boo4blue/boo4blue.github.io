@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794299026,
+ "at": 1794299033,
  "egressIp": "172.203.94.128",
  "own": {
   "base": "https://existed-attachment-honolulu-auditor.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://refurbished-styles-inputs-tomato.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
