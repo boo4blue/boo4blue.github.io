@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794283895,
+ "at": 1794283904,
  "egressIp": "13.86.196.202",
  "own": {
   "base": "https://delhi-motors-surround-distinguished.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://strain-thinkpad-forest-markets.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
