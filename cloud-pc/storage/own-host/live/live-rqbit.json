@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://pamela-carrying-hospital-flash.trycloudflare.com",
- "egressIp": "104.209.12.66",
+ "url": "https://permanent-trucks-max-fallen.trycloudflare.com",
+ "egressIp": "20.120.164.97",
  "port": 3030,
- "started": 1794342504,
+ "started": 1794344991,
  "job": "ownhost-combo1"
 }
