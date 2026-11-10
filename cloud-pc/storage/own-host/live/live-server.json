@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://casa-performances-maritime-thereafter.trycloudflare.com",
- "egressIp": "172.208.127.203",
- "started": 1794334363,
- "job": "ownhost-server1"
+ "url": "https://practices-paperbacks-stat-winner.trycloudflare.com",
+ "egressIp": "172.203.255.192",
+ "port": 11470,
+ "started": 1794334727,
+ "job": "ownhost-combo1"
 }
