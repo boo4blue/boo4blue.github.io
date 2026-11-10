@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://cancer-limiting-atlas-productivity.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://couples-sox-items-matches.trycloudflare.com",
  "egressIp": "20.120.253.173",
- "port": 11470,
- "started": 1794350647,
- "job": "ownhost-combo1"
+ "started": 1794351809,
+ "job": "ownhost-server1"
 }
