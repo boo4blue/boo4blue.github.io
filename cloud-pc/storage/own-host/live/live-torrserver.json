@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://midlands-sand-determination-eric.trycloudflare.com",
- "egressIp": "20.55.222.86",
+ "url": "https://scholarship-joyce-arrivals-prepared.trycloudflare.com",
+ "egressIp": "57.154.5.38",
  "port": 8090,
- "started": 1794321533,
+ "started": 1794324205,
  "job": "ownhost-combo1"
 }
