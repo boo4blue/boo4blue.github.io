@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794269158,
+ "at": 1794269171,
  "egressIp": "4.246.86.195",
  "own": {
   "base": "https://rod-collectible-readers-accompanied.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://lake-fourth-pocket-adventure.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
