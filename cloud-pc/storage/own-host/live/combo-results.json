@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794296328,
+ "at": 1794296863,
  "egressIp": "130.131.205.180",
  "own": {
-  "base": "https://semiconductor-destiny-maintaining-org.trycloudflare.com",
+  "base": "https://positive-you-none-sake.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "https://mil-developers-ready-prayer.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://continued-anthony-further-editing.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://wma-key-proceeding-milan.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
