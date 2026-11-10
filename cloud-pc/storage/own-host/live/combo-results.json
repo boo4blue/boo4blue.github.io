@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794271745,
+ "at": 1794271746,
  "egressIp": "135.119.237.76",
  "own": {
   "base": "https://mystery-differently-had-bringing.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
