@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
  "server": "stream-server (from-scratch)",
- "url": "https://notification-queen-camcorders-reported.trycloudflare.com",
+ "url": "https://casa-performances-maritime-thereafter.trycloudflare.com",
  "egressIp": "172.208.127.203",
- "started": 1794333786,
+ "started": 1794334363,
  "job": "ownhost-server1"
 }
