@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794308357,
+ "at": 1794308365,
  "egressIp": "134.138.41.2",
  "own": {
   "base": "https://maine-unexpected-bench-site.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://fence-indexes-instructional-varieties.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
