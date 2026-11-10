@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794324749,
+ "at": 1794324765,
  "egressIp": "57.154.5.38",
  "own": {
   "base": "https://genre-guidelines-nearby-grammar.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://race-toilet-andrews-creates.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
