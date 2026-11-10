@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794322088,
+ "at": 1794322090,
  "egressIp": "20.55.222.86",
  "own": {
   "base": "https://honolulu-destinations-construct-medication.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
