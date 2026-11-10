@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794337753,
+ "at": 1794337755,
  "egressIp": "9.234.23.119",
  "own": {
   "base": "https://slides-lender-surgeons-maximize.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
