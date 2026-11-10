@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794306266,
+ "at": 1794306274,
  "egressIp": "134.33.75.24",
  "own": {
   "base": "https://completing-gel-bush-influence.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://jewel-red-differently-reviewed.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
