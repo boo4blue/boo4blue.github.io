@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://athletics-treatments-rhythm-upc.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://how-wildlife-dpi-continues.trycloudflare.com",
  "egressIp": "4.246.119.197",
- "port": 11470,
- "started": 1794294449,
- "job": "ownhost-combo1"
+ "started": 1794295610,
+ "job": "ownhost-server1"
 }
