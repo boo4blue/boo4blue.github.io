@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://outer-divided-pickup-launched.trycloudflare.com",
- "egressIp": "172.169.237.153",
+ "url": "https://expressions-assessed-promotional-cage.trycloudflare.com",
+ "egressIp": "20.65.155.209",
  "port": 8080,
- "started": 1794274871,
- "job": "ownhost-multi5"
+ "started": 1794276355,
+ "job": "ownhost-combo1"
 }
