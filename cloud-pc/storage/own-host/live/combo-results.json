@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794321554,
+ "at": 1794322087,
  "egressIp": "20.55.222.86",
  "own": {
-  "base": "https://numeric-founded-praise-say.trycloudflare.com",
+  "base": "https://honolulu-destinations-construct-medication.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "https://midlands-sand-determination-eric.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://writings-returning-bridal-thehun.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://type-webmasters-activity-lightning.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
