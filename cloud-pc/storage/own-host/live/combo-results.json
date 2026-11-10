@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794271185,
+ "at": 1794271193,
  "egressIp": "135.119.237.76",
  "own": {
   "base": "https://buy-holding-medium-judicial.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://vegetables-horn-lawyer-simon.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
