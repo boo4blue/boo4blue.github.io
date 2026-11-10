@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794337755,
+ "at": 1794337769,
  "egressIp": "9.234.23.119",
  "own": {
   "base": "https://slides-lender-surgeons-maximize.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://best-iso-etc-clan.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
