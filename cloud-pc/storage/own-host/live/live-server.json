@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://zoning-vertical-nokia-glance.trycloudflare.com",
- "egressIp": "172.174.190.239",
- "started": 1794328953,
- "job": "ownhost-server1"
+ "url": "https://reduce-elvis-represents-occasion.trycloudflare.com",
+ "egressIp": "20.55.47.27",
+ "port": 11470,
+ "started": 1794329212,
+ "job": "ownhost-combo1"
 }
