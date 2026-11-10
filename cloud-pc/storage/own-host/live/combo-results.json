@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794284452,
+ "at": 1794284465,
  "egressIp": "13.86.196.202",
  "own": {
   "base": "https://circumstances-faced-cfr-focus.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://furthermore-kathy-beast-attempting.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
