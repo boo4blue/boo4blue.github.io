@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794335310,
- "egressIp": "172.203.255.192",
+ "at": 1794337189,
+ "egressIp": "9.234.23.119",
  "own": {
-  "base": "https://page-commission-resource-peninsula.trycloudflare.com",
+  "base": "https://song-flags-condos-eyes.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://stan-voices-granny-landing.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
