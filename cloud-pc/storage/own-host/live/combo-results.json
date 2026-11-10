@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794313679,
+ "at": 1794313687,
  "egressIp": "13.71.229.102",
  "own": {
   "base": "https://forecast-def-apartment-instant.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://contributing-received-northern-understand.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
