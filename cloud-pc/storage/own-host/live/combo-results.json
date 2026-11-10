@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794276881,
+ "at": 1794276893,
  "egressIp": "20.65.155.209",
  "own": {
   "base": "https://heritage-stability-seo-antibody.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://persian-aluminum-countries-annotation.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
