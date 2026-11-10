@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
  "server": "stream-server (from-scratch)",
- "url": "https://racks-symptoms-roles-beauty.trycloudflare.com",
+ "url": "https://this-chapter-tried-serious.trycloudflare.com",
  "egressIp": "20.55.47.27",
- "started": 1794330929,
+ "started": 1794331508,
  "job": "ownhost-server1"
 }
