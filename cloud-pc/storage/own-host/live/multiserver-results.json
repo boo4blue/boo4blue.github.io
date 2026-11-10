@@ -1,6 +1,6 @@
 {
  "job": "ownhost-multi5",
- "at": 1794351234,
+ "at": 1794351653,
  "egressIp": "20.120.253.173",
  "torrserver": {
   "base": "https://mandatory-three-contributed-bufing.trycloudflare.com",
@@ -28,11 +28,11 @@
  },
  "webtorrent": {
   "base": "https://measured-bali-copied-wrestling.trycloudflare.com",
-  "proven": "not-attempted",
+  "proven": "no (metadata never arrived within the poll window)",
   "peers": "",
   "range": "",
   "startLatencySec": "",
-  "diag": "node: v24.22.2 | noauth-status-http=401 | wtlog:  instance at:     at emitErrorNT (node:net:2478:8)     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {   code: 'EADDRINUSE',   errno: -98,   syscall: 'listen',   address: '127.0.0.1',   port: 8080 }  Node.js v24.22.2 "
+  "diag": "node: v24.22.2 | noauth-status-http=401 | wtlog:  instance at:     at emitErrorNT (node:net:2478:8)     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {   code: 'EADDRINUSE',   errno: -98,   syscall: 'listen',   address: '127.0.0.1',   port: 8080 }  Node.js v24.22.2  | last status: "
  },
  "own": {
   "proven": "live-via-s-chain (S7, not re-run here)"
