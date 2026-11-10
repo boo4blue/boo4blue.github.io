@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794279236,
+ "at": 1794279237,
  "egressIp": "20.161.70.188",
  "own": {
   "base": "https://coffee-desire-luis-collaborative.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
