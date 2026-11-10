@@ -5,7 +5,7 @@
  "waitedSec": 0,
  "playHttp": 206,
  "playMagic": "ftyp",
- "at": 1794329769,
- "hash": "08ada5a7a6183aae1e09d831df6748d566095a10",
- "job": "ownhost-combo1"
+ "egressIp": "20.55.47.27",
+ "at": 1794330930,
+ "hash": "08ada5a7a6183aae1e09d831df6748d566095a10"
 }
