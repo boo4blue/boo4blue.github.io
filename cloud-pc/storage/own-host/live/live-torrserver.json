@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://mil-developers-ready-prayer.trycloudflare.com",
- "egressIp": "130.131.205.180",
+ "url": "https://refurbished-styles-inputs-tomato.trycloudflare.com",
+ "egressIp": "172.203.94.128",
  "port": 8090,
- "started": 1794296306,
+ "started": 1794299032,
  "job": "ownhost-combo1"
 }
