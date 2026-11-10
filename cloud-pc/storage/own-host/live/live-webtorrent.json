@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://hearing-ppc-determined-state.trycloudflare.com",
- "egressIp": "172.208.127.203",
+ "url": "https://hayes-elliott-eds-passengers.trycloudflare.com",
+ "egressIp": "172.203.255.192",
  "port": 8080,
- "started": 1794333206,
- "job": "ownhost-multi5"
+ "started": 1794334755,
+ "job": "ownhost-combo1"
 }
