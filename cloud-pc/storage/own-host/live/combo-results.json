@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794350086,
+ "at": 1794350094,
  "egressIp": "20.120.253.173",
  "own": {
   "base": "https://amd-average-vehicles-stress.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://violin-thomas-jpeg-try.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
