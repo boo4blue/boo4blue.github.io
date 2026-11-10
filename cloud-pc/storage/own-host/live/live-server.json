@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://wellington-knights-needed-steps.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://coated-membership-furnished-name.trycloudflare.com",
  "egressIp": "172.169.237.153",
- "port": 11470,
- "started": 1794274285,
- "job": "ownhost-combo1"
+ "started": 1794275448,
+ "job": "ownhost-server1"
 }
