@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://infectious-vision-upgrade-which.trycloudflare.com",
- "egressIp": "20.106.231.81",
- "started": 1794318386,
- "job": "ownhost-server1"
+ "url": "https://cas-them-updates-academy.trycloudflare.com",
+ "egressIp": "52.176.137.210",
+ "port": 11470,
+ "started": 1794318731,
+ "job": "ownhost-combo1"
 }
