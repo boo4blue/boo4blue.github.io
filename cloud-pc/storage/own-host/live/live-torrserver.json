@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://seas-shaped-elegant-visitor.trycloudflare.com",
- "egressIp": "172.214.110.96",
+ "url": "https://jewel-red-differently-reviewed.trycloudflare.com",
+ "egressIp": "134.33.75.24",
  "port": 8090,
- "started": 1794303705,
+ "started": 1794306272,
  "job": "ownhost-combo1"
 }
