@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://strain-thinkpad-forest-markets.trycloudflare.com",
- "egressIp": "13.86.196.202",
+ "url": "https://maple-provision-graham-subjective.trycloudflare.com",
+ "egressIp": "132.196.22.184",
  "port": 8090,
- "started": 1794283903,
+ "started": 1794286427,
  "job": "ownhost-combo1"
 }
