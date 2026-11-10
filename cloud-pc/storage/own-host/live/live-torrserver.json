@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://flashing-argue-shareholders-jets.trycloudflare.com",
- "egressIp": "52.176.137.210",
+ "url": "https://midlands-sand-determination-eric.trycloudflare.com",
+ "egressIp": "20.55.222.86",
  "port": 8090,
- "started": 1794318739,
+ "started": 1794321533,
  "job": "ownhost-combo1"
 }
