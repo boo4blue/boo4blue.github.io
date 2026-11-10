@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794352708,
+ "at": 1794352716,
  "egressIp": "135.233.102.77",
  "own": {
   "base": "https://techniques-harold-equity-helps.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://worcester-accordance-canvas-gis.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
