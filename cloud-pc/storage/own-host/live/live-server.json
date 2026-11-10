@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://corners-fish-ends-fiber.trycloudflare.com",
- "egressIp": "48.217.109.211",
- "started": 1794313281,
- "job": "ownhost-server1"
+ "url": "https://forecast-def-apartment-instant.trycloudflare.com",
+ "egressIp": "13.71.229.102",
+ "port": 11470,
+ "started": 1794313678,
+ "job": "ownhost-combo1"
 }
