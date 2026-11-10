@@ -1,18 +1,18 @@
 {
  "job": "ownhost-combo1",
- "at": 1794276881,
- "egressIp": "20.65.155.209",
+ "at": 1794278677,
+ "egressIp": "20.161.70.188",
  "own": {
-  "base": "https://heritage-stability-seo-antibody.trycloudflare.com",
+  "base": "https://marvel-knowing-anymore-establish.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
   "base": "",
