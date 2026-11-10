@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794279237,
+ "at": 1794279249,
  "egressIp": "20.161.70.188",
  "own": {
   "base": "https://coffee-desire-luis-collaborative.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://processes-erik-devoted-attend.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
