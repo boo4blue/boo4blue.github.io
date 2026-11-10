@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://booth-loose-hats-ordering.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://dodge-bachelor-doom-adaptation.trycloudflare.com",
  "egressIp": "20.120.164.97",
- "port": 11470,
- "started": 1794345529,
- "job": "ownhost-combo1"
+ "started": 1794346698,
+ "job": "ownhost-server1"
 }
