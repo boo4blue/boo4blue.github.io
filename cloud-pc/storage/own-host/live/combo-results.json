@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794327204,
+ "at": 1794327206,
  "egressIp": "172.174.190.239",
  "own": {
   "base": "https://buildings-surrounded-candles-considering.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
