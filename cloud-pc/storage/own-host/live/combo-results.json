@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794318748,
+ "at": 1794318761,
  "egressIp": "52.176.137.210",
  "own": {
   "base": "https://cas-them-updates-academy.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "live noauth-http=401"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://condition-seeker-extras-christina.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
