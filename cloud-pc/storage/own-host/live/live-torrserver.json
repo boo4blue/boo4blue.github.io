@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://soc-competitive-pursuit-reserve.trycloudflare.com",
- "egressIp": "20.65.155.209",
+ "url": "https://signing-compiler-matched-hydraulic.trycloudflare.com",
+ "egressIp": "20.161.70.188",
  "port": 8090,
- "started": 1794276333,
+ "started": 1794278683,
  "job": "ownhost-combo1"
 }
