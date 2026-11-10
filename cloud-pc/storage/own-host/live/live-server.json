@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://how-wildlife-dpi-continues.trycloudflare.com",
- "egressIp": "4.246.119.197",
- "started": 1794295610,
- "job": "ownhost-server1"
+ "url": "https://semiconductor-destiny-maintaining-org.trycloudflare.com",
+ "egressIp": "130.131.205.180",
+ "port": 11470,
+ "started": 1794296298,
+ "job": "ownhost-combo1"
 }
