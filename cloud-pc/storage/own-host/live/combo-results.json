@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794355124,
+ "at": 1794355131,
  "egressIp": "51.8.144.197",
  "own": {
   "base": "https://hull-heading-seed-rich.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://assembled-ltd-princess-stamps.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
