@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://hide-establish-highland-info.trycloudflare.com",
- "egressIp": "52.190.182.229",
- "started": 1794349289,
- "job": "ownhost-server1"
+ "url": "https://amd-average-vehicles-stress.trycloudflare.com",
+ "egressIp": "20.120.253.173",
+ "port": 11470,
+ "started": 1794350085,
+ "job": "ownhost-combo1"
 }
