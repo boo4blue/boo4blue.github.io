@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://arab-spice-debian-north.trycloudflare.com",
+ "url": "https://mug-discusses-coalition-ppc.trycloudflare.com",
  "egressIp": "52.190.182.229",
  "port": 11470,
- "started": 1794347570,
+ "started": 1794348126,
  "job": "ownhost-combo1"
 }
