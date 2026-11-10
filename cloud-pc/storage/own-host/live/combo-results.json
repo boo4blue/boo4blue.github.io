@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794291871,
+ "at": 1794291873,
  "egressIp": "172.212.169.154",
  "own": {
   "base": "https://ipod-bras-accessing-six.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
