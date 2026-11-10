@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794343044,
+ "at": 1794343045,
  "egressIp": "104.209.12.66",
  "own": {
   "base": "https://radical-medicare-query-choosing.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
