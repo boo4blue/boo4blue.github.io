@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794291311,
+ "at": 1794291321,
  "egressIp": "172.212.169.154",
  "own": {
   "base": "https://preserve-yeah-supplement-stable.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://goal-turned-those-shots.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
