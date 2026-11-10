@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://rod-collectible-readers-accompanied.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://morrison-district-allan-granny.trycloudflare.com",
  "egressIp": "4.246.86.195",
- "port": 11470,
- "started": 1794269150,
- "job": "ownhost-combo1"
+ "started": 1794270317,
+ "job": "ownhost-server1"
 }
