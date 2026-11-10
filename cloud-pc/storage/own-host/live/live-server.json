@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
  "server": "stream-server (from-scratch)",
- "url": "https://interpretation-label-iron-manuals.trycloudflare.com",
+ "url": "https://corners-fish-ends-fiber.trycloudflare.com",
  "egressIp": "48.217.109.211",
- "started": 1794312703,
+ "started": 1794313281,
  "job": "ownhost-server1"
 }
