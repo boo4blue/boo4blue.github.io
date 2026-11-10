@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://continental-literally-sufficient-pocket.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://proceedings-dom-transmitted-installing.trycloudflare.com",
  "egressIp": "132.196.22.184",
- "port": 11470,
- "started": 1794286976,
- "job": "ownhost-combo1"
+ "started": 1794288138,
+ "job": "ownhost-server1"
 }
