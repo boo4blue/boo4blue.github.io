@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://mystery-differently-had-bringing.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://consistent-currently-cultural-enzyme.trycloudflare.com",
  "egressIp": "135.119.237.76",
- "port": 11470,
- "started": 1794271742,
- "job": "ownhost-combo1"
+ "started": 1794272907,
+ "job": "ownhost-server1"
 }
