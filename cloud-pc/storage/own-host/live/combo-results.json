@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794276325,
+ "at": 1794276334,
  "egressIp": "20.65.155.209",
  "own": {
   "base": "https://pee-exposure-attachments-table.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://soc-competitive-pursuit-reserve.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
