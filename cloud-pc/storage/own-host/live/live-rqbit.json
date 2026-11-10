@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://physiology-fisher-broadcast-ages.trycloudflare.com",
- "egressIp": "20.106.231.81",
+ "url": "https://outdoor-ordinance-mia-extending.trycloudflare.com",
+ "egressIp": "52.176.137.210",
  "port": 3030,
- "started": 1794316105,
+ "started": 1794318746,
  "job": "ownhost-combo1"
 }
