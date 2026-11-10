@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://proceedings-dom-transmitted-installing.trycloudflare.com",
- "egressIp": "132.196.22.184",
- "started": 1794288138,
- "job": "ownhost-server1"
+ "url": "https://moss-configuration-imported-flush.trycloudflare.com",
+ "egressIp": "74.235.127.96",
+ "port": 11470,
+ "started": 1794288758,
+ "job": "ownhost-combo1"
 }
