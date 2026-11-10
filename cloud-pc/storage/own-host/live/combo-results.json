@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794342487,
+ "at": 1794342497,
  "egressIp": "104.209.12.66",
  "own": {
   "base": "https://wild-programmers-experiment-united.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://largely-some-jerusalem-appreciated.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
