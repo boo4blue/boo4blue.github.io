@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://advertiser-physical-ver-hypothetical.trycloudflare.com",
+ "url": "https://hampton-engineers-advertiser-earnings.trycloudflare.com",
  "egressIp": "172.174.190.239",
  "port": 8080,
- "started": 1794327218,
- "job": "ownhost-combo1"
+ "started": 1794327797,
+ "job": "ownhost-multi5"
 }
