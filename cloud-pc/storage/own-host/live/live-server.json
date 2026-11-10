@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://arguments-modular-taxation-elements.trycloudflare.com",
- "egressIp": "20.120.253.173",
- "started": 1794352386,
- "job": "ownhost-server1"
+ "url": "https://techniques-harold-equity-helps.trycloudflare.com",
+ "egressIp": "135.233.102.77",
+ "port": 11470,
+ "started": 1794352707,
+ "job": "ownhost-combo1"
 }
