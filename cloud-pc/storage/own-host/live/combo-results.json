@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794284465,
- "egressIp": "13.86.196.202",
+ "at": 1794286421,
+ "egressIp": "132.196.22.184",
  "own": {
-  "base": "https://circumstances-faced-cfr-focus.trycloudflare.com",
+  "base": "https://childhood-locally-responded-proper.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://furthermore-kathy-beast-attempting.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
