@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://night-format-bones-towards.trycloudflare.com",
- "egressIp": "172.215.210.160",
+ "url": "https://pamela-carrying-hospital-flash.trycloudflare.com",
+ "egressIp": "104.209.12.66",
  "port": 3030,
- "started": 1794339883,
+ "started": 1794342504,
  "job": "ownhost-combo1"
 }
