@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794350663,
- "egressIp": "20.120.253.173",
+ "at": 1794352708,
+ "egressIp": "135.233.102.77",
  "own": {
-  "base": "https://cancer-limiting-atlas-productivity.trycloudflare.com",
+  "base": "https://techniques-harold-equity-helps.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://relaxation-dicke-universe-facilitate.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
