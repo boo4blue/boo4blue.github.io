@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://infectious-relief-snake-pci.trycloudflare.com",
- "egressIp": "172.212.169.154",
+ "url": "https://bryan-rooms-ours-derived.trycloudflare.com",
+ "egressIp": "4.246.119.197",
  "port": 3030,
- "started": 1794291327,
+ "started": 1794293900,
  "job": "ownhost-combo1"
 }
