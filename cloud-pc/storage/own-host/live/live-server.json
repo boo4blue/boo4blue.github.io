@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://buildings-surrounded-candles-considering.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://bend-settled-judy-measured.trycloudflare.com",
  "egressIp": "172.174.190.239",
- "port": 11470,
- "started": 1794327201,
- "job": "ownhost-combo1"
+ "started": 1794328374,
+ "job": "ownhost-server1"
 }
