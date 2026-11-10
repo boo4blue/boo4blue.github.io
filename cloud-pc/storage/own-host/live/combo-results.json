@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794332622,
+ "at": 1794332623,
  "egressIp": "172.208.127.203",
  "own": {
   "base": "https://gsm-experiment-accordingly-does.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
