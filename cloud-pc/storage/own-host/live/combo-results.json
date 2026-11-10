@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794289317,
+ "at": 1794289318,
  "egressIp": "74.235.127.96",
  "own": {
   "base": "https://enterprises-transmission-calvin-limited.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
