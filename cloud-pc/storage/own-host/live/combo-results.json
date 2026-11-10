@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794353270,
+ "at": 1794353282,
  "egressIp": "135.233.102.77",
  "own": {
   "base": "https://large-est-requests-condos.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://frankfurt-inquire-put-housewives.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
