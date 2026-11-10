@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://listen-tutorials-qualification-moore.trycloudflare.com",
- "egressIp": "57.151.128.221",
+ "url": "https://seas-shaped-elegant-visitor.trycloudflare.com",
+ "egressIp": "172.214.110.96",
  "port": 8090,
- "started": 1794301259,
+ "started": 1794303705,
  "job": "ownhost-combo1"
 }
