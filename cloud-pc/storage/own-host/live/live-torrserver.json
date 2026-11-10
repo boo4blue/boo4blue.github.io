@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://leu-arrives-copy-mod.trycloudflare.com",
- "egressIp": "9.234.23.119",
+ "url": "https://anything-gathering-jackie-dome.trycloudflare.com",
+ "egressIp": "172.215.210.160",
  "port": 8090,
- "started": 1794337196,
+ "started": 1794339875,
  "job": "ownhost-combo1"
 }
