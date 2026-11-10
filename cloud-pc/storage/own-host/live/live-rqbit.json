@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://answered-aside-andrews-oriental.trycloudflare.com",
- "egressIp": "74.235.127.96",
+ "url": "https://infectious-relief-snake-pci.trycloudflare.com",
+ "egressIp": "172.212.169.154",
  "port": 3030,
- "started": 1794288772,
+ "started": 1794291327,
  "job": "ownhost-combo1"
 }
