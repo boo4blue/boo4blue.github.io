@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://grew-factors-did-venues.trycloudflare.com",
- "egressIp": "172.203.255.192",
+ "url": "https://leu-arrives-copy-mod.trycloudflare.com",
+ "egressIp": "9.234.23.119",
  "port": 8090,
- "started": 1794334734,
+ "started": 1794337196,
  "job": "ownhost-combo1"
 }
