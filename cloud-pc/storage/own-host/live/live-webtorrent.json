@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://film-concerns-operators-advertise.trycloudflare.com",
- "egressIp": "20.120.164.97",
+ "url": "https://toe-dietary-arab-attributes.trycloudflare.com",
+ "egressIp": "52.190.182.229",
  "port": 8080,
- "started": 1794346120,
- "job": "ownhost-multi5"
+ "started": 1794347599,
+ "job": "ownhost-combo1"
 }
