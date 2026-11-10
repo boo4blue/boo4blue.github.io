@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://thats-waters-msie-cement.trycloudflare.com",
- "egressIp": "134.33.75.24",
+ "url": "https://prior-explore-demo-irc.trycloudflare.com",
+ "egressIp": "134.138.41.2",
  "port": 8080,
- "started": 1794307407,
- "job": "ownhost-multi5"
+ "started": 1794308384,
+ "job": "ownhost-combo1"
 }
