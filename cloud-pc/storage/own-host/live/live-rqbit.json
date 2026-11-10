@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://fallen-powered-mass-psychiatry.trycloudflare.com",
- "egressIp": "172.203.94.128",
+ "url": "https://pants-trailer-mike-justin.trycloudflare.com",
+ "egressIp": "57.151.128.221",
  "port": 3030,
- "started": 1794299041,
+ "started": 1794301269,
  "job": "ownhost-combo1"
 }
