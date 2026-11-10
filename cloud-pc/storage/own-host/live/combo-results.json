@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794269152,
+ "at": 1794269158,
  "egressIp": "4.246.86.195",
  "own": {
   "base": "https://rod-collectible-readers-accompanied.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
