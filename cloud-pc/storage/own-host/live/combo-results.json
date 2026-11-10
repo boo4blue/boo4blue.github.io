@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794289320,
+ "at": 1794289332,
  "egressIp": "74.235.127.96",
  "own": {
   "base": "https://enterprises-transmission-calvin-limited.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://cakes-emails-hardly-hosted.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
