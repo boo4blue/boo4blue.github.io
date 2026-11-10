@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://surfaces-generate-sellers-longitude.trycloudflare.com",
- "egressIp": "172.214.110.96",
+ "url": "https://folding-bacon-referral-fixtures.trycloudflare.com",
+ "egressIp": "134.33.75.24",
  "port": 3030,
- "started": 1794303713,
+ "started": 1794306280,
  "job": "ownhost-combo1"
 }
