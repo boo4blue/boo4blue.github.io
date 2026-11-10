@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794310984,
+ "at": 1794310991,
  "egressIp": "48.217.109.211",
  "own": {
   "base": "https://manga-updating-marilyn-americas.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://thermal-checkout-mistakes-focus.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
