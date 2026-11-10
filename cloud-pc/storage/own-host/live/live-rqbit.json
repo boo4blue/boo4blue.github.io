@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://healing-routes-apache-les.trycloudflare.com",
- "egressIp": "20.120.253.173",
+ "url": "https://exchanges-study-motels-hey.trycloudflare.com",
+ "egressIp": "135.233.102.77",
  "port": 3030,
- "started": 1794350100,
+ "started": 1794352722,
  "job": "ownhost-combo1"
 }
