@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
  "server": "stream-server (from-scratch)",
- "url": "https://won-yang-irc-characters.trycloudflare.com",
+ "url": "https://semi-coupons-implementation-motor.trycloudflare.com",
  "egressIp": "52.176.137.210",
- "started": 1794320459,
+ "started": 1794321036,
  "job": "ownhost-server1"
 }
