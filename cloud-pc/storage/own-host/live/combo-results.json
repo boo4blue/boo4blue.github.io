@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794344977,
+ "at": 1794344985,
  "egressIp": "20.120.164.97",
  "own": {
   "base": "https://arnold-classical-clear-pick.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://heritage-applicants-ruling-wealth.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
