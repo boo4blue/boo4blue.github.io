@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794286421,
+ "at": 1794286429,
  "egressIp": "132.196.22.184",
  "own": {
   "base": "https://childhood-locally-responded-proper.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://maple-provision-graham-subjective.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
