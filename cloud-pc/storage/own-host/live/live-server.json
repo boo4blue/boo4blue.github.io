@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://saint-camcorders-currently-everyday.trycloudflare.com",
- "egressIp": "9.234.23.119",
- "started": 1794339494,
- "job": "ownhost-server1"
+ "url": "https://herein-found-ment-templates.trycloudflare.com",
+ "egressIp": "172.215.210.160",
+ "port": 11470,
+ "started": 1794339867,
+ "job": "ownhost-combo1"
 }
