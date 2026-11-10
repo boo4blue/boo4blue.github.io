@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794286451,
+ "at": 1794286977,
  "egressIp": "132.196.22.184",
  "own": {
-  "base": "https://childhood-locally-responded-proper.trycloudflare.com",
+  "base": "https://continental-literally-sufficient-pocket.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "https://maple-provision-graham-subjective.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://florist-guarantees-warehouse-gear.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://install-calibration-usb-laptops.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
