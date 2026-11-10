@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794313695,
+ "at": 1794313708,
  "egressIp": "13.71.229.102",
  "own": {
   "base": "https://forecast-def-apartment-instant.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "live noauth-http=401"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://thy-typing-smooth-beneath.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
