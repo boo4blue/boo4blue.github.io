@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://violin-thomas-jpeg-try.trycloudflare.com",
- "egressIp": "20.120.253.173",
+ "url": "https://worcester-accordance-canvas-gis.trycloudflare.com",
+ "egressIp": "135.233.102.77",
  "port": 8090,
- "started": 1794350093,
+ "started": 1794352715,
  "job": "ownhost-combo1"
 }
