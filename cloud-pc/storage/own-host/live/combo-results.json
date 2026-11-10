@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794348128,
+ "at": 1794348130,
  "egressIp": "52.190.182.229",
  "own": {
   "base": "https://mug-discusses-coalition-ppc.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
