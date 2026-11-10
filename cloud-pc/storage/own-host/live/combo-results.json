@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794281772,
+ "at": 1794281785,
  "egressIp": "52.190.182.119",
  "own": {
   "base": "https://raising-titten-catherine-server.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://circuit-foot-numerous-integrating.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
