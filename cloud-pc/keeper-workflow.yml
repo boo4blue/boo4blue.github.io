@@ -1,0 +1,78 @@
+# Keeper - the no-Muse watchdog for the Onion TV stream chain.
+#
+# ONE-TIME ACTIVATION: this file must land at .github/workflows/keeper.yml
+# in the boo4blue.github.io repo. Muse's git token cannot write workflow
+# files (GitHub requires the "workflow" scope), so either re-approve the
+# GitHub connection with workflow access, or paste this file into the repo
+# once from the GitHub website/app (same manual route cloud-pc.yml used).
+# After that it runs forever on GitHub's runners - no Muse, no credits.
+#
+# What it does: every 15 minutes the "keep" job runs cloud-pc/keeper.py.
+# If the stream chain's newest session is stale, the "session" job starts
+# the next session exactly the way the Cloud PC workflow does.
+name: Keeper
+
+on:
+  schedule:
+    - cron: "5,20,35,50 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: keeper
+  cancel-in-progress: false
+
+jobs:
+  keep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      dispatch: ${{ steps.pass.outputs.dispatch }}
+      job_json: ${{ steps.pass.outputs.job_json }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Keeper pass
+        id: pass
+        run: python3 cloud-pc/keeper.py
+
+      - name: Commit keeper state
+        run: |
+          git config user.name "keeper"
+          git config user.email "keeper@onioncore"
+          git add cloud-pc/storage/own-host/live/keeper-state.json cloud-pc/storage/own-host/live/keeper-dispatch.json
+          git diff --cached --quiet || (git commit -m "keeper: heartbeat" && git push)
+
+  session:
+    needs: keep
+    if: needs.keep.outputs.dispatch == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run the dispatched watch job (starts the next stream session)
+        run: |
+          echo '${{ needs.keep.outputs.job_json }}' > /tmp/job.json
+          cat /tmp/job.json
+          python3 cloud-pc/pc.py /tmp/job.json
+
+      - name: Commit results
+        if: always()
+        run: |
+          git config user.name "cloudpc"
+          git config user.email "cloudpc@local"
+          git add cloud-pc/outbox cloud-pc/storage
+          git diff --cached --quiet || (git commit -m "keeper: session results" && git push)
