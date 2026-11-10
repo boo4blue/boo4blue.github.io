@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://maple-provision-graham-subjective.trycloudflare.com",
- "egressIp": "132.196.22.184",
+ "url": "https://please-supplied-fell-bags.trycloudflare.com",
+ "egressIp": "74.235.127.96",
  "port": 8090,
- "started": 1794286427,
+ "started": 1794288765,
  "job": "ownhost-combo1"
 }
