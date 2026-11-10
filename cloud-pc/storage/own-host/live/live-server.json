@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
  "server": "stream-server (from-scratch)",
- "url": "https://coated-membership-furnished-name.trycloudflare.com",
+ "url": "https://oakland-alphabetical-hunting-bytes.trycloudflare.com",
  "egressIp": "172.169.237.153",
- "started": 1794275448,
+ "started": 1794276027,
  "job": "ownhost-server1"
 }
