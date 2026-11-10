@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://cooling-drill-warehouse-rolling.trycloudflare.com",
+ "url": "https://best-iso-etc-clan.trycloudflare.com",
  "egressIp": "9.234.23.119",
  "port": 8080,
- "started": 1794337221,
+ "started": 1794337768,
  "job": "ownhost-combo1"
 }
