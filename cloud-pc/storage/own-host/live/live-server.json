@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://raising-titten-catherine-server.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://conceptual-reload-chan-push.trycloudflare.com",
  "egressIp": "52.190.182.119",
- "port": 11470,
- "started": 1794281768,
- "job": "ownhost-combo1"
+ "started": 1794282933,
+ "job": "ownhost-server1"
 }
