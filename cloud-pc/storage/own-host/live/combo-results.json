@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794332083,
+ "at": 1794332096,
  "egressIp": "172.208.127.203",
  "own": {
   "base": "https://writings-auburn-kits-thermal.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "live noauth-http=401"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://crossing-social-pleasant-judgment.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
