@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794337769,
- "egressIp": "9.234.23.119",
+ "at": 1794339869,
+ "egressIp": "172.215.210.160",
  "own": {
-  "base": "https://slides-lender-surgeons-maximize.trycloudflare.com",
+  "base": "https://herein-found-ment-templates.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://best-iso-etc-clan.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
