@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794329215,
+ "at": 1794329227,
  "egressIp": "20.55.47.27",
  "own": {
   "base": "https://reduce-elvis-represents-occasion.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://assisted-sub-inspections-nonprofit.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
