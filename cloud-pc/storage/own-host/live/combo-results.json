@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794332067,
+ "at": 1794332075,
  "egressIp": "172.208.127.203",
  "own": {
   "base": "https://writings-auburn-kits-thermal.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://empirical-miami-guy-modeling.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
