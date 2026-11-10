@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://anything-gathering-jackie-dome.trycloudflare.com",
- "egressIp": "172.215.210.160",
+ "url": "https://largely-some-jerusalem-appreciated.trycloudflare.com",
+ "egressIp": "104.209.12.66",
  "port": 8090,
- "started": 1794339875,
+ "started": 1794342496,
  "job": "ownhost-combo1"
 }
