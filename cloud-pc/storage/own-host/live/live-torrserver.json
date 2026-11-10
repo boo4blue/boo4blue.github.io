@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://signing-compiler-matched-hydraulic.trycloudflare.com",
- "egressIp": "20.161.70.188",
+ "url": "https://slightly-convicted-allocation-muze.trycloudflare.com",
+ "egressIp": "52.190.182.119",
  "port": 8090,
- "started": 1794278683,
+ "started": 1794281223,
  "job": "ownhost-combo1"
 }
