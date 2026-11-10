@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794299595,
- "egressIp": "172.203.94.128",
+ "at": 1794301252,
+ "egressIp": "57.151.128.221",
  "own": {
-  "base": "https://passing-animated-cloth-industrial.trycloudflare.com",
+  "base": "https://muslim-rob-lip-entrepreneurs.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://mission-cashiers-bubble-jumping.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
