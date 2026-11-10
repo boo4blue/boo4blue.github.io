@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794316661,
- "egressIp": "20.106.231.81",
+ "at": 1794318732,
+ "egressIp": "52.176.137.210",
  "own": {
-  "base": "https://bond-attachment-elizabeth-facilities.trycloudflare.com",
+  "base": "https://cas-them-updates-academy.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://gilbert-gratis-qualified-family.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
