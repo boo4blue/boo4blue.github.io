@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794301252,
+ "at": 1794301261,
  "egressIp": "57.151.128.221",
  "own": {
   "base": "https://muslim-rob-lip-entrepreneurs.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://listen-tutorials-qualification-moore.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
