@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://folding-bacon-referral-fixtures.trycloudflare.com",
- "egressIp": "134.33.75.24",
+ "url": "https://parent-tomatoes-pregnancy-indie.trycloudflare.com",
+ "egressIp": "134.138.41.2",
  "port": 3030,
- "started": 1794306280,
+ "started": 1794308371,
  "job": "ownhost-combo1"
 }
