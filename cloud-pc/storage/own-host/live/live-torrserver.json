@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://savannah-impossible-subjects-universe.trycloudflare.com",
- "egressIp": "52.190.182.229",
+ "url": "https://violin-thomas-jpeg-try.trycloudflare.com",
+ "egressIp": "20.120.253.173",
  "port": 8090,
- "started": 1794347578,
+ "started": 1794350093,
  "job": "ownhost-combo1"
 }
