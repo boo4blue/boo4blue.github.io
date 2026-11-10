@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://scholarship-joyce-arrivals-prepared.trycloudflare.com",
- "egressIp": "57.154.5.38",
+ "url": "https://output-require-expressions-rent.trycloudflare.com",
+ "egressIp": "172.174.190.239",
  "port": 8090,
- "started": 1794324205,
+ "started": 1794326653,
  "job": "ownhost-combo1"
 }
