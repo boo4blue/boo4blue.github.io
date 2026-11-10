@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://student-well-rendering-teacher.trycloudflare.com",
- "egressIp": "57.151.128.221",
- "started": 1794302967,
- "job": "ownhost-server1"
+ "url": "https://heat-joe-plaintiff-proceed.trycloudflare.com",
+ "egressIp": "172.214.110.96",
+ "port": 11470,
+ "started": 1794303698,
+ "job": "ownhost-combo1"
 }
