@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794294450,
+ "at": 1794294451,
  "egressIp": "4.246.119.197",
  "own": {
   "base": "https://athletics-treatments-rhythm-upc.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
