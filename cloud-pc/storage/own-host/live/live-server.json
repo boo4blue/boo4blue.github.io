@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://passing-animated-cloth-industrial.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://decided-freebsd-roots-guestbook.trycloudflare.com",
  "egressIp": "172.203.94.128",
- "port": 11470,
- "started": 1794299579,
- "job": "ownhost-combo1"
+ "started": 1794300740,
+ "job": "ownhost-server1"
 }
