@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794293914,
+ "at": 1794294450,
  "egressIp": "4.246.119.197",
  "own": {
-  "base": "https://beaver-keeps-businesses-hollywood.trycloudflare.com",
+  "base": "https://athletics-treatments-rhythm-upc.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "https://counties-wildlife-soon-thumbzilla.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://bryan-rooms-ours-derived.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://coverage-kansas-legitimate-appreciate.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
