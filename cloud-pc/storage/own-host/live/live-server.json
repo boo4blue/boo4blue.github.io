@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://large-est-requests-condos.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://narrow-reforms-angela-quantum.trycloudflare.com",
  "egressIp": "135.233.102.77",
- "port": 11470,
- "started": 1794353266,
- "job": "ownhost-combo1"
+ "started": 1794354430,
+ "job": "ownhost-server1"
 }
