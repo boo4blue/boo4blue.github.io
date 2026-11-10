@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794322102,
- "egressIp": "20.55.222.86",
+ "at": 1794324197,
+ "egressIp": "57.154.5.38",
  "own": {
-  "base": "https://honolulu-destinations-construct-medication.trycloudflare.com",
+  "base": "https://ten-cheapest-workshops-licensing.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://handmade-supplies-compact-moisture.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
