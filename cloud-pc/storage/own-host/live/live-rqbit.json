@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://richmond-bennett-achieve-size.trycloudflare.com",
- "egressIp": "172.208.127.203",
+ "url": "https://prepaid-junction-anderson-wed.trycloudflare.com",
+ "egressIp": "172.203.255.192",
  "port": 3030,
- "started": 1794332082,
+ "started": 1794334742,
  "job": "ownhost-combo1"
 }
