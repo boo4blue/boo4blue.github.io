@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://enterprises-transmission-calvin-limited.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://increasing-husband-association-screening.trycloudflare.com",
  "egressIp": "74.235.127.96",
- "port": 11470,
- "started": 1794289316,
- "job": "ownhost-combo1"
+ "started": 1794290479,
+ "job": "ownhost-server1"
 }
