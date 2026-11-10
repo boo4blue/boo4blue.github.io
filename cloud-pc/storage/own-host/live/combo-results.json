@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794281216,
+ "at": 1794281224,
  "egressIp": "52.190.182.119",
  "own": {
   "base": "https://factors-curtis-adjustments-descending.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://slightly-convicted-allocation-muze.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
