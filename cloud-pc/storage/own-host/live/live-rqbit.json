@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://pants-trailer-mike-justin.trycloudflare.com",
- "egressIp": "57.151.128.221",
+ "url": "https://surfaces-generate-sellers-longitude.trycloudflare.com",
+ "egressIp": "172.214.110.96",
  "port": 3030,
- "started": 1794301269,
+ "started": 1794303713,
  "job": "ownhost-combo1"
 }
