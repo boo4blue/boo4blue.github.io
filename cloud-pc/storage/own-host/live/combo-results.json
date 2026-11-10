@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794348142,
- "egressIp": "52.190.182.229",
+ "at": 1794350086,
+ "egressIp": "20.120.253.173",
  "own": {
-  "base": "https://mug-discusses-coalition-ppc.trycloudflare.com",
+  "base": "https://amd-average-vehicles-stress.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://stuff-grip-classics-remote.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
