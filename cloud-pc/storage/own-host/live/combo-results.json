@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794335294,
+ "at": 1794335296,
  "egressIp": "172.203.255.192",
  "own": {
   "base": "https://page-commission-resource-peninsula.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
