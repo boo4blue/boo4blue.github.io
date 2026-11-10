@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794350649,
+ "at": 1794350651,
  "egressIp": "20.120.253.173",
  "own": {
   "base": "https://cancer-limiting-atlas-productivity.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
