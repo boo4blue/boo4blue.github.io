@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794288759,
+ "at": 1794288766,
  "egressIp": "74.235.127.96",
  "own": {
   "base": "https://moss-configuration-imported-flush.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://please-supplied-fell-bags.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
