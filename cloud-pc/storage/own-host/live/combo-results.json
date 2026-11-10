@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794327206,
+ "at": 1794327225,
  "egressIp": "172.174.190.239",
  "own": {
   "base": "https://buildings-surrounded-candles-considering.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://advertiser-physical-ver-hypothetical.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
