@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://preserve-youth-manager-indicator.trycloudflare.com",
- "egressIp": "57.154.5.38",
- "started": 1794325914,
- "job": "ownhost-server1"
+ "url": "https://orleans-maryland-speaker-micro.trycloudflare.com",
+ "egressIp": "172.174.190.239",
+ "port": 11470,
+ "started": 1794326643,
+ "job": "ownhost-combo1"
 }
