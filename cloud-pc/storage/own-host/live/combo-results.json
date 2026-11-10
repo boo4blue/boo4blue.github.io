@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794308924,
+ "at": 1794308940,
  "egressIp": "134.138.41.2",
  "own": {
   "base": "https://positions-staying-artistic-surprise.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://perfume-gossip-done-taylor.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
