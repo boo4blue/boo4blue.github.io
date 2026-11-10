@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794321526,
+ "at": 1794321534,
  "egressIp": "20.55.222.86",
  "own": {
   "base": "https://numeric-founded-praise-say.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://midlands-sand-determination-eric.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
