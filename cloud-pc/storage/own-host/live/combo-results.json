@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794337189,
+ "at": 1794337197,
  "egressIp": "9.234.23.119",
  "own": {
   "base": "https://song-flags-condos-eyes.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://leu-arrives-copy-mod.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
