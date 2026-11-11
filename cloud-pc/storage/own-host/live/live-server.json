@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
  "server": "stream-server (from-scratch)",
- "url": "https://atm-favors-eggs-receptors.trycloudflare.com",
+ "url": "https://wisconsin-feeding-tomatoes-solaris.trycloudflare.com",
  "egressIp": "52.190.221.80",
- "started": 1794364965,
+ "started": 1794365543,
  "job": "ownhost-server1"
 }
