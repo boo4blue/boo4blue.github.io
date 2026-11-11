@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://expired-hook-patents-lunch.trycloudflare.com",
- "egressIp": "172.210.148.99",
+ "url": "https://twisted-classes-effects-advantages.trycloudflare.com",
+ "egressIp": "172.212.207.180",
  "port": 8090,
- "started": 1794392175,
+ "started": 1794394634,
  "job": "ownhost-combo1"
 }
