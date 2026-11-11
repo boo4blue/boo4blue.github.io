@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794371845,
+ "at": 1794371857,
  "egressIp": "20.115.102.146",
  "own": {
   "base": "https://browsers-satisfied-gamma-hearings.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://red-jackson-introduction-shipment.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
