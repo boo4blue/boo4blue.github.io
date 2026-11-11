@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794368457,
+ "at": 1794368982,
  "egressIp": "68.220.155.246",
  "own": {
-  "base": "https://host-survivors-statewide-mines.trycloudflare.com",
+  "base": "https://racks-intake-showtimes-identify.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "https://ultimately-something-orders-defined.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://describing-dome-need-helpful.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://assist-bearing-score-reasonably.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
