@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://bargain-mike-sku-firms.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://freely-item-embassy-experienced.trycloudflare.com",
  "egressIp": "172.200.175.176",
- "port": 11470,
- "started": 1794361122,
- "job": "ownhost-combo1"
+ "started": 1794362286,
+ "job": "ownhost-server1"
 }
