@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794433599,
+ "at": 1794434119,
  "egressIp": "13.83.162.73",
  "own": {
-  "base": "https://disable-forth-disciplines-offerings.trycloudflare.com",
+  "base": "https://acc-masters-misc-url.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "https://story-intimate-academic-publishing.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://supplier-integral-pharmaceuticals-aside.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://completely-lay-arnold-lady.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
