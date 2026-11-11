@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794377436,
- "egressIp": "135.232.229.244",
+ "at": 1794379585,
+ "egressIp": "172.185.167.114",
  "own": {
-  "base": "https://foto-reproductive-eur-mortgage.trycloudflare.com",
+  "base": "https://remove-election-scanned-aerial.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://tough-latinas-establishment-forge.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
