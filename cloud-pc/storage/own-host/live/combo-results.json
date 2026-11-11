@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794414691,
+ "at": 1794414699,
  "egressIp": "52.173.109.1",
  "own": {
   "base": "https://penn-intent-henderson-ones.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://consisting-profits-epinions-dated.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
