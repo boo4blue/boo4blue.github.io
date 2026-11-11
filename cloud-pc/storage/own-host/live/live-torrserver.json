@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://recycling-strange-slot-invision.trycloudflare.com",
- "egressIp": "128.203.190.86",
+ "url": "https://filled-peterson-green-zoo.trycloudflare.com",
+ "egressIp": "172.200.175.176",
  "port": 8090,
- "started": 1794357646,
+ "started": 1794360578,
  "job": "ownhost-combo1"
 }
