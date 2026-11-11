@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794412154,
+ "at": 1794412162,
  "egressIp": "52.153.132.113",
  "own": {
   "base": "https://urban-gsm-stage-jackie.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://work-journal-scripting-dial.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
