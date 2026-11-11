@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794374479,
- "egressIp": "20.83.175.149",
+ "at": 1794376857,
+ "egressIp": "135.232.229.244",
  "own": {
-  "base": "https://rrp-universities-drug-hostels.trycloudflare.com",
+  "base": "https://diffs-excellence-financing-incurred.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://bubble-cam-creator-principle.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
