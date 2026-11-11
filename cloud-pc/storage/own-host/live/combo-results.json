@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794436059,
+ "at": 1794436067,
  "egressIp": "4.149.237.124",
  "own": {
   "base": "https://marvel-dolls-talked-gasoline.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://skip-artificial-avoiding-metabolism.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
