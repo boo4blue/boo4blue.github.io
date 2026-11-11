@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://responding-mae-magic-solely.trycloudflare.com",
- "egressIp": "20.83.175.149",
+ "url": "https://weather-median-sperm-spread.trycloudflare.com",
+ "egressIp": "135.232.229.244",
  "port": 8090,
- "started": 1794373914,
+ "started": 1794376863,
  "job": "ownhost-combo1"
 }
