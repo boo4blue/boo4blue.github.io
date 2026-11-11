@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://non-funny-technology-mix.trycloudflare.com",
- "egressIp": "130.131.214.138",
+ "url": "https://expired-hook-patents-lunch.trycloudflare.com",
+ "egressIp": "172.210.148.99",
  "port": 8090,
- "started": 1794389716,
+ "started": 1794392175,
  "job": "ownhost-combo1"
 }
