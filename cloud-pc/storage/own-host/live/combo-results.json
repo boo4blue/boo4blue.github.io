@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794368997,
- "egressIp": "68.220.155.246",
+ "at": 1794371283,
+ "egressIp": "20.115.102.146",
  "own": {
-  "base": "https://racks-intake-showtimes-identify.trycloudflare.com",
+  "base": "https://observe-downloading-locked-nashville.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://utils-message-princeton-springer.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
