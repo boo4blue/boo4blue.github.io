@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://alexandria-prospect-usr-flexibility.trycloudflare.com",
- "egressIp": "52.241.147.118",
+ "url": "https://convention-rely-eternal-figures.trycloudflare.com",
+ "egressIp": "20.161.54.98",
  "port": 3030,
- "started": 1794419987,
+ "started": 1794422758,
  "job": "ownhost-combo1"
 }
