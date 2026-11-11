@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794382151,
+ "at": 1794382159,
  "egressIp": "52.234.42.34",
  "own": {
   "base": "https://magnificent-desktop-cole-hottest.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://ends-characteristic-roommate-collective.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
