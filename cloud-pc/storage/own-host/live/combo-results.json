@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794412162,
+ "at": 1794412170,
  "egressIp": "52.153.132.113",
  "own": {
   "base": "https://urban-gsm-stage-jackie.trycloudflare.com",
@@ -11,8 +11,8 @@
   "state": "live noauth-http=401"
  },
  "rqbit": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://sign-connecting-headed-reducing.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "webtorrent": {
   "base": "",
