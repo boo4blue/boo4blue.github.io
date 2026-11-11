@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794433570,
+ "at": 1794433578,
  "egressIp": "13.83.162.73",
  "own": {
   "base": "https://disable-forth-disciplines-offerings.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://story-intimate-academic-publishing.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
