@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794382710,
+ "at": 1794382711,
  "egressIp": "52.234.42.34",
  "own": {
   "base": "https://perth-plastics-kansas-writing.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
