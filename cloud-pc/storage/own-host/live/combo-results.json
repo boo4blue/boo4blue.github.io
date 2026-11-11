@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794363248,
+ "at": 1794363256,
  "egressIp": "52.190.221.80",
  "own": {
   "base": "https://knit-publicly-courage-trust.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://would-significance-agricultural-victor.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
