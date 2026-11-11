@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794422744,
+ "at": 1794422752,
  "egressIp": "20.161.54.98",
  "own": {
   "base": "https://antibodies-atlantic-reflection-cycle.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://humanity-recorder-employer-outputs.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
