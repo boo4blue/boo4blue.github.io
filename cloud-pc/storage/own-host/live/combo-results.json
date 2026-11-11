@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794363802,
+ "at": 1794363804,
  "egressIp": "52.190.221.80",
  "own": {
   "base": "https://assembly-bend-britain-zip.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
