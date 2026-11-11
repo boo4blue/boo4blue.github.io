@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://grad-preserve-generic-recognized.trycloudflare.com",
- "egressIp": "20.49.61.54",
- "started": 1794406784,
- "job": "ownhost-server1"
+ "url": "https://cluster-unknown-consecutive-nut.trycloudflare.com",
+ "egressIp": "135.232.125.117",
+ "port": 11470,
+ "started": 1794407129,
+ "job": "ownhost-combo1"
 }
