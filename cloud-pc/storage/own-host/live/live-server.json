@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://limited-instructor-assists-graduation.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://mom-assessed-shipment-problems.trycloudflare.com",
  "egressIp": "52.148.0.62",
- "port": 11470,
- "started": 1794425855,
- "job": "ownhost-combo1"
+ "started": 1794427019,
+ "job": "ownhost-server1"
 }
