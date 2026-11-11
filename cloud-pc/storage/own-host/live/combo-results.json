@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794409677,
+ "at": 1794409685,
  "egressIp": "52.165.101.82",
  "own": {
   "base": "https://iron-puzzle-attribute-modifications.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://deluxe-resulting-races-manchester.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
