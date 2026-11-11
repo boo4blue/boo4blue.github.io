@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794373908,
+ "at": 1794373916,
  "egressIp": "20.83.175.149",
  "own": {
   "base": "https://legs-cause-monitor-ash.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://responding-mae-magic-solely.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
