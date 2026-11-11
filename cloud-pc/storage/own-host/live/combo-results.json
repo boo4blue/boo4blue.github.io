@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794371283,
+ "at": 1794371291,
  "egressIp": "20.115.102.146",
  "own": {
   "base": "https://observe-downloading-locked-nashville.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://facial-cooler-readers-epic.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
