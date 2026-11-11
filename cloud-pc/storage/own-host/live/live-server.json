@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://partition-automatic-mod-booth.trycloudflare.com",
- "egressIp": "52.161.180.151",
- "started": 1794386451,
- "job": "ownhost-server1"
+ "url": "https://cameron-visual-bingo-appreciation.trycloudflare.com",
+ "egressIp": "52.242.219.115",
+ "port": 11470,
+ "started": 1794387167,
+ "job": "ownhost-combo1"
 }
