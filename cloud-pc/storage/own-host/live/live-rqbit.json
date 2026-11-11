@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://rica-soviet-kong-mapping.trycloudflare.com",
- "egressIp": "128.203.190.86",
+ "url": "https://tier-enquiry-span-namely.trycloudflare.com",
+ "egressIp": "172.200.175.176",
  "port": 3030,
- "started": 1794357654,
+ "started": 1794360585,
  "job": "ownhost-combo1"
 }
