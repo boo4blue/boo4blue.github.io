@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794410238,
+ "at": 1794410239,
  "egressIp": "52.165.101.82",
  "own": {
   "base": "https://checking-coal-modeling-jerusalem.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
