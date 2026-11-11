@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://admission-bidder-available-deviant.trycloudflare.com",
- "egressIp": "52.242.219.115",
+ "url": "https://non-funny-technology-mix.trycloudflare.com",
+ "egressIp": "130.131.214.138",
  "port": 8090,
- "started": 1794387175,
+ "started": 1794389716,
  "job": "ownhost-combo1"
 }
