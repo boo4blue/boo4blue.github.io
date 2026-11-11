@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794397186,
+ "at": 1794397719,
  "egressIp": "4.149.238.122",
  "own": {
-  "base": "https://conventions-principal-nothing-apache.trycloudflare.com",
+  "base": "https://whom-blackjack-poster-featured.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "https://census-lookup-evans-hub.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "failed-download"
  },
  "rqbit": {
-  "base": "https://zoning-campbell-understanding-loops.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://benz-shades-investigated-mother.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
