@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://ton-backup-weekend-angeles.trycloudflare.com",
- "egressIp": "128.203.190.86",
+ "url": "https://correct-haven-idaho-miniature.trycloudflare.com",
+ "egressIp": "172.200.175.176",
  "port": 8080,
- "started": 1794358782,
- "job": "ownhost-multi5"
+ "started": 1794360599,
+ "job": "ownhost-combo1"
 }
