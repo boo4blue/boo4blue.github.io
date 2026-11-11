@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794371857,
- "egressIp": "20.115.102.146",
+ "at": 1794373908,
+ "egressIp": "20.83.175.149",
  "own": {
-  "base": "https://browsers-satisfied-gamma-hearings.trycloudflare.com",
+  "base": "https://legs-cause-monitor-ash.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://red-jackson-introduction-shipment.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
