@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://eos-off-blogs-jungle.trycloudflare.com",
- "egressIp": "172.185.167.114",
+ "url": "https://rebound-compatibility-their-happy.trycloudflare.com",
+ "egressIp": "52.234.42.34",
  "port": 8080,
- "started": 1794380731,
- "job": "ownhost-multi5"
+ "started": 1794382178,
+ "job": "ownhost-combo1"
 }
