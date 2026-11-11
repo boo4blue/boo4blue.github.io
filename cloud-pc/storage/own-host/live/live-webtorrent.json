@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://see-hold-locally-approve.trycloudflare.com",
- "egressIp": "20.161.54.98",
+ "url": "https://density-those-highways-michael.trycloudflare.com",
+ "egressIp": "52.148.0.62",
  "port": 8080,
- "started": 1794423881,
- "job": "ownhost-multi5"
+ "started": 1794425329,
+ "job": "ownhost-combo1"
 }
