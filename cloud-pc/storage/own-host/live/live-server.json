@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://wisconsin-feeding-tomatoes-solaris.trycloudflare.com",
- "egressIp": "52.190.221.80",
- "started": 1794365543,
- "job": "ownhost-server1"
+ "url": "https://jerusalem-bee-reproduced-preferred.trycloudflare.com",
+ "egressIp": "13.71.231.28",
+ "port": 11470,
+ "started": 1794365836,
+ "job": "ownhost-combo1"
 }
