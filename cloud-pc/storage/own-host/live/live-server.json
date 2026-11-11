@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://boundary-drill-copyrights-many.trycloudflare.com",
- "egressIp": "20.64.183.16",
- "started": 1794401098,
- "job": "ownhost-server1"
+ "url": "https://broadcast-last-hart-enrolled.trycloudflare.com",
+ "egressIp": "52.157.2.253",
+ "port": 11470,
+ "started": 1794401798,
+ "job": "ownhost-combo1"
 }
