@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://kruger-copper-arrangement-cst.trycloudflare.com",
+ "url": "https://hawaii-molecules-minneapolis-powell.trycloudflare.com",
  "egressIp": "135.232.125.117",
  "port": 8080,
- "started": 1794407705,
- "job": "ownhost-combo1"
+ "started": 1794408275,
+ "job": "ownhost-multi5"
 }
