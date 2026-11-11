@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794355680,
+ "at": 1794355682,
  "egressIp": "51.8.144.197",
  "own": {
   "base": "https://ranked-computers-floor-recall.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
