@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794379585,
+ "at": 1794379593,
  "egressIp": "172.185.167.114",
  "own": {
   "base": "https://remove-election-scanned-aerial.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://lauren-ips-ice-constitution.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
