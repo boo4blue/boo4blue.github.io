@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
  "server": "stream-server (from-scratch)",
- "url": "https://mineral-was-prize-underground.trycloudflare.com",
+ "url": "https://hold-remind-twenty-shades.trycloudflare.com",
  "egressIp": "20.83.38.102",
- "started": 1794432567,
+ "started": 1794433144,
  "job": "ownhost-server1"
 }
