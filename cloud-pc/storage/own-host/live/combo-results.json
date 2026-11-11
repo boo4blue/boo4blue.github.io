@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794425858,
+ "at": 1794425859,
  "egressIp": "52.148.0.62",
  "own": {
   "base": "https://limited-instructor-assists-graduation.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
