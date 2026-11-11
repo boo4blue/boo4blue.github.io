@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://trusts-nickname-casey-purchased.trycloudflare.com",
- "egressIp": "52.148.0.62",
+ "url": "https://princeton-respected-origins-scoop.trycloudflare.com",
+ "egressIp": "9.234.14.229",
  "port": 8090,
- "started": 1794425307,
+ "started": 1794427993,
  "job": "ownhost-combo1"
 }
