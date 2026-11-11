@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://twisted-classes-effects-advantages.trycloudflare.com",
- "egressIp": "172.212.207.180",
+ "url": "https://census-lookup-evans-hub.trycloudflare.com",
+ "egressIp": "4.149.238.122",
  "port": 8090,
- "started": 1794394634,
+ "started": 1794397164,
  "job": "ownhost-combo1"
 }
