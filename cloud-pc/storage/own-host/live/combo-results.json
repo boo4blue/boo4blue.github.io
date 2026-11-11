@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794394644,
+ "at": 1794394657,
  "egressIp": "172.212.207.180",
  "own": {
   "base": "https://expensive-release-colleagues-facial.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "live noauth-http=401"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://ways-short-reunion-derek.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
