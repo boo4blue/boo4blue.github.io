@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794380161,
- "egressIp": "172.185.167.114",
+ "at": 1794382151,
+ "egressIp": "52.234.42.34",
  "own": {
-  "base": "https://pad-gazette-sara-gain.trycloudflare.com",
+  "base": "https://magnificent-desktop-cole-hottest.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://businesses-engagement-attempting-trail.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
