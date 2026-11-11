@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794438661,
+ "at": 1794438669,
  "egressIp": "40.74.200.244",
  "own": {
   "base": "https://qualification-walking-numeric-normally.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://presenting-glad-directions-sherman.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
