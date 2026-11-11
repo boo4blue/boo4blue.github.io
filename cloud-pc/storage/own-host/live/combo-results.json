@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794414720,
+ "at": 1794415250,
  "egressIp": "52.173.109.1",
  "own": {
-  "base": "https://penn-intent-henderson-ones.trycloudflare.com",
+  "base": "https://retailer-sum-install-serving.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "https://consisting-profits-epinions-dated.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://cool-trader-enabling-rep.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://texts-economies-historic-practitioners.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
