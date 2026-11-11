@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://mistakes-inches-wto-ste.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://boundary-drill-copyrights-many.trycloudflare.com",
  "egressIp": "20.64.183.16",
- "port": 11470,
- "started": 1794399935,
- "job": "ownhost-combo1"
+ "started": 1794401098,
+ "job": "ownhost-server1"
 }
