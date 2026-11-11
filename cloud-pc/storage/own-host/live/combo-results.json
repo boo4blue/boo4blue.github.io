@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794397174,
+ "at": 1794397186,
  "egressIp": "4.149.238.122",
  "own": {
   "base": "https://conventions-principal-nothing-apache.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "live noauth-http=401"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://benz-shades-investigated-mother.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
