@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://foto-reproductive-eur-mortgage.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://voters-services-ought-direct.trycloudflare.com",
  "egressIp": "135.232.229.244",
- "port": 11470,
- "started": 1794377420,
- "job": "ownhost-combo1"
+ "started": 1794378584,
+ "job": "ownhost-server1"
 }
