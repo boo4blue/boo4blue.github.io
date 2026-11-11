@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794365837,
+ "at": 1794365845,
  "egressIp": "13.71.231.28",
  "own": {
   "base": "https://jerusalem-bee-reproduced-preferred.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://wearing-trivia-played-paste.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
