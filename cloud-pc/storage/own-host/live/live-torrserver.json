@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://presenting-glad-directions-sherman.trycloudflare.com",
- "egressIp": "40.74.200.244",
+ "url": "https://stack-finish-pipe-importantly.trycloudflare.com",
+ "egressIp": "134.138.53.252",
  "port": 8090,
- "started": 1794438668,
+ "started": 1794441332,
  "job": "ownhost-combo1"
 }
