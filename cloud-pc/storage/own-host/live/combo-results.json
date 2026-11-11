@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794371311,
+ "at": 1794371842,
  "egressIp": "20.115.102.146",
  "own": {
-  "base": "https://observe-downloading-locked-nashville.trycloudflare.com",
+  "base": "https://browsers-satisfied-gamma-hearings.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "https://facial-cooler-readers-epic.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://mysimon-athletic-phrase-airports.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://supporting-focused-genre-journals.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
