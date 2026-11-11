@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
  "server": "stream-server (from-scratch)",
- "url": "https://atlas-hdtv-sorts-invitations.trycloudflare.com",
+ "url": "https://lafayette-things-honolulu-editing.trycloudflare.com",
  "egressIp": "20.161.54.98",
- "started": 1794424458,
+ "started": 1794425035,
  "job": "ownhost-server1"
 }
