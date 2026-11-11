@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794407689,
+ "at": 1794407691,
  "egressIp": "135.232.125.117",
  "own": {
   "base": "https://nutritional-san-trusts-jury.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
