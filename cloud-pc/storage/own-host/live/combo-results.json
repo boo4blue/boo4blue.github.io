@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794360588,
+ "at": 1794360600,
  "egressIp": "172.200.175.176",
  "own": {
   "base": "https://villas-douglas-arrangements-optical.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "live noauth-http=401"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://correct-haven-idaho-miniature.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
