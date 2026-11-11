@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://far-iron-pushing-they.trycloudflare.com",
- "egressIp": "13.83.162.73",
- "started": 1794435277,
- "job": "ownhost-server1"
+ "url": "https://marvel-dolls-talked-gasoline.trycloudflare.com",
+ "egressIp": "4.149.237.124",
+ "port": 11470,
+ "started": 1794436058,
+ "job": "ownhost-combo1"
 }
