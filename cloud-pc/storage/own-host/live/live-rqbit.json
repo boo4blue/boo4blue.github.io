@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://trader-sarah-records-sequence.trycloudflare.com",
- "egressIp": "172.212.207.180",
+ "url": "https://zoning-campbell-understanding-loops.trycloudflare.com",
+ "egressIp": "4.149.238.122",
  "port": 3030,
- "started": 1794394642,
+ "started": 1794397172,
  "job": "ownhost-combo1"
 }
