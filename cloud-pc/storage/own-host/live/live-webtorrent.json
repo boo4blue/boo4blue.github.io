@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://legend-haven-rick-delivering.trycloudflare.com",
- "egressIp": "130.131.214.138",
+ "url": "https://proposals-karl-monitored-core.trycloudflare.com",
+ "egressIp": "172.210.148.99",
  "port": 8080,
- "started": 1794390858,
- "job": "ownhost-multi5"
+ "started": 1794392197,
+ "job": "ownhost-combo1"
 }
