@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794407130,
+ "at": 1794407138,
  "egressIp": "135.232.125.117",
  "own": {
   "base": "https://cluster-unknown-consecutive-nut.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://travesti-doors-analog-cams.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
