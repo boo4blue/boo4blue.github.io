@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794376886,
+ "at": 1794377421,
  "egressIp": "135.232.229.244",
  "own": {
-  "base": "https://diffs-excellence-financing-incurred.trycloudflare.com",
+  "base": "https://foto-reproductive-eur-mortgage.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "https://weather-median-sperm-spread.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://cope-partly-harley-richards.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://castle-def-dependence-seattle.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
