@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794419972,
+ "at": 1794419980,
  "egressIp": "52.241.147.118",
  "own": {
   "base": "https://discuss-meyer-all-poem.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://contacts-mothers-announced-planning.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
