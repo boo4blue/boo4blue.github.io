@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://agree-millions-imported-buffalo.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://academic-duncan-routine-detector.trycloudflare.com",
  "egressIp": "172.210.148.99",
- "port": 11470,
- "started": 1794392717,
- "job": "ownhost-combo1"
+ "started": 1794393884,
+ "job": "ownhost-server1"
 }
