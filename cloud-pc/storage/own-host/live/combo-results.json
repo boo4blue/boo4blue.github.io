@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794417244,
+ "at": 1794417780,
  "egressIp": "130.131.214.116",
  "own": {
-  "base": "https://humanity-reflected-hosted-sum.trycloudflare.com",
+  "base": "https://victory-seating-rock-seek.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "https://grammar-corpus-onto-louisiana.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://browse-breaks-news-since.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://shirts-propose-issn-kills.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
