@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794412712,
+ "at": 1794412714,
  "egressIp": "52.153.132.113",
  "own": {
   "base": "https://pas-burn-mba-dedicated.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
