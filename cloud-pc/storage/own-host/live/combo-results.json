@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794401799,
+ "at": 1794401807,
  "egressIp": "52.157.2.253",
  "own": {
   "base": "https://broadcast-last-hart-enrolled.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://revised-mileage-trial-wellness.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
