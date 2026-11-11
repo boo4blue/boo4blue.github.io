@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794431407,
+ "at": 1794431409,
  "egressIp": "20.83.38.102",
  "own": {
   "base": "https://seating-patients-mothers-chevy.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
