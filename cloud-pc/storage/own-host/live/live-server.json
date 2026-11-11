@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
  "server": "stream-server (from-scratch)",
- "url": "https://algorithm-addressing-catalog-hebrew.trycloudflare.com",
+ "url": "https://coastal-warriors-cartoon-prepare.trycloudflare.com",
  "egressIp": "68.220.155.246",
- "started": 1794370142,
+ "started": 1794370719,
  "job": "ownhost-server1"
 }
