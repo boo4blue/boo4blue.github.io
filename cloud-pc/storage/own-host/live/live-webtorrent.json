@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://spare-toolbox-lounge-computational.trycloudflare.com",
- "egressIp": "52.173.109.1",
+ "url": "https://shirts-propose-issn-kills.trycloudflare.com",
+ "egressIp": "130.131.214.116",
  "port": 8080,
- "started": 1794415836,
- "job": "ownhost-multi5"
+ "started": 1794417242,
+ "job": "ownhost-combo1"
 }
