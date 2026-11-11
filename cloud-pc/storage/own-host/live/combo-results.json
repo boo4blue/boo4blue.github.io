@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794436611,
+ "at": 1794436612,
  "egressIp": "4.149.237.124",
  "own": {
   "base": "https://responsibilities-threatening-rice-fires.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
