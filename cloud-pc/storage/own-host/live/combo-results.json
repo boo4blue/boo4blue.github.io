@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794415266,
- "egressIp": "52.173.109.1",
+ "at": 1794417213,
+ "egressIp": "130.131.214.116",
  "own": {
-  "base": "https://retailer-sum-install-serving.trycloudflare.com",
+  "base": "https://humanity-reflected-hosted-sum.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://describing-tale-andreas-placement.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
