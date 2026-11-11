@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://arrested-gives-competition-groundwater.trycloudflare.com",
- "egressIp": "20.49.61.54",
+ "url": "https://judy-rio-indexes-sake.trycloudflare.com",
+ "egressIp": "135.232.125.117",
  "port": 3030,
- "started": 1794404493,
+ "started": 1794407144,
  "job": "ownhost-combo1"
 }
