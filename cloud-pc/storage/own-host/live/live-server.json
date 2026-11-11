@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://pas-burn-mba-dedicated.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://experiences-icon-briefing-rays.trycloudflare.com",
  "egressIp": "52.153.132.113",
- "port": 11470,
- "started": 1794412711,
- "job": "ownhost-combo1"
+ "started": 1794413880,
+ "job": "ownhost-server1"
 }
