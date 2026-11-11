@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://browsers-satisfied-gamma-hearings.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://enter-realtor-contests-qualified.trycloudflare.com",
  "egressIp": "20.115.102.146",
- "port": 11470,
- "started": 1794371841,
- "job": "ownhost-combo1"
+ "started": 1794373003,
+ "job": "ownhost-server1"
 }
