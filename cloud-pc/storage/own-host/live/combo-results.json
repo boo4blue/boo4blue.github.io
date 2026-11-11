@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794368425,
+ "at": 1794368434,
  "egressIp": "68.220.155.246",
  "own": {
   "base": "https://host-survivors-statewide-mines.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://ultimately-something-orders-defined.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
