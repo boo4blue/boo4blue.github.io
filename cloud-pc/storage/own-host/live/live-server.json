@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://academic-duncan-routine-detector.trycloudflare.com",
- "egressIp": "172.210.148.99",
- "started": 1794393884,
- "job": "ownhost-server1"
+ "url": "https://expensive-release-colleagues-facial.trycloudflare.com",
+ "egressIp": "172.212.207.180",
+ "port": 11470,
+ "started": 1794394626,
+ "job": "ownhost-combo1"
 }
