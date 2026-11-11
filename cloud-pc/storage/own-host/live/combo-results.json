@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794434134,
- "egressIp": "13.83.162.73",
+ "at": 1794436059,
+ "egressIp": "4.149.237.124",
  "own": {
-  "base": "https://acc-masters-misc-url.trycloudflare.com",
+  "base": "https://marvel-dolls-talked-gasoline.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://chose-stephen-demonstrated-feat.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
