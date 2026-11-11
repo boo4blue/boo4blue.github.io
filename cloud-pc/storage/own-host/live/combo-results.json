@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794371842,
+ "at": 1794371844,
  "egressIp": "20.115.102.146",
  "own": {
   "base": "https://browsers-satisfied-gamma-hearings.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
