@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794402355,
+ "at": 1794402357,
  "egressIp": "52.157.2.253",
  "own": {
   "base": "https://emphasis-cartoons-spectacular-public.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
