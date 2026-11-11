@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794428567,
- "egressIp": "9.234.14.229",
+ "at": 1794430842,
+ "egressIp": "20.83.38.102",
  "own": {
-  "base": "https://calculator-spare-annually-void.trycloudflare.com",
+  "base": "https://adds-maximize-spending-candy.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://matrix-functionality-bryant-serves.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
