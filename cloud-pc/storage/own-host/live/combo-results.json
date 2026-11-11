@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794395195,
+ "at": 1794395196,
  "egressIp": "172.212.207.180",
  "own": {
   "base": "https://respected-bloom-vacation-strictly.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
