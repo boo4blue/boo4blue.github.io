@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794425301,
+ "at": 1794425308,
  "egressIp": "52.148.0.62",
  "own": {
   "base": "https://cube-increase-banners-nobody.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://trusts-nickname-casey-purchased.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
