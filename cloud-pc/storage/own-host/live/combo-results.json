@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794420523,
+ "at": 1794420525,
  "egressIp": "52.241.147.118",
  "own": {
   "base": "https://categories-layers-troubleshooting-insulin.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
