@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://browse-breaks-news-since.trycloudflare.com",
- "egressIp": "130.131.214.116",
+ "url": "https://alexandria-prospect-usr-flexibility.trycloudflare.com",
+ "egressIp": "52.241.147.118",
  "port": 3030,
- "started": 1794417229,
+ "started": 1794419987,
  "job": "ownhost-combo1"
 }
