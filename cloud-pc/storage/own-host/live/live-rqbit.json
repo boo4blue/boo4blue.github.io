@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://toxic-sculpture-feat-dip.trycloudflare.com",
- "egressIp": "52.242.219.115",
+ "url": "https://parliamentary-armed-cross-mic.trycloudflare.com",
+ "egressIp": "130.131.214.138",
  "port": 3030,
- "started": 1794387182,
+ "started": 1794389724,
  "job": "ownhost-combo1"
 }
