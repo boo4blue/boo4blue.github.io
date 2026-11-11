@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://rrp-universities-drug-hostels.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://teachers-mason-personals-radiation.trycloudflare.com",
  "egressIp": "20.83.175.149",
- "port": 11470,
- "started": 1794374463,
- "job": "ownhost-combo1"
+ "started": 1794375625,
+ "job": "ownhost-server1"
 }
