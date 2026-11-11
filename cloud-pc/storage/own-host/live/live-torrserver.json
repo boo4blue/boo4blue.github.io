@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://ends-characteristic-roommate-collective.trycloudflare.com",
- "egressIp": "52.234.42.34",
+ "url": "https://curves-synthesis-asn-cove.trycloudflare.com",
+ "egressIp": "52.161.180.151",
  "port": 8090,
- "started": 1794382158,
+ "started": 1794384736,
  "job": "ownhost-combo1"
 }
