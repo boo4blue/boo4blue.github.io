@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://stewart-mailing-living-bread.trycloudflare.com",
- "egressIp": "172.210.148.99",
+ "url": "https://trader-sarah-records-sequence.trycloudflare.com",
+ "egressIp": "172.212.207.180",
  "port": 3030,
- "started": 1794392183,
+ "started": 1794394642,
  "job": "ownhost-combo1"
 }
