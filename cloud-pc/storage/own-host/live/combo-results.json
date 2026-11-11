@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794376857,
+ "at": 1794376865,
  "egressIp": "135.232.229.244",
  "own": {
   "base": "https://diffs-excellence-financing-incurred.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://weather-median-sperm-spread.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
