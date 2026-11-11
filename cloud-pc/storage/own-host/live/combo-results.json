@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794361140,
- "egressIp": "172.200.175.176",
+ "at": 1794363248,
+ "egressIp": "52.190.221.80",
  "own": {
-  "base": "https://bargain-mike-sku-firms.trycloudflare.com",
+  "base": "https://knit-publicly-courage-trust.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://yorkshire-intelligence-painted-emma.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
