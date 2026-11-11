@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794395210,
- "egressIp": "172.212.207.180",
+ "at": 1794397157,
+ "egressIp": "4.149.238.122",
  "own": {
-  "base": "https://respected-bloom-vacation-strictly.trycloudflare.com",
+  "base": "https://conventions-principal-nothing-apache.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://algorithms-promotes-surveillance-cabinet.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
