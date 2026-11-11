@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://deluxe-resulting-races-manchester.trycloudflare.com",
- "egressIp": "52.165.101.82",
+ "url": "https://work-journal-scripting-dial.trycloudflare.com",
+ "egressIp": "52.153.132.113",
  "port": 8090,
- "started": 1794409683,
+ "started": 1794412161,
  "job": "ownhost-combo1"
 }
