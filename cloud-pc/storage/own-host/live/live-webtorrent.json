@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://recipe-por-deputy-rates.trycloudflare.com",
- "egressIp": "130.131.214.116",
+ "url": "https://stage-recipients-supplied-arab.trycloudflare.com",
+ "egressIp": "52.241.147.118",
  "port": 8080,
- "started": 1794418365,
- "job": "ownhost-multi5"
+ "started": 1794420001,
+ "job": "ownhost-combo1"
 }
