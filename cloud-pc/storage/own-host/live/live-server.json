@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://calculator-spare-annually-void.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://pill-manual-newport-pleased.trycloudflare.com",
  "egressIp": "9.234.14.229",
- "port": 11470,
- "started": 1794428551,
- "job": "ownhost-combo1"
+ "started": 1794429713,
+ "job": "ownhost-server1"
 }
