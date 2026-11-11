@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794402377,
- "egressIp": "52.157.2.253",
+ "at": 1794404479,
+ "egressIp": "20.49.61.54",
  "own": {
-  "base": "https://emphasis-cartoons-spectacular-public.trycloudflare.com",
+  "base": "https://posting-stranger-pavilion-instances.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://merit-contemporary-sen-writer.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
