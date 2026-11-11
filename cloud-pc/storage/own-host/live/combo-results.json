@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794404479,
+ "at": 1794404487,
  "egressIp": "20.49.61.54",
  "own": {
   "base": "https://posting-stranger-pavilion-instances.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://beans-colleagues-videos-ted.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
