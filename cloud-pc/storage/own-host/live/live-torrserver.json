@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://manually-stages-restaurant-containing.trycloudflare.com",
- "egressIp": "20.83.38.102",
+ "url": "https://story-intimate-academic-publishing.trycloudflare.com",
+ "egressIp": "13.83.162.73",
  "port": 8090,
- "started": 1794430848,
+ "started": 1794433576,
  "job": "ownhost-combo1"
 }
