@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794368982,
+ "at": 1794368983,
  "egressIp": "68.220.155.246",
  "own": {
   "base": "https://racks-intake-showtimes-identify.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
