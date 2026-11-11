@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://transaction-bedford-mostly-contains.trycloudflare.com",
- "egressIp": "172.212.207.180",
- "started": 1794396358,
- "job": "ownhost-server1"
+ "url": "https://conventions-principal-nothing-apache.trycloudflare.com",
+ "egressIp": "4.149.238.122",
+ "port": 11470,
+ "started": 1794397156,
+ "job": "ownhost-combo1"
 }
