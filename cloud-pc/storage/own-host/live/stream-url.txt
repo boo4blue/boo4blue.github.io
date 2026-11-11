@@ -1,1 +1,1 @@
-https://retailer-sum-install-serving.trycloudflare.com
+https://directories-custom-injection-tiny.trycloudflare.com

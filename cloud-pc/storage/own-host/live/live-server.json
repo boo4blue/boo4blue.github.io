@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://retailer-sum-install-serving.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://directories-custom-injection-tiny.trycloudflare.com",
  "egressIp": "52.173.109.1",
- "port": 11470,
- "started": 1794415247,
- "job": "ownhost-combo1"
+ "started": 1794416415,
+ "job": "ownhost-server1"
 }
