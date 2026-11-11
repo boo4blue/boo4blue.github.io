@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://cool-trader-enabling-rep.trycloudflare.com",
- "egressIp": "52.173.109.1",
+ "url": "https://browse-breaks-news-since.trycloudflare.com",
+ "egressIp": "130.131.214.116",
  "port": 3030,
- "started": 1794414705,
+ "started": 1794417229,
  "job": "ownhost-combo1"
 }
