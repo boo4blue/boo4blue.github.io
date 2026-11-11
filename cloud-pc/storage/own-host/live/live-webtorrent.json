@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://jackets-sociology-shaved-hon.trycloudflare.com",
- "egressIp": "20.83.175.149",
+ "url": "https://castle-def-dependence-seattle.trycloudflare.com",
+ "egressIp": "135.232.229.244",
  "port": 8080,
- "started": 1794375048,
- "job": "ownhost-multi5"
+ "started": 1794376884,
+ "job": "ownhost-combo1"
 }
