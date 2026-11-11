@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794363256,
+ "at": 1794363267,
  "egressIp": "52.190.221.80",
  "own": {
   "base": "https://knit-publicly-courage-trust.trycloudflare.com",
@@ -11,8 +11,8 @@
   "state": "live noauth-http=401"
  },
  "rqbit": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://holdings-purse-photographic-induced.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "webtorrent": {
   "base": "",
