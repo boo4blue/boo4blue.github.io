@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794374466,
+ "at": 1794374479,
  "egressIp": "20.83.175.149",
  "own": {
   "base": "https://rrp-universities-drug-hostels.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://bubble-cam-creator-principle.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
