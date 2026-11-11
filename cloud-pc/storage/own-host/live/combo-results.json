@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794412715,
+ "at": 1794412728,
  "egressIp": "52.153.132.113",
  "own": {
   "base": "https://pas-burn-mba-dedicated.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://ryan-tools-vault-chess.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
