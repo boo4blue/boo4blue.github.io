@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794407692,
+ "at": 1794407706,
  "egressIp": "135.232.125.117",
  "own": {
   "base": "https://nutritional-san-trusts-jury.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://kruger-copper-arrangement-cst.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
