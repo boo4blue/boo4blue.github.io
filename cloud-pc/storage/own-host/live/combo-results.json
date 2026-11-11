@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794436088,
+ "at": 1794436611,
  "egressIp": "4.149.237.124",
  "own": {
-  "base": "https://marvel-dolls-talked-gasoline.trycloudflare.com",
+  "base": "https://responsibilities-threatening-rice-fires.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "https://skip-artificial-avoiding-metabolism.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://parties-nearby-introduce-optimize.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://legendary-die-twisted-biography.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
