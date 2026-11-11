@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://respected-bloom-vacation-strictly.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://transaction-bedford-mostly-contains.trycloudflare.com",
  "egressIp": "172.212.207.180",
- "port": 11470,
- "started": 1794395194,
- "job": "ownhost-combo1"
+ "started": 1794396358,
+ "job": "ownhost-server1"
 }
