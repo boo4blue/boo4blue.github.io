@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://princeton-respected-origins-scoop.trycloudflare.com",
- "egressIp": "9.234.14.229",
+ "url": "https://manually-stages-restaurant-containing.trycloudflare.com",
+ "egressIp": "20.83.38.102",
  "port": 8090,
- "started": 1794427993,
+ "started": 1794430848,
  "job": "ownhost-combo1"
 }
