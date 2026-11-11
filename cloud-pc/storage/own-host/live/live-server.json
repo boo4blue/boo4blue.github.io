@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://cingular-conscious-comics-dos.trycloudflare.com",
- "egressIp": "20.115.102.146",
- "started": 1794373580,
- "job": "ownhost-server1"
+ "url": "https://legs-cause-monitor-ash.trycloudflare.com",
+ "egressIp": "20.83.175.149",
+ "port": 11470,
+ "started": 1794373907,
+ "job": "ownhost-combo1"
 }
