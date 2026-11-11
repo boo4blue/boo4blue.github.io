@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://weather-median-sperm-spread.trycloudflare.com",
- "egressIp": "135.232.229.244",
+ "url": "https://lauren-ips-ice-constitution.trycloudflare.com",
+ "egressIp": "172.185.167.114",
  "port": 8090,
- "started": 1794376863,
+ "started": 1794379591,
  "job": "ownhost-combo1"
 }
