@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794417780,
+ "at": 1794417781,
  "egressIp": "130.131.214.116",
  "own": {
   "base": "https://victory-seating-rock-seek.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
