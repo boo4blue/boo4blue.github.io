@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://curves-synthesis-asn-cove.trycloudflare.com",
- "egressIp": "52.161.180.151",
+ "url": "https://admission-bidder-available-deviant.trycloudflare.com",
+ "egressIp": "52.242.219.115",
  "port": 8090,
- "started": 1794384736,
+ "started": 1794387175,
  "job": "ownhost-combo1"
 }
