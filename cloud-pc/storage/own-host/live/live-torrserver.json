@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://grammar-corpus-onto-louisiana.trycloudflare.com",
- "egressIp": "130.131.214.116",
+ "url": "https://contacts-mothers-announced-planning.trycloudflare.com",
+ "egressIp": "52.241.147.118",
  "port": 8090,
- "started": 1794417220,
+ "started": 1794419978,
  "job": "ownhost-combo1"
 }
