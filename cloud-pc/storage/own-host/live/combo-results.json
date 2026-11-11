@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794361123,
+ "at": 1794361125,
  "egressIp": "172.200.175.176",
  "own": {
   "base": "https://bargain-mike-sku-firms.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
