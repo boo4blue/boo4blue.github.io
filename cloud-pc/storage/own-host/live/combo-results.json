@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794366415,
- "egressIp": "13.71.231.28",
+ "at": 1794368425,
+ "egressIp": "68.220.155.246",
  "own": {
-  "base": "https://amp-settlement-sox-improved.trycloudflare.com",
+  "base": "https://host-survivors-statewide-mines.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://meaningful-omissions-law-achieve.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
