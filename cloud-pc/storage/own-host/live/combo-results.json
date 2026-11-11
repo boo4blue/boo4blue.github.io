@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794377423,
+ "at": 1794377436,
  "egressIp": "135.232.229.244",
  "own": {
   "base": "https://foto-reproductive-eur-mortgage.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://tough-latinas-establishment-forge.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
