@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794382159,
+ "at": 1794382167,
  "egressIp": "52.234.42.34",
  "own": {
   "base": "https://magnificent-desktop-cole-hottest.trycloudflare.com",
@@ -11,8 +11,8 @@
   "state": "live noauth-http=401"
  },
  "rqbit": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://researcher-substance-performs-enhancements.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "webtorrent": {
   "base": "",
