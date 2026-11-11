@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794430849,
+ "at": 1794430859,
  "egressIp": "20.83.38.102",
  "own": {
   "base": "https://adds-maximize-spending-candy.trycloudflare.com",
@@ -11,8 +11,8 @@
   "state": "live noauth-http=401"
  },
  "rqbit": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://wanted-canal-indexed-mariah.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "webtorrent": {
   "base": "",
