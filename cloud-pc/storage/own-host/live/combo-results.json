@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794392733,
- "egressIp": "172.210.148.99",
+ "at": 1794394628,
+ "egressIp": "172.212.207.180",
  "own": {
-  "base": "https://agree-millions-imported-buffalo.trycloudflare.com",
+  "base": "https://expensive-release-colleagues-facial.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://configure-dave-reno-medical.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
