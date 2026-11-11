@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://acc-masters-misc-url.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://far-iron-pushing-they.trycloudflare.com",
  "egressIp": "13.83.162.73",
- "port": 11470,
- "started": 1794434118,
- "job": "ownhost-combo1"
+ "started": 1794435277,
+ "job": "ownhost-server1"
 }
