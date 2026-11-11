@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794360600,
+ "at": 1794361123,
  "egressIp": "172.200.175.176",
  "own": {
-  "base": "https://villas-douglas-arrangements-optical.trycloudflare.com",
+  "base": "https://bargain-mike-sku-firms.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "https://filled-peterson-green-zoo.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://tier-enquiry-span-namely.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://correct-haven-idaho-miniature.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
