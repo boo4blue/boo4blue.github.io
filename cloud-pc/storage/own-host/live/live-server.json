@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://holdem-referenced-integrate-manufacturers.trycloudflare.com",
- "egressIp": "128.203.190.86",
- "started": 1794359937,
- "job": "ownhost-server1"
+ "url": "https://villas-douglas-arrangements-optical.trycloudflare.com",
+ "egressIp": "172.200.175.176",
+ "port": 11470,
+ "started": 1794360569,
+ "job": "ownhost-combo1"
 }
