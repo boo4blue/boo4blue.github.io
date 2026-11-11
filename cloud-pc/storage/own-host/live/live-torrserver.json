@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://ultimately-something-orders-defined.trycloudflare.com",
- "egressIp": "68.220.155.246",
+ "url": "https://facial-cooler-readers-epic.trycloudflare.com",
+ "egressIp": "20.115.102.146",
  "port": 8090,
- "started": 1794368433,
+ "started": 1794371289,
  "job": "ownhost-combo1"
 }
