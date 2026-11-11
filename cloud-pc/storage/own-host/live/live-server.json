@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://cleveland-once-act-columns.trycloudflare.com",
- "egressIp": "20.83.175.149",
- "started": 1794376204,
- "job": "ownhost-server1"
+ "url": "https://diffs-excellence-financing-incurred.trycloudflare.com",
+ "egressIp": "135.232.229.244",
+ "port": 11470,
+ "started": 1794376856,
+ "job": "ownhost-combo1"
 }
