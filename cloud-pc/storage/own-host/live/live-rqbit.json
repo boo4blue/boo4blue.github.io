@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://technician-quiet-locate-lines.trycloudflare.com",
- "egressIp": "52.161.180.151",
+ "url": "https://toxic-sculpture-feat-dip.trycloudflare.com",
+ "egressIp": "52.242.219.115",
  "port": 3030,
- "started": 1794384744,
+ "started": 1794387182,
  "job": "ownhost-combo1"
 }
