@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://facial-cooler-readers-epic.trycloudflare.com",
- "egressIp": "20.115.102.146",
+ "url": "https://responding-mae-magic-solely.trycloudflare.com",
+ "egressIp": "20.83.175.149",
  "port": 8090,
- "started": 1794371289,
+ "started": 1794373914,
  "job": "ownhost-combo1"
 }
