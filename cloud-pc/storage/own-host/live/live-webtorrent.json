@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://tray-seq-platforms-myth.trycloudflare.com",
- "egressIp": "172.200.175.176",
+ "url": "https://dock-stopped-concerned-engagement.trycloudflare.com",
+ "egressIp": "52.190.221.80",
  "port": 8080,
- "started": 1794361709,
- "job": "ownhost-multi5"
+ "started": 1794363279,
+ "job": "ownhost-combo1"
 }
