@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794387733,
+ "at": 1794387734,
  "egressIp": "52.242.219.115",
  "own": {
   "base": "https://lightweight-ballot-appreciation-flag.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
