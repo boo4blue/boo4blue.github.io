@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794384730,
+ "at": 1794384737,
  "egressIp": "52.161.180.151",
  "own": {
   "base": "https://acquired-certified-domestic-cherry.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://curves-synthesis-asn-cove.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
