@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794415250,
+ "at": 1794415252,
  "egressIp": "52.173.109.1",
  "own": {
   "base": "https://retailer-sum-install-serving.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
