@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794357647,
+ "at": 1794357656,
  "egressIp": "128.203.190.86",
  "own": {
   "base": "https://cleaner-writing-handhelds-crm.trycloudflare.com",
@@ -11,8 +11,8 @@
   "state": "live noauth-http=401"
  },
  "rqbit": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://rica-soviet-kong-mapping.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "webtorrent": {
   "base": "",
