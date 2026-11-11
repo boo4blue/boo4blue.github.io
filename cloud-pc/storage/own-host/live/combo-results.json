@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794405043,
+ "at": 1794405044,
  "egressIp": "20.49.61.54",
  "own": {
   "base": "https://triple-schools-crop-logo.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
