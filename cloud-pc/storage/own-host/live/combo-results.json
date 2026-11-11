@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794360570,
+ "at": 1794360579,
  "egressIp": "172.200.175.176",
  "own": {
   "base": "https://villas-douglas-arrangements-optical.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://filled-peterson-green-zoo.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
