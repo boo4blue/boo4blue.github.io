@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://physiology-retreat-selections-locked.trycloudflare.com",
- "egressIp": "52.173.109.1",
- "started": 1794416993,
- "job": "ownhost-server1"
+ "url": "https://humanity-reflected-hosted-sum.trycloudflare.com",
+ "egressIp": "130.131.214.116",
+ "port": 11470,
+ "started": 1794417211,
+ "job": "ownhost-combo1"
 }
