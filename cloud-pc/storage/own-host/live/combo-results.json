@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794405060,
- "egressIp": "20.49.61.54",
+ "at": 1794407130,
+ "egressIp": "135.232.125.117",
  "own": {
-  "base": "https://triple-schools-crop-logo.trycloudflare.com",
+  "base": "https://cluster-unknown-consecutive-nut.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://surrey-adsl-shipping-housewives.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
