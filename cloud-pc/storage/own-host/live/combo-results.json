@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794441326,
+ "at": 1794441333,
  "egressIp": "134.138.53.252",
  "own": {
   "base": "https://limits-prayers-rings-valium.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://stack-finish-pipe-importantly.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
