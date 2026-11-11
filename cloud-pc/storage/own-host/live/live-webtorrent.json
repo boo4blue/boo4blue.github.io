@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://hide-jeffrey-lap-essential.trycloudflare.com",
- "egressIp": "40.74.200.244",
+ "url": "https://ste-micro-considering-north.trycloudflare.com",
+ "egressIp": "134.138.53.252",
  "port": 8080,
- "started": 1794439798,
- "job": "ownhost-multi5"
+ "started": 1794441353,
+ "job": "ownhost-combo1"
 }
