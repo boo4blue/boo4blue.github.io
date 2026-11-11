@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794366401,
+ "at": 1794366402,
  "egressIp": "13.71.231.28",
  "own": {
   "base": "https://amp-settlement-sox-improved.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
