@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794394628,
+ "at": 1794394636,
  "egressIp": "172.212.207.180",
  "own": {
   "base": "https://expensive-release-colleagues-facial.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://twisted-classes-effects-advantages.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
