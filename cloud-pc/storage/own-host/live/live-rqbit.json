@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://judy-rio-indexes-sake.trycloudflare.com",
- "egressIp": "135.232.125.117",
+ "url": "https://solaris-minneapolis-forty-daniel.trycloudflare.com",
+ "egressIp": "52.165.101.82",
  "port": 3030,
- "started": 1794407144,
+ "started": 1794409693,
  "job": "ownhost-combo1"
 }
