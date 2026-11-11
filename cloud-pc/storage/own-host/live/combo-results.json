@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794434119,
+ "at": 1794434120,
  "egressIp": "13.83.162.73",
  "own": {
   "base": "https://acc-masters-misc-url.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
