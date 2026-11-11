@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794389710,
+ "at": 1794389718,
  "egressIp": "130.131.214.138",
  "own": {
   "base": "https://nations-graduates-married-anthony.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://non-funny-technology-mix.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
