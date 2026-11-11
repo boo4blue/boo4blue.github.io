@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://filled-peterson-green-zoo.trycloudflare.com",
- "egressIp": "172.200.175.176",
+ "url": "https://would-significance-agricultural-victor.trycloudflare.com",
+ "egressIp": "52.190.221.80",
  "port": 8090,
- "started": 1794360578,
+ "started": 1794363255,
  "job": "ownhost-combo1"
 }
