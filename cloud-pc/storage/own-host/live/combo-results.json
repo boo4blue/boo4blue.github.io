@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794513765,
- "egressIp": "20.169.67.13",
+ "at": 1794515541,
+ "egressIp": "172.210.0.96",
  "own": {
-  "base": "https://depending-organ-hung-burns.trycloudflare.com",
+  "base": "https://safari-offices-bouquet-weapon.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://lib-disabilities-spray-mesh.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
