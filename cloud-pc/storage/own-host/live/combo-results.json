@@ -1,18 +1,18 @@
 {
  "job": "ownhost-combo1",
- "at": 1794451925,
+ "at": 1794451940,
  "egressIp": "48.217.25.162",
  "own": {
   "base": "https://consensus-scores-certain-dip.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://conducting-faster-persons-collectables.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://engine-pharmaceutical-someone-bottle.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "webtorrent": {
   "base": "",
