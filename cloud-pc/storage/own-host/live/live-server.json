@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://nested-prostores-based-cache.trycloudflare.com",
- "egressIp": "20.171.37.166",
- "started": 1794512436,
- "job": "ownhost-server1"
+ "url": "https://wiley-quantitative-military-greatly.trycloudflare.com",
+ "egressIp": "20.169.67.13",
+ "port": 11470,
+ "started": 1794513189,
+ "job": "ownhost-combo1"
 }
