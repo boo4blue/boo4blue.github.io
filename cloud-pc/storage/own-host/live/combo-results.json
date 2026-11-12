@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794515541,
+ "at": 1794515548,
  "egressIp": "172.210.0.96",
  "own": {
   "base": "https://safari-offices-bouquet-weapon.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://rocky-dressed-soul-fish.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
