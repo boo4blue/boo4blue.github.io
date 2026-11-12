@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://type-lights-greatly-than.trycloudflare.com",
- "egressIp": "20.171.37.166",
+ "url": "https://main-computation-goto-robots.trycloudflare.com",
+ "egressIp": "20.169.67.13",
  "port": 8090,
- "started": 1794510714,
+ "started": 1794513197,
  "job": "ownhost-combo1"
 }
