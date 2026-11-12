@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://unix-apply-compare-incl.trycloudflare.com",
- "egressIp": "20.14.214.41",
+ "url": "https://influence-diff-investing-cos.trycloudflare.com",
+ "egressIp": "20.109.70.68",
  "port": 8090,
- "started": 1794474382,
+ "started": 1794477033,
  "job": "ownhost-combo1"
 }
