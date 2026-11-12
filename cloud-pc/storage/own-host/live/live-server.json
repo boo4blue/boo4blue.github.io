@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://por-impossible-lead-substance.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://each-motherboard-patterns-continue.trycloudflare.com",
  "egressIp": "20.169.65.217",
- "port": 11470,
- "started": 1794501429,
- "job": "ownhost-combo1"
+ "started": 1794502583,
+ "job": "ownhost-server1"
 }
