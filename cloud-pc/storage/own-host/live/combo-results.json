@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794464245,
+ "at": 1794464246,
  "egressIp": "172.203.198.161",
  "own": {
   "base": "https://ought-skirt-attorney-profession.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
