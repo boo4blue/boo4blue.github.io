@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794505556,
+ "at": 1794505564,
  "egressIp": "52.159.244.182",
  "own": {
   "base": "https://pdas-study-customise-simple.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://salaries-pine-grant-these.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
