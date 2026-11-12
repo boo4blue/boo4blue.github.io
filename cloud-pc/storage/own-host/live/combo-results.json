@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794474404,
+ "at": 1794474927,
  "egressIp": "20.14.214.41",
  "own": {
-  "base": "https://utilities-ddr-facility-transmission.trycloudflare.com",
+  "base": "https://follows-cellular-always-architectural.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "https://unix-apply-compare-incl.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://moon-bowling-vacuum-emission.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://bobby-listing-nokia-briefly.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
