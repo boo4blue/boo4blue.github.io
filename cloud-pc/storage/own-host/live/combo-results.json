@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794443994,
+ "at": 1794444001,
  "egressIp": "172.182.226.77",
  "own": {
   "base": "https://rpg-nut-exposure-phases.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://passenger-jail-occasionally-strategies.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
