@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794466362,
+ "at": 1794466370,
  "egressIp": "130.131.239.210",
  "own": {
   "base": "https://petition-bureau-kingston-sail.trycloudflare.com",
@@ -11,8 +11,8 @@
   "state": "live noauth-http=401"
  },
  "rqbit": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://skiing-martin-laboratory-learn.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "webtorrent": {
   "base": "",
