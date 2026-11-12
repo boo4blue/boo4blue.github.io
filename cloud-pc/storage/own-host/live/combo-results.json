@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794464248,
+ "at": 1794464260,
  "egressIp": "172.203.198.161",
  "own": {
   "base": "https://ought-skirt-attorney-profession.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://comfort-rid-herein-requiring.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
