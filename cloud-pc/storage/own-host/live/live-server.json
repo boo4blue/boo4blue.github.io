@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://lamb-balance-watershed-tax.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://custody-registry-affecting-herb.trycloudflare.com",
  "egressIp": "51.8.152.228",
- "port": 11470,
- "started": 1794498848,
- "job": "ownhost-combo1"
+ "started": 1794500019,
+ "job": "ownhost-server1"
 }
