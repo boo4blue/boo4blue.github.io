@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794449899,
+ "at": 1794449900,
  "egressIp": "20.127.199.49",
  "own": {
   "base": "https://std-recommends-raleigh-legislative.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
