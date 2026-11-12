@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://biology-assure-blocking-embassy.trycloudflare.com",
- "egressIp": "20.80.79.202",
+ "url": "https://unix-apply-compare-incl.trycloudflare.com",
+ "egressIp": "20.14.214.41",
  "port": 8090,
- "started": 1794471703,
+ "started": 1794474382,
  "job": "ownhost-combo1"
 }
