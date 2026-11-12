@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794493528,
+ "at": 1794493540,
  "egressIp": "4.154.246.58",
  "own": {
   "base": "https://alexandria-drawings-expression-fired.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://pepper-league-marketplace-dark.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
