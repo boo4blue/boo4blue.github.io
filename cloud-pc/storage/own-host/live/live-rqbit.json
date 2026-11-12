@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://workplace-tcp-shadows-ripe.trycloudflare.com",
- "egressIp": "172.182.226.77",
+ "url": "https://governor-intermediate-employers-whole.trycloudflare.com",
+ "egressIp": "172.190.85.24",
  "port": 3030,
- "started": 1794444010,
+ "started": 1794446708,
  "job": "ownhost-combo1"
 }
