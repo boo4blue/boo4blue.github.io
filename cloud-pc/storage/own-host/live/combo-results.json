@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794521207,
+ "at": 1794521216,
  "egressIp": "172.200.223.56",
  "own": {
   "base": "https://specialists-whenever-fits-hire.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://fuzzy-females-ppc-tone.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
