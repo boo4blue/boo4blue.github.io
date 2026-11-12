@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
  "server": "stream-server (from-scratch)",
- "url": "https://past-bread-lie-tmp.trycloudflare.com",
+ "url": "https://compensation-concerns-figured-hughes.trycloudflare.com",
  "egressIp": "52.159.228.219",
- "started": 1794462756,
+ "started": 1794463333,
  "job": "ownhost-server1"
 }
