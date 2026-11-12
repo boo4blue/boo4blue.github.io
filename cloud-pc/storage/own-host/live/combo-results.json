@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794474375,
+ "at": 1794474383,
  "egressIp": "20.14.214.41",
  "own": {
   "base": "https://utilities-ddr-facility-transmission.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://unix-apply-compare-incl.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
