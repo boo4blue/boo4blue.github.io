@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794469633,
+ "at": 1794469634,
  "egressIp": "4.242.196.134",
  "own": {
   "base": "https://projection-under-karl-her.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
