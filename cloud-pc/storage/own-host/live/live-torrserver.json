@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "",
- "egressIp": "57.154.167.243",
+ "url": "https://module-perceived-breaking-belfast.trycloudflare.com",
+ "egressIp": "52.159.228.219",
  "port": 8090,
- "started": 1794458364,
+ "started": 1794461038,
  "job": "ownhost-combo1"
 }
