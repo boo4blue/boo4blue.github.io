@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794449913,
- "egressIp": "20.127.199.49",
+ "at": 1794451925,
+ "egressIp": "48.217.25.162",
  "own": {
-  "base": "https://std-recommends-raleigh-legislative.trycloudflare.com",
+  "base": "https://consensus-scores-certain-dip.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://males-ringtone-female-isle.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
