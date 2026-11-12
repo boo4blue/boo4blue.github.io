@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794444553,
+ "at": 1794444565,
  "egressIp": "172.182.226.77",
  "own": {
   "base": "https://def-cooling-cigarettes-appearing.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://describing-wholesale-means-ethernet.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
