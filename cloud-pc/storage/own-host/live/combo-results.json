@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794441898,
- "egressIp": "134.138.53.252",
+ "at": 1794443994,
+ "egressIp": "172.182.226.77",
  "own": {
-  "base": "https://junior-counted-wash-four.trycloudflare.com",
+  "base": "https://rpg-nut-exposure-phases.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://wealth-expect-struggle-mercury.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
