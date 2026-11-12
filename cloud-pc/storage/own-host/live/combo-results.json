@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794495676,
+ "at": 1794495683,
  "egressIp": "57.154.167.222",
  "own": {
   "base": "https://deutsch-pursuit-athletes-deserve.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://calculation-percentage-undo-yamaha.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
