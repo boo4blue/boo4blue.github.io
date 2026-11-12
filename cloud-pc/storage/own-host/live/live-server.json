@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://scanners-durable-agriculture-boot.trycloudflare.com",
+ "url": "https://badge-puts-robertson-figure.trycloudflare.com",
  "egressIp": "20.169.94.167",
  "port": 11470,
- "started": 1794454389,
+ "started": 1794454953,
  "job": "ownhost-combo1"
 }
