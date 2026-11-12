@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794454957,
+ "at": 1794454970,
  "egressIp": "20.169.94.167",
  "own": {
   "base": "https://badge-puts-robertson-figure.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://studios-puzzles-function-surfing.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
