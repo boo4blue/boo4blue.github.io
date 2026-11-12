@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794458374,
+ "at": 1794458387,
  "egressIp": "57.154.167.243",
  "own": {
   "base": "",
@@ -15,8 +15,8 @@
   "state": "live noauth-http=401"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://words-try-herein-celtic.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
