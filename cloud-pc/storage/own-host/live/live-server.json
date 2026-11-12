@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://updating-associated-emission-feel.trycloudflare.com",
- "egressIp": "52.159.244.182",
- "started": 1794507855,
- "job": "ownhost-server1"
+ "url": "https://documented-insider-treated-beauty.trycloudflare.com",
+ "egressIp": "52.154.133.21",
+ "port": 11470,
+ "started": 1794508188,
+ "job": "ownhost-combo1"
 }
