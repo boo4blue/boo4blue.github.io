@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794480165,
+ "at": 1794480166,
  "egressIp": "104.210.132.56",
  "own": {
   "base": "https://princeton-sauce-poem-broadcast.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
