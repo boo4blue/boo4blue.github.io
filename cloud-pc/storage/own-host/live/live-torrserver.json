@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://confidential-burke-earnings-cruise.trycloudflare.com",
- "egressIp": "104.210.132.56",
+ "url": "https://stripes-legislative-spring-seeds.trycloudflare.com",
+ "egressIp": "128.85.45.90",
  "port": 8090,
- "started": 1794479607,
+ "started": 1794482267,
  "job": "ownhost-combo1"
 }
