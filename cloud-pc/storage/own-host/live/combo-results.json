@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794524557,
+ "at": 1794524570,
  "egressIp": "52.179.93.143",
  "own": {
   "base": "https://wma-sessions-frontier-reforms.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://fundamentals-executed-modified-destiny.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
