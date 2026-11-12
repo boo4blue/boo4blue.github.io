@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794458745,
+ "at": 1794458747,
  "egressIp": "57.154.167.243",
  "own": {
   "base": "https://important-carnival-underground-fibre.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
