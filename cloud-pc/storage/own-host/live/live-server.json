@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://api.trycloudflare.com",
- "egressIp": "20.57.215.242",
+ "url": "https://important-carnival-underground-fibre.trycloudflare.com",
+ "egressIp": "57.154.167.243",
  "port": 11470,
- "started": 1794457093,
+ "started": 1794458743,
  "job": "ownhost-combo1"
 }
