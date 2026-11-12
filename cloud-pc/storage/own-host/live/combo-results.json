@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794458272,
+ "at": 1794458366,
  "egressIp": "57.154.167.243",
  "own": {
   "base": "",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
