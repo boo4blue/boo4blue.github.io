@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://slip-identity-foto-batch.trycloudflare.com",
- "egressIp": "48.217.25.162",
- "started": 1794453636,
- "job": "ownhost-server1"
+ "url": "https://scanners-durable-agriculture-boot.trycloudflare.com",
+ "egressIp": "20.169.94.167",
+ "port": 11470,
+ "started": 1794454389,
+ "job": "ownhost-combo1"
 }
