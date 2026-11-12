@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://api.trycloudflare.com",
- "egressIp": "172.203.198.161",
+ "url": "",
+ "egressIp": "130.131.239.210",
  "port": 8080,
- "started": 1794464841,
- "job": "ownhost-multi5"
+ "started": 1794466467,
+ "job": "ownhost-combo1"
 }
