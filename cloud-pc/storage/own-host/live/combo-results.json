@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794527457,
+ "at": 1794527458,
  "egressIp": "4.246.63.111",
  "own": {
   "base": "https://seeks-and-irc-departure.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
