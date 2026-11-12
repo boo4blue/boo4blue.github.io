@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794472266,
+ "at": 1794472281,
  "egressIp": "20.80.79.202",
  "own": {
   "base": "https://attractions-memo-galaxy-deviant.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://coupled-performances-putting-exclusively.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
