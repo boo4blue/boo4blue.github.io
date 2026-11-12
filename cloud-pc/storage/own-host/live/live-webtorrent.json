@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://julian-lincoln-offer-moon.trycloudflare.com",
- "egressIp": "172.190.85.24",
+ "url": "https://toys-register-exterior-sufficient.trycloudflare.com",
+ "egressIp": "20.127.199.49",
  "port": 8080,
- "started": 1794447830,
- "job": "ownhost-multi5"
+ "started": 1794449363,
+ "job": "ownhost-combo1"
 }
