@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794524028,
+ "at": 1794524555,
  "egressIp": "52.179.93.143",
  "own": {
-  "base": "https://hamilton-fred-tree-vampire.trycloudflare.com",
+  "base": "https://wma-sessions-frontier-reforms.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "https://oscar-parallel-transmission-extends.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://sie-ending-guided-passes.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://occupations-scholarships-becoming-mile.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
