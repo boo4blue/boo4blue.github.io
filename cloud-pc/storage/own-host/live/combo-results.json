@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794503917,
+ "at": 1794503920,
  "egressIp": "172.170.189.245",
  "own": {
   "base": "https://goals-moore-conditioning-counting.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
