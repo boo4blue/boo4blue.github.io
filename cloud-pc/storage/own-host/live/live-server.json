@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://sam-mind-newspapers-characterized.trycloudflare.com",
- "egressIp": "128.85.45.90",
- "started": 1794484554,
- "job": "ownhost-server1"
+ "url": "https://methodology-satisfied-chances-emails.trycloudflare.com",
+ "egressIp": "135.119.77.156",
+ "port": 11470,
+ "started": 1794484934,
+ "job": "ownhost-combo1"
 }
