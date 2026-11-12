@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794454956,
+ "at": 1794454957,
  "egressIp": "20.169.94.167",
  "own": {
   "base": "https://badge-puts-robertson-figure.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
