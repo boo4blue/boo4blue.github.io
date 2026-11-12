@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://tone-keywords-game-scotland.trycloudflare.com",
- "egressIp": "172.203.198.161",
+ "url": "https://mainly-clay-sen-builder.trycloudflare.com",
+ "egressIp": "130.131.239.210",
  "port": 8090,
- "started": 1794463692,
+ "started": 1794466361,
  "job": "ownhost-combo1"
 }
