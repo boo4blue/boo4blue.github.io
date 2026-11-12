@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://pencil-column-ranger-fact.trycloudflare.com",
- "egressIp": "20.169.67.13",
- "started": 1794514915,
- "job": "ownhost-server1"
+ "url": "https://safari-offices-bouquet-weapon.trycloudflare.com",
+ "egressIp": "172.210.0.96",
+ "port": 11470,
+ "started": 1794515540,
+ "job": "ownhost-combo1"
 }
