@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794508762,
+ "at": 1794508776,
  "egressIp": "52.154.133.21",
  "own": {
   "base": "https://pattern-untitled-depend-utc.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://rare-permalink-humor-restaurants.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
