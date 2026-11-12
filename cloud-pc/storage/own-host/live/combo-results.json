@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794485479,
+ "at": 1794485480,
  "egressIp": "135.119.77.156",
  "own": {
   "base": "https://usd-assure-ssl-instantly.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
