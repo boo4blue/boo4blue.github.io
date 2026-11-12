@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794446709,
+ "at": 1794446722,
  "egressIp": "172.190.85.24",
  "own": {
   "base": "https://fleece-feelings-adware-compounds.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "live noauth-http=401"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://andale-conducting-makers-covered.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
