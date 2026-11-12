@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://forms-colour-walks-tree.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://nested-prostores-based-cache.trycloudflare.com",
  "egressIp": "20.171.37.166",
- "port": 11470,
- "started": 1794511272,
- "job": "ownhost-combo1"
+ "started": 1794512436,
+ "job": "ownhost-server1"
 }
