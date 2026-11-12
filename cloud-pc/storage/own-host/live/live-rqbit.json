@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://improve-publications-algebra-acdbentity.trycloudflare.com",
- "egressIp": "52.159.228.219",
+ "url": "https://sending-behavioral-worthy-guns.trycloudflare.com",
+ "egressIp": "172.203.198.161",
  "port": 3030,
- "started": 1794461045,
+ "started": 1794463700,
  "job": "ownhost-combo1"
 }
