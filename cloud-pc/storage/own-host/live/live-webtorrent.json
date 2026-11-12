@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://scout-accessible-athletics-climbing.trycloudflare.com",
- "egressIp": "172.170.189.245",
+ "url": "https://diagnostic-rough-cashiers-rebound.trycloudflare.com",
+ "egressIp": "52.159.244.182",
  "port": 8080,
- "started": 1794504507,
- "job": "ownhost-multi5"
+ "started": 1794505585,
+ "job": "ownhost-combo1"
 }
