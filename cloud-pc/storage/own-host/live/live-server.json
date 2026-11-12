@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
  "server": "stream-server (from-scratch)",
- "url": "https://permit-chat-invited-upper.trycloudflare.com",
+ "url": "https://api.trycloudflare.com",
  "egressIp": "20.169.94.167",
- "started": 1794456116,
+ "started": 1794456705,
  "job": "ownhost-server1"
 }

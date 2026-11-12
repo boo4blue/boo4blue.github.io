@@ -1,1 +1,1 @@
-https://permit-chat-invited-upper.trycloudflare.com
+https://api.trycloudflare.com
