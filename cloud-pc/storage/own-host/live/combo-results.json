@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794523999,
+ "at": 1794524007,
  "egressIp": "52.179.93.143",
  "own": {
   "base": "https://hamilton-fred-tree-vampire.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://oscar-parallel-transmission-extends.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
