@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794524556,
+ "at": 1794524557,
  "egressIp": "52.179.93.143",
  "own": {
   "base": "https://wma-sessions-frontier-reforms.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
