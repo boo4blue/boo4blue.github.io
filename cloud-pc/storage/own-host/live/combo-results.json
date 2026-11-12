@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794511278,
+ "at": 1794511291,
  "egressIp": "20.171.37.166",
  "own": {
   "base": "https://forms-colour-walks-tree.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://lamps-designing-tops-pen.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
