@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794441883,
+ "at": 1794441884,
  "egressIp": "134.138.53.252",
  "own": {
   "base": "https://junior-counted-wash-four.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
