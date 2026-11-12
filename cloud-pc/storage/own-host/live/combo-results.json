@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794484952,
+ "at": 1794484965,
  "egressIp": "135.119.77.156",
  "own": {
   "base": "https://methodology-satisfied-chances-emails.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "live noauth-http=401"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://domestic-cuts-joyce-introduced.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
