@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://depending-organ-hung-burns.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://pencil-column-ranger-fact.trycloudflare.com",
  "egressIp": "20.169.67.13",
- "port": 11470,
- "started": 1794513748,
- "job": "ownhost-combo1"
+ "started": 1794514915,
+ "job": "ownhost-server1"
 }
