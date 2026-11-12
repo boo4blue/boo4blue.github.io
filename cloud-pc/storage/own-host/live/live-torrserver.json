@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://cakes-barely-bases-arrive.trycloudflare.com",
- "egressIp": "4.242.196.134",
+ "url": "https://biology-assure-blocking-embassy.trycloudflare.com",
+ "egressIp": "20.80.79.202",
  "port": 8090,
- "started": 1794469080,
+ "started": 1794471703,
  "job": "ownhost-combo1"
 }
