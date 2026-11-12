@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794506109,
+ "at": 1794506111,
  "egressIp": "52.159.244.182",
  "own": {
   "base": "https://minimal-graphic-invalid-wallpapers.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
