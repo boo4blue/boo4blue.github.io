@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://follows-cellular-always-architectural.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://rounds-statewide-wins-collar.trycloudflare.com",
  "egressIp": "20.14.214.41",
- "port": 11470,
- "started": 1794474926,
- "job": "ownhost-combo1"
+ "started": 1794476088,
+ "job": "ownhost-server1"
 }
