@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://evolution-metallica-piano-missouri.trycloudflare.com",
- "egressIp": "172.170.189.245",
+ "url": "https://paintball-gently-arcade-scenes.trycloudflare.com",
+ "egressIp": "52.159.244.182",
  "port": 3030,
- "started": 1794503366,
+ "started": 1794505572,
  "job": "ownhost-combo1"
 }
