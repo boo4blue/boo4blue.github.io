@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794452478,
+ "at": 1794452490,
  "egressIp": "48.217.25.162",
  "own": {
   "base": "https://genetics-shoot-compatible-register.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://correction-represented-vii-regulation.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
