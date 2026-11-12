@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://engine-pharmaceutical-someone-bottle.trycloudflare.com",
- "egressIp": "48.217.25.162",
+ "url": "https://lawrence-timber-hockey-remedy.trycloudflare.com",
+ "egressIp": "20.169.94.167",
  "port": 3030,
- "started": 1794451938,
+ "started": 1794454404,
  "job": "ownhost-combo1"
 }
