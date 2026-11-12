@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://olympus-outline-proceeds-navy.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://past-bread-lie-tmp.trycloudflare.com",
  "egressIp": "52.159.228.219",
- "port": 11470,
- "started": 1794461587,
- "job": "ownhost-combo1"
+ "started": 1794462756,
+ "job": "ownhost-server1"
 }
