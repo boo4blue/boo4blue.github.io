@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794496236,
+ "at": 1794496251,
  "egressIp": "57.154.167.222",
  "own": {
   "base": "https://plastic-und-flood-fred.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://inform-horse-each-briefing.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
