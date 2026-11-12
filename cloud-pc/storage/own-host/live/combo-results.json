@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794477601,
- "egressIp": "20.109.70.68",
+ "at": 1794479601,
+ "egressIp": "104.210.132.56",
  "own": {
-  "base": "https://learners-indexed-struggle-exist.trycloudflare.com",
+  "base": "https://infants-postal-trustees-necessary.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://touched-salem-restricted-pendant.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
