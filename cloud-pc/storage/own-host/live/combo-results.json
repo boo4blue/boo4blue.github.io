@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794487524,
+ "at": 1794487531,
  "egressIp": "48.217.34.238",
  "own": {
   "base": "https://magazines-resource-centered-abs.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://update-universe-belle-fees.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
