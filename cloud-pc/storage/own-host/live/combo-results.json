@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794516098,
+ "at": 1794516110,
  "egressIp": "172.210.0.96",
  "own": {
   "base": "https://alpha-previously-considers-intervals.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://offered-computation-officials-condo.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
