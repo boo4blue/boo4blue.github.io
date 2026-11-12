@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794472265,
+ "at": 1794472266,
  "egressIp": "20.80.79.202",
  "own": {
   "base": "https://attractions-memo-galaxy-deviant.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
