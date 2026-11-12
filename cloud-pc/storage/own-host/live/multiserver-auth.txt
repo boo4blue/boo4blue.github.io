@@ -1,5 +1,7 @@
-# Combo session credentials — generated on the Cloud PC runner 2026-11-12T17:18:28Z
-# These protect this session's trycloudflare-exposed servers (job ownhost-combo1).
-torrserver user=onion pass=be33211fdbf01900569d6894
-rqbit user=onion pass=0103bb56944370d4623638cd
-webtorrent user=onion pass=b11c26ef46c515cba946eb78
+# Multiserver trial credentials — generated on the Cloud PC runner 2026-11-12T17:28:14Z
+# Trial only. These protect the trycloudflare-exposed trial servers.
+# NOTE: v3 regenerates rqbit/webtorrent creds; the torrserver line below
+# is the v2 session's (that session is over; TorrServer was PROVEN in v2).
+torrserver user=onion pass=(v2 session, expired — see MULTISERVER-TRIAL.md)
+rqbit user=onion pass=71f8ff9012d7687dcc1bf164
+webtorrent user=onion pass=05c5139a79c04d5c32830ca3
