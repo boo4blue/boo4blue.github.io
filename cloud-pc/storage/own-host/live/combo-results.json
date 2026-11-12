@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794447247,
+ "at": 1794447249,
  "egressIp": "172.190.85.24",
  "own": {
   "base": "https://drinks-receptor-salem-antenna.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
