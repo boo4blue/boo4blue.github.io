@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://attractions-memo-galaxy-deviant.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://intervals-adventure-species-drop.trycloudflare.com",
  "egressIp": "20.80.79.202",
- "port": 11470,
- "started": 1794472262,
- "job": "ownhost-combo1"
+ "started": 1794473426,
+ "job": "ownhost-server1"
 }
