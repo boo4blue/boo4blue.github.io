@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794466921,
+ "at": 1794466922,
  "egressIp": "130.131.239.210",
  "own": {
   "base": "https://laugh-elderly-difficulty-engineers.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
