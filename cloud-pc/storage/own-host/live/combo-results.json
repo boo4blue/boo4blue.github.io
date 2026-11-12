@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794477586,
+ "at": 1794477587,
  "egressIp": "20.109.70.68",
  "own": {
   "base": "https://learners-indexed-struggle-exist.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
