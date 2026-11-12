@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://warren-scenic-speakers-techniques.trycloudflare.com",
- "egressIp": "172.210.0.96",
- "started": 1794517841,
- "job": "ownhost-server1"
+ "url": "https://charm-normal-shopping-opening.trycloudflare.com",
+ "egressIp": "172.171.7.3",
+ "port": 11470,
+ "started": 1794518434,
+ "job": "ownhost-combo1"
 }
