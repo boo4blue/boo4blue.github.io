@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://circular-zero-mysql-eclipse.trycloudflare.com",
+ "url": "https://lamb-balance-watershed-tax.trycloudflare.com",
  "egressIp": "51.8.152.228",
  "port": 11470,
- "started": 1794498289,
+ "started": 1794498848,
  "job": "ownhost-combo1"
 }
