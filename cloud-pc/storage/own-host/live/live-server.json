@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
  "server": "stream-server (from-scratch)",
- "url": "https://fool-roulette-kansas-standing.trycloudflare.com",
+ "url": "https://epic-rational-induced-complications.trycloudflare.com",
  "egressIp": "172.200.223.56",
- "started": 1794522921,
+ "started": 1794523499,
  "job": "ownhost-server1"
 }
