@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794446694,
+ "at": 1794446701,
  "egressIp": "172.190.85.24",
  "own": {
   "base": "https://fleece-feelings-adware-compounds.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://enough-css-regression-constraints.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
