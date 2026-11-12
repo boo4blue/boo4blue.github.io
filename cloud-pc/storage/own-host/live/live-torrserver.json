@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://salaries-pine-grant-these.trycloudflare.com",
- "egressIp": "52.159.244.182",
+ "url": "https://ent-snake-selection-jessica.trycloudflare.com",
+ "egressIp": "52.154.133.21",
  "port": 8090,
- "started": 1794505563,
+ "started": 1794508196,
  "job": "ownhost-combo1"
 }
