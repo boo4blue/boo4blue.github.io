@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794503351,
+ "at": 1794503359,
  "egressIp": "172.170.189.245",
  "own": {
   "base": "https://liquid-headquarters-thorough-parent.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://stand-alternate-brief-advocate.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
