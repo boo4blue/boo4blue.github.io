@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794463701,
+ "at": 1794463714,
  "egressIp": "172.203.198.161",
  "own": {
   "base": "https://structures-exercises-cargo-ratings.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "live noauth-http=401"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://baskets-favour-scuba-writing.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
