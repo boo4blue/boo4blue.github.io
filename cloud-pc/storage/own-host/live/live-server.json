@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://wma-sessions-frontier-reforms.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://indication-instance-lead-rabbit.trycloudflare.com",
  "egressIp": "52.179.93.143",
- "port": 11470,
- "started": 1794524554,
- "job": "ownhost-combo1"
+ "started": 1794525716,
+ "job": "ownhost-server1"
 }
