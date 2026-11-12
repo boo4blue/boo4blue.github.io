@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://lawrence-timber-hockey-remedy.trycloudflare.com",
- "egressIp": "20.169.94.167",
+ "url": "https://charlie-order-pdas-dubai.trycloudflare.com",
+ "egressIp": "57.154.167.243",
  "port": 3030,
- "started": 1794454404,
+ "started": 1794458372,
  "job": "ownhost-combo1"
 }
