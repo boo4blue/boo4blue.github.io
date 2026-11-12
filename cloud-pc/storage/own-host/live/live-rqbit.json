@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://sie-ending-guided-passes.trycloudflare.com",
- "egressIp": "52.179.93.143",
+ "url": "https://separated-discharge-arrival-maintains.trycloudflare.com",
+ "egressIp": "4.246.63.111",
  "port": 3030,
- "started": 1794524013,
+ "started": 1794526917,
  "job": "ownhost-combo1"
 }
