@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://charlie-order-pdas-dubai.trycloudflare.com",
- "egressIp": "57.154.167.243",
+ "url": "https://improve-publications-algebra-acdbentity.trycloudflare.com",
+ "egressIp": "52.159.228.219",
  "port": 3030,
- "started": 1794458372,
+ "started": 1794461045,
  "job": "ownhost-combo1"
 }
