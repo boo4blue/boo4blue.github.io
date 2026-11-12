@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794463686,
+ "at": 1794463693,
  "egressIp": "172.203.198.161",
  "own": {
   "base": "https://structures-exercises-cargo-ratings.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://tone-keywords-game-scotland.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
