@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://royal-glenn-orleans-invited.trycloudflare.com",
- "egressIp": "172.210.0.96",
+ "url": "https://details-acceptable-css-cons.trycloudflare.com",
+ "egressIp": "172.171.7.3",
  "port": 8080,
- "started": 1794516681,
- "job": "ownhost-multi5"
+ "started": 1794518463,
+ "job": "ownhost-combo1"
 }
