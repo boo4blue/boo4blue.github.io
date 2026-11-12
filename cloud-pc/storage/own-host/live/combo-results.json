@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794477027,
+ "at": 1794477035,
  "egressIp": "20.109.70.68",
  "own": {
   "base": "https://cutting-sandwich-psychological-advised.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://influence-diff-investing-cos.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
