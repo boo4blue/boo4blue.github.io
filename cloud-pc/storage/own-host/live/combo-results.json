@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794479601,
+ "at": 1794479609,
  "egressIp": "104.210.132.56",
  "own": {
   "base": "https://infants-postal-trustees-necessary.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://confidential-burke-earnings-cruise.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
