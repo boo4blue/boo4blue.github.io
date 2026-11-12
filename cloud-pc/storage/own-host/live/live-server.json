@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://ted-doors-organised-restaurant.trycloudflare.com",
- "egressIp": "51.8.152.228",
- "started": 1794500598,
- "job": "ownhost-server1"
+ "url": "https://nextel-consequence-seven-aluminum.trycloudflare.com",
+ "egressIp": "20.169.65.217",
+ "port": 11470,
+ "started": 1794500869,
+ "job": "ownhost-combo1"
 }
