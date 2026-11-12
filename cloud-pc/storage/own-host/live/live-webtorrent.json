@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://proxy-chamber-tenant-lime.trycloudflare.com",
- "egressIp": "52.179.93.143",
+ "url": "https://beer-nuclear-delays-prayer.trycloudflare.com",
+ "egressIp": "4.246.63.111",
  "port": 8080,
- "started": 1794525139,
- "job": "ownhost-multi5"
+ "started": 1794526932,
+ "job": "ownhost-combo1"
 }
