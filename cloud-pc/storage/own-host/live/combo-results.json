@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794510708,
+ "at": 1794510716,
  "egressIp": "20.171.37.166",
  "own": {
   "base": "https://attempts-the-pennsylvania-transition.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://type-lights-greatly-than.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
