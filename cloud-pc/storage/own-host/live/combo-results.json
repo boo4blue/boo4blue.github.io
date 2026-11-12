@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794454398,
+ "at": 1794454406,
  "egressIp": "20.169.94.167",
  "own": {
   "base": "https://scanners-durable-agriculture-boot.trycloudflare.com",
@@ -11,8 +11,8 @@
   "state": "live noauth-http=401"
  },
  "rqbit": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://lawrence-timber-hockey-remedy.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "webtorrent": {
   "base": "",
