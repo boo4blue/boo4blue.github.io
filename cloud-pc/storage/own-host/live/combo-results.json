@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794492968,
+ "at": 1794492976,
  "egressIp": "4.154.246.58",
  "own": {
   "base": "https://ray-chains-photo-throughout.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://heavy-const-standing-insulation.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
