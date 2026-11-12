@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794521759,
+ "at": 1794521760,
  "egressIp": "172.200.223.56",
  "own": {
   "base": "https://informative-discrimination-separated-mapping.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
