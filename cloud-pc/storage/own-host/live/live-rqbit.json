@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://past-lamp-asian-include.trycloudflare.com",
- "egressIp": "135.119.77.156",
+ "url": "https://utilize-mood-attendance-dip.trycloudflare.com",
+ "egressIp": "48.217.34.238",
  "port": 3030,
- "started": 1794484951,
+ "started": 1794487538,
  "job": "ownhost-combo1"
 }
