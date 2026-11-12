@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://usd-assure-ssl-instantly.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://political-cos-genuine-hudson.trycloudflare.com",
  "egressIp": "135.119.77.156",
- "port": 11470,
- "started": 1794485477,
- "job": "ownhost-combo1"
+ "started": 1794486640,
+ "job": "ownhost-server1"
 }
