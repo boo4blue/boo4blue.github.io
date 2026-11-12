@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://pattern-untitled-depend-utc.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://specialists-february-sake-press.trycloudflare.com",
  "egressIp": "52.154.133.21",
- "port": 11470,
- "started": 1794508757,
- "job": "ownhost-combo1"
+ "started": 1794509923,
+ "job": "ownhost-server1"
 }
