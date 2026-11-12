@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://module-perceived-breaking-belfast.trycloudflare.com",
- "egressIp": "52.159.228.219",
+ "url": "https://tone-keywords-game-scotland.trycloudflare.com",
+ "egressIp": "172.203.198.161",
  "port": 8090,
- "started": 1794461038,
+ "started": 1794463692,
  "job": "ownhost-combo1"
 }
