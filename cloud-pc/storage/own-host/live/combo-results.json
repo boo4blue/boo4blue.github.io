@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794490239,
+ "at": 1794490249,
  "egressIp": "52.165.103.106",
  "own": {
   "base": "https://ordinance-freeware-adequate-arm.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://observed-definitions-ipaq-genetics.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
