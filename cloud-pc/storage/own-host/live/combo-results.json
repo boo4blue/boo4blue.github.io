@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794516096,
+ "at": 1794516097,
  "egressIp": "172.210.0.96",
  "own": {
   "base": "https://alpha-previously-considers-intervals.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
