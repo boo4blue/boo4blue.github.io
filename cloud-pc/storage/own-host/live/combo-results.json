@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794493526,
+ "at": 1794493527,
  "egressIp": "4.154.246.58",
  "own": {
   "base": "https://alexandria-drawings-expression-fired.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
