@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794461047,
+ "at": 1794461060,
  "egressIp": "52.159.228.219",
  "own": {
   "base": "https://lay-liz-bedroom-deemed.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "live noauth-http=401"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://abs-kent-hoped-programmers.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
