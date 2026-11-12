@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://interview-applied-decades-gba.trycloudflare.com",
- "egressIp": "20.109.70.68",
+ "url": "https://healthcare-russell-colleges-properties.trycloudflare.com",
+ "egressIp": "104.210.132.56",
  "port": 8080,
- "started": 1794478171,
- "job": "ownhost-multi5"
+ "started": 1794479629,
+ "job": "ownhost-combo1"
 }
