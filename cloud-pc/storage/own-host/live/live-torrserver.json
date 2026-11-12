@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://observed-definitions-ipaq-genetics.trycloudflare.com",
- "egressIp": "52.165.103.106",
+ "url": "https://heavy-const-standing-insulation.trycloudflare.com",
+ "egressIp": "4.154.246.58",
  "port": 8090,
- "started": 1794490248,
+ "started": 1794492974,
  "job": "ownhost-combo1"
 }
