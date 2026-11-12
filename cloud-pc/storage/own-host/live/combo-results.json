@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794490802,
+ "at": 1794490804,
  "egressIp": "52.165.103.106",
  "own": {
   "base": "https://chorus-framing-analyze-charlie.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
