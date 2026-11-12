@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://control-forums-applies-bali.trycloudflare.com",
- "egressIp": "20.80.79.202",
+ "url": "https://moon-bowling-vacuum-emission.trycloudflare.com",
+ "egressIp": "20.14.214.41",
  "port": 3030,
- "started": 1794471710,
+ "started": 1794474389,
  "job": "ownhost-combo1"
 }
