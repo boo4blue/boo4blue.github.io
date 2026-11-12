@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794519017,
- "egressIp": "172.171.7.3",
+ "at": 1794521207,
+ "egressIp": "172.200.223.56",
  "own": {
-  "base": "https://playlist-adaptor-henderson-brake.trycloudflare.com",
+  "base": "https://specialists-whenever-fits-hire.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://join-intervals-cliff-atomic.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
