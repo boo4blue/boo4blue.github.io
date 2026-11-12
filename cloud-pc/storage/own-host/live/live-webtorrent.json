@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://plug-midwest-beginner-sci.trycloudflare.com",
- "egressIp": "48.217.25.162",
+ "url": "https://extension-sat-anti-association.trycloudflare.com",
+ "egressIp": "20.169.94.167",
  "port": 8080,
- "started": 1794453059,
- "job": "ownhost-multi5"
+ "started": 1794454417,
+ "job": "ownhost-combo1"
 }
