@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://goals-moore-conditioning-counting.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://stays-topic-potter-assume.trycloudflare.com",
  "egressIp": "172.170.189.245",
- "port": 11470,
- "started": 1794503915,
- "job": "ownhost-combo1"
+ "started": 1794505084,
+ "job": "ownhost-server1"
 }
