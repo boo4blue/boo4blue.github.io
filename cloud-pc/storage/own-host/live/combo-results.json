@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794444551,
+ "at": 1794444553,
  "egressIp": "172.182.226.77",
  "own": {
   "base": "https://def-cooling-cigarettes-appearing.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
