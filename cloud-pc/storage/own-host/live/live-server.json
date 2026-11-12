@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://alpha-previously-considers-intervals.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://armed-walls-americas-styles.trycloudflare.com",
  "egressIp": "172.210.0.96",
- "port": 11470,
- "started": 1794516094,
- "job": "ownhost-combo1"
+ "started": 1794517260,
+ "job": "ownhost-server1"
 }
