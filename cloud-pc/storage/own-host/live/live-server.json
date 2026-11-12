@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
  "server": "stream-server (from-scratch)",
- "url": "https://anchor-listing-could-communication.trycloudflare.com",
+ "url": "https://classics-combines-isle-split.trycloudflare.com",
  "egressIp": "57.154.167.222",
- "started": 1794497394,
+ "started": 1794497973,
  "job": "ownhost-server1"
 }
