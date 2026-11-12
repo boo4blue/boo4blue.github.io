@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794498869,
- "egressIp": "51.8.152.228",
+ "at": 1794500870,
+ "egressIp": "20.169.65.217",
  "own": {
-  "base": "https://lamb-balance-watershed-tax.trycloudflare.com",
+  "base": "https://nextel-consequence-seven-aluminum.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://der-reliance-modular-brown.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
