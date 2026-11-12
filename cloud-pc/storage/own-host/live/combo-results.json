@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794469073,
+ "at": 1794469081,
  "egressIp": "4.242.196.134",
  "own": {
   "base": "https://icon-participation-nato-bridal.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://cakes-barely-bases-arrive.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
