@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794482261,
+ "at": 1794482268,
  "egressIp": "128.85.45.90",
  "own": {
   "base": "https://organizations-irc-declared-sets.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://stripes-legislative-spring-seeds.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
