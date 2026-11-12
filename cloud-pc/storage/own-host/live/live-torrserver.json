@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://stack-finish-pipe-importantly.trycloudflare.com",
- "egressIp": "134.138.53.252",
+ "url": "https://passenger-jail-occasionally-strategies.trycloudflare.com",
+ "egressIp": "172.182.226.77",
  "port": 8090,
- "started": 1794441332,
+ "started": 1794444000,
  "job": "ownhost-combo1"
 }
