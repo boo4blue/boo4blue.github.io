@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794513190,
+ "at": 1794513198,
  "egressIp": "20.169.67.13",
  "own": {
   "base": "https://wiley-quantitative-military-greatly.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://main-computation-goto-robots.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
