@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794527458,
+ "at": 1794527473,
  "egressIp": "4.246.63.111",
  "own": {
   "base": "https://seeks-and-irc-departure.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://consumer-fall-herein-downloads.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
