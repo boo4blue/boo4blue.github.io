@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794454390,
+ "at": 1794454398,
  "egressIp": "20.169.94.167",
  "own": {
   "base": "https://scanners-durable-agriculture-boot.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://organized-wedding-ken-minister.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
