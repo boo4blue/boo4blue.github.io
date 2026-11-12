@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://compensation-concerns-figured-hughes.trycloudflare.com",
- "egressIp": "52.159.228.219",
- "started": 1794463333,
- "job": "ownhost-server1"
+ "url": "https://structures-exercises-cargo-ratings.trycloudflare.com",
+ "egressIp": "172.203.198.161",
+ "port": 11470,
+ "started": 1794463685,
+ "job": "ownhost-combo1"
 }
