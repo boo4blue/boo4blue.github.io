@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794484935,
+ "at": 1794484944,
  "egressIp": "135.119.77.156",
  "own": {
   "base": "https://methodology-satisfied-chances-emails.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://wallace-item-pdt-negotiations.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
