@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794508190,
+ "at": 1794508198,
  "egressIp": "52.154.133.21",
  "own": {
   "base": "https://documented-insider-treated-beauty.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://ent-snake-selection-jessica.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
