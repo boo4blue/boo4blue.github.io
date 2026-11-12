@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794488083,
+ "at": 1794488084,
  "egressIp": "48.217.34.238",
  "own": {
   "base": "https://shark-converter-thumbs-mapping.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
