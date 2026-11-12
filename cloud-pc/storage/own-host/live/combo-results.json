@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794449337,
+ "at": 1794449344,
  "egressIp": "20.127.199.49",
  "own": {
   "base": "https://issues-pda-wanted-amanda.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://aimed-gay-bacteria-tournament.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
