@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794500887,
+ "at": 1794500900,
  "egressIp": "20.169.65.217",
  "own": {
   "base": "https://nextel-consequence-seven-aluminum.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "live noauth-http=401"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://jenny-recreational-filename-pose.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
