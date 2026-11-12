@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://plastic-und-flood-fred.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://anchor-listing-could-communication.trycloudflare.com",
  "egressIp": "57.154.167.222",
- "port": 11470,
- "started": 1794496232,
- "job": "ownhost-combo1"
+ "started": 1794497394,
+ "job": "ownhost-server1"
 }
