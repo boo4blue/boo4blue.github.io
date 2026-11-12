@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794498291,
+ "at": 1794498299,
  "egressIp": "51.8.152.228",
  "own": {
   "base": "https://circular-zero-mysql-eclipse.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://dietary-catherine-printer-mechanism.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
