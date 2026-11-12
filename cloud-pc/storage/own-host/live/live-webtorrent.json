@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://understanding-analysis-pubs-coated.trycloudflare.com",
- "egressIp": "52.154.133.21",
+ "url": "https://status-professor-salad-munich.trycloudflare.com",
+ "egressIp": "20.171.37.166",
  "port": 8080,
- "started": 1794509346,
- "job": "ownhost-multi5"
+ "started": 1794510736,
+ "job": "ownhost-combo1"
 }
