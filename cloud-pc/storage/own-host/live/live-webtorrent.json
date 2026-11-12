@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://normal-thou-returns-manga.trycloudflare.com",
- "egressIp": "20.169.67.13",
+ "url": "https://select-relating-aus-decade.trycloudflare.com",
+ "egressIp": "172.210.0.96",
  "port": 8080,
- "started": 1794514337,
- "job": "ownhost-multi5"
+ "started": 1794515568,
+ "job": "ownhost-combo1"
 }
