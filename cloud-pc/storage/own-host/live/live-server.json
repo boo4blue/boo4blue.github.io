@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://alexandria-drawings-expression-fired.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://saver-inkjet-tapes-clinton.trycloudflare.com",
  "egressIp": "4.154.246.58",
- "port": 11470,
- "started": 1794493524,
- "job": "ownhost-combo1"
+ "started": 1794494683,
+ "job": "ownhost-server1"
 }
