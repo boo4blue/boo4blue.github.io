@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794508760,
+ "at": 1794508762,
  "egressIp": "52.154.133.21",
  "own": {
   "base": "https://pattern-untitled-depend-utc.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
