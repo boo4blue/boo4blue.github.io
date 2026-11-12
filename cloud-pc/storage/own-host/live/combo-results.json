@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794482814,
+ "at": 1794482815,
  "egressIp": "128.85.45.90",
  "own": {
   "base": "https://disabilities-dubai-constitutes-purposes.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
