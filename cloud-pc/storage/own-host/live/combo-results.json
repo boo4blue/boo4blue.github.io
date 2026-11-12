@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794454970,
- "egressIp": "20.169.94.167",
+ "at": 1794457094,
+ "egressIp": "20.57.215.242",
  "own": {
-  "base": "https://badge-puts-robertson-figure.trycloudflare.com",
+  "base": "https://api.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://studios-puzzles-function-surfing.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
