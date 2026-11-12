@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794503936,
- "egressIp": "172.170.189.245",
+ "at": 1794505556,
+ "egressIp": "52.159.244.182",
  "own": {
-  "base": "https://goals-moore-conditioning-counting.trycloudflare.com",
+  "base": "https://pdas-study-customise-simple.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://aging-function-living-banana.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
