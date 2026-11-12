@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794466469,
+ "at": 1794466920,
  "egressIp": "130.131.239.210",
  "own": {
-  "base": "https://petition-bureau-kingston-sail.trycloudflare.com",
+  "base": "https://laugh-elderly-difficulty-engineers.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "https://mainly-clay-sen-builder.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://skiing-martin-laboratory-learn.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
   "base": "",
-  "state": "live (proof only)",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
