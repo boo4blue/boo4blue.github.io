@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://each-motherboard-patterns-continue.trycloudflare.com",
- "egressIp": "20.169.65.217",
- "started": 1794502583,
- "job": "ownhost-server1"
+ "url": "https://liquid-headquarters-thorough-parent.trycloudflare.com",
+ "egressIp": "172.170.189.245",
+ "port": 11470,
+ "started": 1794503348,
+ "job": "ownhost-combo1"
 }
