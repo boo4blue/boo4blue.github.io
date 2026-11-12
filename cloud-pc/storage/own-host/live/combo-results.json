@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794457097,
+ "at": 1794457196,
  "egressIp": "20.57.215.242",
  "own": {
   "base": "https://api.trycloudflare.com",
@@ -16,7 +16,7 @@
  },
  "webtorrent": {
   "base": "",
-  "state": "not-started",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
