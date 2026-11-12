@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794518436,
+ "at": 1794518443,
  "egressIp": "172.171.7.3",
  "own": {
   "base": "https://charm-normal-shopping-opening.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://possess-valuation-completing-schools.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
