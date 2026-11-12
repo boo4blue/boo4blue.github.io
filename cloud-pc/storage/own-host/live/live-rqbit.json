@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://moon-bowling-vacuum-emission.trycloudflare.com",
- "egressIp": "20.14.214.41",
+ "url": "https://albuquerque-listings-heights-drums.trycloudflare.com",
+ "egressIp": "20.109.70.68",
  "port": 3030,
- "started": 1794474389,
+ "started": 1794477041,
  "job": "ownhost-combo1"
 }
