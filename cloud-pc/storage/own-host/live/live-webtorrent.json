@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://itunes-travelers-italia-minimum.trycloudflare.com",
- "egressIp": "57.154.167.243",
+ "url": "https://abs-kent-hoped-programmers.trycloudflare.com",
+ "egressIp": "52.159.228.219",
  "port": 8080,
- "started": 1794459330,
- "job": "ownhost-multi5"
+ "started": 1794461058,
+ "job": "ownhost-combo1"
 }
