@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://informative-discrimination-separated-mapping.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://fool-roulette-kansas-standing.trycloudflare.com",
  "egressIp": "172.200.223.56",
- "port": 11470,
- "started": 1794521758,
- "job": "ownhost-combo1"
+ "started": 1794522921,
+ "job": "ownhost-server1"
 }
