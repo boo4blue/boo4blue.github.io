@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794461609,
- "egressIp": "52.159.228.219",
+ "at": 1794463686,
+ "egressIp": "172.203.198.161",
  "own": {
-  "base": "https://olympus-outline-proceeds-navy.trycloudflare.com",
+  "base": "https://structures-exercises-cargo-ratings.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://bowl-adam-silent-syndrome.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
