@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://hamilton-fred-tree-vampire.trycloudflare.com",
+ "url": "https://wma-sessions-frontier-reforms.trycloudflare.com",
  "egressIp": "52.179.93.143",
  "port": 11470,
- "started": 1794523998,
+ "started": 1794524554,
  "job": "ownhost-combo1"
 }
