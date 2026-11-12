@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://particles-markers-semi-haven.trycloudflare.com",
- "egressIp": "134.138.53.252",
+ "url": "https://workplace-tcp-shadows-ripe.trycloudflare.com",
+ "egressIp": "172.182.226.77",
  "port": 3030,
- "started": 1794441340,
+ "started": 1794444010,
  "job": "ownhost-combo1"
 }
