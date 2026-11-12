@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://stays-topic-potter-assume.trycloudflare.com",
- "egressIp": "172.170.189.245",
- "started": 1794505084,
- "job": "ownhost-server1"
+ "url": "https://pdas-study-customise-simple.trycloudflare.com",
+ "egressIp": "52.159.244.182",
+ "port": 11470,
+ "started": 1794505555,
+ "job": "ownhost-combo1"
 }
