@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794518998,
+ "at": 1794518999,
  "egressIp": "172.171.7.3",
  "own": {
   "base": "https://playlist-adaptor-henderson-brake.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
