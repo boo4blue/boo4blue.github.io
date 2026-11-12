@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://var-mercy-promo-athens.trycloudflare.com",
- "egressIp": "52.179.93.143",
- "started": 1794526293,
- "job": "ownhost-server1"
+ "url": "https://surely-gui-seem-takes.trycloudflare.com",
+ "egressIp": "4.246.63.111",
+ "port": 11470,
+ "started": 1794526902,
+ "job": "ownhost-combo1"
 }
