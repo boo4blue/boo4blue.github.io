@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://menus-amend-guarantees-photography.trycloudflare.com",
- "egressIp": "35.174.28.24",
- "started": 1794608551,
- "job": "ownhost-server1"
+ "url": "https://plasma-helps-mechanisms-really.trycloudflare.com",
+ "egressIp": "145.132.91.173",
+ "port": 11470,
+ "started": 1794609094,
+ "job": "ownhost-combo1"
 }
