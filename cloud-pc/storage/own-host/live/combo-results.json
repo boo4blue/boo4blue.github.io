@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794599183,
+ "at": 1794599196,
  "egressIp": "51.57.86.128",
  "own": {
   "base": "https://lay-neighbors-trinity-walking.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://divided-pit-level-speaking.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
