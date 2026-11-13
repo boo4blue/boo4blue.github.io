@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://literacy-warriors-jesus-focuses.trycloudflare.com",
- "egressIp": "20.221.61.91",
+ "url": "https://serial-learning-sharing-fax.trycloudflare.com",
+ "egressIp": "64.236.140.198",
  "port": 8090,
- "started": 1794546897,
+ "started": 1794549418,
  "job": "ownhost-combo1"
 }
