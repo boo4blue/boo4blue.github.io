@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794534828,
+ "at": 1794534829,
  "egressIp": "20.81.47.115",
  "own": {
   "base": "https://handbook-endangered-diagram-admit.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
