@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794612238,
+ "at": 1794612239,
  "egressIp": "4.227.135.150",
  "own": {
   "base": "https://telling-treasury-smilies-abc.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
