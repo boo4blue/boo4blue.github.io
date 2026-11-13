@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794612252,
- "egressIp": "4.227.135.150",
+ "at": 1794614292,
+ "egressIp": "4.242.61.50",
  "own": {
-  "base": "https://telling-treasury-smilies-abc.trycloudflare.com",
+  "base": "https://faq-artificial-titled-recommendation.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://court-ambassador-trip-grows.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
