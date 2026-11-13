@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794568697,
- "egressIp": "20.80.95.171",
+ "at": 1794570728,
+ "egressIp": "20.84.245.17",
  "own": {
-  "base": "https://control-children-exit-picked.trycloudflare.com",
+  "base": "https://shoes-brochures-erp-obvious.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://mathematics-birmingham-islamic-each.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
