@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794584287,
+ "at": 1794584288,
  "egressIp": "20.161.30.248",
  "own": {
   "base": "https://mustang-remind-welcome-joyce.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
