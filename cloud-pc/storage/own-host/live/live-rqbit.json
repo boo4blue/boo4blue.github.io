@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://twiki-menus-pictures-views.trycloudflare.com",
- "egressIp": "13.71.228.41",
+ "url": "https://records-athens-softball-concerts.trycloudflare.com",
+ "egressIp": "172.172.87.73",
  "port": 3030,
- "started": 1794586335,
+ "started": 1794588787,
  "job": "ownhost-combo1"
 }
