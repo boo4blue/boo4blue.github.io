@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://henry-bases-sensitivity-exact.trycloudflare.com",
- "egressIp": "4.227.135.150",
+ "url": "https://inner-invitation-reached-computational.trycloudflare.com",
+ "egressIp": "4.242.61.50",
  "port": 3030,
- "started": 1794611688,
+ "started": 1794614306,
  "job": "ownhost-combo1"
 }
