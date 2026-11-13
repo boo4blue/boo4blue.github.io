@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://defensive-reference-dont-albert.trycloudflare.com",
- "egressIp": "20.161.30.248",
- "started": 1794586026,
- "job": "ownhost-server1"
+ "url": "https://into-conditional-plans-towns.trycloudflare.com",
+ "egressIp": "13.71.228.41",
+ "port": 11470,
+ "started": 1794586316,
+ "job": "ownhost-combo1"
 }
