@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794601831,
+ "at": 1794601840,
  "egressIp": "20.246.62.180",
  "own": {
   "base": "https://huge-laugh-link-mississippi.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://andreas-silver-facility-lodge.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
