@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://surrounded-drove-linux-dialog.trycloudflare.com",
- "egressIp": "128.85.152.202",
+ "url": "https://factor-bristol-boys-ensures.trycloudflare.com",
+ "egressIp": "57.154.4.162",
  "port": 8090,
- "started": 1794536819,
+ "started": 1794539428,
  "job": "ownhost-combo1"
 }
