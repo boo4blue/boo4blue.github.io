@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794586897,
- "egressIp": "13.71.228.41",
+ "at": 1794588769,
+ "egressIp": "172.172.87.73",
  "own": {
-  "base": "https://strange-issued-controversial-tvs.trycloudflare.com",
+  "base": "https://institutes-arms-opponents-flood.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://gardening-mom-heights-integrate.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
