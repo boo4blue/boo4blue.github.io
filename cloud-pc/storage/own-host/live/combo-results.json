@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794609095,
+ "at": 1794609103,
  "egressIp": "145.132.91.173",
  "own": {
   "base": "https://plasma-helps-mechanisms-really.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://singer-casa-categories-terminals.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
