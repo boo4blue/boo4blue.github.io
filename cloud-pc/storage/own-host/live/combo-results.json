@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794568127,
+ "at": 1794568135,
  "egressIp": "20.80.95.171",
  "own": {
   "base": "https://bean-super-frog-acute.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://revolutionary-speed-copy-lands.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
