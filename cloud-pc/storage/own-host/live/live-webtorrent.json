@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://shirt-situated-territory-nvidia.trycloudflare.com",
- "egressIp": "20.221.61.91",
+ "url": "https://villas-rpg-greatest-finally.trycloudflare.com",
+ "egressIp": "64.236.140.198",
  "port": 8080,
- "started": 1794548038,
- "job": "ownhost-multi5"
+ "started": 1794549439,
+ "job": "ownhost-combo1"
 }
