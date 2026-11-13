@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794611675,
+ "at": 1794611682,
  "egressIp": "4.227.135.150",
  "own": {
   "base": "https://trivia-visited-likely-oval.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://matched-rotary-rely-reader.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
