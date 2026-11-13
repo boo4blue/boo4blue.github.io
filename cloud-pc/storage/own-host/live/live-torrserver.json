@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://incidents-certificates-peripheral-multiple.trycloudflare.com",
- "egressIp": "172.183.89.130",
+ "url": "https://andreas-silver-facility-lodge.trycloudflare.com",
+ "egressIp": "20.246.62.180",
  "port": 8090,
- "started": 1794596520,
+ "started": 1794601839,
  "job": "ownhost-combo1"
 }
