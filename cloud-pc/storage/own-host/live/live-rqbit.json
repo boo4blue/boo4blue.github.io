@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://measures-modular-stationery-isbn.trycloudflare.com",
- "egressIp": "64.236.140.198",
+ "url": "https://hop-legs-furnishings-spas.trycloudflare.com",
+ "egressIp": "4.242.27.82",
  "port": 3030,
- "started": 1794549426,
+ "started": 1794552004,
  "job": "ownhost-combo1"
 }
