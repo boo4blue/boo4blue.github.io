@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794555186,
- "egressIp": "20.119.87.54",
+ "at": 1794557354,
+ "egressIp": "20.40.253.102",
  "own": {
-  "base": "https://officer-partially-transactions-tamil.trycloudflare.com",
+  "base": "https://stay-segments-correspondence-softball.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://fuji-opposition-males-speakers.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
