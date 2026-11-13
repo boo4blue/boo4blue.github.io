@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794589329,
+ "at": 1794589331,
  "egressIp": "172.172.87.73",
  "own": {
   "base": "https://lane-medicaid-cameras-tub.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
