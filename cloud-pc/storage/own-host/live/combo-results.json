@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794566049,
+ "at": 1794566051,
  "egressIp": "128.85.46.208",
  "own": {
   "base": "https://trunk-wishes-pleasant-against.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
