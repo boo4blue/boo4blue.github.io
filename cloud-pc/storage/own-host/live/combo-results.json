@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794599747,
+ "at": 1794599748,
  "egressIp": "51.57.86.128",
  "own": {
   "base": "https://spirit-hayes-optics-receives.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
