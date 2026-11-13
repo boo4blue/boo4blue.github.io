@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://dev-mood-spam-wherever.trycloudflare.com",
- "egressIp": "172.203.197.253",
+ "url": "https://roses-arrival-nearly-toilet.trycloudflare.com",
+ "egressIp": "20.119.86.124",
  "port": 3030,
- "started": 1794591050,
+ "started": 1794593649,
  "job": "ownhost-combo1"
 }
