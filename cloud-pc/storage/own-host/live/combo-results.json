@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794537389,
- "egressIp": "128.85.152.202",
+ "at": 1794539422,
+ "egressIp": "57.154.4.162",
  "own": {
-  "base": "https://spies-presentations-interactions-standing.trycloudflare.com",
+  "base": "https://mercy-sound-chef-sample.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://electricity-architect-progressive-disco.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
