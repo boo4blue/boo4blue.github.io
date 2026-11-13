@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794546890,
+ "at": 1794546898,
  "egressIp": "20.221.61.91",
  "own": {
   "base": "https://compounds-short-objects-hip.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://literacy-warriors-jesus-focuses.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
