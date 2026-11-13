@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://considers-adaptive-symposium-offerings.trycloudflare.com",
- "egressIp": "4.246.63.111",
+ "url": "https://exposed-recently-minus-subscribe.trycloudflare.com",
+ "egressIp": "20.49.62.25",
  "port": 8090,
- "started": 1794526909,
+ "started": 1794529367,
  "job": "ownhost-combo1"
 }
