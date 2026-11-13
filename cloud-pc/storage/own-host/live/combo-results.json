@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794607406,
- "egressIp": "35.174.28.24",
+ "at": 1794609095,
+ "egressIp": "145.132.91.173",
  "own": {
-  "base": "https://zen-markers-frequent-naturally.trycloudflare.com",
+  "base": "https://plasma-helps-mechanisms-really.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://characters-helena-adequate-equipment.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
