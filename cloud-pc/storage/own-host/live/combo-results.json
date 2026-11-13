@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794606820,
+ "at": 1794606829,
  "egressIp": "35.174.28.24",
  "own": {
   "base": "https://considered-dolls-whether-coupons.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://treatment-outer-patents-jersey.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
