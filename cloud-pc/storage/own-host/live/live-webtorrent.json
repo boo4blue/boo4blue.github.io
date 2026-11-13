@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://ruled-von-anthropology-charitable.trycloudflare.com",
- "egressIp": "20.119.86.124",
+ "url": "https://manual-drums-oldest-collar.trycloudflare.com",
+ "egressIp": "172.183.89.130",
  "port": 8080,
- "started": 1794594761,
- "job": "ownhost-multi5"
+ "started": 1794596542,
+ "job": "ownhost-combo1"
 }
