@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://chapters-diary-louis-density.trycloudflare.com",
- "egressIp": "20.9.183.55",
+ "url": "https://milton-loan-admitted-sub.trycloudflare.com",
+ "egressIp": "35.174.28.24",
  "port": 3030,
- "started": 1794604330,
+ "started": 1794606835,
  "job": "ownhost-combo1"
 }
