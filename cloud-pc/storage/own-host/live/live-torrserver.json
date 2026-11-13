@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://folders-pct-telescope-bowling.trycloudflare.com",
- "egressIp": "20.84.245.17",
+ "url": "https://gpl-keyboard-profession-adams.trycloudflare.com",
+ "egressIp": "20.14.214.38",
  "port": 8090,
- "started": 1794570735,
+ "started": 1794573225,
  "job": "ownhost-combo1"
 }
