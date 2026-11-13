@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794541913,
+ "at": 1794541921,
  "egressIp": "4.150.181.243",
  "own": {
   "base": "https://drug-celebrity-yields-ever.trycloudflare.com",
@@ -11,8 +11,8 @@
   "state": "live noauth-http=401"
  },
  "rqbit": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://skin-bloom-retrieval-und.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "webtorrent": {
   "base": "",
