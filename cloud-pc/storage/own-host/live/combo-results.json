@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794560648,
- "egressIp": "20.168.139.16",
+ "at": 1794562776,
+ "egressIp": "52.155.48.56",
  "own": {
-  "base": "https://baltimore-idle-may-only.trycloudflare.com",
+  "base": "https://layers-correct-geometry-posted.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://tariff-imposed-robust-delicious.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
