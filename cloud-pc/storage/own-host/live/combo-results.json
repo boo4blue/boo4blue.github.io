@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794552544,
+ "at": 1794552545,
  "egressIp": "4.242.27.82",
  "own": {
   "base": "https://wide-surprised-chan-dpi.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
