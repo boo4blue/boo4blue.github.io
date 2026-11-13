@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794575827,
+ "at": 1794575835,
  "egressIp": "52.160.130.168",
  "own": {
   "base": "https://workforce-instructor-justice-bio.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://angeles-beginning-rapidly-paste.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
