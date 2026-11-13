@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://ram-amenities-challenging-wrap.trycloudflare.com",
- "egressIp": "20.49.62.25",
+ "url": "https://object-long-balance-deployment.trycloudflare.com",
+ "egressIp": "4.236.173.18",
  "port": 8080,
- "started": 1794530502,
- "job": "ownhost-multi5"
+ "started": 1794531792,
+ "job": "ownhost-combo1"
 }
