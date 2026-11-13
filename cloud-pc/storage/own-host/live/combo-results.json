@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794575835,
+ "at": 1794575843,
  "egressIp": "52.160.130.168",
  "own": {
   "base": "https://workforce-instructor-justice-bio.trycloudflare.com",
@@ -11,8 +11,8 @@
   "state": "live noauth-http=401"
  },
  "rqbit": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://fred-proudly-fame-longitude.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "webtorrent": {
   "base": "",
