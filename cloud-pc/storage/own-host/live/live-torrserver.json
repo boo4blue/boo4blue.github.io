@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://discovery-exclusion-scientists-necessary.trycloudflare.com",
- "egressIp": "20.119.86.124",
+ "url": "https://incidents-certificates-peripheral-multiple.trycloudflare.com",
+ "egressIp": "172.183.89.130",
  "port": 8090,
- "started": 1794593639,
+ "started": 1794596520,
  "job": "ownhost-combo1"
 }
