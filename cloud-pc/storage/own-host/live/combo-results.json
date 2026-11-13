@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794593633,
+ "at": 1794593640,
  "egressIp": "20.119.86.124",
  "own": {
   "base": "https://pressing-percent-beauty-causes.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://discovery-exclusion-scientists-necessary.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
