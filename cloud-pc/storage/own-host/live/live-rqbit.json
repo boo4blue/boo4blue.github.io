@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://mills-disc-cas-stronger.trycloudflare.com",
- "egressIp": "20.246.62.180",
+ "url": "https://chapters-diary-louis-density.trycloudflare.com",
+ "egressIp": "20.9.183.55",
  "port": 3030,
- "started": 1794601847,
+ "started": 1794604330,
  "job": "ownhost-combo1"
 }
