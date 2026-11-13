@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://zen-markers-frequent-naturally.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://menus-amend-guarantees-photography.trycloudflare.com",
  "egressIp": "35.174.28.24",
- "port": 11470,
- "started": 1794607389,
- "job": "ownhost-combo1"
+ "started": 1794608551,
+ "job": "ownhost-server1"
 }
