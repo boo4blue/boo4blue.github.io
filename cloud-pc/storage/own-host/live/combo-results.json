@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794549411,
+ "at": 1794549419,
  "egressIp": "64.236.140.198",
  "own": {
   "base": "https://eagle-takes-tcp-helen.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://serial-learning-sharing-fax.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
