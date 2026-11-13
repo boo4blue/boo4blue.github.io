@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://index-macro-neutral-snap.trycloudflare.com",
- "egressIp": "20.168.139.16",
- "started": 1794562376,
- "job": "ownhost-server1"
+ "url": "https://layers-correct-geometry-posted.trycloudflare.com",
+ "egressIp": "52.155.48.56",
+ "port": 11470,
+ "started": 1794562774,
+ "job": "ownhost-combo1"
 }
