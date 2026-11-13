@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794544933,
+ "at": 1794544946,
  "egressIp": "172.185.31.211",
  "own": {
   "base": "https://intelligent-opposite-particular-himself.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://manager-stations-kate-levy.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
