@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://overall-reseller-succeed-depending.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://patients-katie-louis-render.trycloudflare.com",
  "egressIp": "172.203.197.253",
- "port": 11470,
- "started": 1794591593,
- "job": "ownhost-combo1"
+ "started": 1794592761,
+ "job": "ownhost-server1"
 }
