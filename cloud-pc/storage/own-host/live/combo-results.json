@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794591034,
+ "at": 1794591044,
  "egressIp": "172.203.197.253",
  "own": {
   "base": "https://punch-lecture-tip-advertisers.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://bracket-headset-oclc-mason.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
