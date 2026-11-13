@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794599196,
+ "at": 1794599745,
  "egressIp": "51.57.86.128",
  "own": {
-  "base": "https://lay-neighbors-trinity-walking.trycloudflare.com",
+  "base": "https://spirit-hayes-optics-receives.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://divided-pit-level-speaking.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
