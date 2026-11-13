@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://diet-recall-added-determination.trycloudflare.com",
- "egressIp": "20.84.245.17",
+ "url": "https://gather-moisture-entity-linked.trycloudflare.com",
+ "egressIp": "20.14.214.38",
  "port": 3030,
- "started": 1794570742,
+ "started": 1794573233,
  "job": "ownhost-combo1"
 }
