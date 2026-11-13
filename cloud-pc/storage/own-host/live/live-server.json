@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://compounds-short-objects-hip.trycloudflare.com",
+ "url": "https://dealt-assess-cattle-detected.trycloudflare.com",
  "egressIp": "20.221.61.91",
  "port": 11470,
- "started": 1794546889,
+ "started": 1794547452,
  "job": "ownhost-combo1"
 }
