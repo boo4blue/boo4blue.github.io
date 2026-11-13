@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://mustang-remind-welcome-joyce.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://laptops-manhattan-slide-vital.trycloudflare.com",
  "egressIp": "20.161.30.248",
- "port": 11470,
- "started": 1794584284,
- "job": "ownhost-combo1"
+ "started": 1794585449,
+ "job": "ownhost-server1"
 }
