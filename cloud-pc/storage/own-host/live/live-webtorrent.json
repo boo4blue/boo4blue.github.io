@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://pay-folk-means-suburban.trycloudflare.com",
- "egressIp": "4.227.135.150",
+ "url": "https://write-scratch-wav-fires.trycloudflare.com",
+ "egressIp": "4.242.61.50",
  "port": 8080,
- "started": 1794612821,
- "job": "ownhost-multi5"
+ "started": 1794614319,
+ "job": "ownhost-combo1"
 }
