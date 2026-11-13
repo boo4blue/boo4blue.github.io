@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794557354,
+ "at": 1794557362,
  "egressIp": "20.40.253.102",
  "own": {
   "base": "https://stay-segments-correspondence-softball.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://ahead-alike-impression-ecology.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
