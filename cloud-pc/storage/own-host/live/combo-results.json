@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794532320,
+ "at": 1794532321,
  "egressIp": "4.236.173.18",
  "own": {
   "base": "https://windsor-makeup-incl-minerals.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
