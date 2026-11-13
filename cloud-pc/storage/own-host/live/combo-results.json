@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794544931,
+ "at": 1794544932,
  "egressIp": "172.185.31.211",
  "own": {
   "base": "https://intelligent-opposite-particular-himself.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
