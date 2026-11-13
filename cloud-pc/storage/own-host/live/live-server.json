@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://handbook-endangered-diagram-admit.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://participants-shirt-rim-programming.trycloudflare.com",
  "egressIp": "20.81.47.115",
- "port": 11470,
- "started": 1794534826,
- "job": "ownhost-combo1"
+ "started": 1794535987,
+ "job": "ownhost-server1"
 }
