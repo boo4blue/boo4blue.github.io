@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://fifty-mats-hung-sunny.trycloudflare.com",
- "egressIp": "172.172.87.73",
+ "url": "https://clinics-four-optimize-detector.trycloudflare.com",
+ "egressIp": "172.203.197.253",
  "port": 8080,
- "started": 1794589923,
- "job": "ownhost-multi5"
+ "started": 1794591065,
+ "job": "ownhost-combo1"
 }
