@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://burke-oxygen-msie-commodity.trycloudflare.com",
- "egressIp": "20.119.87.54",
+ "url": "https://ahead-alike-impression-ecology.trycloudflare.com",
+ "egressIp": "20.40.253.102",
  "port": 8090,
- "started": 1794554616,
+ "started": 1794557361,
  "job": "ownhost-combo1"
 }
