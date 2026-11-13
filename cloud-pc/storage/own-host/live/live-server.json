@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://trunk-wishes-pleasant-against.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://tournament-nerve-governments-mins.trycloudflare.com",
  "egressIp": "128.85.46.208",
- "port": 11470,
- "started": 1794566044,
- "job": "ownhost-combo1"
+ "started": 1794567212,
+ "job": "ownhost-server1"
 }
