@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://fred-proudly-fame-longitude.trycloudflare.com",
- "egressIp": "52.160.130.168",
+ "url": "https://daisy-absolutely-weblog-mileage.trycloudflare.com",
+ "egressIp": "20.65.156.19",
  "port": 3030,
- "started": 1794575841,
+ "started": 1794578427,
  "job": "ownhost-combo1"
 }
