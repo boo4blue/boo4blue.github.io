@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://quest-asn-reuters-reserve.trycloudflare.com",
- "egressIp": "20.168.139.16",
+ "url": "https://analyst-cases-lovers-safely.trycloudflare.com",
+ "egressIp": "52.155.48.56",
  "port": 3030,
- "started": 1794560095,
+ "started": 1794562790,
  "job": "ownhost-combo1"
 }
