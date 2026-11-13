@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://expo-influences-bone-rolled.trycloudflare.com",
- "egressIp": "20.80.95.171",
+ "url": "https://tomato-faster-planets-utc.trycloudflare.com",
+ "egressIp": "20.84.245.17",
  "port": 8080,
- "started": 1794569268,
- "job": "ownhost-multi5"
+ "started": 1794570755,
+ "job": "ownhost-combo1"
 }
