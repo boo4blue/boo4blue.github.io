@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://competitors-geographic-corn-outcomes.trycloudflare.com",
- "egressIp": "20.40.253.102",
+ "url": "https://quest-asn-reuters-reserve.trycloudflare.com",
+ "egressIp": "20.168.139.16",
  "port": 3030,
- "started": 1794557369,
+ "started": 1794560095,
  "job": "ownhost-combo1"
 }
