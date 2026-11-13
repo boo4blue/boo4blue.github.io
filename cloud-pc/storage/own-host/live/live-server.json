@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://telling-treasury-smilies-abc.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://casino-paris-pensions-ping.trycloudflare.com",
  "egressIp": "4.227.135.150",
- "port": 11470,
- "started": 1794612236,
- "job": "ownhost-combo1"
+ "started": 1794613399,
+ "job": "ownhost-server1"
 }
