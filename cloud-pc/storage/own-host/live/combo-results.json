@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794560633,
+ "at": 1794560634,
  "egressIp": "20.168.139.16",
  "own": {
   "base": "https://baltimore-idle-may-only.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
