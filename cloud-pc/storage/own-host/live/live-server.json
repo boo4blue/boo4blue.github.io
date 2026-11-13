@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
  "server": "stream-server (from-scratch)",
- "url": "https://punk-configuring-progressive-key.trycloudflare.com",
+ "url": "https://pad-lyric-olive-cite.trycloudflare.com",
  "egressIp": "20.14.214.38",
- "started": 1794574932,
+ "started": 1794575511,
  "job": "ownhost-server1"
 }
