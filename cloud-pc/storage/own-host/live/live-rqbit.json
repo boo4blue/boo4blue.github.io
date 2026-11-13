@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://daisy-absolutely-weblog-mileage.trycloudflare.com",
- "egressIp": "20.65.156.19",
+ "url": "https://benz-dear-does-sic.trycloudflare.com",
+ "egressIp": "20.124.222.94",
  "port": 3030,
- "started": 1794578427,
+ "started": 1794580964,
  "job": "ownhost-combo1"
 }
