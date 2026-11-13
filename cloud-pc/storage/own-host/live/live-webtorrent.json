@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://object-long-balance-deployment.trycloudflare.com",
+ "url": "https://outer-intensity-costs-formerly.trycloudflare.com",
  "egressIp": "4.236.173.18",
  "port": 8080,
- "started": 1794531792,
+ "started": 1794532333,
  "job": "ownhost-combo1"
 }
