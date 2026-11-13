@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794588789,
+ "at": 1794588802,
  "egressIp": "172.172.87.73",
  "own": {
   "base": "https://institutes-arms-opponents-flood.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "live noauth-http=401"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://potentially-facilitate-attractive-mechanisms.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
