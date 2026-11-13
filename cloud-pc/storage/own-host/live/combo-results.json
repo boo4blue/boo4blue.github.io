@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794601840,
+ "at": 1794601848,
  "egressIp": "20.246.62.180",
  "own": {
   "base": "https://huge-laugh-link-mississippi.trycloudflare.com",
@@ -11,8 +11,8 @@
   "state": "live noauth-http=401"
  },
  "rqbit": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://mills-disc-cas-stronger.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "webtorrent": {
   "base": "",
