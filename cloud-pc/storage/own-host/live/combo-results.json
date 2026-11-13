@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794604872,
+ "at": 1794604873,
  "egressIp": "20.9.183.55",
  "own": {
   "base": "https://rev-exact-budgets-exactly.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
