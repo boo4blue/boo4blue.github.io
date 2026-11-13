@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://rev-exact-budgets-exactly.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://supporting-watching-images-karen.trycloudflare.com",
  "egressIp": "20.9.183.55",
- "port": 11470,
- "started": 1794604871,
- "job": "ownhost-combo1"
+ "started": 1794606039,
+ "job": "ownhost-server1"
 }
