@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://ana-cells-syndication-excellence.trycloudflare.com",
- "egressIp": "20.9.183.55",
+ "url": "https://treatment-outer-patents-jersey.trycloudflare.com",
+ "egressIp": "35.174.28.24",
  "port": 8090,
- "started": 1794604322,
+ "started": 1794606827,
  "job": "ownhost-combo1"
 }
