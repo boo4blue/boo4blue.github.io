@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://revolutionary-speed-copy-lands.trycloudflare.com",
- "egressIp": "20.80.95.171",
+ "url": "https://folders-pct-telescope-bowling.trycloudflare.com",
+ "egressIp": "20.84.245.17",
  "port": 8090,
- "started": 1794568134,
+ "started": 1794570735,
  "job": "ownhost-combo1"
 }
