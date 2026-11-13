@@ -1,7 +1,7 @@
 {
  "job": "ownhost-multi5",
- "at": 1794567056,
- "egressIp": "128.85.46.208",
+ "at": 1794569269,
+ "egressIp": "20.80.95.171",
  "torrserver": {
   "base": "https://mandatory-three-contributed-bufing.trycloudflare.com",
   "proven": "yes (v2 session, sandbox-verified through tunnel; session expired)",
@@ -27,12 +27,12 @@
   "diag": "assets: https://github.com/ikatson/rqbit/releases/download/v9.1.0/rqbit-desktop-9.1.0-1.aarch64.rpm https://github.com/ikatson/rqbit/releases/download/v9.1.0/rqbit-desktop-9.1.0-1.x86_64.rpm https://github.com/ikatson/rqbit/releases/download/v9.1.0/rqbit-desktop-linux-amd64 https://github.com/ikatson/rqbit/releases/download/v9.1.0/rqbit-desktop-linux-arm64 https://github.com/ikatson/rqbit/releases/downloa | chosen: https://github.com/ikatson/rqbit/releases/download/v9.1.0/rqbit-linux-amd64 | file: /tmp/rqbit: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), static-pie linked, BuildID[sha1]=65d0a286f9ea2775c4af67e7c5613b44aae2b52a, not st | size: 28630928 | version: rqbit 9.1.0 | help: A bittorrent command line client and server.\n\nUsage: rqbit [OPTIONS] <COMMAND>\n\nCommands:\n  server       Start rqbit server with HTTP API\n  share        Create a torrent from a given path and announce it. Stateless\n  download     Download a single torrent, stateless\n  completions  Shell completions."
  },
  "webtorrent": {
-  "base": "https://watches-according-army-watches.trycloudflare.com",
-  "proven": "no (metadata never arrived within the poll window)",
+  "base": "https://expo-influences-bone-rolled.trycloudflare.com",
+  "proven": "not-attempted",
   "peers": "",
   "range": "",
   "startLatencySec": "",
-  "diag": "node: v24.22.2 | noauth-status-http=401 | wtlog:  instance at:     at emitErrorNT (node:net:2478:8)     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {   code: 'EADDRINUSE',   errno: -98,   syscall: 'listen',   address: '127.0.0.1',   port: 8080 }  Node.js v24.22.2  | last status: "
+  "diag": "node: v24.22.2 | noauth-status-http=401 | wtlog:  instance at:     at emitErrorNT (node:net:2478:8)     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {   code: 'EADDRINUSE',   errno: -98,   syscall: 'listen',   address: '127.0.0.1',   port: 8080 }  Node.js v24.22.2 "
  },
  "own": {
   "proven": "live-via-s-chain (S7, not re-run here)"
