@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794529361,
+ "at": 1794529369,
  "egressIp": "20.49.62.25",
  "own": {
   "base": "https://acquire-yrs-status-mate.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://exposed-recently-minus-subscribe.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
