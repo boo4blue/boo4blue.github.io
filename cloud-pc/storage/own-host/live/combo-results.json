@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794537374,
+ "at": 1794537375,
  "egressIp": "128.85.152.202",
  "own": {
   "base": "https://spies-presentations-interactions-standing.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
