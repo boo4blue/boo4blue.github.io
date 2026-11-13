@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794546898,
+ "at": 1794546905,
  "egressIp": "20.221.61.91",
  "own": {
   "base": "https://compounds-short-objects-hip.trycloudflare.com",
@@ -11,8 +11,8 @@
   "state": "live noauth-http=401"
  },
  "rqbit": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://journalism-processed-doctrine-across.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "webtorrent": {
   "base": "",
