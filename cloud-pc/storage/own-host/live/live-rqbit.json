@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://benz-dear-does-sic.trycloudflare.com",
- "egressIp": "20.124.222.94",
+ "url": "https://papers-hosts-surrounded-respectively.trycloudflare.com",
+ "egressIp": "20.161.30.248",
  "port": 3030,
- "started": 1794580964,
+ "started": 1794583744,
  "job": "ownhost-combo1"
 }
