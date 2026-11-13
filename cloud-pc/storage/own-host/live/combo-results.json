@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794565481,
+ "at": 1794565488,
  "egressIp": "128.85.46.208",
  "own": {
   "base": "https://throw-deutschland-respectively-general.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://organ-gras-keywords-mercury.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
