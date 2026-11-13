@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794581525,
- "egressIp": "20.124.222.94",
+ "at": 1794583730,
+ "egressIp": "20.161.30.248",
  "own": {
-  "base": "https://individuals-que-reynolds-settle.trycloudflare.com",
+  "base": "https://coordinates-happy-liberal-con.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://casey-myers-alternatives-conditions.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
