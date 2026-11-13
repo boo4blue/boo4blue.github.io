@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://bite-accomplish-tournaments-bunny.trycloudflare.com",
- "egressIp": "20.119.87.54",
+ "url": "https://competitors-geographic-corn-outcomes.trycloudflare.com",
+ "egressIp": "20.40.253.102",
  "port": 3030,
- "started": 1794554624,
+ "started": 1794557369,
  "job": "ownhost-combo1"
 }
