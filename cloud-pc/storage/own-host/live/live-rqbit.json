@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://records-athens-softball-concerts.trycloudflare.com",
- "egressIp": "172.172.87.73",
+ "url": "https://dev-mood-spam-wherever.trycloudflare.com",
+ "egressIp": "172.203.197.253",
  "port": 3030,
- "started": 1794588787,
+ "started": 1794591050,
  "job": "ownhost-combo1"
 }
