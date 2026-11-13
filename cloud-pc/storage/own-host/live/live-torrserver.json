@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://ahead-alike-impression-ecology.trycloudflare.com",
- "egressIp": "20.40.253.102",
+ "url": "https://utils-shaved-associated-functional.trycloudflare.com",
+ "egressIp": "20.168.139.16",
  "port": 8090,
- "started": 1794557361,
+ "started": 1794560087,
  "job": "ownhost-combo1"
 }
