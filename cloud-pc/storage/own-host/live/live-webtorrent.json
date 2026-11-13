@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://productive-circular-multimedia-heart.trycloudflare.com",
- "egressIp": "4.246.63.111",
+ "url": "https://motel-luther-inspection-polls.trycloudflare.com",
+ "egressIp": "20.49.62.25",
  "port": 8080,
- "started": 1794528045,
- "job": "ownhost-multi5"
+ "started": 1794529388,
+ "job": "ownhost-combo1"
 }
