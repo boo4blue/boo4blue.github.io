@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://journalism-processed-doctrine-across.trycloudflare.com",
- "egressIp": "20.221.61.91",
+ "url": "https://measures-modular-stationery-isbn.trycloudflare.com",
+ "egressIp": "64.236.140.198",
  "port": 3030,
- "started": 1794546904,
+ "started": 1794549426,
  "job": "ownhost-combo1"
 }
