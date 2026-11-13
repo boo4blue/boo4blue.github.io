@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794536829,
+ "at": 1794536842,
  "egressIp": "128.85.152.202",
  "own": {
   "base": "https://deposits-advancement-punch-breeds.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "live noauth-http=401"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://track-hong-silence-dress.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
