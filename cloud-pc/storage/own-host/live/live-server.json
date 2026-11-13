@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://armed-york-agent-src.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://punk-configuring-progressive-key.trycloudflare.com",
  "egressIp": "20.14.214.38",
- "port": 11470,
- "started": 1794573770,
- "job": "ownhost-combo1"
+ "started": 1794574932,
+ "job": "ownhost-server1"
 }
