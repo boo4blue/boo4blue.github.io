@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794549427,
+ "at": 1794549440,
  "egressIp": "64.236.140.198",
  "own": {
   "base": "https://eagle-takes-tcp-helen.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "live noauth-http=401"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://villas-rpg-greatest-finally.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
