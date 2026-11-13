@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://spirit-hayes-optics-receives.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://folks-dana-refined-might.trycloudflare.com",
  "egressIp": "51.57.86.128",
- "port": 11470,
- "started": 1794599742,
- "job": "ownhost-combo1"
+ "started": 1794600923,
+ "job": "ownhost-server1"
 }
