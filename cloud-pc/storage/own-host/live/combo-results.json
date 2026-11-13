@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794536813,
+ "at": 1794536821,
  "egressIp": "128.85.152.202",
  "own": {
   "base": "https://deposits-advancement-punch-breeds.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://surrounded-drove-linux-dialog.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
