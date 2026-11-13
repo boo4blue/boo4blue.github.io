@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794541906,
+ "at": 1794541913,
  "egressIp": "4.150.181.243",
  "own": {
   "base": "https://drug-celebrity-yields-ever.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://pentium-performing-nails-observer.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
