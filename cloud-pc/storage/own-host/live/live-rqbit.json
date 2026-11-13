@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://medium-specification-robert-visited.trycloudflare.com",
- "egressIp": "128.85.152.202",
+ "url": "https://initial-flags-consult-recently.trycloudflare.com",
+ "egressIp": "57.154.4.162",
  "port": 3030,
- "started": 1794536827,
+ "started": 1794539436,
  "job": "ownhost-combo1"
 }
