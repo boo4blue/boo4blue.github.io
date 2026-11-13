@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794557904,
+ "at": 1794557905,
  "egressIp": "20.40.253.102",
  "own": {
   "base": "https://distances-flexibility-promote-representatives.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
