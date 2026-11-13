@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794557906,
+ "at": 1794557919,
  "egressIp": "20.40.253.102",
  "own": {
   "base": "https://distances-flexibility-promote-representatives.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://which-online-geometry-affecting.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
