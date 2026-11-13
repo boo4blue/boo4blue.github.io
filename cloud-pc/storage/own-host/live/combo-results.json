@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794532322,
+ "at": 1794532335,
  "egressIp": "4.236.173.18",
  "own": {
   "base": "https://windsor-makeup-incl-minerals.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://outer-intensity-costs-formerly.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
