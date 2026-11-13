@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794578409,
+ "at": 1794578420,
  "egressIp": "20.65.156.19",
  "own": {
   "base": "https://wallace-purple-cornell-poems.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://flu-beginners-representations-practices.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
