@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://control-children-exit-picked.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://grande-iso-divine-customers.trycloudflare.com",
  "egressIp": "20.80.95.171",
- "port": 11470,
- "started": 1794568682,
- "job": "ownhost-combo1"
+ "started": 1794569836,
+ "job": "ownhost-server1"
 }
