@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://ian-his-producers-necessarily.trycloudflare.com",
- "egressIp": "20.246.62.180",
- "started": 1794603556,
- "job": "ownhost-server1"
+ "url": "https://hire-replication-addresses-particularly.trycloudflare.com",
+ "egressIp": "20.9.183.55",
+ "port": 11470,
+ "started": 1794604314,
+ "job": "ownhost-combo1"
 }
