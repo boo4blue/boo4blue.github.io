@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794614292,
+ "at": 1794614300,
  "egressIp": "4.242.61.50",
  "own": {
   "base": "https://faq-artificial-titled-recommendation.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://jvc-installing-parameters-int.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
