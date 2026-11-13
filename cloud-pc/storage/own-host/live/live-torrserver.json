@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://described-pine-plastic-restore.trycloudflare.com",
- "egressIp": "20.81.47.115",
+ "url": "https://surrounded-drove-linux-dialog.trycloudflare.com",
+ "egressIp": "128.85.152.202",
  "port": 8090,
- "started": 1794534273,
+ "started": 1794536819,
  "job": "ownhost-combo1"
 }
