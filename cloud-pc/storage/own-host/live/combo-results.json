@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794531763,
+ "at": 1794531773,
  "egressIp": "4.236.173.18",
  "own": {
   "base": "https://pot-match-hence-leaves.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://beta-enhancing-convinced-thee.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
