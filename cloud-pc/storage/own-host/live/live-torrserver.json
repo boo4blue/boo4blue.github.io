@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://angeles-beginning-rapidly-paste.trycloudflare.com",
- "egressIp": "52.160.130.168",
+ "url": "https://flu-beginners-representations-practices.trycloudflare.com",
+ "egressIp": "20.65.156.19",
  "port": 8090,
- "started": 1794575833,
+ "started": 1794578418,
  "job": "ownhost-combo1"
 }
