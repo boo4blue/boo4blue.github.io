@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://individuals-que-reynolds-settle.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://washing-secondary-control-vaccine.trycloudflare.com",
  "egressIp": "20.124.222.94",
- "port": 11470,
- "started": 1794581507,
- "job": "ownhost-combo1"
+ "started": 1794582677,
+ "job": "ownhost-server1"
 }
