@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794568683,
+ "at": 1794568684,
  "egressIp": "20.80.95.171",
  "own": {
   "base": "https://control-children-exit-picked.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
