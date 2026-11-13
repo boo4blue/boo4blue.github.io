@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794566065,
- "egressIp": "128.85.46.208",
+ "at": 1794568127,
+ "egressIp": "20.80.95.171",
  "own": {
-  "base": "https://trunk-wishes-pleasant-against.trycloudflare.com",
+  "base": "https://bean-super-frog-acute.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://cedar-drivers-honolulu-notices.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
