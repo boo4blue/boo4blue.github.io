@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://denied-compound-med-ware.trycloudflare.com",
- "egressIp": "20.81.47.115",
+ "url": "https://medium-specification-robert-visited.trycloudflare.com",
+ "egressIp": "128.85.152.202",
  "port": 3030,
- "started": 1794534283,
+ "started": 1794536827,
  "job": "ownhost-combo1"
 }
