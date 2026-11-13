@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794549970,
+ "at": 1794549972,
  "egressIp": "64.236.140.198",
  "own": {
   "base": "https://talked-fisher-bosnia-justice.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
