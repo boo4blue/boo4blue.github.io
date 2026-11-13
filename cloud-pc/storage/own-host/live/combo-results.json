@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794547454,
+ "at": 1794547455,
  "egressIp": "20.221.61.91",
  "own": {
   "base": "https://dealt-assess-cattle-detected.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
