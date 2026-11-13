@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://soma-ram-bunny-differ.trycloudflare.com",
- "egressIp": "51.57.86.128",
+ "url": "https://notifications-specified-birth-assembly.trycloudflare.com",
+ "egressIp": "20.246.62.180",
  "port": 8080,
- "started": 1794600339,
- "job": "ownhost-multi5"
+ "started": 1794601860,
+ "job": "ownhost-combo1"
 }
