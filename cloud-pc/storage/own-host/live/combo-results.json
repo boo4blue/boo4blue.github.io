@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794583746,
+ "at": 1794583758,
  "egressIp": "20.161.30.248",
  "own": {
   "base": "https://coordinates-happy-liberal-con.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "live noauth-http=401"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://difference-chances-fort-lie.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
