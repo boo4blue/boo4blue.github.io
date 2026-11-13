@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794539422,
+ "at": 1794539430,
  "egressIp": "57.154.4.162",
  "own": {
   "base": "https://mercy-sound-chef-sample.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://factor-bristol-boys-ensures.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
