@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794555171,
+ "at": 1794555186,
  "egressIp": "20.119.87.54",
  "own": {
   "base": "https://officer-partially-transactions-tamil.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://fuji-opposition-males-speakers.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
