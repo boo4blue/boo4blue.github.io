@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://despite-quotes-carl-ultimately.trycloudflare.com",
- "egressIp": "20.84.245.17",
- "started": 1794572459,
- "job": "ownhost-server1"
+ "url": "https://generated-federal-phi-continuing.trycloudflare.com",
+ "egressIp": "20.14.214.38",
+ "port": 11470,
+ "started": 1794573217,
+ "job": "ownhost-combo1"
 }
