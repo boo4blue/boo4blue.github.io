@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://serial-learning-sharing-fax.trycloudflare.com",
- "egressIp": "64.236.140.198",
+ "url": "https://thoughts-keith-successfully-kissing.trycloudflare.com",
+ "egressIp": "4.242.27.82",
  "port": 8090,
- "started": 1794549418,
+ "started": 1794551995,
  "job": "ownhost-combo1"
 }
