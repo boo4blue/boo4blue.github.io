@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://barcelona-obtained-slowly-dominant.trycloudflare.com",
- "egressIp": "128.85.46.208",
- "started": 1794567790,
- "job": "ownhost-server1"
+ "url": "https://bean-super-frog-acute.trycloudflare.com",
+ "egressIp": "20.80.95.171",
+ "port": 11470,
+ "started": 1794568125,
+ "job": "ownhost-combo1"
 }
