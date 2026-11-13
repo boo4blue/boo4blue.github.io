@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://securities-jar-envelope-informed.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://theorem-borough-medal-drilling.trycloudflare.com",
  "egressIp": "52.160.130.168",
- "port": 11470,
- "started": 1794576382,
- "job": "ownhost-combo1"
+ "started": 1794577547,
+ "job": "ownhost-server1"
 }
