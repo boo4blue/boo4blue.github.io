@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://seeks-and-irc-departure.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://permissions-python-concerning-reducing.trycloudflare.com",
  "egressIp": "4.246.63.111",
- "port": 11470,
- "started": 1794527455,
- "job": "ownhost-combo1"
+ "started": 1794528622,
+ "job": "ownhost-server1"
 }
