@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794609123,
+ "at": 1794609654,
  "egressIp": "145.132.91.173",
  "own": {
-  "base": "https://plasma-helps-mechanisms-really.trycloudflare.com",
+  "base": "https://chapel-strategies-ought-weight.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "https://singer-casa-categories-terminals.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://email-passion-grain-lights.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://jazz-tribunal-stack-cycles.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
