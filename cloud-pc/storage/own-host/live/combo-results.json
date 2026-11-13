@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794551988,
+ "at": 1794551996,
  "egressIp": "4.242.27.82",
  "own": {
   "base": "https://names-explicit-mother-divisions.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://thoughts-keith-successfully-kissing.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
