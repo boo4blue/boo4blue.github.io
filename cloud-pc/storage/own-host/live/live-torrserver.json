@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://exposed-recently-minus-subscribe.trycloudflare.com",
- "egressIp": "20.49.62.25",
+ "url": "https://beta-enhancing-convinced-thee.trycloudflare.com",
+ "egressIp": "4.236.173.18",
  "port": 8090,
- "started": 1794529367,
+ "started": 1794531772,
  "job": "ownhost-combo1"
 }
