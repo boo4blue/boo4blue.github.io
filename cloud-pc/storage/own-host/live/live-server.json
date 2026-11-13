@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://offers-formal-binding-reductions.trycloudflare.com",
- "egressIp": "20.9.183.55",
- "started": 1794606618,
- "job": "ownhost-server1"
+ "url": "https://considered-dolls-whether-coupons.trycloudflare.com",
+ "egressIp": "35.174.28.24",
+ "port": 11470,
+ "started": 1794606819,
+ "job": "ownhost-combo1"
 }
