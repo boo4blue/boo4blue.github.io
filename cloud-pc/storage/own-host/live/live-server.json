@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://bean-super-frog-acute.trycloudflare.com",
+ "url": "https://control-children-exit-picked.trycloudflare.com",
  "egressIp": "20.80.95.171",
  "port": 11470,
- "started": 1794568125,
+ "started": 1794568682,
  "job": "ownhost-combo1"
 }
