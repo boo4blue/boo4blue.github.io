@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794594177,
+ "at": 1794594179,
  "egressIp": "20.119.86.124",
  "own": {
   "base": "https://influence-appropriations-expected-physician.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
