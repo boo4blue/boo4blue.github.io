@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794584300,
- "egressIp": "20.161.30.248",
+ "at": 1794586318,
+ "egressIp": "13.71.228.41",
  "own": {
-  "base": "https://mustang-remind-welcome-joyce.trycloudflare.com",
+  "base": "https://into-conditional-plans-towns.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://drawn-stocks-sci-drive.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
