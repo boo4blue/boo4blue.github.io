@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://provinces-alfred-crossword-fairfield.trycloudflare.com",
- "egressIp": "4.242.27.82",
- "started": 1794554288,
- "job": "ownhost-server1"
+ "url": "https://automotive-topic-tablet-academics.trycloudflare.com",
+ "egressIp": "20.119.87.54",
+ "port": 11470,
+ "started": 1794554608,
+ "job": "ownhost-combo1"
 }
