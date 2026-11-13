@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794554609,
+ "at": 1794554617,
  "egressIp": "20.119.87.54",
  "own": {
   "base": "https://automotive-topic-tablet-academics.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://burke-oxygen-msie-commodity.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
