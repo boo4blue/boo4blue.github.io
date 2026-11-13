@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794604316,
+ "at": 1794604323,
  "egressIp": "20.9.183.55",
  "own": {
   "base": "https://hire-replication-addresses-particularly.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://ana-cells-syndication-excellence.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
