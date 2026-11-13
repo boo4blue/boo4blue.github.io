@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://flip-half-optimal-having.trycloudflare.com",
- "egressIp": "20.65.156.19",
+ "url": "https://trivia-timber-prior-mazda.trycloudflare.com",
+ "egressIp": "20.124.222.94",
  "port": 8080,
- "started": 1794579570,
- "job": "ownhost-multi5"
+ "started": 1794580978,
+ "job": "ownhost-combo1"
 }
