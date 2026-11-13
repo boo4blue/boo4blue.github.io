@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794591596,
+ "at": 1794591597,
  "egressIp": "172.203.197.253",
  "own": {
   "base": "https://overall-reseller-succeed-depending.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
