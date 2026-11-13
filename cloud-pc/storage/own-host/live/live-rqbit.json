@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://milton-loan-admitted-sub.trycloudflare.com",
- "egressIp": "35.174.28.24",
+ "url": "https://email-passion-grain-lights.trycloudflare.com",
+ "egressIp": "145.132.91.173",
  "port": 3030,
- "started": 1794606835,
+ "started": 1794609109,
  "job": "ownhost-combo1"
 }
