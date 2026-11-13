@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794609655,
+ "at": 1794609656,
  "egressIp": "145.132.91.173",
  "own": {
   "base": "https://chapel-strategies-ought-weight.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
