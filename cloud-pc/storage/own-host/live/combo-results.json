@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794542465,
+ "at": 1794542466,
  "egressIp": "4.150.181.243",
  "own": {
   "base": "https://petite-syndication-cocktail-mpegs.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
