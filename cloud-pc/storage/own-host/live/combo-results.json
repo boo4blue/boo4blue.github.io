@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794532335,
- "egressIp": "4.236.173.18",
+ "at": 1794534266,
+ "egressIp": "20.81.47.115",
  "own": {
-  "base": "https://windsor-makeup-incl-minerals.trycloudflare.com",
+  "base": "https://reflects-yard-mtv-silk.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://outer-intensity-costs-formerly.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
