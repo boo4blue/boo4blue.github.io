@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://demands-law-sole-holdings.trycloudflare.com",
- "egressIp": "52.160.130.168",
- "started": 1794578125,
- "job": "ownhost-server1"
+ "url": "https://wallace-purple-cornell-poems.trycloudflare.com",
+ "egressIp": "20.65.156.19",
+ "port": 11470,
+ "started": 1794578407,
+ "job": "ownhost-combo1"
 }
