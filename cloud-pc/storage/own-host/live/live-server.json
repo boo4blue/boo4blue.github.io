@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
  "server": "stream-server (from-scratch)",
- "url": "https://folks-dana-refined-might.trycloudflare.com",
+ "url": "https://sims-shaved-fairfield-sally.trycloudflare.com",
  "egressIp": "51.57.86.128",
- "started": 1794600923,
+ "started": 1794601502,
  "job": "ownhost-server1"
 }
