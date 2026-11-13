@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794547456,
+ "at": 1794547469,
  "egressIp": "20.221.61.91",
  "own": {
   "base": "https://dealt-assess-cattle-detected.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://ipaq-jenny-latin-functionality.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
