@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://ooo-java-villas-coupons.trycloudflare.com",
- "egressIp": "13.71.228.41",
- "started": 1794588047,
- "job": "ownhost-server1"
+ "url": "https://institutes-arms-opponents-flood.trycloudflare.com",
+ "egressIp": "172.172.87.73",
+ "port": 11470,
+ "started": 1794588768,
+ "job": "ownhost-combo1"
 }
