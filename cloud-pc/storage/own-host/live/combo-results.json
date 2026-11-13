@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794593640,
+ "at": 1794593651,
  "egressIp": "20.119.86.124",
  "own": {
   "base": "https://pressing-percent-beauty-causes.trycloudflare.com",
@@ -11,8 +11,8 @@
   "state": "live noauth-http=401"
  },
  "rqbit": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://roses-arrival-nearly-toilet.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "webtorrent": {
   "base": "",
