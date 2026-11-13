@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://matched-rotary-rely-reader.trycloudflare.com",
- "egressIp": "4.227.135.150",
+ "url": "https://jvc-installing-parameters-int.trycloudflare.com",
+ "egressIp": "4.242.61.50",
  "port": 8090,
- "started": 1794611681,
+ "started": 1794614298,
  "job": "ownhost-combo1"
 }
