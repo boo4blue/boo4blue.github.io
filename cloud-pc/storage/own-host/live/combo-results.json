@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794529369,
+ "at": 1794529377,
  "egressIp": "20.49.62.25",
  "own": {
   "base": "https://acquire-yrs-status-mate.trycloudflare.com",
@@ -11,8 +11,8 @@
   "state": "live noauth-http=401"
  },
  "rqbit": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://squad-christ-around-shaw.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "webtorrent": {
   "base": "",
