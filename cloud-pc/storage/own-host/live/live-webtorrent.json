@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://vehicle-with-alive-binary.trycloudflare.com",
+ "url": "https://jury-curve-shelf-valium.trycloudflare.com",
  "egressIp": "64.236.140.198",
  "port": 8080,
- "started": 1794549983,
- "job": "ownhost-combo1"
+ "started": 1794550553,
+ "job": "ownhost-multi5"
 }
