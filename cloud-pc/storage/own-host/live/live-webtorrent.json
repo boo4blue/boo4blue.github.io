@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://stickers-arrow-chuck-wet.trycloudflare.com",
- "egressIp": "20.168.139.16",
+ "url": "https://desert-immune-dynamic-water.trycloudflare.com",
+ "egressIp": "52.155.48.56",
  "port": 8080,
- "started": 1794561219,
- "job": "ownhost-multi5"
+ "started": 1794562806,
+ "job": "ownhost-combo1"
 }
