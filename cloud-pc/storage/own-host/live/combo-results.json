@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794606837,
+ "at": 1794606849,
  "egressIp": "35.174.28.24",
  "own": {
   "base": "https://considered-dolls-whether-coupons.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "live noauth-http=401"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://pulling-spokesman-decor-plastic.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
