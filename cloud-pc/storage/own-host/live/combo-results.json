@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794576385,
+ "at": 1794576386,
  "egressIp": "52.160.130.168",
  "own": {
   "base": "https://securities-jar-envelope-informed.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
