@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794534266,
+ "at": 1794534274,
  "egressIp": "20.81.47.115",
  "own": {
   "base": "https://reflects-yard-mtv-silk.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://described-pine-plastic-restore.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
