@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794560080,
+ "at": 1794560088,
  "egressIp": "20.168.139.16",
  "own": {
   "base": "https://top-wave-guitar-dimensions.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://utils-shaved-associated-functional.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
