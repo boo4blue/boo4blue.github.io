@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://andreas-silver-facility-lodge.trycloudflare.com",
- "egressIp": "20.246.62.180",
+ "url": "https://ana-cells-syndication-excellence.trycloudflare.com",
+ "egressIp": "20.9.183.55",
  "port": 8090,
- "started": 1794601839,
+ "started": 1794604322,
  "job": "ownhost-combo1"
 }
