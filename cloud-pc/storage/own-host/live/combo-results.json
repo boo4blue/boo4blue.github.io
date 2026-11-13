@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794566051,
+ "at": 1794566065,
  "egressIp": "128.85.46.208",
  "own": {
   "base": "https://trunk-wishes-pleasant-against.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://cedar-drivers-honolulu-notices.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
