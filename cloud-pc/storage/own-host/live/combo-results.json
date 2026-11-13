@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794529933,
- "egressIp": "20.49.62.25",
+ "at": 1794531763,
+ "egressIp": "4.236.173.18",
  "own": {
-  "base": "https://brunette-skill-characteristics-biggest.trycloudflare.com",
+  "base": "https://pot-match-hence-leaves.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://passes-mph-appropriations-menu.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
