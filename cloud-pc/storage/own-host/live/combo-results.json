@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794597058,
+ "at": 1794597059,
  "egressIp": "172.183.89.130",
  "own": {
   "base": "https://ball-hero-fisher-photographs.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
