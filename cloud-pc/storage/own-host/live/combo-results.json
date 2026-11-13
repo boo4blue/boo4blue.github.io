@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794583730,
+ "at": 1794583737,
  "egressIp": "20.161.30.248",
  "own": {
   "base": "https://coordinates-happy-liberal-con.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://blacks-pledge-maps-cork.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
