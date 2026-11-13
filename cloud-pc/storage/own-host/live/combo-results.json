@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794580957,
+ "at": 1794580967,
  "egressIp": "20.124.222.94",
  "own": {
   "base": "https://hall-starter-annotation-bright.trycloudflare.com",
@@ -11,8 +11,8 @@
   "state": "live noauth-http=401"
  },
  "rqbit": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://benz-dear-does-sic.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "webtorrent": {
   "base": "",
