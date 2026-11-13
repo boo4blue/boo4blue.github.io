@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794571297,
+ "at": 1794571299,
  "egressIp": "20.84.245.17",
  "own": {
   "base": "https://advise-prints-floyd-exec.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
