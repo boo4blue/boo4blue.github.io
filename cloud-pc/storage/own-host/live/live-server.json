@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://talked-fisher-bosnia-justice.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://timing-realize-loving-repairs.trycloudflare.com",
  "egressIp": "64.236.140.198",
- "port": 11470,
- "started": 1794549968,
- "job": "ownhost-combo1"
+ "started": 1794551131,
+ "job": "ownhost-server1"
 }
