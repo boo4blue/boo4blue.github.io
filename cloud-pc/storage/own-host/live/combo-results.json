@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794586877,
+ "at": 1794586878,
  "egressIp": "13.71.228.41",
  "own": {
   "base": "https://strange-issued-controversial-tvs.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
