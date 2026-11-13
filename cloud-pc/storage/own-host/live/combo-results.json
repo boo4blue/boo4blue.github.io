@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794609669,
- "egressIp": "145.132.91.173",
+ "at": 1794611675,
+ "egressIp": "4.227.135.150",
  "own": {
-  "base": "https://chapel-strategies-ought-weight.trycloudflare.com",
+  "base": "https://trivia-visited-likely-oval.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://compact-hook-kyle-distinguished.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
