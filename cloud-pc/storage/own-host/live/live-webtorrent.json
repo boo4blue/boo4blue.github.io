@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://allergy-yes-mazda-indoor.trycloudflare.com",
- "egressIp": "134.33.77.208",
+ "url": "https://compare-animal-election-occupations.trycloudflare.com",
+ "egressIp": "20.184.150.252",
  "port": 8080,
- "started": 1794681737,
- "job": "ownhost-multi5"
+ "started": 1794683076,
+ "job": "ownhost-combo1"
 }
