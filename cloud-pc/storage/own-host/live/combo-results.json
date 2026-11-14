@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794631035,
- "egressIp": "4.236.166.145",
+ "at": 1794631852,
+ "egressIp": "52.248.45.160",
  "own": {
-  "base": "https://starsmerchant-aerospace-record-jose.trycloudflare.com",
+  "base": "https://complicated-copies-attempting-volleyball.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://personalized-broker-closure-manner.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
