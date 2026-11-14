@@ -1,40 +1,40 @@
-11-14 04:21:43.992   521   538 I ActivityTaskManager: Displayed com.facebook.aura/.main.AuraMainActivity for user 0: +7s377ms
-11-14 04:21:43.993   521   538 I ActivityTaskManager: Fully drawn com.facebook.aura/.main.AuraMainActivity: +7s399ms
-11-14 04:21:43.993   521   538 W system_server: Failed to determine oat file name for dex location /data/app/~~wJC5riXhqgjp8YiYpfXBVg==/com.facebook.aura-sigP-sQEN6117KgH1VBG2A==/base.apk: Dalvik cache directory does not exist
-11-14 04:21:43.993   521   538 W ziparchive: Unable to open '/data/app/~~wJC5riXhqgjp8YiYpfXBVg==/com.facebook.aura-sigP-sQEN6117KgH1VBG2A==/base.dm': No such file or directory
-11-14 04:21:44.150  3839  3972 W ProcessAnrErrorMonitor: Starting process monitor checks for process 'com.facebook.aura'
-11-14 04:21:44.336   521  2251 I ImeTracker: com.facebook.aura:e0e1c6f8: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
-11-14 04:21:44.336   521  2251 I ImeTracker: com.facebook.aura:e0e1c6f8: onCancelled at PHASE_SERVER_SHOULD_HIDE
-11-14 04:21:44.348  1553  1553 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.facebook.aura fieldId=0 fieldName=null extras=null}, false)
-11-14 04:21:44.491  1730  2619 W SearchServiceCore: Abort, client detached.
-11-14 04:21:44.562   521  2749 D CoreBackPreview: Window{b453c47 u0 Splash Screen com.facebook.aura}: Setting back callback null
-11-14 04:21:44.580   521  2519 W InputManager-JNI: Input channel object 'b453c47 Splash Screen com.facebook.aura (client)' was disposed without first being removed with the input manager!
-11-14 04:21:44.982  1730  2619 W SearchServiceCore: Abort, client detached.
-11-14 04:21:45.000  1730  2619 W SearchServiceCore: Abort, client detached.
-11-14 04:21:45.015  1730  2619 W SearchServiceCore: Abort, client detached.
-11-14 04:21:45.017  1730  2619 W SearchServiceCore: Abort, client detached.
-11-14 04:21:45.769  1730  2619 W SearchServiceCore: Abort, client detached.
-11-14 04:21:45.771  1730  2619 W SearchServiceCore: Abort, client detached.
-11-14 04:21:45.771  1730  2619 W SearchServiceCore: Abort, client detached.
-11-14 04:21:45.805  1039  1072 V OnDeviceRecognitionPreferenceController: Recognition service not in the same package as the default on-device recognizer: com.facebook.aura/com.facebook.aura.assist.HatchRecognitionService.
-11-14 04:21:46.624   521  2384 I CredManSysService: starting executeGetCredential with callingPackage: com.facebook.aura
-11-14 04:21:47.031  1730  2619 W SearchServiceCore: Abort, client detached.
-11-14 04:21:47.032  1730  2619 W SearchServiceCore: Abort, client detached.
-11-14 04:21:48.222  3839  3886 I m.facebook.aura: Background concurrent copying GC freed 756704(24MB) AllocSpace objects, 70(5240KB) LOS objects, 49% free, 10MB/21MB, paused 394us,15us total 689.704ms
-11-14 04:21:48.383  1648  1648 I AiAiEcho: AppFetcherImplV2 updateApps package:[com.facebook.aura], userId:[0], reason:[package is added.].
-11-14 04:21:48.455  1730  2619 W SearchServiceCore: Abort, client detached.
-11-14 04:21:48.455  1730  2619 W SearchServiceCore: Abort, client detached.
-11-14 04:21:48.718  3839  4384 D ProfileInstaller: Installing profile for com.facebook.aura
-11-14 04:21:49.264  1648  1648 I AiAiEcho: AppFetcherImpl onPackageChanged com.facebook.aura.
-11-14 04:21:49.265  1648  3347 I AiAiEcho: AppIndexer Package:[com.facebook.aura] UserProfile:[0] Enabled:[true].
-11-14 04:21:49.265  1648  3347 I AiAiEcho: AppFetcherImplV2 updateApps package:[com.facebook.aura], userId:[0], reason:[package is updated.].
-11-14 04:21:51.701  1461  4347 I BlockstoreStorage: Clearing Blockstore Data for package com.facebook.aura [CONTEXT service_id=258 ]
-11-14 04:21:53.916  4595  4595 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-11-14 04:21:53.939  4595  4595 I AndroidRuntime: Using default boot image
-11-14 04:21:53.939  4595  4595 I AndroidRuntime: Leaving lock profiling enabled
-11-14 04:21:54.342  4595  4595 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-11-14 04:21:55.147  1730  2619 W SearchServiceCore: Abort, client detached.
-11-14 04:21:55.147  1730  2619 W SearchServiceCore: Abort, client detached.
-11-14 04:21:55.679  4595  4595 D AndroidRuntime: Shutting down VM
-11-14 04:21:56.287  1730  2619 W SearchServiceCore: Abort, client detached.
-11-14 04:21:56.287  1730  2619 W SearchServiceCore: Abort, client detached.
+11-14 04:48:36.930  1605  3152 I AiAiEcho: AppIndexer Package:[com.facebook.aura] UserProfile:[0] Enabled:[true].
+11-14 04:48:36.931  1605  3152 I AiAiEcho: AppFetcherImplV2 updateApps package:[com.facebook.aura], userId:[0], reason:[package is updated.].
+11-14 04:48:37.213  1769  2786 W SearchServiceCore: Abort, client detached.
+11-14 04:48:37.213  1769  2786 W SearchServiceCore: Abort, client detached.
+11-14 04:48:37.213  1769  2786 W SearchServiceCore: Abort, client detached.
+11-14 04:48:37.214  1769  2786 W SearchServiceCore: Abort, client detached.
+11-14 04:48:37.214  1769  2786 W SearchServiceCore: Abort, client detached.
+11-14 04:48:37.339   525   542 W system_server: Failed to determine oat file name for dex location /data/app/~~f_Ir52XkSKhvD-vEmdJ8Rw==/com.facebook.aura-VjWFR05QIsPGpLC-7j-kdw==/base.apk: Dalvik cache directory does not exist
+11-14 04:48:37.378   525   542 W ziparchive: Unable to open '/data/app/~~f_Ir52XkSKhvD-vEmdJ8Rw==/com.facebook.aura-VjWFR05QIsPGpLC-7j-kdw==/base.dm': No such file or directory
+11-14 04:48:37.381   525   542 I ActivityTaskManager: Displayed com.facebook.aura/.main.AuraMainActivity for user 0: +5s994ms
+11-14 04:48:37.381   525   542 I ActivityTaskManager: Fully drawn com.facebook.aura/.main.AuraMainActivity: +5s994ms
+11-14 04:48:37.381   525   542 W system_server: Failed to determine oat file name for dex location /data/app/~~f_Ir52XkSKhvD-vEmdJ8Rw==/com.facebook.aura-VjWFR05QIsPGpLC-7j-kdw==/base.apk: Dalvik cache directory does not exist
+11-14 04:48:37.381   525   542 W ziparchive: Unable to open '/data/app/~~f_Ir52XkSKhvD-vEmdJ8Rw==/com.facebook.aura-VjWFR05QIsPGpLC-7j-kdw==/base.dm': No such file or directory
+11-14 04:48:37.669  3914  4005 W ProcessAnrErrorMonitor: Starting process monitor checks for process 'com.facebook.aura'
+11-14 04:48:37.711   525  2659 I ImeTracker: com.facebook.aura:9ff154da: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+11-14 04:48:37.713   525  2659 I ImeTracker: com.facebook.aura:9ff154da: onCancelled at PHASE_SERVER_SHOULD_HIDE
+11-14 04:48:37.746  1538  1538 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.facebook.aura fieldId=0 fieldName=null extras=null}, false)
+11-14 04:48:37.972   525  2659 W InputManager-JNI: Input channel object 'ffd5ab4 Splash Screen com.facebook.aura (client)' was disposed without first being removed with the input manager!
+11-14 04:48:38.066   525  2659 D ConnectivityService: requestNetwork for uid/pid:10192/3914 activeRequest: null callbackRequest: 111 [NetworkRequest [ REQUEST id=112, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 10192 RequestorPkg: com.facebook.aura UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+11-14 04:48:38.100   525   749 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=112, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 10192 RequestorPkg: com.facebook.aura UnderlyingNetworks: Null] ]
+11-14 04:48:38.101   525   749 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=112, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 10192 RequestorPkg: com.facebook.aura UnderlyingNetworks: Null] ]
+11-14 04:48:38.101   525   749 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=112, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 10192 RequestorPkg: com.facebook.aura UnderlyingNetworks: Null] ]
+11-14 04:48:38.101   525   749 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=112, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 10192 RequestorPkg: com.facebook.aura UnderlyingNetworks: Null] ]
+11-14 04:48:40.205   525  2251 I CredManSysService: starting executeGetCredential with callingPackage: com.facebook.aura
+11-14 04:48:41.107  3914  4518 D ProfileInstaller: Installing profile for com.facebook.aura
+11-14 04:48:42.156  3914  3932 I m.facebook.aura: Background concurrent copying GC freed 972314(28MB) AllocSpace objects, 127(7184KB) LOS objects, 49% free, 10MB/21MB, paused 36us,12us total 450.564ms
+11-14 04:48:44.794  1769  2786 W SearchServiceCore: Abort, client detached.
+11-14 04:48:44.797  1769  2786 W SearchServiceCore: Abort, client detached.
+11-14 04:48:44.951  1431  4503 I BlockstoreStorage: Clearing Blockstore Data for package com.facebook.aura [CONTEXT service_id=258 ]
+11-14 04:48:46.143  1769  2786 W SearchServiceCore: Abort, client detached.
+11-14 04:48:46.143  1769  2786 W SearchServiceCore: Abort, client detached.
+11-14 04:48:47.487  4675  4675 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+11-14 04:48:47.507  4675  4675 I AndroidRuntime: Using default boot image
+11-14 04:48:47.507  4675  4675 I AndroidRuntime: Leaving lock profiling enabled
+11-14 04:48:47.748  4675  4675 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+11-14 04:48:47.872  1769  2786 W SearchServiceCore: Abort, client detached.
+11-14 04:48:47.872  1769  2786 W SearchServiceCore: Abort, client detached.
+11-14 04:48:48.950  4675  4675 D AndroidRuntime: Shutting down VM
+11-14 04:48:49.604  1769  2786 W SearchServiceCore: Abort, client detached.
+11-14 04:48:49.604  1769  2786 W SearchServiceCore: Abort, client detached.
