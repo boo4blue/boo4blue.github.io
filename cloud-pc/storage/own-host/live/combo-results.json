@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794683560,
+ "at": 1794683623,
  "egressIp": "20.184.150.252",
  "own": {
   "base": "https://movers-publishers-promised-postcards.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
