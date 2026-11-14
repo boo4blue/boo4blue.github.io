@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794622308,
+ "at": 1794622321,
  "egressIp": "3.41.210.122",
  "own": {
   "base": "https://lancaster-vip-specializing-composite.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://owner-amended-lovers-pics.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
