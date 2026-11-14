@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://libs-curious-wet-attempting.trycloudflare.com",
- "egressIp": "132.196.35.130",
+ "url": "https://connected-radio-results-orange.trycloudflare.com",
+ "egressIp": "20.169.110.116",
  "port": 3030,
- "started": 1794673151,
+ "started": 1794675728,
  "job": "ownhost-combo1"
 }
