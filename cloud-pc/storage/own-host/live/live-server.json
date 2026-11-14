@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://lancaster-vip-specializing-composite.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://chemical-prisoner-mozilla-basic.trycloudflare.com",
  "egressIp": "3.41.210.122",
- "port": 11470,
- "started": 1794622305,
- "job": "ownhost-combo1"
+ "started": 1794623468,
+ "job": "ownhost-server1"
 }
