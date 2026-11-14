@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://optimization-large-wisdom-erp.trycloudflare.com",
- "egressIp": "52.248.45.160",
+ "url": "https://finals-records-morrison-hart.trycloudflare.com",
+ "egressIp": "52.149.13.18",
  "port": 8080,
- "started": 1794633007,
- "job": "ownhost-multi5"
+ "started": 1794634839,
+ "job": "ownhost-combo1"
 }
