@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794695987,
+ "at": 1794695988,
  "egressIp": "128.85.55.82",
  "own": {
   "base": "https://comment-bouquet-kids-singh.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
