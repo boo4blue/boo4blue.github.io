@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794642798,
+ "at": 1794642806,
  "egressIp": "134.138.34.128",
  "own": {
   "base": "https://paso-biodiversity-lamb-performance.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://wildlife-lib-loan-elliott.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
