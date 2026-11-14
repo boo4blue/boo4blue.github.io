@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://benjamin-path-goal-cooked.trycloudflare.com",
- "egressIp": "172.190.126.113",
+ "url": "https://enrollment-lawyers-issue-res.trycloudflare.com",
+ "egressIp": "128.85.55.82",
  "port": 3030,
- "started": 1794693005,
- "job": "ownhost-combo1"
+ "started": 1794696568,
+ "job": "ownhost-multi5"
 }
