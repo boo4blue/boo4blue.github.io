@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794675743,
+ "at": 1794676219,
  "egressIp": "20.169.110.116",
  "own": {
-  "base": "https://videos-persian-studied-edmonton.trycloudflare.com",
+  "base": "https://occupied-corrections-cornwall-tournaments.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-start"
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://connected-radio-results-orange.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://reply-handling-ralph-seo.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
