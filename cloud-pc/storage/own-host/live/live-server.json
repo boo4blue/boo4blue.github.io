@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://departments-estimation-pan-awards.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://scotia-metals-tale-breed.trycloudflare.com",
  "egressIp": "132.196.39.137",
- "port": 11470,
- "started": 1794645846,
- "job": "ownhost-combo1"
+ "started": 1794647008,
+ "job": "ownhost-server1"
 }
