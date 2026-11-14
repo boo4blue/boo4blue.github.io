@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794635376,
+ "at": 1794635377,
  "egressIp": "52.149.13.18",
  "own": {
   "base": "https://aberdeen-mailman-kitchen-recall.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
