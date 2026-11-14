@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794650366,
+ "at": 1794650373,
  "egressIp": "134.138.58.145",
  "own": {
   "base": "https://ghz-forests-don-eur.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://sector-diagnosis-vip-bikini.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
