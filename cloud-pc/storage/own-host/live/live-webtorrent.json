@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://blackjack-roger-citysearch-char.trycloudflare.com",
- "egressIp": "52.165.59.212",
+ "url": "https://bikes-kinda-managers-webster.trycloudflare.com",
+ "egressIp": "20.120.252.81",
  "port": 8080,
- "started": 1794689072,
- "job": "ownhost-multi5"
+ "started": 1794690543,
+ "job": "ownhost-combo1"
 }
