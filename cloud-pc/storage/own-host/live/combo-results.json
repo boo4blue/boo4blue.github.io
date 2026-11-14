@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794668039,
+ "at": 1794668102,
  "egressIp": "52.188.87.153",
  "own": {
   "base": "https://maternity-taught-sleeps-ranges.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
