@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794614851,
+ "at": 1794614852,
  "egressIp": "4.242.61.50",
  "own": {
   "base": "https://grant-shortly-animal-und.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
