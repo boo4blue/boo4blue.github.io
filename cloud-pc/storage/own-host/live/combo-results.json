@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794666292,
+ "at": 1794666355,
  "egressIp": "52.173.10.50",
  "own": {
   "base": "https://authorities-gas-carrying-eric.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
