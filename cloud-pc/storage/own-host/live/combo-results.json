@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794647741,
+ "at": 1794647750,
  "egressIp": "52.165.86.36",
  "own": {
   "base": "https://dressing-paperback-expression-robertson.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://volumes-velocity-cow-meaning.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
