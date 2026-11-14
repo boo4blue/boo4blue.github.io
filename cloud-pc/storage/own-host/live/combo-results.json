@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794631854,
+ "at": 1794631867,
  "egressIp": "52.248.45.160",
  "own": {
   "base": "https://complicated-copies-attempting-volleyball.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://radar-unnecessary-cult-adams.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
