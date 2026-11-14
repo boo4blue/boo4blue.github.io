@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794692997,
+ "at": 1794693007,
  "egressIp": "172.190.126.113",
  "own": {
   "base": "https://tapes-pee-profits-measure.trycloudflare.com",
@@ -11,8 +11,8 @@
   "state": "failed-start"
  },
  "rqbit": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://benjamin-path-goal-cooked.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "webtorrent": {
   "base": "",
