@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794617411,
+ "at": 1794617413,
  "egressIp": "20.168.111.84",
  "own": {
   "base": "https://roster-syndrome-coordinate-spin.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
