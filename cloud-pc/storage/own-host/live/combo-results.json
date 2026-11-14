@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794688562,
- "egressIp": "52.165.59.212",
+ "at": 1794690460,
+ "egressIp": "20.120.252.81",
  "own": {
-  "base": "https://shall-uri-disclaimers-candidate.trycloudflare.com",
+  "base": "https://healthcare-trance-quebec-hosting.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-start"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://digest-contribute-strand-click.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
