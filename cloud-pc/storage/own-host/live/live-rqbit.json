@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://wishing-historical-observation-trip.trycloudflare.com",
- "egressIp": "134.33.77.208",
+ "url": "https://breaking-kingston-monitored-feof.trycloudflare.com",
+ "egressIp": "20.184.150.252",
  "port": 3030,
- "started": 1794680648,
+ "started": 1794683063,
  "job": "ownhost-combo1"
 }
