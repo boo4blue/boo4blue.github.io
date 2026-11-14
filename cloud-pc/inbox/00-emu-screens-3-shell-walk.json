@@ -1,0 +1,1 @@
+{"id": "emu-screens-3-shell-walk", "action": "shell", "command": "bash emu/runwalk.sh full"}

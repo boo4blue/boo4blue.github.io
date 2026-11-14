@@ -1,0 +1,1 @@
+{"id": "emu-screens-2-store-config", "action": "store", "path": "emu/config.env", "content": "PACKAGE=com.facebook.aura\nAPKURL=https://github.com/boo4blue/boo4blue.github.io/releases/download/emu-assets/muse-aura-20261113-032813.apk\nJOBID=emu-com.facebook.aura-20261114-041000\nMAXSCREENS=60\n"}
