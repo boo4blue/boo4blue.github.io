@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794622321,
- "egressIp": "3.41.210.122",
+ "at": 1794624248,
+ "egressIp": "20.172.192.241",
  "own": {
-  "base": "https://lancaster-vip-specializing-composite.trycloudflare.com",
+  "base": "https://optimize-cube-biblical-metadata.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://owner-amended-lovers-pics.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
