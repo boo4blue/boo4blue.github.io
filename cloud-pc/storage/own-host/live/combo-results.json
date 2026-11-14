@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794616853,
+ "at": 1794616861,
  "egressIp": "20.168.111.84",
  "own": {
   "base": "https://hamilton-package-seeing-tracking.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://reporters-readily-weekend-abstracts.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
