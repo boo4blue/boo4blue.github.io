@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://habitat-oem-interface-neck.trycloudflare.com",
- "egressIp": "4.155.175.48",
+ "url": "https://libs-curious-wet-attempting.trycloudflare.com",
+ "egressIp": "132.196.35.130",
  "port": 3030,
- "started": 1794670733,
+ "started": 1794673151,
  "job": "ownhost-combo1"
 }
