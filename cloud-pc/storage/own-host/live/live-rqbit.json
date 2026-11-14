@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://tropical-aye-curtis-terrace.trycloudflare.com",
- "egressIp": "135.232.200.38",
+ "url": "https://pour-citizens-chicago-reviewed.trycloudflare.com",
+ "egressIp": "4.236.95.148",
  "port": 3030,
- "started": 1794627553,
+ "started": 1794628243,
  "job": "ownhost-combo1"
 }
