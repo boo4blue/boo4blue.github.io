@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794681147,
+ "at": 1794681210,
  "egressIp": "134.33.77.208",
  "own": {
   "base": "https://collecting-broadcasting-venice-highest.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
