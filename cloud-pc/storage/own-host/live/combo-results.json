@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794634813,
+ "at": 1794634821,
  "egressIp": "52.149.13.18",
  "own": {
   "base": "https://relatively-cord-favourite-rewards.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://martin-gel-danny-arranged.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
