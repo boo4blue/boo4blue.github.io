@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794656421,
+ "at": 1794656422,
  "egressIp": "4.236.174.148",
  "own": {
   "base": "https://versions-supporters-list-signatures.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
