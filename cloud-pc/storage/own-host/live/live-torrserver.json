@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://jvc-installing-parameters-int.trycloudflare.com",
- "egressIp": "4.242.61.50",
+ "url": "https://reporters-readily-weekend-abstracts.trycloudflare.com",
+ "egressIp": "20.168.111.84",
  "port": 8090,
- "started": 1794614298,
+ "started": 1794616860,
  "job": "ownhost-combo1"
 }
