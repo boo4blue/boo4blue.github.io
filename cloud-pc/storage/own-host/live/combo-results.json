@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794686054,
- "egressIp": "130.131.215.208",
+ "at": 1794687917,
+ "egressIp": "52.165.59.212",
  "own": {
-  "base": "https://gmt-charlotte-beverly-nasa.trycloudflare.com",
+  "base": "https://sodium-modified-demonstrate-frog.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-start"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://clients-statutes-hobbies-vegetables.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
