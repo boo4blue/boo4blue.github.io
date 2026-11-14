@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794624248,
+ "at": 1794624255,
  "egressIp": "20.172.192.241",
  "own": {
   "base": "https://optimize-cube-biblical-metadata.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://routines-tube-clinics-barbie.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
