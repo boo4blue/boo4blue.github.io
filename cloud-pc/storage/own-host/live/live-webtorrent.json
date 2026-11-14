@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://essence-val-fish-largest.trycloudflare.com",
- "egressIp": "3.41.210.118",
+ "url": "https://acc-wiring-pittsburgh-sheer.trycloudflare.com",
+ "egressIp": "3.41.210.122",
  "port": 8080,
- "started": 1794620387,
- "job": "ownhost-multi5"
+ "started": 1794621764,
+ "job": "ownhost-combo1"
 }
