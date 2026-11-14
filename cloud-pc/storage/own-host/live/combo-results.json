@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794617413,
+ "at": 1794617426,
  "egressIp": "20.168.111.84",
  "own": {
   "base": "https://roster-syndrome-coordinate-spin.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://manual-wisconsin-urgent-themselves.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
