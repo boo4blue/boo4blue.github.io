@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://streams-barely-knights-terry.trycloudflare.com",
- "egressIp": "20.49.62.21",
+ "url": "https://separation-efforts-russia-chi.trycloudflare.com",
+ "egressIp": "4.150.81.247",
  "port": 3030,
- "started": 1794697992,
+ "started": 1794700528,
  "job": "ownhost-combo1"
 }
