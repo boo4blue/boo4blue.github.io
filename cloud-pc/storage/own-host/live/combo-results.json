@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794652802,
+ "at": 1794652812,
  "egressIp": "4.150.81.245",
  "own": {
   "base": "https://possible-favor-chemistry-treasury.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://transmitted-heavily-rolls-investor.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
