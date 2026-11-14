@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794682994,
+ "at": 1794683057,
  "egressIp": "20.184.150.252",
  "own": {
   "base": "https://ownership-informal-blend-dressed.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
