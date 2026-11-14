@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794695433,
+ "at": 1794695985,
  "egressIp": "128.85.55.82",
  "own": {
-  "base": "https://lawyers-changes-instead-toner.trycloudflare.com",
+  "base": "https://comment-bouquet-kids-singh.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://rejected-number-following-render.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
