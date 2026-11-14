@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://posted-lite-scenic-doctrine.trycloudflare.com",
- "egressIp": "132.196.39.137",
+ "url": "https://files-antique-notices-percent.trycloudflare.com",
+ "egressIp": "52.165.86.36",
  "port": 8080,
- "started": 1794646432,
- "job": "ownhost-multi5"
+ "started": 1794647769,
+ "job": "ownhost-combo1"
 }
