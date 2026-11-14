@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://integrate-library-numerical-scheduled.trycloudflare.com",
- "egressIp": "52.149.13.18",
+ "url": "https://produce-catalogue-node-processing.trycloudflare.com",
+ "egressIp": "52.160.130.164",
  "port": 3030,
- "started": 1794634826,
+ "started": 1794638370,
  "job": "ownhost-combo1"
 }
