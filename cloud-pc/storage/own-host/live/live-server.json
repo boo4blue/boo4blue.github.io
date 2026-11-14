@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://magazines-description-enb-reload.trycloudflare.com",
- "egressIp": "20.102.46.201",
+ "url": "https://rico-folk-clips-thumbs.trycloudflare.com",
+ "egressIp": "135.232.200.38",
  "port": 11470,
- "started": 1794626780,
+ "started": 1794627538,
  "job": "ownhost-combo1"
 }
