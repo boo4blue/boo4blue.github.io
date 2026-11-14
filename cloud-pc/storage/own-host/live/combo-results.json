@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794640856,
- "egressIp": "57.151.125.211",
+ "at": 1794642798,
+ "egressIp": "134.138.34.128",
  "own": {
-  "base": "https://catch-forget-animal-receptor.trycloudflare.com",
+  "base": "https://paso-biodiversity-lamb-performance.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://site-wet-captain-within.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
