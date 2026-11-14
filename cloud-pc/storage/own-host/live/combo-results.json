@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794614864,
- "egressIp": "4.242.61.50",
+ "at": 1794616853,
+ "egressIp": "20.168.111.84",
  "own": {
-  "base": "https://grant-shortly-animal-und.trycloudflare.com",
+  "base": "https://hamilton-package-seeing-tracking.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://campbell-islamic-would-sacred.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
