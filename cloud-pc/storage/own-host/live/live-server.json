@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://carried-asin-attractions-conferencing.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://cattle-evolution-english-sleeping.trycloudflare.com",
  "egressIp": "20.120.252.81",
- "port": 11470,
- "started": 1794691023,
- "job": "ownhost-combo1"
+ "started": 1794692188,
+ "job": "ownhost-server1"
 }
