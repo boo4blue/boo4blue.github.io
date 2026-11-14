@@ -1,0 +1,1 @@
+{"id": "emu-muse-4-run", "action": "shell", "command": "bash emu/runmuse.sh full"}
