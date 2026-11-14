@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794627547,
+ "at": 1794627554,
  "egressIp": "135.232.200.38",
  "own": {
   "base": "https://rico-folk-clips-thumbs.trycloudflare.com",
@@ -11,8 +11,8 @@
   "state": "live noauth-http=401"
  },
  "rqbit": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://tropical-aye-curtis-terrace.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "webtorrent": {
   "base": "",
