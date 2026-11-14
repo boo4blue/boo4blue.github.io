@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794665819,
+ "at": 1794666292,
  "egressIp": "52.173.10.50",
  "own": {
-  "base": "https://appeals-reasoning-platform-rabbit.trycloudflare.com",
+  "base": "https://authorities-gas-carrying-eric.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-start"
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://responsible-derived-gardens-corn.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://texas-midlands-reported-petite.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
