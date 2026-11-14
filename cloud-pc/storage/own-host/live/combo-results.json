@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794671229,
+ "at": 1794671291,
  "egressIp": "4.155.175.48",
  "own": {
   "base": "https://foundations-expense-warranties-arrested.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
