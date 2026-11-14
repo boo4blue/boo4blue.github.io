@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794695988,
+ "at": 1794696001,
  "egressIp": "128.85.55.82",
  "own": {
   "base": "https://comment-bouquet-kids-singh.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://deer-fred-person-weights.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
