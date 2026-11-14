@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://sector-diagnosis-vip-bikini.trycloudflare.com",
- "egressIp": "134.138.58.145",
+ "url": "https://transmitted-heavily-rolls-investor.trycloudflare.com",
+ "egressIp": "4.150.81.245",
  "port": 8090,
- "started": 1794650372,
+ "started": 1794652810,
  "job": "ownhost-combo1"
 }
