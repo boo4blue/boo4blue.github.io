@@ -1,15 +1,15 @@
-=== emu-screens walk 18:20:55Z package=com.facebook.aura job=emu-com.facebook.aura-20261114-043905 max=60
+=== emu-screens walk 19:01:12Z package=com.facebook.aura job=emu-com.facebook.aura-20261114-043905 max=60
 apk_bytes=46914492 apk_md5=ae687f3de432b75793334b6c999fcad3
 boot_completed=1 after ~25s
 boot_ok=1
 screen=1080x2400
 install_exit=0
 pm_list_match=1
-pid_after_launch=3910
-step01 shot=01-launch.png bytes=79525 sig=8eafb882 focus=com.facebook.aura label=[Launch] texts: Welcome to Muse ~ Mobile number or email ~ You may receive SMS notifications from us by using your mobile number. Learn more ~ Continue ~ Settings
+pid_after_launch=3973
+step01 shot=01-launch.png bytes=79727 sig=8eafb882 focus=com.facebook.aura label=[Launch] texts: Welcome to Muse ~ Mobile number or email ~ You may receive SMS notifications from us by using your mobile number. Learn more ~ Continue ~ Settings
 step01 WALL label=[Launch] reason=[sign-in wall (credential form)]
 step02 WALL_EXIT focus=[com.google.android.apps.nexuslauncher] after wall (no capture)
 walk_stop_reason=WALL_EXIT
-pid_at_end=3910
-logcat_bytes=5383807
-results_zip_bytes=3291078
+pid_at_end=3973
+logcat_bytes=5620750
+results_zip_bytes=3291278
