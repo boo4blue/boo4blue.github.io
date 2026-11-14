@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794660724,
+ "at": 1794660733,
  "egressIp": "57.156.70.52",
  "own": {
   "base": "https://william-dude-protocols-shades.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://wishes-colony-buyer-part.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
