@@ -1,0 +1,47 @@
+=== emu-screens walk 04:21:59Z package=com.facebook.aura job=emu-com.facebook.aura-20261114-041000 max=60
+apk_bytes=46914492 apk_md5=ae687f3de432b75793334b6c999fcad3
+boot_completed=1 after ~30s
+boot_ok=1
+screen=1080x2400
+install_exit=0
+pm_list_match=1
+pid_after_launch=4038
+step01 shot=01-launch.png bytes=79871 sig=8eafb882 focus= label=[Launch] texts: Welcome to Muse ~ Mobile number or email ~ You may receive SMS notifications from us by using your mobile number. Learn more ~ Continue ~ Settings
+step01 WALL label=[Launch] reason=[sign-in wall (credential form)]
+step02 shot=02-back01.png bytes=1374309 sig=75cea7f4 focus= label=[Back 01] texts: Sat, Nov 14 ~ Gmail ~ Photos ~ YouTube ~ Home ~ Phone ~ Messages ~ Chrome ~ Muse ~ Search ~ Google app ~ Voice search ~ Google Lens
+step03 shot=03-sat-nov-14.png bytes=38551 sig=b0cd6c07 focus= label=[Sat, Nov 14] texts: Google Calendar ~ Make the most of every day. ~ next page
+step04 shot=04-next-page.png bytes=211392 sig=ecce5631 focus= label=[next page] texts: Easy to scan and lovely to look at ~ Schedule View puts images and maps on your calendar. ~ Uses device location. ~ Got it
+step05 duplicate sig=ecce5631 (already captured) next=[SWIPE]
+step06 shot=06-got-it.png bytes=41417 sig=56c9cd2a focus= label=[Got it] texts: Checking info…
+step07 shot=07-got-it.png bytes=39717 sig=8514ce0b focus= label=[Got it] texts: Checking info… ~ Sign in - Google Accounts ~ Google ~ Sign in ~ Use your Google Account. The account will be added to this device and available to other Google apps. ~ &#10; ~ Learn more about using your account ~ Forgot email? ~ Next ~ Create account
+step07 WALL label=[Got it] reason=[sign-in wall (credential form)]
+step08 duplicate sig=75cea7f4 (already captured) next=[TAP 414 1615 Gmail]
+step09 duplicate sig=75cea7f4 (already captured) next=[TAP 666 1615 Photos]
+step10 shot=10-photos.png bytes=53735 sig=06e31c74 focus= label=[Photos] texts: New in Gmail ~ All the features you love with a fresh new look ~ GOT IT
+step11 shot=11-got-it.png bytes=600374 sig=1eafdf93 focus= label=[GOT IT] texts: You can now add all your email addresses. Learn more ~ Add an email address ~ TAKE ME TO GMAIL
+step12 shot=12-take-me-to-gmail.png bytes=494384 sig=7a294589 focus= label=[TAKE ME TO GMAIL] texts: Please add at least one email address. ~ OK
+step13 duplicate sig=1eafdf93 (already captured) next=[SWIPE]
+step14 duplicate sig=1eafdf93 (already captured) next=[NONE]
+step15 duplicate sig=06e31c74 (already captured) next=[SWIPE]
+step16 duplicate sig=06e31c74 (already captured) next=[NONE]
+step17 duplicate sig=75cea7f4 (already captured) next=[TAP 918 1615 YouTube]
+step18 shot=18-youtube.png bytes=33754 sig=51099132 focus= label=[YouTube] texts: Allow YouTube to send you notifications? ~ Allow ~ Don’t allow
+step19 shot=19-allow.png bytes=111324 sig=b04a577c focus= label=[Allow] texts: YouTube ~ Search ~ More options ~ Update available ~ You are using an old version of YouTube. Please update to get important bug fixes and improvements. It typically takes less than 1 minute. ~ Home ~ Home ~ Shorts ~ Shorts ~ Subscriptions ~ Subscriptions ~ Library ~ Library
+step20 shot=20-search.png bytes=106058 sig=10c55d60 focus= label=[Search] texts: Navigate up ~ Search YouTube ~ Voice search
+step21 duplicate sig=b04a577c (already captured) next=[TAP 1027 191 More options]
+step22 shot=22-more-options.png bytes=127020 sig=d1ea2368 focus= label=[More options] texts: Settings ~ Watch on TV ~ Terms &amp; privacy policy ~ Help &amp; feedback
+step23 duplicate sig=b04a577c (already captured) next=[TAP 135 2274 Home]
+step24 duplicate sig=b04a577c (already captured) next=[TAP 405 2274 Shorts]
+step25 shot=25-shorts.png bytes=68956 sig=a696f3ee focus= label=[Shorts] texts: YouTube ~ Search ~ More options ~ There was a problem with the server [400] ~ RETRY ~ Home ~ Home ~ Shorts ~ Shorts ~ Subscriptions ~ Subscriptions ~ Library ~ Library
+step26 duplicate sig=10c55d60 (already captured) next=[TAP 571 191 Search YouTube]
+step27 duplicate sig=10c55d60 (already captured) next=[TAP 1017 191 Voice search]
+step28 shot=28-voice-search.png bytes=67383 sig=a375a6a2 focus= label=[Voice search] texts: Allow YouTube to record audio? ~ While using the app ~ Only this time ~ Don’t allow
+step29 shot=29-while-using-the-app.png bytes=73198 sig=fcdaffbe focus= label=[While using the app] texts: Close ~ Voice ~ Song ~ Didn’t hear that. Try again. ~ Tap microphone to try again ~ Tap to speak button
+step30 duplicate sig=10c55d60 (already captured) next=[SWIPE]
+step31 duplicate sig=10c55d60 (already captured) next=[NONE]
+step32 duplicate sig=a696f3ee (already captured) next=[TAP 1027 191 More options]
+step33 duplicate sig=d1ea2368 (already captured) next=[NONE]
+walk_stop_reason=NO_ADVANCE
+pid_at_end=4038
+logcat_bytes=9101968
+results_zip_bytes=3291788

@@ -1,0 +1,18 @@
+file=01-launch.png	label=Launch
+walled=Launch	sign-in wall (credential form)
+file=02-back01.png	label=Back 01
+file=03-sat-nov-14.png	label=Sat, Nov 14
+file=04-next-page.png	label=next page
+file=06-got-it.png	label=Got it
+file=07-got-it.png	label=Got it
+walled=Got it	sign-in wall (credential form)
+file=10-photos.png	label=Photos
+file=11-got-it.png	label=GOT IT
+file=12-take-me-to-gmail.png	label=TAKE ME TO GMAIL
+file=18-youtube.png	label=YouTube
+file=19-allow.png	label=Allow
+file=20-search.png	label=Search
+file=22-more-options.png	label=More options
+file=25-shorts.png	label=Shorts
+file=28-voice-search.png	label=Voice search
+file=29-while-using-the-app.png	label=While using the app
