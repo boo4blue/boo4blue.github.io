@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794650928,
+ "at": 1794650929,
  "egressIp": "134.138.58.145",
  "own": {
   "base": "https://dept-territories-track-forecast.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
