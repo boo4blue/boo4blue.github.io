@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794675657,
+ "at": 1794675720,
  "egressIp": "20.169.110.116",
  "own": {
   "base": "https://videos-persian-studied-edmonton.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
