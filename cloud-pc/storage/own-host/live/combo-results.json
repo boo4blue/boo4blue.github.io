@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794690544,
+ "at": 1794691024,
  "egressIp": "20.120.252.81",
  "own": {
-  "base": "https://healthcare-trance-quebec-hosting.trycloudflare.com",
+  "base": "https://carried-asin-attractions-conferencing.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-start"
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://membrane-nevertheless-ultimate-raleigh.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://bikes-kinda-managers-webster.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
