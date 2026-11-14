@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794668124,
+ "at": 1794668596,
  "egressIp": "52.188.87.153",
  "own": {
-  "base": "https://maternity-taught-sleeps-ranges.trycloudflare.com",
+  "base": "https://css-beatles-jewelry-member.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-start"
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://completely-standards-bangkok-ict.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://insider-allows-sometimes-rugby.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
