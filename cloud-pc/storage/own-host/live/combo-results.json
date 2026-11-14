@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794666357,
+ "at": 1794666369,
  "egressIp": "52.173.10.50",
  "own": {
   "base": "https://authorities-gas-carrying-eric.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://katie-desired-circuit-flour.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
