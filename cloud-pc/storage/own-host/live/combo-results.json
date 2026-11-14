@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794686040,
+ "at": 1794686041,
  "egressIp": "130.131.215.208",
  "own": {
   "base": "https://gmt-charlotte-beverly-nasa.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
