@@ -1,4 +1,4 @@
-shot-MUSE2-01-launch.png | bytes=80123 | texts: Welcome to Muse ~ Mobile number or email ~ You may receive SMS notifications from us by using your mobile number. Learn more ~ Continue ~ Settings
-shot-MUSE2-02-settings.png | bytes=50380 | texts: Help &amp; support ~ Legal info ~ Dismiss ~ Settings
-shot-MUSE2-03-sub-help.png | bytes=70968 | texts: Muse Help Center ~ Contact customer support ~ Report an issue ~ Shake phone to report an issue ~ Back ~ Help &amp; support
-shot-MUSE2-04-learnmore.png | bytes=83211 | texts: Welcome to Muse ~ Mobile number or email ~ You may receive SMS notifications from us by using your mobile number. Learn more ~ Continue ~ Settings
+shot-MUSE2-01-launch.png | bytes=79553 | texts: Welcome to Muse ~ Mobile number or email ~ You may receive SMS notifications from us by using your mobile number. Learn more ~ Continue ~ Settings
+shot-MUSE2-02-settings.png | bytes=49858 | texts: Help &amp; support ~ Legal info ~ Dismiss ~ Settings
+shot-MUSE2-03-sub-help.png | bytes=70269 | texts: Muse Help Center ~ Contact customer support ~ Report an issue ~ Shake phone to report an issue ~ Back ~ Help &amp; support
+shot-MUSE2-04-learnmore.png | bytes=82610 | texts: Welcome to Muse ~ Mobile number or email ~ You may receive SMS notifications from us by using your mobile number. Learn more ~ Continue ~ Settings
