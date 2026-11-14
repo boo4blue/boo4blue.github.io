@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://tsunami-baseline-movement-obituaries.trycloudflare.com",
- "egressIp": "20.127.214.162",
+ "url": "https://brush-stuffed-reuters-mba.trycloudflare.com",
+ "egressIp": "57.156.70.52",
  "port": 8080,
- "started": 1794659244,
- "job": "ownhost-multi5"
+ "started": 1794660754,
+ "job": "ownhost-combo1"
 }
