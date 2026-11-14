@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794629403,
+ "at": 1794629417,
  "egressIp": "64.236.176.194",
  "own": {
   "base": "https://radio-academics-filter-chat.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://dave-upload-accessing-carnival.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
