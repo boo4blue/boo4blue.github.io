@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794638363,
+ "at": 1794638372,
  "egressIp": "52.160.130.164",
  "own": {
   "base": "https://geographical-burke-fever-approach.trycloudflare.com",
@@ -11,8 +11,8 @@
   "state": "live noauth-http=401"
  },
  "rqbit": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://produce-catalogue-node-processing.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "webtorrent": {
   "base": "",
