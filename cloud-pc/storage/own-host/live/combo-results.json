@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794668596,
+ "at": 1794668659,
  "egressIp": "52.188.87.153",
  "own": {
   "base": "https://css-beatles-jewelry-member.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
