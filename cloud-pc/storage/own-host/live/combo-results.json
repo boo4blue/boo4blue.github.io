@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794628846,
+ "at": 1794628854,
  "egressIp": "64.236.176.194",
  "own": {
   "base": "https://selective-wax-vitamins-wallpapers.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://warning-wishing-widespread-scales.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
