@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://inf-loving-elder-obligations.trycloudflare.com",
- "egressIp": "134.33.77.208",
- "started": 1794682315,
- "job": "ownhost-server1"
+ "url": "https://ownership-informal-blend-dressed.trycloudflare.com",
+ "egressIp": "20.184.150.252",
+ "port": 11470,
+ "started": 1794682993,
+ "job": "ownhost-combo1"
 }
