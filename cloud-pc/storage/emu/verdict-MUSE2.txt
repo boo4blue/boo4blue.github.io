@@ -1,15 +1,15 @@
-=== Muse emu probe2 16:11:30Z package=com.facebook.aura
+=== Muse emu probe2 16:52:37Z package=com.facebook.aura
 apk_bytes=46914492
-boot_completed=1 after ~25s
+boot_completed=1 after ~35s
 pm_list_match=1
-pid_after_launch=3611
-cap01 launch bytes=52585
+pid_after_launch=3946
+cap01 launch bytes=79248
 settings_tapped at 975 228 top=
-cap02 settings bytes=52585
+cap02 settings bytes=49459
 sub_tapped Help at 355 465 top=
-cap03 sub-help bytes=52585
+cap03 sub-help bytes=69912
 sub_entrances_tried=1
-after_back_texts: Welcome to Muse ~ Mobile number or email ~ You may receive SMS notifications from us by using your mobile number. Learn more ~ Continue ~ Settings ~ Application icon ~ Application branding image
+after_back_texts: Welcome to Muse ~ Mobile number or email ~ You may receive SMS notifications from us by using your mobile number. Learn more ~ Continue ~ Settings
 learnmore_tapped at 540 895 top=
-cap04 learnmore bytes=52843
-pid_at_end=3611
+cap04 learnmore bytes=82351
+pid_at_end=3946
