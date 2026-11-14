@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://breaking-kingston-monitored-feof.trycloudflare.com",
- "egressIp": "20.184.150.252",
+ "url": "https://com-sociology-cure-painting.trycloudflare.com",
+ "egressIp": "130.131.215.208",
  "port": 3030,
- "started": 1794683063,
+ "started": 1794685481,
  "job": "ownhost-combo1"
 }
