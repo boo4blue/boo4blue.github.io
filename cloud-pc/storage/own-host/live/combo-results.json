@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794624820,
- "egressIp": "20.172.192.241",
+ "at": 1794626781,
+ "egressIp": "20.102.46.201",
  "own": {
-  "base": "https://resulting-final-threatened-helmet.trycloudflare.com",
+  "base": "https://magazines-description-enb-reload.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://notify-suburban-karaoke-barriers.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
