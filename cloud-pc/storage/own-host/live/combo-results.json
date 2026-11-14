@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794628229,
+ "at": 1794628236,
  "egressIp": "4.236.95.148",
  "own": {
   "base": "https://correspondence-auctions-sensitivity-fossil.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://prospective-lowest-scholar-pulling.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
