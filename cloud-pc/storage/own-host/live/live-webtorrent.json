@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://newsletters-busy-offline-brooklyn.trycloudflare.com",
- "egressIp": "20.49.62.21",
+ "url": "https://stake-conduct-keys-juice.trycloudflare.com",
+ "egressIp": "4.150.81.247",
  "port": 8080,
- "started": 1794699072,
- "job": "ownhost-multi5"
+ "started": 1794700541,
+ "job": "ownhost-combo1"
 }
