@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794624803,
+ "at": 1794624804,
  "egressIp": "20.172.192.241",
  "own": {
   "base": "https://resulting-final-threatened-helmet.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
