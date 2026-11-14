@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794685475,
+ "at": 1794685483,
  "egressIp": "130.131.215.208",
  "own": {
   "base": "https://built-bringing-deaf-tracy.trycloudflare.com",
@@ -11,8 +11,8 @@
   "state": "failed-start"
  },
  "rqbit": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://com-sociology-cure-painting.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "webtorrent": {
   "base": "",
