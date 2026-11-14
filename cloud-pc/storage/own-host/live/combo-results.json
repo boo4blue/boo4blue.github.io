@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794692934,
+ "at": 1794692997,
  "egressIp": "172.190.126.113",
  "own": {
   "base": "https://tapes-pee-profits-measure.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
