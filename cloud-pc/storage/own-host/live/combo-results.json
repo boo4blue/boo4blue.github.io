@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794693007,
+ "at": 1794693020,
  "egressIp": "172.190.126.113",
  "own": {
   "base": "https://tapes-pee-profits-measure.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "live noauth-http=401"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://singh-slowly-itunes-pencil.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
