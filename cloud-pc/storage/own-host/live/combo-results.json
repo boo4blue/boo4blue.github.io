@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794650373,
+ "at": 1794650381,
  "egressIp": "134.138.58.145",
  "own": {
   "base": "https://ghz-forests-don-eur.trycloudflare.com",
@@ -11,8 +11,8 @@
   "state": "live noauth-http=401"
  },
  "rqbit": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://rare-pledge-name-supplies.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "webtorrent": {
   "base": "",
