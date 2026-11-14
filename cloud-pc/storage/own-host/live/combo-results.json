@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794627569,
- "egressIp": "135.232.200.38",
+ "at": 1794628229,
+ "egressIp": "4.236.95.148",
  "own": {
-  "base": "https://rico-folk-clips-thumbs.trycloudflare.com",
+  "base": "https://correspondence-auctions-sensitivity-fossil.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "https://night-developers-face-amongst.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://tropical-aye-curtis-terrace.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://len-packard-attractive-feat.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
