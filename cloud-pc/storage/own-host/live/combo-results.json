@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794626781,
+ "at": 1794626789,
  "egressIp": "20.102.46.201",
  "own": {
   "base": "https://magazines-description-enb-reload.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://suspended-carnival-shoulder-timer.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
