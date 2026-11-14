@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://string-hopkins-several-metallic.trycloudflare.com",
- "egressIp": "57.151.125.211",
+ "url": "https://compute-sole-iron-ruby.trycloudflare.com",
+ "egressIp": "134.138.34.128",
  "port": 3030,
- "started": 1794640295,
+ "started": 1794642812,
  "job": "ownhost-combo1"
 }
