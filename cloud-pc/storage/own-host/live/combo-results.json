@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794619818,
- "egressIp": "3.41.210.118",
+ "at": 1794621737,
+ "egressIp": "3.41.210.122",
  "own": {
-  "base": "https://asking-currently-blvd-lucky.trycloudflare.com",
+  "base": "https://person-wow-licenses-ellis.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://leads-asin-hollywood-dodge.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
