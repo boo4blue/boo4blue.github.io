@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794642806,
+ "at": 1794642814,
  "egressIp": "134.138.34.128",
  "own": {
   "base": "https://paso-biodiversity-lamb-performance.trycloudflare.com",
@@ -11,8 +11,8 @@
   "state": "live noauth-http=401"
  },
  "rqbit": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://compute-sole-iron-ruby.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "webtorrent": {
   "base": "",
