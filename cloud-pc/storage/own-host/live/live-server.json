@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://traveling-combined-combining-reflected.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://optical-kit-dresses-library.trycloudflare.com",
  "egressIp": "20.49.62.21",
- "port": 11470,
- "started": 1794698484,
- "job": "ownhost-combo1"
+ "started": 1794699649,
+ "job": "ownhost-server1"
 }
