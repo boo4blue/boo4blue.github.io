@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794691024,
+ "at": 1794691087,
  "egressIp": "20.120.252.81",
  "own": {
   "base": "https://carried-asin-attractions-conferencing.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
