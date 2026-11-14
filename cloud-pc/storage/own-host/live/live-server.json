@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://burn-inspector-consecutive-lined.trycloudflare.com",
- "egressIp": "134.138.34.128",
- "started": 1794644522,
- "job": "ownhost-server1"
+ "url": "https://thereof-dave-larger-adaptor.trycloudflare.com",
+ "egressIp": "132.196.39.137",
+ "port": 11470,
+ "started": 1794645285,
+ "job": "ownhost-combo1"
 }
