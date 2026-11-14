@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://sequences-elected-copy-ordered.trycloudflare.com",
- "egressIp": "3.41.210.122",
+ "url": "https://representations-oxygen-gravity-trusted.trycloudflare.com",
+ "egressIp": "20.172.192.241",
  "port": 8080,
- "started": 1794622892,
- "job": "ownhost-multi5"
+ "started": 1794624275,
+ "job": "ownhost-combo1"
 }
