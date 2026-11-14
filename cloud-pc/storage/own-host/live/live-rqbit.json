@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://enrollment-lawyers-issue-res.trycloudflare.com",
- "egressIp": "128.85.55.82",
+ "url": "https://streams-barely-knights-terry.trycloudflare.com",
+ "egressIp": "20.49.62.21",
  "port": 3030,
- "started": 1794696568,
- "job": "ownhost-multi5"
+ "started": 1794697992,
+ "job": "ownhost-combo1"
 }
