@@ -1,0 +1,1 @@
+{"id": "emu-muse-2d-probe3", "action": "shell", "command": "bash emu/run10.sh setup && bash emu/runmuse3.sh probe"}
