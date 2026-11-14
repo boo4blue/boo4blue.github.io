@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794643376,
- "egressIp": "134.138.34.128",
+ "at": 1794645286,
+ "egressIp": "132.196.39.137",
  "own": {
-  "base": "https://pitch-heater-jewellery-moved.trycloudflare.com",
+  "base": "https://thereof-dave-larger-adaptor.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://promoted-evening-electrical-portable.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
