@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794680578,
+ "at": 1794680641,
  "egressIp": "134.33.77.208",
  "own": {
   "base": "https://charlotte-employee-kingston-louis.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
