@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794622306,
+ "at": 1794622307,
  "egressIp": "3.41.210.122",
  "own": {
   "base": "https://lancaster-vip-specializing-composite.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
