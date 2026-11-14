@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794629400,
+ "at": 1794629402,
  "egressIp": "64.236.176.194",
  "own": {
   "base": "https://radio-academics-filter-chat.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
