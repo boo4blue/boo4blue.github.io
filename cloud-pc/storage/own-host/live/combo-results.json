@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794698563,
- "egressIp": "20.49.62.21",
+ "at": 1794700459,
+ "egressIp": "4.150.81.247",
  "own": {
-  "base": "https://traveling-combined-combining-reflected.trycloudflare.com",
+  "base": "https://licence-disclose-gym-shipped.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-start"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://nil-include-pieces-supplemental.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
