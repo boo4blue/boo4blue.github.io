@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://alaska-paintings-provincial-served.trycloudflare.com",
- "egressIp": "20.172.192.241",
+ "url": "https://graphical-equivalent-archives-affordable.trycloudflare.com",
+ "egressIp": "20.102.46.201",
  "port": 8080,
- "started": 1794625390,
- "job": "ownhost-multi5"
+ "started": 1794626808,
+ "job": "ownhost-combo1"
 }
