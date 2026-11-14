@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://asking-currently-blvd-lucky.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://distances-semi-mailto-edward.trycloudflare.com",
  "egressIp": "3.41.210.118",
- "port": 11470,
- "started": 1794619802,
- "job": "ownhost-combo1"
+ "started": 1794620963,
+ "job": "ownhost-server1"
 }
