@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794678018,
+ "at": 1794678081,
  "egressIp": "20.59.251.64",
  "own": {
   "base": "https://litigation-events-sandy-traditions.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
