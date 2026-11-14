@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://completely-standards-bangkok-ict.trycloudflare.com",
- "egressIp": "52.188.87.153",
+ "url": "https://habitat-oem-interface-neck.trycloudflare.com",
+ "egressIp": "4.155.175.48",
  "port": 3030,
- "started": 1794668111,
+ "started": 1794670733,
  "job": "ownhost-combo1"
 }
