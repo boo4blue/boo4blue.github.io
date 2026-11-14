@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794626797,
+ "at": 1794626810,
  "egressIp": "20.102.46.201",
  "own": {
   "base": "https://magazines-description-enb-reload.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "live noauth-http=401"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://graphical-equivalent-archives-affordable.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
