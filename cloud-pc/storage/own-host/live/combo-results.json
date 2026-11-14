@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794678655,
+ "at": 1794678656,
  "egressIp": "20.59.251.64",
  "own": {
   "base": "https://mechanism-prepaid-auburn-watches.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
