@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794621737,
+ "at": 1794621744,
  "egressIp": "3.41.210.122",
  "own": {
   "base": "https://person-wow-licenses-ellis.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://empirical-when-stan-purchases.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
