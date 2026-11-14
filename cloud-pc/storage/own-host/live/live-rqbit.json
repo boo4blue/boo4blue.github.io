@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://rotation-milton-various-bloomberg.trycloudflare.com",
- "egressIp": "4.236.174.148",
+ "url": "https://move-headline-basename-fusion.trycloudflare.com",
+ "egressIp": "20.127.214.162",
  "port": 3030,
- "started": 1794655876,
+ "started": 1794658114,
  "job": "ownhost-combo1"
 }
