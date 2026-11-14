@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794700522,
+ "at": 1794700530,
  "egressIp": "4.150.81.247",
  "own": {
   "base": "https://licence-disclose-gym-shipped.trycloudflare.com",
@@ -11,8 +11,8 @@
   "state": "failed-start"
  },
  "rqbit": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://separation-efforts-russia-chi.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "webtorrent": {
   "base": "",
