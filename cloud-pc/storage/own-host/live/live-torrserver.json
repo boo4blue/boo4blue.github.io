@@ -1,8 +1,8 @@
 {
  "service": "torrserver",
- "url": "https://climb-subsidiaries-element-ocean.trycloudflare.com",
- "egressIp": "4.236.166.145",
+ "url": "https://martin-gel-danny-arranged.trycloudflare.com",
+ "egressIp": "52.149.13.18",
  "port": 8090,
- "started": 1794630469,
+ "started": 1794634819,
  "job": "ownhost-combo1"
 }
