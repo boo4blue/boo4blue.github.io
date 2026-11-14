@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://findarticles-fame-not-federation.trycloudflare.com",
- "egressIp": "130.131.205.179",
+ "url": "https://responsible-derived-gardens-corn.trycloudflare.com",
+ "egressIp": "52.173.10.50",
  "port": 3030,
- "started": 1794663071,
+ "started": 1794665804,
  "job": "ownhost-combo1"
 }
