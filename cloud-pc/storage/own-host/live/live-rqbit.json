@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://tail-prescription-supervisors-affiliated.trycloudflare.com",
- "egressIp": "57.156.70.52",
+ "url": "https://findarticles-fame-not-federation.trycloudflare.com",
+ "egressIp": "130.131.205.179",
  "port": 3030,
- "started": 1794660740,
+ "started": 1794663071,
  "job": "ownhost-combo1"
 }
