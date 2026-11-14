@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://brick-era-pharmacology-depends.trycloudflare.com",
- "egressIp": "52.165.86.36",
- "started": 1794649472,
- "job": "ownhost-server1"
+ "url": "https://ghz-forests-don-eur.trycloudflare.com",
+ "egressIp": "134.138.58.145",
+ "port": 11470,
+ "started": 1794650365,
+ "job": "ownhost-combo1"
 }
