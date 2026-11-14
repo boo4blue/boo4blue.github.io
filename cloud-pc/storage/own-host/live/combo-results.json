@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794671292,
+ "at": 1794671305,
  "egressIp": "4.155.175.48",
  "own": {
   "base": "https://foundations-expense-warranties-arrested.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://bailey-mild-adjust-optimize.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
