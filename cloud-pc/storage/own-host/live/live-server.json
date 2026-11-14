@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://roster-syndrome-coordinate-spin.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://leon-population-produces-village.trycloudflare.com",
  "egressIp": "20.168.111.84",
- "port": 11470,
- "started": 1794617408,
- "job": "ownhost-combo1"
+ "started": 1794618573,
+ "job": "ownhost-server1"
 }
