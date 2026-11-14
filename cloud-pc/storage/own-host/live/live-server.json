@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://smile-launches-dialogue-valuation.trycloudflare.com",
- "egressIp": "3.41.210.122",
- "started": 1794624045,
- "job": "ownhost-server1"
+ "url": "https://optimize-cube-biblical-metadata.trycloudflare.com",
+ "egressIp": "20.172.192.241",
+ "port": 11470,
+ "started": 1794624247,
+ "job": "ownhost-combo1"
 }
