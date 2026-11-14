@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794658659,
+ "at": 1794658660,
  "egressIp": "20.127.214.162",
  "own": {
   "base": "https://pair-monitored-conversation-movement.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
