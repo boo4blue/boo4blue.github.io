@@ -1,40 +1,40 @@
-11-14 03:49:31.938  1616  3028 I AiAiEcho: AppIndexer Package:[com.facebook.aura] UserProfile:[0] Enabled:[true].
-11-14 03:49:31.938  1616  3028 I AiAiEcho: AppFetcherImplV2 updateApps package:[com.facebook.aura], userId:[0], reason:[package is updated.].
-11-14 03:49:33.859  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:33.859  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:33.859  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:33.872  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:33.872  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:33.873  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:34.053  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:34.054  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:34.130  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:34.132  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:34.132  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:34.286  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:34.286  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:34.286  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:34.609  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:34.609  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:35.697  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:35.697  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:35.697  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:36.494  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:36.496  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:36.497  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:36.533  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:36.535  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:36.535  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:36.556  4559  4559 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-11-14 03:49:36.578  4559  4559 I AndroidRuntime: Using default boot image
-11-14 03:49:36.578  4559  4559 I AndroidRuntime: Leaving lock profiling enabled
-11-14 03:49:36.753  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:36.775  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:36.948  4559  4559 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-11-14 03:49:38.769  4559  4559 D AndroidRuntime: Shutting down VM
-11-14 03:49:39.088  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:39.088  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:39.088  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:39.099  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:39.099  1728  2609 W SearchServiceCore: Abort, client detached.
-11-14 03:49:39.657  1472  3309 I BlockstoreStorage: Clearing Blockstore Data for package com.facebook.aura [CONTEXT service_id=258 ]
+11-14 03:59:43.591  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:43.937  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:43.937  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:43.937  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:43.937  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:44.079  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:44.079  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:44.079  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:44.079  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:44.079  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:44.079  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:44.080  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:44.123  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:44.123  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:48.395  4634  4634 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+11-14 03:59:48.432  4634  4634 I AndroidRuntime: Using default boot image
+11-14 03:59:48.432  4634  4634 I AndroidRuntime: Leaving lock profiling enabled
+11-14 03:59:48.908  4634  4634 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+11-14 03:59:49.423  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:49.423  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:49.423  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:49.423  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:49.423  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:49.423  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:49.423  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:49.423  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:49.423  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:50.468  4634  4634 D AndroidRuntime: Shutting down VM
+11-14 03:59:50.959  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:50.959  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:50.960  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:50.960  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:50.960  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:50.960  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:50.963  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:50.963  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:50.964  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:51.297  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:51.297  1742  2807 W SearchServiceCore: Abort, client detached.
+11-14 03:59:51.297  1742  2807 W SearchServiceCore: Abort, client detached.
