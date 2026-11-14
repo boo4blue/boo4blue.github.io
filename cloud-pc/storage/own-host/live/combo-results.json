@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794671291,
+ "at": 1794671292,
  "egressIp": "4.155.175.48",
  "own": {
   "base": "https://foundations-expense-warranties-arrested.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
