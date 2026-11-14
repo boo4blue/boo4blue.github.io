@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794670664,
+ "at": 1794670727,
  "egressIp": "4.155.175.48",
  "own": {
   "base": "https://thread-guns-directions-equal.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
