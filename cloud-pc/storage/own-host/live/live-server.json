@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://playstation-life-four-essay.trycloudflare.com",
- "egressIp": "20.59.251.64",
- "started": 1794679757,
- "job": "ownhost-server1"
+ "url": "https://charlotte-employee-kingston-louis.trycloudflare.com",
+ "egressIp": "134.33.77.208",
+ "port": 11470,
+ "started": 1794680576,
+ "job": "ownhost-combo1"
 }
