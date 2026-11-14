@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794632422,
+ "at": 1794632423,
  "egressIp": "52.248.45.160",
  "own": {
   "base": "https://cohen-liability-dated-evaluating.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
