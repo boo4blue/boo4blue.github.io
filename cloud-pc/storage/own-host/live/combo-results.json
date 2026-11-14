@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794655863,
+ "at": 1794655870,
  "egressIp": "4.236.174.148",
  "own": {
   "base": "https://indication-donation-leadership-significance.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://architect-forgotten-dentists-meditation.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
