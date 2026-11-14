@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://dave-upload-accessing-carnival.trycloudflare.com",
- "egressIp": "64.236.176.194",
+ "url": "https://fri-copies-realistic-cab.trycloudflare.com",
+ "egressIp": "4.236.166.145",
  "port": 8080,
- "started": 1794629416,
+ "started": 1794630490,
  "job": "ownhost-combo1"
 }
