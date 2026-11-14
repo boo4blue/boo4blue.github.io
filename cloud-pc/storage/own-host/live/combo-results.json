@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794690460,
+ "at": 1794690523,
  "egressIp": "20.120.252.81",
  "own": {
   "base": "https://healthcare-trance-quebec-hosting.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
