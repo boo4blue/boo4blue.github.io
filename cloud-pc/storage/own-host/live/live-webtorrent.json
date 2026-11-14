@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://operated-twice-award-accounts.trycloudflare.com",
- "egressIp": "20.168.111.84",
+ "url": "https://elections-units-occupations-rap.trycloudflare.com",
+ "egressIp": "3.41.210.118",
  "port": 8080,
- "started": 1794617996,
- "job": "ownhost-multi5"
+ "started": 1794619263,
+ "job": "ownhost-combo1"
 }
