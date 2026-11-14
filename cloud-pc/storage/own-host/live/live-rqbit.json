@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://produce-catalogue-node-processing.trycloudflare.com",
- "egressIp": "52.160.130.164",
+ "url": "https://string-hopkins-several-metallic.trycloudflare.com",
+ "egressIp": "57.151.125.211",
  "port": 3030,
- "started": 1794638370,
+ "started": 1794640295,
  "job": "ownhost-combo1"
 }
