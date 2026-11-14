@@ -1,12 +1,12 @@
-=== Muse emu walk 09:55:42Z package=com.facebook.aura
+=== Muse emu walk 10:36:46Z package=com.facebook.aura
 apk_bytes=46914492 apk_md5=ae687f3de432b75793334b6c999fcad3
-boot_completed=1 after ~30s
+boot_completed=1 after ~25s
 boot_ok=1
 screen=1080x2400
 install_exit=0
 pm_list_match=1
-pid_after_launch=3837
-step01 shot=shot-MUSE-01-launch.png bytes=79974 sig=8eafb882 focus= next=[WALL credential-form]
+pid_after_launch=3428
+step01 shot=shot-MUSE-01-launch.png bytes=80047 sig=8eafb882 focus= next=[WALL credential-form]
 walk_stop_reason=WALL credential-form
-pid_at_end=3837
-logcat_bytes=5242828
+pid_at_end=3428
+logcat_bytes=5258626
