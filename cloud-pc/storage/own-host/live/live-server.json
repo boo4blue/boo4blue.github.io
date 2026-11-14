@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://dealtime-settings-lancaster-motivated.trycloudflare.com",
- "egressIp": "172.190.126.113",
- "started": 1794694644,
- "job": "ownhost-server1"
+ "url": "https://lawyers-changes-instead-toner.trycloudflare.com",
+ "egressIp": "128.85.55.82",
+ "port": 11470,
+ "started": 1794695415,
+ "job": "ownhost-combo1"
 }
