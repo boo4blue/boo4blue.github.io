@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794624255,
+ "at": 1794624263,
  "egressIp": "20.172.192.241",
  "own": {
   "base": "https://optimize-cube-biblical-metadata.trycloudflare.com",
@@ -11,8 +11,8 @@
   "state": "live noauth-http=401"
  },
  "rqbit": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://naturals-memory-switch-pat.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "webtorrent": {
   "base": "",
