@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://mechanism-prepaid-auburn-watches.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://playstation-life-four-essay.trycloudflare.com",
  "egressIp": "20.59.251.64",
- "port": 11470,
- "started": 1794678590,
- "job": "ownhost-combo1"
+ "started": 1794679757,
+ "job": "ownhost-server1"
 }
