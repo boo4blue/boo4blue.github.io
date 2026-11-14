@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794661263,
+ "at": 1794661265,
  "egressIp": "57.156.70.52",
  "own": {
   "base": "https://isbn-impressed-baby-pest.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
