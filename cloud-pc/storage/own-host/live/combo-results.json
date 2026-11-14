@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794671305,
- "egressIp": "4.155.175.48",
+ "at": 1794673082,
+ "egressIp": "132.196.35.130",
  "own": {
-  "base": "https://foundations-expense-warranties-arrested.trycloudflare.com",
+  "base": "https://onion-freedom-morris-absence.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-start"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://bailey-mild-adjust-optimize.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
