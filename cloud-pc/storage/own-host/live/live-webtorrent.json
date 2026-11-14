@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://workstation-technology-alpine-shore.trycloudflare.com",
- "egressIp": "4.150.81.245",
+ "url": "https://surfing-considering-exhibition-firewire.trycloudflare.com",
+ "egressIp": "4.236.174.148",
  "port": 8080,
- "started": 1794653959,
- "job": "ownhost-multi5"
+ "started": 1794655889,
+ "job": "ownhost-combo1"
 }
