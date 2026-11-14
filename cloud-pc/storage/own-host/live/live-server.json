@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://dictionaries-tasks-understood-integer.trycloudflare.com",
- "egressIp": "52.248.45.160",
- "started": 1794633585,
- "job": "ownhost-server1"
+ "url": "https://relatively-cord-favourite-rewards.trycloudflare.com",
+ "egressIp": "52.149.13.18",
+ "port": 11470,
+ "started": 1794634812,
+ "job": "ownhost-combo1"
 }
