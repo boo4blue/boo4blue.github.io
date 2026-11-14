@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794638356,
+ "at": 1794638363,
  "egressIp": "52.160.130.164",
  "own": {
   "base": "https://geographical-burke-fever-approach.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://egg-urls-berkeley-subjects.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
