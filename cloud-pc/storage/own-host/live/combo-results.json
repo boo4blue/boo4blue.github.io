@@ -1,14 +1,14 @@
 {
  "job": "ownhost-combo1",
- "at": 1794640280,
+ "at": 1794640289,
  "egressIp": "57.151.125.211",
  "own": {
   "base": "https://structured-vancouver-helicopter-reuters.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://essentials-civic-less-harper.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "rqbit": {
   "base": "",
