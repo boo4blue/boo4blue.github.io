@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://cattle-evolution-english-sleeping.trycloudflare.com",
- "egressIp": "20.120.252.81",
- "started": 1794692188,
- "job": "ownhost-server1"
+ "url": "https://tapes-pee-profits-measure.trycloudflare.com",
+ "egressIp": "172.190.126.113",
+ "port": 11470,
+ "started": 1794692932,
+ "job": "ownhost-combo1"
 }
