@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794691101,
- "egressIp": "20.120.252.81",
+ "at": 1794692934,
+ "egressIp": "172.190.126.113",
  "own": {
-  "base": "https://carried-asin-attractions-conferencing.trycloudflare.com",
+  "base": "https://tapes-pee-profits-measure.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-start"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://printed-various-aside-background.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
