@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794653374,
+ "at": 1794653376,
  "egressIp": "4.150.81.245",
  "own": {
   "base": "https://suggest-horizontal-dealt-demanding.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
