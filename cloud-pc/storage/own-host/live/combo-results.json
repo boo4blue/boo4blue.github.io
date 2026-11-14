@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794653389,
- "egressIp": "4.150.81.245",
+ "at": 1794655863,
+ "egressIp": "4.236.174.148",
  "own": {
-  "base": "https://suggest-horizontal-dealt-demanding.trycloudflare.com",
+  "base": "https://indication-donation-leadership-significance.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://defense-kids-booth-pda.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
