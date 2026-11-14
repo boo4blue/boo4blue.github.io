@@ -1,40 +1,40 @@
-11-14 21:45:59.199  1698  2561 W SearchServiceCore: Abort, client detached.
-11-14 21:45:59.594  4029  4048 I m.facebook.aura: Background concurrent copying GC freed 403277(13MB) AllocSpace objects, 73(2776KB) LOS objects, 49% free, 21MB/42MB, paused 24.933ms,18us total 1.570s
-11-14 21:46:00.344  1698  2561 W SearchServiceCore: Abort, client detached.
-11-14 21:46:00.344  1698  2561 W SearchServiceCore: Abort, client detached.
-11-14 21:46:00.344  1698  2561 W SearchServiceCore: Abort, client detached.
-11-14 21:46:00.344  1698  2561 W SearchServiceCore: Abort, client detached.
-11-14 21:46:00.344  1698  2561 W SearchServiceCore: Abort, client detached.
-11-14 21:46:00.344  1698  2561 W SearchServiceCore: Abort, client detached.
-11-14 21:46:00.345  1698  2561 W SearchServiceCore: Abort, client detached.
-11-14 21:46:00.345  1698  2561 W SearchServiceCore: Abort, client detached.
-11-14 21:46:00.345  1698  2561 W SearchServiceCore: Abort, client detached.
-11-14 21:46:00.345  1698  2561 W SearchServiceCore: Abort, client detached.
-11-14 21:46:00.345  1698  2561 W SearchServiceCore: Abort, client detached.
-11-14 21:46:01.984  1464  4462 I BlockstoreStorage: Clearing Blockstore Data for package com.facebook.aura [CONTEXT service_id=258 ]
-11-14 21:46:03.172  1631  1631 I AiAiEcho: AppFetcherImplV2 updateApps package:[com.facebook.aura], userId:[0], reason:[package is added.].
-11-14 21:46:03.995  1698  2561 W SearchServiceCore: Abort, client detached.
-11-14 21:46:04.006  1631  1631 I AiAiEcho: AppFetcherImpl onPackageChanged com.facebook.aura.
-11-14 21:46:04.009  1631  3209 I AiAiEcho: AppIndexer Package:[com.facebook.aura] UserProfile:[0] Enabled:[true].
-11-14 21:46:04.010  1631  3209 I AiAiEcho: AppFetcherImplV2 updateApps package:[com.facebook.aura], userId:[0], reason:[package is updated.].
-11-14 21:46:04.012  1698  2561 W SearchServiceCore: Abort, client detached.
-11-14 21:46:04.016  1698  2561 W SearchServiceCore: Abort, client detached.
-11-14 21:46:04.018  1698  2561 W SearchServiceCore: Abort, client detached.
-11-14 21:46:04.266  1698  2561 W SearchServiceCore: Abort, client detached.
-11-14 21:46:04.267  1698  2561 W SearchServiceCore: Abort, client detached.
-11-14 21:46:04.267  1698  2561 W SearchServiceCore: Abort, client detached.
-11-14 21:46:04.272  1698  2561 W SearchServiceCore: Abort, client detached.
-11-14 21:46:04.872  4539  4539 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-11-14 21:46:04.902  4539  4539 I AndroidRuntime: Using default boot image
-11-14 21:46:04.902  4539  4539 I AndroidRuntime: Leaving lock profiling enabled
-11-14 21:46:05.360  4539  4539 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-11-14 21:46:06.658  4539  4539 D AndroidRuntime: Shutting down VM
-11-14 21:46:07.298  1698  2561 W SearchServiceCore: Abort, client detached.
-11-14 21:46:07.313  1698  2561 W SearchServiceCore: Abort, client detached.
-11-14 21:46:07.313  1698  2561 W SearchServiceCore: Abort, client detached.
-11-14 21:46:07.313  1698  2561 W SearchServiceCore: Abort, client detached.
-11-14 21:46:07.314  1698  2561 W SearchServiceCore: Abort, client detached.
-11-14 21:46:07.317  1698  2561 W SearchServiceCore: Abort, client detached.
-11-14 21:46:07.317  1698  2561 W SearchServiceCore: Abort, client detached.
-11-14 21:46:07.318  1698  2561 W SearchServiceCore: Abort, client detached.
-11-14 21:46:07.318  1698  2561 W SearchServiceCore: Abort, client detached.
+11-14 22:27:59.454   521  1697 I ImeTracker: com.facebook.aura:e4a78786: onCancelled at PHASE_SERVER_SHOULD_HIDE
+11-14 22:27:59.509   521   895 D CoreBackPreview: Window{2610220 u0 Splash Screen com.facebook.aura}: Setting back callback null
+11-14 22:27:59.510   521   544 W InputManager-JNI: Input channel object '2610220 Splash Screen com.facebook.aura (client)' was disposed without first being removed with the input manager!
+11-14 22:27:59.670  1518  1518 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.facebook.aura fieldId=0 fieldName=null extras=null}, false)
+11-14 22:27:59.874  3668  3728 W ProcessAnrErrorMonitor: Starting process monitor checks for process 'com.facebook.aura'
+11-14 22:28:00.255   836   836 I SafetyLabelChangedBroadcastReceiver: received broadcast packageName: com.facebook.aura, current user: UserHandle{0}, packageChangeEvent: NEW_INSTALL, intent user: UserHandle{0}
+11-14 22:28:00.495  1755  2544 W SearchServiceCore: Abort, client detached.
+11-14 22:28:00.497  1755  2544 W SearchServiceCore: Abort, client detached.
+11-14 22:28:01.288  1755  2544 W SearchServiceCore: Abort, client detached.
+11-14 22:28:01.288  1755  2544 W SearchServiceCore: Abort, client detached.
+11-14 22:28:01.298  1755  2544 W SearchServiceCore: Abort, client detached.
+11-14 22:28:01.298  1755  2544 W SearchServiceCore: Abort, client detached.
+11-14 22:28:01.512   521  2191 I CredManSysService: starting executeGetCredential with callingPackage: com.facebook.aura
+11-14 22:28:02.196  1459  3138 I IntentFilterIntentOp: Verifying IntentFilter. verificationId:5 scheme:"https" hosts:"www.muse.ai agent.meta.ai muse.ai applink.muse.ai" package:"com.facebook.aura". [CONTEXT service_id=244 ]
+11-14 22:28:02.868  3668  4210 D ProfileInstaller: Installing profile for com.facebook.aura
+11-14 22:28:04.136  1755  2544 W SearchServiceCore: Abort, client detached.
+11-14 22:28:04.136  1755  2544 W SearchServiceCore: Abort, client detached.
+11-14 22:28:04.136  1755  2544 W SearchServiceCore: Abort, client detached.
+11-14 22:28:04.661  1755  2544 W SearchServiceCore: Abort, client detached.
+11-14 22:28:04.661  1755  2544 W SearchServiceCore: Abort, client detached.
+11-14 22:28:04.817  3668  3693 I m.facebook.aura: Background concurrent copying GC freed 974182(29MB) AllocSpace objects, 127(7188KB) LOS objects, 49% free, 10MB/21MB, paused 22us,12us total 243.111ms
+11-14 22:28:04.885  1033  1055 V OnDeviceRecognitionPreferenceController: Recognition service not in the same package as the default on-device recognizer: com.facebook.aura/com.facebook.aura.assist.HatchRecognitionService.
+11-14 22:28:04.989  1755  2544 W SearchServiceCore: Abort, client detached.
+11-14 22:28:04.989  1755  2544 W SearchServiceCore: Abort, client detached.
+11-14 22:28:08.718  1459  4001 I BlockstoreStorage: Clearing Blockstore Data for package com.facebook.aura [CONTEXT service_id=258 ]
+11-14 22:28:09.251  1589  1589 I AiAiEcho: AppFetcherImplV2 updateApps package:[com.facebook.aura], userId:[0], reason:[package is added.].
+11-14 22:28:09.628  1589  1589 I AiAiEcho: AppFetcherImpl onPackageChanged com.facebook.aura.
+11-14 22:28:09.629  1589  3075 I AiAiEcho: AppIndexer Package:[com.facebook.aura] UserProfile:[0] Enabled:[true].
+11-14 22:28:09.629  1589  3075 I AiAiEcho: AppFetcherImplV2 updateApps package:[com.facebook.aura], userId:[0], reason:[package is updated.].
+11-14 22:28:10.438  4609  4609 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+11-14 22:28:10.457  4609  4609 I AndroidRuntime: Using default boot image
+11-14 22:28:10.457  4609  4609 I AndroidRuntime: Leaving lock profiling enabled
+11-14 22:28:10.662  1755  2544 W SearchServiceCore: Abort, client detached.
+11-14 22:28:10.662  1755  2544 W SearchServiceCore: Abort, client detached.
+11-14 22:28:10.726  4609  4609 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+11-14 22:28:11.017  1755  2544 W SearchServiceCore: Abort, client detached.
+11-14 22:28:11.017  1755  2544 W SearchServiceCore: Abort, client detached.
+11-14 22:28:11.954  4609  4609 D AndroidRuntime: Shutting down VM
+11-14 22:28:13.255  1755  2544 W SearchServiceCore: Abort, client detached.
+11-14 22:28:13.255  1755  2544 W SearchServiceCore: Abort, client detached.
