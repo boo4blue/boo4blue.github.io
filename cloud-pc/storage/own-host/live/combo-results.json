@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794660742,
+ "at": 1794660756,
  "egressIp": "57.156.70.52",
  "own": {
   "base": "https://william-dude-protocols-shades.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "live noauth-http=401"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://brush-stuffed-reuters-mba.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
