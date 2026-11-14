@@ -12,8 +12,13 @@
 # new screen signature. HARD RULES: nothing is ever typed; a password
 # field, a credential form, or a sign-in chooser with no other way
 # forward is a WALL (captured, recorded, backed out of — never
-# filled); system permission dialogs are captured then DENIED; if
-# focus leaves the app the walk backs out.
+# filled); system permission dialogs are captured then DENIED; and
+# focus discipline is verified BEFORE every capture: after a wall
+# only verifiable target focus may continue (else WALL_EXIT), known
+# foreign focus stops the walk unsighted (FOCUS_EXIT), and focus
+# that stays undetermined past one blind step stops it too
+# (FOCUS_UNKNOWN). The walk ends with one stop=<reason> line in
+# emu-results.txt (the editor's importer ignores unknown lines).
 #
 # Outputs in emu/: NN-<stem>.png per screen, emu-results.txt
 # (file=/label= + walled= lines, the EmuRuns format), and
@@ -45,6 +50,21 @@ uidump() { # $1 = dest file; retries once
 }
 focuspkg() {
   adb shell dumpsys window windows 2>/dev/null | grep -m1 -o 'mCurrentFocus=Window{[^ ]* [^ ]*/' | sed 's/.* //' | tr -d '/'
+}
+focuspkg_fallback() {
+  # Primary probe came back empty: try the other focus fields before
+  # conceding focus is undetermined (mFocusedApp in the window dump,
+  # then the activity stack's top resumed activity).
+  local p
+  p=$(adb shell dumpsys window windows 2>/dev/null | grep -m1 'mFocusedApp' | grep -oE '[a-zA-Z][a-zA-Z0-9._]*/' | head -1 | tr -d '/')
+  [ -n "$p" ] && { echo "$p"; return; }
+  p=$(adb shell dumpsys activity activities 2>/dev/null | grep -m1 'topResumedActivity' | grep -oE 'u0 [a-zA-Z][a-zA-Z0-9._]*/' | awk '{print $2}' | tr -d '/')
+  echo "$p"
+}
+focusprobe() {
+  local p; p=$(focuspkg)
+  [ -n "$p" ] && { echo "$p"; return; }
+  focuspkg_fallback
 }
 slugify() { echo "$1" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+|-+$//g' | cut -c1-24; }
 
@@ -182,13 +202,44 @@ if [ "$mode" = full ]; then
   pid1=$(adb shell pidof $PACKAGE | tr -d '\r'); say "pid_after_launch=${pid1:-NONE}"
   # ---------------- walk ----------------
   TRIED=/tmp/emu-walk-tried.txt; : > $TRIED
-  cur_slug=launch; cur_label=Launch; backs=0; walls=0; stopreason=""
+  cur_slug=launch; cur_label=Launch; backs=0; walls=0; stopreason=""; unknown=0
   declare -A SEEN
   for step in $(seq 1 $MAXSCREENS); do
     nn=$(printf "%02d" $step)
+    fp=$(focusprobe)
+    # ---- focus discipline: never photograph another app ----
+    if [ $walls -ge 1 ]; then
+      # A wall is on record: the walk may only continue while the
+      # target is VERIFIABLY in front. Foreign focus means the
+      # back-out left the app; undetermined focus after a wall is
+      # just as disqualifying (stopAtSignInWall, EMU-SCREENS-JOB.md).
+      # Either way: stop here, before any capture.
+      if [ "$fp" != "$PACKAGE" ]; then
+        stopreason="WALL_EXIT"; say "step$nn WALL_EXIT focus=[${fp:-UNKNOWN}] after wall (no capture)"; break
+      fi
+    elif [ -n "$fp" ] && [ "$fp" != "$PACKAGE" ] \
+         && ! echo "$fp" | grep -q permissioncontroller \
+         && [ "$fp" != "android" ] && [ "$fp" != "com.android.systemui" ]; then
+      # Focus is KNOWN to be a different app: stop instead of
+      # capturing it. Exempt: the permission controller (captured,
+      # then denied, per contract) and android/systemui (the walker
+      # itself rules on system dialogs, e.g. BLOCKED on ANR).
+      stopreason="FOCUS_EXIT"; say "step$nn FOCUS_EXIT focus=$fp (no capture)"; break
+    fi
+    if [ -z "$fp" ]; then
+      # No wall yet but focus undetermined (primary + fallback both
+      # empty): allow ONE blind step; a second consecutive unknown
+      # stops the walk rather than photographing blindly.
+      unknown=$((unknown+1))
+      if [ $unknown -gt 1 ]; then
+        stopreason="FOCUS_UNKNOWN"; say "step$nn FOCUS_UNKNOWN focus undetermined twice (no capture)"; break
+      fi
+      say "step$nn focus_unknown (blind step $unknown of 1 allowed)"
+    else
+      unknown=0
+    fi
     adb exec-out screencap -p > emu/.shot-tmp.png 2>/dev/null
     uidump emu/.ui-cur.xml
-    fp=$(focuspkg)
     out=$(python3 emu/.walker.py emu/.ui-cur.xml $TRIED "$fp")
     sig=$(echo "$out" | grep '^SIG' | awk '{print $2}')
     texts=$(echo "$out" | grep '^TEXTS' | cut -c7-)
@@ -232,6 +283,7 @@ if [ "$mode" = full ]; then
         else stopreason="NO_ADVANCE"; break; fi ;;
     esac
   done
+  printf 'stop=%s\n' "${stopreason:-STEP_LIMIT}" >> $R
   say "walk_stop_reason=${stopreason:-STEP_LIMIT}"
   pid2=$(adb shell pidof $PACKAGE | tr -d '\r'); say "pid_at_end=${pid2:-NONE}"
   fi
