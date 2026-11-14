@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
  "server": "stream-server (from-scratch)",
- "url": "https://cosmetics-foundation-printer-expressed.trycloudflare.com",
+ "url": "https://florists-becomes-booking-became.trycloudflare.com",
  "egressIp": "20.172.192.241",
- "started": 1794625968,
+ "started": 1794626545,
  "job": "ownhost-server1"
 }
