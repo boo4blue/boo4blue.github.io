@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794688548,
+ "at": 1794688550,
  "egressIp": "52.165.59.212",
  "own": {
   "base": "https://shall-uri-disclaimers-candidate.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
