@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794754765,
- "egressIp": "172.172.157.2",
+ "at": 1794756627,
+ "egressIp": "52.183.7.212",
  "own": {
-  "base": "https://narrow-citizens-oecd-factors.trycloudflare.com",
+  "base": "https://showtimes-mailman-reminder-blue.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-start"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://lamps-asks-declared-dimensional.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
