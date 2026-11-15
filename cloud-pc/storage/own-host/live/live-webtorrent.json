@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://tender-nickel-belief-cardiovascular.trycloudflare.com",
- "egressIp": "172.132.46.98",
+ "url": "https://office-whenever-thus-hopkins.trycloudflare.com",
+ "egressIp": "172.184.213.228",
  "port": 8080,
- "started": 1794737788,
- "job": "ownhost-multi5"
+ "started": 1794739248,
+ "job": "ownhost-combo1"
 }
