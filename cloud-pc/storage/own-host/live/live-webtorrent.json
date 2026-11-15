@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://wheat-avi-bias-anime.trycloudflare.com",
- "egressIp": "9.234.15.210",
+ "url": "https://north-produced-applicants-cornwall.trycloudflare.com",
+ "egressIp": "4.236.95.161",
  "port": 8080,
- "started": 1794732752,
- "job": "ownhost-multi5"
+ "started": 1794734255,
+ "job": "ownhost-combo1"
 }
