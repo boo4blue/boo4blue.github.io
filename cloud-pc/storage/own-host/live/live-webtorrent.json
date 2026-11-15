@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://agent-authentic-participating-nominations.trycloudflare.com",
- "egressIp": "172.202.100.55",
+ "url": "https://maple-please-macintosh-henry.trycloudflare.com",
+ "egressIp": "13.83.160.130",
  "port": 8080,
- "started": 1794745219,
- "job": "ownhost-multi5"
+ "started": 1794746844,
+ "job": "ownhost-combo1"
 }
