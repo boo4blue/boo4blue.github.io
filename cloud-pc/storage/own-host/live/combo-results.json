@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794770737,
+ "at": 1794770750,
  "egressIp": "20.115.229.183",
  "own": {
   "base": "https://salem-websites-superb-bare.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://dollars-quarterly-period-cream.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
