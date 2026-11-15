@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794702989,
+ "at": 1794703052,
  "egressIp": "128.85.70.49",
  "own": {
   "base": "https://rendered-appears-papua-grass.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
