@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
  "server": "stream-server (from-scratch)",
- "url": "https://menus-cabinet-making-capacity.trycloudflare.com",
- "egressIp": "172.190.109.33",
- "started": 1794783995,
+ "url": "https://cite-reflects-vegetation-developers.trycloudflare.com",
+ "egressIp": "128.85.146.163",
+ "started": 1794784250,
  "job": "ownhost-server1"
 }
