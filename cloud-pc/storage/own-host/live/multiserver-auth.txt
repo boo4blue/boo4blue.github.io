@@ -1,5 +1,5 @@
-# Combo session credentials — generated on the Cloud PC runner 2026-11-15T15:29:37Z
+# Combo session credentials — generated on the Cloud PC runner 2026-11-15T15:39:37Z
 # These protect this session's trycloudflare-exposed servers (job ownhost-combo1).
-torrserver user=onion pass=da2b6066b52d5b4c7790a8a3
-rqbit user=onion pass=48a45b575649c039af911742
-webtorrent user=onion pass=8a198106f161f3bb4ec12360
+torrserver user=onion pass=33b1b9eda27b9e1870334cf8
+rqbit user=onion pass=1b55dbf525460828c3ce5a11
+webtorrent user=onion pass=27c219d445b057e6910ccc37
