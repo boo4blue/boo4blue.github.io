@@ -68,7 +68,7 @@
       "i": "4",
       "do": "tap_element",
       "status": "OK",
-      "detail": "tapped 'new here' at 540 1494"
+      "detail": "tapped 'new here' at 297 1494"
     },
     {
       "i": "5",
@@ -140,7 +140,7 @@
       "i": "16",
       "do": "tap_element",
       "status": "OK",
-      "detail": "tapped 'Create my family' at 540 866"
+      "detail": "tapped 'Create my family' at 352 866"
     },
     {
       "i": "17",
@@ -485,8 +485,8 @@
       "detail": "observe x13-badges (png+xml+texts)"
     }
   ],
-  "startedUtc": "2026-11-15T23:22:25Z",
-  "finishedUtc": "2026-11-15T23:28:51Z",
+  "startedUtc": "2026-11-15T23:28:46Z",
+  "finishedUtc": "2026-11-15T23:34:13Z",
   "verdict": "PASS",
   "note": ""
 }
