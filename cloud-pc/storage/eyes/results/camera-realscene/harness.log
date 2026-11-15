@@ -1,0 +1,46 @@
+== eyes run camera-realscene 2026-11-15T23:53:39Z
+api_put: cloud-pc/storage/eyes/results/camera-realscene/heartbeat.txt OK
+apk md5=e72dd22e98344c36cac4ba486f2100fb expected=e72dd22e98344c36cac4ba486f2100fb size=246579
+WARNING: no real-scene camera available — captures use the emulator test pattern and do NOT count as camera proof
+camera route: none — source: none ()
+<stdin>:6: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+route.json written
+api_put: cloud-pc/storage/eyes/results/camera-realscene/route.json OK
+* daemon not running; starting now at tcp:5037
+* daemon started successfully
+booted after ~35s
+screen real: size=1080x2280 density=420 fontScale=1.0
+installOk=1
+seed verify: provider holds 0 contacts
+pidAliveStart=1
+api_put: cloud-pc/storage/eyes/results/camera-realscene/progress.json OK
+step 0 [record_start] OK: screenrecord started (540x1140 @1.2Mbps)
+step 1 [wait] OK: slept 5s
+shot 01-viewfinder: 78252 bytes
+api_put: cloud-pc/storage/eyes/results/camera-realscene/01-viewfinder.png OK
+api_put: cloud-pc/storage/eyes/results/camera-realscene/01-viewfinder.xml OK
+api_put: cloud-pc/storage/eyes/results/camera-realscene/01-viewfinder.texts.txt OK
+step 2 [observe] OK: observe 01-viewfinder (png+xml+texts)
+step 3 [wait] OK: slept 8s
+shot 02-viewfinder-later: 77728 bytes
+api_put: cloud-pc/storage/eyes/results/camera-realscene/02-viewfinder-later.png OK
+step 4 [screenshot] OK: screenshot 02-viewfinder-later
+step 5 [tap_element] SKIP: 'Take photo' not found (optional)
+step 6 [tap_xy] OK: tap frac 0.5,0.87
+step 7 [wait] OK: slept 2s
+step 8 [tap_xy] OK: tap frac 0.46,0.57
+step 9 [wait] OK: slept 3s
+step 10 [assert_text] SOFTFAIL: assert soft-fail: 'Saved' not in hierarchy (vision check decides)
+shot 03-after-shutter: 80467 bytes
+api_put: cloud-pc/storage/eyes/results/camera-realscene/03-after-shutter.png OK
+step 11 [screenshot] OK: screenshot 03-after-shutter
+step 12 [shell] OK: shell: newest=$(adb shell ls -t /sdcard/Pictures/OnionCamera/ 2>/dev/null | head -1 | tr -d '\015'); if [ -n "$newest" ]; then adb pull "/sdcard/Pictures/OnionCamera/$newest" "$RESULTS/taken-photo.jpg" && api_put "eyes $ID: taken photo" "cloud-pc/storage/eyes/results/$ID/taken-photo.jpg"; fi
+step 13 [shell] OK: shell: if [ -n "$newest" ]; then adb shell am start -a android.intent.action.VIEW -d "file:///sdcard/Pictures/OnionCamera/$newest" -t "image/jpeg" >/dev/null 2>&1; fi
+step 14 [wait] OK: slept 3s
+shot 04-stock-gallery: 18952 bytes
+api_put: cloud-pc/storage/eyes/results/camera-realscene/04-stock-gallery.png OK
+step 15 [screenshot] OK: screenshot 04-stock-gallery
+video flow: 588147 bytes
+step 16 [record_stop] OK: screenrecord stopped -> flow.mp4
+<stdin>:23: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+result.json written, verdict PASS
