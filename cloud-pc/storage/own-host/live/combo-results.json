@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794749710,
+ "at": 1794749773,
  "egressIp": "20.12.245.231",
  "own": {
   "base": "https://plate-condition-yang-patrick.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
