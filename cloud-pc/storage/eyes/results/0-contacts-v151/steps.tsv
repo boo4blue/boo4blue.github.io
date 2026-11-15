@@ -1,0 +1,18 @@
+0	wait	OK	slept 2s
+1	tap_xy	OK	tap frac 0.8,0.27
+2	wait	OK	slept 3s
+3	record_start	OK	screenrecord started (540x1140 @1.2Mbps)
+4	observe	OK	observe people-list (png+xml+texts)
+5	screenshot	OK	screenshot 01-people-list
+6	assert_text	OK	assert ok: 'Search people, notes, T9' present
+7	tap_element	FALLBACK	'All accounts' not in hierarchy; fallback tap 0.5 0.145
+8	wait	OK	slept 2s
+9	screenshot	OK	screenshot 02-account-menu
+10	observe	OK	observe account-menu (png+xml+texts)
+11	back	OK	keyevent BACK
+12	wait	OK	slept 1s
+13	tap_element	FALLBACK	'Avery Collins' not in hierarchy; fallback tap 0.5 0.36
+14	wait	OK	slept 3s
+15	screenshot	OK	screenshot 03-person-sheet
+16	observe	OK	observe person-sheet (png+xml+texts)
+17	record_stop	OK	screenrecord stopped -> flow.mp4
