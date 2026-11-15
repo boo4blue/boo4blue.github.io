@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://waterproof-ppc-anniversary-upgrading.trycloudflare.com",
- "egressIp": "20.80.78.228",
- "started": 1794728355,
- "job": "ownhost-server1"
+ "url": "https://speaking-randy-delivering-elizabeth.trycloudflare.com",
+ "egressIp": "134.138.43.49",
+ "port": 11470,
+ "started": 1794729242,
+ "job": "ownhost-combo1"
 }
