@@ -1,0 +1,141 @@
+{
+  "id": "0-contacts-v151",
+  "package": "com.onioncore.contacts",
+  "lane": "onion-eyes/cloud-pc",
+  "apkMd5Expected": "e69cde42aa5cdf6a4e955cc665c190b8",
+  "apkMd5Actual": "e69cde42aa5cdf6a4e955cc665c190b8",
+  "bootCompleted": true,
+  "installOk": true,
+  "pidAliveStart": true,
+  "pidAliveEnd": true,
+  "screen": {
+    "size": "1080x2280",
+    "density": "420",
+    "fontScale": "1.0"
+  },
+  "shots": [
+    "01-people-list.png",
+    "02-account-menu.png",
+    "03-person-sheet.png",
+    "account-menu.png",
+    "people-list.png",
+    "person-sheet.png"
+  ],
+  "videos": [
+    "flow.mp4"
+  ],
+  "steps": [
+    {
+      "i": "0",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "1",
+      "do": "tap_xy",
+      "status": "OK",
+      "detail": "tap frac 0.8,0.27"
+    },
+    {
+      "i": "2",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 3s"
+    },
+    {
+      "i": "3",
+      "do": "record_start",
+      "status": "OK",
+      "detail": "screenrecord started (540x1140 @1.2Mbps)"
+    },
+    {
+      "i": "4",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe people-list (png+xml+texts)"
+    },
+    {
+      "i": "5",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 01-people-list"
+    },
+    {
+      "i": "6",
+      "do": "assert_text",
+      "status": "OK",
+      "detail": "assert ok: 'Search people, notes, T9' present"
+    },
+    {
+      "i": "7",
+      "do": "tap_element",
+      "status": "FALLBACK",
+      "detail": "'All accounts' not in hierarchy; fallback tap 0.5 0.145"
+    },
+    {
+      "i": "8",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "9",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 02-account-menu"
+    },
+    {
+      "i": "10",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe account-menu (png+xml+texts)"
+    },
+    {
+      "i": "11",
+      "do": "back",
+      "status": "OK",
+      "detail": "keyevent BACK"
+    },
+    {
+      "i": "12",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 1s"
+    },
+    {
+      "i": "13",
+      "do": "tap_element",
+      "status": "FALLBACK",
+      "detail": "'Avery Collins' not in hierarchy; fallback tap 0.5 0.36"
+    },
+    {
+      "i": "14",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 3s"
+    },
+    {
+      "i": "15",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 03-person-sheet"
+    },
+    {
+      "i": "16",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe person-sheet (png+xml+texts)"
+    },
+    {
+      "i": "17",
+      "do": "record_stop",
+      "status": "OK",
+      "detail": "screenrecord stopped -> flow.mp4"
+    }
+  ],
+  "startedUtc": "2026-11-15T22:02:15Z",
+  "finishedUtc": "2026-11-15T22:04:25Z",
+  "verdict": "PASS",
+  "note": ""
+}
