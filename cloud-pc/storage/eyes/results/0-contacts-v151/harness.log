@@ -1,0 +1,50 @@
+== eyes run 0-contacts-v151 2026-11-15T22:02:13Z
+api_put: cloud-pc/storage/eyes/results/0-contacts-v151/heartbeat.txt OK
+apk md5=e69cde42aa5cdf6a4e955cc665c190b8 expected=e69cde42aa5cdf6a4e955cc665c190b8 size=205756
+* daemon not running; starting now at tcp:5037
+* daemon started successfully
+booted after ~30s
+screen real: size=1080x2280 density=420 fontScale=1.0
+installOk=1
+SEED FAIL Avery Collins
+pidAliveStart=1
+api_put: cloud-pc/storage/eyes/results/0-contacts-v151/progress.json OK
+step 0 [wait] OK: slept 2s
+step 1 [tap_xy] OK: tap frac 0.8,0.27
+step 2 [wait] OK: slept 3s
+step 3 [record_start] OK: screenrecord started (540x1140 @1.2Mbps)
+shot people-list: 68535 bytes
+api_put: cloud-pc/storage/eyes/results/0-contacts-v151/people-list.png OK
+api_put: cloud-pc/storage/eyes/results/0-contacts-v151/people-list.xml OK
+api_put: cloud-pc/storage/eyes/results/0-contacts-v151/people-list.texts.txt OK
+step 4 [observe] OK: observe people-list (png+xml+texts)
+shot 01-people-list: 68535 bytes
+api_put: cloud-pc/storage/eyes/results/0-contacts-v151/01-people-list.png OK
+step 5 [screenshot] OK: screenshot 01-people-list
+step 6 [assert_text] OK: assert ok: 'Search people, notes, T9' present
+step 7 [tap_element] FALLBACK: 'All accounts' not in hierarchy; fallback tap 0.5 0.145
+step 8 [wait] OK: slept 2s
+shot 02-account-menu: 68535 bytes
+api_put: cloud-pc/storage/eyes/results/0-contacts-v151/02-account-menu.png OK
+step 9 [screenshot] OK: screenshot 02-account-menu
+shot account-menu: 68535 bytes
+api_put: cloud-pc/storage/eyes/results/0-contacts-v151/account-menu.png OK
+api_put: cloud-pc/storage/eyes/results/0-contacts-v151/account-menu.xml OK
+api_put: cloud-pc/storage/eyes/results/0-contacts-v151/account-menu.texts.txt OK
+step 10 [observe] OK: observe account-menu (png+xml+texts)
+step 11 [back] OK: keyevent BACK
+step 12 [wait] OK: slept 1s
+step 13 [tap_element] FALLBACK: 'Avery Collins' not in hierarchy; fallback tap 0.5 0.36
+step 14 [wait] OK: slept 3s
+shot 03-person-sheet: 1346653 bytes
+api_put: too big for contents API, needs git path: cloud-pc/storage/eyes/results/0-contacts-v151/03-person-sheet.png
+step 15 [screenshot] OK: screenshot 03-person-sheet
+shot person-sheet: 1346653 bytes
+api_put: too big for contents API, needs git path: cloud-pc/storage/eyes/results/0-contacts-v151/person-sheet.png
+api_put: cloud-pc/storage/eyes/results/0-contacts-v151/person-sheet.xml OK
+api_put: cloud-pc/storage/eyes/results/0-contacts-v151/person-sheet.texts.txt OK
+step 16 [observe] OK: observe person-sheet (png+xml+texts)
+video flow: 374959 bytes
+step 17 [record_stop] OK: screenrecord stopped -> flow.mp4
+<stdin>:20: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+result.json written, verdict PASS
