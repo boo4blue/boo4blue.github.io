@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://translate-functional-assurance-together.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://symbols-mere-appendix-vector.trycloudflare.com",
  "egressIp": "40.74.205.243",
- "port": 11470,
- "started": 1794742112,
- "job": "ownhost-combo1"
+ "started": 1794743278,
+ "job": "ownhost-server1"
 }
