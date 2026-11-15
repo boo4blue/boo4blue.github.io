@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://speeds-interface-moisture-womens.trycloudflare.com",
- "egressIp": "20.161.184.81",
+ "url": "https://output-lucky-worth-shakespeare.trycloudflare.com",
+ "egressIp": "172.214.45.244",
  "port": 3030,
- "started": 1794761712,
+ "started": 1794766623,
  "job": "ownhost-combo1"
 }
