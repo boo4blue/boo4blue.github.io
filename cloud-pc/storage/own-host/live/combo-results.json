@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794754688,
+ "at": 1794754751,
  "egressIp": "172.172.157.2",
  "own": {
   "base": "https://narrow-citizens-oecd-factors.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
