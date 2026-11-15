@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794746845,
+ "at": 1794747317,
  "egressIp": "13.83.160.130",
  "own": {
-  "base": "https://clark-wine-reporting-home.trycloudflare.com",
+  "base": "https://garden-plc-males-converted.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-start"
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://asthma-pursue-insertion-gen.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://maple-please-macintosh-henry.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
