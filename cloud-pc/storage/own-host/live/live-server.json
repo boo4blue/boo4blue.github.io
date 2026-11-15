@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://showtimes-mailman-reminder-blue.trycloudflare.com",
+ "url": "https://enclosure-flexibility-possibly-abstracts.trycloudflare.com",
  "egressIp": "52.183.7.212",
  "port": 11470,
- "started": 1794756625,
+ "started": 1794757183,
  "job": "ownhost-combo1"
 }
