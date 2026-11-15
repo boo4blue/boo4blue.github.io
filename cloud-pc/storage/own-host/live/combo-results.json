@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794749787,
- "egressIp": "20.12.245.231",
+ "at": 1794751653,
+ "egressIp": "172.203.95.247",
  "own": {
-  "base": "https://plate-condition-yang-patrick.trycloudflare.com",
+  "base": "https://korean-reveal-pulse-chorus.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-start"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://continent-ben-owner-ware.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
