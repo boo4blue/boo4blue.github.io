@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794761713,
+ "at": 1794761726,
  "egressIp": "20.161.184.81",
  "own": {
   "base": "https://header-street-some-plugin.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "live noauth-http=401"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://configurations-packing-drunk-huge.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
