@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://conclusions-furnished-victor-breath.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://archives-logo-magnificent-normal.trycloudflare.com",
  "egressIp": "128.203.199.215",
- "port": 11470,
- "started": 1794710982,
- "job": "ownhost-combo1"
+ "started": 1794712146,
+ "job": "ownhost-server1"
 }
