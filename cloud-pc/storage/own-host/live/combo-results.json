@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794705467,
+ "at": 1794705530,
  "egressIp": "48.217.116.131",
  "own": {
   "base": "https://tradition-phpbb-baker-rug.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
