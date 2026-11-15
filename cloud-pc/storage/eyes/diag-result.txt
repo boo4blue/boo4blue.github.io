@@ -1,0 +1,45 @@
+== eyes diag 2026-11-15T20:48:47Z pwd=/home/runner/work/boo4blue.github.io/boo4blue.github.io/cloud-pc/storage user=runner
+--- eyes/ dir (store mechanics proof: this script arrived via store)
+total 16
+drwxr-xr-x 2 runner runner 4096 Nov 15 20:48 .
+drwxr-xr-x 9 runner runner 4096 Nov 15 20:48 ..
+-rw-r--r-- 1 runner runner  192 Nov 15 20:48 diag-result.txt
+-rw-r--r-- 1 runner runner 1654 Nov 15 20:48 diag.sh
+--- cache SDK tree
+ollama-bin
+ollama-models
+ls: cannot access '/home/runner/.cache/cloudpc-models/android-sdk/': No such file or directory
+--- cache system-images
+ls: cannot access '/home/runner/.cache/cloudpc-models/android-sdk/system-images/': No such file or directory
+ls: cannot access '/home/runner/.cache/cloudpc-models/android-sdk/system-images/*/': No such file or directory
+--- sys sdk
+build-tools
+cmake
+cmdline-tools
+extras
+licenses
+ndk
+packages-list.txt
+platform-tools
+platforms
+--- java / disk / mem / cpu
+openjdk version "25.0.5" 2026-10-20 LTS
+OpenJDK Runtime Environment Temurin-25.0.5+8 (build 25.0.5+8-LTS)
+/dev/root       145G   71G   75G  49% /
+               total        used        free      shared  buff/cache   available
+Mem:           15982        1025        2356          45       12990       14957
+4
+--- sdkmanager installed list (cache sdk, timeout 100)
+Loading package information...                                                  Loading local repository...                                                     [=========                              ] 25% Loading local repository...       
+sdkmanager_list_exit=0
+--- git
+d78b971 eyes: diag dispatch
+ D ../inbox/00-00tv-all53.json
+ D ../inbox/00-01tv-base53.json
+ D ../inbox/00-02tv-feat53.json
+ D ../inbox/00-03tv-mx53.json
+ D ../inbox/00-emu-eyes-0diag-1-eyes-0diag-store.json
+?? ../outbox/eyes-0diag-store.json
+?? ../outbox/job-1794775727.json
+?? eyes/
+== diag end
