@@ -2,7 +2,7 @@
 1	wait	OK	slept 8s
 2	observe	OK	observe x0-welcome (png+xml+texts)
 3	screenshot	OK	screenshot 01-welcome
-4	tap_element	OK	tapped 'new here' at 540 1494
+4	tap_element	OK	tapped 'new here' at 297 1494
 5	wait	OK	slept 2s
 6	tap_element	OK	tapped 'I'm a parent' at 540 1698
 7	wait	OK	slept 2s
@@ -14,7 +14,7 @@
 13	tap_element	FALLBACK	'Alvarez' not in hierarchy; fallback tap 0.5 0.71
 14	type	OK	typed 'Demo Circle'
 15	screenshot	OK	screenshot x2-form-filled
-16	tap_element	OK	tapped 'Create my family' at 540 866
+16	tap_element	OK	tapped 'Create my family' at 352 866
 17	wait	OK	slept 9s
 18	observe	OK	observe x3-after-signup (png+xml+texts)
 19	screenshot	OK	screenshot x4-wizard-welcome
