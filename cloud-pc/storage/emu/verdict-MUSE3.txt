@@ -1,7 +1,7 @@
-=== Muse emu probe3 (legal info) 06:25:17Z
-boot_completed=1 after ~25s
+=== Muse emu probe3 (legal info) 07:06:00Z
+boot_completed=1 after ~20s
 pm_list_match=1
 legal_tapped at 301 637
-cap01 legal-info bytes=124411
+cap01 legal-info bytes=124080
 legal_rows=NONE_FOUND
-pid_at_end=4050
+pid_at_end=3743
