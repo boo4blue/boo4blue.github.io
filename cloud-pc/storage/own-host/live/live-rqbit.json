@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://associate-potential-democratic-cancer.trycloudflare.com",
- "egressIp": "172.203.95.247",
+ "url": "https://coastal-tribunal-peers-flux.trycloudflare.com",
+ "egressIp": "172.172.157.2",
  "port": 3030,
- "started": 1794751722,
+ "started": 1794754198,
  "job": "ownhost-combo1"
 }
