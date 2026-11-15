@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794707990,
+ "at": 1794708054,
  "egressIp": "68.211.146.21",
  "own": {
   "base": "https://medicare-powder-graduation-rhode.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
