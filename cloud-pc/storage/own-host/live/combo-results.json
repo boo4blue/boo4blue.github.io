@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794721830,
+ "at": 1794722310,
  "egressIp": "20.221.60.203",
  "own": {
-  "base": "https://bacon-leading-anticipated-internship.trycloudflare.com",
+  "base": "https://raises-colorado-wrap-personnel.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-start"
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://toe-license-rewards-calibration.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://karma-varieties-representations-phantom.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
