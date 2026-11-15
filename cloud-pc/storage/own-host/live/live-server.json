@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://popular-ssl-photographs-berry.trycloudflare.com",
- "egressIp": "135.232.177.196",
- "started": 1794716046,
- "job": "ownhost-server1"
+ "url": "https://manually-coordination-dynamic-exams.trycloudflare.com",
+ "egressIp": "20.64.175.132",
+ "port": 11470,
+ "started": 1794716762,
+ "job": "ownhost-combo1"
 }
