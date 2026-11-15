@@ -1,0 +1,66 @@
+== eyes run camera-v160 2026-11-15T23:25:06Z
+api_put: cloud-pc/storage/eyes/results/camera-v160/heartbeat.txt OK
+apk md5=f674a182ad0415f14bd009a085f7a772 expected=f674a182ad0415f14bd009a085f7a772 size=213811
+* daemon not running; starting now at tcp:5037
+* daemon started successfully
+booted after ~30s
+screen real: size=1080x2280 density=420 fontScale=1.0
+installOk=1
+seed verify: provider holds 0 contacts
+pidAliveStart=1
+api_put: cloud-pc/storage/eyes/results/camera-v160/progress.json OK
+step 0 [record_start] OK: screenrecord started (540x1140 @1.2Mbps)
+shot 00-launch-early: 78300 bytes
+api_put: cloud-pc/storage/eyes/results/camera-v160/00-launch-early.png OK
+step 1 [screenshot] OK: screenshot 00-launch-early
+step 2 [wait] OK: slept 3s
+shot photo-viewfinder: 77620 bytes
+api_put: cloud-pc/storage/eyes/results/camera-v160/photo-viewfinder.png OK
+api_put: cloud-pc/storage/eyes/results/camera-v160/photo-viewfinder.xml OK
+api_put: cloud-pc/storage/eyes/results/camera-v160/photo-viewfinder.texts.txt OK
+step 3 [observe] OK: observe photo-viewfinder (png+xml+texts)
+shot 01-photo-viewfinder: 78307 bytes
+api_put: cloud-pc/storage/eyes/results/camera-v160/01-photo-viewfinder.png OK
+step 4 [screenshot] OK: screenshot 01-photo-viewfinder
+step 5 [wait] OK: slept 2s
+shot 02-photo-viewfinder-settled: 77549 bytes
+api_put: cloud-pc/storage/eyes/results/camera-v160/02-photo-viewfinder-settled.png OK
+step 6 [screenshot] OK: screenshot 02-photo-viewfinder-settled
+step 7 [tap_element] OK: tapped 'MORE' at 850 333
+step 8 [wait] OK: slept 2s
+shot more-grid: 152000 bytes
+api_put: cloud-pc/storage/eyes/results/camera-v160/more-grid.png OK
+api_put: cloud-pc/storage/eyes/results/camera-v160/more-grid.xml OK
+api_put: cloud-pc/storage/eyes/results/camera-v160/more-grid.texts.txt OK
+step 9 [observe] OK: observe more-grid (png+xml+texts)
+shot 03-more-grid: 152588 bytes
+api_put: cloud-pc/storage/eyes/results/camera-v160/03-more-grid.png OK
+step 10 [screenshot] OK: screenshot 03-more-grid
+step 11 [back] OK: keyevent BACK
+step 12 [launch] OK: monkey launch
+step 13 [wait] OK: slept 2s
+step 14 [tap_element] OK: tapped 'VIDEO' at 455 333
+step 15 [wait] OK: slept 2s
+shot video-mode: 70392 bytes
+api_put: cloud-pc/storage/eyes/results/camera-v160/video-mode.png OK
+api_put: cloud-pc/storage/eyes/results/camera-v160/video-mode.xml OK
+api_put: cloud-pc/storage/eyes/results/camera-v160/video-mode.texts.txt OK
+step 16 [observe] OK: observe video-mode (png+xml+texts)
+shot 04-video-mode: 69745 bytes
+api_put: cloud-pc/storage/eyes/results/camera-v160/04-video-mode.png OK
+step 17 [screenshot] OK: screenshot 04-video-mode
+step 18 [tap_element] OK: tapped 'Settings' at 816 200
+step 19 [wait] OK: slept 2s
+shot 05-settings: 126461 bytes
+api_put: cloud-pc/storage/eyes/results/camera-v160/05-settings.png OK
+step 20 [screenshot] OK: screenshot 05-settings
+shot settings: 126461 bytes
+api_put: cloud-pc/storage/eyes/results/camera-v160/settings.png OK
+api_put: cloud-pc/storage/eyes/results/camera-v160/settings.xml OK
+api_put: cloud-pc/storage/eyes/results/camera-v160/settings.texts.txt OK
+step 21 [observe] OK: observe settings (png+xml+texts)
+step 22 [back] OK: keyevent BACK
+video flow: 1540528 bytes
+step 23 [record_stop] OK: screenrecord stopped -> flow.mp4
+<stdin>:21: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+result.json written, verdict PASS
