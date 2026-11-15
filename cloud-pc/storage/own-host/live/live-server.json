@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://wins-beautifully-hello-raleigh.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://timber-catering-toner-advisors.trycloudflare.com",
  "egressIp": "9.234.15.210",
- "port": 11470,
- "started": 1794732165,
- "job": "ownhost-combo1"
+ "started": 1794733329,
+ "job": "ownhost-server1"
 }
