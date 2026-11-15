@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://selling-huntington-curtis-loud.trycloudflare.com",
- "egressIp": "48.217.116.131",
+ "url": "https://nasa-techno-shore-bureau.trycloudflare.com",
+ "egressIp": "68.211.146.21",
  "port": 3030,
- "started": 1794705536,
+ "started": 1794708062,
  "job": "ownhost-combo1"
 }
