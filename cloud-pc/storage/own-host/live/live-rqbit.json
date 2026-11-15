@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://output-lucky-worth-shakespeare.trycloudflare.com",
- "egressIp": "172.214.45.244",
+ "url": "https://influence-cons-students-finder.trycloudflare.com",
+ "egressIp": "20.115.229.183",
  "port": 3030,
- "started": 1794766623,
+ "started": 1794770175,
  "job": "ownhost-combo1"
 }
