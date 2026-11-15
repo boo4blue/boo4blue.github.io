@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://marilyn-lived-aggregate-encoding.trycloudflare.com",
- "egressIp": "135.232.177.196",
+ "url": "https://leg-often-tone-proudly.trycloudflare.com",
+ "egressIp": "20.64.175.132",
  "port": 3030,
- "started": 1794714391,
+ "started": 1794716833,
  "job": "ownhost-combo1"
 }
