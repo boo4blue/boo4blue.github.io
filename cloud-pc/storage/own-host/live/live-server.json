@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://shots-houston-actor-amd.trycloudflare.com",
- "egressIp": "20.221.60.203",
- "started": 1794723474,
- "job": "ownhost-server1"
+ "url": "https://meals-speaker-powerpoint-drunk.trycloudflare.com",
+ "egressIp": "4.154.135.148",
+ "port": 11470,
+ "started": 1794724186,
+ "job": "ownhost-combo1"
 }
