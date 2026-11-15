@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794759864,
+ "at": 1794759877,
  "egressIp": "20.171.13.114",
  "own": {
   "base": "https://happiness-ease-cutting-run.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://neighbor-gives-bottles-observations.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
