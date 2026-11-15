@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794762280,
- "egressIp": "20.161.184.81",
+ "at": 1794764037,
+ "egressIp": "3.41.210.71",
  "own": {
-  "base": "https://july-podcast-although-receiver.trycloudflare.com",
+  "base": "https://belle-dependent-managers-sheer.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-start"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://mice-blend-disks-beef.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
