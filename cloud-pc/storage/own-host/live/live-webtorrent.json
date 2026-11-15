@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://diagram-worthy-ideal-pmc.trycloudflare.com",
- "egressIp": "20.64.175.132",
+ "url": "https://antiques-recording-termination-games.trycloudflare.com",
+ "egressIp": "51.8.190.91",
  "port": 8080,
- "started": 1794717916,
- "job": "ownhost-multi5"
+ "started": 1794719363,
+ "job": "ownhost-combo1"
 }
