@@ -1,0 +1,77 @@
+# Capture Lane — REAL screenshots of shipped APKs on a Note10-profile AVD.
+#
+# ONE-TIME ACTIVATION (GitHub won't let bots write here, so this is manual):
+#   1. In the repo, create the file  .github/workflows/capture.yml
+#   2. Paste the entire contents of THIS file into it. Commit. Done.
+# (This file lives at capture/workflow-source.yml because the bot token
+# lacks the `workflow` scope to push anything under .github/workflows/ —
+# the same wall cloud-pc.yml and onion-ai.yml were pasted around.)
+#
+# ISOLATION (the whole point): this workflow is separate from cloud-pc.yml.
+# It triggers ONLY on capture/inbox/*.json, consumes ONLY that inbox, and
+# runs under its own concurrency group — it can never consume, delay, or
+# cancel a TV stream chain job (cloud-pc/inbox) or any other workflow.
+# Results commit back incrementally: run-capture.sh pushes EVERY capture
+# the moment it exists, so a timed-out run still leaves its screenshots.
+#
+# Dispatch: push a job JSON to capture/inbox/ (see capture/README.md), or
+# re-run manually here with a job file name. This workflow's dispatch is
+# for CAPTURE jobs only — the standing "no workflow_dispatch job_json"
+# rule for stream/host jobs is untouched.
+
+name: Capture Lane
+
+on:
+  push:
+    paths:
+      - "capture/inbox/*.json"
+  workflow_dispatch:
+    inputs:
+      job:
+        description: "Job file name in capture/inbox (blank = all queued)"
+        required: false
+        type: string
+
+concurrency:
+  group: capture-lane
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Same cache the Cloud PC uses: the Android SDK lives here, so setup
+      # is a restore, not a download. Key already exists -> read-only win.
+      - name: Restore SDK cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/cloudpc-models
+          key: cloudpc-models-v1
+
+      - name: Run capture jobs
+        run: |
+          if [ -n "${{ inputs.job }}" ]; then
+            bash capture/run-capture.sh "capture/inbox/${{ inputs.job }}"
+          else
+            for f in capture/inbox/*.json; do
+              [ -e "$f" ] || continue
+              bash capture/run-capture.sh "$f"
+            done
+          fi
+
+      # Backup copy only — git commits are the primary result channel.
+      - name: Upload results as artifact (backup)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: capture-results
+          path: capture/results/
+          if-no-files-found: ignore

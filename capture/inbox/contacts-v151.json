@@ -4,6 +4,7 @@
   "package": "com.onioncore.contacts",
   "script": "capture/scripts/contacts-v151.sh",
   "api": 31,
+  "dispatchedAt": "2026-11-15T19:50:35Z",
   "apkMd5": "e69cde42aa5cdf6a4e955cc665c190b8",
   "permissions": "READ_CONTACTS WRITE_CONTACTS CALL_PHONE READ_CALL_LOG POST_NOTIFICATIONS"
 }
