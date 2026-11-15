@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794747380,
+ "at": 1794747381,
  "egressIp": "13.83.160.130",
  "own": {
   "base": "https://garden-plc-males-converted.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
