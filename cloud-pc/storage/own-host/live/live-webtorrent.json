@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://north-produced-applicants-cornwall.trycloudflare.com",
+ "url": "https://weights-europe-fixtures-folder.trycloudflare.com",
  "egressIp": "4.236.95.161",
  "port": 8080,
- "started": 1794734255,
+ "started": 1794734809,
  "job": "ownhost-combo1"
 }
