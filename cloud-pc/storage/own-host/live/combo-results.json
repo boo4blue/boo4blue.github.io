@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794703631,
- "egressIp": "128.85.70.49",
+ "at": 1794705467,
+ "egressIp": "48.217.116.131",
  "own": {
-  "base": "https://flash-crops-acquired-stakeholders.trycloudflare.com",
+  "base": "https://tradition-phpbb-baker-rug.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-start"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://projected-six-boutique-tribal.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
