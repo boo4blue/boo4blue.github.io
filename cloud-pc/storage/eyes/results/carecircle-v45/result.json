@@ -1,0 +1,492 @@
+{
+  "id": "carecircle-v45",
+  "package": "com.onioncore.carecircle",
+  "lane": "onion-eyes/cloud-pc",
+  "apkMd5Expected": "e8c51d8149032a2e089d0a271f492fa2",
+  "apkMd5Actual": "e8c51d8149032a2e089d0a271f492fa2",
+  "bootCompleted": true,
+  "installOk": true,
+  "pidAliveStart": true,
+  "pidAliveEnd": true,
+  "seededCount": 0,
+  "screen": {
+    "size": "1080x2280",
+    "density": "420",
+    "fontScale": "1.0"
+  },
+  "shots": [
+    "01-welcome.png",
+    "02-today.png",
+    "03-play-home.png",
+    "03b-play-home-scrolled.png",
+    "04-manage-games.png",
+    "04b-manage-games-scrolled.png",
+    "05-badges.png",
+    "06-kid-home.png",
+    "x0-welcome.png",
+    "x1-parent-form.png",
+    "x10-play-return.png",
+    "x11-controls.png",
+    "x12-kid-home.png",
+    "x13-badges.png",
+    "x2-form-filled.png",
+    "x3-after-signup.png",
+    "x4-wizard-welcome.png",
+    "x5-wizard-after-profile.png",
+    "x6-wizard-kids.png",
+    "x7-wizard-kid-added.png",
+    "x8-after-wizard.png",
+    "x9-manage.png"
+  ],
+  "videos": [],
+  "steps": [
+    {
+      "i": "0",
+      "do": "launch",
+      "status": "OK",
+      "detail": "monkey launch"
+    },
+    {
+      "i": "1",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 8s"
+    },
+    {
+      "i": "2",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x0-welcome (png+xml+texts)"
+    },
+    {
+      "i": "3",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 01-welcome"
+    },
+    {
+      "i": "4",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'new here' at 540 1494"
+    },
+    {
+      "i": "5",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "6",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'I'm a parent' at 540 1698"
+    },
+    {
+      "i": "7",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "8",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x1-parent-form (png+xml+texts)"
+    },
+    {
+      "i": "9",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'Your name' at 540 1463"
+    },
+    {
+      "i": "10",
+      "do": "type",
+      "status": "OK",
+      "detail": "typed 'Demo Parent'"
+    },
+    {
+      "i": "11",
+      "do": "tap_element",
+      "status": "FALLBACK",
+      "detail": "'Your PIN' not in hierarchy; fallback tap 0.5 0.62"
+    },
+    {
+      "i": "12",
+      "do": "type",
+      "status": "OK",
+      "detail": "typed '2468'"
+    },
+    {
+      "i": "13",
+      "do": "tap_element",
+      "status": "FALLBACK",
+      "detail": "'Alvarez' not in hierarchy; fallback tap 0.5 0.71"
+    },
+    {
+      "i": "14",
+      "do": "type",
+      "status": "OK",
+      "detail": "typed 'Demo Circle'"
+    },
+    {
+      "i": "15",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot x2-form-filled"
+    },
+    {
+      "i": "16",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'Create my family' at 540 866"
+    },
+    {
+      "i": "17",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 9s"
+    },
+    {
+      "i": "18",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x3-after-signup (png+xml+texts)"
+    },
+    {
+      "i": "19",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot x4-wizard-welcome"
+    },
+    {
+      "i": "20",
+      "do": "tap_element",
+      "status": "SKIP",
+      "detail": "'Step by step' not found (optional)"
+    },
+    {
+      "i": "21",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "22",
+      "do": "tap_element",
+      "status": "SKIP",
+      "detail": "'555-123-4567' not found (optional)"
+    },
+    {
+      "i": "23",
+      "do": "type",
+      "status": "OK",
+      "detail": "typed '555-010-1234'"
+    },
+    {
+      "i": "24",
+      "do": "tap_element",
+      "status": "SKIP",
+      "detail": "'Street, town, state' not found (optional)"
+    },
+    {
+      "i": "25",
+      "do": "type",
+      "status": "OK",
+      "detail": "typed '1 Demo Street'"
+    },
+    {
+      "i": "26",
+      "do": "tap_element",
+      "status": "SKIP",
+      "detail": "'Save and continue' not found (optional)"
+    },
+    {
+      "i": "27",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 4s"
+    },
+    {
+      "i": "28",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x5-wizard-after-profile (png+xml+texts)"
+    },
+    {
+      "i": "29",
+      "do": "tap_element",
+      "status": "SKIP",
+      "detail": "'my circle' not found (optional)"
+    },
+    {
+      "i": "30",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "31",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x6-wizard-kids (png+xml+texts)"
+    },
+    {
+      "i": "32",
+      "do": "tap_element",
+      "status": "SKIP",
+      "detail": "'First name' not found (optional)"
+    },
+    {
+      "i": "33",
+      "do": "type",
+      "status": "OK",
+      "detail": "typed 'Demo Kid'"
+    },
+    {
+      "i": "34",
+      "do": "tap_element",
+      "status": "SKIP",
+      "detail": "'Add kid' not found (optional)"
+    },
+    {
+      "i": "35",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 5s"
+    },
+    {
+      "i": "36",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot x7-wizard-kid-added"
+    },
+    {
+      "i": "37",
+      "do": "tap_element",
+      "status": "SKIP",
+      "detail": "'Continue' not found (optional)"
+    },
+    {
+      "i": "38",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "39",
+      "do": "tap_element",
+      "status": "FALLBACK",
+      "detail": "'Close setup' not in hierarchy; fallback tap 0.93 0.055"
+    },
+    {
+      "i": "40",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 3s"
+    },
+    {
+      "i": "41",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x8-after-wizard (png+xml+texts)"
+    },
+    {
+      "i": "42",
+      "do": "tap_element",
+      "status": "SKIP",
+      "detail": "'Today' not found (optional)"
+    },
+    {
+      "i": "43",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 3s"
+    },
+    {
+      "i": "44",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 02-today"
+    },
+    {
+      "i": "45",
+      "do": "tap_element",
+      "status": "SKIP",
+      "detail": "'Play' not found (optional)"
+    },
+    {
+      "i": "46",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 4s"
+    },
+    {
+      "i": "47",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 03-play-home"
+    },
+    {
+      "i": "48",
+      "do": "tap_element",
+      "status": "SKIP",
+      "detail": "'Choose games' not found (optional)"
+    },
+    {
+      "i": "49",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 3s"
+    },
+    {
+      "i": "50",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x9-manage (png+xml+texts)"
+    },
+    {
+      "i": "51",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 04-manage-games"
+    },
+    {
+      "i": "52",
+      "do": "scroll",
+      "status": "OK",
+      "detail": "scroll down"
+    },
+    {
+      "i": "53",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 04b-manage-games-scrolled"
+    },
+    {
+      "i": "54",
+      "do": "tap_element",
+      "status": "SKIP",
+      "detail": "'Play' not found (optional)"
+    },
+    {
+      "i": "55",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "56",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x10-play-return (png+xml+texts)"
+    },
+    {
+      "i": "57",
+      "do": "scroll",
+      "status": "OK",
+      "detail": "scroll down"
+    },
+    {
+      "i": "58",
+      "do": "scroll",
+      "status": "OK",
+      "detail": "scroll down"
+    },
+    {
+      "i": "59",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 03b-play-home-scrolled"
+    },
+    {
+      "i": "60",
+      "do": "tap_element",
+      "status": "SKIP",
+      "detail": "'People' not found (optional)"
+    },
+    {
+      "i": "61",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "62",
+      "do": "tap_element",
+      "status": "SKIP",
+      "detail": "'Parent Controls' not found (optional)"
+    },
+    {
+      "i": "63",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "64",
+      "do": "scroll",
+      "status": "OK",
+      "detail": "scroll down"
+    },
+    {
+      "i": "65",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x11-controls (png+xml+texts)"
+    },
+    {
+      "i": "66",
+      "do": "tap_element",
+      "status": "SKIP",
+      "detail": "'sees it' not found (optional)"
+    },
+    {
+      "i": "67",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 3s"
+    },
+    {
+      "i": "68",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 06-kid-home"
+    },
+    {
+      "i": "69",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x12-kid-home (png+xml+texts)"
+    },
+    {
+      "i": "70",
+      "do": "tap_element",
+      "status": "SKIP",
+      "detail": "'Badges' not found (optional)"
+    },
+    {
+      "i": "71",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "72",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 05-badges"
+    },
+    {
+      "i": "73",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x13-badges (png+xml+texts)"
+    }
+  ],
+  "startedUtc": "2026-11-15T23:22:25Z",
+  "finishedUtc": "2026-11-15T23:28:51Z",
+  "verdict": "PASS",
+  "note": ""
+}
