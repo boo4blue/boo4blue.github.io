@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794710983,
+ "at": 1794711046,
  "egressIp": "128.203.199.215",
  "own": {
   "base": "https://conclusions-furnished-victor-breath.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
