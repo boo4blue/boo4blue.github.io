@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://enters-claimed-int-sailing.trycloudflare.com",
- "egressIp": "68.211.146.21",
+ "url": "https://jeremy-thinkpad-amsterdam-lately.trycloudflare.com",
+ "egressIp": "128.203.199.215",
  "port": 8080,
- "started": 1794709117,
- "job": "ownhost-multi5"
+ "started": 1794710494,
+ "job": "ownhost-combo1"
 }
