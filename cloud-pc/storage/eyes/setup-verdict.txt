@@ -1,0 +1,5 @@
+== eyes setup 2026-11-15T21:58:40Z
+api_put: cloud-pc/storage/eyes/setup-heartbeat.txt OK
+sdkmanager attempt 1 exit=0
+SDK verified OK on attempt 1
+SETUP_OK
