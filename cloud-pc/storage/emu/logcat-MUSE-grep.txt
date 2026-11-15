@@ -1,40 +1,40 @@
-11-15 02:38:23.097  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:23.097  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:23.098  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:23.098  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:23.136  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:23.136  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:23.136  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:23.136  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:23.198  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:23.199  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:23.199  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:23.199  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:23.199  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:23.216  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:23.395  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:23.555  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:23.657  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:23.944  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:24.314  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:24.565  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:24.565  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:24.565  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:24.619  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:24.619  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:24.619  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:24.631  4793  4793 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-11-15 02:38:24.638  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:24.639  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:24.642  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:24.650  4793  4793 I AndroidRuntime: Using default boot image
-11-15 02:38:24.650  4793  4793 I AndroidRuntime: Leaving lock profiling enabled
-11-15 02:38:24.724  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:24.724  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:24.791  4793  4793 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-11-15 02:38:24.806  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:24.899  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:25.758  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:25.951  4793  4793 D AndroidRuntime: Shutting down VM
-11-15 02:38:26.442  1778  2538 W SearchServiceCore: Abort, client detached.
-11-15 02:38:26.605  1778  2538 W SearchServiceCore: Abort, client detached.
+11-15 03:18:40.738  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:40.738  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:40.738  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:40.824  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:40.825  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:40.825  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:40.825  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:40.825  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:40.825  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:40.825  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:41.030  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:41.031  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:41.833  4787  4787 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+11-15 03:18:41.846  4787  4787 I AndroidRuntime: Using default boot image
+11-15 03:18:41.846  4787  4787 I AndroidRuntime: Leaving lock profiling enabled
+11-15 03:18:42.029  4787  4787 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+11-15 03:18:43.145  4787  4787 D AndroidRuntime: Shutting down VM
+11-15 03:18:43.189  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:43.191  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:43.191  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:43.191  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:43.191  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:44.141  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:44.141  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:44.141  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:44.141  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:44.141  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:44.173  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:44.173  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:44.173  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:44.173  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:44.173  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:44.183  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:44.183  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:44.220  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:44.220  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:44.220  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:44.428  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:44.428  1713  2793 W SearchServiceCore: Abort, client detached.
+11-15 03:18:44.428  1713  2793 W SearchServiceCore: Abort, client detached.
