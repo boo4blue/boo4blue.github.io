@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794726620,
+ "at": 1794726683,
  "egressIp": "20.80.78.228",
  "own": {
   "base": "https://fork-serious-marked-typically.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
