@@ -1,0 +1,34 @@
+1x
+2x
+PHOTO
+VIDEO
+FOOD
+MORE
+Shutter
+Flip
+More — Pro / Cinema / Tools / Settings
+Viewfinder stays clean. Everything else lives in this sheet.
+Torch: Off
+Pro
+ISO: Auto
+Shutter: Auto
+WB: Auto
+Focus: Auto
+Metering: Matrix
+Format: JPEG
+Grid: Thirds
+Bracketing: Off
+Intervalometer: Off
+Anti-flicker: Auto
+Histogram / Level / Zebra / Peaking
+Save C1
+Load C1
+Save C2
+Load C2
+Volume keys as shutter: On
+Cinema
+Cinema: 160x120 @ 30fps · bitrate ~1 Mbps · shutter angle ~180 deg · Scene S01 Take 1 · recorder max 30 fps
+Auto
+Off
+Mood
+Settings
