@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794736650,
+ "at": 1794736713,
  "egressIp": "172.132.46.98",
  "own": {
   "base": "https://fraction-moses-download-emphasis.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
