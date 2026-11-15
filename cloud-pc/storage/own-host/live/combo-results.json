@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794752283,
+ "at": 1794752296,
  "egressIp": "172.203.95.247",
  "own": {
   "base": "https://years-pentium-success-sql.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://settings-collect-timer-meters.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
