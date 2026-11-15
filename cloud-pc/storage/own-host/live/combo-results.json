@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794703073,
+ "at": 1794703554,
  "egressIp": "128.85.70.49",
  "own": {
-  "base": "https://rendered-appears-papua-grass.trycloudflare.com",
+  "base": "https://flash-crops-acquired-stakeholders.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-start"
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://awarded-intellectual-volvo-recordings.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://scored-class-list-combining.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
