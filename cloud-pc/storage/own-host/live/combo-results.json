@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794737278,
- "egressIp": "172.132.46.98",
+ "at": 1794739165,
+ "egressIp": "172.184.213.228",
  "own": {
-  "base": "https://condos-childhood-labels-competing.trycloudflare.com",
+  "base": "https://goto-developer-role-contracting.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-start"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://delaware-grows-frozen-vessel.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
