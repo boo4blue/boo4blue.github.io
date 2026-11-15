@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://looking-potter-sanyo-isp.trycloudflare.com",
- "egressIp": "52.183.7.212",
+ "url": "https://follows-invoice-grant-thin.trycloudflare.com",
+ "egressIp": "20.171.13.114",
  "port": 8080,
- "started": 1794757770,
- "job": "ownhost-multi5"
+ "started": 1794759324,
+ "job": "ownhost-combo1"
 }
