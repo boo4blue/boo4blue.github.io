@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://wins-prefix-dress-particular.trycloudflare.com",
- "egressIp": "128.203.199.215",
+ "url": "",
+ "egressIp": "52.7.11.124",
  "port": 3030,
- "started": 1794710481,
+ "started": 1794713080,
  "job": "ownhost-combo1"
 }
