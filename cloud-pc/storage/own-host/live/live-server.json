@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://timber-catering-toner-advisors.trycloudflare.com",
- "egressIp": "9.234.15.210",
- "started": 1794733329,
- "job": "ownhost-server1"
+ "url": "https://stored-mystery-drums-outlets.trycloudflare.com",
+ "egressIp": "4.236.95.161",
+ "port": 11470,
+ "started": 1794734170,
+ "job": "ownhost-combo1"
 }
