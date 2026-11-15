@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794770673,
+ "at": 1794770736,
  "egressIp": "20.115.229.183",
  "own": {
   "base": "https://salem-websites-superb-bare.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
