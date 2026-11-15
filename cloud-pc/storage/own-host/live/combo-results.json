@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794708080,
+ "at": 1794708526,
  "egressIp": "68.211.146.21",
  "own": {
-  "base": "https://medicare-powder-graduation-rhode.trycloudflare.com",
+  "base": "https://dependence-overnight-marco-amplifier.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-start"
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://nasa-techno-shore-bureau.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://engines-mega-sensors-valuation.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
