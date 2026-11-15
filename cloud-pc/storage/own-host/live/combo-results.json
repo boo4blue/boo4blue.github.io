@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794759877,
- "egressIp": "20.171.13.114",
+ "at": 1794761643,
+ "egressIp": "20.161.184.81",
  "own": {
-  "base": "https://happiness-ease-cutting-run.trycloudflare.com",
+  "base": "https://header-street-some-plugin.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-start"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://neighbor-gives-bottles-observations.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
