@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794724271,
+ "at": 1794724759,
  "egressIp": "4.154.135.148",
  "own": {
-  "base": "https://meals-speaker-powerpoint-drunk.trycloudflare.com",
+  "base": "https://allowing-chance-sharp-geographical.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-start"
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://ascii-theatre-partnerships-kerry.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://episode-goals-images-lindsay.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
