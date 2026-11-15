@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794744709,
- "egressIp": "172.202.100.55",
+ "at": 1794746760,
+ "egressIp": "13.83.160.130",
  "own": {
-  "base": "https://pursue-ebook-talks-rep.trycloudflare.com",
+  "base": "https://clark-wine-reporting-home.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-start"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://specialized-switching-delayed-rep.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
