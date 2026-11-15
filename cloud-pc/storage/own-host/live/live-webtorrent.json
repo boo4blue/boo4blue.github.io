@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://weights-europe-fixtures-folder.trycloudflare.com",
+ "url": "https://reader-editorial-inspection-para.trycloudflare.com",
  "egressIp": "4.236.95.161",
  "port": 8080,
- "started": 1794734809,
- "job": "ownhost-combo1"
+ "started": 1794735320,
+ "job": "ownhost-multi5"
 }
