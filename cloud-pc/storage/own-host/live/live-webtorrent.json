@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://portfolio-past-hero-connector.trycloudflare.com",
- "egressIp": "172.184.213.228",
+ "url": "https://printable-guitar-oriental-write.trycloudflare.com",
+ "egressIp": "40.74.205.243",
  "port": 8080,
- "started": 1794740308,
- "job": "ownhost-multi5"
+ "started": 1794741627,
+ "job": "ownhost-combo1"
 }
