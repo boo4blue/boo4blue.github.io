@@ -1,0 +1,5 @@
+{
+ "id": "eyes-camera-v160-setup",
+ "action": "shell",
+ "command": "bash eyes/run-eyes.sh setup"
+}
