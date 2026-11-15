@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://forward-endorsement-its-fails.trycloudflare.com",
- "egressIp": "52.183.7.212",
+ "url": "https://economy-trustee-medicare-heaven.trycloudflare.com",
+ "egressIp": "20.171.13.114",
  "port": 3030,
- "started": 1794756696,
+ "started": 1794759311,
  "job": "ownhost-combo1"
 }
