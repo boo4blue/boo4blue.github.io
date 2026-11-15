@@ -4,7 +4,27 @@
   "source": null,
   "clip": null,
   "attempts": [
-    "attempt: virtual webcam module -> /dev/video0 present=yes"
+    "attempt: virtual webcam module -> /dev/video0 present=yes",
+    "pump: chunklist ok for feed 1415",
+    "pump: recorded 6.0s -> /home/runner/eyes-cam/camera-realscene/probe.ts",
+    "attempt: earthcam Times Square cam, EarthCam feed 1415 (feed 1415) -> pump failed",
+    "pump: chunklist ok for feed 15559",
+    "pump: recorded 6.0s -> /home/runner/eyes-cam/camera-realscene/probe.ts",
+    "attempt: earthcam Times Square cam, EarthCam feed 15559 (feed 15559) -> pump failed",
+    "pump: chunklist ok for feed 28925",
+    "pump: recorded 6.1s -> /home/runner/eyes-cam/camera-realscene/probe.ts",
+    "attempt: earthcam Times Square cam, EarthCam feed 28925 (feed 28925) -> pump failed",
+    "attempt: hls White-tailed eagle cam (EENet / looduskalender) (https://tv.eenet.ee/hls/merikotkas.m3u8) -> no video stream",
+    "attempt: hls Red deer cam (EENet / looduskalender) (https://tv.eenet.ee/hls/hirv.m3u8) -> no video stream",
+    "attempt: hls Beaver cam (EENet / looduskalender) (https://tv.eenet.ee/hls/kopra.m3u8) -> no video stream",
+    "attempt: hls Roe deer cam (EENet / looduskalender) (https://tv.eenet.ee/hls/metskits.m3u8) -> no video stream",
+    "attempt: hls Minnesota DOT traffic cam C5013 (https://video.dot.state.mn.us/public/C5013.stream/playlist.m3u8) -> no video stream",
+    "attempt: wi511 candidate 1 -> no video stream",
+    "attempt: wi511 candidate 2 -> no video stream",
+    "attempt: wi511 candidate 3 -> no video stream",
+    "attempt: wi511 candidate 4 -> no video stream",
+    "attempt: ytdlp EarthCam live channel (YouTube) -> resolve/probe failed",
+    "attempt: ytdlp Explore.org live channel (YouTube) -> resolve/probe failed"
   ],
-  "updatedUtc": "2026-11-15T23:53:22Z"
+  "updatedUtc": "2026-11-15T23:53:36Z"
 }
