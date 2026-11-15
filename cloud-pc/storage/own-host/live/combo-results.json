@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794759241,
+ "at": 1794759304,
  "egressIp": "20.171.13.114",
  "own": {
   "base": "https://ceo-allocated-vol-hypothetical.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
