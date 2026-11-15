@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://press-graduation-visible-pill.trycloudflare.com",
- "egressIp": "51.8.190.91",
+ "url": "https://toe-license-rewards-calibration.trycloudflare.com",
+ "egressIp": "20.221.60.203",
  "port": 3030,
- "started": 1794719350,
+ "started": 1794721813,
  "job": "ownhost-combo1"
 }
