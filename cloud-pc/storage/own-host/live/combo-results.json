@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794759863,
+ "at": 1794759864,
  "egressIp": "20.171.13.114",
  "own": {
   "base": "https://happiness-ease-cutting-run.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
