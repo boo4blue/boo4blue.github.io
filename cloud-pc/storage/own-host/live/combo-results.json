@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794736737,
+ "at": 1794737201,
  "egressIp": "172.132.46.98",
  "own": {
-  "base": "https://fraction-moses-download-emphasis.trycloudflare.com",
+  "base": "https://condos-childhood-labels-competing.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-start"
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://colleagues-egg-sunset-friendship.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://variables-founded-aug-low.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
