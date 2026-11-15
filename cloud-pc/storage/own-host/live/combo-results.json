@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794717393,
+ "at": 1794717394,
  "egressIp": "20.64.175.132",
  "own": {
   "base": "https://penetration-controlling-television-thou.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
