@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794716835,
+ "at": 1794716848,
  "egressIp": "20.64.175.132",
  "own": {
   "base": "https://manually-coordination-dynamic-exams.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "live noauth-http=401"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://expansys-explanation-households-passport.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
