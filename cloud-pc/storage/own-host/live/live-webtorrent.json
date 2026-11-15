@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://queens-simon-sponsorship-proposed.trycloudflare.com",
- "egressIp": "20.171.13.114",
+ "url": "https://configurations-packing-drunk-huge.trycloudflare.com",
+ "egressIp": "20.161.184.81",
  "port": 8080,
- "started": 1794760387,
- "job": "ownhost-multi5"
+ "started": 1794761725,
+ "job": "ownhost-combo1"
 }
