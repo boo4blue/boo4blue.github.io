@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794761643,
+ "at": 1794761706,
  "egressIp": "20.161.184.81",
  "own": {
   "base": "https://header-street-some-plugin.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
