@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794705550,
+ "at": 1794706021,
  "egressIp": "48.217.116.131",
  "own": {
-  "base": "https://tradition-phpbb-baker-rug.trycloudflare.com",
+  "base": "https://transcription-investigator-lakes-thinking.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-start"
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://selling-huntington-curtis-loud.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://limiting-anything-stop-amy.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
