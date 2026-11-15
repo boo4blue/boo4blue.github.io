@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794714405,
+ "at": 1794714880,
  "egressIp": "135.232.177.196",
  "own": {
-  "base": "https://downloaded-tube-charlotte-plots.trycloudflare.com",
+  "base": "https://gifts-models-journal-west.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-start"
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://marilyn-lived-aggregate-encoding.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://conditioning-lying-registry-newspapers.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
