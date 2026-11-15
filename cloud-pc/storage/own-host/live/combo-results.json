@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794732229,
+ "at": 1794732230,
  "egressIp": "9.234.15.210",
  "own": {
   "base": "https://wins-beautifully-hello-raleigh.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
