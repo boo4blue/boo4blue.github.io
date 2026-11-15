@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://asked-toolkit-shopping-psp.trycloudflare.com",
- "egressIp": "52.183.7.212",
- "started": 1794758349,
- "job": "ownhost-server1"
+ "url": "https://ceo-allocated-vol-hypothetical.trycloudflare.com",
+ "egressIp": "20.171.13.114",
+ "port": 11470,
+ "started": 1794759240,
+ "job": "ownhost-combo1"
 }
