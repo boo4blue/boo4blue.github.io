@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794770106,
+ "at": 1794770169,
  "egressIp": "20.115.229.183",
  "own": {
   "base": "https://nil-thirty-fresh-country.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
