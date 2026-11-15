@@ -1,0 +1,10 @@
+{
+  "id": "camera-realscene",
+  "v4l2": true,
+  "source": null,
+  "clip": null,
+  "attempts": [
+    "attempt: virtual webcam module -> /dev/video0 present=yes"
+  ],
+  "updatedUtc": "2026-11-15T23:53:22Z"
+}
