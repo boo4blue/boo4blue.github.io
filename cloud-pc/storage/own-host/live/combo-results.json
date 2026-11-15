@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794747381,
+ "at": 1794747394,
  "egressIp": "13.83.160.130",
  "own": {
   "base": "https://garden-plc-males-converted.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://mega-retain-suse-safe.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
