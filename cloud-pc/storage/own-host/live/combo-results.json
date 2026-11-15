@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794737266,
+ "at": 1794737278,
  "egressIp": "172.132.46.98",
  "own": {
   "base": "https://condos-childhood-labels-competing.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://delaware-grows-frozen-vessel.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
