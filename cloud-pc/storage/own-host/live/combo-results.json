@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794749227,
+ "at": 1794749710,
  "egressIp": "20.12.245.231",
  "own": {
-  "base": "https://track-beneath-protect-houston.trycloudflare.com",
+  "base": "https://plate-condition-yang-patrick.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-start"
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://formatting-tent-enter-costs.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://perfect-capacity-magazine-short.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
