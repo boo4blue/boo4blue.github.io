@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794757184,
+ "at": 1794757247,
  "egressIp": "52.183.7.212",
  "own": {
   "base": "https://enclosure-flexibility-possibly-abstracts.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
