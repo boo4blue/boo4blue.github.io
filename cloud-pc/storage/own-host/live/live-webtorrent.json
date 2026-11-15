@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://signal-scenic-lan-shot.trycloudflare.com",
- "egressIp": "20.80.78.228",
+ "url": "https://scsi-photographic-widespread-def.trycloudflare.com",
+ "egressIp": "134.138.43.49",
  "port": 8080,
- "started": 1794727778,
- "job": "ownhost-multi5"
+ "started": 1794729326,
+ "job": "ownhost-combo1"
 }
