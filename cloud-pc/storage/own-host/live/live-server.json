@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://recommended-tablet-ascii-ottawa.trycloudflare.com",
- "egressIp": "172.214.45.244",
- "started": 1794768866,
- "job": "ownhost-server1"
+ "url": "https://nil-thirty-fresh-country.trycloudflare.com",
+ "egressIp": "20.115.229.183",
+ "port": 11470,
+ "started": 1794770105,
+ "job": "ownhost-combo1"
 }
