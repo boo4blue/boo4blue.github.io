@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794729866,
+ "at": 1794729868,
  "egressIp": "134.138.43.49",
  "own": {
   "base": "https://outcome-lookup-show-expires.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
