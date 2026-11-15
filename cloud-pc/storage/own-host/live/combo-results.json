@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794705537,
+ "at": 1794705550,
  "egressIp": "48.217.116.131",
  "own": {
   "base": "https://tradition-phpbb-baker-rug.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "live noauth-http=401"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://limiting-anything-stop-amy.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
