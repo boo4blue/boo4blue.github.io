@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794726695,
+ "at": 1794726708,
  "egressIp": "20.80.78.228",
  "own": {
   "base": "https://fork-serious-marked-typically.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "live noauth-http=401"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://catering-cheque-seq-linear.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
