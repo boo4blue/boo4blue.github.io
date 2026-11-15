@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://raises-colorado-wrap-personnel.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://shots-houston-actor-amd.trycloudflare.com",
  "egressIp": "20.221.60.203",
- "port": 11470,
- "started": 1794722309,
- "job": "ownhost-combo1"
+ "started": 1794723474,
+ "job": "ownhost-server1"
 }
