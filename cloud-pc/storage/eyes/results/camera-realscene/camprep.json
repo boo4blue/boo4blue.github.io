@@ -24,7 +24,8 @@
     "attempt: wi511 candidate 3 -> no video stream",
     "attempt: wi511 candidate 4 -> no video stream",
     "attempt: ytdlp EarthCam live channel (YouTube) -> resolve/probe failed",
-    "attempt: ytdlp Explore.org live channel (YouTube) -> resolve/probe failed"
+    "attempt: ytdlp Explore.org live channel (YouTube) -> resolve/probe failed",
+    "attempt: NO source verified live \u2014 no clip"
   ],
-  "updatedUtc": "2026-11-15T23:53:36Z"
+  "updatedUtc": "2026-11-15T23:53:37Z"
 }
