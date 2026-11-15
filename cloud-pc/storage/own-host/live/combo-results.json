@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794719281,
+ "at": 1794719344,
  "egressIp": "51.8.190.91",
  "own": {
   "base": "https://nicole-turtle-reflection-kids.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
