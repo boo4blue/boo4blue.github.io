@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "https://lecture-busy-vessel-albums.trycloudflare.com",
- "egressIp": "128.85.70.49",
+ "url": "https://limiting-anything-stop-amy.trycloudflare.com",
+ "egressIp": "48.217.116.131",
  "port": 8080,
- "started": 1794704141,
- "job": "ownhost-multi5"
+ "started": 1794705549,
+ "job": "ownhost-combo1"
 }
