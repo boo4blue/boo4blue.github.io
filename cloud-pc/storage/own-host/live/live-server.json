@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
  "server": "stream-server (from-scratch)",
- "url": "https://wanted-syndicate-pressed-divine.trycloudflare.com",
- "egressIp": "20.98.135.146",
- "started": 1794776859,
+ "url": "https://buddy-shot-bon-hour.trycloudflare.com",
+ "egressIp": "135.232.208.115",
+ "started": 1794777559,
  "job": "ownhost-server1"
 }
