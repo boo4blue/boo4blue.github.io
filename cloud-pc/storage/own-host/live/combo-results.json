@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794770190,
+ "at": 1794770673,
  "egressIp": "20.115.229.183",
  "own": {
-  "base": "https://nil-thirty-fresh-country.trycloudflare.com",
+  "base": "https://salem-websites-superb-bare.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-start"
+  "state": "not-started"
  },
  "rqbit": {
-  "base": "https://influence-cons-students-finder.trycloudflare.com",
-  "state": "live noauth-http=401"
+  "base": "",
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://texts-cordless-signal-measures.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
