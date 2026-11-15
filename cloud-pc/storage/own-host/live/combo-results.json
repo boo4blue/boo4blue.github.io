@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794710475,
+ "at": 1794710483,
  "egressIp": "128.203.199.215",
  "own": {
   "base": "https://engineering-easy-assets-mod.trycloudflare.com",
@@ -11,8 +11,8 @@
   "state": "failed-start"
  },
  "rqbit": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://wins-prefix-dress-particular.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "webtorrent": {
   "base": "",
