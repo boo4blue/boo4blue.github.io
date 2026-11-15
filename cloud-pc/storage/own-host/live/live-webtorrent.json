@@ -1,8 +1,8 @@
 {
  "service": "webtorrent",
- "url": "",
- "egressIp": "52.7.11.124",
+ "url": "https://conditioning-lying-registry-newspapers.trycloudflare.com",
+ "egressIp": "135.232.177.196",
  "port": 8080,
- "started": 1794713659,
+ "started": 1794714403,
  "job": "ownhost-combo1"
 }
