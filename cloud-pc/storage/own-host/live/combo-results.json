@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794710412,
+ "at": 1794710475,
  "egressIp": "128.203.199.215",
  "own": {
   "base": "https://engineering-easy-assets-mod.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
