@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://plate-condition-yang-patrick.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://projection-projects-headers-strip.trycloudflare.com",
  "egressIp": "20.12.245.231",
- "port": 11470,
- "started": 1794749709,
- "job": "ownhost-combo1"
+ "started": 1794750873,
+ "job": "ownhost-server1"
 }
