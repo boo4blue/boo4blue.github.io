@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794744697,
+ "at": 1794744709,
  "egressIp": "172.202.100.55",
  "own": {
   "base": "https://pursue-ebook-talks-rep.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://specialized-switching-delayed-rep.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
