@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794742113,
+ "at": 1794742176,
  "egressIp": "40.74.205.243",
  "own": {
   "base": "https://translate-functional-assurance-together.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
