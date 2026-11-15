@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794752282,
+ "at": 1794752283,
  "egressIp": "172.203.95.247",
  "own": {
   "base": "https://years-pentium-success-sql.trycloudflare.com",
@@ -12,7 +12,7 @@
  },
  "rqbit": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "webtorrent": {
   "base": "",
