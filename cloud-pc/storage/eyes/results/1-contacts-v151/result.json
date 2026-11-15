@@ -1,0 +1,23 @@
+{
+  "id": "1-contacts-v151",
+  "package": "com.onioncore.contacts",
+  "lane": "onion-eyes/cloud-pc",
+  "apkMd5Expected": "e69cde42aa5cdf6a4e955cc665c190b8",
+  "apkMd5Actual": "e69cde42aa5cdf6a4e955cc665c190b8",
+  "bootCompleted": true,
+  "installOk": true,
+  "pidAliveStart": true,
+  "pidAliveEnd": true,
+  "screen": {
+    "size": "1080x2280",
+    "density": "420",
+    "fontScale": "1.0"
+  },
+  "shots": [],
+  "videos": [],
+  "steps": [],
+  "startedUtc": "2026-11-15T22:25:46Z",
+  "finishedUtc": "2026-11-15T22:27:38Z",
+  "verdict": "PASS",
+  "note": "seeded 0 contacts"
+}
