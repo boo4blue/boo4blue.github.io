@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794752219,
+ "at": 1794752282,
  "egressIp": "172.203.95.247",
  "own": {
   "base": "https://years-pentium-success-sql.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
