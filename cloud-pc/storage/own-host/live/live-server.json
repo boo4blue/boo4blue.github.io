@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "server": "stream-server (from-scratch)",
- "url": "https://sticks-earl-new-locations.trycloudflare.com",
- "egressIp": "3.41.210.71",
- "started": 1794765769,
- "job": "ownhost-server1"
+ "url": "https://treaty-savings-atmospheric-individually.trycloudflare.com",
+ "egressIp": "172.214.45.244",
+ "port": 11470,
+ "started": 1794766553,
+ "job": "ownhost-combo1"
 }
