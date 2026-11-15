@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794747394,
- "egressIp": "13.83.160.130",
+ "at": 1794749143,
+ "egressIp": "20.12.245.231",
  "own": {
-  "base": "https://garden-plc-males-converted.trycloudflare.com",
+  "base": "https://track-beneath-protect-houston.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-start"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://mega-retain-suse-safe.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
