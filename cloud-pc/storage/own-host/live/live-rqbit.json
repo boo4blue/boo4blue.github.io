@@ -1,8 +1,8 @@
 {
  "service": "rqbit",
- "url": "https://ascii-theatre-partnerships-kerry.trycloudflare.com",
- "egressIp": "4.154.135.148",
+ "url": "https://respondents-reasons-states-revenue.trycloudflare.com",
+ "egressIp": "20.80.78.228",
  "port": 3030,
- "started": 1794724256,
+ "started": 1794726692,
  "job": "ownhost-combo1"
 }
