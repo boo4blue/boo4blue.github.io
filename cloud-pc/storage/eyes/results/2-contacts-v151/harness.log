@@ -1,0 +1,108 @@
+== eyes run 2-contacts-v151 2026-11-15T22:45:33Z
+api_put: cloud-pc/storage/eyes/results/2-contacts-v151/heartbeat.txt OK
+apk md5=e69cde42aa5cdf6a4e955cc665c190b8 expected=e69cde42aa5cdf6a4e955cc665c190b8 size=205756
+* daemon not running; starting now at tcp:5037
+* daemon started successfully
+booted after ~25s
+screen real: size=1080x2280 density=420 fontScale=1.0
+installOk=1
+seeded Avery Collins rid=1
+seeded Jordan Meyer rid=2
+seeded Priya Nair rid=3
+seeded Taylor Brooks rid=4
+SEED FAIL Sam Whitfield (raw: usage: adb shell content [subcommand] [options]
+
+usage: adb shell content insert --uri <URI> [--user <USER_ID>] --bind <BINDING> [--bind <BINDING>...] [--extra <BINDING>...]
+  <URI> a content provider URI.
+  <BINDING> binds a typed value to a column and is formatted:
+  <COLUMN_NAME>:<TYPE>:<COLUMN_VALUE> where:
+  <TYPE> specifies data type such as:
+  b - boolean, s - string, i - integer, l - long, f - float, d - double, n - null
+  Note: Omit the value for passing an empty string, e.g column:s:
+  Example:
+  # Add "new_setting" secure setting with value "new_value".
+  adb shell content insert --uri content://settings/secure --bind name:s:new_setting --bind value:s:new_value
+
+usage: adb shell content update --uri <URI> [--user <USER_ID>] [--where <WHERE>] [--extra <BINDING>...]
+  <WHERE> is a SQL style where clause in quotes (You have to escape single quotes - see example below).
+  Example:
+  # Change "new_setting" secure setting to "newer_value".
+  adb shell content update --uri content://settings/secure --bind value:s:newer_value --where "name='new_setting'"
+
+usage: adb shell content delete --uri <URI> [--user <USER_ID>] --bind <BINDING> [--bind <BINDING>...] [--where <WHERE>] [--extra <BINDING>...]
+  Example:
+  # Remove "new_setting" secure setting.
+  adb shell content delete --uri content://settings/secure --where "name='new_setting'"
+
+usage: adb shell content query --uri <URI> [--user <USER_ID>] [--projection <PROJECTION>] [--where <WHERE>] [--sort <SORT_ORDER>] [--extra <BINDING>...]
+  <PROJECTION> is a list of colon separated column names and is formatted:
+  <COLUMN_NAME>[:<COLUMN_NAME>...]
+  <SORT_ORDER> is the order in which rows in the result should be sorted.
+  Example:
+  # Select "name" and "value" columns from secure settings where "name" is equal to "new_setting" and sort the result by name in ascending order.
+  adb shell content query --uri content://settings/secure --projection name:value --where "name='new_setting'" --sort "name ASC"
+
+usage: adb shell content call --uri <URI> --method <METHOD> [--arg <ARG>]
+       [--extra <BINDING> ...]
+  <METHOD> is the name of a provider-defined method
+  <ARG> is an optional string argument
+  <BINDING> is like --bind above, typed data of the form <KEY>:{b,s,i,l,f,d}:<VAL>
+
+usage: adb shell content read --uri <URI> [--user <USER_ID>]
+  Example:
+  adb shell 'content read --uri content://settings/system/ringtone_cache' > host.ogg
+
+usage: adb shell content write --uri <URI> [--user <USER_ID>]
+  Example:
+  adb shell 'content write --uri content://settings/system/ringtone_cache' < host.ogg
+
+usage: adb shell content gettype --uri <URI> [--user <USER_ID>]
+  Example:
+  adb shell content gettype --uri content://media/internal/audio/media/
+
+
+[ERROR] For input string: "")
+seed verify: provider holds 4 contacts
+pidAliveStart=1
+api_put: cloud-pc/storage/eyes/results/2-contacts-v151/progress.json OK
+step 0 [wait] OK: slept 2s
+step 1 [tap_xy] OK: tap frac 0.8,0.27
+step 2 [wait] OK: slept 3s
+step 3 [record_start] OK: screenrecord started (540x1140 @1.2Mbps)
+shot people-list: 117010 bytes
+api_put: cloud-pc/storage/eyes/results/2-contacts-v151/people-list.png OK
+api_put: cloud-pc/storage/eyes/results/2-contacts-v151/people-list.xml OK
+api_put: cloud-pc/storage/eyes/results/2-contacts-v151/people-list.texts.txt OK
+step 4 [observe] OK: observe people-list (png+xml+texts)
+shot 01-people-list: 117010 bytes
+api_put: cloud-pc/storage/eyes/results/2-contacts-v151/01-people-list.png OK
+step 5 [screenshot] OK: screenshot 01-people-list
+step 6 [assert_text] OK: assert ok: 'Search people, notes, T9' present
+step 7 [tap_element] OK: tapped 'All accounts' at 519 401
+step 8 [wait] OK: slept 2s
+shot 02-account-menu: 100151 bytes
+api_put: cloud-pc/storage/eyes/results/2-contacts-v151/02-account-menu.png OK
+step 9 [screenshot] OK: screenshot 02-account-menu
+shot account-menu: 100151 bytes
+api_put: cloud-pc/storage/eyes/results/2-contacts-v151/account-menu.png OK
+api_put: cloud-pc/storage/eyes/results/2-contacts-v151/account-menu.xml OK
+api_put: cloud-pc/storage/eyes/results/2-contacts-v151/account-menu.texts.txt OK
+step 10 [observe] OK: observe account-menu (png+xml+texts)
+step 11 [back] OK: keyevent BACK
+step 12 [launch] OK: monkey launch
+step 13 [wait] OK: slept 2s
+step 14 [wait] OK: slept 1s
+step 15 [tap_element] OK: tapped 'Avery Collins' at 587 813
+step 16 [wait] OK: slept 3s
+shot 03-person-sheet: 130100 bytes
+api_put: cloud-pc/storage/eyes/results/2-contacts-v151/03-person-sheet.png OK
+step 17 [screenshot] OK: screenshot 03-person-sheet
+shot person-sheet: 130100 bytes
+api_put: cloud-pc/storage/eyes/results/2-contacts-v151/person-sheet.png OK
+api_put: cloud-pc/storage/eyes/results/2-contacts-v151/person-sheet.xml OK
+api_put: cloud-pc/storage/eyes/results/2-contacts-v151/person-sheet.texts.txt OK
+step 18 [observe] OK: observe person-sheet (png+xml+texts)
+video flow: 259594 bytes
+step 19 [record_stop] OK: screenrecord stopped -> flow.mp4
+<stdin>:21: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+result.json written, verdict PASS
