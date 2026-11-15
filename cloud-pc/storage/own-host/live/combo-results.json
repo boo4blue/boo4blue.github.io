@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794764606,
+ "at": 1794764607,
  "egressIp": "3.41.210.71",
  "own": {
   "base": "https://exactly-boring-assessments-substances.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-download"
  },
  "rqbit": {
   "base": "",
