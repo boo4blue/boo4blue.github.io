@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794732230,
+ "at": 1794732242,
  "egressIp": "9.234.15.210",
  "own": {
   "base": "https://wins-beautifully-hello-raleigh.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://applications-shelf-farmers-penguin.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
