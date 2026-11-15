@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794739165,
+ "at": 1794739228,
  "egressIp": "172.184.213.228",
  "own": {
   "base": "https://goto-developer-role-contracting.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
