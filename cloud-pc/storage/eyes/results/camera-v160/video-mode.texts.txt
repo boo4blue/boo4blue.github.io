@@ -1,0 +1,12 @@
+1x
+2x
+PHOTO
+VIDEO
+FOOD
+MORE
+Shutter
+Flip
+Auto
+Off
+Mood
+Settings
