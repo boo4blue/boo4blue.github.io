@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794722310,
+ "at": 1794722373,
  "egressIp": "20.221.60.203",
  "own": {
   "base": "https://raises-colorado-wrap-personnel.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
