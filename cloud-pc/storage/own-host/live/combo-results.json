@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794736713,
+ "at": 1794736724,
  "egressIp": "172.132.46.98",
  "own": {
   "base": "https://fraction-moses-download-emphasis.trycloudflare.com",
@@ -11,8 +11,8 @@
   "state": "failed-start"
  },
  "rqbit": {
-  "base": "",
-  "state": "not-started"
+  "base": "https://colleagues-egg-sunset-friendship.trycloudflare.com",
+  "state": "live noauth-http=401"
  },
  "webtorrent": {
   "base": "",
