@@ -1,0 +1,9 @@
+{
+  "id": "contacts-v151",
+  "apkUrl": "https://github.com/boo4blue/boo4blue.github.io/releases/download/emu-assets/OnionContacts-v151.apk",
+  "package": "com.onioncore.contacts",
+  "script": "capture/scripts/contacts-v151.sh",
+  "api": 31,
+  "apkMd5": "e69cde42aa5cdf6a4e955cc665c190b8",
+  "permissions": "READ_CONTACTS WRITE_CONTACTS CALL_PHONE READ_CALL_LOG POST_NOTIFICATIONS"
+}
