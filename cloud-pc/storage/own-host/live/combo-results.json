@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794717330,
+ "at": 1794717393,
  "egressIp": "20.64.175.132",
  "own": {
   "base": "https://penetration-controlling-television-thou.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
