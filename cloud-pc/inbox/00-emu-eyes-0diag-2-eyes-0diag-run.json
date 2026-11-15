@@ -1,5 +1,0 @@
-{
- "id": "eyes-0diag-run",
- "action": "shell",
- "command": "bash eyes/diag.sh"
-}
