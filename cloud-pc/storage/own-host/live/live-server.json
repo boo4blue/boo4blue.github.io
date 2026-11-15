@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
  "server": "stream-server (from-scratch)",
- "url": "https://fairly-lying-transport-ciao.trycloudflare.com",
- "egressIp": "172.202.118.179",
- "started": 1794780268,
+ "url": "https://americas-opposition-dealt-reward.trycloudflare.com",
+ "egressIp": "128.24.161.22",
+ "started": 1794780508,
  "job": "ownhost-server1"
 }
