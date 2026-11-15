@@ -1,5 +1,0 @@
-{
- "id": "eyes-contacts-v151-setup",
- "action": "shell",
- "command": "bash eyes/run-eyes.sh setup"
-}
