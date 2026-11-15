@@ -1,22 +1,22 @@
 {
  "job": "ownhost-combo1",
- "at": 1794706099,
- "egressIp": "48.217.116.131",
+ "at": 1794707990,
+ "egressIp": "68.211.146.21",
  "own": {
-  "base": "https://transcription-investigator-lakes-thinking.trycloudflare.com",
+  "base": "https://medicare-powder-graduation-rhode.trycloudflare.com",
   "state": "live"
  },
  "torrserver": {
   "base": "",
-  "state": "failed-start"
+  "state": "not-started"
  },
  "rqbit": {
   "base": "",
-  "state": "failed-download"
+  "state": "not-started"
  },
  "webtorrent": {
-  "base": "https://are-smell-isaac-economies.trycloudflare.com",
-  "state": "live (proof only)",
+  "base": "",
+  "state": "not-started",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
