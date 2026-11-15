@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://salem-websites-superb-bare.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://reserved-results-types-vic.trycloudflare.com",
  "egressIp": "20.115.229.183",
- "port": 11470,
- "started": 1794770671,
- "job": "ownhost-combo1"
+ "started": 1794771838,
+ "job": "ownhost-server1"
 }
