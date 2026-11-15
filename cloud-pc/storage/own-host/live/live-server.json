@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
  "server": "stream-server (from-scratch)",
- "url": "https://marie-greene-replication-temporarily.trycloudflare.com",
- "egressIp": "172.206.119.232",
- "started": 1794781697,
+ "url": "https://gardening-assured-demonstrates-evidence.trycloudflare.com",
+ "egressIp": "132.196.54.230",
+ "started": 1794781928,
  "job": "ownhost-server1"
 }
