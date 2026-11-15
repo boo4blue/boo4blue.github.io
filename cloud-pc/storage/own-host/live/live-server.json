@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
- "url": "https://years-pentium-success-sql.trycloudflare.com",
+ "server": "stream-server (from-scratch)",
+ "url": "https://ideal-toys-plane-gzip.trycloudflare.com",
  "egressIp": "172.203.95.247",
- "port": 11470,
- "started": 1794752218,
- "job": "ownhost-combo1"
+ "started": 1794753382,
+ "job": "ownhost-server1"
 }
