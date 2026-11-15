@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794711047,
+ "at": 1794711060,
  "egressIp": "128.203.199.215",
  "own": {
   "base": "https://conclusions-furnished-victor-breath.trycloudflare.com",
@@ -15,8 +15,8 @@
   "state": "failed-download"
  },
  "webtorrent": {
-  "base": "",
-  "state": "not-started",
+  "base": "https://rebound-plants-mem-assist.trycloudflare.com",
+  "state": "live (proof only)",
   "note": "proof only \u2014 NOT published to the router (no adapter yet)"
  }
 }
