@@ -1,6 +1,6 @@
 {
  "job": "ownhost-combo1",
- "at": 1794729243,
+ "at": 1794729306,
  "egressIp": "134.138.43.49",
  "own": {
   "base": "https://speaking-randy-delivering-elizabeth.trycloudflare.com",
@@ -8,7 +8,7 @@
  },
  "torrserver": {
   "base": "",
-  "state": "not-started"
+  "state": "failed-start"
  },
  "rqbit": {
   "base": "",
