@@ -67,7 +67,7 @@
       "i": "4",
       "do": "tap_element",
       "status": "OK",
-      "detail": "tapped 'sign me in' at 284 1335"
+      "detail": "tapped 'sign me in' at 286 1335"
     },
     {
       "i": "5",
@@ -382,8 +382,8 @@
       "detail": "observe x9-badges (png+xml+texts)"
     }
   ],
-  "startedUtc": "2026-11-16T04:25:23Z",
-  "finishedUtc": "2026-11-16T04:31:49Z",
+  "startedUtc": "2026-11-16T04:54:05Z",
+  "finishedUtc": "2026-11-16T05:00:27Z",
   "verdict": "PASS",
   "note": ""
 }
