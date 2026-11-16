@@ -6,7 +6,7 @@
 5	tap_text	SKIP	'Wait' not found (optional)
 6	wait	OK	slept 5s
 7	screenshot	OK	screenshot 02b-after-wait
-8	tap_element	OK	tapped 'Shutter' at 487 2106
+8	tap_element	FAIL	'Shutter' not found in UI hierarchy
 9	wait	OK	slept 3s
 10	assert_text	SOFTFAIL	assert soft-fail: 'Saved' not in hierarchy (vision check decides)
 11	screenshot	OK	screenshot 03-after-shutter
