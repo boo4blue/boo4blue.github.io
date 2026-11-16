@@ -1,0 +1,131 @@
+{
+  "id": "camera-realscene4",
+  "package": "com.onioncore.camera",
+  "lane": "onion-eyes/cloud-pc",
+  "apkMd5Expected": "1f5fbdffa5fd34ed1d4640c0a1e3e153",
+  "apkMd5Actual": "1f5fbdffa5fd34ed1d4640c0a1e3e153",
+  "bootCompleted": true,
+  "installOk": true,
+  "pidAliveStart": true,
+  "pidAliveEnd": true,
+  "seededCount": 0,
+  "cameraRoute": "A-live",
+  "cameraSource": "Times Square cam, EarthCam feed 1415",
+  "cameraNote": null,
+  "screen": {
+    "size": "1080x2280",
+    "density": "420",
+    "fontScale": "1.0"
+  },
+  "shots": [
+    "01-viewfinder.png",
+    "02-viewfinder-later.png",
+    "03-after-shutter.png",
+    "04-stock-gallery.png"
+  ],
+  "videos": [
+    "flow.mp4"
+  ],
+  "steps": [
+    {
+      "i": "0",
+      "do": "record_start",
+      "status": "OK",
+      "detail": "screenrecord started (540x1140 @1.2Mbps)"
+    },
+    {
+      "i": "1",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 5s"
+    },
+    {
+      "i": "2",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe 01-viewfinder (png+xml+texts)"
+    },
+    {
+      "i": "3",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 8s"
+    },
+    {
+      "i": "4",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 02-viewfinder-later"
+    },
+    {
+      "i": "5",
+      "do": "tap_element",
+      "status": "FAIL",
+      "detail": "'Shutter' not found in UI hierarchy"
+    },
+    {
+      "i": "6",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 3s"
+    },
+    {
+      "i": "7",
+      "do": "assert_text",
+      "status": "SOFTFAIL",
+      "detail": "assert soft-fail: 'Saved' not in hierarchy (vision check decides)"
+    },
+    {
+      "i": "8",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 03-after-shutter"
+    },
+    {
+      "i": "9",
+      "do": "tap_xy",
+      "status": "OK",
+      "detail": "tap frac 0.45,0.57"
+    },
+    {
+      "i": "10",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "11",
+      "do": "shell",
+      "status": "OK",
+      "detail": "shell: newest=$(adb shell ls -t /sdcard/Pictures/OnionCamera/ 2>/dev/null | head -1 | tr -d '\\015'); if [ -n \"$newest\" ]; then adb pull \"/sdcard/Pictures/OnionCamera/$newest\" \"$RESULTS/taken-photo.jpg\" && api_put \"eyes $ID: taken photo\" \"cloud-pc/storage/eyes/results/$ID/taken-photo.jpg\"; fi"
+    },
+    {
+      "i": "12",
+      "do": "shell",
+      "status": "OK",
+      "detail": "shell: if [ -n \"$newest\" ]; then adb shell am start -a android.intent.action.VIEW -d \"file:///sdcard/Pictures/OnionCamera/$newest\" -t \"image/jpeg\" >/dev/null 2>&1; fi"
+    },
+    {
+      "i": "13",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 3s"
+    },
+    {
+      "i": "14",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 04-stock-gallery"
+    },
+    {
+      "i": "15",
+      "do": "record_stop",
+      "status": "OK",
+      "detail": "screenrecord stopped -> flow.mp4"
+    }
+  ],
+  "startedUtc": "2026-11-16T01:48:15Z",
+  "finishedUtc": "2026-11-16T01:52:59Z",
+  "verdict": "FAIL",
+  "note": ""
+}
