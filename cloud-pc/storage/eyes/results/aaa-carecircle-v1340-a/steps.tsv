@@ -83,8 +83,3 @@
 82	observe	OK	observe x14-badge-preview (png+xml+texts)
 83	tap_element	SKIP	'Back to controls' not found (optional)
 84	wait	OK	slept 2s
-85	back	OK	keyevent BACK
-86	wait	OK	slept 1s
-87	observe	OK	observe x15-after-controls-back (png+xml+texts)
-88	tap_element	OK	tapped 'Today' at 118 2123
-89	wait	OK	slept 2s
