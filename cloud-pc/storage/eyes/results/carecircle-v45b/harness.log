@@ -170,3 +170,14 @@ ERROR        | stop: Not implemented
 INFO         | removeAll
 WARNING      | Netsim Wifi dns:///localhost:35965 is gone due to CANCELLED
 INFO         | ipv6:%5B::1%5D:35965: Got goaway [2] err=UNAVAILABLE:GOAWAY received; Error code: 2; Debug Text: Cancelling all calls {http2_error:2}
+== eyes run carecircle-v45b 2026-11-16T02:04:18Z
+api_put: cloud-pc/storage/eyes/results/carecircle-v45b/heartbeat.txt OK
+apk md5=df6a2d89a8d5e26529fa30931d686858 expected=df6a2d89a8d5e26529fa30931d686858 size=95098
+INFO         | Wait for emulator (pid 22472) 20 seconds to shutdown gracefully before kill;you can set environment variable ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL(in seconds) to change the default value (20 seconds)
+
+USER_INFO    | Snapshots have been disabled by the user, save request is ignored.
+INFO         | Saving snapshot 'default_boot' took 0 ms
+ERROR        | stop: Not implemented
+INFO         | removeAll
+WARNING      | Netsim Wifi dns:///localhost:37885 is gone due to CANCELLED
+INFO         | ipv6:%5B::1%5D:37885: Got goaway [2] err=UNAVAILABLE:GOAWAY received; Error code: 2; Debug Text: Cancelling all calls {http2_error:2}
