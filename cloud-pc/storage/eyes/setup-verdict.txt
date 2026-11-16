@@ -30,21 +30,21 @@ api_put: cloud-pc/storage/eyes/setup-heartbeat.txt OK
 sdkmanager attempt 1 exit=0
 SDK verified OK on attempt 1
 SETUP_OK
-== eyes setup 2026-11-16T00:17:41Z
+== eyes setup 2026-11-16T00:11:54Z
 api_put: cloud-pc/storage/eyes/setup-heartbeat.txt OK
 sdkmanager attempt 1 exit=0
 SDK verified OK on attempt 1
 SETUP_OK
 api_put: cloud-pc/storage/eyes/setup-verdict.txt OK
 api_put: cloud-pc/storage/eyes/setup.log OK
-== eyes setup 2026-11-16T00:27:19Z
+== eyes setup 2026-11-16T00:21:13Z
 api_put: cloud-pc/storage/eyes/setup-heartbeat.txt OK
 sdkmanager attempt 1 exit=0
 SDK verified OK on attempt 1
 SETUP_OK
 api_put: cloud-pc/storage/eyes/setup-verdict.txt OK
 api_put: cloud-pc/storage/eyes/setup.log OK
-== eyes setup 2026-11-16T00:31:01Z
+== eyes setup 2026-11-16T00:33:14Z
 api_put: cloud-pc/storage/eyes/setup-heartbeat.txt OK
 sdkmanager attempt 1 exit=0
 SDK verified OK on attempt 1
