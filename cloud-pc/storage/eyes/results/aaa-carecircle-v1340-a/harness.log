@@ -1972,3 +1972,215 @@ api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/10-final-state.png
 step 96 [screenshot] OK: screenshot 10-final-state
 <stdin>:25: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
 result.json written, verdict PASS
+== eyes run aaa-carecircle-v1340-a 2026-11-16T12:42:37Z
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/heartbeat.txt OK
+apk md5=3fbdae5fdb235eef08640ab6313974b6 expected=3fbdae5fdb235eef08640ab6313974b6 size=95098
+* daemon not running; starting now at tcp:5037
+* daemon started successfully
+booted after ~35s
+screen real: size=1080x2280 density=420 fontScale=1.0
+installOk=1
+seed verify: provider holds 0 contacts
+pidAliveStart=1
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/progress.json OK
+step 0 [launch] OK: monkey launch
+step 1 [wait] OK: slept 3s
+shot 00-boot: 172934 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/00-boot.png OK
+step 2 [screenshot] OK: screenshot 00-boot
+step 3 [wait] OK: slept 4s
+shot x0-door: 172934 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x0-door.png OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x0-door.xml OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x0-door.texts.txt OK
+step 4 [observe] OK: observe x0-door (png+xml+texts)
+shot 01-welcome: 172934 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/01-welcome.png OK
+step 5 [screenshot] OK: screenshot 01-welcome
+step 6 [tap_element] SKIP: 'sign me in' not found (optional)
+step 7 [wait] OK: slept 2s
+shot x1-login-form: 172934 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x1-login-form.png OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x1-login-form.xml OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x1-login-form.texts.txt OK
+step 8 [observe] OK: observe x1-login-form (png+xml+texts)
+step 9 [tap_element] SKIP: 'asName' not found (optional)
+step 10 [type] OK: typed 'Demo Parent'
+step 11 [key] OK: keyevent BACK
+step 12 [wait] OK: slept 1s
+step 13 [tap_element] SKIP: 'asPin' not found (optional)
+step 14 [type] OK: typed '2468'
+step 15 [key] OK: keyevent BACK
+step 16 [wait] OK: slept 1s
+step 17 [tap_element] SKIP: 'btnSignin' not found (optional)
+step 18 [wait] OK: slept 9s
+shot x2-landing: 172679 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x2-landing.png OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x2-landing.xml OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x2-landing.texts.txt OK
+step 19 [observe] OK: observe x2-landing (png+xml+texts)
+step 20 [tap_element] SKIP: 'Today' not found (optional)
+step 21 [wait] OK: slept 2s
+shot 02-today: 172679 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/02-today.png OK
+step 22 [screenshot] OK: screenshot 02-today
+shot x3-today: 172679 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x3-today.png OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x3-today.xml OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x3-today.texts.txt OK
+step 23 [observe] OK: observe x3-today (png+xml+texts)
+step 24 [scroll] OK: scroll down
+shot 02b-today-scrolled: 172679 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/02b-today-scrolled.png OK
+step 25 [screenshot] OK: screenshot 02b-today-scrolled
+step 26 [scroll] OK: scroll up
+step 27 [tap_element] FALLBACK: 'All kids' not in hierarchy; fallback tap 0.3 0.04
+step 28 [wait] OK: slept 1s
+shot x4-picker-sheet: 172679 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x4-picker-sheet.png OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x4-picker-sheet.xml OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x4-picker-sheet.texts.txt OK
+step 29 [observe] OK: observe x4-picker-sheet (png+xml+texts)
+step 30 [back] OK: keyevent BACK
+step 31 [wait] OK: slept 1s
+shot x5-after-sheet-back: 172679 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x5-after-sheet-back.png OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x5-after-sheet-back.xml OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x5-after-sheet-back.texts.txt OK
+step 32 [observe] OK: observe x5-after-sheet-back (png+xml+texts)
+step 33 [tap_element] SKIP: 'Tasks' not found (optional)
+step 34 [wait] OK: slept 2s
+shot 03-tasks-pending: 172679 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/03-tasks-pending.png OK
+step 35 [screenshot] OK: screenshot 03-tasks-pending
+step 36 [tap_element] SKIP: 'Approvals' not found (optional)
+step 37 [wait] OK: slept 2s
+shot 03b-tasks-approvals: 172679 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/03b-tasks-approvals.png OK
+step 38 [screenshot] OK: screenshot 03b-tasks-approvals
+step 39 [tap_element] SKIP: 'Completed' not found (optional)
+step 40 [wait] OK: slept 2s
+shot 03c-tasks-completed: 172679 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/03c-tasks-completed.png OK
+step 41 [screenshot] OK: screenshot 03c-tasks-completed
+step 42 [back] OK: keyevent BACK
+step 43 [wait] OK: slept 1s
+shot x6-after-tasks-back: 172679 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x6-after-tasks-back.png OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x6-after-tasks-back.xml OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x6-after-tasks-back.texts.txt OK
+step 44 [observe] OK: observe x6-after-tasks-back (png+xml+texts)
+step 45 [tap_element] SKIP: 'Play' not found (optional)
+step 46 [wait] OK: slept 3s
+shot 04-play-home: 172679 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/04-play-home.png OK
+step 47 [screenshot] OK: screenshot 04-play-home
+step 48 [scroll] OK: scroll down
+shot 04b-play-scrolled: 172679 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/04b-play-scrolled.png OK
+step 49 [screenshot] OK: screenshot 04b-play-scrolled
+step 50 [scroll] OK: scroll up
+step 51 [tap_element] SKIP: 'Choose games' not found (optional)
+step 52 [wait] OK: slept 3s
+shot 05-manage-games: 172679 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/05-manage-games.png OK
+step 53 [screenshot] OK: screenshot 05-manage-games
+shot x7-manage: 172679 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x7-manage.png OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x7-manage.xml OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x7-manage.texts.txt OK
+step 54 [observe] OK: observe x7-manage (png+xml+texts)
+step 55 [back] OK: keyevent BACK
+step 56 [wait] OK: slept 1s
+shot x8-after-manage-back: 172679 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x8-after-manage-back.png OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x8-after-manage-back.xml OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x8-after-manage-back.texts.txt OK
+step 57 [observe] OK: observe x8-after-manage-back (png+xml+texts)
+step 58 [tap_element] SKIP: 'More' not found (optional)
+step 59 [wait] OK: slept 1s
+step 60 [tap_element] SKIP: 'People' not found (optional)
+step 61 [wait] OK: slept 2s
+step 62 [tap_element] SKIP: 'Parent Controls' not found (optional)
+step 63 [wait] OK: slept 2s
+shot x9-controls: 172679 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x9-controls.png OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x9-controls.xml OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x9-controls.texts.txt OK
+step 64 [observe] OK: observe x9-controls (png+xml+texts)
+shot 06-parent-controls: 172679 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/06-parent-controls.png OK
+step 65 [screenshot] OK: screenshot 06-parent-controls
+step 66 [scroll] OK: scroll down
+step 67 [scroll] OK: scroll down
+shot x10-controls-mid: 172679 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x10-controls-mid.png OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x10-controls-mid.xml OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x10-controls-mid.texts.txt OK
+step 68 [observe] OK: observe x10-controls-mid (png+xml+texts)
+step 69 [tap_element] SKIP: 'Make the join code' not found (optional)
+step 70 [wait] OK: slept 4s
+shot x11-joincode: 172679 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x11-joincode.png OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x11-joincode.xml OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x11-joincode.texts.txt OK
+step 71 [observe] OK: observe x11-joincode (png+xml+texts)
+shot 07-join-code: 172679 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/07-join-code.png OK
+step 72 [screenshot] OK: screenshot 07-join-code
+step 73 [scroll] OK: scroll down
+shot x12-controls-lower: 172679 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x12-controls-lower.png OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x12-controls-lower.xml OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x12-controls-lower.texts.txt OK
+step 74 [observe] OK: observe x12-controls-lower (png+xml+texts)
+step 75 [tap_element] SKIP: 'sees it' not found (optional)
+step 76 [wait] OK: slept 3s
+shot 08-kid-home-preview: 172679 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/08-kid-home-preview.png OK
+step 77 [screenshot] OK: screenshot 08-kid-home-preview
+shot x13-kid-preview: 172679 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x13-kid-preview.png OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x13-kid-preview.xml OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x13-kid-preview.texts.txt OK
+step 78 [observe] OK: observe x13-kid-preview (png+xml+texts)
+step 79 [tap_element] SKIP: 'Badges' not found (optional)
+step 80 [wait] OK: slept 2s
+shot 09-badge-case-preview: 172679 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/09-badge-case-preview.png OK
+step 81 [screenshot] OK: screenshot 09-badge-case-preview
+shot x14-badge-preview: 172679 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x14-badge-preview.png OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x14-badge-preview.xml OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x14-badge-preview.texts.txt OK
+step 82 [observe] OK: observe x14-badge-preview (png+xml+texts)
+step 83 [tap_element] SKIP: 'Back to controls' not found (optional)
+step 84 [wait] OK: slept 2s
+step 85 [back] OK: keyevent BACK
+step 86 [wait] OK: slept 1s
+shot x15-after-controls-back: 172679 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x15-after-controls-back.png OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x15-after-controls-back.xml OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x15-after-controls-back.texts.txt OK
+step 87 [observe] OK: observe x15-after-controls-back (png+xml+texts)
+step 88 [tap_element] SKIP: 'Today' not found (optional)
+step 89 [wait] OK: slept 2s
+step 90 [back] OK: keyevent BACK
+step 91 [wait] OK: slept 2s
+shot x16-root-back: 172679 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x16-root-back.png OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x16-root-back.xml OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x16-root-back.texts.txt OK
+step 92 [observe] OK: observe x16-root-back (png+xml+texts)
+step 93 [launch] OK: monkey launch
+step 94 [wait] OK: slept 3s
+shot x17-final: 172679 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x17-final.png OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x17-final.xml OK
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/x17-final.texts.txt OK
+step 95 [observe] OK: observe x17-final (png+xml+texts)
+shot 10-final-state: 172679 bytes
+api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v1340-a/10-final-state.png OK
+step 96 [screenshot] OK: screenshot 10-final-state
+<stdin>:25: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+result.json written, verdict PASS
