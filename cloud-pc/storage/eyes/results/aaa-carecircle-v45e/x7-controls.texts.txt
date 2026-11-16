@@ -1,66 +1,18 @@
-Care Circle — by Onion Core
-Care 
-Circle
-BY ONION CORE
-Choose whose day to show
-Notifications
-My profile
-Emergency contacts and SOS
-LIVE — everyone sees changes right away
-Back to People
-Parent Controls
-What Demo Kid can do, who holds which keys, and their own account — one screen, no archaeology.
-What can Demo Kid do?
-Play 2
-Chores &amp; points 1
-Daily Mix — the morning chore deal 2
-Points spending &amp; saved money 2
-All sections (15)
-WHAT CAN DEMO KID DO?
-Sign in with their own account
-Off
-Off pauses the kid's account sign-in entirely.
-Nobody has set this yet — new kid features start off.
-Sign in with their own account
-Off — tap to turn on
-Play games on their own
-Off
-The master switch over the Play shelf when the kid is signed in themselves. The per-game allowlist still applies.
-Nobody has set this yet — new kid features start off.
-Play games on their own
-Off — tap to turn on
-Ask to change their display name
-Off
-The kid asks; a parent still approves the new name before it lands.
-Nobody has set this yet — new kid features start off.
-Ask to change their display name
-Off — tap to turn on
-See their own day history
-Off
-Past care days on the kid's own home — never a sibling's.
-Nobody has set this yet — new kid features start off.
-See their own day history
-Off — tap to turn on
-SAY IT IN YOUR WORDS (OPTIONAL)
-Changes land the moment you tap. Demo Kid hears about them in your words, and the other parent is told too.
-Today
-Calendar
-Tasks
-Play
-More
-Quick add
-Quick Add
-The day, kept up to date by everyone.
-Add a note
-Add a task
-Add a shift
-Add an expense
-Add a kid
-Invite someone
-Report incident
-Announcement
-Close
-Emergency
-Allergies, medical notes and tap-to-call contacts for every kid you can see. For a life-threatening emergency, call 911 first.
-Close
-Edit
+This website has been temporarily rate limited | onion-care.blueblazer82.workers.dev | Cloudflare
+Please check back later
+Error 1027
+This website has been temporarily rate limited
+You cannot access this site because the owner has reached their plan limits. Check back later once traffic has gone down.
+If you are owner of this website, prevent this from happening again by upgrading your plan on the 
+Cloudflare Workers dashboard
+Cloudflare Workers dashboard
+.
+Learn more about this issue →
+Learn more about this issue →
+Cloudflare Ray ID: a5b54a636f600640
+2026-11-16 08:57:51 UTC
+Your IP: 
+Click to reveal
+Runs on 
+Cloudflare Workers
+Cloudflare Workers
