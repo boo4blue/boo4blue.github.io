@@ -547,3 +547,10 @@ api_put: cloud-pc/storage/eyes/setup-heartbeat.txt OK
 sdkmanager attempt 1 exit=0
 SDK verified OK on attempt 1
 SETUP_OK
+api_put: cloud-pc/storage/eyes/setup-verdict.txt OK
+api_put: too big for contents API, needs git path: cloud-pc/storage/eyes/setup.log
+== eyes setup 2026-11-16T12:02:54Z
+api_put: cloud-pc/storage/eyes/setup-heartbeat.txt OK
+sdkmanager attempt 1 exit=0
+SDK verified OK on attempt 1
+SETUP_OK
