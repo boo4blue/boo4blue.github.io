@@ -1,0 +1,241 @@
+{
+  "id": "camera-acceptance-v170",
+  "package": "com.onioncore.camera",
+  "lane": "onion-eyes/cloud-pc",
+  "apkMd5Expected": "e72dd22e98344c36cac4ba486f2100fb",
+  "apkMd5Actual": "e72dd22e98344c36cac4ba486f2100fb",
+  "bootCompleted": true,
+  "installOk": true,
+  "pidAliveStart": true,
+  "pidAliveEnd": true,
+  "seededCount": 0,
+  "cameraRoute": null,
+  "cameraSource": null,
+  "cameraNote": null,
+  "screen": {
+    "size": "1080x2280",
+    "density": "420",
+    "fontScale": "1.0"
+  },
+  "shots": [
+    "00-launch-early.png",
+    "01-photo-viewfinder.png",
+    "02-after-capture.png",
+    "after-back-more.png",
+    "after-back-photo.png",
+    "after-back-root.png",
+    "after-back-settings.png",
+    "more-grid.png",
+    "photo-view.png",
+    "photo-viewfinder.png",
+    "settings.png",
+    "video-mode.png"
+  ],
+  "videos": [
+    "flow.mp4"
+  ],
+  "steps": [
+    {
+      "i": "0",
+      "do": "record_start",
+      "status": "OK",
+      "detail": "screenrecord started (540x1140 @1.2Mbps)"
+    },
+    {
+      "i": "1",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 00-launch-early"
+    },
+    {
+      "i": "2",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 3s"
+    },
+    {
+      "i": "3",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe photo-viewfinder (png+xml+texts)"
+    },
+    {
+      "i": "4",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 01-photo-viewfinder"
+    },
+    {
+      "i": "5",
+      "do": "tap_xy",
+      "status": "OK",
+      "detail": "tap frac 0.451,0.572"
+    },
+    {
+      "i": "6",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "7",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 02-after-capture"
+    },
+    {
+      "i": "8",
+      "do": "tap_xy",
+      "status": "OK",
+      "detail": "tap frac 0.247,0.572"
+    },
+    {
+      "i": "9",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 1s"
+    },
+    {
+      "i": "10",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe photo-view (png+xml+texts)"
+    },
+    {
+      "i": "11",
+      "do": "back",
+      "status": "OK",
+      "detail": "keyevent BACK"
+    },
+    {
+      "i": "12",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 1s"
+    },
+    {
+      "i": "13",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe after-back-photo (png+xml+texts)"
+    },
+    {
+      "i": "14",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'MORE' at 850 333"
+    },
+    {
+      "i": "15",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 1s"
+    },
+    {
+      "i": "16",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe more-grid (png+xml+texts)"
+    },
+    {
+      "i": "17",
+      "do": "back",
+      "status": "OK",
+      "detail": "keyevent BACK"
+    },
+    {
+      "i": "18",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 1s"
+    },
+    {
+      "i": "19",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe after-back-more (png+xml+texts)"
+    },
+    {
+      "i": "20",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'Settings' at 816 200"
+    },
+    {
+      "i": "21",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 1s"
+    },
+    {
+      "i": "22",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe settings (png+xml+texts)"
+    },
+    {
+      "i": "23",
+      "do": "back",
+      "status": "OK",
+      "detail": "keyevent BACK"
+    },
+    {
+      "i": "24",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 1s"
+    },
+    {
+      "i": "25",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe after-back-settings (png+xml+texts)"
+    },
+    {
+      "i": "26",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'VIDEO' at 455 333"
+    },
+    {
+      "i": "27",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 1s"
+    },
+    {
+      "i": "28",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe video-mode (png+xml+texts)"
+    },
+    {
+      "i": "29",
+      "do": "back",
+      "status": "OK",
+      "detail": "keyevent BACK"
+    },
+    {
+      "i": "30",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 1s"
+    },
+    {
+      "i": "31",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe after-back-root (png+xml+texts)"
+    },
+    {
+      "i": "32",
+      "do": "record_stop",
+      "status": "OK",
+      "detail": "screenrecord stopped -> flow.mp4"
+    }
+  ],
+  "startedUtc": "2026-11-16T00:27:28Z",
+  "finishedUtc": "2026-11-16T00:30:57Z",
+  "verdict": "PASS",
+  "note": ""
+}
