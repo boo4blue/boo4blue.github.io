@@ -2,7 +2,7 @@
 1	wait	OK	slept 6s
 2	observe	OK	observe x0-door (png+xml+texts)
 3	screenshot	OK	screenshot 01-welcome
-4	tap_element	OK	tapped 'sign me in' at 286 1335
+4	tap_element	SKIP	'sign me in' not found (optional)
 5	wait	OK	slept 2s
 6	observe	OK	observe x1-login-form (png+xml+texts)
 7	tap_element	SKIP	'liName' not found (optional)
