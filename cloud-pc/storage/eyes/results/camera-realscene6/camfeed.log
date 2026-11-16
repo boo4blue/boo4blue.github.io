@@ -1,8 +1,8 @@
 pump: chunklist ok for feed 1415
 pump: segment error: [Errno 32] Broken pipe
 IDIOC_G_FMT): Invalid argument
-[out#0/video4linux2,v4l2 @ 0x636b38878680] Could not write header (incorrect codec parameters ?): Invalid argument
-[vf#0:0 @ 0x636b38835e40] Error sending frames to consumers: Invalid argument
-[vf#0:0 @ 0x636b38835e40] Task finished with error code: -22 (Invalid argument)
-[vf#0:0 @ 0x636b38835e40] Terminating thread with return code -22 (Invalid argument)
-[out#0/video4linux2,v4l2 @ 0x636b38878680] Nothing was written into output file, because at least one of its streams received no packets.
+[out#0/video4linux2,v4l2 @ 0x603de3dc5f00] Could not write header (incorrect codec parameters ?): Invalid argument
+[vf#0:0 @ 0x603de3d4f740] Error sending frames to consumers: Invalid argument
+[vf#0:0 @ 0x603de3d4f740] Task finished with error code: -22 (Invalid argument)
+[vf#0:0 @ 0x603de3d4f740] Terminating thread with return code -22 (Invalid argument)
+[out#0/video4linux2,v4l2 @ 0x603de3dc5f00] Nothing was written into output file, because at least one of its streams received no packets.
