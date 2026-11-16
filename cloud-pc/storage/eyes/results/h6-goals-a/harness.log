@@ -59,3 +59,64 @@ step 22 [screenshot] OK: screenshot 05b-goal-created
 step 23 [assert_text] SOFTFAIL: assert soft-fail: 'Run a 5K' not in hierarchy (vision check decides)
 <stdin>:25: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
 result.json written, verdict FAIL
+== eyes run h6-goals-a 2026-11-16T21:12:07Z
+api_put: cloud-pc/storage/eyes/results/h6-goals-a/heartbeat.txt OK
+apk md5=3c1bf6e05afb5d4d999de08f6bede5fe expected=3c1bf6e05afb5d4d999de08f6bede5fe size=1223020
+* daemon not running; starting now at tcp:5037
+* daemon started successfully
+booted after ~30s
+screen real: size=1080x2280 density=420 fontScale=1.0
+installOk=1
+seed verify: provider holds 0 contacts
+pidAliveStart=1
+api_put: cloud-pc/storage/eyes/results/h6-goals-a/progress.json OK
+step 0 [launch] OK: monkey launch
+step 1 [wait] OK: slept 4s
+shot 01-launch: 90206 bytes
+api_put: cloud-pc/storage/eyes/results/h6-goals-a/01-launch.png OK
+api_put: cloud-pc/storage/eyes/results/h6-goals-a/01-launch.xml OK
+api_put: cloud-pc/storage/eyes/results/h6-goals-a/01-launch.texts.txt OK
+step 2 [observe] OK: observe 01-launch (png+xml+texts)
+step 3 [tap_element] SKIP: 'Not now' not found (optional)
+step 4 [wait] OK: slept 2s
+step 5 [tap_element] OK: tapped 'Menu' at 996 223
+step 6 [wait] OK: slept 2s
+shot 02-menu: 157180 bytes
+api_put: cloud-pc/storage/eyes/results/h6-goals-a/02-menu.png OK
+api_put: cloud-pc/storage/eyes/results/h6-goals-a/02-menu.xml OK
+api_put: cloud-pc/storage/eyes/results/h6-goals-a/02-menu.texts.txt OK
+step 7 [observe] OK: observe 02-menu (png+xml+texts)
+step 8 [tap_element] FAIL: 'Memory & Goals' not found in UI hierarchy
+step 9 [wait] OK: slept 2s
+shot 03-goals-empty: 157180 bytes
+api_put: cloud-pc/storage/eyes/results/h6-goals-a/03-goals-empty.png OK
+api_put: cloud-pc/storage/eyes/results/h6-goals-a/03-goals-empty.xml OK
+api_put: cloud-pc/storage/eyes/results/h6-goals-a/03-goals-empty.texts.txt OK
+step 10 [observe] OK: observe 03-goals-empty (png+xml+texts)
+shot 03b-goals-empty: 157180 bytes
+api_put: cloud-pc/storage/eyes/results/h6-goals-a/03b-goals-empty.png OK
+step 11 [screenshot] OK: screenshot 03b-goals-empty
+step 12 [tap_element] FAIL: '+ New goal' not found in UI hierarchy
+step 13 [wait] OK: slept 2s
+shot 04-new-goal-dialog: 157180 bytes
+api_put: cloud-pc/storage/eyes/results/h6-goals-a/04-new-goal-dialog.png OK
+api_put: cloud-pc/storage/eyes/results/h6-goals-a/04-new-goal-dialog.xml OK
+api_put: cloud-pc/storage/eyes/results/h6-goals-a/04-new-goal-dialog.texts.txt OK
+step 14 [observe] OK: observe 04-new-goal-dialog (png+xml+texts)
+step 15 [tap_element] OK: tapped 'Goal' at 540 1306
+step 16 [type] OK: typed 'Run a 5K'
+step 17 [tap_element] FALLBACK: 'Notes' not in hierarchy; fallback tap 0.5 0.53
+step 18 [type] OK: typed 'Demo goal for the H6 proof'
+step 19 [tap_element] FAIL: 'Save' not found in UI hierarchy
+step 20 [wait] OK: slept 2s
+shot 05-goal-created: 78504 bytes
+api_put: cloud-pc/storage/eyes/results/h6-goals-a/05-goal-created.png OK
+api_put: cloud-pc/storage/eyes/results/h6-goals-a/05-goal-created.xml OK
+api_put: cloud-pc/storage/eyes/results/h6-goals-a/05-goal-created.texts.txt OK
+step 21 [observe] OK: observe 05-goal-created (png+xml+texts)
+shot 05b-goal-created: 78504 bytes
+api_put: cloud-pc/storage/eyes/results/h6-goals-a/05b-goal-created.png OK
+step 22 [screenshot] OK: screenshot 05b-goal-created
+step 23 [assert_text] SOFTFAIL: assert soft-fail: 'Run a 5K' not in hierarchy (vision check decides)
+<stdin>:25: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+result.json written, verdict FAIL
