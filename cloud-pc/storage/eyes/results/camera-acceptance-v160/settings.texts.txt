@@ -1,0 +1,36 @@
+ EV 
+1x
+2x
+PHOTO
+VIDEO
+FOOD
+MORE
+Shutter
+Flip
+More — Pro / Cinema / Tools / Settings
+Viewfinder stays clean. Everything else lives in this sheet.
+Torch: Off
+Pro
+ISO: Auto
+Shutter: Auto
+WB: Auto
+Focus: Auto
+Metering: Matrix
+Format: JPEG
+Grid: Thirds
+Bracketing: Off
+Intervalometer: Off
+Anti-flicker: Auto
+Histogram / Zebra / Peaking
+Save C1
+Load C1
+Save C2
+Load C2
+Volume keys as shutter: On
+Shoot &amp; fix — Pro / Faces / Creator
+Pro mode lives here too: ISO / shutter / WB / focus above, histogram + zebra + peaking on the viewfinder, grid + golden-ratio overlays. Night stack: Night stack: 4 frames · Long exposure not reported by this phone · hold steady. Long exposure not reported by this phone.
+Auto
+Off
+Mood
+Settings
+Low light — Night suggested (open Modes, tap Night) · Scene suggestion: Night
