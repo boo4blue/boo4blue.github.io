@@ -92,40 +92,47 @@ api_put: cloud-pc/storage/eyes/setup-heartbeat.txt OK
 sdkmanager attempt 1 exit=0
 SDK verified OK on attempt 1
 SETUP_OK
-== eyes setup 2026-11-16T02:07:12Z
+== eyes setup 2026-11-16T02:11:02Z
 api_put: cloud-pc/storage/eyes/setup-heartbeat.txt OK
 sdkmanager attempt 1 exit=0
 SDK verified OK on attempt 1
 SETUP_OK
 api_put: cloud-pc/storage/eyes/setup-verdict.txt OK
 api_put: too big for contents API, needs git path: cloud-pc/storage/eyes/setup.log
-== eyes setup 2026-11-16T02:19:36Z
+== eyes setup 2026-11-16T02:23:13Z
 api_put: cloud-pc/storage/eyes/setup-heartbeat.txt OK
 sdkmanager attempt 1 exit=0
 SDK verified OK on attempt 1
 SETUP_OK
 api_put: cloud-pc/storage/eyes/setup-verdict.txt OK
 api_put: too big for contents API, needs git path: cloud-pc/storage/eyes/setup.log
-== eyes setup 2026-11-16T02:24:20Z
+== eyes setup 2026-11-16T02:28:10Z
 api_put: cloud-pc/storage/eyes/setup-heartbeat.txt OK
 sdkmanager attempt 1 exit=0
 SDK verified OK on attempt 1
 SETUP_OK
 api_put: cloud-pc/storage/eyes/setup-verdict.txt OK
 api_put: too big for contents API, needs git path: cloud-pc/storage/eyes/setup.log
-== eyes setup 2026-11-16T02:27:06Z
+== eyes setup 2026-11-16T02:30:46Z
+api_put: cloud-pc/storage/eyes/setup-heartbeat.txt OK
+sdkmanager attempt 1 exit=0
+SDK verified OK on attempt 1
+SETUP_OK
+== eyes setup 2026-11-16T02:57:38Z
 api_put: cloud-pc/storage/eyes/setup-heartbeat.txt OK
 sdkmanager attempt 1 exit=0
 SDK verified OK on attempt 1
 SETUP_OK
 api_put: cloud-pc/storage/eyes/setup-verdict.txt OK
 api_put: too big for contents API, needs git path: cloud-pc/storage/eyes/setup.log
-== eyes setup 2026-11-16T02:38:05Z
+== eyes setup 2026-11-16T03:03:35Z
 api_put: cloud-pc/storage/eyes/setup-heartbeat.txt OK
 sdkmanager attempt 1 exit=0
 SDK verified OK on attempt 1
 SETUP_OK
-== eyes setup 2026-11-16T03:07:05Z
+api_put: cloud-pc/storage/eyes/setup-verdict.txt OK
+api_put: too big for contents API, needs git path: cloud-pc/storage/eyes/setup.log
+== eyes setup 2026-11-16T03:07:27Z
 api_put: cloud-pc/storage/eyes/setup-heartbeat.txt OK
 sdkmanager attempt 1 exit=0
 SDK verified OK on attempt 1
