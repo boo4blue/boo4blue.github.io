@@ -1,0 +1,79 @@
+0	launch	OK	monkey launch
+1	wait	OK	slept 3s
+2	screenshot	OK	screenshot 00-boot
+3	wait	OK	slept 4s
+4	observe	OK	observe x0-door (png+xml+texts)
+5	screenshot	OK	screenshot 01-welcome
+6	tap_element	OK	tapped 'sign me in' at 286 1335
+7	wait	OK	slept 2s
+8	observe	OK	observe x1-login-form (png+xml+texts)
+9	tap_element	OK	tapped 'asName' at 540 1297
+10	type	OK	typed 'Demo Parent'
+11	key	OK	keyevent BACK
+12	wait	OK	slept 1s
+13	tap_element	OK	tapped 'asPin' at 540 1513
+14	type	OK	typed '2468'
+15	key	OK	keyevent BACK
+16	wait	OK	slept 1s
+17	tap_element	OK	tapped 'btnSignin' at 199 1143
+18	wait	OK	slept 9s
+19	observe	OK	observe x2-landing (png+xml+texts)
+20	tap_element	OK	tapped 'Today' at 118 2123
+21	wait	OK	slept 2s
+22	screenshot	OK	screenshot 02-today
+23	observe	OK	observe x3-today (png+xml+texts)
+24	scroll	OK	scroll down
+25	screenshot	OK	screenshot 02b-today-scrolled
+26	scroll	OK	scroll up
+27	tap_element	OK	tapped 'All kids' at 0 0
+28	wait	OK	slept 1s
+29	observe	OK	observe x4-picker-sheet (png+xml+texts)
+30	back	OK	keyevent BACK
+31	wait	OK	slept 1s
+32	observe	OK	observe x5-after-sheet-back (png+xml+texts)
+33	tap_element	OK	tapped 'Tasks' at 540 2123
+34	wait	OK	slept 2s
+35	screenshot	OK	screenshot 03-tasks-pending
+36	tap_element	SKIP	'Approvals' not found (optional)
+37	wait	OK	slept 2s
+38	screenshot	OK	screenshot 03b-tasks-approvals
+39	tap_element	SKIP	'Completed' not found (optional)
+40	wait	OK	slept 2s
+41	screenshot	OK	screenshot 03c-tasks-completed
+42	back	OK	keyevent BACK
+43	wait	OK	slept 1s
+44	observe	OK	observe x6-after-tasks-back (png+xml+texts)
+45	tap_element	OK	tapped 'Play' at 753 2123
+46	wait	OK	slept 3s
+47	screenshot	OK	screenshot 04-play-home
+48	scroll	OK	scroll down
+49	screenshot	OK	screenshot 04b-play-scrolled
+50	scroll	OK	scroll up
+51	tap_element	OK	tapped 'Choose games' at 835 1281
+52	wait	OK	slept 3s
+53	screenshot	OK	screenshot 05-manage-games
+54	observe	OK	observe x7-manage (png+xml+texts)
+55	back	OK	keyevent BACK
+56	wait	OK	slept 1s
+57	observe	OK	observe x8-after-manage-back (png+xml+texts)
+58	tap_element	OK	tapped 'More' at 963 2123
+59	wait	OK	slept 1s
+60	tap_element	OK	tapped 'People' at 540 1765
+61	wait	OK	slept 2s
+62	tap_element	OK	tapped 'Parent Controls' at 540 1394
+63	wait	OK	slept 2s
+64	observe	OK	observe x9-controls (png+xml+texts)
+65	screenshot	OK	screenshot 06-parent-controls
+66	scroll	OK	scroll down
+67	scroll	OK	scroll down
+68	observe	OK	observe x10-controls-mid (png+xml+texts)
+69	tap_element	SKIP	'Make the join code' not found (optional)
+70	wait	OK	slept 4s
+71	observe	OK	observe x11-joincode (png+xml+texts)
+72	screenshot	OK	screenshot 07-join-code
+73	scroll	OK	scroll down
+74	observe	OK	observe x12-controls-lower (png+xml+texts)
+75	tap_element	SKIP	'sees it' not found (optional)
+76	wait	OK	slept 3s
+77	screenshot	OK	screenshot 08-kid-home-preview
+78	observe	OK	observe x13-kid-preview (png+xml+texts)
