@@ -1,0 +1,185 @@
+{
+  "id": "h6-goals-a",
+  "package": "com.onioncore.onionai",
+  "lane": "onion-eyes/cloud-pc",
+  "apkMd5Expected": "3c1bf6e05afb5d4d999de08f6bede5fe",
+  "apkMd5Actual": "3c1bf6e05afb5d4d999de08f6bede5fe",
+  "apk_md5": {
+    "expected": "3c1bf6e05afb5d4d999de08f6bede5fe",
+    "actual": "3c1bf6e05afb5d4d999de08f6bede5fe",
+    "match": true
+  },
+  "bootCompleted": true,
+  "installOk": true,
+  "pidAliveStart": true,
+  "pidAliveEnd": true,
+  "seededCount": 0,
+  "cameraRoute": null,
+  "cameraSource": null,
+  "cameraNote": null,
+  "screen": {
+    "size": "1080x2280",
+    "density": "420",
+    "fontScale": "1.0"
+  },
+  "shots": [
+    "01-launch.png",
+    "02-menu.png",
+    "03-goals-empty.png",
+    "03b-goals-empty.png",
+    "04-new-goal-dialog.png",
+    "05-goal-created.png",
+    "05b-goal-created.png"
+  ],
+  "videos": [],
+  "steps": [
+    {
+      "i": "0",
+      "do": "launch",
+      "status": "OK",
+      "detail": "monkey launch"
+    },
+    {
+      "i": "1",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 4s"
+    },
+    {
+      "i": "2",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe 01-launch (png+xml+texts)"
+    },
+    {
+      "i": "3",
+      "do": "tap_element",
+      "status": "SKIP",
+      "detail": "'Not now' not found (optional)"
+    },
+    {
+      "i": "4",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "5",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'Menu' at 996 223"
+    },
+    {
+      "i": "6",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "7",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe 02-menu (png+xml+texts)"
+    },
+    {
+      "i": "8",
+      "do": "tap_element",
+      "status": "FAIL",
+      "detail": "'Memory & Goals' not found in UI hierarchy"
+    },
+    {
+      "i": "9",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "10",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe 03-goals-empty (png+xml+texts)"
+    },
+    {
+      "i": "11",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 03b-goals-empty"
+    },
+    {
+      "i": "12",
+      "do": "tap_element",
+      "status": "FAIL",
+      "detail": "'+ New goal' not found in UI hierarchy"
+    },
+    {
+      "i": "13",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "14",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe 04-new-goal-dialog (png+xml+texts)"
+    },
+    {
+      "i": "15",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'Goal' at 540 1306"
+    },
+    {
+      "i": "16",
+      "do": "type",
+      "status": "OK",
+      "detail": "typed 'Run a 5K'"
+    },
+    {
+      "i": "17",
+      "do": "tap_element",
+      "status": "FALLBACK",
+      "detail": "'Notes' not in hierarchy; fallback tap 0.5 0.53"
+    },
+    {
+      "i": "18",
+      "do": "type",
+      "status": "OK",
+      "detail": "typed 'Demo goal for the H6 proof'"
+    },
+    {
+      "i": "19",
+      "do": "tap_element",
+      "status": "FAIL",
+      "detail": "'Save' not found in UI hierarchy"
+    },
+    {
+      "i": "20",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "21",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe 05-goal-created (png+xml+texts)"
+    },
+    {
+      "i": "22",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 05b-goal-created"
+    },
+    {
+      "i": "23",
+      "do": "assert_text",
+      "status": "SOFTFAIL",
+      "detail": "assert soft-fail: 'Run a 5K' not in hierarchy (vision check decides)"
+    }
+  ],
+  "startedUtc": "2026-11-16T16:49:22Z",
+  "finishedUtc": "2026-11-16T16:52:01Z",
+  "verdict": "FAIL",
+  "note": ""
+}
