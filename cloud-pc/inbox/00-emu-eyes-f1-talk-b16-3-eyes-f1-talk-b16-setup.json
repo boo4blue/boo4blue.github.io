@@ -1,0 +1,5 @@
+{
+ "id": "eyes-f1-talk-b16-setup",
+ "action": "shell",
+ "command": "bash eyes/run-eyes.sh setup"
+}

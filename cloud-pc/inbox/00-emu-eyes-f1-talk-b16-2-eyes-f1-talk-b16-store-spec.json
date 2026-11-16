@@ -1,0 +1,6 @@
+{
+ "id": "eyes-f1-talk-b16-store-spec",
+ "action": "store",
+ "path": "eyes/jobs/f1-talk-b16.json",
+ "content": "{\n \"api\": 34,\n \"density\": 420,\n \"height\": 2280,\n \"image\": \"google_apis\",\n \"package\": \"com.onioncore.onionai\",\n \"steps\": [\n  {\n   \"do\": \"launch\",\n   \"seconds\": 14\n  },\n  {\n   \"do\": \"wait\",\n   \"seconds\": 4\n  },\n  {\n   \"do\": \"observe\",\n   \"label\": \"01-launch\"\n  },\n  {\n   \"do\": \"tap_element\",\n   \"optional\": true,\n   \"text\": \"Not now\"\n  },\n  {\n   \"do\": \"wait\",\n   \"seconds\": 2\n  },\n  {\n   \"do\": \"tap_element\",\n   \"text\": \"Talk\"\n  },\n  {\n   \"do\": \"wait\",\n   \"seconds\": 3\n  },\n  {\n   \"do\": \"observe\",\n   \"label\": \"02-talk-screen\"\n  },\n  {\n   \"do\": \"screenshot\",\n   \"label\": \"02b-talk-screen\"\n  },\n  {\n   \"do\": \"assert_text\",\n   \"soft\": true,\n   \"text\": \"Talk\"\n  }\n ],\n \"width\": 1080,\n \"id\": \"f1-talk-b16\",\n \"apkUrl\": \"https://github.com/boo4blue/boo4blue.github.io/releases/download/emu-assets/eyes-f1-talk-b16.apk\",\n \"apkMd5\": \"4c7619e431896c092f4789599b40552c\",\n \"apk_md5\": \"4c7619e431896c092f4789599b40552c\"\n}"
+}

@@ -1,0 +1,5 @@
+{
+ "id": "eyes-f1-talk-b16-run",
+ "action": "shell",
+ "command": "bash eyes/run-eyes.sh run f1-talk-b16"
+}
