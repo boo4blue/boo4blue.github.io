@@ -1,27 +1,47 @@
 Care Circle — by Onion Core
 Care Circle
-One shared, live circle for the kids — schedules, tasks,&#10;pickups and updates that everyone sees the moment they change.
-Onion, the Care Circle mascot
-HTTP 500
-Your family's circle
-You'll be this circle's first parent — add the kids, then invite the other parent and the caregivers. You hold the controls for your kids.
-YOUR NAME
-Demo Parent
-CHOOSE A PIN (4+ CHARACTERS)
-••••
-NAME YOUR CIRCLE
-Demo Circle
-Create my family's circle
-Already have an account? 
-Sign in
+BY ONION CORE
+My profile
+Emergency
+LIVE — everyone sees changes right away
+People
+Character sheets for the kids and everyone in the circle — profiles, invites and roles.
+0
+kids
+1
+grown-ups
+Hold any card for quick actions
+Finish your profile
+Your circle sees your face and how to reach you. Still missing: a photo, a one-line about line.
+Complete my profile
+Not now
+Add a kid
+People &amp; invites
+ADD A KID
+NAME
+AGE
+SCHOOL
+ALLERGIES (IMPORTANT — SHOWN ON TODAY)
+Add kid
+Guardians you invite can be linked to specific kids, so each family only ever sees its own kids.
+Today
+Calendar
+Play
+Updates
+More
+Quick add
+Your kids
+Step 4 of 13 · 4 of 11 done
+Close setup
+Add each kid you look after. Photos and the rest can be added any time from the People tab.
+ADD A KID
+Kid's name
+Age (optional)
+What they call you (optional)
+Add kid
 Back
-Live schedule
-Every change appears on every phone in seconds — no re-asking, no stale plans.
-Meds &amp; pickups
-Doses logged, pickups confirmed, running late handled in one tap.
-Pay without texts
-Hours, requests and card pay in one place — no chasing anyone in chat.
-By Onion Core. Private to your circle — nothing here is public.
+Continue
+Prefer to talk it through? Set up with Onion AI
 Quick Add
 The day, kept up to date by everyone.
 Add a note
@@ -37,3 +57,4 @@ Emergency
 Allergies, medical notes and tap-to-call contacts for every kid you can see. For a life-threatening emergency, call 911 first.
 Close
 Edit
+Circle created — add your first kid
