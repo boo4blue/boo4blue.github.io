@@ -1,0 +1,12 @@
+{
+  "id": "camera-realscene6",
+  "phase": "steps",
+  "bootCompleted": true,
+  "installOk": true,
+  "pidAliveStart": false,
+  "screen": {
+    "size": "1080x2280",
+    "density": "420",
+    "fontScale": "1.0"
+  }
+}
