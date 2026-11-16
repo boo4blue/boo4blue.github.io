@@ -1,0 +1,97 @@
+{
+  "id": "f1-talk-b16",
+  "package": "com.onioncore.onionai",
+  "lane": "onion-eyes/cloud-pc",
+  "apkMd5Expected": "4c7619e431896c092f4789599b40552c",
+  "apkMd5Actual": "4c7619e431896c092f4789599b40552c",
+  "apk_md5": {
+    "expected": "4c7619e431896c092f4789599b40552c",
+    "actual": "4c7619e431896c092f4789599b40552c",
+    "match": true
+  },
+  "bootCompleted": true,
+  "installOk": true,
+  "pidAliveStart": true,
+  "pidAliveEnd": true,
+  "seededCount": 0,
+  "cameraRoute": null,
+  "cameraSource": null,
+  "cameraNote": null,
+  "screen": {
+    "size": "1080x2280",
+    "density": "420",
+    "fontScale": "1.0"
+  },
+  "shots": [
+    "01-launch.png",
+    "02-talk-screen.png",
+    "02b-talk-screen.png"
+  ],
+  "videos": [],
+  "steps": [
+    {
+      "i": "0",
+      "do": "launch",
+      "status": "OK",
+      "detail": "monkey launch"
+    },
+    {
+      "i": "1",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 4s"
+    },
+    {
+      "i": "2",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe 01-launch (png+xml+texts)"
+    },
+    {
+      "i": "3",
+      "do": "tap_element",
+      "status": "SKIP",
+      "detail": "'Not now' not found (optional)"
+    },
+    {
+      "i": "4",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "5",
+      "do": "tap_element",
+      "status": "FAIL",
+      "detail": "'Talk' not found in UI hierarchy"
+    },
+    {
+      "i": "6",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 3s"
+    },
+    {
+      "i": "7",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe 02-talk-screen (png+xml+texts)"
+    },
+    {
+      "i": "8",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 02b-talk-screen"
+    },
+    {
+      "i": "9",
+      "do": "assert_text",
+      "status": "SOFTFAIL",
+      "detail": "assert soft-fail: 'Talk' not in hierarchy (vision check decides)"
+    }
+  ],
+  "startedUtc": "2026-11-16T16:47:08Z",
+  "finishedUtc": "2026-11-16T16:49:09Z",
+  "verdict": "FAIL",
+  "note": ""
+}
