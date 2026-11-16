@@ -1,9 +1,9 @@
-== eyes run aaa-carecircle-v45d 2026-11-16T03:07:11Z
+== eyes run aaa-carecircle-v45d 2026-11-16T03:06:45Z
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/heartbeat.txt OK
 apk md5=7691afd196928d6533884db5be076e0c expected=7691afd196928d6533884db5be076e0c size=95098
 * daemon not running; starting now at tcp:5037
 * daemon started successfully
-booted after ~30s
+booted after ~25s
 screen real: size=1080x2280 density=420 fontScale=1.0
 installOk=1
 seed verify: provider holds 0 contacts
@@ -11,17 +11,17 @@ pidAliveStart=1
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/progress.json OK
 step 0 [launch] OK: monkey launch
 step 1 [wait] OK: slept 6s
-shot x0-door: 610304 bytes
+shot x0-door: 610231 bytes
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/x0-door.png OK
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/x0-door.xml OK
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/x0-door.texts.txt OK
 step 2 [observe] OK: observe x0-door (png+xml+texts)
-shot 01-welcome: 609632 bytes
+shot 01-welcome: 610406 bytes
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/01-welcome.png OK
 step 3 [screenshot] OK: screenshot 01-welcome
 step 4 [tap_element] OK: tapped 'sign me in' at 284 1335
 step 5 [wait] OK: slept 2s
-shot x1-login-form: 563927 bytes
+shot x1-login-form: 565485 bytes
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/x1-login-form.png OK
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/x1-login-form.xml OK
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/x1-login-form.texts.txt OK
@@ -32,26 +32,26 @@ step 9 [tap_element] OK: tapped 'asPin' at 540 1413
 step 10 [type] OK: typed '2468'
 step 11 [tap_element] OK: tapped 'btnSignin' at 196 1488
 step 12 [wait] OK: slept 9s
-shot x2-landing: 933059 bytes
+shot x2-landing: 921148 bytes
 api_put: too big for contents API, needs git path: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/x2-landing.png
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/x2-landing.xml OK
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/x2-landing.texts.txt OK
 step 13 [observe] OK: observe x2-landing (png+xml+texts)
 step 14 [tap_element] SKIP: 'Today' not found (optional)
 step 15 [wait] OK: slept 2s
-shot 02-today: 933628 bytes
+shot 02-today: 921751 bytes
 api_put: too big for contents API, needs git path: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/02-today.png
 step 16 [screenshot] OK: screenshot 02-today
 step 17 [tap_element] SKIP: 'More' not found (optional)
 step 18 [wait] OK: slept 1s
-shot x3-after-more: 932719 bytes
+shot x3-after-more: 921334 bytes
 api_put: too big for contents API, needs git path: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/x3-after-more.png
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/x3-after-more.xml OK
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/x3-after-more.texts.txt OK
 step 19 [observe] OK: observe x3-after-more (png+xml+texts)
 step 20 [tap_element] SKIP: 'People' not found (optional)
 step 21 [wait] OK: slept 2s
-shot x4-people: 933059 bytes
+shot x4-people: 920462 bytes
 api_put: too big for contents API, needs git path: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/x4-people.png
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/x4-people.xml OK
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/x4-people.texts.txt OK
@@ -60,34 +60,34 @@ step 23 [tap_element] SKIP: 'nkName' not found (optional)
 step 24 [type] OK: typed 'Demo Kid'
 step 25 [tap_element] SKIP: 'nkAdd' not found (optional)
 step 26 [wait] OK: slept 4s
-shot x5-kid-added: 885779 bytes
+shot x5-kid-added: 886467 bytes
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/x5-kid-added.png OK
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/x5-kid-added.xml OK
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/x5-kid-added.texts.txt OK
 step 27 [observe] OK: observe x5-kid-added (png+xml+texts)
 step 28 [tap_element] SKIP: 'Play' not found (optional)
 step 29 [wait] OK: slept 4s
-shot 03-play-home: 885792 bytes
+shot 03-play-home: 886488 bytes
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/03-play-home.png OK
 step 30 [screenshot] OK: screenshot 03-play-home
 step 31 [tap_element] SKIP: 'Choose games' not found (optional)
 step 32 [wait] OK: slept 3s
-shot x6-manage: 884879 bytes
+shot x6-manage: 886177 bytes
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/x6-manage.png OK
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/x6-manage.xml OK
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/x6-manage.texts.txt OK
 step 33 [observe] OK: observe x6-manage (png+xml+texts)
-shot 04-manage-games: 885614 bytes
+shot 04-manage-games: 886164 bytes
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/04-manage-games.png OK
 step 34 [screenshot] OK: screenshot 04-manage-games
 step 35 [scroll] OK: scroll down
-shot 04b-manage-games-scrolled: 626797 bytes
+shot 04b-manage-games-scrolled: 764485 bytes
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/04b-manage-games-scrolled.png OK
 step 36 [screenshot] OK: screenshot 04b-manage-games-scrolled
 step 37 [tap_element] SKIP: 'Play' not found (optional)
 step 38 [wait] OK: slept 2s
 step 39 [scroll] OK: scroll down
-shot 03b-play-home-scrolled: 763073 bytes
+shot 03b-play-home-scrolled: 764573 bytes
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/03b-play-home-scrolled.png OK
 step 40 [screenshot] OK: screenshot 03b-play-home-scrolled
 step 41 [tap_element] SKIP: 'More' not found (optional)
@@ -97,27 +97,27 @@ step 44 [wait] OK: slept 2s
 step 45 [tap_element] SKIP: 'Parent Controls' not found (optional)
 step 46 [wait] OK: slept 2s
 step 47 [scroll] OK: scroll down
-shot x7-controls: 763152 bytes
+shot x7-controls: 764242 bytes
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/x7-controls.png OK
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/x7-controls.xml OK
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/x7-controls.texts.txt OK
 step 48 [observe] OK: observe x7-controls (png+xml+texts)
 step 49 [tap_element] SKIP: 'sees it' not found (optional)
 step 50 [wait] OK: slept 3s
-shot 06-kid-home: 784268 bytes
+shot 06-kid-home: 784528 bytes
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/06-kid-home.png OK
 step 51 [screenshot] OK: screenshot 06-kid-home
-shot x8-kid-home: 784396 bytes
+shot x8-kid-home: 785054 bytes
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/x8-kid-home.png OK
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/x8-kid-home.xml OK
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/x8-kid-home.texts.txt OK
 step 52 [observe] OK: observe x8-kid-home (png+xml+texts)
 step 53 [tap_element] SKIP: 'Badges' not found (optional)
 step 54 [wait] OK: slept 2s
-shot 05-badges: 783505 bytes
+shot 05-badges: 786060 bytes
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/05-badges.png OK
 step 55 [screenshot] OK: screenshot 05-badges
-shot x9-badges: 783861 bytes
+shot x9-badges: 785992 bytes
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/x9-badges.png OK
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/x9-badges.xml OK
 api_put: cloud-pc/storage/eyes/results/aaa-carecircle-v45d/x9-badges.texts.txt OK
