@@ -1,0 +1,12 @@
+{
+  "id": "camera-realscene2",
+  "v4l2": true,
+  "source": null,
+  "clip": null,
+  "attempts": [
+    "attempt: toolchain ffmpeg=/usr/bin/ffmpeg ffprobe=/usr/bin/ffprobe",
+    "ffmpeg version 8.0.1-3ubuntu2 Copyright (c) 2000-2025 the FFmpeg developers",
+    "attempt: virtual webcam module -> /dev/video0 present=yes"
+  ],
+  "updatedUtc": "2026-11-16T00:22:24Z"
+}
