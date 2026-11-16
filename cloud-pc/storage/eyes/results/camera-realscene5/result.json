@@ -79,8 +79,8 @@
     {
       "i": "8",
       "do": "tap_element",
-      "status": "FAIL",
-      "detail": "'Shutter' not found in UI hierarchy"
+      "status": "OK",
+      "detail": "tapped 'Shutter' at 487 2106"
     },
     {
       "i": "9",
@@ -149,8 +149,8 @@
       "detail": "screenrecord stopped -> flow.mp4"
     }
   ],
-  "startedUtc": "2026-11-16T04:08:38Z",
-  "finishedUtc": "2026-11-16T04:14:27Z",
-  "verdict": "FAIL",
+  "startedUtc": "2026-11-16T10:33:09Z",
+  "finishedUtc": "2026-11-16T10:37:50Z",
+  "verdict": "PASS",
   "note": ""
 }
