@@ -7,7 +7,7 @@
   "bootCompleted": true,
   "installOk": true,
   "pidAliveStart": true,
-  "pidAliveEnd": true,
+  "pidAliveEnd": false,
   "seededCount": 0,
   "cameraRoute": "A-live",
   "cameraSource": "Times Square cam, EarthCam feed 1415",
@@ -79,8 +79,8 @@
     {
       "i": "8",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'Shutter' at 487 2106"
+      "status": "FAIL",
+      "detail": "'Shutter' not found in UI hierarchy"
     },
     {
       "i": "9",
@@ -149,8 +149,8 @@
       "detail": "screenrecord stopped -> flow.mp4"
     }
   ],
-  "startedUtc": "2026-11-16T10:33:09Z",
-  "finishedUtc": "2026-11-16T10:37:50Z",
-  "verdict": "PASS",
+  "startedUtc": "2026-11-16T14:27:28Z",
+  "finishedUtc": "2026-11-16T14:30:10Z",
+  "verdict": "FAIL",
   "note": ""
 }
