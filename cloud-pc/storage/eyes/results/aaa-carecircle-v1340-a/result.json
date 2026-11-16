@@ -1,0 +1,535 @@
+{
+  "id": "aaa-carecircle-v1340-a",
+  "package": "com.onioncore.carecircle",
+  "lane": "onion-eyes/cloud-pc",
+  "apkMd5Expected": "3fbdae5fdb235eef08640ab6313974b6",
+  "apkMd5Actual": "3fbdae5fdb235eef08640ab6313974b6",
+  "apk_md5": {
+    "expected": "3fbdae5fdb235eef08640ab6313974b6",
+    "actual": "3fbdae5fdb235eef08640ab6313974b6",
+    "match": true
+  },
+  "bootCompleted": true,
+  "installOk": true,
+  "pidAliveStart": true,
+  "pidAliveEnd": true,
+  "seededCount": 0,
+  "cameraRoute": null,
+  "cameraSource": null,
+  "cameraNote": null,
+  "screen": {
+    "size": "1080x2280",
+    "density": "420",
+    "fontScale": "1.0"
+  },
+  "shots": [
+    "00-boot.png",
+    "01-welcome.png",
+    "02-today.png",
+    "02b-today-scrolled.png",
+    "03-tasks-pending.png",
+    "03b-tasks-approvals.png",
+    "03c-tasks-completed.png",
+    "04-play-home.png",
+    "04b-play-scrolled.png",
+    "05-manage-games.png",
+    "06-parent-controls.png",
+    "07-join-code.png",
+    "08-kid-home-preview.png",
+    "x0-door.png",
+    "x1-login-form.png",
+    "x10-controls-mid.png",
+    "x11-joincode.png",
+    "x12-controls-lower.png",
+    "x13-kid-preview.png",
+    "x2-landing.png",
+    "x3-today.png",
+    "x4-picker-sheet.png",
+    "x5-after-sheet-back.png",
+    "x6-after-tasks-back.png",
+    "x7-manage.png",
+    "x8-after-manage-back.png",
+    "x9-controls.png"
+  ],
+  "videos": [],
+  "steps": [
+    {
+      "i": "0",
+      "do": "launch",
+      "status": "OK",
+      "detail": "monkey launch"
+    },
+    {
+      "i": "1",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 3s"
+    },
+    {
+      "i": "2",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 00-boot"
+    },
+    {
+      "i": "3",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 4s"
+    },
+    {
+      "i": "4",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x0-door (png+xml+texts)"
+    },
+    {
+      "i": "5",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 01-welcome"
+    },
+    {
+      "i": "6",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'sign me in' at 286 1335"
+    },
+    {
+      "i": "7",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "8",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x1-login-form (png+xml+texts)"
+    },
+    {
+      "i": "9",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'asName' at 540 1297"
+    },
+    {
+      "i": "10",
+      "do": "type",
+      "status": "OK",
+      "detail": "typed 'Demo Parent'"
+    },
+    {
+      "i": "11",
+      "do": "key",
+      "status": "OK",
+      "detail": "keyevent BACK"
+    },
+    {
+      "i": "12",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 1s"
+    },
+    {
+      "i": "13",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'asPin' at 540 1513"
+    },
+    {
+      "i": "14",
+      "do": "type",
+      "status": "OK",
+      "detail": "typed '2468'"
+    },
+    {
+      "i": "15",
+      "do": "key",
+      "status": "OK",
+      "detail": "keyevent BACK"
+    },
+    {
+      "i": "16",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 1s"
+    },
+    {
+      "i": "17",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'btnSignin' at 199 1143"
+    },
+    {
+      "i": "18",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 9s"
+    },
+    {
+      "i": "19",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x2-landing (png+xml+texts)"
+    },
+    {
+      "i": "20",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'Today' at 118 2123"
+    },
+    {
+      "i": "21",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "22",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 02-today"
+    },
+    {
+      "i": "23",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x3-today (png+xml+texts)"
+    },
+    {
+      "i": "24",
+      "do": "scroll",
+      "status": "OK",
+      "detail": "scroll down"
+    },
+    {
+      "i": "25",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 02b-today-scrolled"
+    },
+    {
+      "i": "26",
+      "do": "scroll",
+      "status": "OK",
+      "detail": "scroll up"
+    },
+    {
+      "i": "27",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'All kids' at 0 0"
+    },
+    {
+      "i": "28",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 1s"
+    },
+    {
+      "i": "29",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x4-picker-sheet (png+xml+texts)"
+    },
+    {
+      "i": "30",
+      "do": "back",
+      "status": "OK",
+      "detail": "keyevent BACK"
+    },
+    {
+      "i": "31",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 1s"
+    },
+    {
+      "i": "32",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x5-after-sheet-back (png+xml+texts)"
+    },
+    {
+      "i": "33",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'Tasks' at 540 2123"
+    },
+    {
+      "i": "34",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "35",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 03-tasks-pending"
+    },
+    {
+      "i": "36",
+      "do": "tap_element",
+      "status": "SKIP",
+      "detail": "'Approvals' not found (optional)"
+    },
+    {
+      "i": "37",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "38",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 03b-tasks-approvals"
+    },
+    {
+      "i": "39",
+      "do": "tap_element",
+      "status": "SKIP",
+      "detail": "'Completed' not found (optional)"
+    },
+    {
+      "i": "40",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "41",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 03c-tasks-completed"
+    },
+    {
+      "i": "42",
+      "do": "back",
+      "status": "OK",
+      "detail": "keyevent BACK"
+    },
+    {
+      "i": "43",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 1s"
+    },
+    {
+      "i": "44",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x6-after-tasks-back (png+xml+texts)"
+    },
+    {
+      "i": "45",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'Play' at 753 2123"
+    },
+    {
+      "i": "46",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 3s"
+    },
+    {
+      "i": "47",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 04-play-home"
+    },
+    {
+      "i": "48",
+      "do": "scroll",
+      "status": "OK",
+      "detail": "scroll down"
+    },
+    {
+      "i": "49",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 04b-play-scrolled"
+    },
+    {
+      "i": "50",
+      "do": "scroll",
+      "status": "OK",
+      "detail": "scroll up"
+    },
+    {
+      "i": "51",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'Choose games' at 835 1281"
+    },
+    {
+      "i": "52",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 3s"
+    },
+    {
+      "i": "53",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 05-manage-games"
+    },
+    {
+      "i": "54",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x7-manage (png+xml+texts)"
+    },
+    {
+      "i": "55",
+      "do": "back",
+      "status": "OK",
+      "detail": "keyevent BACK"
+    },
+    {
+      "i": "56",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 1s"
+    },
+    {
+      "i": "57",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x8-after-manage-back (png+xml+texts)"
+    },
+    {
+      "i": "58",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'More' at 963 2123"
+    },
+    {
+      "i": "59",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 1s"
+    },
+    {
+      "i": "60",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'People' at 540 1765"
+    },
+    {
+      "i": "61",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "62",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'Parent Controls' at 540 1394"
+    },
+    {
+      "i": "63",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "64",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x9-controls (png+xml+texts)"
+    },
+    {
+      "i": "65",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 06-parent-controls"
+    },
+    {
+      "i": "66",
+      "do": "scroll",
+      "status": "OK",
+      "detail": "scroll down"
+    },
+    {
+      "i": "67",
+      "do": "scroll",
+      "status": "OK",
+      "detail": "scroll down"
+    },
+    {
+      "i": "68",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x10-controls-mid (png+xml+texts)"
+    },
+    {
+      "i": "69",
+      "do": "tap_element",
+      "status": "SKIP",
+      "detail": "'Make the join code' not found (optional)"
+    },
+    {
+      "i": "70",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 4s"
+    },
+    {
+      "i": "71",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x11-joincode (png+xml+texts)"
+    },
+    {
+      "i": "72",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 07-join-code"
+    },
+    {
+      "i": "73",
+      "do": "scroll",
+      "status": "OK",
+      "detail": "scroll down"
+    },
+    {
+      "i": "74",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x12-controls-lower (png+xml+texts)"
+    },
+    {
+      "i": "75",
+      "do": "tap_element",
+      "status": "SKIP",
+      "detail": "'sees it' not found (optional)"
+    },
+    {
+      "i": "76",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 3s"
+    },
+    {
+      "i": "77",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 08-kid-home-preview"
+    },
+    {
+      "i": "78",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x13-kid-preview (png+xml+texts)"
+    }
+  ],
+  "startedUtc": "2026-11-16T05:01:51Z",
+  "finishedUtc": "2026-11-16T05:11:52Z",
+  "verdict": "PASS",
+  "note": ""
+}
