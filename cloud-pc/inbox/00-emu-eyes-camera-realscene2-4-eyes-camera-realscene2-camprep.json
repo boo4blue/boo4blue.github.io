@@ -1,5 +1,0 @@
-{
- "id": "eyes-camera-realscene2-camprep",
- "action": "shell",
- "command": "bash eyes/run-eyes.sh camprep camera-realscene2"
-}
