@@ -6,11 +6,11 @@
 5	tap_text	SKIP	'Wait' not found (optional)
 6	wait	OK	slept 5s
 7	screenshot	OK	screenshot 02b-after-wait
-8	tap_element	OK	tapped 'Shutter' at 487 2106
+8	tap_element	FAIL	'Shutter' not found in UI hierarchy
 9	wait	OK	slept 3s
 10	assert_text	SOFTFAIL	assert soft-fail: 'Saved' not in hierarchy (vision check decides)
 11	screenshot	OK	screenshot 03-after-shutter
-12	tap_text	SKIP	'Wait' not found (optional)
+12	tap_text	OK	tapped 'Wait' at 540 1331
 13	tap_xy	OK	tap frac 0.45,0.9
 14	wait	OK	slept 2s
 15	shell	OK	shell: newest=$(adb shell ls -t /sdcard/Pictures/OnionCamera/ 2>/dev/null | head -1 | tr -d '\015'); if [ -n "$newest" ]; then adb pull "/sdcard/Pictures/OnionCamera/$newest" "$RESULTS/taken-photo.jpg" && api_put "eyes $ID: taken photo" "cloud-pc/storage/eyes/results/$ID/taken-photo.jpg"; fi
