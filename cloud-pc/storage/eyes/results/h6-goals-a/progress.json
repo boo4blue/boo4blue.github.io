@@ -1,0 +1,12 @@
+{
+  "id": "h6-goals-a",
+  "phase": "steps",
+  "bootCompleted": true,
+  "installOk": true,
+  "pidAliveStart": true,
+  "screen": {
+    "size": "1080x2280",
+    "density": "420",
+    "fontScale": "1.0"
+  }
+}
