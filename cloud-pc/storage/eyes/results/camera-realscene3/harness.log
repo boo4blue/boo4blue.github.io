@@ -113,7 +113,7 @@ INFO         | emulatorSetupEnvironment: Environment scene is not required
 USER_INFO    | Emulator is performing a full startup. This may take upto two minutes, or more.
 <stdin>:23: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
 result.json written, verdict FAIL
-== eyes run camera-realscene3 2026-11-16T04:54:32Z
+== eyes run camera-realscene3 2026-11-16T05:22:53Z
 api_put: cloud-pc/storage/eyes/results/camera-realscene3/heartbeat.txt OK
 apk md5=1f5fbdffa5fd34ed1d4640c0a1e3e153 expected=1f5fbdffa5fd34ed1d4640c0a1e3e153 size=250675
 route A: starting LIVE feed — Times Square cam, EarthCam feed 1415 (Times Square, New York City, New York, USA)
@@ -127,9 +127,9 @@ api_put: cloud-pc/storage/eyes/results/camera-realscene3/route.json OK
 * daemon started successfully
 emulator process exited during boot — see boot.log tail below
 INFO         | Started GRPC server at 127.0.0.1:8554, security: Local, auth: +token
-INFO         | Advertising in: /run/user/1001/avd/running/pid_19761.ini
-INFO         | Successfully initialized netsim WiFi
+INFO         | Advertising in: /run/user/1001/avd/running/pid_20567.ini
 INFO         | Activated packet streamer for bluetooth emulation
+INFO         | Successfully initialized netsim WiFi
 INFO         | Setting display: 0 configuration to: 1080x2280, dpi: 420x420 
 INFO         | setDisplayActiveConfig: id:0, 1080x2280
 INFO         | emulatorSetupEnvironment: Environment scene is not required
