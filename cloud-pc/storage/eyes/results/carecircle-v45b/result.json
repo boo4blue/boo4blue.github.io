@@ -41,8 +41,8 @@
   ],
   "videos": [],
   "steps": [],
-  "startedUtc": "2026-11-16T00:33:23Z",
-  "finishedUtc": "2026-11-16T00:44:19Z",
+  "startedUtc": "2026-11-16T00:43:16Z",
+  "finishedUtc": "2026-11-16T00:54:27Z",
   "verdict": "FAIL",
   "note": "emulator did not finish booting"
 }
