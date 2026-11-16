@@ -15,7 +15,7 @@
 14	type	OK	typed '2468'
 15	key	OK	keyevent BACK
 16	wait	OK	slept 1s
-17	tap_element	OK	tapped 'btnSignin' at 199 1537
+17	tap_element	OK	tapped 'btnSignin' at 199 1143
 18	wait	OK	slept 9s
 19	observe	OK	observe x2-landing (png+xml+texts)
 20	tap_element	OK	tapped 'Today' at 118 2123
@@ -83,3 +83,15 @@
 82	observe	OK	observe x14-badge-preview (png+xml+texts)
 83	tap_element	SKIP	'Back to controls' not found (optional)
 84	wait	OK	slept 2s
+85	back	OK	keyevent BACK
+86	wait	OK	slept 1s
+87	observe	OK	observe x15-after-controls-back (png+xml+texts)
+88	tap_element	OK	tapped 'Today' at 118 2123
+89	wait	OK	slept 2s
+90	back	OK	keyevent BACK
+91	wait	OK	slept 2s
+92	observe	OK	observe x16-root-back (png+xml+texts)
+93	launch	OK	monkey launch
+94	wait	OK	slept 3s
+95	observe	OK	observe x17-final (png+xml+texts)
+96	screenshot	OK	screenshot 10-final-state
