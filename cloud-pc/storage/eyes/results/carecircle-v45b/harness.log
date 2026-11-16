@@ -1,4 +1,4 @@
-== eyes run carecircle-v45b 2026-11-15T23:52:43Z
+== eyes run carecircle-v45b 2026-11-15T23:56:38Z
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/heartbeat.txt OK
 apk md5=df6a2d89a8d5e26529fa30931d686858 expected=df6a2d89a8d5e26529fa30931d686858 size=95098
 * daemon not running; starting now at tcp:5037
@@ -11,19 +11,19 @@ pidAliveStart=1
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/progress.json OK
 step 0 [launch] OK: monkey launch
 step 1 [wait] OK: slept 6s
-shot x0-welcome: 610446 bytes
+shot x0-welcome: 609880 bytes
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x0-welcome.png OK
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x0-welcome.xml OK
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x0-welcome.texts.txt OK
 step 2 [observe] OK: observe x0-welcome (png+xml+texts)
-shot 01-welcome: 609801 bytes
+shot 01-welcome: 609847 bytes
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/01-welcome.png OK
 step 3 [screenshot] OK: screenshot 01-welcome
 step 4 [tap_element] OK: tapped 'new here' at 297 1494
 step 5 [wait] OK: slept 2s
 step 6 [tap_element] OK: tapped 'I'm a parent' at 540 1698
 step 7 [wait] OK: slept 2s
-shot x1-parent-form: 617514 bytes
+shot x1-parent-form: 617924 bytes
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x1-parent-form.png OK
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x1-parent-form.xml OK
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x1-parent-form.texts.txt OK
@@ -34,21 +34,21 @@ step 11 [tap_element] OK: tapped 'apPin' at 540 785
 step 12 [type] OK: typed '2468'
 step 13 [tap_element] OK: tapped 'apSpace' at 540 984
 step 14 [type] OK: typed 'Demo Circle'
-shot x2-form-filled: 378213 bytes
+shot x2-form-filled: 382335 bytes
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x2-form-filled.png OK
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x2-form-filled.xml OK
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x2-form-filled.texts.txt OK
 step 15 [observe] OK: observe x2-form-filled (png+xml+texts)
 step 16 [tap_element] OK: tapped 'btnCreateParent' at 352 1139
 step 17 [wait] OK: slept 10s
-shot x3-after-signup: 410971 bytes
+shot x3-after-signup: 410848 bytes
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x3-after-signup.png OK
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x3-after-signup.xml OK
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x3-after-signup.texts.txt OK
 step 18 [observe] OK: observe x3-after-signup (png+xml+texts)
 step 19 [tap_element] SKIP: 'Step by step' not found (optional)
 step 20 [wait] OK: slept 2s
-shot x4-wizard-step: 410971 bytes
+shot x4-wizard-step: 410848 bytes
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x4-wizard-step.png OK
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x4-wizard-step.xml OK
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x4-wizard-step.texts.txt OK
@@ -59,14 +59,14 @@ step 24 [tap_element] SKIP: 'wizAddress' not found (optional)
 step 25 [type] OK: typed '1 Demo Street'
 step 26 [tap_element] SKIP: 'wizProfileSave' not found (optional)
 step 27 [wait] OK: slept 4s
-shot x5-wizard-after-profile: 410062 bytes
+shot x5-wizard-after-profile: 409948 bytes
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x5-wizard-after-profile.png OK
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x5-wizard-after-profile.xml OK
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x5-wizard-after-profile.texts.txt OK
 step 28 [observe] OK: observe x5-wizard-after-profile (png+xml+texts)
 step 29 [tap_element] SKIP: 'wizCircleOk' not found (optional)
 step 30 [wait] OK: slept 2s
-shot x6-wizard-kids: 410062 bytes
+shot x6-wizard-kids: 409948 bytes
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x6-wizard-kids.png OK
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x6-wizard-kids.xml OK
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x6-wizard-kids.texts.txt OK
@@ -75,56 +75,56 @@ step 32 [tap_element] SKIP: 'wizKidName' not found (optional)
 step 33 [type] OK: typed 'Demo Kid'
 step 34 [tap_element] SKIP: 'wizKidAdd' not found (optional)
 step 35 [wait] OK: slept 5s
-shot x7-wizard-kid-added: 410062 bytes
+shot x7-wizard-kid-added: 409948 bytes
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x7-wizard-kid-added.png OK
 step 36 [screenshot] OK: screenshot x7-wizard-kid-added
 step 37 [tap_element] SKIP: 'wizNext' not found (optional)
 step 38 [wait] OK: slept 2s
-shot x8-wizard-next: 410062 bytes
+shot x8-wizard-next: 409948 bytes
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x8-wizard-next.png OK
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x8-wizard-next.xml OK
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x8-wizard-next.texts.txt OK
 step 39 [observe] OK: observe x8-wizard-next (png+xml+texts)
 step 40 [tap_element] SKIP: 'wizClose' not found (optional)
 step 41 [wait] OK: slept 3s
-shot x9-after-wizard: 410062 bytes
+shot x9-after-wizard: 409948 bytes
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x9-after-wizard.png OK
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x9-after-wizard.xml OK
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x9-after-wizard.texts.txt OK
 step 42 [observe] OK: observe x9-after-wizard (png+xml+texts)
 step 43 [tap_element] SKIP: 'Today' not found (optional)
 step 44 [wait] OK: slept 3s
-shot 02-today: 410062 bytes
+shot 02-today: 409948 bytes
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/02-today.png OK
 step 45 [screenshot] OK: screenshot 02-today
 step 46 [tap_element] SKIP: 'Play' not found (optional)
 step 47 [wait] OK: slept 4s
-shot 03-play-home: 410062 bytes
+shot 03-play-home: 409948 bytes
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/03-play-home.png OK
 step 48 [screenshot] OK: screenshot 03-play-home
 step 49 [tap_element] SKIP: 'Choose games' not found (optional)
 step 50 [wait] OK: slept 3s
-shot x10-manage: 410062 bytes
+shot x10-manage: 409948 bytes
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x10-manage.png OK
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x10-manage.xml OK
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x10-manage.texts.txt OK
 step 51 [observe] OK: observe x10-manage (png+xml+texts)
-shot 04-manage-games: 410062 bytes
+shot 04-manage-games: 409948 bytes
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/04-manage-games.png OK
 step 52 [screenshot] OK: screenshot 04-manage-games
 step 53 [scroll] OK: scroll down
-shot 04b-manage-games-scrolled: 372195 bytes
+shot 04b-manage-games-scrolled: 372090 bytes
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/04b-manage-games-scrolled.png OK
 step 54 [screenshot] OK: screenshot 04b-manage-games-scrolled
 step 55 [tap_element] SKIP: 'Play' not found (optional)
 step 56 [wait] OK: slept 2s
-shot x11-play-return: 372195 bytes
+shot x11-play-return: 372090 bytes
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x11-play-return.png OK
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x11-play-return.xml OK
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x11-play-return.texts.txt OK
 step 57 [observe] OK: observe x11-play-return (png+xml+texts)
 step 58 [scroll] OK: scroll down
-shot 03b-play-home-scrolled: 372195 bytes
+shot 03b-play-home-scrolled: 372090 bytes
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/03b-play-home-scrolled.png OK
 step 59 [screenshot] OK: screenshot 03b-play-home-scrolled
 step 60 [tap_element] SKIP: 'People' not found (optional)
@@ -132,27 +132,27 @@ step 61 [wait] OK: slept 2s
 step 62 [tap_element] SKIP: 'Parent Controls' not found (optional)
 step 63 [wait] OK: slept 2s
 step 64 [scroll] OK: scroll down
-shot x12-controls: 372195 bytes
+shot x12-controls: 372090 bytes
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x12-controls.png OK
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x12-controls.xml OK
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x12-controls.texts.txt OK
 step 65 [observe] OK: observe x12-controls (png+xml+texts)
 step 66 [tap_element] SKIP: 'sees it' not found (optional)
 step 67 [wait] OK: slept 3s
-shot 06-kid-home: 372195 bytes
+shot 06-kid-home: 372090 bytes
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/06-kid-home.png OK
 step 68 [screenshot] OK: screenshot 06-kid-home
-shot x13-kid-home: 372195 bytes
+shot x13-kid-home: 372090 bytes
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x13-kid-home.png OK
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x13-kid-home.xml OK
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x13-kid-home.texts.txt OK
 step 69 [observe] OK: observe x13-kid-home (png+xml+texts)
 step 70 [tap_element] SKIP: 'Badges' not found (optional)
 step 71 [wait] OK: slept 2s
-shot 05-badges: 372195 bytes
+shot 05-badges: 372090 bytes
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/05-badges.png OK
 step 72 [screenshot] OK: screenshot 05-badges
-shot x14-badges: 372195 bytes
+shot x14-badges: 372090 bytes
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x14-badges.png OK
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x14-badges.xml OK
 api_put: cloud-pc/storage/eyes/results/carecircle-v45b/x14-badges.texts.txt OK
