@@ -1,32 +1,44 @@
 Care Circle — by Onion Core
-Care Circle
+Care 
+Circle
 BY ONION CORE
+Choose whose day to show
+Notifications
 My profile
-Emergency
+Emergency contacts and SOS
 LIVE — everyone sees changes right away
 People
 Character sheets for the kids and everyone in the circle — profiles, invites and roles.
-0
-kids
+1
+kid
 1
 grown-ups
 Finish your profile
 Your circle sees your face and how to reach you. Still missing: a photo, a one-line about line.
 Complete my profile
 Not now
+Parent Controls — what each kid can do, who holds which keys
+Demo Circle — kids 3
 Add a kid
 People &amp; invites
-ADD A KID
-NAME
-AGE
-SCHOOL
-ALLERGIES (IMPORTANT — SHOWN ON TODAY)
-Add kid
-Guardians you invite can be linked to specific kids, so each family only ever sees its own kids.
+DEMO CIRCLE — KIDS
+DDemo Kid
+D
+CLASS: KID
+WITH PARENT
+Today tasks
+0 of 0 done
+Pickup today
+Not set
+Circle
+Demo Circle
+See tasks
+View / edit profile
+Parent Controls
 Today
 Calendar
+Tasks
 Play
-Updates
 More
 Quick add
 Quick Add
