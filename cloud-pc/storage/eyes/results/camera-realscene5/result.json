@@ -79,8 +79,8 @@
     {
       "i": "8",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'Shutter' at 487 2106"
+      "status": "FAIL",
+      "detail": "'Shutter' not found in UI hierarchy"
     },
     {
       "i": "9",
@@ -103,8 +103,8 @@
     {
       "i": "12",
       "do": "tap_text",
-      "status": "SKIP",
-      "detail": "'Wait' not found (optional)"
+      "status": "OK",
+      "detail": "tapped 'Wait' at 540 1331"
     },
     {
       "i": "13",
@@ -149,8 +149,8 @@
       "detail": "screenrecord stopped -> flow.mp4"
     }
   ],
-  "startedUtc": "2026-11-16T03:10:03Z",
-  "finishedUtc": "2026-11-16T03:16:28Z",
-  "verdict": "PASS",
+  "startedUtc": "2026-11-16T03:14:27Z",
+  "finishedUtc": "2026-11-16T03:19:34Z",
+  "verdict": "FAIL",
   "note": ""
 }
