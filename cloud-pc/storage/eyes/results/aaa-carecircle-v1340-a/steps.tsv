@@ -4,34 +4,34 @@
 3	wait	OK	slept 4s
 4	observe	OK	observe x0-door (png+xml+texts)
 5	screenshot	OK	screenshot 01-welcome
-6	tap_element	OK	tapped 'sign me in' at 286 1335
+6	tap_element	SKIP	'sign me in' not found (optional)
 7	wait	OK	slept 2s
 8	observe	OK	observe x1-login-form (png+xml+texts)
-9	tap_element	OK	tapped 'asName' at 540 1297
+9	tap_element	SKIP	'asName' not found (optional)
 10	type	OK	typed 'Demo Parent'
 11	key	OK	keyevent BACK
 12	wait	OK	slept 1s
-13	tap_element	OK	tapped 'asPin' at 540 1513
+13	tap_element	SKIP	'asPin' not found (optional)
 14	type	OK	typed '2468'
 15	key	OK	keyevent BACK
 16	wait	OK	slept 1s
-17	tap_element	OK	tapped 'btnSignin' at 199 1143
+17	tap_element	SKIP	'btnSignin' not found (optional)
 18	wait	OK	slept 9s
 19	observe	OK	observe x2-landing (png+xml+texts)
-20	tap_element	OK	tapped 'Today' at 118 2123
+20	tap_element	SKIP	'Today' not found (optional)
 21	wait	OK	slept 2s
 22	screenshot	OK	screenshot 02-today
 23	observe	OK	observe x3-today (png+xml+texts)
 24	scroll	OK	scroll down
 25	screenshot	OK	screenshot 02b-today-scrolled
 26	scroll	OK	scroll up
-27	tap_element	OK	tapped 'All kids' at 0 0
+27	tap_element	FALLBACK	'All kids' not in hierarchy; fallback tap 0.3 0.04
 28	wait	OK	slept 1s
 29	observe	OK	observe x4-picker-sheet (png+xml+texts)
 30	back	OK	keyevent BACK
 31	wait	OK	slept 1s
 32	observe	OK	observe x5-after-sheet-back (png+xml+texts)
-33	tap_element	OK	tapped 'Tasks' at 540 2123
+33	tap_element	SKIP	'Tasks' not found (optional)
 34	wait	OK	slept 2s
 35	screenshot	OK	screenshot 03-tasks-pending
 36	tap_element	SKIP	'Approvals' not found (optional)
@@ -43,24 +43,24 @@
 42	back	OK	keyevent BACK
 43	wait	OK	slept 1s
 44	observe	OK	observe x6-after-tasks-back (png+xml+texts)
-45	tap_element	OK	tapped 'Play' at 753 2123
+45	tap_element	SKIP	'Play' not found (optional)
 46	wait	OK	slept 3s
 47	screenshot	OK	screenshot 04-play-home
 48	scroll	OK	scroll down
 49	screenshot	OK	screenshot 04b-play-scrolled
 50	scroll	OK	scroll up
-51	tap_element	OK	tapped 'Choose games' at 835 1315
+51	tap_element	SKIP	'Choose games' not found (optional)
 52	wait	OK	slept 3s
 53	screenshot	OK	screenshot 05-manage-games
 54	observe	OK	observe x7-manage (png+xml+texts)
 55	back	OK	keyevent BACK
 56	wait	OK	slept 1s
 57	observe	OK	observe x8-after-manage-back (png+xml+texts)
-58	tap_element	OK	tapped 'More' at 963 2123
+58	tap_element	SKIP	'More' not found (optional)
 59	wait	OK	slept 1s
-60	tap_element	OK	tapped 'People' at 540 1765
+60	tap_element	SKIP	'People' not found (optional)
 61	wait	OK	slept 2s
-62	tap_element	OK	tapped 'Parent Controls' at 540 1394
+62	tap_element	SKIP	'Parent Controls' not found (optional)
 63	wait	OK	slept 2s
 64	observe	OK	observe x9-controls (png+xml+texts)
 65	screenshot	OK	screenshot 06-parent-controls
@@ -76,3 +76,22 @@
 75	tap_element	SKIP	'sees it' not found (optional)
 76	wait	OK	slept 3s
 77	screenshot	OK	screenshot 08-kid-home-preview
+78	observe	OK	observe x13-kid-preview (png+xml+texts)
+79	tap_element	SKIP	'Badges' not found (optional)
+80	wait	OK	slept 2s
+81	screenshot	OK	screenshot 09-badge-case-preview
+82	observe	OK	observe x14-badge-preview (png+xml+texts)
+83	tap_element	SKIP	'Back to controls' not found (optional)
+84	wait	OK	slept 2s
+85	back	OK	keyevent BACK
+86	wait	OK	slept 1s
+87	observe	OK	observe x15-after-controls-back (png+xml+texts)
+88	tap_element	SKIP	'Today' not found (optional)
+89	wait	OK	slept 2s
+90	back	OK	keyevent BACK
+91	wait	OK	slept 2s
+92	observe	OK	observe x16-root-back (png+xml+texts)
+93	launch	OK	monkey launch
+94	wait	OK	slept 3s
+95	observe	OK	observe x17-final (png+xml+texts)
+96	screenshot	OK	screenshot 10-final-state
