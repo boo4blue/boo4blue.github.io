@@ -92,40 +92,54 @@ api_put: cloud-pc/storage/eyes/setup-heartbeat.txt OK
 sdkmanager attempt 1 exit=0
 SDK verified OK on attempt 1
 SETUP_OK
-== eyes setup 2026-11-16T02:11:02Z
+== eyes setup 2026-11-16T02:21:28Z
+api_put: cloud-pc/storage/eyes/setup-heartbeat.txt OK
+sdkmanager attempt 1 exit=0
+SDK verified OK on attempt 1
+SETUP_OK
+api_put: cloud-pc/storage/eyes/setup-verdict.txt OK
+api_put: cloud-pc/storage/eyes/setup.log OK
+== eyes setup 2026-11-16T02:25:52Z
+api_put: cloud-pc/storage/eyes/setup-heartbeat.txt OK
+sdkmanager attempt 1 exit=0
+SDK verified OK on attempt 1
+SETUP_OK
+api_put: cloud-pc/storage/eyes/setup-verdict.txt OK
+api_put: cloud-pc/storage/eyes/setup.log OK
+== eyes setup 2026-11-16T02:28:25Z
+api_put: cloud-pc/storage/eyes/setup-heartbeat.txt OK
+sdkmanager attempt 1 exit=0
+SDK verified OK on attempt 1
+SETUP_OK
+api_put: cloud-pc/storage/eyes/setup-verdict.txt OK
+api_put: cloud-pc/storage/eyes/setup.log OK
+== eyes setup 2026-11-16T02:34:56Z
+api_put: cloud-pc/storage/eyes/setup-heartbeat.txt OK
+sdkmanager attempt 1 exit=0
+SDK verified OK on attempt 1
+SETUP_OK
+== eyes setup 2026-11-16T02:44:32Z
 api_put: cloud-pc/storage/eyes/setup-heartbeat.txt OK
 sdkmanager attempt 1 exit=0
 SDK verified OK on attempt 1
 SETUP_OK
 api_put: cloud-pc/storage/eyes/setup-verdict.txt OK
 api_put: too big for contents API, needs git path: cloud-pc/storage/eyes/setup.log
-== eyes setup 2026-11-16T02:23:13Z
+== eyes setup 2026-11-16T02:56:19Z
 api_put: cloud-pc/storage/eyes/setup-heartbeat.txt OK
 sdkmanager attempt 1 exit=0
 SDK verified OK on attempt 1
 SETUP_OK
 api_put: cloud-pc/storage/eyes/setup-verdict.txt OK
 api_put: too big for contents API, needs git path: cloud-pc/storage/eyes/setup.log
-== eyes setup 2026-11-16T02:28:10Z
+== eyes setup 2026-11-16T03:01:58Z
 api_put: cloud-pc/storage/eyes/setup-heartbeat.txt OK
 sdkmanager attempt 1 exit=0
 SDK verified OK on attempt 1
 SETUP_OK
 api_put: cloud-pc/storage/eyes/setup-verdict.txt OK
 api_put: too big for contents API, needs git path: cloud-pc/storage/eyes/setup.log
-== eyes setup 2026-11-16T02:30:46Z
-api_put: cloud-pc/storage/eyes/setup-heartbeat.txt OK
-sdkmanager attempt 1 exit=0
-SDK verified OK on attempt 1
-SETUP_OK
-== eyes setup 2026-11-16T02:57:38Z
-api_put: cloud-pc/storage/eyes/setup-heartbeat.txt OK
-sdkmanager attempt 1 exit=0
-SDK verified OK on attempt 1
-SETUP_OK
-api_put: cloud-pc/storage/eyes/setup-verdict.txt OK
-api_put: too big for contents API, needs git path: cloud-pc/storage/eyes/setup.log
-== eyes setup 2026-11-16T03:03:35Z
+== eyes setup 2026-11-16T03:05:10Z
 api_put: cloud-pc/storage/eyes/setup-heartbeat.txt OK
 sdkmanager attempt 1 exit=0
 SDK verified OK on attempt 1
