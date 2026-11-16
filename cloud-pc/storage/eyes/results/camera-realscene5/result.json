@@ -149,8 +149,8 @@
       "detail": "screenrecord stopped -> flow.mp4"
     }
   ],
-  "startedUtc": "2026-11-16T03:24:37Z",
-  "finishedUtc": "2026-11-16T03:29:25Z",
+  "startedUtc": "2026-11-16T03:25:04Z",
+  "finishedUtc": "2026-11-16T03:30:01Z",
   "verdict": "FAIL",
   "note": ""
 }
