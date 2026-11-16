@@ -1,0 +1,24 @@
+0	launch	OK	monkey launch
+1	wait	OK	slept 4s
+2	observe	OK	observe 01-launch (png+xml+texts)
+3	tap_element	SKIP	'Not now' not found (optional)
+4	wait	OK	slept 2s
+5	observe	OK	observe 01b-thread (png+xml+texts)
+6	tap_element	FALLBACK	'Message' not in hierarchy; fallback tap 0.4 0.9
+7	type	OK	typed 'Say hi in your voice'
+8	tap_element	FALLBACK	'Send' not in hierarchy; fallback tap 0.93 0.9
+9	wait_text	FAIL	'Say hi in your voice' not seen within 120s
+10	wait	OK	slept 10s
+11	observe	OK	observe 02-reply-arrived (png+xml+texts)
+12	screenshot	OK	screenshot 02b-reply-arrived
+13	assert_text	SOFTFAIL	assert soft-fail: 'Voice note' not in hierarchy (vision check decides)
+14	wait	OK	slept 5s
+15	observe	OK	observe 03-voice-note-row (png+xml+texts)
+16	screenshot	OK	screenshot 03b-voice-note-row
+17	tap_element	FALLBACK	'Voice note' not in hierarchy; fallback tap 0.1 0.75
+18	wait	OK	slept 4s
+19	observe	OK	observe 04-after-play-tap (png+xml+texts)
+20	screenshot	OK	screenshot 04b-after-play-tap
+21	back	OK	keyevent BACK
+22	wait	OK	slept 2s
+23	observe	OK	observe 05-back-in-chat (png+xml+texts)
