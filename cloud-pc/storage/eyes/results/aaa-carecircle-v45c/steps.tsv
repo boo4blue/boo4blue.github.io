@@ -2,63 +2,6 @@
 1	wait	OK	slept 6s
 2	observe	OK	observe x0-door (png+xml+texts)
 3	screenshot	OK	screenshot 01-welcome
-4	tap_element	OK	tapped 'sign me in' at 284 1335
-5	wait	OK	slept 2s
-6	observe	OK	observe x1-login-form (png+xml+texts)
-7	tap_element	SKIP	'liName' not found (optional)
-8	type	OK	typed 'Demo Parent'
-9	tap_element	SKIP	'liPin' not found (optional)
-10	type	OK	typed '2468'
-11	tap_element	SKIP	'btnLogin' not found (optional)
-12	wait	OK	slept 9s
-13	observe	OK	observe x2-landing (png+xml+texts)
-14	tap_element	SKIP	'Today' not found (optional)
-15	wait	OK	slept 2s
-16	screenshot	OK	screenshot 02-today
-17	tap_element	SKIP	'More' not found (optional)
-18	wait	OK	slept 1s
-19	observe	OK	observe x3-after-more (png+xml+texts)
-20	tap_element	SKIP	'People' not found (optional)
-21	wait	OK	slept 2s
-22	observe	OK	observe x4-people (png+xml+texts)
-23	tap_element	SKIP	'nkName' not found (optional)
-24	type	OK	typed 'Demo Kid'
-25	tap_element	SKIP	'nkAdd' not found (optional)
-26	wait	OK	slept 4s
-27	observe	OK	observe x5-kid-added (png+xml+texts)
-28	tap_element	SKIP	'Play' not found (optional)
-29	wait	OK	slept 4s
-30	screenshot	OK	screenshot 03-play-home
-31	tap_element	SKIP	'Choose games' not found (optional)
-32	wait	OK	slept 3s
-33	observe	OK	observe x6-manage (png+xml+texts)
-34	screenshot	OK	screenshot 04-manage-games
-35	scroll	OK	scroll down
-36	screenshot	OK	screenshot 04b-manage-games-scrolled
-37	tap_element	SKIP	'Play' not found (optional)
-38	wait	OK	slept 2s
-39	scroll	OK	scroll down
-40	screenshot	OK	screenshot 03b-play-home-scrolled
-41	tap_element	SKIP	'More' not found (optional)
-42	wait	OK	slept 1s
-43	tap_element	SKIP	'People' not found (optional)
-44	wait	OK	slept 2s
-45	tap_element	SKIP	'Parent Controls' not found (optional)
-46	wait	OK	slept 2s
-47	scroll	OK	scroll down
-48	observe	OK	observe x7-controls (png+xml+texts)
-49	tap_element	SKIP	'sees it' not found (optional)
-50	wait	OK	slept 3s
-51	screenshot	OK	screenshot 06-kid-home
-52	observe	OK	observe x8-kid-home (png+xml+texts)
-53	tap_element	SKIP	'Badges' not found (optional)
-54	wait	OK	slept 2s
-55	screenshot	OK	screenshot 05-badges
-56	observe	OK	observe x9-badges (png+xml+texts)
-0	launch	OK	monkey launch
-1	wait	OK	slept 6s
-2	observe	OK	observe x0-door (png+xml+texts)
-3	screenshot	OK	screenshot 01-welcome
 4	tap_element	OK	tapped 'sign me in' at 286 1335
 5	wait	OK	slept 2s
 6	observe	OK	observe x1-login-form (png+xml+texts)
