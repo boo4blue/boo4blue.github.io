@@ -1,0 +1,5 @@
+{
+ "id": "eyes-stage-d-voice-note-run",
+ "action": "shell",
+ "command": "bash eyes/run-eyes.sh run stage-d-voice-note"
+}
