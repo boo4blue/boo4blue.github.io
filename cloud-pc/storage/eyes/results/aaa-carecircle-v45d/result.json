@@ -66,8 +66,8 @@
     {
       "i": "4",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'sign me in' at 286 1335"
+      "status": "SKIP",
+      "detail": "'sign me in' not found (optional)"
     },
     {
       "i": "5",
@@ -84,8 +84,8 @@
     {
       "i": "7",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'asName' at 540 1297"
+      "status": "SKIP",
+      "detail": "'asName' not found (optional)"
     },
     {
       "i": "8",
@@ -96,8 +96,8 @@
     {
       "i": "9",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'asPin' at 540 1421"
+      "status": "SKIP",
+      "detail": "'asPin' not found (optional)"
     },
     {
       "i": "10",
@@ -108,8 +108,8 @@
     {
       "i": "11",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'btnSignin' at 199 1505"
+      "status": "SKIP",
+      "detail": "'btnSignin' not found (optional)"
     },
     {
       "i": "12",
@@ -382,8 +382,8 @@
       "detail": "observe x9-badges (png+xml+texts)"
     }
   ],
-  "startedUtc": "2026-11-16T08:17:38Z",
-  "finishedUtc": "2026-11-16T08:24:37Z",
+  "startedUtc": "2026-11-16T08:51:51Z",
+  "finishedUtc": "2026-11-16T08:56:28Z",
   "verdict": "PASS",
   "note": ""
 }
