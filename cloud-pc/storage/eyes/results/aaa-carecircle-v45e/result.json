@@ -138,7 +138,7 @@
       "i": "15",
       "do": "tap_element",
       "status": "OK",
-      "detail": "tapped 'btnSignin' at 199 1143"
+      "detail": "tapped 'btnSignin' at 199 1651"
     },
     {
       "i": "16",
@@ -423,8 +423,8 @@
       "detail": "observe x9-badges (png+xml+texts)"
     }
   ],
-  "startedUtc": "2026-11-16T05:07:42Z",
-  "finishedUtc": "2026-11-16T05:16:23Z",
+  "startedUtc": "2026-11-16T05:19:12Z",
+  "finishedUtc": "2026-11-16T05:28:29Z",
   "verdict": "PASS",
   "note": ""
 }
