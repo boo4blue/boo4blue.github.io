@@ -1,0 +1,27 @@
+{
+  "id": "camera-realscene2",
+  "package": "com.onioncore.camera",
+  "lane": "onion-eyes/cloud-pc",
+  "apkMd5Expected": "e72dd22e98344c36cac4ba486f2100fb",
+  "apkMd5Actual": "e72dd22e98344c36cac4ba486f2100fb",
+  "bootCompleted": false,
+  "installOk": false,
+  "pidAliveStart": false,
+  "pidAliveEnd": false,
+  "seededCount": 0,
+  "cameraRoute": "B-recorded",
+  "cameraSource": "Times Square cam, EarthCam feed 1415",
+  "cameraNote": "live feed process died at start (see camfeed.log)",
+  "screen": {
+    "size": null,
+    "density": null,
+    "fontScale": null
+  },
+  "shots": [],
+  "videos": [],
+  "steps": [],
+  "startedUtc": "2026-11-16T00:23:15Z",
+  "finishedUtc": "2026-11-16T00:33:25Z",
+  "verdict": "FAIL",
+  "note": "emulator did not finish booting"
+}
