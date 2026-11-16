@@ -1,0 +1,430 @@
+{
+  "id": "aaa-carecircle-v45e",
+  "package": "com.onioncore.carecircle",
+  "lane": "onion-eyes/cloud-pc",
+  "apkMd5Expected": "60269b4b783f1d489889e480a78a04e9",
+  "apkMd5Actual": "60269b4b783f1d489889e480a78a04e9",
+  "apk_md5": {
+    "expected": "60269b4b783f1d489889e480a78a04e9",
+    "actual": "60269b4b783f1d489889e480a78a04e9",
+    "match": true
+  },
+  "bootCompleted": true,
+  "installOk": true,
+  "pidAliveStart": true,
+  "pidAliveEnd": true,
+  "seededCount": 0,
+  "cameraRoute": null,
+  "cameraSource": null,
+  "cameraNote": null,
+  "screen": {
+    "size": "1080x2280",
+    "density": "420",
+    "fontScale": "1.0"
+  },
+  "shots": [
+    "01-welcome.png",
+    "02-today.png",
+    "03-play-home.png",
+    "03b-play-home-scrolled.png",
+    "04-manage-games.png",
+    "04b-manage-games-scrolled.png",
+    "05-badges.png",
+    "06-kid-home.png",
+    "x0-door.png",
+    "x1-login-form.png",
+    "x2-landing.png",
+    "x3-after-more.png",
+    "x4-people.png",
+    "x5-kid-added.png",
+    "x6-manage.png",
+    "x7-controls.png",
+    "x8-kid-home.png",
+    "x9-badges.png"
+  ],
+  "videos": [],
+  "steps": [
+    {
+      "i": "0",
+      "do": "launch",
+      "status": "OK",
+      "detail": "monkey launch"
+    },
+    {
+      "i": "1",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 6s"
+    },
+    {
+      "i": "2",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x0-door (png+xml+texts)"
+    },
+    {
+      "i": "3",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 01-welcome"
+    },
+    {
+      "i": "4",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'sign me in' at 284 1335"
+    },
+    {
+      "i": "5",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "6",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x1-login-form (png+xml+texts)"
+    },
+    {
+      "i": "7",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'asName' at 540 1287"
+    },
+    {
+      "i": "8",
+      "do": "type",
+      "status": "OK",
+      "detail": "typed 'Demo Parent'"
+    },
+    {
+      "i": "9",
+      "do": "key",
+      "status": "OK",
+      "detail": "keyevent BACK"
+    },
+    {
+      "i": "10",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 1s"
+    },
+    {
+      "i": "11",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'asPin' at 540 1487"
+    },
+    {
+      "i": "12",
+      "do": "type",
+      "status": "OK",
+      "detail": "typed '2468'"
+    },
+    {
+      "i": "13",
+      "do": "key",
+      "status": "OK",
+      "detail": "keyevent BACK"
+    },
+    {
+      "i": "14",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 1s"
+    },
+    {
+      "i": "15",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'btnSignin' at 196 920"
+    },
+    {
+      "i": "16",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 9s"
+    },
+    {
+      "i": "17",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x2-landing (png+xml+texts)"
+    },
+    {
+      "i": "18",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'Today' at 102 2117"
+    },
+    {
+      "i": "19",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "20",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 02-today"
+    },
+    {
+      "i": "21",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'More' at 803 2117"
+    },
+    {
+      "i": "22",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 1s"
+    },
+    {
+      "i": "23",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x3-after-more (png+xml+texts)"
+    },
+    {
+      "i": "24",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'People' at 541 1652"
+    },
+    {
+      "i": "25",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "26",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x4-people (png+xml+texts)"
+    },
+    {
+      "i": "27",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'nkName' at 541 1570"
+    },
+    {
+      "i": "28",
+      "do": "type",
+      "status": "OK",
+      "detail": "typed 'Demo Kid'"
+    },
+    {
+      "i": "29",
+      "do": "key",
+      "status": "OK",
+      "detail": "keyevent BACK"
+    },
+    {
+      "i": "30",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 1s"
+    },
+    {
+      "i": "31",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'nkAdd' at 193 1683"
+    },
+    {
+      "i": "32",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 4s"
+    },
+    {
+      "i": "33",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x5-kid-added (png+xml+texts)"
+    },
+    {
+      "i": "34",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'Play' at 453 2117"
+    },
+    {
+      "i": "35",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 4s"
+    },
+    {
+      "i": "36",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 03-play-home"
+    },
+    {
+      "i": "37",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'Choose games' at 837 1212"
+    },
+    {
+      "i": "38",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 3s"
+    },
+    {
+      "i": "39",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x6-manage (png+xml+texts)"
+    },
+    {
+      "i": "40",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 04-manage-games"
+    },
+    {
+      "i": "41",
+      "do": "scroll",
+      "status": "OK",
+      "detail": "scroll down"
+    },
+    {
+      "i": "42",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 04b-manage-games-scrolled"
+    },
+    {
+      "i": "43",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'Play' at 453 2120"
+    },
+    {
+      "i": "44",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "45",
+      "do": "scroll",
+      "status": "OK",
+      "detail": "scroll down"
+    },
+    {
+      "i": "46",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 03b-play-home-scrolled"
+    },
+    {
+      "i": "47",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'More' at 803 2118"
+    },
+    {
+      "i": "48",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 1s"
+    },
+    {
+      "i": "49",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'People' at 541 1652"
+    },
+    {
+      "i": "50",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "51",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'Parent Controls' at 542 1270"
+    },
+    {
+      "i": "52",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "53",
+      "do": "scroll",
+      "status": "OK",
+      "detail": "scroll down"
+    },
+    {
+      "i": "54",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x7-controls (png+xml+texts)"
+    },
+    {
+      "i": "55",
+      "do": "tap_element",
+      "status": "SKIP",
+      "detail": "'sees it' not found (optional)"
+    },
+    {
+      "i": "56",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 3s"
+    },
+    {
+      "i": "57",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 06-kid-home"
+    },
+    {
+      "i": "58",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x8-kid-home (png+xml+texts)"
+    },
+    {
+      "i": "59",
+      "do": "tap_element",
+      "status": "SKIP",
+      "detail": "'Badges' not found (optional)"
+    },
+    {
+      "i": "60",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "61",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 05-badges"
+    },
+    {
+      "i": "62",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x9-badges (png+xml+texts)"
+    }
+  ],
+  "startedUtc": "2026-11-16T03:54:00Z",
+  "finishedUtc": "2026-11-16T04:00:39Z",
+  "verdict": "PASS",
+  "note": ""
+}
