@@ -1,63 +1,18 @@
-Care Circle — by Onion Core
-Care 
-Circle
-BY ONION CORE
-Choose whose day to show
-Notifications
-My profile
-Emergency contacts and SOS
-LIVE — everyone sees changes right away
-Today
-Monday, November 16 — live for everyone in the circle.
-0 of 1
-kids in care
-0
-meds due
-—
-next pickup
-GETTING SET UP
-Invite your people — a co-parent or caregiver
-Do it
-Dismiss this reminder
-Add who may pick up Demo Kid
-Do it
-Dismiss this reminder
-Add an emergency contact for Demo Kid
-Do it
-Dismiss this reminder
-Finish setting up Care Circle
-2 of 11 steps done — it only takes a few minutes, and you can stop and come back any time.
-Finish setup
-CARE STATUS
-Nobody is in care right now
-No pickup is set for today yet
-TASKS TODAY 0 of 0 done — open the pipeline
-APPROVALS 0 waiting for your eyes
-THIS WEEK 0 events &amp; shifts
-MONEY $0.00 on the books right now
-All kids
-Coming up
-What changed
-ALL KIDS
-D Demo Kid With parent · 0 pts · Level 1 0/0 TASKS
-Today
-Calendar
-Tasks
-Play
-More
-Quick add
-Quick Add
-The day, kept up to date by everyone.
-Add a note
-Add a task
-Add a shift
-Add an expense
-Add a kid
-Invite someone
-Report incident
-Announcement
-Close
-Emergency
-Allergies, medical notes and tap-to-call contacts for every kid you can see. For a life-threatening emergency, call 911 first.
-Close
-Edit
+This website has been temporarily rate limited | onion-care.blueblazer82.workers.dev | Cloudflare
+Please check back later
+Error 1027
+This website has been temporarily rate limited
+You cannot access this site because the owner has reached their plan limits. Check back later once traffic has gone down.
+If you are owner of this website, prevent this from happening again by upgrading your plan on the 
+Cloudflare Workers dashboard
+Cloudflare Workers dashboard
+.
+Learn more about this issue →
+Learn more about this issue →
+Cloudflare Ray ID: a5b531257d0e0640
+2026-11-16 08:40:38 UTC
+Your IP: 
+Click to reveal
+Runs on 
+Cloudflare Workers
+Cloudflare Workers
