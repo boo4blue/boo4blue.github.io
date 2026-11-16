@@ -13,7 +13,7 @@
 12	type	OK	typed '2468'
 13	key	OK	keyevent BACK
 14	wait	OK	slept 1s
-15	tap_element	OK	tapped 'btnSignin' at 199 1143
+15	tap_element	OK	tapped 'btnSignin' at 199 1651
 16	wait	OK	slept 9s
 17	observe	OK	observe x2-landing (png+xml+texts)
 18	tap_element	OK	tapped 'Today' at 118 2123
