@@ -7,7 +7,7 @@
   "bootCompleted": true,
   "installOk": true,
   "pidAliveStart": true,
-  "pidAliveEnd": false,
+  "pidAliveEnd": true,
   "seededCount": 0,
   "cameraRoute": null,
   "cameraSource": null,
@@ -382,8 +382,8 @@
       "detail": "observe x9-badges (png+xml+texts)"
     }
   ],
-  "startedUtc": "2026-11-16T14:06:34Z",
-  "finishedUtc": "2026-11-16T14:10:30Z",
-  "verdict": "FAIL",
+  "startedUtc": "2026-11-16T15:08:07Z",
+  "finishedUtc": "2026-11-16T15:13:06Z",
+  "verdict": "PASS",
   "note": ""
 }
