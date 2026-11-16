@@ -154,3 +154,55 @@ video flow: 1931655 bytes
 step 19 [record_stop] OK: screenrecord stopped -> flow.mp4
 <stdin>:23: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
 result.json written, verdict PASS
+== eyes run camera-realscene5 2026-11-16T14:27:27Z
+api_put: cloud-pc/storage/eyes/results/camera-realscene5/heartbeat.txt OK
+apk md5=1f5fbdffa5fd34ed1d4640c0a1e3e153 expected=1f5fbdffa5fd34ed1d4640c0a1e3e153 size=250675
+route A: starting LIVE feed — Times Square cam, EarthCam feed 1415 (Times Square, New York City, New York, USA)
+api_put: cloud-pc/storage/eyes/results/camera-realscene5/camfeed.log OK
+camera route: A-live — source: Times Square cam, EarthCam feed 1415 (Times Square, New York City, New York, USA)
+<stdin>:6: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+route.json written
+api_put: cloud-pc/storage/eyes/results/camera-realscene5/route.json OK
+* daemon not running; starting now at tcp:5037
+* daemon started successfully
+booted after ~25s
+screen real: size=1080x2280 density=420 fontScale=1.0
+installOk=1
+seed verify: provider holds 0 contacts
+pidAliveStart=1
+api_put: cloud-pc/storage/eyes/results/camera-realscene5/progress.json OK
+step 0 [record_start] OK: screenrecord started (540x1140 @1.2Mbps)
+step 1 [wait] OK: slept 8s
+shot 01-viewfinder: 815765 bytes
+api_put: cloud-pc/storage/eyes/results/camera-realscene5/01-viewfinder.png OK
+api_put: cloud-pc/storage/eyes/results/camera-realscene5/01-viewfinder.xml OK
+api_put: cloud-pc/storage/eyes/results/camera-realscene5/01-viewfinder.texts.txt OK
+step 2 [observe] OK: observe 01-viewfinder (png+xml+texts)
+step 3 [wait] OK: slept 6s
+shot 02-viewfinder-later: 1343708 bytes
+api_put: too big for contents API, needs git path: cloud-pc/storage/eyes/results/camera-realscene5/02-viewfinder-later.png
+step 4 [screenshot] OK: screenshot 02-viewfinder-later
+step 5 [tap_text] SKIP: 'Wait' not found (optional)
+step 6 [wait] OK: slept 5s
+shot 02b-after-wait: 1343708 bytes
+api_put: too big for contents API, needs git path: cloud-pc/storage/eyes/results/camera-realscene5/02b-after-wait.png
+step 7 [screenshot] OK: screenshot 02b-after-wait
+step 8 [tap_element] FAIL: 'Shutter' not found in UI hierarchy
+step 9 [wait] OK: slept 3s
+step 10 [assert_text] SOFTFAIL: assert soft-fail: 'Saved' not in hierarchy (vision check decides)
+shot 03-after-shutter: 1347799 bytes
+api_put: too big for contents API, needs git path: cloud-pc/storage/eyes/results/camera-realscene5/03-after-shutter.png
+step 11 [screenshot] OK: screenshot 03-after-shutter
+step 12 [tap_text] SKIP: 'Wait' not found (optional)
+step 13 [tap_xy] OK: tap frac 0.45,0.9
+step 14 [wait] OK: slept 2s
+step 15 [shell] OK: shell: newest=$(adb shell ls -t /sdcard/Pictures/OnionCamera/ 2>/dev/null | head -1 | tr -d '\015'); if [ -n "$newest" ]; then adb pull "/sdcard/Pictures/OnionCamera/$newest" "$RESULTS/taken-photo.jpg" && api_put "eyes $ID: taken photo" "cloud-pc/storage/eyes/results/$ID/taken-photo.jpg"; fi
+step 16 [shell] OK: shell: if [ -n "$newest" ]; then adb shell am start -a android.intent.action.VIEW -d "file:///sdcard/Pictures/OnionCamera/$newest" -t "image/jpeg" >/dev/null 2>&1; fi
+step 17 [wait] OK: slept 3s
+shot 04-stock-gallery: 119514 bytes
+api_put: cloud-pc/storage/eyes/results/camera-realscene5/04-stock-gallery.png OK
+step 18 [screenshot] OK: screenshot 04-stock-gallery
+video flow: 910997 bytes
+step 19 [record_stop] OK: screenrecord stopped -> flow.mp4
+<stdin>:23: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+result.json written, verdict FAIL
