@@ -178,8 +178,8 @@
       "detail": "assert soft-fail: 'Run a 5K' not in hierarchy (vision check decides)"
     }
   ],
-  "startedUtc": "2026-11-16T16:49:22Z",
-  "finishedUtc": "2026-11-16T16:52:01Z",
+  "startedUtc": "2026-11-16T21:12:08Z",
+  "finishedUtc": "2026-11-16T21:14:49Z",
   "verdict": "FAIL",
   "note": ""
 }
