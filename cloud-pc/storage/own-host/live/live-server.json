@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
  "server": "stream-server (from-scratch)",
- "url": "https://cycles-tried-screenshot-mph.trycloudflare.com",
- "egressIp": "52.250.211.199",
- "started": 1794840336,
+ "url": "https://lancaster-spaces-hostel-min.trycloudflare.com",
+ "egressIp": "3.42.157.48",
+ "started": 1794842524,
  "job": "ownhost-server1"
 }
