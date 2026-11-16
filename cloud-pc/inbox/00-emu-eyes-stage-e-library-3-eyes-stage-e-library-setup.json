@@ -1,0 +1,5 @@
+{
+ "id": "eyes-stage-e-library-setup",
+ "action": "shell",
+ "command": "bash eyes/run-eyes.sh setup"
+}
