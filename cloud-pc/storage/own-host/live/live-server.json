@@ -1,8 +1,8 @@
 {
  "service": "onion-stream",
  "server": "stream-server (from-scratch)",
- "url": "https://arts-moses-drives-beta.trycloudflare.com",
- "egressIp": "4.150.101.110",
- "started": 1794869125,
+ "url": "https://boot-available-complexity-cartridge.trycloudflare.com",
+ "egressIp": "40.75.133.106",
+ "started": 1794872311,
  "job": "ownhost-server1"
 }
