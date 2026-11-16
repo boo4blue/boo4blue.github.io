@@ -1,5 +1,0 @@
-{
- "id": "eyes-camera-realscene5-run",
- "action": "shell",
- "command": "bash eyes/run-eyes.sh run camera-realscene5"
-}

@@ -1,5 +1,0 @@
-{
- "id": "eyes-carecircle-v132-look-setup",
- "action": "shell",
- "command": "bash eyes/run-eyes.sh setup"
-}

@@ -1,5 +1,0 @@
-{
- "id": "eyes-camera-v171-realscene-setup",
- "action": "shell",
- "command": "bash eyes/run-eyes.sh setup"
-}

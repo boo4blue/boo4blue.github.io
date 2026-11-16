@@ -1,5 +1,0 @@
-{
- "id": "eyes-camera-acceptance-v160-run",
- "action": "shell",
- "command": "bash eyes/run-eyes.sh run camera-acceptance-v160"
-}
