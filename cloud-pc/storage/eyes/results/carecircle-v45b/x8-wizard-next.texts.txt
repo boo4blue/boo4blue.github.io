@@ -1,27 +1,41 @@
 Care Circle — by Onion Core
 Care Circle
-One shared, live circle for the kids — schedules, tasks,&#10;pickups and updates that everyone sees the moment they change.
-Onion, the Care Circle mascot
-HTTP 500
-Your family's circle
-You'll be this circle's first parent — add the kids, then invite the other parent and the caregivers. You hold the controls for your kids.
-YOUR NAME
-Demo Parent
-CHOOSE A PIN (4+ CHARACTERS)
-••••
-NAME YOUR CIRCLE
-Demo Circle
-Create my family's circle
-Already have an account? 
-Sign in
-Back
-Live schedule
-Every change appears on every phone in seconds — no re-asking, no stale plans.
-Meds &amp; pickups
-Doses logged, pickups confirmed, running late handled in one tap.
-Pay without texts
-Hours, requests and card pay in one place — no chasing anyone in chat.
-By Onion Core. Private to your circle — nothing here is public.
+BY ONION CORE
+My profile
+Emergency
+LIVE — everyone sees changes right away
+People
+Character sheets for the kids and everyone in the circle — profiles, invites and roles.
+0
+kids
+1
+grown-ups
+Hold any card for quick actions
+Finish your profile
+Your circle sees your face and how to reach you. Still missing: a photo, a one-line about line.
+Complete my profile
+Not now
+Add a kid
+People &amp; invites
+ADD A KID
+NAME
+AGE
+SCHOOL
+ALLERGIES (IMPORTANT — SHOWN ON TODAY)
+Add kid
+Guardians you invite can be linked to specific kids, so each family only ever sees its own kids.
+Today
+Calendar
+Play
+Updates
+More
+Quick add
+Set up by talking
+Onion AI · now on: Your profile
+Close setup
+Talking setup sends what you type to Onion AI so it can help you. Anything you would rather not type — health details, for example — can be added on the step-by-step screens instead. Your PIN and your card always stay on the app's own screens: Onion AI never sees them.
+Send
+Use the step-by-step screens instead
 Quick Add
 The day, kept up to date by everyone.
 Add a note
@@ -37,3 +51,4 @@ Emergency
 Allergies, medical notes and tap-to-call contacts for every kid you can see. For a life-threatening emergency, call 911 first.
 Close
 Edit
+Circle created — add your first kid
