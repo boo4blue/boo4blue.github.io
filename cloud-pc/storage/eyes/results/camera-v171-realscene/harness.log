@@ -1,0 +1,19 @@
+== eyes run camera-v171-realscene 2026-11-16T00:59:51Z
+api_put: cloud-pc/storage/eyes/results/camera-v171-realscene/heartbeat.txt OK
+apk md5=1f5fbdffa5fd34ed1d4640c0a1e3e153 expected=1f5fbdffa5fd34ed1d4640c0a1e3e153 size=250675
+route A: starting LIVE feed — Times Square cam, EarthCam feed 1415 (Times Square, New York City, New York, USA)
+route A feed process died at start — see camfeed.log
+camera route: B-recorded — source: Times Square cam, EarthCam feed 1415 (Times Square, New York City, New York, USA)
+<stdin>:6: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+route.json written
+api_put: cloud-pc/storage/eyes/results/camera-v171-realscene/route.json OK
+* daemon not running; starting now at tcp:5037
+* daemon started successfully
+INFO         |      Ok: Disk space requirements to run avd: `eyesavd` are met
+INFO         |   Checking: hasSufficientHwGpu
+INFO         |      Ok: Hardware GPU compatibility checks are not required
+INFO         |   Checking: hasSufficientSystem
+INFO         |      Ok: System requirements to run avd: `eyesavd` are met
+ERROR        | Invalid value for -camera-back <mode> parameter: videoplayback:/home/runner/eyes-cam/camera-v171-realscene/scene.mp4
+Valid values are: 'webcam<N>', 'emulated', 'virtualscene', 'environment', 'videofile:options', 'imagefile:options', 'image360:options' or 'none'
+
