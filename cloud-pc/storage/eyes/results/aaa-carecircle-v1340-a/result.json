@@ -36,12 +36,15 @@
     "06-parent-controls.png",
     "07-join-code.png",
     "08-kid-home-preview.png",
+    "09-badge-case-preview.png",
     "x0-door.png",
     "x1-login-form.png",
     "x10-controls-mid.png",
     "x11-joincode.png",
     "x12-controls-lower.png",
     "x13-kid-preview.png",
+    "x14-badge-preview.png",
+    "x15-after-controls-back.png",
     "x2-landing.png",
     "x3-today.png",
     "x4-picker-sheet.png",
@@ -159,7 +162,7 @@
       "i": "17",
       "do": "tap_element",
       "status": "OK",
-      "detail": "tapped 'btnSignin' at 199 1143"
+      "detail": "tapped 'btnSignin' at 199 1537"
     },
     {
       "i": "18",
@@ -363,7 +366,7 @@
       "i": "51",
       "do": "tap_element",
       "status": "OK",
-      "detail": "tapped 'Choose games' at 835 1281"
+      "detail": "tapped 'Choose games' at 835 1315"
     },
     {
       "i": "52",
@@ -526,10 +529,76 @@
       "do": "observe",
       "status": "OK",
       "detail": "observe x13-kid-preview (png+xml+texts)"
+    },
+    {
+      "i": "79",
+      "do": "tap_element",
+      "status": "SKIP",
+      "detail": "'Badges' not found (optional)"
+    },
+    {
+      "i": "80",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "81",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 09-badge-case-preview"
+    },
+    {
+      "i": "82",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x14-badge-preview (png+xml+texts)"
+    },
+    {
+      "i": "83",
+      "do": "tap_element",
+      "status": "SKIP",
+      "detail": "'Back to controls' not found (optional)"
+    },
+    {
+      "i": "84",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "85",
+      "do": "back",
+      "status": "OK",
+      "detail": "keyevent BACK"
+    },
+    {
+      "i": "86",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 1s"
+    },
+    {
+      "i": "87",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x15-after-controls-back (png+xml+texts)"
+    },
+    {
+      "i": "88",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'Today' at 118 2123"
+    },
+    {
+      "i": "89",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
     }
   ],
-  "startedUtc": "2026-11-16T05:01:51Z",
-  "finishedUtc": "2026-11-16T05:11:52Z",
+  "startedUtc": "2026-11-16T05:51:58Z",
+  "finishedUtc": "2026-11-16T06:02:00Z",
   "verdict": "PASS",
   "note": ""
 }
