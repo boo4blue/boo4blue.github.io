@@ -1,11 +1,11 @@
 {
  "infoReady": true,
- "maxPeers": 7,
+ "maxPeers": 1,
  "file5Length": 129241752,
  "waitedSec": 8,
  "playHttp": 206,
  "playMagic": "ftyp",
- "egressIp": "4.150.101.110",
- "at": 1794869135,
+ "egressIp": "40.75.133.106",
+ "at": 1794872321,
  "hash": "08ada5a7a6183aae1e09d831df6748d566095a10"
 }
