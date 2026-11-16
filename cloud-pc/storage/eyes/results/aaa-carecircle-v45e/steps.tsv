@@ -2,27 +2,27 @@
 1	wait	OK	slept 6s
 2	observe	OK	observe x0-door (png+xml+texts)
 3	screenshot	OK	screenshot 01-welcome
-4	tap_element	OK	tapped 'sign me in' at 286 1335
+4	tap_element	SKIP	'sign me in' not found (optional)
 5	wait	OK	slept 2s
 6	observe	OK	observe x1-login-form (png+xml+texts)
-7	tap_element	OK	tapped 'asName' at 540 1297
+7	tap_element	SKIP	'asName' not found (optional)
 8	type	OK	typed 'Demo Parent'
 9	key	OK	keyevent BACK
 10	wait	OK	slept 1s
-11	tap_element	OK	tapped 'asPin' at 540 1513
+11	tap_element	SKIP	'asPin' not found (optional)
 12	type	OK	typed '2468'
 13	key	OK	keyevent BACK
 14	wait	OK	slept 1s
-15	tap_element	OK	tapped 'btnSignin' at 199 1143
+15	tap_element	SKIP	'btnSignin' not found (optional)
 16	wait	OK	slept 9s
 17	observe	OK	observe x2-landing (png+xml+texts)
-18	tap_element	OK	tapped 'Today' at 118 2123
+18	tap_element	SKIP	'Today' not found (optional)
 19	wait	OK	slept 2s
 20	screenshot	OK	screenshot 02-today
-21	tap_element	OK	tapped 'More' at 963 2123
+21	tap_element	SKIP	'More' not found (optional)
 22	wait	OK	slept 1s
 23	observe	OK	observe x3-after-more (png+xml+texts)
-24	tap_element	OK	tapped 'People' at 540 1765
+24	tap_element	SKIP	'People' not found (optional)
 25	wait	OK	slept 2s
 26	observe	OK	observe x4-people (png+xml+texts)
 27	tap_element	SKIP	'nkName' not found (optional)
@@ -32,24 +32,24 @@
 31	tap_element	SKIP	'nkAdd' not found (optional)
 32	wait	OK	slept 4s
 33	observe	OK	observe x5-kid-added (png+xml+texts)
-34	tap_element	OK	tapped 'Play' at 753 2123
+34	tap_element	SKIP	'Play' not found (optional)
 35	wait	OK	slept 4s
 36	screenshot	OK	screenshot 03-play-home
-37	tap_element	OK	tapped 'Choose games' at 835 1315
+37	tap_element	SKIP	'Choose games' not found (optional)
 38	wait	OK	slept 3s
 39	observe	OK	observe x6-manage (png+xml+texts)
 40	screenshot	OK	screenshot 04-manage-games
 41	scroll	OK	scroll down
 42	screenshot	OK	screenshot 04b-manage-games-scrolled
-43	tap_element	OK	tapped 'Play' at 753 2123
+43	tap_element	SKIP	'Play' not found (optional)
 44	wait	OK	slept 2s
 45	scroll	OK	scroll down
 46	screenshot	OK	screenshot 03b-play-home-scrolled
-47	tap_element	OK	tapped 'More' at 963 2123
+47	tap_element	SKIP	'More' not found (optional)
 48	wait	OK	slept 1s
-49	tap_element	OK	tapped 'People' at 540 1765
+49	tap_element	SKIP	'People' not found (optional)
 50	wait	OK	slept 2s
-51	tap_element	OK	tapped 'Parent Controls' at 540 1394
+51	tap_element	SKIP	'Parent Controls' not found (optional)
 52	wait	OK	slept 2s
 53	scroll	OK	scroll down
 54	observe	OK	observe x7-controls (png+xml+texts)
