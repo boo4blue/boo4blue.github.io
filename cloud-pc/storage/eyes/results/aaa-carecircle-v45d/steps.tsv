@@ -2,14 +2,14 @@
 1	wait	OK	slept 6s
 2	observe	OK	observe x0-door (png+xml+texts)
 3	screenshot	OK	screenshot 01-welcome
-4	tap_element	OK	tapped 'sign me in' at 286 1335
+4	tap_element	SKIP	'sign me in' not found (optional)
 5	wait	OK	slept 2s
 6	observe	OK	observe x1-login-form (png+xml+texts)
-7	tap_element	OK	tapped 'asName' at 540 1297
+7	tap_element	SKIP	'asName' not found (optional)
 8	type	OK	typed 'Demo Parent'
-9	tap_element	OK	tapped 'asPin' at 540 1421
+9	tap_element	SKIP	'asPin' not found (optional)
 10	type	OK	typed '2468'
-11	tap_element	OK	tapped 'btnSignin' at 199 1505
+11	tap_element	SKIP	'btnSignin' not found (optional)
 12	wait	OK	slept 9s
 13	observe	OK	observe x2-landing (png+xml+texts)
 14	tap_element	SKIP	'Today' not found (optional)
