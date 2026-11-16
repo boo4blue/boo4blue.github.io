@@ -11,7 +11,7 @@
   },
   "clip": {
     "path": "/home/runner/eyes-cam/camera-realscene5/scene.mp4",
-    "bytes": 3726377,
+    "bytes": 3802702,
     "seconds": "45.033333"
   },
   "attempts": [
@@ -21,11 +21,11 @@
     "attempt: /dev/video0 perms -> 666 root:video",
     "pump: chunklist ok for feed 1415",
     "pump: recorded 6.0s -> /home/runner/eyes-cam/camera-realscene5/probe.ts",
-    "attempt: earthcam Times Square cam, EarthCam feed 1415 (feed 1415) probe.ts=905596B ts-structure/ffprobe ok=1",
+    "attempt: earthcam Times Square cam, EarthCam feed 1415 (feed 1415) probe.ts=905220B ts-structure/ffprobe ok=1",
     "attempt: earthcam Times Square cam, EarthCam feed 1415 (feed 1415) -> LIVE",
     "pump: chunklist ok for feed 1415",
     "pump: recorded 45.0s -> /home/runner/eyes-cam/camera-realscene5/scene.ts",
-    "attempt: route-B clip recorded (45.033333s, 3726377 B)"
+    "attempt: route-B clip recorded (45.033333s, 3802702 B)"
   ],
-  "updatedUtc": "2026-11-16T03:24:35Z"
+  "updatedUtc": "2026-11-16T03:25:01Z"
 }
