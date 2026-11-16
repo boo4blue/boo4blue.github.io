@@ -90,8 +90,8 @@
       "detail": "assert soft-fail: 'Talk' not in hierarchy (vision check decides)"
     }
   ],
-  "startedUtc": "2026-11-16T16:47:08Z",
-  "finishedUtc": "2026-11-16T16:49:09Z",
+  "startedUtc": "2026-11-16T21:09:50Z",
+  "finishedUtc": "2026-11-16T21:11:56Z",
   "verdict": "FAIL",
   "note": ""
 }
