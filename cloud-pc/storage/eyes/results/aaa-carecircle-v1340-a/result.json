@@ -37,6 +37,7 @@
     "07-join-code.png",
     "08-kid-home-preview.png",
     "09-badge-case-preview.png",
+    "10-final-state.png",
     "x0-door.png",
     "x1-login-form.png",
     "x10-controls-mid.png",
@@ -45,6 +46,8 @@
     "x13-kid-preview.png",
     "x14-badge-preview.png",
     "x15-after-controls-back.png",
+    "x16-root-back.png",
+    "x17-final.png",
     "x2-landing.png",
     "x3-today.png",
     "x4-picker-sheet.png",
@@ -162,7 +165,7 @@
       "i": "17",
       "do": "tap_element",
       "status": "OK",
-      "detail": "tapped 'btnSignin' at 199 1537"
+      "detail": "tapped 'btnSignin' at 199 1143"
     },
     {
       "i": "18",
@@ -565,10 +568,82 @@
       "do": "wait",
       "status": "OK",
       "detail": "slept 2s"
+    },
+    {
+      "i": "85",
+      "do": "back",
+      "status": "OK",
+      "detail": "keyevent BACK"
+    },
+    {
+      "i": "86",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 1s"
+    },
+    {
+      "i": "87",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x15-after-controls-back (png+xml+texts)"
+    },
+    {
+      "i": "88",
+      "do": "tap_element",
+      "status": "OK",
+      "detail": "tapped 'Today' at 118 2123"
+    },
+    {
+      "i": "89",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "90",
+      "do": "back",
+      "status": "OK",
+      "detail": "keyevent BACK"
+    },
+    {
+      "i": "91",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "92",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x16-root-back (png+xml+texts)"
+    },
+    {
+      "i": "93",
+      "do": "launch",
+      "status": "OK",
+      "detail": "monkey launch"
+    },
+    {
+      "i": "94",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 3s"
+    },
+    {
+      "i": "95",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x17-final (png+xml+texts)"
+    },
+    {
+      "i": "96",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 10-final-state"
     }
   ],
-  "startedUtc": "2026-11-16T06:35:52Z",
-  "finishedUtc": "2026-11-16T06:45:57Z",
+  "startedUtc": "2026-11-16T07:19:50Z",
+  "finishedUtc": "2026-11-16T07:29:50Z",
   "verdict": "PASS",
   "note": ""
 }
