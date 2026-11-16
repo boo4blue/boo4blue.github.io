@@ -532,92 +532,92 @@ video flow: 1996185 bytes
 step 32 [record_stop] OK: screenrecord stopped -> flow.mp4
 <stdin>:23: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
 result.json written, verdict PASS
-== eyes run camera-acceptance-v160 2026-11-16T05:16:35Z
+== eyes run camera-acceptance-v160 2026-11-16T05:28:39Z
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/heartbeat.txt OK
 apk md5=e72dd22e98344c36cac4ba486f2100fb expected=e72dd22e98344c36cac4ba486f2100fb size=246579
 * daemon not running; starting now at tcp:5037
 * daemon started successfully
-booted after ~30s
+booted after ~25s
 screen real: size=1080x2280 density=420 fontScale=1.0
 installOk=1
 seed verify: provider holds 0 contacts
 pidAliveStart=1
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/progress.json OK
 step 0 [record_start] OK: screenrecord started (540x1140 @1.2Mbps)
-shot 00-launch-early: 77898 bytes
+shot 00-launch-early: 78321 bytes
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/00-launch-early.png OK
 step 1 [screenshot] OK: screenshot 00-launch-early
 step 2 [wait] OK: slept 3s
-shot photo-viewfinder: 78143 bytes
+shot photo-viewfinder: 77913 bytes
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/photo-viewfinder.png OK
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/photo-viewfinder.xml OK
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/photo-viewfinder.texts.txt OK
 step 3 [observe] OK: observe photo-viewfinder (png+xml+texts)
-shot 01-photo-viewfinder: 77977 bytes
+shot 01-photo-viewfinder: 77117 bytes
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/01-photo-viewfinder.png OK
 step 4 [screenshot] OK: screenshot 01-photo-viewfinder
 step 5 [tap_xy] OK: tap frac 0.451,0.549
 step 6 [wait] OK: slept 2s
-shot 02-after-capture: 78511 bytes
+shot 02-after-capture: 78472 bytes
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/02-after-capture.png OK
 step 7 [screenshot] OK: screenshot 02-after-capture
 step 8 [tap_xy] OK: tap frac 0.135,0.549
 step 9 [wait] OK: slept 1s
-shot photo-view: 79967 bytes
+shot photo-view: 79774 bytes
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/photo-view.png OK
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/photo-view.xml OK
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/photo-view.texts.txt OK
 step 10 [observe] OK: observe photo-view (png+xml+texts)
 step 11 [back] OK: keyevent BACK
 step 12 [wait] OK: slept 1s
-shot after-back-photo: 79364 bytes
+shot after-back-photo: 79251 bytes
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/after-back-photo.png OK
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/after-back-photo.xml OK
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/after-back-photo.texts.txt OK
 step 13 [observe] OK: observe after-back-photo (png+xml+texts)
 step 14 [tap_element] OK: tapped 'MORE' at 850 380
 step 15 [wait] OK: slept 1s
-shot more-grid: 168187 bytes
+shot more-grid: 167496 bytes
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/more-grid.png OK
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/more-grid.xml OK
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/more-grid.texts.txt OK
 step 16 [observe] OK: observe more-grid (png+xml+texts)
 step 17 [back] OK: keyevent BACK
 step 18 [wait] OK: slept 1s
-shot after-back-more: 80403 bytes
+shot after-back-more: 79095 bytes
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/after-back-more.png OK
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/after-back-more.xml OK
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/after-back-more.texts.txt OK
 step 19 [observe] OK: observe after-back-more (png+xml+texts)
 step 20 [tap_element] OK: tapped 'Settings' at 816 200
 step 21 [wait] OK: slept 1s
-shot settings: 132698 bytes
+shot settings: 132699 bytes
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/settings.png OK
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/settings.xml OK
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/settings.texts.txt OK
 step 22 [observe] OK: observe settings (png+xml+texts)
 step 23 [back] OK: keyevent BACK
 step 24 [wait] OK: slept 1s
-shot after-back-settings: 79767 bytes
+shot after-back-settings: 79718 bytes
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/after-back-settings.png OK
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/after-back-settings.xml OK
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/after-back-settings.texts.txt OK
 step 25 [observe] OK: observe after-back-settings (png+xml+texts)
 step 26 [tap_element] OK: tapped 'VIDEO' at 455 380
 step 27 [wait] OK: slept 1s
-shot video-mode: 73331 bytes
+shot video-mode: 73288 bytes
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/video-mode.png OK
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/video-mode.xml OK
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/video-mode.texts.txt OK
 step 28 [observe] OK: observe video-mode (png+xml+texts)
 step 29 [back] OK: keyevent BACK
 step 30 [wait] OK: slept 1s
-shot after-back-root: 79474 bytes
+shot after-back-root: 79374 bytes
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/after-back-root.png OK
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/after-back-root.xml OK
 api_put: cloud-pc/storage/eyes/results/camera-acceptance-v160/after-back-root.texts.txt OK
 step 31 [observe] OK: observe after-back-root (png+xml+texts)
-video flow: 2181129 bytes
+video flow: 3036980 bytes
 step 32 [record_stop] OK: screenrecord stopped -> flow.mp4
 <stdin>:23: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
 result.json written, verdict PASS
