@@ -1,27 +1,24 @@
 Care Circle — by Onion Core
 Care Circle
-One shared, live circle for the kids — schedules, tasks,&#10;pickups and updates that everyone sees the moment they change.
-Onion, the Care Circle mascot
-HTTP 500
-Your family's circle
-You'll be this circle's first parent — add the kids, then invite the other parent and the caregivers. You hold the controls for your kids.
-YOUR NAME
-Demo Parent
-CHOOSE A PIN (4+ CHARACTERS)
-••••
-NAME YOUR CIRCLE
-Demo Circle
-Create my family's circle
-Already have an account? 
-Sign in
-Back
-Live schedule
-Every change appears on every phone in seconds — no re-asking, no stale plans.
-Meds &amp; pickups
-Doses logged, pickups confirmed, running late handled in one tap.
-Pay without texts
-Hours, requests and card pay in one place — no chasing anyone in chat.
-By Onion Core. Private to your circle — nothing here is public.
+BY ONION CORE
+My profile
+Emergency
+LIVE — everyone sees changes right away
+Play
+Games kids play right here in Care Circle. You choose what is allowed — kids ask, you approve.
+0
+asks waiting
+0
+kids
+Hold any card for quick actions
+No kids yet
+Add the kids from the People tab and their games will appear here.
+Today
+Calendar
+Play
+Updates
+More
+Quick add
 Quick Add
 The day, kept up to date by everyone.
 Add a note
@@ -37,3 +34,4 @@ Emergency
 Allergies, medical notes and tap-to-call contacts for every kid you can see. For a life-threatening emergency, call 911 first.
 Close
 Edit
+Circle created — add your first kid
