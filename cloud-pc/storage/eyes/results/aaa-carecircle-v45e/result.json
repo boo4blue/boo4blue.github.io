@@ -72,7 +72,7 @@
       "i": "4",
       "do": "tap_element",
       "status": "OK",
-      "detail": "tapped 'sign me in' at 284 1335"
+      "detail": "tapped 'sign me in' at 286 1335"
     },
     {
       "i": "5",
@@ -90,7 +90,7 @@
       "i": "7",
       "do": "tap_element",
       "status": "OK",
-      "detail": "tapped 'asName' at 540 1287"
+      "detail": "tapped 'asName' at 540 1297"
     },
     {
       "i": "8",
@@ -114,7 +114,7 @@
       "i": "11",
       "do": "tap_element",
       "status": "OK",
-      "detail": "tapped 'asPin' at 540 1487"
+      "detail": "tapped 'asPin' at 540 1513"
     },
     {
       "i": "12",
@@ -138,7 +138,7 @@
       "i": "15",
       "do": "tap_element",
       "status": "OK",
-      "detail": "tapped 'btnSignin' at 196 920"
+      "detail": "tapped 'btnSignin' at 199 1651"
     },
     {
       "i": "16",
@@ -156,7 +156,7 @@
       "i": "18",
       "do": "tap_element",
       "status": "OK",
-      "detail": "tapped 'Today' at 102 2117"
+      "detail": "tapped 'Today' at 118 2123"
     },
     {
       "i": "19",
@@ -174,7 +174,7 @@
       "i": "21",
       "do": "tap_element",
       "status": "OK",
-      "detail": "tapped 'More' at 803 2117"
+      "detail": "tapped 'More' at 963 2123"
     },
     {
       "i": "22",
@@ -192,7 +192,7 @@
       "i": "24",
       "do": "tap_element",
       "status": "OK",
-      "detail": "tapped 'People' at 541 1652"
+      "detail": "tapped 'People' at 540 1765"
     },
     {
       "i": "25",
@@ -209,8 +209,8 @@
     {
       "i": "27",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'nkName' at 541 1570"
+      "status": "SKIP",
+      "detail": "'nkName' not found (optional)"
     },
     {
       "i": "28",
@@ -233,8 +233,8 @@
     {
       "i": "31",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'nkAdd' at 193 1683"
+      "status": "SKIP",
+      "detail": "'nkAdd' not found (optional)"
     },
     {
       "i": "32",
@@ -252,7 +252,7 @@
       "i": "34",
       "do": "tap_element",
       "status": "OK",
-      "detail": "tapped 'Play' at 453 2117"
+      "detail": "tapped 'Play' at 753 2123"
     },
     {
       "i": "35",
@@ -270,7 +270,7 @@
       "i": "37",
       "do": "tap_element",
       "status": "OK",
-      "detail": "tapped 'Choose games' at 837 1212"
+      "detail": "tapped 'Choose games' at 835 1315"
     },
     {
       "i": "38",
@@ -306,7 +306,7 @@
       "i": "43",
       "do": "tap_element",
       "status": "OK",
-      "detail": "tapped 'Play' at 453 2120"
+      "detail": "tapped 'Play' at 753 2123"
     },
     {
       "i": "44",
@@ -330,7 +330,7 @@
       "i": "47",
       "do": "tap_element",
       "status": "OK",
-      "detail": "tapped 'More' at 803 2118"
+      "detail": "tapped 'More' at 963 2123"
     },
     {
       "i": "48",
@@ -342,7 +342,7 @@
       "i": "49",
       "do": "tap_element",
       "status": "OK",
-      "detail": "tapped 'People' at 541 1652"
+      "detail": "tapped 'People' at 540 1765"
     },
     {
       "i": "50",
@@ -354,7 +354,7 @@
       "i": "51",
       "do": "tap_element",
       "status": "OK",
-      "detail": "tapped 'Parent Controls' at 542 1270"
+      "detail": "tapped 'Parent Controls' at 540 1394"
     },
     {
       "i": "52",
@@ -423,8 +423,8 @@
       "detail": "observe x9-badges (png+xml+texts)"
     }
   ],
-  "startedUtc": "2026-11-16T03:54:00Z",
-  "finishedUtc": "2026-11-16T04:00:39Z",
+  "startedUtc": "2026-11-16T04:39:03Z",
+  "finishedUtc": "2026-11-16T04:47:24Z",
   "verdict": "PASS",
   "note": ""
 }
