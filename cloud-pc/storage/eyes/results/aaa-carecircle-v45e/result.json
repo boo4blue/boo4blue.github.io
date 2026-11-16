@@ -71,8 +71,8 @@
     {
       "i": "4",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'sign me in' at 286 1335"
+      "status": "SKIP",
+      "detail": "'sign me in' not found (optional)"
     },
     {
       "i": "5",
@@ -89,8 +89,8 @@
     {
       "i": "7",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'asName' at 540 1297"
+      "status": "SKIP",
+      "detail": "'asName' not found (optional)"
     },
     {
       "i": "8",
@@ -113,8 +113,8 @@
     {
       "i": "11",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'asPin' at 540 1513"
+      "status": "SKIP",
+      "detail": "'asPin' not found (optional)"
     },
     {
       "i": "12",
@@ -137,8 +137,8 @@
     {
       "i": "15",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'btnSignin' at 199 1143"
+      "status": "SKIP",
+      "detail": "'btnSignin' not found (optional)"
     },
     {
       "i": "16",
@@ -155,8 +155,8 @@
     {
       "i": "18",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'Today' at 118 2123"
+      "status": "SKIP",
+      "detail": "'Today' not found (optional)"
     },
     {
       "i": "19",
@@ -173,8 +173,8 @@
     {
       "i": "21",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'More' at 963 2123"
+      "status": "SKIP",
+      "detail": "'More' not found (optional)"
     },
     {
       "i": "22",
@@ -191,8 +191,8 @@
     {
       "i": "24",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'People' at 540 1765"
+      "status": "SKIP",
+      "detail": "'People' not found (optional)"
     },
     {
       "i": "25",
@@ -251,8 +251,8 @@
     {
       "i": "34",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'Play' at 753 2123"
+      "status": "SKIP",
+      "detail": "'Play' not found (optional)"
     },
     {
       "i": "35",
@@ -269,8 +269,8 @@
     {
       "i": "37",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'Choose games' at 835 1315"
+      "status": "SKIP",
+      "detail": "'Choose games' not found (optional)"
     },
     {
       "i": "38",
@@ -305,8 +305,8 @@
     {
       "i": "43",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'Play' at 753 2123"
+      "status": "SKIP",
+      "detail": "'Play' not found (optional)"
     },
     {
       "i": "44",
@@ -329,8 +329,8 @@
     {
       "i": "47",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'More' at 963 2123"
+      "status": "SKIP",
+      "detail": "'More' not found (optional)"
     },
     {
       "i": "48",
@@ -341,8 +341,8 @@
     {
       "i": "49",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'People' at 540 1765"
+      "status": "SKIP",
+      "detail": "'People' not found (optional)"
     },
     {
       "i": "50",
@@ -353,8 +353,8 @@
     {
       "i": "51",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'Parent Controls' at 540 1394"
+      "status": "SKIP",
+      "detail": "'Parent Controls' not found (optional)"
     },
     {
       "i": "52",
@@ -423,8 +423,8 @@
       "detail": "observe x9-badges (png+xml+texts)"
     }
   ],
-  "startedUtc": "2026-11-16T07:42:02Z",
-  "finishedUtc": "2026-11-16T07:50:16Z",
+  "startedUtc": "2026-11-16T08:56:42Z",
+  "finishedUtc": "2026-11-16T09:01:47Z",
   "verdict": "PASS",
   "note": ""
 }
