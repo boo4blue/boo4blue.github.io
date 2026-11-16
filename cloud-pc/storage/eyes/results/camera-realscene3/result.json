@@ -20,8 +20,8 @@
   "shots": [],
   "videos": [],
   "steps": [],
-  "startedUtc": "2026-11-16T13:11:34Z",
-  "finishedUtc": "2026-11-16T13:12:03Z",
+  "startedUtc": "2026-11-16T14:26:00Z",
+  "finishedUtc": "2026-11-16T14:26:29Z",
   "verdict": "FAIL",
   "note": "emulator did not finish booting"
 }
