@@ -1,0 +1,33 @@
+0	record_start	OK	screenrecord started (540x1140 @1.2Mbps)
+1	screenshot	OK	screenshot 00-launch-early
+2	wait	OK	slept 3s
+3	observe	OK	observe photo-viewfinder (png+xml+texts)
+4	screenshot	OK	screenshot 01-photo-viewfinder
+5	tap_xy	OK	tap frac 0.451,0.549
+6	wait	OK	slept 2s
+7	screenshot	OK	screenshot 02-after-capture
+8	tap_xy	OK	tap frac 0.135,0.549
+9	wait	OK	slept 1s
+10	observe	OK	observe photo-view (png+xml+texts)
+11	back	OK	keyevent BACK
+12	wait	OK	slept 1s
+13	observe	OK	observe after-back-photo (png+xml+texts)
+14	tap_element	OK	tapped 'MORE' at 850 380
+15	wait	OK	slept 1s
+16	observe	OK	observe more-grid (png+xml+texts)
+17	back	OK	keyevent BACK
+18	wait	OK	slept 1s
+19	observe	OK	observe after-back-more (png+xml+texts)
+20	tap_element	OK	tapped 'Settings' at 816 200
+21	wait	OK	slept 1s
+22	observe	OK	observe settings (png+xml+texts)
+23	back	OK	keyevent BACK
+24	wait	OK	slept 1s
+25	observe	OK	observe after-back-settings (png+xml+texts)
+26	tap_element	OK	tapped 'VIDEO' at 455 380
+27	wait	OK	slept 1s
+28	observe	OK	observe video-mode (png+xml+texts)
+29	back	OK	keyevent BACK
+30	wait	OK	slept 1s
+31	observe	OK	observe after-back-root (png+xml+texts)
+32	record_stop	OK	screenrecord stopped -> flow.mp4
