@@ -76,22 +76,3 @@
 75	tap_element	SKIP	'sees it' not found (optional)
 76	wait	OK	slept 3s
 77	screenshot	OK	screenshot 08-kid-home-preview
-78	observe	OK	observe x13-kid-preview (png+xml+texts)
-79	tap_element	SKIP	'Badges' not found (optional)
-80	wait	OK	slept 2s
-81	screenshot	OK	screenshot 09-badge-case-preview
-82	observe	OK	observe x14-badge-preview (png+xml+texts)
-83	tap_element	SKIP	'Back to controls' not found (optional)
-84	wait	OK	slept 2s
-85	back	OK	keyevent BACK
-86	wait	OK	slept 1s
-87	observe	OK	observe x15-after-controls-back (png+xml+texts)
-88	tap_element	OK	tapped 'Today' at 118 2123
-89	wait	OK	slept 2s
-90	back	OK	keyevent BACK
-91	wait	OK	slept 2s
-92	observe	OK	observe x16-root-back (png+xml+texts)
-93	launch	OK	monkey launch
-94	wait	OK	slept 3s
-95	observe	OK	observe x17-final (png+xml+texts)
-96	screenshot	OK	screenshot 10-final-state
