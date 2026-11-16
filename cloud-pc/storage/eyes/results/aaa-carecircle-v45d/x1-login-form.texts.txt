@@ -1,33 +1,18 @@
-Care Circle — by Onion Core
-Care Circle
-One shared, live circle for the kids — schedules, tasks,&#10;pickups and updates that everyone sees the moment they change.
-Onion, the Care Circle mascot
-YOUR NAME
-YOUR PIN
-Sign in
-New here? 
-Create a space
-Have an invite code? 
-Join a circle
-Live schedule
-Every change appears on every phone in seconds — no re-asking, no stale plans.
-Meds &amp; pickups
-Doses logged, pickups confirmed, running late handled in one tap.
-Pay without texts
-Hours, requests and card pay in one place — no chasing anyone in chat.
-By Onion Core. Private to your circle — nothing here is public.
-Quick Add
-The day, kept up to date by everyone.
-Add a note
-Add a task
-Add a shift
-Add an expense
-Add a kid
-Invite someone
-Report incident
-Announcement
-Close
-Emergency
-Allergies, medical notes and tap-to-call contacts for every kid you can see. For a life-threatening emergency, call 911 first.
-Close
-Edit
+This website has been temporarily rate limited | onion-care.blueblazer82.workers.dev | Cloudflare
+Please check back later
+Error 1027
+This website has been temporarily rate limited
+You cannot access this site because the owner has reached their plan limits. Check back later once traffic has gone down.
+If you are owner of this website, prevent this from happening again by upgrading your plan on the 
+Cloudflare Workers dashboard
+Cloudflare Workers dashboard
+.
+Learn more about this issue →
+Learn more about this issue →
+Cloudflare Ray ID: a5b543288b75acfa
+2026-11-16 08:52:55 UTC
+Your IP: 
+Click to reveal
+Runs on 
+Cloudflare Workers
+Cloudflare Workers
