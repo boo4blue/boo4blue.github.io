@@ -1,0 +1,5 @@
+{
+ "id": "eyes-camera-acceptance-v170-setup",
+ "action": "shell",
+ "command": "bash eyes/run-eyes.sh setup"
+}
