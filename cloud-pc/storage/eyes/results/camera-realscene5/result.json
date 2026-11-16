@@ -103,8 +103,8 @@
     {
       "i": "12",
       "do": "tap_text",
-      "status": "OK",
-      "detail": "tapped 'Wait' at 540 1331"
+      "status": "SKIP",
+      "detail": "'Wait' not found (optional)"
     },
     {
       "i": "13",
@@ -149,8 +149,8 @@
       "detail": "screenrecord stopped -> flow.mp4"
     }
   ],
-  "startedUtc": "2026-11-16T03:14:27Z",
-  "finishedUtc": "2026-11-16T03:19:34Z",
+  "startedUtc": "2026-11-16T03:24:37Z",
+  "finishedUtc": "2026-11-16T03:29:25Z",
   "verdict": "FAIL",
   "note": ""
 }
