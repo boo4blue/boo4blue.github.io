@@ -1,30 +1,12 @@
 {
   "id": "camera-realscene3",
   "v4l2": true,
-  "source": {
-    "type": "earthcam",
-    "name": "Times Square cam, EarthCam feed 1415",
-    "place": "Times Square, New York City, New York, USA",
-    "url": null,
-    "page": "https://www.earthcam.com/usa/newyork/timessquare/",
-    "feed": "1415"
-  },
-  "clip": {
-    "path": "/home/runner/eyes-cam/camera-realscene3/scene.mp4",
-    "bytes": 5458886,
-    "seconds": "48.033333"
-  },
+  "source": null,
+  "clip": null,
   "attempts": [
     "attempt: toolchain ffmpeg=/usr/bin/ffmpeg ffprobe=/usr/bin/ffprobe",
     "ffmpeg version 8.0.1-3ubuntu2 Copyright (c) 2000-2025 the FFmpeg developers",
-    "attempt: virtual webcam module -> /dev/video0 present=yes",
-    "pump: chunklist ok for feed 1415",
-    "pump: recorded 6.0s -> /home/runner/eyes-cam/camera-realscene3/probe.ts",
-    "attempt: earthcam Times Square cam, EarthCam feed 1415 (feed 1415) probe.ts=947520B ts-structure/ffprobe ok=1",
-    "attempt: earthcam Times Square cam, EarthCam feed 1415 (feed 1415) -> LIVE",
-    "pump: chunklist ok for feed 1415",
-    "pump: recorded 48.0s -> /home/runner/eyes-cam/camera-realscene3/scene.ts",
-    "attempt: route-B clip recorded (48.033333s, 5458886 B)"
+    "attempt: virtual webcam module -> /dev/video0 present=yes"
   ],
-  "updatedUtc": "2026-11-16T09:08:30Z"
+  "updatedUtc": "2026-11-16T09:52:42Z"
 }
