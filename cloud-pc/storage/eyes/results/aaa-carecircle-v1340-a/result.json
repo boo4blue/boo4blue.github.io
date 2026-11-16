@@ -565,40 +565,10 @@
       "do": "wait",
       "status": "OK",
       "detail": "slept 2s"
-    },
-    {
-      "i": "85",
-      "do": "back",
-      "status": "OK",
-      "detail": "keyevent BACK"
-    },
-    {
-      "i": "86",
-      "do": "wait",
-      "status": "OK",
-      "detail": "slept 1s"
-    },
-    {
-      "i": "87",
-      "do": "observe",
-      "status": "OK",
-      "detail": "observe x15-after-controls-back (png+xml+texts)"
-    },
-    {
-      "i": "88",
-      "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'Today' at 118 2123"
-    },
-    {
-      "i": "89",
-      "do": "wait",
-      "status": "OK",
-      "detail": "slept 2s"
     }
   ],
-  "startedUtc": "2026-11-16T05:51:58Z",
-  "finishedUtc": "2026-11-16T06:02:00Z",
+  "startedUtc": "2026-11-16T06:35:52Z",
+  "finishedUtc": "2026-11-16T06:45:57Z",
   "verdict": "PASS",
   "note": ""
 }
