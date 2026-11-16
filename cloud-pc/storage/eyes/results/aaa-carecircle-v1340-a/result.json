@@ -98,8 +98,8 @@
     {
       "i": "6",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'sign me in' at 286 1335"
+      "status": "SKIP",
+      "detail": "'sign me in' not found (optional)"
     },
     {
       "i": "7",
@@ -116,8 +116,8 @@
     {
       "i": "9",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'asName' at 540 1297"
+      "status": "SKIP",
+      "detail": "'asName' not found (optional)"
     },
     {
       "i": "10",
@@ -140,8 +140,8 @@
     {
       "i": "13",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'asPin' at 540 1513"
+      "status": "SKIP",
+      "detail": "'asPin' not found (optional)"
     },
     {
       "i": "14",
@@ -164,8 +164,8 @@
     {
       "i": "17",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'btnSignin' at 199 1143"
+      "status": "SKIP",
+      "detail": "'btnSignin' not found (optional)"
     },
     {
       "i": "18",
@@ -182,8 +182,8 @@
     {
       "i": "20",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'Today' at 118 2123"
+      "status": "SKIP",
+      "detail": "'Today' not found (optional)"
     },
     {
       "i": "21",
@@ -224,8 +224,8 @@
     {
       "i": "27",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'All kids' at 0 0"
+      "status": "FALLBACK",
+      "detail": "'All kids' not in hierarchy; fallback tap 0.3 0.04"
     },
     {
       "i": "28",
@@ -260,8 +260,8 @@
     {
       "i": "33",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'Tasks' at 540 2123"
+      "status": "SKIP",
+      "detail": "'Tasks' not found (optional)"
     },
     {
       "i": "34",
@@ -332,8 +332,8 @@
     {
       "i": "45",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'Play' at 753 2123"
+      "status": "SKIP",
+      "detail": "'Play' not found (optional)"
     },
     {
       "i": "46",
@@ -368,8 +368,8 @@
     {
       "i": "51",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'Choose games' at 835 1315"
+      "status": "SKIP",
+      "detail": "'Choose games' not found (optional)"
     },
     {
       "i": "52",
@@ -410,8 +410,8 @@
     {
       "i": "58",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'More' at 963 2123"
+      "status": "SKIP",
+      "detail": "'More' not found (optional)"
     },
     {
       "i": "59",
@@ -422,8 +422,8 @@
     {
       "i": "60",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'People' at 540 1765"
+      "status": "SKIP",
+      "detail": "'People' not found (optional)"
     },
     {
       "i": "61",
@@ -434,8 +434,8 @@
     {
       "i": "62",
       "do": "tap_element",
-      "status": "OK",
-      "detail": "tapped 'Parent Controls' at 540 1394"
+      "status": "SKIP",
+      "detail": "'Parent Controls' not found (optional)"
     },
     {
       "i": "63",
@@ -526,10 +526,124 @@
       "do": "screenshot",
       "status": "OK",
       "detail": "screenshot 08-kid-home-preview"
+    },
+    {
+      "i": "78",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x13-kid-preview (png+xml+texts)"
+    },
+    {
+      "i": "79",
+      "do": "tap_element",
+      "status": "SKIP",
+      "detail": "'Badges' not found (optional)"
+    },
+    {
+      "i": "80",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "81",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 09-badge-case-preview"
+    },
+    {
+      "i": "82",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x14-badge-preview (png+xml+texts)"
+    },
+    {
+      "i": "83",
+      "do": "tap_element",
+      "status": "SKIP",
+      "detail": "'Back to controls' not found (optional)"
+    },
+    {
+      "i": "84",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "85",
+      "do": "back",
+      "status": "OK",
+      "detail": "keyevent BACK"
+    },
+    {
+      "i": "86",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 1s"
+    },
+    {
+      "i": "87",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x15-after-controls-back (png+xml+texts)"
+    },
+    {
+      "i": "88",
+      "do": "tap_element",
+      "status": "SKIP",
+      "detail": "'Today' not found (optional)"
+    },
+    {
+      "i": "89",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "90",
+      "do": "back",
+      "status": "OK",
+      "detail": "keyevent BACK"
+    },
+    {
+      "i": "91",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "92",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x16-root-back (png+xml+texts)"
+    },
+    {
+      "i": "93",
+      "do": "launch",
+      "status": "OK",
+      "detail": "monkey launch"
+    },
+    {
+      "i": "94",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 3s"
+    },
+    {
+      "i": "95",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe x17-final (png+xml+texts)"
+    },
+    {
+      "i": "96",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 10-final-state"
     }
   ],
-  "startedUtc": "2026-11-16T08:00:43Z",
-  "finishedUtc": "2026-11-16T08:10:46Z",
+  "startedUtc": "2026-11-16T08:39:26Z",
+  "finishedUtc": "2026-11-16T08:46:29Z",
   "verdict": "PASS",
   "note": ""
 }
