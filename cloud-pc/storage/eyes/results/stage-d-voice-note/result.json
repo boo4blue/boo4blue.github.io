@@ -1,0 +1,187 @@
+{
+  "id": "stage-d-voice-note",
+  "package": "com.onioncore.onionai",
+  "lane": "onion-eyes/cloud-pc",
+  "apkMd5Expected": "d8ba0a1ed2b0e2b5dee9230cfc0cf583",
+  "apkMd5Actual": "d8ba0a1ed2b0e2b5dee9230cfc0cf583",
+  "apk_md5": {
+    "expected": "d8ba0a1ed2b0e2b5dee9230cfc0cf583",
+    "actual": "d8ba0a1ed2b0e2b5dee9230cfc0cf583",
+    "match": true
+  },
+  "bootCompleted": true,
+  "installOk": true,
+  "pidAliveStart": true,
+  "pidAliveEnd": true,
+  "seededCount": 0,
+  "cameraRoute": null,
+  "cameraSource": null,
+  "cameraNote": null,
+  "screen": {
+    "size": "1080x2280",
+    "density": "420",
+    "fontScale": "1.0"
+  },
+  "shots": [
+    "01-launch.png",
+    "01b-thread.png",
+    "02-reply-arrived.png",
+    "02b-reply-arrived.png",
+    "03-voice-note-row.png",
+    "03b-voice-note-row.png",
+    "04-after-play-tap.png",
+    "04b-after-play-tap.png",
+    "05-back-in-chat.png"
+  ],
+  "videos": [],
+  "steps": [
+    {
+      "i": "0",
+      "do": "launch",
+      "status": "OK",
+      "detail": "monkey launch"
+    },
+    {
+      "i": "1",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 4s"
+    },
+    {
+      "i": "2",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe 01-launch (png+xml+texts)"
+    },
+    {
+      "i": "3",
+      "do": "tap_element",
+      "status": "SKIP",
+      "detail": "'Not now' not found (optional)"
+    },
+    {
+      "i": "4",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "5",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe 01b-thread (png+xml+texts)"
+    },
+    {
+      "i": "6",
+      "do": "tap_element",
+      "status": "FALLBACK",
+      "detail": "'Message' not in hierarchy; fallback tap 0.4 0.9"
+    },
+    {
+      "i": "7",
+      "do": "type",
+      "status": "OK",
+      "detail": "typed 'Say hi in your voice'"
+    },
+    {
+      "i": "8",
+      "do": "tap_element",
+      "status": "FALLBACK",
+      "detail": "'Send' not in hierarchy; fallback tap 0.93 0.9"
+    },
+    {
+      "i": "9",
+      "do": "wait_text",
+      "status": "FAIL",
+      "detail": "'Say hi in your voice' not seen within 120s"
+    },
+    {
+      "i": "10",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 10s"
+    },
+    {
+      "i": "11",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe 02-reply-arrived (png+xml+texts)"
+    },
+    {
+      "i": "12",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 02b-reply-arrived"
+    },
+    {
+      "i": "13",
+      "do": "assert_text",
+      "status": "SOFTFAIL",
+      "detail": "assert soft-fail: 'Voice note' not in hierarchy (vision check decides)"
+    },
+    {
+      "i": "14",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 5s"
+    },
+    {
+      "i": "15",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe 03-voice-note-row (png+xml+texts)"
+    },
+    {
+      "i": "16",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 03b-voice-note-row"
+    },
+    {
+      "i": "17",
+      "do": "tap_element",
+      "status": "FALLBACK",
+      "detail": "'Voice note' not in hierarchy; fallback tap 0.1 0.75"
+    },
+    {
+      "i": "18",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 4s"
+    },
+    {
+      "i": "19",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe 04-after-play-tap (png+xml+texts)"
+    },
+    {
+      "i": "20",
+      "do": "screenshot",
+      "status": "OK",
+      "detail": "screenshot 04b-after-play-tap"
+    },
+    {
+      "i": "21",
+      "do": "back",
+      "status": "OK",
+      "detail": "keyevent BACK"
+    },
+    {
+      "i": "22",
+      "do": "wait",
+      "status": "OK",
+      "detail": "slept 2s"
+    },
+    {
+      "i": "23",
+      "do": "observe",
+      "status": "OK",
+      "detail": "observe 05-back-in-chat (png+xml+texts)"
+    }
+  ],
+  "startedUtc": "2026-11-16T22:39:40Z",
+  "finishedUtc": "2026-11-16T22:46:27Z",
+  "verdict": "FAIL",
+  "note": ""
+}
