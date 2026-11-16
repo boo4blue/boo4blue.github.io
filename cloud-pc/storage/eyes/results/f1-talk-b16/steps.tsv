@@ -1,0 +1,10 @@
+0	launch	OK	monkey launch
+1	wait	OK	slept 4s
+2	observe	OK	observe 01-launch (png+xml+texts)
+3	tap_element	SKIP	'Not now' not found (optional)
+4	wait	OK	slept 2s
+5	tap_element	FAIL	'Talk' not found in UI hierarchy
+6	wait	OK	slept 3s
+7	observe	OK	observe 02-talk-screen (png+xml+texts)
+8	screenshot	OK	screenshot 02b-talk-screen
+9	assert_text	SOFTFAIL	assert soft-fail: 'Talk' not in hierarchy (vision check decides)
