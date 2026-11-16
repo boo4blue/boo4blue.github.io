@@ -1,0 +1,33 @@
+== eyes run f1-talk-b16 2026-11-16T16:47:07Z
+api_put: cloud-pc/storage/eyes/results/f1-talk-b16/heartbeat.txt OK
+apk md5=4c7619e431896c092f4789599b40552c expected=4c7619e431896c092f4789599b40552c size=1227116
+* daemon not running; starting now at tcp:5037
+* daemon started successfully
+booted after ~30s
+screen real: size=1080x2280 density=420 fontScale=1.0
+installOk=1
+seed verify: provider holds 0 contacts
+pidAliveStart=1
+api_put: cloud-pc/storage/eyes/results/f1-talk-b16/progress.json OK
+step 0 [launch] OK: monkey launch
+step 1 [wait] OK: slept 4s
+shot 01-launch: 90206 bytes
+api_put: cloud-pc/storage/eyes/results/f1-talk-b16/01-launch.png OK
+api_put: cloud-pc/storage/eyes/results/f1-talk-b16/01-launch.xml OK
+api_put: cloud-pc/storage/eyes/results/f1-talk-b16/01-launch.texts.txt OK
+step 2 [observe] OK: observe 01-launch (png+xml+texts)
+step 3 [tap_element] SKIP: 'Not now' not found (optional)
+step 4 [wait] OK: slept 2s
+step 5 [tap_element] FAIL: 'Talk' not found in UI hierarchy
+step 6 [wait] OK: slept 3s
+shot 02-talk-screen: 90206 bytes
+api_put: cloud-pc/storage/eyes/results/f1-talk-b16/02-talk-screen.png OK
+api_put: cloud-pc/storage/eyes/results/f1-talk-b16/02-talk-screen.xml OK
+api_put: cloud-pc/storage/eyes/results/f1-talk-b16/02-talk-screen.texts.txt OK
+step 7 [observe] OK: observe 02-talk-screen (png+xml+texts)
+shot 02b-talk-screen: 90206 bytes
+api_put: cloud-pc/storage/eyes/results/f1-talk-b16/02b-talk-screen.png OK
+step 8 [screenshot] OK: screenshot 02b-talk-screen
+step 9 [assert_text] SOFTFAIL: assert soft-fail: 'Talk' not in hierarchy (vision check decides)
+<stdin>:25: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+result.json written, verdict FAIL
