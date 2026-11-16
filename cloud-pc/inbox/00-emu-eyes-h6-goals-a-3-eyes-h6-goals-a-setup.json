@@ -1,0 +1,5 @@
+{
+ "id": "eyes-h6-goals-a-setup",
+ "action": "shell",
+ "command": "bash eyes/run-eyes.sh setup"
+}
