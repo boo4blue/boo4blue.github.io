@@ -1,0 +1,16 @@
+0	record_start	OK	screenrecord started (540x1140 @1.2Mbps)
+1	wait	OK	slept 5s
+2	observe	OK	observe 01-viewfinder (png+xml+texts)
+3	wait	OK	slept 8s
+4	screenshot	OK	screenshot 02-viewfinder-later
+5	tap_element	FAIL	'Shutter' not found in UI hierarchy
+6	wait	OK	slept 3s
+7	assert_text	SOFTFAIL	assert soft-fail: 'Saved' not in hierarchy (vision check decides)
+8	screenshot	OK	screenshot 03-after-shutter
+9	tap_xy	OK	tap frac 0.45,0.57
+10	wait	OK	slept 2s
+11	shell	OK	shell: newest=$(adb shell ls -t /sdcard/Pictures/OnionCamera/ 2>/dev/null | head -1 | tr -d '\015'); if [ -n "$newest" ]; then adb pull "/sdcard/Pictures/OnionCamera/$newest" "$RESULTS/taken-photo.jpg" && api_put "eyes $ID: taken photo" "cloud-pc/storage/eyes/results/$ID/taken-photo.jpg"; fi
+12	shell	OK	shell: if [ -n "$newest" ]; then adb shell am start -a android.intent.action.VIEW -d "file:///sdcard/Pictures/OnionCamera/$newest" -t "image/jpeg" >/dev/null 2>&1; fi
+13	wait	OK	slept 3s
+14	screenshot	OK	screenshot 04-stock-gallery
+15	record_stop	OK	screenrecord stopped -> flow.mp4
