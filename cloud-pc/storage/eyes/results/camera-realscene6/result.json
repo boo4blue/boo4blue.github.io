@@ -1,0 +1,27 @@
+{
+  "id": "camera-realscene6",
+  "package": "com.onioncore.camera",
+  "lane": "onion-eyes/cloud-pc",
+  "apkMd5Expected": "3aa0e327429ea5139410699bed6a8a00",
+  "apkMd5Actual": "3aa0e327429ea5139410699bed6a8a00",
+  "bootCompleted": true,
+  "installOk": true,
+  "pidAliveStart": false,
+  "pidAliveEnd": false,
+  "seededCount": 0,
+  "cameraRoute": "B-recorded",
+  "cameraSource": "Times Square cam, EarthCam feed 1415",
+  "cameraNote": "live feed process died at start (see camfeed.log)",
+  "screen": {
+    "size": "1080x2280",
+    "density": "420",
+    "fontScale": "1.0"
+  },
+  "shots": [],
+  "videos": [],
+  "steps": [],
+  "startedUtc": "2026-11-16T14:31:06Z",
+  "finishedUtc": "2026-11-16T14:32:13Z",
+  "verdict": "FAIL",
+  "note": "app not alive after launch"
+}
