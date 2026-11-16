@@ -1,58 +1,18 @@
-Care Circle — by Onion Core
-Care 
-Circle
-BY ONION CORE
-Choose whose day to show
-Notifications
-My profile
-Emergency contacts and SOS
-LIVE — everyone sees changes right away
-People
-Character sheets for the kids and everyone in the circle — profiles, invites and roles.
-1
-kid
-1
-grown-ups
-Finish your profile
-Your circle sees your face and how to reach you. Still missing: a photo, a one-line about line.
-Complete my profile
-Not now
-Parent Controls — what each kid can do, who holds which keys
-Demo Circle — kids 3
-Add a kid
-People &amp; invites
-DEMO CIRCLE — KIDS
-DDemo Kid
-D
-CLASS: KID
-WITH PARENT
-Today tasks
-0 of 0 done
-Pickup today
-Not set
-Circle
-Demo Circle
-See tasks
-View / edit profile
-Parent Controls
-Today
-Calendar
-Tasks
-Play
-More
-Quick add
-Quick Add
-The day, kept up to date by everyone.
-Add a note
-Add a task
-Add a shift
-Add an expense
-Add a kid
-Invite someone
-Report incident
-Announcement
-Close
-Emergency
-Allergies, medical notes and tap-to-call contacts for every kid you can see. For a life-threatening emergency, call 911 first.
-Close
-Edit
+This website has been temporarily rate limited | onion-care.blueblazer82.workers.dev | Cloudflare
+Please check back later
+Error 1027
+This website has been temporarily rate limited
+You cannot access this site because the owner has reached their plan limits. Check back later once traffic has gone down.
+If you are owner of this website, prevent this from happening again by upgrading your plan on the 
+Cloudflare Workers dashboard
+Cloudflare Workers dashboard
+.
+Learn more about this issue →
+Learn more about this issue →
+Cloudflare Ray ID: a5b54a636f600640
+2026-11-16 08:57:51 UTC
+Your IP: 
+Click to reveal
+Runs on 
+Cloudflare Workers
+Cloudflare Workers
