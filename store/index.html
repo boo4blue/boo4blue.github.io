@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Onion Core — Store</title>
+<style>
+  :root{
+    --bg:#0b0f14;
+    --surface:#121922;
+    --surface-2:#182230;
+    --border:#243144;
+    --text:#eef3f8;
+    --muted:#9db0c3;
+    --accent:#35c759;
+    --accent-dark:#0e2a18;
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;overflow-x:hidden}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    line-height:1.5;
+  }
+  .wrap{
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+    padding:24px 16px 48px;
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+  }
+  header{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .logo{
+    flex:0 0 auto;
+    width:48px;height:48px;
+    border-radius:50%;
+    background:radial-gradient(circle at 50% 38%, #7ee2a0 0 26%, var(--accent) 27% 52%, var(--accent-dark) 53% 100%);
+    border:2px solid var(--border);
+  }
+  .brand{min-width:0;flex:1 1 auto}
+  .brand h1{
+    margin:0;
+    font-size:clamp(1.4rem,4vw,2rem);
+    overflow-wrap:break-word;
+  }
+  .brand p{margin:4px 0 0;color:var(--muted);overflow-wrap:break-word}
+  .grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+  }
+  .card{
+    flex:1 1 260px;
+    min-width:0;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:24px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    box-shadow:0 4px 16px rgba(0,0,0,.35);
+  }
+  .thumb{
+    aspect-ratio:16/9;
+    border-radius:8px;
+    background:var(--surface-2);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .thumb svg{width:64px;height:64px}
+  .card h2{
+    margin:0;
+    font-size:1.15rem;
+    min-width:0;
+    overflow-wrap:break-word;
+  }
+  .card p{
+    margin:0;
+    color:var(--muted);
+    min-width:0;
+    overflow-wrap:break-word;
+    flex:1 1 auto;
+  }
+  .row{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .price{
+    font-size:1.25rem;
+    font-weight:700;
+    flex:0 0 auto;
+  }
+  .buy{
+    flex:1 1 auto;
+    min-height:48px;
+    padding:8px 16px;
+    border-radius:8px;
+    border:1px solid var(--accent);
+    background:var(--accent);
+    color:#06130a;
+    font-size:1rem;
+    font-weight:600;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    cursor:pointer;
+    text-align:center;
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .buy:active{transform:scale(.96)}
+  .buy[aria-disabled="true"]{
+    background:transparent;
+    color:var(--muted);
+    border-color:var(--border);
+    cursor:default;
+  }
+  .buy[aria-disabled="true"]:active{transform:none}
+  footer{color:var(--muted);font-size:.9rem;overflow-wrap:break-word}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo" aria-hidden="true"></div>
+    <div class="brand">
+      <h1>Onion Core</h1>
+      <p>Game-ready asset packs and tools, sold direct. Pay once, download yours.</p>
+    </div>
+  </header>
+
+  <main class="grid" id="grid"><!-- cards are built by the script below --></main>
+
+  <footer>
+    <p>Every pack is licensed for use in your own projects. Questions about a
+    product? Reach out through the Onion Core channels listed with your receipt.</p>
+  </footer>
+</div>
+
+<script>
+  // Product catalog (prices match the direct-sale link script).
+  var PRODUCTS = [
+    { slug: "sfx-vault-vol-1",        name: "SFX Vault Vol. 1",          price: "$5",  desc: "36 game-ready sound effects for your project.",                 icon: "sound" },
+    { slug: "pbr-textures-vol-1",     name: "Seamless PBR Textures Vol. 1", price: "$6", desc: "8 tileable PBR materials at 512px, ready to drop in.",          icon: "grid" },
+    { slug: "loops-beats-drum-kit",   name: "Loops, Beats & Drum Kit",   price: "$4",  desc: "Game music starter pack: loops, beats, and a drum kit.",        icon: "note" },
+    { slug: "game-dev-starter-bundle", name: "Game Dev Starter Bundle",  price: "$12", desc: "SFX Vault, PBR Textures, and Loops & Beats in one bundle.",     icon: "box" },
+    { slug: "apk-editor-public",      name: "Onion APK Editor (Public)", price: "$5",  desc: "Inspect, edit, rebuild, and sign Android APKs on-device.",      icon: "wrench" }
+  ];
+
+  // Simple drawn icons (inline SVG, stroke only).
+  var ICONS = {
+    sound:  '<svg viewBox="0 0 48 48" fill="none" stroke="#35c759" stroke-width="3" stroke-linecap="round"><path d="M10 20v8h6l10 8V12l-10 8h-6z" fill="#35c759" stroke="none"/><path d="M32 18c3 3 3 9 0 12"/><path d="M37 14c5 5 5 15 0 20"/></svg>',
+    grid:   '<svg viewBox="0 0 48 48" fill="none" stroke="#35c759" stroke-width="3"><rect x="8" y="8" width="14" height="14"/><rect x="26" y="8" width="14" height="14"/><rect x="8" y="26" width="14" height="14"/><rect x="26" y="26" width="14" height="14"/></svg>',
+    note:   '<svg viewBox="0 0 48 48" fill="none" stroke="#35c759" stroke-width="3" stroke-linecap="round"><path d="M18 34V12l20-4v22"/><circle cx="13" cy="34" r="5"/><circle cx="33" cy="30" r="5"/></svg>',
+    box:    '<svg viewBox="0 0 48 48" fill="none" stroke="#35c759" stroke-width="3" stroke-linejoin="round"><path d="M24 6l16 8v20L24 42 8 34V14l16-8z"/><path d="M8 14l16 8 16-8M24 22v20"/></svg>',
+    wrench: '<svg viewBox="0 0 48 48" fill="none" stroke="#35c759" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M30 8a10 10 0 0 0-9 15L8 36a4.2 4.2 0 1 0 6 6l13-13a10 10 0 0 0 13-9l-6 6-6-2-2-6 4-10z"/></svg>'
+  };
+
+  function buildCards(links) {
+    var grid = document.getElementById("grid");
+    grid.textContent = "";
+    PRODUCTS.forEach(function (p) {
+      var card = document.createElement("section");
+      card.className = "card";
+
+      var thumb = document.createElement("div");
+      thumb.className = "thumb";
+      thumb.innerHTML = ICONS[p.icon] || "";
+      card.appendChild(thumb);
+
+      var title = document.createElement("h2");
+      title.textContent = p.name;
+      card.appendChild(title);
+
+      var desc = document.createElement("p");
+      desc.textContent = p.desc;
+      card.appendChild(desc);
+
+      var row = document.createElement("div");
+      row.className = "row";
+
+      var price = document.createElement("span");
+      price.className = "price";
+      price.textContent = p.price;
+      row.appendChild(price);
+
+      var url = links && links[p.slug];
+      if (url) {
+        var buy = document.createElement("a");
+        buy.className = "buy";
+        buy.href = url;
+        buy.textContent = "Buy now";
+        row.appendChild(buy);
+      } else {
+        var soon = document.createElement("span");
+        soon.className = "buy";
+        soon.setAttribute("aria-disabled", "true");
+        soon.textContent = "Coming soon";
+        row.appendChild(soon);
+      }
+      card.appendChild(row);
+      grid.appendChild(card);
+    });
+  }
+
+  // Buy buttons light up automatically once links.json exists next to this
+  // page (created by create_links.py). Until then every button honestly
+  // reads "Coming soon" and goes nowhere.
+  buildCards(null);
+  fetch("links.json", { cache: "no-store" })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (links) { if (links) buildCards(links); })
+    .catch(function () { /* no links yet — placeholder state stands */ });
+</script>
+</body>
+</html>
