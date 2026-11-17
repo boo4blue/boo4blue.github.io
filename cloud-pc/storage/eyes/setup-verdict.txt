@@ -870,3 +870,6 @@ api_put: cloud-pc/storage/eyes/setup-heartbeat.txt OK
 sdkmanager attempt 1 exit=0
 SDK verified OK on attempt 1
 SETUP_OK
+== eyes setup 2026-11-16T23:57:05Z
+api_put: cloud-pc/storage/eyes/setup-heartbeat.txt OK
+sdkmanager attempt 1 exit=0
