@@ -19,6 +19,8 @@ HOW IT WORKS (see PROTOCOL.md — the binding spec this file follows)
     The broker bridges transports: a TCP publisher reaches WSS subscribers.
     Some networks (including sandboxed VMs) block port 1883, so by default this
     script tries TCP first and automatically falls back to WSS.
+    If the standard http_proxy/https_proxy environment variables are set, both
+    transports tunnel through that HTTP proxy (CONNECT) automatically.
   * Enrollment: publish a JSON enroll request to `muse-link/enroll`, listen on
     `muse-link/enroll/ack` for an ack addressed to your display name. Silence
     from the bot means the token was rejected (or the bot is offline).
@@ -91,6 +93,7 @@ import ssl
 import struct
 import sys
 import time
+import urllib.parse
 from datetime import datetime
 
 # ---------------------------------------------------------------------------
@@ -181,6 +184,80 @@ def extract_token_from_file(path):
               file=sys.stderr)
         sys.exit(2)
     return match.group(0)
+
+
+# ===========================================================================
+# Outbound connection helper — direct, or via an HTTP CONNECT proxy
+# ===========================================================================
+# Many networks (corporate firewalls, sandboxed VMs, some ISPs) only allow
+# outbound traffic through an HTTP proxy. If the standard *_proxy environment
+# variables are set, we honour them: open a TCP connection to the proxy, ask
+# it to CONNECT to the broker, and then run MQTT (or TLS+WebSocket) through
+# that tunnel. With no proxy variables set, connections are direct — exactly
+# what a normal home machine wants. Either way this is pure stdlib.
+
+def _proxy_url_for(host):
+    """Return the proxy URL from the environment for reaching `host`,
+    or None for a direct connection (also None if host is in no_proxy)."""
+    no_proxy = os.environ.get("no_proxy") or os.environ.get("NO_PROXY") or ""
+    for entry in no_proxy.split(","):
+        entry = entry.strip().lower()
+        if entry and (host.lower() == entry or host.lower().endswith(entry)):
+            return None
+    for var in ("https_proxy", "HTTPS_PROXY", "all_proxy", "ALL_PROXY",
+                "http_proxy", "HTTP_PROXY"):
+        value = os.environ.get(var)
+        if value:
+            return value
+    return None
+
+
+def _open_socket(host, port, timeout):
+    """Open a TCP connection to host:port, tunnelling through the
+    environment's HTTP proxy when one is configured.
+
+    Returns (socket, leftover_bytes). leftover_bytes is anything read past
+    the proxy's CONNECT response headers — normally empty, because neither
+    an MQTT broker nor a TLS server speaks first.
+    """
+    proxy_url = _proxy_url_for(host)
+    if not proxy_url:
+        return socket.create_connection((host, port), timeout=timeout), b""
+
+    parsed = urllib.parse.urlparse(proxy_url)
+    proxy_host = parsed.hostname
+    proxy_port = parsed.port or 3128
+    if not proxy_host:
+        raise MQTTError("could not parse proxy URL from environment")
+    sock = socket.create_connection((proxy_host, proxy_port), timeout=timeout)
+
+    auth_line = ""
+    if parsed.username:
+        creds = "%s:%s" % (urllib.parse.unquote(parsed.username),
+                           urllib.parse.unquote(parsed.password or ""))
+        encoded = base64.b64encode(creds.encode("utf-8")).decode("ascii")
+        auth_line = "Proxy-Authorization: Basic %s\r\n" % encoded
+    target = "%s:%d" % (host, port)
+    request = ("CONNECT %s HTTP/1.1\r\nHost: %s\r\n%s\r\n"
+               % (target, target, auth_line))
+    sock.sendall(request.encode("ascii"))
+
+    response = bytearray()
+    while b"\r\n\r\n" not in response:
+        chunk = sock.recv(4096)
+        if not chunk:
+            sock.close()
+            raise MQTTError("proxy closed the connection during CONNECT")
+        response.extend(chunk)
+        if len(response) > 65536:
+            sock.close()
+            raise MQTTError("proxy CONNECT response too large")
+    head, _, rest = bytes(response).partition(b"\r\n\r\n")
+    status_line = head.split(b"\r\n", 1)[0].decode("iso-8859-1", "replace")
+    if " 200" not in status_line:
+        sock.close()
+        raise MQTTError("proxy CONNECT to %s failed: %s" % (target, status_line))
+    return sock, rest
 
 
 # ===========================================================================
@@ -362,12 +439,18 @@ class MQTTClient:
     def connect(self, timeout=15):
         """Open the transport and perform the MQTT CONNECT/CONNACK exchange."""
         if self.transport == "tcp":
-            self.sock = socket.create_connection(
-                (BROKER_HOST, TCP_PORT), timeout=timeout)
+            self.sock, leftover = _open_socket(BROKER_HOST, TCP_PORT, timeout)
+            if leftover:
+                self._mqtt_buf.extend(leftover)
         elif self.transport == "wss":
             context = ssl.create_default_context()
-            raw = socket.create_connection(
-                (BROKER_HOST, WSS_PORT), timeout=timeout)
+            raw, leftover = _open_socket(BROKER_HOST, WSS_PORT, timeout)
+            if leftover:
+                # Bytes past the proxy's CONNECT headers belong to the TLS
+                # stream. Proxies do not send any before the client speaks,
+                # so this should be empty; fail loudly rather than corrupt
+                # the TLS handshake if one ever does.
+                raise MQTTError("unexpected bytes before TLS handshake")
             self.sock = context.wrap_socket(raw, server_hostname=BROKER_HOST)
             leftover = _ws_connect(self.sock, BROKER_HOST, WSS_PATH,
                                    WSS_SUBPROTOCOL)
@@ -383,7 +466,11 @@ class MQTTClient:
             raise MQTTError("no CONNACK from broker (timeout)")
         ptype, _flags, body = packet
         if ptype != MQTT_CONNACK or len(body) < 2:
-            raise MQTTError("unexpected packet instead of CONNACK")
+            raise MQTTError(
+                "unexpected packet instead of CONNACK — the connection was "
+                "probably intercepted or blocked by the network (some "
+                "networks answer blocked connections with a text notice). "
+                "Try the other transport, e.g. --transport wss")
         return_code = body[1]
         if return_code != 0:
             raise MQTTError("broker refused connection, CONNACK code %d"
