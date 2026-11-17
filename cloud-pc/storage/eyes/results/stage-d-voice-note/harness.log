@@ -63,3 +63,68 @@ api_put: cloud-pc/storage/eyes/results/stage-d-voice-note/05-back-in-chat.texts.
 step 23 [observe] OK: observe 05-back-in-chat (png+xml+texts)
 <stdin>:25: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
 result.json written, verdict FAIL
+== eyes run stage-d-voice-note 2026-11-17T00:16:44Z
+api_put: cloud-pc/storage/eyes/results/stage-d-voice-note/heartbeat.txt OK
+apk md5=d8ba0a1ed2b0e2b5dee9230cfc0cf583 expected=d8ba0a1ed2b0e2b5dee9230cfc0cf583 size=19864452
+booted after ~35s
+screen real: size=1080x2280 density=420 fontScale=1.0
+installOk=1
+seed verify: provider holds 0 contacts
+pidAliveStart=1
+api_put: cloud-pc/storage/eyes/results/stage-d-voice-note/progress.json OK
+step 0 [launch] OK: monkey launch
+step 1 [wait] OK: slept 4s
+shot 01-launch: 108277 bytes
+api_put: cloud-pc/storage/eyes/results/stage-d-voice-note/01-launch.png OK
+api_put: cloud-pc/storage/eyes/results/stage-d-voice-note/01-launch.xml OK
+api_put: cloud-pc/storage/eyes/results/stage-d-voice-note/01-launch.texts.txt OK
+step 2 [observe] OK: observe 01-launch (png+xml+texts)
+step 3 [tap_element] SKIP: 'Not now' not found (optional)
+step 4 [wait] OK: slept 2s
+shot 01b-thread: 108277 bytes
+api_put: cloud-pc/storage/eyes/results/stage-d-voice-note/01b-thread.png OK
+api_put: cloud-pc/storage/eyes/results/stage-d-voice-note/01b-thread.xml OK
+api_put: cloud-pc/storage/eyes/results/stage-d-voice-note/01b-thread.texts.txt OK
+step 5 [observe] OK: observe 01b-thread (png+xml+texts)
+step 6 [tap_element] FALLBACK: 'Message' not in hierarchy; fallback tap 0.4 0.9
+step 7 [type] OK: typed 'Say hi in your voice'
+step 8 [tap_element] FALLBACK: 'Send' not in hierarchy; fallback tap 0.93 0.9
+step 9 [wait_text] FAIL: 'Say hi in your voice' not seen within 120s
+step 10 [wait] OK: slept 10s
+shot 02-reply-arrived: 118677 bytes
+api_put: cloud-pc/storage/eyes/results/stage-d-voice-note/02-reply-arrived.png OK
+api_put: cloud-pc/storage/eyes/results/stage-d-voice-note/02-reply-arrived.xml OK
+api_put: cloud-pc/storage/eyes/results/stage-d-voice-note/02-reply-arrived.texts.txt OK
+step 11 [observe] OK: observe 02-reply-arrived (png+xml+texts)
+shot 02b-reply-arrived: 118677 bytes
+api_put: cloud-pc/storage/eyes/results/stage-d-voice-note/02b-reply-arrived.png OK
+step 12 [screenshot] OK: screenshot 02b-reply-arrived
+step 13 [assert_text] SOFTFAIL: assert soft-fail: 'Voice note' not in hierarchy (vision check decides)
+step 14 [wait] OK: slept 5s
+shot 03-voice-note-row: 118677 bytes
+api_put: cloud-pc/storage/eyes/results/stage-d-voice-note/03-voice-note-row.png OK
+api_put: cloud-pc/storage/eyes/results/stage-d-voice-note/03-voice-note-row.xml OK
+api_put: cloud-pc/storage/eyes/results/stage-d-voice-note/03-voice-note-row.texts.txt OK
+step 15 [observe] OK: observe 03-voice-note-row (png+xml+texts)
+shot 03b-voice-note-row: 118677 bytes
+api_put: cloud-pc/storage/eyes/results/stage-d-voice-note/03b-voice-note-row.png OK
+step 16 [screenshot] OK: screenshot 03b-voice-note-row
+step 17 [tap_element] FALLBACK: 'Voice note' not in hierarchy; fallback tap 0.1 0.75
+step 18 [wait] OK: slept 4s
+shot 04-after-play-tap: 118677 bytes
+api_put: cloud-pc/storage/eyes/results/stage-d-voice-note/04-after-play-tap.png OK
+api_put: cloud-pc/storage/eyes/results/stage-d-voice-note/04-after-play-tap.xml OK
+api_put: cloud-pc/storage/eyes/results/stage-d-voice-note/04-after-play-tap.texts.txt OK
+step 19 [observe] OK: observe 04-after-play-tap (png+xml+texts)
+shot 04b-after-play-tap: 118677 bytes
+api_put: cloud-pc/storage/eyes/results/stage-d-voice-note/04b-after-play-tap.png OK
+step 20 [screenshot] OK: screenshot 04b-after-play-tap
+step 21 [back] OK: keyevent BACK
+step 22 [wait] OK: slept 2s
+shot 05-back-in-chat: 108277 bytes
+api_put: cloud-pc/storage/eyes/results/stage-d-voice-note/05-back-in-chat.png OK
+api_put: cloud-pc/storage/eyes/results/stage-d-voice-note/05-back-in-chat.xml OK
+api_put: cloud-pc/storage/eyes/results/stage-d-voice-note/05-back-in-chat.texts.txt OK
+step 23 [observe] OK: observe 05-back-in-chat (png+xml+texts)
+<stdin>:25: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+result.json written, verdict FAIL
