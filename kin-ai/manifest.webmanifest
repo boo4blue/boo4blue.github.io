@@ -1,6 +1,6 @@
 {
-  "name": "Kin — Your AI, your way",
-  "short_name": "Kin AI",
+  "name": "Onion — Your AI, your way",
+  "short_name": "Onion AI",
   "description": "Build and personalize an AI assistant that works your way.",
   "start_url": "./",
   "display": "standalone",
