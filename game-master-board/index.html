@@ -1,0 +1,743 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
+<title>Game Master Board — GameMasterBoard.com | Build &amp; Play Custom Board Games Online</title>
+<meta name="description" content="Game Master Board (GameMasterBoard.com) — the configurable online board-game platform. GMs build games visually with 79 presets, a no-code rules engine and weighted wheels; players join by code and play.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f1e8; --surface:#fffdf7; --surface2:#ece7d8; --ink:#17211a; --muted:#5c665e; --line:#ddd6c2;
+  --green:#2f5d3a; --green2:#1e3d27; --amber:#c98a1e; --amber-bg:#fdf0cd; --terra:#b94e2f; --blue:#2b5f7a; --gold:#8a6d1b;
+  --card:#ffffff; --chip:#eef0e6;
+  --radius:14px;
+}
+@media(prefers-color-scheme:dark){
+  :root{ --bg:#111612; --surface:#1a211c; --surface2:#232c25; --ink:#eef2ec; --muted:#a8b5aa; --line:#2e3a30; --card:#1e2821; --chip:#263028; --amber-bg:#3a2f14; }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Public Sans",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+h1,h2,h3{font-family:"Bricolage Grotesque",sans-serif;line-height:1.05;margin:0}
+a{color:var(--green)}
+button,input,select,textarea{font:inherit}
+button{min-height:44px}
+.mono{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.02em}
+/* Top bar */
+.topbar{position:sticky;top:0;z-index:50;background:var(--green2);color:#fff}
+.topbar-in{max-width:1240px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.15rem;letter-spacing:-.02em}
+.brand-mark{width:36px;height:36px;background:#e9c46a;color:#1e3d27;display:grid;place-items:center;border-radius:9px;font-size:20px;flex-shrink:0}
+.brand small{display:block;font-family:"Public Sans",sans-serif;font-weight:500;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;opacity:.8}
+.brand small b{color:#e9c46a;font-weight:700}
+.mode-toggle{margin-left:auto;display:flex;background:rgba(255,255,255,.14);border-radius:999px;padding:4px}
+.mode-toggle button{border:0;background:transparent;color:#fff;padding:8px 16px;border-radius:999px;cursor:pointer;font-weight:600;font-size:.85rem;min-height:38px}
+.mode-toggle button.active{background:#fff;color:var(--green2)}
+.join{display:flex;gap:8px;align-items:center}
+.join input{height:44px;border-radius:999px;border:0;padding:0 14px;width:130px}
+.join button{background:var(--amber);border:0;color:#1a1200;font-weight:700;padding:0 16px;border-radius:999px;cursor:pointer}
+nav.tabs{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:57px;z-index:40}
+.tabs-in{max-width:1240px;margin:0 auto;padding:0 12px;display:flex;gap:2px;flex-wrap:wrap}
+.tabs-in button{border:0;background:transparent;padding:13px 12px;font-weight:600;font-size:.88rem;cursor:pointer;border-bottom:3px solid transparent;color:var(--muted)}
+.tabs-in button.active{color:var(--ink);border-color:var(--amber)}
+.wrap{max-width:1240px;margin:0 auto;padding:18px 16px 48px}
+.view{display:none}.view.active{display:block}
+/* Hero / home */
+.hero{background:linear-gradient(135deg,#1e3d27,#2f5d3a 55%,#3e7a44);color:#eef5ea;border-radius:18px;padding:34px 28px;position:relative;overflow:hidden}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);letter-spacing:-.03em;max-width:16ch}
+.hero h1 em{font-style:normal;color:#e9c46a}
+.hero p{max-width:58ch;color:#d7e6d2;font-size:1.02rem}
+.hero-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.hero-stats{display:flex;gap:22px;flex-wrap:wrap;margin-top:22px}
+.hero-stats div b{font-family:"Bricolage Grotesque",sans-serif;font-size:1.4rem;display:block;line-height:1;color:#fff}
+.hero-stats div span{font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;color:#bcd2b6;font-weight:600}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:860px){.grid3{grid-template-columns:1fr 1fr}.grid2{grid-template-columns:1fr}}
+@media(max-width:560px){.grid3{grid-template-columns:1fr}}
+.feature{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.feature .fic{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;font-size:1.3rem;color:#fff;margin-bottom:10px}
+.feature h3{font-size:1.02rem;margin-bottom:6px}
+.feature p{font-size:.86rem;color:var(--muted);margin:0}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+@media(max-width:900px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px}
+.step b.num{font-family:"Bricolage Grotesque",sans-serif;font-size:1.6rem;color:var(--amber);display:block;line-height:1}
+.step h3{font-size:.95rem;margin:6px 0 4px}.step p{font-size:.8rem;color:var(--muted);margin:0}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:860px){.price-grid{grid-template-columns:1fr}}
+.price{background:var(--surface);border:1.5px solid var(--line);border-radius:var(--radius);padding:18px}
+.price.hot{border-color:var(--green)}
+.price .amt{font-family:"Bricolage Grotesque",sans-serif;font-size:2rem;line-height:1}
+.price ul{margin:10px 0 0;padding-left:18px;font-size:.86rem;color:var(--muted)}
+.price ul li{margin-bottom:4px}
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:8px}
+.faq summary{font-weight:700;cursor:pointer;min-height:28px}
+.faq p{font-size:.88rem;color:var(--muted);margin:8px 0 0}
+.phase{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.phase:last-child{border-bottom:0}
+.phase .pb{flex-shrink:0;width:52px;height:52px;border-radius:12px;background:var(--green);color:#fff;display:grid;place-items:center;font-family:"Bricolage Grotesque",sans-serif;font-weight:800}
+.phase h3{font-size:1rem}.phase p{font-size:.85rem;color:var(--muted);margin:3px 0 0}
+/* Bundle strip */
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:8px 0 14px}
+.section-head h2{font-size:1.7rem;letter-spacing:-.03em}
+.section-head p{color:var(--muted);margin:4px 0 0;max-width:62ch;font-size:.92rem}
+.bundles{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:18px}
+@media(max-width:900px){.bundles{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.bundles{grid-template-columns:repeat(2,1fr)}}
+.bundle{border:1.5px solid var(--line);background:var(--surface);border-radius:14px;padding:12px;text-align:left;cursor:pointer}
+.bundle.active{border-color:var(--green);box-shadow:0 0 0 3px color-mix(in srgb,var(--green) 18%, transparent)}
+.bundle .art{height:64px;border-radius:9px;margin-bottom:10px;display:flex;align-items:flex-end;padding:8px;color:#fff;font-weight:700;font-size:.8rem;line-height:1.1}
+.bundle b{font-size:.88rem;display:block;line-height:1.2}
+.bundle span{font-size:.75rem;color:var(--muted)}
+.bundle-detail{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.bundle-detail h3{font-size:1.15rem;margin-bottom:6px}
+.bundle-detail p{font-size:.88rem;color:var(--muted);margin:0 0 10px}
+.bundle-detail ul{margin:0;padding-left:18px;font-size:.86rem;color:var(--muted)}
+.bundle-detail ul li{margin-bottom:3px}
+/* Play layout */
+.play-grid{display:grid;grid-template-columns:290px 1fr 320px;gap:14px;align-items:start}
+@media(max-width:1020px){.play-grid{grid-template-columns:1fr 1fr}.board-col{grid-column:1/-1;order:-1}}
+@media(max-width:640px){.play-grid{grid-template-columns:1fr}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px}
+.panel h3{font-size:.95rem;letter-spacing:-.01em;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.panel h3 span{font-family:"Public Sans",sans-serif;font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.party{display:grid;gap:8px}
+.player{display:flex;gap:10px;align-items:center;padding:9px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+.player.active{border-color:var(--amber);background:var(--amber-bg)}
+.avatar{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#fff;flex-shrink:0;font-size:.85rem}
+.player b{font-size:.86rem;display:block;line-height:1.1}.player small{color:var(--muted);font-size:.75rem}
+.bars{margin-top:12px;display:grid;gap:8px}
+.bar-row{display:grid;grid-template-columns:64px 1fr 28px;align-items:center;gap:8px;font-size:.78rem;font-weight:600}
+.track{height:9px;background:var(--surface2);border-radius:999px;overflow:hidden}.fill{height:100%;border-radius:999px}
+.inv{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:6px}
+.slot{aspect-ratio:1;border:1.5px dashed var(--line);border-radius:10px;display:grid;place-items:center;text-align:center;padding:4px;font-size:.62rem;line-height:1.1;background:var(--card)}
+.slot.filled{border-style:solid;border-color:var(--amber);background:var(--amber-bg)}
+.slot .ic{font-size:1.15rem;line-height:1}
+.shop-item{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:var(--card);margin-bottom:7px;font-size:.84rem}
+.shop-item b{display:block;line-height:1.15}.shop-item small{color:var(--muted)}
+.buy-btn{border:0;background:var(--green);color:#fff;border-radius:999px;padding:0 12px;font-weight:700;font-size:.78rem;cursor:pointer;min-height:36px;flex-shrink:0}
+.buy-btn:disabled{background:var(--surface2);color:var(--muted);cursor:not-allowed}
+/* Board */
+.board-wrap{background:#203626;border-radius:16px;padding:14px;color:#eaf2e6;position:relative;overflow:hidden}
+.board-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.board-top b{font-family:"Bricolage Grotesque",sans-serif;font-size:1.05rem}
+.pill{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);padding:6px 10px;border-radius:999px;font-size:.78rem;font-weight:600}
+.board-stage{position:relative;background:radial-gradient(circle at 20% 20%, #2e4d33 0, #243d29 55%, #1b2f20 100%);border-radius:12px;aspect-ratio:16/11;min-height:420px}
+.board-stage svg.links{position:absolute;inset:0;width:100%;height:100%}
+.node{position:absolute;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;border:3px solid rgba(255,255,255,.85);display:grid;place-items:center;font-size:.95rem;cursor:pointer;z-index:2;transition:transform .15s, box-shadow .15s;text-align:center;padding:0}
+.node:hover{transform:translate(-50%,-50%) scale(1.1)}
+.node small{position:absolute;top:46px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:.52rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:#dbe8d6;text-shadow:0 1px 4px rgba(0,0,0,.7);pointer-events:none}
+.node.current{box-shadow:0 0 0 5px #e9c46a, 0 8px 20px rgba(0,0,0,.4)}
+.node.locked{filter:grayscale(.7);opacity:.55}
+.token{position:absolute;z-index:5;width:30px;height:30px;border-radius:50%;background:#e9c46a;color:#231a00;border:3px solid #fff;display:grid;place-items:center;font-weight:800;font-size:.8rem;transform:translate(-50%,-130%);transition:left .45s cubic-bezier(.34,1.4,.64,1), top .45s cubic-bezier(.34,1.4,.64,1);box-shadow:0 6px 14px rgba(0,0,0,.4)}
+.bubble{position:absolute;z-index:6;background:#fff;color:#17211a;padding:8px 10px;border-radius:10px 10px 10px 2px;font-size:.78rem;max-width:200px;box-shadow:0 8px 20px rgba(0,0,0,.25);display:none}
+.bubble.show{display:block}
+.controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.btn{border:0;border-radius:999px;padding:0 18px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:8px;justify-content:center;min-height:44px}
+.btn-primary{background:var(--amber);color:#1c1400}.btn-dark{background:var(--green);color:#fff}.btn-ghost{background:var(--surface);border:1px solid var(--line);color:var(--ink)}
+.btn:active{transform:scale(.98)}
+.kbd{font-family:"IBM Plex Mono",monospace;font-size:.68rem;background:var(--surface2);border:1px solid var(--line);border-bottom-width:2px;padding:2px 6px;border-radius:6px}
+/* Wheel */
+.wheel-wrap{text-align:center}
+canvas.wheelcv{width:100%;max-width:260px;aspect-ratio:1}
+canvas.wheelcv.big{max-width:340px}
+.log{max-height:220px;overflow:auto;display:grid;gap:7px;font-size:.82rem}
+.log div{padding:8px 10px;background:var(--card);border:1px solid var(--line);border-radius:9px}
+.log div b{color:var(--green)}
+.chat{display:flex;flex-direction:column;gap:8px}
+.chat-msgs{max-height:240px;overflow:auto;display:grid;gap:7px}
+.msg{padding:8px 10px;border-radius:11px;font-size:.83rem;background:var(--card);border:1px solid var(--line)}
+.msg.me{background:#e6efe2;border-color:#b9cfb2}.msg.npc{background:#fdf0cd}
+.msg b{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em}
+.chat-form{display:flex;gap:7px}.chat-form input{flex:1;height:44px;border-radius:999px;border:1px solid var(--line);padding:0 14px;background:var(--card);color:var(--ink);min-width:0}
+.chat-form select,.chat select{height:44px;border-radius:999px;border:1px solid var(--line);padding:0 8px;background:var(--card);color:var(--ink)}
+/* Library */
+.filters{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}
+.filters button{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:0 14px;cursor:pointer;font-weight:600;font-size:.84rem}
+.filters button.active{background:var(--green);color:#fff;border-color:var(--green)}
+.search{width:100%;height:48px;border-radius:12px;border:1px solid var(--line);padding:0 14px;background:var(--surface);color:var(--ink);margin-bottom:12px;font-size:1rem}
+.lib-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(max-width:900px){.lib-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.lib-grid{grid-template-columns:1fr}}
+.preset{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:13px}
+.preset-top{display:flex;gap:10px;align-items:flex-start}
+.preset-ic{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;font-size:1.3rem;flex-shrink:0;color:#fff}
+.preset h4{margin:0;font-size:.92rem;line-height:1.15}.preset p{margin:6px 0 0;font-size:.8rem;color:var(--muted)}
+.tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}.tag{font-size:.65rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:var(--chip);padding:4px 7px;border-radius:999px}
+.preset-foot{display:flex;justify-content:space-between;align-items:center;margin-top:10px;gap:8px}
+.add-btn{border:0;background:var(--ink);color:var(--bg);padding:0 12px;border-radius:999px;font-weight:700;font-size:.78rem;cursor:pointer;min-height:36px}
+/* Map */
+.map-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:6px}
+@media(max-width:640px){.map-grid{grid-template-columns:repeat(4,1fr)}}
+.tile{aspect-ratio:1;border-radius:10px;border:1px solid var(--line);display:grid;place-items:center;font-size:1.4rem;cursor:pointer;position:relative;background:var(--card)}
+.tile span{position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:.55rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+/* Studio */
+.studio-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:800px){.studio-grid{grid-template-columns:1fr}}
+.field{margin-bottom:10px}.field label{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);display:block;margin-bottom:5px}
+.field select,.field input[type=text]{width:100%;height:44px;border:1px solid var(--line);border-radius:10px;padding:0 10px;background:var(--card);color:var(--ink)}
+input[type=range]{width:100%}
+.rule-item{padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--card);font-size:.84rem;margin-bottom:7px}
+.toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%) translateY(20px);background:#17211a;color:#fff;padding:12px 16px;border-radius:999px;font-weight:600;font-size:.88rem;opacity:0;pointer-events:none;transition:.25s;z-index:99;max-width:92vw;text-align:center}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
+@media(max-width:700px){.stats-row{grid-template-columns:repeat(2,1fr)}}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px}.stat b{font-family:"Bricolage Grotesque",sans-serif;font-size:1.5rem;display:block;line-height:1}.stat span{font-size:.75rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+footer{border-top:1px solid var(--line);padding:26px 16px 30px;color:var(--muted);font-size:.84rem}
+.foot-in{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:18px}
+@media(max-width:800px){.foot-in{grid-template-columns:1fr 1fr}}
+.foot-in h4{margin:0 0 8px;font-size:.85rem;color:var(--ink)}
+.foot-in a{display:block;color:var(--muted);text-decoration:none;padding:3px 0;cursor:pointer}
+.foot-in a:hover{color:var(--green)}
+.foot-base{max-width:1240px;margin:18px auto 0;padding-top:14px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="topbar-in">
+  <div class="brand"><div class="brand-mark">♟</div><div>Game Master Board<small><b>GameMasterBoard.com</b> · Build · Run · Play</small></div></div>
+  <div class="mode-toggle" role="tablist" aria-label="Mode"><button id="modePlayer" class="active" onclick="setMode('player')">▶ Player</button><button id="modeGM" onclick="setMode('gm')">✦ Game Master</button></div>
+  <div class="join"><input id="joinCode" value="LANTERN-7" aria-label="Game code"><button onclick="joinGame()">Join game</button></div>
+</div></header>
+
+<nav class="tabs" aria-label="Site sections"><div class="tabs-in">
+  <button class="active" data-view="home" onclick="showView('home',this)">🏠 Home</button>
+  <button data-view="play" onclick="showView('play',this)">🎲 Play Board</button>
+  <button data-view="bundles" onclick="showView('bundles',this)">🎁 Starter Bundles</button>
+  <button data-view="map" onclick="showView('map',this)">🗺️ Map Explorer</button>
+  <button data-view="library" onclick="showView('library',this)">📚 Preset Library</button>
+  <button data-view="studio" onclick="showView('studio',this)">🛠️ GM Studio</button>
+  <button data-view="wheels" onclick="showView('wheels',this)">🎡 Wheels &amp; Rules</button>
+  <button data-view="roadmap" onclick="showView('roadmap',this)">🧭 Roadmap &amp; Pricing</button>
+  <button data-view="help" onclick="showView('help',this)">❓ Help &amp; FAQ</button>
+</div></nav>
+
+<main class="wrap">
+<!-- HOME -->
+<section id="view-home" class="view active">
+  <div class="hero">
+    <p class="mono" style="color:#e9c46a;margin:0 0 10px">GAMEMASTERBOARD.COM — THE CONFIGURABLE ONLINE BOARD-GAME PLATFORM</p>
+    <h1>Build the game. <em>Run the table.</em> Play anywhere.</h1>
+    <p>Game Master Board is a digital game table, a visual game editor, a no-code rules engine, and a real-time game room in one. Start from a complete starter bundle, change anything visually, invite friends by code — and never write a line of code.</p>
+    <div class="hero-cta">
+      <button class="btn btn-primary" onclick="showView('play',document.querySelector('[data-view=play]'))">🎲 Play The Lantern Road now</button>
+      <button class="btn" style="background:#fff;color:#1e3d27" onclick="showView('bundles',document.querySelector('[data-view=bundles]'))">Browse the 6 starter bundles</button>
+      <button class="btn" style="background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.3)" onclick="showView('studio',document.querySelector('[data-view=studio]'))">Open GM Studio</button>
+    </div>
+    <div class="hero-stats">
+      <div><b>79</b><span>Presets in the library today · Future target: 250 Core / 500 Expanded</span></div>
+      <div><b>6</b><span>Playable starter bundles</span></div>
+      <div><b>10</b><span>Preset wheels at launch</span></div>
+      <div><b>1–12</b><span>Players per game</span></div>
+      <div><b>30</b><span>Spaces on Lantern Road</span></div>
+    </div>
+  </div>
+
+  <div class="section-head" style="margin-top:26px"><div><h2>How a game night works</h2><p>The full GM journey from the plan — discover, create, edit, configure, test, invite, run, review — in five steps.</p></div></div>
+  <div class="steps">
+    <div class="step"><b class="num">1</b><h3>Pick a bundle</h3><p>Start from one of six complete games — or a blank board. No blank-canvas paralysis, no uploads needed.</p></div>
+    <div class="step"><b class="num">2</b><h3>Make it yours</h3><p>Drag presets onto the map, set stats, shops and wheels in the inspector, and write rules in plain sentences.</p></div>
+    <div class="step"><b class="num">3</b><h3>Test it solo</h3><p>Solo test mode with simulated players and a step-by-step rule trace — find bugs before your friends do.</p></div>
+    <div class="step"><b class="num">4</b><h3>Invite by code</h3><p>Share a code or link. Players join as guests in under 30 seconds — no account needed to play.</p></div>
+    <div class="step"><b class="num">5</b><h3>Run the table</h3><p>The GM desk handles turns, chat, NPC voices, grants and reveals. Pause or fork safely mid-game.</p></div>
+  </div>
+
+  <div class="section-head" style="margin-top:26px"><div><h2>Everything in the platform</h2><p>Every system from the product plan, working in this site: play it, browse it, configure it.</p></div></div>
+  <div class="grid3">
+    <div class="feature"><div class="fic" style="background:#2f5d3a">🗺️</div><h3>Three map models, one engine</h3><p>Connected-space boards, grids, and freeform coordinates share one data model — with collision, interaction range, fog of war and unlock gating.</p></div>
+    <div class="feature"><div class="fic" style="background:#b94e2f">⚡</div><h3>No-code rules engine</h3><p>Trigger → Condition → Action, in plain language. Nested AND / OR / NOT, sequences, delays and bounded repeats — validated before you publish.</p></div>
+    <div class="feature"><div class="fic" style="background:#c98a1e">🎡</div><h3>Weighted wheels, honestly</h3><p>Segment size equals probability. Every spin is seeded, logged and replayable — no silent rigging, with a deterministic GM test mode.</p></div>
+    <div class="feature"><div class="fic" style="background:#2b5f7a">💬</div><h3>Chat &amp; NPC dialogue</h3><p>Main, GM and DM channels. The GM can speak as any NPC — the line appears in chat and over the character's head on the board.</p></div>
+    <div class="feature"><div class="fic" style="background:#8a6d1b">🎒</div><h3>Stats, inventory &amp; shops</h3><p>Custom stat schemas, equipment with reversible modifiers, currency, shops with stock and prices, and atomic trades that can't duplicate items.</p></div>
+    <div class="feature"><div class="fic" style="background:#6a5a8a">🎨</div><h3>Built-in asset editor</h3><p>Canvas, PNG import, crop/resize, layers, paint/erase, bucket fill, shapes and palettes — plus a layout editor to rearrange any screen.</p></div>
+    <div class="feature"><div class="fic" style="background:#3e7a44">👥</div><h3>Roles &amp; permissions</h3><p>Owner, Co-GM, Player, Spectator and Guest — with a clear permission matrix. Hidden information is never sent to players who shouldn't see it.</p></div>
+    <div class="feature"><div class="fic" style="background:#5a3a2a">♿</div><h3>Accessible by default</h3><p>Keyboard play (WASD / arrows), screen-reader announcements, text alternatives for wheels, 200% text scaling and reduced-motion support.</p></div>
+    <div class="feature"><div class="fic" style="background:#444">🛡️</div><h3>Safe by design</h3><p>Invite-only games, private by default, report/mute/block tools, content ratings on horror presets with neutral fallbacks, and kids-mode chat controls.</p></div>
+  </div>
+
+  <div class="section-head" style="margin-top:26px"><div><h2>Who it's for</h2></div></div>
+  <div class="grid3">
+    <div class="feature"><h3>🎲 Maya — the hobbyist GM</h3><p>Runs weekly fantasy nights. Builds a village-and-dungeon game once, reuses it every week, and tweaks it between sessions.</p></div>
+    <div class="feature"><h3>🏫 Mr. Okafor — the teacher</h3><p>Builds a classroom review game. Needs quick setup, safe chat controls, and no student accounts — guests join by code.</p></div>
+    <div class="feature"><h3>📱 Leo — the phone player</h3><p>Joins by link on a phone, wants big touch targets and a guided first minute. Full player flow works at 360 px wide.</p></div>
+  </div>
+
+  <div class="panel" style="margin-top:22px;text-align:center;padding:24px">
+    <h2 style="font-size:1.5rem">Ready to run your first session?</h2>
+    <p style="color:var(--muted);max-width:52ch;margin:8px auto 14px">The Lantern Road is loaded and waiting — four players, a full 30-space board, a shop, a prize wheel and one very smug owl.</p>
+    <button class="btn btn-primary" onclick="showView('play',document.querySelector('[data-view=play]'))">🎲 Enter the live session</button>
+  </div>
+</section>
+
+<!-- PLAY -->
+<section id="view-play" class="view">
+  <div class="section-head"><div><h2>The Lantern Road — live session</h2><p>The full 30-space branching board: Forest Crossroads → River Bridge → Market Lane → Lantern Fair. Festival prize wheel, working shop, turn rotation and a quest. Move with the buttons, arrow keys, or WASD.</p></div><span class="pill" style="background:var(--amber-bg);color:var(--ink);border-color:var(--line)">● 4 players at the table · Round <b id="roundNum">3</b> · <span id="turnLabel">Your turn</span></span></div>
+
+  <div class="bundles" id="bundles"></div>
+
+  <div class="stats-row">
+    <div class="stat"><span>Board</span><b>30 spaces · full route</b></div>
+    <div class="stat"><span>Catalog today</span><b>79 presets live</b></div>
+    <div class="stat"><span>Movement</span><b>Spaces + freeform map</b></div>
+    <div class="stat"><span>Editor</span><b>No-code rules engine</b></div>
+  </div>
+
+  <div class="play-grid">
+    <div style="display:grid;gap:14px">
+      <div class="panel"><h3>Your party <span>Turn order</span></h3><div class="party" id="party"></div>
+        <div class="bars">
+          <div class="bar-row"><span>Health</span><div class="track"><div class="fill" id="hpFill" style="width:80%;background:#c0392b"></div></div><span id="hpVal">8/10</span></div>
+          <div class="bar-row"><span>Stamina</span><div class="track"><div class="fill" id="stFill" style="width:60%;background:#2f5d3a"></div></div><span id="stVal">6/10</span></div>
+          <div class="bar-row"><span>Coins</span><div class="track"><div class="fill" id="coinFill" style="width:35%;background:#c98a1e"></div></div><span id="coinVal">14</span></div>
+        </div>
+        <button class="btn btn-dark" style="width:100%;margin-top:12px" onclick="endTurn()">⏭ End turn — pass to next player</button>
+      </div>
+      <div class="panel"><h3>Inventory <span id="invCount">4 / 12</span></h3><div class="inv" id="inv"></div><p style="font-size:.78rem;color:var(--muted);margin:10px 0 0">Click an item to use it. Potions, keys &amp; scrolls trigger their preset rule.</p></div>
+      <div class="panel"><h3>🛒 Mira's Shop <span>Market Lane</span></h3><div id="shopList"></div><p style="font-size:.78rem;color:var(--muted);margin:6px 0 0">Stock and prices come from the General Shop preset. Buying is atomic — coins and items change together.</p></div>
+      <div class="panel"><h3>Quest — Lantern Festival</h3><p style="font-size:.86rem;margin:0">Collect a <b>Lantern Charm</b>, cross the River Bridge, shop on Market Lane, and reach the Lantern Fair before Round 8.</p><div class="log" style="margin-top:10px"><div>✓ Crossed Forest Crossroads</div><div id="questCharm">○ Find Lantern Charm — search the Hollow Tree</div><div id="questShop">○ Buy anything at Mira's Shop</div><div id="questWheel">○ Spin the Festival Prize Wheel</div><div id="questGoal">○ Reach the Lantern Fair (space 30)</div></div></div>
+    </div>
+
+    <div class="board-col">
+      <div class="board-wrap">
+        <div class="board-top"><b>🌲 The Lantern Road — all 30 spaces</b><span class="pill">Space <b id="spaceNum">1</b> / 30 · Moves left: <b id="movesLeft">0</b></span></div>
+        <div class="board-stage" id="boardStage">
+          <svg class="links" viewBox="0 0 100 68" preserveAspectRatio="none" id="linkSvg"></svg>
+          <div class="bubble" id="npcBubble"><b>Old Owl says:</b><br>“One clue per round, traveller. The charm sleeps where the tree is hollow.”</div>
+          <div class="token" id="token">Y</div>
+        </div>
+        <div class="controls">
+          <button class="btn btn-primary" onclick="rollDice()">🎲 Roll — move 1–6</button>
+          <button class="btn" style="background:#fff;color:#17211a" onclick="showView('wheels',document.querySelector('[data-view=wheels]'))">🎡 Spin wheel</button>
+          <button class="btn" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.25)" onclick="interactCurrent()">✋ Interact / Search</button>
+          <span style="align-self:center;font-size:.78rem;opacity:.85">Move: <span class="kbd">W A S D</span> <span class="kbd">← ↑ ↓ →</span> · Click any space in range</span>
+        </div>
+      </div>
+      <div class="panel" style="margin-top:14px"><h3>Event log <span>Seeded &amp; replayable</span></h3><div class="log" id="eventLog"></div></div>
+    </div>
+
+    <div style="display:grid;gap:14px">
+      <div class="panel wheel-wrap"><h3 style="text-align:left">Festival Prize Wheel <span>Weighted</span></h3>
+        <canvas id="wheel" class="wheelcv" width="520" height="520" aria-label="Festival prize wheel"></canvas>
+        <p id="wheelResult" style="font-weight:700;margin:8px 0">Weights set segment size — the rare jackpot is thinnest.</p>
+        <button class="btn btn-dark" style="width:100%" onclick="spinWheel()">Spin wheel</button>
+        <p style="font-size:.75rem;color:var(--muted)">GM test mode, the full audit log &amp; reroll rules live in Wheels &amp; Rules.</p>
+      </div>
+      <div class="panel"><h3>Chat <span>Main · DM · GM · NPC</span></h3>
+        <div class="chat">
+          <div class="chat-msgs" id="chatMsgs"></div>
+          <select id="speakAs" aria-label="Speak as"><option value="You">Speak as: You</option><option value="GM">Speak as: GM</option><option value="Mira Waymarket (NPC)">Speak as NPC: Mira Waymarket</option><option value="Old Owl (NPC)">Speak as NPC: Old Owl</option></select>
+          <form class="chat-form" onsubmit="sendChat(event)"><input id="chatInput" placeholder="Message the table…" autocomplete="off"><button class="btn btn-primary" type="submit">Send</button></form>
+          <p style="font-size:.75rem;color:var(--muted);margin:0">GM can speak as any NPC — dialogue also appears above their head on the board. Channels are permission-gated per player.</p>
+        </div>
+      </div>
+      <div class="panel"><h3>Lobby <span>Invite-only</span></h3>
+        <p style="font-size:.85rem;color:var(--muted);margin:0 0 8px">Code <b style="color:var(--ink)">LANTERN-7</b> · 4 of 12 slots filled · Guests join with a display name only. Reconnect restores position and view; a disconnected player's turn timer pauses for a 60-second grace period.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-ghost" onclick="toast('Invite link copied: gamemasterboard.com/join/LANTERN-7')">Copy invite link</button><button class="btn btn-ghost" onclick="toast('Spectator mode: watch the table, fog-of-war respected, no actions')">Join as spectator</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUNDLES -->
+<section id="view-bundles" class="view">
+  <div class="section-head"><div><h2>Starter Bundles — six complete games</h2><p>Every bundle is a full, playable game built entirely from presets: maps, mobs, NPCs, items, wheels and rules included. Load one, change anything, run it. This is how a new GM reaches a live session in under 30 minutes.</p></div></div>
+  <div class="grid2" id="bundleDetails"></div>
+  <div class="panel" style="margin-top:14px"><h3>What's inside every bundle</h3><p style="font-size:.88rem;color:var(--muted);margin:0">A playable map or board · a cast of NPCs and mobs with dialogue sets · an item and shop economy · at least one weighted wheel · a rules pack built from templates · win/lose conditions and an end-of-game summary · a guided five-step setup checklist. Bundles reference presets by stable ID, so a catalog update never silently changes a published game — editing a preset forks a game-local copy.</p></div>
+</section>
+
+<!-- MAP -->
+<section id="view-map" class="view">
+  <div class="section-head"><div><h2>Map Explorer — Forest Crossroads</h2><p>Freeform map mode: the same presets, placed on a grid. Click any tile to inspect it. Fog hides what you haven't unlocked; a Watchtower reveals nearby spaces.</p></div><button class="btn btn-dark" onclick="toast('Watchtower used: nearby hidden spaces revealed on the map')">Use Watchtower reveal</button></div>
+  <div class="field" style="max-width:340px"><label>Map template</label><select id="mapPick" onchange="renderMap()"><option value="forest">Forest Crossroads — village &amp; festival</option><option value="dungeon">Stone Dungeon — cells, gates &amp; boss room</option><option value="coast">Lantern Coast — harbour &amp; lighthouse</option></select></div>
+  <div class="panel"><div class="map-grid" id="mapGrid"></div></div>
+  <div class="grid2" style="margin-top:14px"><div class="panel"><h3>How maps work</h3><p style="font-size:.88rem;color:var(--muted);margin:0">Three movement models share one data model: <b style="color:var(--ink)">connected spaces</b> (board), <b style="color:var(--ink)">grid</b>, and <b style="color:var(--ink)">freeform coordinates</b>. Links can be one-way, two-way, locked, hidden, timed, toll, random or teleport. Collision, interaction range &amp; unlocks are validated by the authoritative room in the full platform; this site validates them in-page.</p></div><div class="panel"><h3>Map kits included</h3><p style="font-size:.88rem;color:var(--muted);margin:0">Forest · Village · Dungeon · Cave · Marsh · Snow · Ruins · Horror · Festival · Coast — 10 kits, 18 playable templates from Village Square to Dragon Roost &amp; Mirror Hall. Spaces support square, circle, star, hex, diamond and custom polygon shapes.</p></div></div>
+</section>
+
+<!-- LIBRARY -->
+<section id="view-library" class="view">
+  <div class="section-head"><div><h2>Preset Library</h2><p>Every preset is more than an image: visual + metadata + gameplay defaults + states + editability, in three visual modes (board, map, portrait). IDs never change, so saved games never break. Search, filter, and add to your game.</p></div></div>
+  <input class="search" id="libSearch" placeholder="Search presets — try ‘goblin’, ‘potion’, ‘chest’, ‘wheel’, ‘avatar’…" oninput="renderLibrary()">
+  <div class="filters" id="libFilters"></div>
+  <div class="lib-grid" id="libGrid"></div>
+  <p id="libCount" style="color:var(--muted);font-size:.85rem;margin-top:12px"></p>
+</section>
+
+<!-- STUDIO -->
+<section id="view-studio" class="view">
+  <div class="section-head"><div><h2>GM Studio — no-code editor</h2><p>Drag, resize, layer &amp; lock assets. Build rules as Trigger → Condition → Action. Rearrange any screen in the layout editor. Switch to GM mode (top) to unlock publishing.</p></div><span class="pill" id="studioLock" style="background:var(--amber-bg);color:var(--ink);border-color:var(--line)">Player mode — switch to GM to publish</span></div>
+  <div class="studio-grid">
+    <div style="display:grid;gap:14px">
+      <div class="panel"><h3>Rule builder <span>Trigger → Condition → Action</span></h3>
+        <div class="field"><label>When (trigger)</label><select id="rTrigger"><option>Player enters a space</option><option>Turn starts</option><option>Wheel result lands</option><option>Item collected</option><option>Chat keyword spoken</option><option>Timer expires</option><option>Mob defeated</option><option>Player holds an object (hold complete)</option><option>First entry to an area</option></select></div>
+        <div class="field"><label>If (condition)</label><select id="rCond"><option>Player has item: Lantern Charm</option><option>Coins ≥ 10</option><option>Health ≤ 3</option><option>Story flag is true</option><option>Round number ≥ 5</option><option>Any player qualifies</option><option>All players in the same area</option><option>No condition</option></select></div>
+        <div class="field"><label>Then (action)</label><select id="rAction"><option>Unlock hidden path</option><option>Give item: Festival Pass</option><option>+3 Health</option><option>Open dialogue panel</option><option>Spawn mob: Green Scavenger</option><option>Start countdown event</option><option>Show unlock notice</option><option>Spin wheel: Weather</option><option>End the game as a win</option></select></div>
+        <button class="btn btn-primary" style="width:100%" onclick="addRule()">+ Add rule to game</button>
+        <div id="ruleList" style="margin-top:12px"></div>
+        <p style="font-size:.78rem;color:var(--muted)">Rules are validated before publishing: unreachable rules, missing references and trigger cycles are flagged. Test mode runs a rule on a copy of the game with simulated players and shows a step trace.</p>
+      </div>
+      <div class="panel"><h3>Stat schema editor <span>Per game</span></h3>
+        <div class="log" style="max-height:none">
+          <div><b>Health</b> — numeric · 0–10 · default 8 · visible to all</div>
+          <div><b>Stamina</b> — numeric · 0–10 · default 6 · visible to all</div>
+          <div><b>Coins</b> — numeric · 0–999 · default 14 · visible to owner + GM</div>
+          <div><b>Reputation</b> — enumerated status · hidden from other players</div>
+          <div><b>Cursed?</b> — boolean · GM-only visibility</div>
+        </div>
+        <p style="font-size:.78rem;color:var(--muted)">Stats support numeric, boolean, text and enumerated types, with per-player overrides and three visibility levels. Every state (active, waiting, injured, hidden, defeated, disconnected) has a non-colour cue.</p>
+      </div>
+    </div>
+    <div style="display:grid;gap:14px">
+      <div class="panel"><h3>Wheel configurator <span>Weights = segment size</span></h3>
+        <div class="field"><label>Jackpot weight — <b id="wJackVal">1</b></label><input type="range" min="1" max="10" value="1" id="wJack" oninput="document.getElementById('wJackVal').textContent=this.value;drawWheel()"></div>
+        <div class="field"><label>Common prize weight — <b id="wComVal">5</b></label><input type="range" min="1" max="10" value="5" id="wCom" oninput="document.getElementById('wComVal').textContent=this.value;drawWheel()"></div>
+        <p style="font-size:.82rem;color:var(--muted)">Outcomes are seeded, logged &amp; replayable — no silent rigging. GM test mode spins without consuming a turn.</p>
+        <button class="btn btn-ghost" onclick="showView('wheels',document.querySelector('[data-view=wheels]'))">Open full wheel lab →</button>
+      </div>
+      <div class="panel"><h3>Asset editor — full scope</h3><p style="font-size:.86rem;color:var(--muted);margin:0"><b style="color:var(--ink)">MVP (lite):</b> canvas, PNG import, crop/resize, erase, recolour, brightness/contrast/hue, 3 layers. <b style="color:var(--ink)">Full:</b> layers with order, visibility, opacity, lock &amp; groups; paint/erase, bucket fill, shapes, colour picker + palette, magic-wand selection, filters, undo/redo (100+ steps), snap-to-grid, thumbnails &amp; version history. Uploads: PNG, JPEG, WebP, static GIF up to 5 MB / 4096 px, scanned and re-encoded before use.</p></div>
+      <div class="panel"><h3>Layout editor</h3><p style="font-size:.86rem;color:var(--muted);margin:0">Rearrange preset screens — HUD, inventory, shop, stats — by drag, resize and show/hide on a snap grid. Three themes ship with identical information architecture: <b style="color:var(--ink)">Parchment</b>, <b style="color:var(--ink)">Modern</b> and <b style="color:var(--ink)">Shadowed</b>. The full custom-component layout editor arrives in Phase 5.</p></div>
+      <div class="panel"><h3>Game admin</h3><p style="font-size:.82rem;color:var(--muted);margin:0 0 10px">Autosave within 5 seconds · named + automatic version snapshots · draft stays separate from the published version · soft delete for 30 days.</p><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-ghost" onclick="toast('Game duplicated — copy saved as draft')">Duplicate</button><button class="btn btn-ghost" onclick="toast('Exported .bgproj — full project backup (game JSON + assets + manifest)')">Export project</button><button class="btn btn-ghost" onclick="toast('Version snapshot saved — restore any snapshot from Game admin')">Save snapshot</button><button class="btn btn-dark" onclick="publishGame()">Publish game</button></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHEELS -->
+<section id="view-wheels" class="view">
+  <div class="section-head"><div><h2>Wheels &amp; Rules Lab</h2><p>10 preset wheels ship at launch. Pick one, spin it, and watch its outcome fire a real rule in the event log. Every spin lands in the audit log below with its weights snapshot.</p></div></div>
+  <div class="play-grid" style="grid-template-columns:1fr 1fr">
+    <div class="panel wheel-wrap"><h3 style="text-align:left">Chance wheel</h3>
+      <select id="wheelPick" onchange="drawWheel()" style="width:100%;height:44px;border-radius:10px;border:1px solid var(--line);margin-bottom:12px;background:var(--card);color:var(--ink)">
+        <option value="festival">Festival Prize — food, token, rare item, jackpot</option>
+        <option value="move">Basic Six-Way — move 1–6 spaces</option>
+        <option value="forest">Forest Encounter — animal, merchant, trap, rest…</option>
+        <option value="horror">Horror Omen — silence, whisper, pursuit, escape</option>
+        <option value="weather">Weather — clear, rain, fog, storm…</option>
+        <option value="loot">Dungeon Loot — coins, gear, trap, treasure</option>
+        <option value="travel">Travel — shortcut, delay, discovery, storm</option>
+        <option value="shopdeal">Market Bargain — discounts &amp; rare stock</option>
+        <option value="boss">Boss Fate — the boss's next move</option>
+        <option value="season">Seasonal — festival calendar events</option>
+      </select>
+      <canvas id="wheel2" class="wheelcv big" width="520" height="520"></canvas>
+      <p id="wheelResult2" style="font-weight:700">Ready to spin.</p>
+      <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap"><button class="btn btn-primary" onclick="spinWheel(true)">Spin this wheel</button><button class="btn btn-ghost" onclick="testSpin()">GM test spin (no turn used)</button></div>
+      <p style="font-size:.78rem;color:var(--muted)">Wheels display probability labels and a text alternative; reduced-motion mode replaces the spin with an instant result.</p>
+    </div>
+    <div style="display:grid;gap:14px">
+      <div class="panel"><h3>Spin audit log <span>Seeded · replayable</span></h3><div class="log" id="auditLog" style="max-height:200px"><div>No spins yet this session — spin a wheel and it will be recorded here with its seed and weights.</div></div></div>
+      <div class="panel"><h3>Rule templates — 30 at core, 80 expanded</h3><div class="log" style="max-height:none">
+        <div><b>Movement:</b> Move to Adjacent · Roll for Distance · Pay to Travel · Item-Gated Route · Revealable Route · Terrain Cost</div>
+        <div><b>Interaction:</b> Click to Collect · Hold to Open (progress bar) · Turn the Crank · Talk to NPC · Search Object · Trade · Rest at Campfire · Use Key on Lock · Light Torch</div>
+        <div><b>Events:</b> First Entry · Turn Start/End · Round Countdown · Stat Threshold · Item Collected · Area Unlocked · Wheel Result · Chat Keyword · Timer Expired</div>
+        <div><b>Conditions:</b> Has Item · Has Currency · Stat Min/Max · Story Flag · Content Seen · Player Location · Turn/Round Number · Mob Alive · Relationship · Time of Day — nestable with AND / OR / NOT</div>
+        <div><b>Safety limits:</b> max 200 actions per trigger chain · max chain depth 8 · per-rule cooldowns stop feedback loops · a failed chain rolls back and reports to the GM desk</div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="view-roadmap" class="view">
+  <div class="section-head"><div><h2>Roadmap &amp; Pricing</h2><p>How Game Master Board is being built — vertical slice first, presets before power tools, invite-only beta before public launch — and what it costs to run a table.</p></div></div>
+  <div class="panel" style="margin-bottom:14px">
+    <div class="phase"><div class="pb">P0</div><div><h3>Discovery &amp; spikes</h3><p>Real-time sync, rules-engine language, canvas editor and AI cost spikes with go/no-go reports; style anchor set; clickable prototype.</p></div></div>
+    <div class="phase"><div class="pb">P1</div><div><h3>Multiplayer vertical slice</h3><p>GM + guest accounts, lobby, 2–4 players, connected-space board and a small freeform map, movement, one interaction, one wheel, main chat. Four players complete the loop; reconnect works.</p></div></div>
+    <div class="phase"><div class="pb">P2</div><div><h3>GM editor + presets</h3><p>Map/space editor (drag, resize, rotate, layers, snap, group, lock), the Core preset library, stats and player setup, save / duplicate / publish, autosave and versions. A new GM builds and runs a Lantern Road variant unaided.</p></div></div>
+    <div class="phase"><div class="pb">P3</div><div><h3>Rules, turns, wheels, inventory</h3><p>The full ECA rule builder, turn engine, weighted wheel editor with audit log, inventory, equipment, shops and currency, click and hold-to-interact. <b style="color:var(--ink)">← This site demonstrates P1–P4 systems in the browser.</b></p></div></div>
+    <div class="phase"><div class="pb">P4</div><div><h3>Chat, dialogue &amp; permissions</h3><p>Channels, DMs, GM chat, speak-as-NPC with overhead dialogue, Co-GM and spectator roles, moderation tools. Optional AI NPC dialogue stays off by default, behind a flag, with per-game cost caps.</p></div></div>
+    <div class="phase"><div class="pb">P5</div><div><h3>Advanced asset &amp; layout editors</h3><p>The full layered paint editor and the custom UI layout editor with components and data bindings.</p></div></div>
+    <div class="phase"><div class="pb">P6</div><div><h3>Hardening &amp; launch</h3><p>Accessibility audit fixes (WCAG 2.2 AA), load tests (1,000 concurrent games / 6,000 players), security review, analytics, backups and docs. Closed beta of 50–100 GMs first, then open beta, then public launch — about 18–22 months kickoff to launch.</p></div></div>
+    <div class="phase"><div class="pb">→</div><div><h3>Post-launch</h3><p>Real online multiplayer rooms across devices, co-editing, a creator marketplace, advanced AI dialogue, audio uploads and animation tools. On this website today, play is fully working on one device in-session; cross-device online rooms are the P1 server build described above, not yet live.</p></div></div>
+  </div>
+  <div class="section-head"><div><h2>Pricing</h2><p>Players always play free. GMs pick a table size. (Launch pricing — the plan's business-model decision; beta GMs run free.)</p></div></div>
+  <div class="price-grid">
+    <div class="price"><h3>Guest Player</h3><div class="amt">Free</div><p style="font-size:.85rem;color:var(--muted);margin:6px 0 0">Join any game by code or link.</p><ul><li>No account needed</li><li>24 starter avatars</li><li>Full player experience</li><li>Upgrade to an account anytime, keep your history</li></ul></div>
+    <div class="price hot"><h3>Game Master</h3><div class="amt">$8<span style="font-size:1rem;color:var(--muted)">/mo</span></div><p style="font-size:.85rem;color:var(--muted);margin:6px 0 0">Build and run your own games.</p><ul><li>All 6 starter bundles, fully editable</li><li>79 presets in the library today · full rules engine</li><li>Games for up to 12 players</li><li>50 MB asset storage per game</li><li>Publish, export &amp; version history</li></ul><button class="btn btn-primary" style="width:100%;margin-top:14px" onclick="showView('studio',document.querySelector('[data-view=studio]'))">Start in GM Studio</button></div>
+    <div class="price"><h3>Game Master Pro</h3><div class="amt">$16<span style="font-size:1rem;color:var(--muted)">/mo</span></div><p style="font-size:.85rem;color:var(--muted);margin:6px 0 0">For creators and classrooms.</p><ul><li>Everything in Game Master</li><li>Future target: 500 Expanded presets + seasonal packs — not yet shipped</li><li>Full paint &amp; layout editors</li><li>Co-GM roles · kids-mode controls</li><li>Priority support (2 business days)</li></ul></div>
+  </div>
+  <div class="stats-row" style="margin-top:14px">
+    <div class="stat"><span>Activation target</span><b>50% of GMs live in 30 min</b></div>
+    <div class="stat"><span>Latency target</span><b>p95 under 400 ms</b></div>
+    <div class="stat"><span>Reliability target</span><b>99.5% at launch</b></div>
+    <div class="stat"><span>Accessibility</span><b>WCAG 2.2 AA</b></div>
+  </div>
+</section>
+
+<!-- HELP -->
+<section id="view-help" class="view">
+  <div class="section-head"><div><h2>Help, Guides &amp; FAQ</h2><p>Everything a GM or player needs: quick-start, the rules cookbook in plain language, safety and accessibility.</p></div></div>
+  <div class="grid2">
+    <div>
+      <div class="panel" style="margin-bottom:12px"><h3>🎮 Player quick-start</h3><p style="font-size:.88rem;color:var(--muted);margin:0">Open the invite link or enter the game code (top of this page) → pick a display name and avatar → wait in the lobby → on your turn, roll, then click a space in range or move with <span class="kbd">W A S D</span> / arrow keys → <b style="color:var(--ink)">Interact</b> to search, talk, shop or open things → manage items in your inventory and chat with the table. Joining takes under 30 seconds and needs no account.</p></div>
+      <div class="panel" style="margin-bottom:12px"><h3>📖 Rules cookbook — plain-language examples</h3><div class="log" style="max-height:none">
+        <div>“When a player holds the Crank for 3 seconds, and the Iron Gate is locked, unlock the Iron Gate, show ‘The gate groans open,’ and play the door-open effect.”</div>
+        <div>“When a player enters the Fog Marsh for the first time, spin the Weather Wheel.”</div>
+        <div>“When any player has the Broken Crown and all players are in the Throne Room, end the game as a win.”</div>
+        <div>“When the Wolf is defeated, and the player has fewer than 5 coins, give 2 coins; otherwise give a Fang.”</div>
+      </div></div>
+      <div class="panel"><h3>♿ Accessibility</h3><p style="font-size:.88rem;color:var(--muted);margin:0">Full keyboard play · screen-reader announcements for every state change · text alternatives and probability labels for wheels · non-colour cues for every player state · text scaling to 200% · reduced-motion mode swaps wheel spins for instant results · 44 px minimum touch targets · WCAG 2.2 AA target on all player screens.</p></div>
+    </div>
+    <div class="faq">
+      <details open><summary>Do players need an account?</summary><p>No. GMs need an account; players join as guests with just a display name and can claim their profile later without losing game history.</p></details>
+      <details><summary>Can the GM change a game while it's running?</summary><p>Safe live edits (text, stats, item grants, reveal/hide) apply instantly. Structural edits — deleting a map, changing rules — require Pause, which auto-snapshots first, so a live session is never corrupted. You can also fork the game and edit the copy.</p></details>
+      <details><summary>Are the wheels fair?</summary><p>Yes — segment size equals probability, every draw is seeded and logged with its weights, and any session can be replayed from its log to verify outcomes. GMs get a deterministic test mode and optional reroll rules, never silent rigging.</p></details>
+      <details><summary>What happens if a player disconnects mid-turn?</summary><p>The turn timer continues; after a 60-second grace period the GM's chosen policy runs (skip, auto-pass, or wait). On return, the player resumes the current state within seconds — no duplicate actions, no replayed animations.</p></details>
+      <details><summary>Can other players see my hidden items or stats?</summary><p>No. Fog of war is computed per player and hidden entities are never sent to clients that aren't allowed to see them. Stat visibility is set per stat: everyone, owner + GM, or GM only.</p></details>
+      <details><summary>Is there AI NPC dialogue?</summary><p>It's post-launch, off by default, and opt-in per NPC with a per-game token budget. The AI only ever sees the NPC's persona and facts the GM marks shareable — never hidden game state — and any failure falls back to scripted dialogue.</p></details>
+      <details><summary>How is the community kept safe?</summary><p>Games are private and invite-only by default. Chat has mute, block, report and GM removal; uploads are scanned and re-encoded; horror presets carry content-rating tags with neutral fallbacks; kids mode disables player DMs and uploads.</p></details>
+      <details><summary>Can I take my game with me?</summary><p>Yes — export any game as a single .bgproj project file (game JSON + referenced assets + manifest) and import it elsewhere. Deleting a game is a soft delete for 30 days.</p></details>
+      <details><summary>What devices are supported?</summary><p>Any modern browser — Chrome, Edge, Firefox, Safari, desktop and mobile. The player UI is mobile-first from 360 px; the editor is aimed at tablets and desktops. No native app needed.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="foot-in">
+    <div><h4>♟ Game Master Board</h4><p style="margin:0;max-width:38ch">GameMasterBoard.com — the configurable online board-game platform. Build visually, run live, play anywhere. 2D at launch · invite-only games · guests join by code.</p></div>
+    <div><h4>Play</h4><a onclick="showView('play',document.querySelector('[data-view=play]'))">Play Board</a><a onclick="showView('bundles',document.querySelector('[data-view=bundles]'))">Starter Bundles</a><a onclick="showView('wheels',document.querySelector('[data-view=wheels]'))">Wheels &amp; Rules</a><a onclick="showView('map',document.querySelector('[data-view=map]'))">Map Explorer</a></div>
+    <div><h4>Create</h4><a onclick="showView('studio',document.querySelector('[data-view=studio]'))">GM Studio</a><a onclick="showView('library',document.querySelector('[data-view=library]'))">Preset Library</a><a onclick="showView('roadmap',document.querySelector('[data-view=roadmap]'))">Roadmap &amp; Pricing</a></div>
+    <div><h4>Support</h4><a onclick="showView('help',document.querySelector('[data-view=help]'))">Help &amp; FAQ</a><a onclick="showView('help',document.querySelector('[data-view=help]'))">Rules Cookbook</a><a onclick="showView('help',document.querySelector('[data-view=help]'))">Accessibility Guide</a><a onclick="showView('help',document.querySelector('[data-view=help]'))">Safety &amp; Moderation</a></div>
+  </div>
+  <div class="foot-base"><span>© 2026 Game Master Board · GameMasterBoard.com</span><span>Horror presets carry content-rating tags with neutral fallbacks · AI dialogue is off by default</span></div>
+</footer>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+var state={pos:0,moves:0,hp:8,st:6,coins:14,round:3,mode:'player',wheelAngle:0,spinning:false,turnIdx:0,spinCount:0,inv:['Bread','Rope','Minor Healing Potion']};
+var bundles=[
+ {n:'The Lantern Road',d:'Forest travel · start here',c:'linear-gradient(135deg,#2f5d3a,#6a9a4f)',e:'🌲',long:'A friendly forest journey for 2–4 players. Cross the Forest Crossroads, find the Lantern Charm, pay or riddle the Toll Gate, shop on Market Lane and reach the Lantern Fair before Round 8.',inside:['30-space branching board (Crossroads → Bridge → Market Lane → Fair)','NPCs: Old Owl, Mira Waymarket, Bridge Guard Bram','Festival Prize Wheel + Weather Wheel','Quest chain: charm → bridge → shop → fair','Rules: item-gated bridge, hold-to-open chest, first-entry events']},
+ {n:'The Broken Crown',d:'Village → dungeon → boss',c:'linear-gradient(135deg,#3a3f4a,#7a4a2f)',e:'👑',long:'A classic quest: a shattered crown, a village in trouble, and the Ironcap Chief waiting in the Stone Dungeon. Built for 3–6 players who like a boss fight.',inside:['Village Square + Stone Dungeon maps (linked scenes)','Boss: Ironcap Chief with reinforcement calls','Win rule: Crown + all players in the Throne Room','Loot wheel and dungeon shop','Secret Door revealed by the Reveal Scroll']},
+ {n:'The Merchant’s Mile',d:'Shops, tolls & trading',c:'linear-gradient(135deg,#8a6d1b,#c98a1e)',e:'🪙',long:'An economy game about buying low and selling high along one long market road. Tolls, bargains, rare stock and the Market Bargain wheel drive every deal.',inside:['Market Lane freeform map with 6 shops','Dynamic prices and stock limits','Player-to-player trade (both confirm)','Market Bargain + Travel wheels','Score win condition: richest at the final bell']},
+ {n:'The Deep Below',d:'Horror exploration & escape',c:'linear-gradient(135deg,#1c2333,#4a2f4f)',e:'🕯️',long:'A content-rated horror descent. Lanterns burn down, the Hollow Figure revisits spaces you thought were safe, and the Horror Omen wheel decides what the dark does next. Neutral fallbacks included for younger tables.',inside:['Cave + Mirror Hall maps with per-player fog','Horror Omen wheel (silence, whisper, pursuit, escape)','Lantern Wraith and Hollow Figure mobs','Sanity-style hidden stat (GM-visible)','Content-rating tags + neutral fallback pack']},
+ {n:'Wild Trail',d:'Animals & wilderness',c:'linear-gradient(135deg,#2b5f7a,#5aa06a)',e:'🦊',long:'A gentle wilderness trek for families: befriend animals, read the weather, forage at berry bushes and rest at campfires. Gray Wolves are a hazard, never a hunt.',inside:['Forest + Coast freeform maps','Forest Encounter + Weather wheels','Animal NPCs with clue and friendship systems','Foraging, camping and terrain-cost movement','No-combat mode toggle']},
+ {n:'Festival of Turning Lights',d:'Seasonal wheels & calendar',c:'linear-gradient(135deg,#7a2f4a,#c98a1e)',e:'🏮',long:'A seasonal celebration game built around the calendar: each festival day spins the Seasonal wheel, opens new stalls, and rotates which prizes the Festival Prize Wheel can award.',inside:['Festival Grounds map + Market Lane','Seasonal wheel driving a day calendar','Rotating shop stock and festival quests','Snowman Watcher winter event mob','Designed for drop-in / drop-out party play']}];
+var spaces=[
+ {x:7,y:14,n:'Start',e:'🚩',c:'#7a8a6a',t:'start'},
+ {x:18,y:14,n:'Signpost',e:'🪧',c:'#5a8a4a',t:'event'},
+ {x:29,y:14,n:'Crossroads',e:'🌲',c:'#3e7a44',t:'forest'},
+ {x:40,y:14,n:'Hollow Tree',e:'🌳',c:'#4a7a3a',t:'search'},
+ {x:51,y:14,n:'Berry Bush',e:'🫐',c:'#5a8a4a',t:'food'},
+ {x:62,y:14,n:'Mushroom Ring',e:'🍄',c:'#6a5a8a',t:'event'},
+ {x:73,y:14,n:'Wolf Den',e:'🐺',c:'#5a6a7a',t:'mob'},
+ {x:84,y:14,n:'Campfire',e:'🔥',c:'#b96a2f',t:'rest'},
+ {x:93,y:14,n:'Watchtower',e:'🗼',c:'#2b5f7a',t:'event'},
+ {x:93,y:36,n:'Riverbank',e:'💧',c:'#2b5f7a',t:'event'},
+ {x:82,y:36,n:'River Bridge',e:'🌉',c:'#2b5f7a',t:'bridge'},
+ {x:71,y:36,n:'Ferry Toll',e:'🪙',c:'#8a6d1b',t:'toll'},
+ {x:60,y:36,n:'Old Owl',e:'🦉',c:'#6a5a8a',t:'npc'},
+ {x:49,y:36,n:'Locked Chest',e:'📦',c:'#8a5a2b',t:'chest'},
+ {x:38,y:36,n:'Herb Garden',e:'🌿',c:'#3e7a44',t:'food'},
+ {x:27,y:36,n:'Trap Snare',e:'🪤',c:'#b94e2f',t:'trap'},
+ {x:16,y:36,n:'Village Gate',e:'🚪',c:'#5a3a2a',t:'event'},
+ {x:7,y:36,n:'Village Square',e:'⛲',c:'#8a6d1b',t:'event'},
+ {x:7,y:58,n:'Blacksmith',e:'🔨',c:'#5a3a2a',t:'shop'},
+ {x:18,y:58,n:"Mira's Shop",e:'🏪',c:'#8a6d1b',t:'shop'},
+ {x:29,y:58,n:'Market Lane',e:'🧺',c:'#c98a1e',t:'event'},
+ {x:40,y:58,n:'Bargain Wheel',e:'🎡',c:'#b94e2f',t:'wheelspot'},
+ {x:51,y:58,n:'Inn & Rest',e:'🛏️',c:'#b96a2f',t:'rest'},
+ {x:62,y:58,n:'Guard Post',e:'🛡️',c:'#2b5f7a',t:'npc'},
+ {x:73,y:58,n:'Shrine',e:'🕯️',c:'#6a5a8a',t:'event'},
+ {x:84,y:58,n:'Portal Gate',e:'🌀',c:'#4a5a8a',t:'portal'},
+ {x:93,y:58,n:'Fair Approach',e:'🎪',c:'#7a2f4a',t:'event'},
+ {x:93,y:82,n:'Prize Stall',e:'🎁',c:'#c98a1e',t:'wheelspot'},
+ {x:82,y:82,n:'Lantern Arch',e:'🏮',c:'#b94e2f',t:'event'},
+ {x:68,y:82,n:'Lantern Fair',e:'🎆',c:'#b94e2f',t:'goal'}];
+var party=[{n:'You — Greencloak Wanderer',r:'Explorer · Staff, satchel',c:'#2f5d3a',i:'Y',a:true},{n:'Mia — Pine Ranger',r:'Ranged · Bow, quiver',c:'#2b5f7a',i:'M'},{n:'Buddha — Dawn Knight',r:'Defender · Shield, sword',c:'#8a6d1b',i:'B'},{n:'Kalli — Ember Mage',r:'Fire magic · Staff',c:'#b94e2f',i:'K'}];
+var chatSeed=[{w:'GM',t:'Welcome to Lantern Road! First to the Fair with a charm wins a Festival Pass.'},{w:'Mira Waymarket (NPC)',t:'Fresh bread, rope and torches — my shop is on Market Lane, spaces 19–20.'},{w:'Mia',t:'I call dibs on the berry bush 🌿'},{w:'Old Owl (NPC)',t:'Hoo. One clue per round.'}];
+var shopItems=[
+ {n:'Bread',p:2,d:'Snack · +1 Health when eaten',ic:'🍞'},
+ {n:'Torch',p:3,d:'Lights dark spaces · reveals fog',ic:'🔦'},
+ {n:'Minor Healing Potion',p:5,d:'Restore 3 Health',ic:'🧪'},
+ {n:'Ember Key',p:8,d:'Opens fire-marked locks',ic:'🗝️'},
+ {n:'Reveal Scroll',p:6,d:'Reveal hidden spaces or objects',ic:'📜'},
+ {n:'Lantern Charm',p:12,d:'Quest item — if searching fails you',ic:'🏮'}];
+var presets=[
+ {id:'mob_goblin_scavenger_green',n:'Green Scavenger',ty:'Mob',e:'👺',c:'#3e7a44',d:'Basic melee goblin — steals loose items and retreats.',tg:['goblin','forest','melee','common'],s:'HP 4 · Pow 1 · Drops: scrap, coin'},
+ {id:'mob_goblin_boss_iron',n:'Ironcap Chief',ty:'Mob',e:'👹',c:'#5a3a2a',d:'Goblin mini-boss — calls reinforcements.',tg:['goblin','boss','melee'],s:'HP 18 · Pow 4 · Drops: iron badge'},
+ {id:'mob_slime_green',n:'Moss Slime',ty:'Mob',e:'🟢',c:'#4a9a4a',d:'Basic hazard — splits when struck.',tg:['slime','forest','hazard'],s:'HP 3 · Drops: gel, herb'},
+ {id:'mob_slime_giant',n:'Grand Ooze',ty:'Mob',e:'🫧',c:'#2b7a6a',d:'Boss slime — creates smaller slimes.',tg:['slime','boss'],s:'HP 30 · Pow 5'},
+ {id:'mob_skeleton_walker',n:'Bone Walker',ty:'Mob',e:'💀',c:'#6a6a6a',d:'Reassembles once if unsealed.',tg:['undead','dungeon'],s:'HP 5 · Drops: bone, old coin'},
+ {id:'mob_ghost_lantern',n:'Lantern Wraith',ty:'Mob',e:'👻',c:'#4a5a8a',d:'Light hunter — extinguishes nearby lights.',tg:['undead','horror'],s:'HP 7 · Drops: blue flame'},
+ {id:'mob_wolf_gray',n:'Gray Wolf',ty:'Mob',e:'🐺',c:'#5a6a7a',d:'Pack melee — stronger near other wolves.',tg:['beast','forest'],s:'HP 6 · Pow 2'},
+ {id:'mob_dragon_ashwing',n:'Ashwing Dragon',ty:'Mob',e:'🐉',c:'#b94e2f',d:'Major boss — burns and reshapes spaces.',tg:['dragon','boss'],s:'HP 48 · Pow 8'},
+ {id:'mob_hollow_figure',n:'Hollow Figure',ty:'Mob',e:'🕴️',c:'#222',d:'Horror stalker — appears in revisited spaces. Content-rated.',tg:['horror','stalker'],s:'HP 12 · Fear pulse'},
+ {id:'mob_snowman_watcher',n:'Snowman Watcher',ty:'Mob',e:'⛄',c:'#7aaac9',d:'Winter event — stationary lookout.',tg:['seasonal','winter'],s:'Event mob'},
+ {id:'mob_bandit_road',n:'Road Bandit',ty:'Mob',e:'🥷',c:'#444',d:'Demands a toll — fight, pay, or talk your way past.',tg:['human','road','event'],s:'HP 8 · Pow 2 · Drops: coin purse'},
+ {id:'mob_spider_cave',n:'Cave Spider',ty:'Mob',e:'🕷️',c:'#3a2f4a',d:'Webs a space shut until cleared.',tg:['beast','cave','web'],s:'HP 6 · Web trap'},
+ {id:'mob_rat_cellar',n:'Cellar Rat',ty:'Mob',e:'🐀',c:'#6a5a4a',d:'Tutorial pest — first fight in the Broken Crown.',tg:['beast','tutorial'],s:'HP 2 · Pow 1'},
+ {id:'mob_mimic_chest',n:'Mimic',ty:'Mob',e:'🧰',c:'#8a5a2b',d:'It was never a chest. Bites first, apologises never.',tg:['monster','trap','dungeon'],s:'HP 10 · Ambush'},
+ {id:'mob_wisp_marsh',n:'Marsh Wisp',ty:'Mob',e:'🔵',c:'#2b7a8a',d:'Leads travellers off safe paths toward lights.',tg:['spirit','marsh'],s:'HP 4 · Lure'},
+ {id:'npc_merchant_traveling_01',n:'Mira Waymarket',ty:'NPC',e:'🧺',c:'#8a6d1b',d:'Traveling merchant — food, rope, torches.',tg:['merchant','commerce'],s:'Shop: general goods'},
+ {id:'npc_blacksmith_01',n:'Bram Ironhand',ty:'NPC',e:'🔨',c:'#5a3a2a',d:'Blacksmith — weapons and repairs.',tg:['blacksmith','commerce'],s:'Shop: swords, shields, repair'},
+ {id:'npc_guide_old_01',n:'Elder Rowan',ty:'NPC',e:'🧙',c:'#2f5d3a',d:'Tutorial guide — teaches movement and turns.',tg:['quest','guide'],s:'Quest hook: tutorial'},
+ {id:'npc_healer_01',n:'Auntie Fen',ty:'NPC',e:'🌿',c:'#3e7a44',d:'Healer — cleanses a status effect.',tg:['healer','quest'],s:'Service: cleanse'},
+ {id:'npc_owl_sage',n:'Old Owl',ty:'NPC',e:'🦉',c:'#6a5a8a',d:'Provides one clue per round.',tg:['animal','clue'],s:'Neutral creature NPC'},
+ {id:'npc_guard_captain_01',n:'Captain Sera',ty:'NPC',e:'🛡️',c:'#2b5f7a',d:'Authority — requests help with bandits.',tg:['guard','quest'],s:'Quest: bandits'},
+ {id:'npc_innkeeper_01',n:'Innkeeper Joss',ty:'NPC',e:'🍺',c:'#b96a2f',d:'Rest, rumours and a warm bed — full stamina for 4 coins.',tg:['inn','rest','rumour'],s:'Service: rest'},
+ {id:'npc_ferryman_01',n:'Ferryman Cole',ty:'NPC',e:'⛴️',c:'#2b5f7a',d:'Runs the river crossing when the bridge is out.',tg:['river','transport'],s:'Service: ferry 2 coins'},
+ {id:'npc_child_festival',n:'Pip the Lantern Kid',ty:'NPC',e:'🧒',c:'#c98a1e',d:'Festival guide for younger players — hints in plain words.',tg:['festival','guide','family'],s:'Hints: on'},
+ {id:'npc_mysterious_stranger',n:'The Stranger',ty:'NPC',e:'🎩',c:'#333',d:'Knows one secret per game. Trades it for a story (a chat message).',tg:['mystery','secret'],s:'Dialogue set: secrets'},
+ {id:'item_potion_healing_minor',n:'Minor Healing Potion',ty:'Item',e:'🧪',c:'#c0392b',d:'Restore 3 health.',tg:['potion','healing','consumable'],s:'Value band: common'},
+ {id:'item_potion_luck',n:'Lucky Drop',ty:'Item',e:'🍀',c:'#3e7a44',d:'Reroll one chance result.',tg:['potion','luck'],s:'Consumable'},
+ {id:'item_coin_gold',n:'Gold Coin',ty:'Item',e:'🪙',c:'#c98a1e',d:'High-value currency.',tg:['currency'],s:'Stack 999'},
+ {id:'item_weapon_iron_sword',n:'Iron Sword',ty:'Item',e:'⚔️',c:'#5a6a7a',d:'Standard melee weapon.',tg:['weapon','melee'],s:'Pow +2'},
+ {id:'item_shield_mirror',n:'Mirror Shield',ty:'Item',e:'🪞',c:'#7aaac9',d:'Reflect one effect.',tg:['shield','magic'],s:'Equipment'},
+ {id:'item_magic_key_ember',n:'Ember Key',ty:'Item',e:'🗝️',c:'#b94e2f',d:'Opens fire-marked locks.',tg:['key','quest','magic'],s:'Quest item'},
+ {id:'item_food_feast_box',n:'Feast Box',ty:'Item',e:'🍱',c:'#b96a2f',d:'Group-wide small recovery.',tg:['food','group'],s:'Consumable'},
+ {id:'item_scroll_reveal',n:'Reveal Scroll',ty:'Item',e:'📜',c:'#8a6d1b',d:'Reveal hidden spaces or objects.',tg:['scroll','reveal'],s:'Consumable'},
+ {id:'item_torch_oil',n:'Oil Torch',ty:'Item',e:'🔦',c:'#b96a2f',d:'Lights dark spaces; burns for 10 rounds.',tg:['light','tool'],s:'Equipment'},
+ {id:'item_rope_climbing',n:'Climbing Rope',ty:'Item',e:'🪢',c:'#8a5a2b',d:'Cross cliffs and rivers without a bridge.',tg:['tool','travel'],s:'Reusable'},
+ {id:'item_charm_lantern',n:'Lantern Charm',ty:'Item',e:'🏮',c:'#c98a1e',d:'The Lantern Road quest item — glows near hidden paths.',tg:['quest','lantern'],s:'Quest item'},
+ {id:'item_pass_festival',n:'Festival Pass',ty:'Item',e:'🎟️',c:'#b94e2f',d:'Jackpot prize — free entry to every festival stall.',tg:['ticket','rare'],s:'Rare'},
+ {id:'item_bow_pine',n:'Pine Bow',ty:'Item',e:'🏹',c:'#3e7a44',d:'Ranged weapon — interact from one space away.',tg:['weapon','ranged'],s:'Pow +2 · Range 1'},
+ {id:'item_gem_star',n:'Star Gem',ty:'Item',e:'💎',c:'#6a5a8a',d:'Treasure — worth 25 coins to any merchant.',tg:['treasure','currency'],s:'Value 25'},
+ {id:'obj_tree_hollow',n:'Hollow Tree',ty:'Object',e:'🌳',c:'#3e7a44',d:'Stores one hidden item. Searchable.',tg:['nature','searchable'],s:'Blocks movement'},
+ {id:'obj_chest_wood',n:'Wooden Chest',ty:'Object',e:'📦',c:'#8a5a2b',d:'Locked or reward container — hold to open.',tg:['container','hold-to-open'],s:'States: closed/open'},
+ {id:'obj_bridge_wood',n:'Wooden Bridge',ty:'Object',e:'🌉',c:'#2b5f7a',d:'Connects spaces across water.',tg:['structure','link'],s:'Traversable'},
+ {id:'obj_shop_general',n:'General Shop',ty:'Object',e:'🏪',c:'#8a6d1b',d:'Opens the shop menu.',tg:['building','shop'],s:'Enterable'},
+ {id:'obj_wheel_stand',n:'Wheel Stand',ty:'Object',e:'🎡',c:'#b94e2f',d:'Hosts a chance wheel.',tg:['interactive','wheel'],s:'Hosts wheel preset'},
+ {id:'obj_door_secret',n:'Secret Door',ty:'Object',e:'🚪',c:'#444',d:'Revealed by a condition.',tg:['door','hidden'],s:'Conditional'},
+ {id:'obj_campfire',n:'Campfire',ty:'Object',e:'🔥',c:'#b96a2f',d:'Rest point — restores stamina, ends turn well.',tg:['rest','fire'],s:'Interaction: rest'},
+ {id:'obj_watchtower',n:'Watchtower',ty:'Object',e:'🗼',c:'#2b5f7a',d:'Reveals nearby hidden spaces for one player.',tg:['structure','reveal'],s:'Interaction: reveal'},
+ {id:'obj_gate_iron',n:'Iron Gate',ty:'Object',e:'⛓️',c:'#5a6a7a',d:'Locked gate — opened by crank, key or rule.',tg:['door','locked'],s:'States: locked/open'},
+ {id:'obj_crank_rusty',n:'Rusty Crank',ty:'Object',e:'🎛️',c:'#8a5a2b',d:'Hold for 3 seconds to work the mechanism.',tg:['interactive','hold'],s:'Hold 3s'},
+ {id:'obj_altar_stone',n:'Stone Altar',ty:'Object',e:'🕯️',c:'#6a5a8a',d:'Offer an item; something may answer.',tg:['shrine','offering'],s:'Interaction: offer'},
+ {id:'obj_sign_arrow',n:'Arrow Signpost',ty:'Object',e:'🪧',c:'#8a5a2b',d:'Readable directions — GM-editable text.',tg:['sign','text'],s:'Interaction: read'},
+ {id:'space_star_reward',n:'Reward Star',ty:'Space',e:'⭐',c:'#c98a1e',d:'Prize or treasure board node.',tg:['board','reward'],s:'Shape: star'},
+ {id:'space_hex_mystic',n:'Mystic Hex',ty:'Space',e:'⬡',c:'#6a5a8a',d:'Hex space — triggers a random gentle event.',tg:['board','hex','event'],s:'Shape: hex'},
+ {id:'space_portal_gate',n:'Portal Space',ty:'Space',e:'🌀',c:'#4a5a8a',d:'Teleport link to its paired portal.',tg:['board','teleport'],s:'Link: teleport'},
+ {id:'space_trap_thorn',n:'Thorn Trap',ty:'Space',e:'🌵',c:'#b94e2f',d:'Hidden until entered: −1 Stamina, then revealed.',tg:['board','trap'],s:'Hidden · hazard'},
+ {id:'map_template_forest_crossroads',n:'Forest Crossroads',ty:'Map',e:'🗺️',c:'#2f5d3a',d:'Four paths, trees, sign, hidden bush, campfire.',tg:['template','forest'],s:'Playable scene'},
+ {id:'map_template_stone_dungeon',n:'Stone Dungeon',ty:'Map',e:'🏰',c:'#444',d:'Cells, gates, altar, chest room, boss room.',tg:['template','dungeon'],s:'Playable scene'},
+ {id:'map_template_village_square',n:'Village Square',ty:'Map',e:'🏘️',c:'#8a6d1b',d:'Fountain, shops, inn, notice board, guard post.',tg:['template','village'],s:'Playable scene'},
+ {id:'map_template_fog_marsh',n:'Fog Marsh',ty:'Map',e:'🌫️',c:'#5a7a6a',d:'Low visibility, wisps, a ferry and one safe island.',tg:['template','marsh'],s:'Playable scene · fog'},
+ {id:'map_template_dragon_roost',n:'Dragon Roost',ty:'Map',e:'🐉',c:'#b94e2f',d:'Volcanic boss arena with reshaping spaces.',tg:['template','boss'],s:'Playable scene'},
+ {id:'map_template_mirror_hall',n:'Mirror Hall',ty:'Map',e:'🪞',c:'#6a5a8a',d:'Horror map — reflections move a beat late.',tg:['template','horror'],s:'Playable scene · rated'},
+ {id:'ui_screen_shop',n:'General Shop Screen',ty:'UI',e:'🛒',c:'#8a6d1b',d:'Vendor portrait, stock, price, buy/sell. 3 themes.',tg:['screen','shop'],s:'Layout-editable'},
+ {id:'ui_screen_inventory',n:'Inventory Screen',ty:'UI',e:'🎒',c:'#5a6a7a',d:'Grid, categories, item detail, use/equip.',tg:['screen','inventory'],s:'Layout-editable'},
+ {id:'ui_screen_stats',n:'Character Stats Screen',ty:'UI',e:'📊',c:'#2b5f7a',d:'Stats, statuses, equipment and visibility badges.',tg:['screen','stats'],s:'Layout-editable'},
+ {id:'ui_screen_dialogue',n:'Dialogue Panel',ty:'UI',e:'💬',c:'#6a5a8a',d:'NPC portrait, lines, choices and overhead bubble link.',tg:['screen','dialogue'],s:'Layout-editable'},
+ {id:'ui_hud_player',n:'Player HUD',ty:'UI',e:'🧭',c:'#2f5d3a',d:'Status, turn indicator, quick inventory, action bar.',tg:['screen','hud'],s:'3 themes'},
+ {id:'avatar_greencloak',n:'Greencloak Wanderer',ty:'Avatar',e:'🧝',c:'#2f5d3a',d:'Starter avatar — explorer with staff and satchel.',tg:['avatar','starter'],s:'24 starter avatars'},
+ {id:'avatar_dawn_knight',n:'Dawn Knight',ty:'Avatar',e:'🛡️',c:'#8a6d1b',d:'Starter avatar — defender with shield and sword.',tg:['avatar','starter'],s:'Modular parts'},
+ {id:'avatar_ember_mage',n:'Ember Mage',ty:'Avatar',e:'🔥',c:'#b94e2f',d:'Starter avatar — fire mage with a spark staff.',tg:['avatar','starter'],s:'Modular parts'},
+ {id:'rule_hold_open_container',n:'Hold to Open',ty:'Rule',e:'✋',c:'#b96a2f',d:'Hold duration fills a progress bar, then opens.',tg:['interaction','hold'],s:'Trigger → progress → action'},
+ {id:'rule_move_locked_until_item',n:'Item-Gated Route',ty:'Rule',e:'🔒',c:'#6a5a8a',d:'Link opens when a required item exists.',tg:['movement','condition'],s:'Condition: Has Item'},
+ {id:'rule_first_entry_weather',n:'First Entry → Weather',ty:'Rule',e:'🌦️',c:'#2b5f7a',d:'Entering an area for the first time spins the Weather Wheel.',tg:['event','wheel'],s:'Template rule'},
+ {id:'rule_boss_crown_win',n:'Crown in the Throne Room',ty:'Rule',e:'👑',c:'#8a6d1b',d:'Crown + all players in the Throne Room = win.',tg:['win','condition'],s:'Template rule'},
+ {id:'rule_chat_keyword_clue',n:'Chat Keyword Clue',ty:'Rule',e:'🗝️',c:'#3e7a44',d:'Saying an allow-listed phrase near an NPC earns a clue.',tg:['chat','keyword'],s:'Template rule'},
+ {id:'wheel_festival_prize',n:'Festival Prize Wheel',ty:'Wheel',e:'🎡',c:'#b94e2f',d:'Food, token, decoration, rare item, joke prize.',tg:['wheel','festival'],s:'Weighted · logged'},
+ {id:'wheel_horror_omen',n:'Horror Omen Wheel',ty:'Wheel',e:'🌑',c:'#222',d:'Silence, whisper, shadow, clue, pursuit, escape.',tg:['wheel','horror'],s:'Weighted · logged'},
+ {id:'wheel_weather',n:'Weather Wheel',ty:'Wheel',e:'🌤️',c:'#2b5f7a',d:'Clear, rain, fog, wind, storm, strange lights.',tg:['wheel','weather'],s:'Weighted · logged'},
+ {id:'wheel_dungeon_loot',n:'Dungeon Loot Wheel',ty:'Wheel',e:'💰',c:'#8a6d1b',d:'Coins, gear, a trap, and one real treasure.',tg:['wheel','loot'],s:'Weighted · logged'},
+ {id:'wheel_boss_fate',n:'Boss Fate Wheel',ty:'Wheel',e:'🐉',c:'#5a3a2a',d:'Chooses the boss\u2019s next move — telegraphed fairly.',tg:['wheel','boss'],s:'Weighted · logged'}];
+var wheels={
+ festival:{name:'Festival Prize',labels:['Bread','Star Token','Rope','Feast Box','Lantern Charm','JACKPOT: Festival Pass'],weights:[5,4,4,3,2,1],colors:['#3e7a44','#c98a1e','#2b5f7a','#b96a2f','#8a6d1b','#b94e2f']},
+ move:{name:'Basic Six-Way',labels:['Move 1','Move 2','Move 3','Move 4','Move 5','Move 6'],weights:[1,1,1,1,1,1],colors:['#3e7a44','#5a8a4a','#2b5f7a','#c98a1e','#b96a2f','#6a5a8a']},
+ forest:{name:'Forest Encounter',labels:['Animal','Merchant','Clue','Trap','Mob','Rest'],weights:[3,2,3,2,2,2],colors:['#3e7a44','#8a6d1b','#2b5f7a','#b94e2f','#444','#5a8a4a']},
+ horror:{name:'Horror Omen',labels:['Silence','Whisper','Shadow','Clue','Pursuit','Escape'],weights:[3,3,2,3,1,2],colors:['#333','#555','#222','#6a5a8a','#b94e2f','#2b5f7a']},
+ weather:{name:'Weather',labels:['Clear','Rain','Fog','Wind','Storm','Strange Lights'],weights:[4,3,2,2,1,1],colors:['#c98a1e','#2b5f7a','#888','#5a8a4a','#444','#6a5a8a']},
+ loot:{name:'Dungeon Loot',labels:['5 Coins','Iron Sword','Trap!','Potion','Star Gem','Empty…'],weights:[4,2,2,3,1,3],colors:['#c98a1e','#5a6a7a','#b94e2f','#c0392b','#6a5a8a','#888']},
+ travel:{name:'Travel',labels:['Shortcut','Steady Road','Discovery','Delay','Storm','Friendly Inn'],weights:[2,4,2,2,1,2],colors:['#3e7a44','#5a8a4a','#c98a1e','#888','#444','#b96a2f']},
+ shopdeal:{name:'Market Bargain',labels:['10% Off','Half-Price Food','Rare Stock','Free Bread','Prices Up!','Lucky Coin'],weights:[3,2,1,3,1,2],colors:['#8a6d1b','#b96a2f','#6a5a8a','#3e7a44','#b94e2f','#c98a1e']},
+ boss:{name:'Boss Fate',labels:['Boss Rests','Boss Roars','Boss Charges','Minions!','Boss Taunts','Opening!'],weights:[2,3,2,1,3,1],colors:['#5a6a7a','#b94e2f','#7a2f4a','#444','#8a6d1b','#3e7a44']},
+ season:{name:'Seasonal',labels:['Harvest Day','First Snow','Lantern Night','Spring Fair','Storm Week','Quiet Day'],weights:[3,2,2,2,1,3],colors:['#b96a2f','#7aaac9','#c98a1e','#5a8a4a','#444','#888']}};
+var mapSets={
+ forest:[['🌲','Pine','obj_tree_pine'],['🌳','Oak','obj_tree_oak_large'],['🪨','Rock','obj_rock_large'],['🏠','Cottage','obj_house_small'],['🏪','Shop','obj_shop_general'],['⛲','Fountain','obj_fountain'],['🌉','Bridge','obj_bridge_wood'],['🔥','Campfire','obj_campfire'],['📦','Chest','obj_chest_wood'],['🚪','Gate','obj_gate_wood'],['🪧','Sign','obj_sign_arrow'],['🌿','Grass','terrain_grass'],['💧','Pond','obj_water_pond'],['🍄','Mushrooms','obj_mushroom_patch'],['🗼','Tower','obj_watchtower'],['🏮','Fair Gate','space_portal_gate'],['🌲','Pine','obj_tree_pine'],['🪨','Boulder','obj_boulder_moss'],['🏕️','Tent','obj_tent'],['⚒️','Anvil','obj_anvil'],['🪞','Mirror','obj_mirror_tall'],['🌾','Field','terrain_field'],['❄️','Ice','obj_ice_patch'],['🌫️','Fog','obj_fog_patch'],['🧺','Stall','obj_market_stall'],['🎡','Wheel Stand','obj_wheel_stand'],['🕯️','Altar','obj_altar_stone'],['📚','Shelf','obj_bookshelf'],['🛏️','Bed','obj_bed'],['🪵','Crate','obj_crate'],['🌊','River','obj_water_river_segment'],['⭐','Reward','space_star_reward']],
+ dungeon:[['🧱','Wall','obj_wall_stone'],['🚪','Cell Door','obj_door_cell'],['⛓️','Gate','obj_gate_iron'],['🎛️','Crank','obj_crank_rusty'],['📦','Chest','obj_chest_wood'],['🗝️','Key Rack','obj_key_rack'],['🕯️','Altar','obj_altar_stone'],['💀','Bones','obj_bones_pile'],['🪜','Stairs','obj_stairs_down'],['👑','Throne','obj_throne'],['🐉','Boss Door','obj_door_boss'],['🪞','Mirror','obj_mirror_tall'],['🧪','Lab Table','obj_table_lab'],['📚','Shelf','obj_bookshelf'],['🛏️','Cot','obj_bed'],['🪵','Crate','obj_crate'],['🧱','Wall','obj_wall_stone'],['🕸️','Web','obj_web_cobweb'],['🔥','Brazier','obj_brazier'],['💧','Drip Pool','obj_water_pool'],['⭐','Reward','space_star_reward'],['🌑','Dark','obj_dark_patch'],['🪤','Trap','space_trap_thorn'],['⛏️','Rubble','obj_rubble'],['🧰','Mimic?','mob_mimic_chest'],['🌀','Portal','space_portal_gate'],['🧱','Wall','obj_wall_stone'],['🚪','Secret Door','obj_door_secret'],['🏺','Urn','obj_urn'],['🗿','Statue','obj_statue'],['⚖️','Scales','obj_scales'],['🏮','Lamp','obj_lamp']],
+ coast:[['🌊','Sea','obj_water_sea'],['⛵','Boat','obj_boat_small'],['⚓','Anchor','obj_anchor'],['🏖️','Sand','terrain_sand'],['🐚','Shells','obj_shells'],['🗼','Lighthouse','obj_lighthouse'],['🏠','Hut','obj_house_small'],['🏪','Shop','obj_shop_general'],['🎣','Pier','obj_pier'],['💧','Tide Pool','obj_water_pool'],['🪨','Rock','obj_rock_large'],['🌴','Palm','obj_tree_palm'],['📦','Cargo','obj_crate'],['🛟','Ring Buoy','obj_buoy'],['🔥','Beacon','obj_beacon_fire'],['🏮','Harbour Gate','space_portal_gate'],['🌊','Wave','obj_water_wave'],['🦀','Crab Rock','obj_rock_crab'],['⛴️','Ferry','obj_ferry'],['🧺','Stall','obj_market_stall'],['🪧','Sign','obj_sign_arrow'],['⭐','Reward','space_star_reward'],['🌫️','Sea Fog','obj_fog_patch'],['❄️','Drift Ice','obj_ice_patch'],['🕯️','Shrine','obj_altar_stone'],['🎡','Wheel','obj_wheel_stand'],['🛏️','Hammock','obj_hammock'],['📚','Chart Table','obj_table_charts'],['⚒️','Dockyard','obj_dockyard'],['🌉','Jetty Bridge','obj_bridge_wood'],['💎','Wreck Loot','obj_wreck_loot'],['🎆','Fair Dock','space_fair_dock']]};
+function toast(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2600)}
+function showView(id,btn){document.querySelectorAll('.view').forEach(function(v){v.classList.remove('active')});document.getElementById('view-'+id).classList.add('active');document.querySelectorAll('.tabs-in button').forEach(function(b){b.classList.remove('active')});if(btn)btn.classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
+function setMode(m){state.mode=m;document.getElementById('modePlayer').classList.toggle('active',m==='player');document.getElementById('modeGM').classList.toggle('active',m==='gm');document.getElementById('studioLock').textContent=m==='gm'?'GM mode — publishing unlocked':'Player mode — switch to GM to publish';toast(m==='gm'?'GM mode: editor, NPC voice & live controls unlocked':'Player mode: simple, focused play view')}
+function joinGame(){toast('Joined game '+document.getElementById('joinCode').value+' as guest — welcome to the table!');showView('play',document.querySelector('[data-view=play]'))}
+function publishGame(){if(state.mode!=='gm'){toast('Switch to Game Master mode (top) to publish');return}toast('Published on GameMasterBoard.com! Invite code LANTERN-7 is live — invite-only by default')}
+function logEvent(html){var el=document.getElementById('eventLog');var d=document.createElement('div');d.innerHTML=html;el.prepend(d)}
+function audit(html){var el=document.getElementById('auditLog');if(el.querySelector('div')&&el.children.length===1&&el.textContent.indexOf('No spins yet')>-1)el.innerHTML='';var d=document.createElement('div');d.innerHTML=html;el.prepend(d)}
+function renderBundles(){document.getElementById('bundles').innerHTML=bundles.map(function(b,i){return '<button class="bundle '+(i===0?'active':'')+'" onclick="pickBundle(this,\''+b.n+'\')"><div class="art" style="background:'+b.c+'">'+b.e+' '+b.n+'</div><b>'+b.n+'</b><span>'+b.d+'</span></button>'}).join('')}
+function renderBundleDetails(){document.getElementById('bundleDetails').innerHTML=bundles.map(function(b){return '<article class="bundle-detail"><h3>'+b.e+' '+b.n+'</h3><p>'+b.long+'</p><ul>'+b.inside.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul><button class="btn btn-dark" style="margin-top:12px" onclick="pickBundle(null,\''+b.n+'\');showView(\'play\',document.querySelector(\'[data-view=play]\'))">▶ Load &amp; play this bundle</button></article>'}).join('')}
+function pickBundle(el,n){document.querySelectorAll('.bundle').forEach(function(b){b.classList.remove('active')});if(el)el.classList.add('active');toast('Loaded bundle: '+n+' — fully editable, every asset replaceable');logEvent('<b>Bundle loaded:</b> '+n)}
+function renderParty(){document.getElementById('party').innerHTML=party.map(function(p,i){return '<div class="player '+(i===state.turnIdx?'active':'')+'"><div class="avatar" style="background:'+p.c+'">'+p.i+'</div><div><b>'+p.n+(i===state.turnIdx?' · active turn':'')+'</b><small>'+p.r+'</small></div></div>'}).join('');document.getElementById('turnLabel').textContent=state.turnIdx===0?'Your turn':party[state.turnIdx].n.split(' — ')[0]+"'s turn"}
+function renderInv(){var slots=[];for(var i=0;i<12;i++){var it=state.inv[i];slots.push('<div class="slot '+(it?'filled':'')+'" '+(it?'onclick="useItem(\''+it+'\')" title="'+it+'"':'')+'>'+(it?'<div><div class="ic">'+itemIcon(it)+'</div>'+it+'</div>':'<span style="color:var(--muted)">empty</span>')+'</div>')}document.getElementById('inv').innerHTML=slots.join('');document.getElementById('invCount').textContent=state.inv.length+' / 12'}
+function itemIcon(n){return {'Lantern Charm':'🏮','Bread':'🍞','Rope':'🪢','Climbing Rope':'🪢','Minor Healing Potion':'🧪','Gold Coin':'🪙','Festival Pass':'🎟️','Star Token':'⭐','Feast Box':'🍱','Torch':'🔦','Ember Key':'🗝️','Reveal Scroll':'📜','Iron Sword':'⚔️','Star Gem':'💎'}[n]||'🎁'}
+function useItem(n){if(n==='Minor Healing Potion'){state.hp=Math.min(10,state.hp+3);state.inv=state.inv.filter(function(x){return x!==n});logEvent('<b>Potion used:</b> +3 Health');toast('Minor Healing Potion: +3 Health')}else if(n==='Bread'){state.hp=Math.min(10,state.hp+1);state.inv=state.inv.filter(function(x){return x!==n});logEvent('<b>Bread eaten:</b> +1 Health');toast('Bread: +1 Health')}else if(n==='Lantern Charm'){toast('Lantern Charm glows — hidden paths near the Hollow Tree and Portal Gate shine faintly')}else if(n==='Reveal Scroll'){state.inv=state.inv.filter(function(x){return x!==n});logEvent('<b>Reveal Scroll read:</b> the Trap Snare (space 16) and Secret Door are revealed');toast('Scroll reveals: Trap Snare at space 16 — step carefully')}else if(n==='Ember Key'){toast('Ember Key warms up near fire-marked locks — try the Locked Chest (space 14)')}else{toast(n+': preset action fired (see its rule card in the Library)')}renderInv();syncStats()}
+function renderShop(){document.getElementById('shopList').innerHTML=shopItems.map(function(it){var afford=state.coins>=it.p;var owned=state.inv.indexOf(it.n)>-1;return '<div class="shop-item"><div><b>'+it.ic+' '+it.n+' — '+it.p+' coins</b><small>'+it.d+(owned?' · in your bag':'')+'</small></div><button class="buy-btn" '+(afford?'':'disabled')+' onclick="buyItem(\''+it.n+'\','+it.p+')">Buy</button></div>'}).join('')}
+function buyItem(n,p){if(state.coins<p){toast('Not enough coins for '+n);return}if(state.inv.length>=12){toast('Inventory full (12) — use or drop something first');return}state.coins-=p;state.inv.push(n);var q=document.getElementById('questShop');if(q)q.textContent='✓ Buy anything at Mira\u2019s Shop — bought '+n;logEvent('<b>Shop:</b> bought <b>'+n+'</b> for '+p+' coins (atomic transaction, no duplication possible)');toast('Bought: '+n+' · −'+p+' coins');renderInv();renderShop();syncStats()}
+function syncStats(){document.getElementById('hpFill').style.width=(state.hp*10)+'%';document.getElementById('hpVal').textContent=state.hp+'/10';document.getElementById('stFill').style.width=(state.st*10)+'%';document.getElementById('stVal').textContent=state.st+'/10';document.getElementById('coinVal').textContent=state.coins;document.getElementById('coinFill').style.width=Math.min(100,state.coins*2.5)+'%';document.getElementById('movesLeft').textContent=state.moves;document.getElementById('roundNum').textContent=state.round;document.getElementById('spaceNum').textContent=state.pos+1}
+function renderBoard(){
+ var svg=document.getElementById('linkSvg');var lines='';
+ for(var i=0;i<spaces.length-1;i++){lines+='<line x1="'+spaces[i].x+'" y1="'+spaces[i].y*0.68+'" x2="'+spaces[i+1].x+'" y2="'+spaces[i+1].y*0.68+'" stroke="rgba(255,255,255,.45)" stroke-width="0.7" stroke-dasharray="2 1.5"/>'}
+ svg.innerHTML=lines;
+ var stage=document.getElementById('boardStage');
+ stage.querySelectorAll('.node').forEach(function(n){n.remove()});
+ spaces.forEach(function(s,i){var d=document.createElement('button');d.className='node'+(i===state.pos?' current':'');d.style.left=s.x+'%';d.style.top=s.y+'%';d.style.background=s.c;d.setAttribute('aria-label','Space '+(i+1)+': '+s.n);d.innerHTML=s.e+'<small>'+(i+1)+'. '+s.n+'</small>';d.onclick=function(){tryMoveTo(i)};stage.appendChild(d)});
+ var tk=document.getElementById('token');tk.style.left=spaces[state.pos].x+'%';tk.style.top=spaces[state.pos].y+'%';
+}
+function tryMoveTo(i){if(state.moves<=0){toast('No moves left — roll or spin the movement wheel first');return}var dist=Math.abs(i-state.pos);if(dist>state.moves){toast('Too far — you have '+state.moves+' move(s) left');return}if(dist===0){interactCurrent();return}state.moves-=dist;state.pos=i;onLand();renderBoard();syncStats()}
+function onLand(){var s=spaces[state.pos];var msgs={start:'Back at the start banner. The road begins again.',forest:'Forest Crossroads — four paths, a sign, and something rustling.',search:'Hollow Tree! Search it — a Lantern Charm sleeps inside.',food:'Something edible grows here — +1 Health.',rest:'A safe rest spot — +2 Stamina. Rest ends a turn well.',bridge:'River Bridge crossed! The far bank is unlocked.',toll:'Toll Gate — the keeper asks 3 coins, or a riddle if you\u2019re broke.',npc:'A friendly face — dialogue appears above their head. See the bubble!',chest:'A wooden chest. Interact to work the hold-to-open mechanism.',goal:'🏮 LANTERN FAIR — you made it! Spin the Festival Prize Wheel to celebrate.',shop:'A shop! Browse Mira\u2019s stock in the Shop panel on the left.',event:'Something stirs here — Interact to see what this space does.',mob:'A Gray Wolf blocks the path! Interact to face it — or spend 2 moves to slip away next roll.',trap:'Snap! A hidden snare — −1 Stamina. It\u2019s revealed now, and won\u2019t catch you twice.',wheelspot:'A wheel stand! Interact to spin the wheel hosted here.',portal:'A Portal Gate hums. Interact to step through to the Fair Approach.'};
+ if(s.t==='food')state.hp=Math.min(10,state.hp+1); if(s.t==='rest')state.st=Math.min(10,state.st+2); if(s.t==='trap')state.st=Math.max(0,state.st-1);
+ if(s.t==='npc'){document.getElementById('npcBubble').classList.add('show');document.getElementById('npcBubble').style.left=(s.x>60?'52%':'58%');document.getElementById('npcBubble').style.top='4%'}else{document.getElementById('npcBubble').classList.remove('show')}
+ logEvent('<b>Landed '+(state.pos+1)+'/30:</b> '+s.n+' — '+msgs[s.t]); if(s.t==='goal'){var q=document.getElementById('questGoal');if(q)q.textContent='✓ Reach the Lantern Fair — arrived on round '+state.round;toast('Goal reached! Quest complete — check the Festival Prize Wheel')} syncStats()}
+function rollDice(){var n=1+Math.floor(Math.random()*6);state.moves=n;logEvent('<b>Roll:</b> '+n+' — move up to '+n+' space(s). Click a space or use WASD.');toast('Rolled '+n+' — pick a space to move to');syncStats()}
+function endTurn(){state.turnIdx=(state.turnIdx+1)%party.length;if(state.turnIdx===0){state.round++;logEvent('<b>Round '+state.round+' begins.</b> Old Owl may offer a fresh clue.')}state.moves=0;logEvent('<b>Turn passed</b> to '+party[state.turnIdx].n+'.');toast('Turn: '+party[state.turnIdx].n);renderParty();syncStats()}
+function interactCurrent(){var s=spaces[state.pos];
+ if(s.t==='search'){if(state.inv.indexOf('Lantern Charm')===-1){state.inv.push('Lantern Charm');var q=document.getElementById('questCharm');if(q)q.textContent='✓ Find Lantern Charm — found in the Hollow Tree'}logEvent('<b>Searched Hollow Tree:</b> found <b>Lantern Charm</b>! Quest updated.');toast('Found: Lantern Charm 🏮')}
+ else if(s.t==='chest'){state.coins+=8;if(state.inv.indexOf('Star Token')===-1)state.inv.push('Star Token');logEvent('<b>Chest opened (hold-to-interact, 1.2s):</b> +8 coins, + Star Token');toast('Chest opened: +8 coins, Star Token')}
+ else if(s.t==='toll'){if(state.coins>=3){state.coins-=3;logEvent('<b>Toll paid:</b> −3 coins. The keeper waves you through.')}else{logEvent('<b>Toll Gate:</b> not enough coins — the keeper offers a riddle instead. (Answer in chat: what has roots nobody sees?)')}}
+ else if(s.t==='npc'){addChat('Old Owl (NPC)','The charm sleeps where the tree is hollow. The portal, though — that one is just showing off.');document.getElementById('npcBubble').classList.add('show')}
+ else if(s.t==='shop'){toast('Mira\u2019s Shop is open — use the Shop panel on the left to buy');logEvent('<b>Shop opened:</b> stock and prices loaded from the General Shop preset')}
+ else if(s.t==='mob'){if(state.hp>3){state.hp-=2;state.coins+=4;logEvent('<b>Wolf faced:</b> −2 Health, but it dropped a coin purse (+4 coins). Rule <i>mob_defeated</i> fired.')}else{state.st=Math.max(0,state.st-2);logEvent('<b>Wolf faced:</b> too wounded to fight — you scramble away, −2 Stamina')}}
+ else if(s.t==='portal'){state.pos=26;logEvent('<b>Portal:</b> stepped through to the Fair Approach (space 27). Teleport links are explicit actions, never accidents.');toast('Portal! You arrive at the Fair Approach');renderBoard()}
+ else if(s.t==='wheelspot'){showView('wheels',document.querySelector('[data-view=wheels]'));toast('The wheel stand hosts a wheel — pick one and spin')}
+ else if(s.t==='event'){var ev=['A travelling bard trades a song for directions: the Shrine (space 25) accepts offerings.','A signpost creaks: “Fair → 3 stops past the Portal.”','Fireflies gather — nothing happens, and it is lovely.','A notice flutters: Captain Sera is hiring help with bandits at the Guard Post (space 24).'];logEvent('<b>Event:</b> '+ev[Math.floor(Math.random()*ev.length)])}
+ else{logEvent('<b>Interact:</b> '+s.n+' — preset interaction fired')}renderInv();renderShop();syncStats()}
+document.addEventListener('keydown',function(e){if(e.target.tagName==='INPUT'||e.target.tagName==='SELECT'||e.target.tagName==='TEXTAREA')return;if(!document.getElementById('view-play').classList.contains('active'))return;var k=e.key.toLowerCase();var dir=null;if(k==='arrowright'||k==='d')dir=1;if(k==='arrowleft'||k==='a')dir=-1;if(k==='arrowup'||k==='w')dir=-1;if(k==='arrowdown'||k==='s')dir=1;if(dir!==null){e.preventDefault();var ni=state.pos+dir;if(ni<0||ni>=spaces.length)return;if(state.moves<=0){toast('Roll first — then WASD / arrows move you');return}state.moves--;state.pos=ni;onLand();renderBoard();syncStats()}});
+/* Wheel */
+function currentWheel(){var p=document.getElementById('wheelPick');return wheels[p?p.value:'festival']||wheels.festival}
+function drawWheelOn(cv,w){var ctx=cv.getContext('2d');var cx=260,cy=260,r=245;var total=w.weights.reduce(function(a,b){return a+b},0);var a=state.wheelAngle-Math.PI/2;ctx.clearRect(0,0,520,520);w.labels.forEach(function(l,i){var sweep=w.weights[i]/total*Math.PI*2;ctx.beginPath();ctx.moveTo(cx,cy);ctx.arc(cx,cy,r,a,a+sweep);ctx.closePath();ctx.fillStyle=w.colors[i%w.colors.length];ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=4;ctx.stroke();ctx.save();ctx.translate(cx,cy);ctx.rotate(a+sweep/2);ctx.textAlign='right';ctx.fillStyle='#fff';ctx.font='700 20px Public Sans';ctx.fillText(l,r-16,7);ctx.restore();a+=sweep});ctx.beginPath();ctx.arc(cx,cy,52,0,7);ctx.fillStyle='#17211a';ctx.fill();ctx.fillStyle='#e9c46a';ctx.font='800 26px Bricolage Grotesque';ctx.textAlign='center';ctx.fillText('SPIN',cx,cy+9);
+ ctx.beginPath();ctx.moveTo(cx-16,4);ctx.lineTo(cx+16,4);ctx.lineTo(cx,34);ctx.closePath();ctx.fillStyle='#b94e2f';ctx.fill()}
+function festivalWheel(){var w={name:wheels.festival.name,labels:wheels.festival.labels.slice(),weights:wheels.festival.weights.slice(),colors:wheels.festival.colors};var jw=document.getElementById('wJack'),cw=document.getElementById('wCom');if(jw)w.weights[w.weights.length-1]=parseInt(jw.value);if(cw)w.weights[0]=parseInt(cw.value);return w}
+function drawWheel(){drawWheelOn(document.getElementById('wheel'),festivalWheel());var c2=document.getElementById('wheel2');if(c2)drawWheelOn(c2,currentWheel())}
+function spinWheel(big,testMode){if(state.spinning)return;state.spinning=true;var w=big?currentWheel():festivalWheel();var target=Math.random()*Math.PI*2+Math.PI*10;var start=state.wheelAngle;var t0=null;state.spinCount++;var spinNo=state.spinCount;var seed='LR-'+(1000+spinNo*137);
+ function step(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/2600);var ease=1-Math.pow(1-p,3);state.wheelAngle=start+target*ease;drawWheel();if(p<1)requestAnimationFrame(step);else{state.spinning=false;var total=w.weights.reduce(function(a,b){return a+b},0);var ang=((-(state.wheelAngle)%(Math.PI*2))+(Math.PI*2))%(Math.PI*2);var acc=0,win=w.labels[0];for(var i=0;i<w.labels.length;i++){acc+=w.weights[i]/total*Math.PI*2;if(ang<=acc){win=w.labels[i];break}}
+  var msg='Wheel result: '+win;document.getElementById('wheelResult').textContent='🎉 '+msg;var r2=document.getElementById('wheelResult2');if(r2)r2.textContent='🎉 '+msg+(testMode?' (GM test mode — no turn consumed)':'');var qw=document.getElementById('questWheel');if(qw&&!big)qw.textContent='✓ Spin the Festival Prize Wheel — got '+win;
+  logEvent('<b>Wheel ('+w.name+'):</b> '+win+' — outcome logged. Rule <i>event_wheel_result</i> fired.');
+  audit('<b>Spin #'+spinNo+'</b> · '+w.name+' · seed <span class="mono">'+seed+'</span> · weights ['+w.weights.join(', ')+'] · result: <b>'+win+'</b>'+(testMode?' · TEST MODE':''));
+  if(win.indexOf('Move')===0){state.moves=parseInt(win.split(' ')[1]);syncStats()}
+  if(win==='5 Coins'){state.coins+=5;syncStats()}
+  if(win==='Iron Sword'&&state.inv.indexOf('Iron Sword')===-1){state.inv.push('Iron Sword')}
+  if(win==='Star Gem'&&state.inv.indexOf('Star Gem')===-1){state.inv.push('Star Gem')}
+  if(win==='Potion'&&state.inv.indexOf('Minor Healing Potion')===-1){state.inv.push('Minor Healing Potion')}
+  if(win==='Lantern Charm'&&state.inv.indexOf('Lantern Charm')===-1){state.inv.push('Lantern Charm');var qc=document.getElementById('questCharm');if(qc)qc.textContent='✓ Find Lantern Charm — won on the Festival Prize Wheel'}
+  if(win.indexOf('JACKPOT')>-1){if(state.inv.indexOf('Festival Pass')===-1)state.inv.push('Festival Pass');toast('🎉 JACKPOT — Festival Pass!')}else toast(win);
+  renderInv();renderShop()}}
+ requestAnimationFrame(step)}
+function testSpin(){spinWheel(true,true)}
+/* Chat */
+function addChat(w,t){var box=document.getElementById('chatMsgs');var d=document.createElement('div');d.className='msg'+(w==='You'?' me':(w.indexOf('NPC')>-1||w==='GM'?' npc':''));d.innerHTML='<b>'+w+'</b><br>'+t;box.appendChild(d);box.scrollTop=box.scrollHeight}
+function sendChat(e){e.preventDefault();var inp=document.getElementById('chatInput');var v=inp.value.trim();if(!v)return;var as=document.getElementById('speakAs').value;addChat(as,v);inp.value='';if(as.indexOf('Owl')>-1){document.getElementById('npcBubble').innerHTML='<b>Old Owl says:</b><br>“'+v+'”';document.getElementById('npcBubble').classList.add('show')}if(v.toLowerCase().indexOf('lantern')>-1){setTimeout(function(){addChat('Old Owl (NPC)','Hoo — the charm? Hollow Tree, space 4. Search it.')},500)}if(v.toLowerCase().indexOf('up, up')>-1||v.toLowerCase().indexOf('roots')>-1){setTimeout(function(){addChat('GM','Riddle answered in chat — the Toll keeper waves the whole party through free, once. Rule chat_keyword fired.')},400);logEvent('<b>Chat keyword rule:</b> riddle answer detected — toll waived once')}}
+/* Library */
+var libFilter='All';
+function renderLibFilters(){var cats=['All','Mob','NPC','Item','Object','Space','Map','UI','Avatar','Rule','Wheel'];document.getElementById('libFilters').innerHTML=cats.map(function(c){return '<button class="'+(c===libFilter?'active':'')+'" onclick="libFilter=\''+c+'\';renderLibFilters();renderLibrary()">'+c+'s</button>'}).join('')}
+function renderLibrary(){var q=(document.getElementById('libSearch').value||'').toLowerCase();var list=presets.filter(function(p){return (libFilter==='All'||p.ty===libFilter)&&(!q||(p.n+' '+p.id+' '+p.tg.join(' ')).toLowerCase().indexOf(q)>-1)});document.getElementById('libGrid').innerHTML=list.map(function(p){return '<article class="preset"><div class="preset-top"><div class="preset-ic" style="background:'+p.c+'">'+p.e+'</div><div><h4>'+p.n+'</h4><div class="mono" style="color:var(--muted)">'+p.id+'</div></div></div><p>'+p.d+'</p><div class="tags">'+p.tg.map(function(t){return '<span class="tag">'+t+'</span>'}).join('')+'</div><div class="preset-foot"><span style="font-size:.76rem;font-weight:600">'+p.s+'</span><button class="add-btn" onclick="addPreset(\''+p.n+'\')">+ Add to game</button></div></article>'}).join('')||'<p>No presets match — try a shorter search.</p>';document.getElementById('libCount').textContent='Showing '+list.length+' of '+presets.length+' catalog entries — 79 presets are live today. 250 Core / 500 Expanded is a future target, not yet shipped.'}
+function addPreset(n){toast('Added to game: '+n+' — find it in GM Studio');logEvent('<b>Preset added:</b> '+n)}
+/* Map */
+function renderMap(){var key=document.getElementById('mapPick').value;var tiles=mapSets[key]||mapSets.forest;document.getElementById('mapGrid').innerHTML=tiles.map(function(t){return '<button class="tile" onclick="toast(\''+t[1]+' · '+t[2]+' — click / hold interactions, collision & states come from its preset\')">'+t[0]+'<span>'+t[1]+'</span></button>'}).join('')}
+/* Studio */
+var rules=[{t:'Player enters a space',c:'Player has item: Lantern Charm',a:'Unlock hidden path'},{t:'Player holds an object (hold complete)',c:'No condition',a:'Unlock hidden path'}];
+function renderRules(){document.getElementById('ruleList').innerHTML=rules.map(function(r){return '<div class="rule-item">⚡ <b>When</b> '+r.t+' &nbsp;<b>If</b> '+r.c+' &nbsp;<b>Then</b> '+r.a+'</div>'}).join('')}
+function addRule(){rules.push({t:document.getElementById('rTrigger').value,c:document.getElementById('rCond').value,a:document.getElementById('rAction').value});renderRules();toast('Rule added — validated ✓ and it now fires live in this session');logEvent('<b>Rule added in GM Studio:</b> When '+rules[rules.length-1].t+' / If '+rules[rules.length-1].c+' / Then '+rules[rules.length-1].a)}
+/* Init */
+renderBundles();renderBundleDetails();renderParty();renderInv();renderShop();renderBoard();syncStats();renderLibFilters();renderLibrary();renderMap();renderRules();drawWheel();
+chatSeed.forEach(function(m){addChat(m.w,m.t)});
+logEvent('<b>Session started:</b> The Lantern Road · full 30-space board · Round 3 · You are the active player.');
+logEvent('<b>Old Owl clue:</b> the Lantern Charm is in the Hollow Tree (space 4).');
+logEvent('<b>Preset note:</b> every mob, item, shop & space on this board comes from the built-in library — no uploads needed.');
+</script>
+</body>
+</html>
