@@ -1,0 +1,24 @@
+{
+  "content": {
+    "balance": {
+      "blood_draw_cost": 5,
+      "cover_absorb": 0.8,
+      "cover_cast_cost": 8,
+      "dummy_max_hp": 150,
+      "mana_regen_per_sec": 2.5,
+      "rest_heal": 6,
+      "rock_hit_damage": 35,
+      "swing_damage_multiplier": 1.0
+    },
+    "ui": {
+      "pack_note": "tougher dummy (150 HP), Mana Cover 8 mana / 80% absorb, mana regen 2.5/s, 6 sticks + 6 stones",
+      "title_suffix": "Pack 0.2.0",
+      "welcome_message": "Content pack 0.2.0 is live \u2014 sharper sticks, a tougher dummy, cheaper Mana Cover."
+    },
+    "world": {
+      "stick_count": 6,
+      "stone_count": 6
+    }
+  },
+  "version": "0.2.0"
+}
