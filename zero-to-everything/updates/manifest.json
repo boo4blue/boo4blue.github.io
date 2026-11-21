@@ -1,6 +1,6 @@
 {
   "game": "zero-to-everything",
-  "latest_pack_version": "0.2.0",
+  "latest_pack_version": "0.2.1",
   "min_apk_version": "0.2.0",
   "packs": [
     {
@@ -9,6 +9,13 @@
       "sha256": "7d4dcda80b0460bbd3dd43290430df5a125e9edb62b4f4579291b9ca6b60a732",
       "size_bytes": 653,
       "notes": "First live-update pack: tougher dummy (150 HP), Mana Cover 8 mana / 80% absorb, mana regen 2.5/s, 6 sticks + 6 stones."
+    },
+    {
+      "version": "0.2.1",
+      "file": "packs/content-0.2.1.json",
+      "sha256": "a37562031b2c44ac3d477944803f8cb1076d5010f2b2837868323966ddcf9177",
+      "size_bytes": 661,
+      "notes": "Dummy back to 50 HP (report f4d22719); everything else as 0.2.0."
     }
   ]
 }

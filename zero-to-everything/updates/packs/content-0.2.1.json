@@ -1,0 +1,24 @@
+{
+  "content": {
+    "balance": {
+      "blood_draw_cost": 5,
+      "cover_absorb": 0.8,
+      "cover_cast_cost": 8,
+      "dummy_max_hp": 50,
+      "mana_regen_per_sec": 2.5,
+      "rest_heal": 6,
+      "rock_hit_damage": 35,
+      "swing_damage_multiplier": 1.0
+    },
+    "ui": {
+      "pack_note": "dummy back to 50 HP (report f4d22719), Mana Cover 8 mana / 80% absorb, mana regen 2.5/s, 6 sticks + 6 stones",
+      "title_suffix": "Pack 0.2.1",
+      "welcome_message": "Content pack 0.2.1 is live \u2014 the training dummy is 50 HP now, as requested."
+    },
+    "world": {
+      "stick_count": 6,
+      "stone_count": 6
+    }
+  },
+  "version": "0.2.1"
+}
