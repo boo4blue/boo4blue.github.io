@@ -35,6 +35,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Free runner disk FIRST (2026-11-24: the repo's storage/ hit 1.2GB
+      # and the 14GB runner boots nearly full after the ~9GB model cache
+      # restore — Ubuntu nags Blaze to delete stuff). The GitHub image
+      # ships ~10-15GB of toolchains nobody on this PC uses; the emu
+      # lane reinstalls its own Android SDK every run, so removing the
+      # preinstalled one is safe. Never delete the model cache or
+      # cloud-pc/storage here — those are Blaze's files.
+      - name: Free runner disk
+        run: |
+          sudo rm -rf /usr/share/dotnet /opt/hostedtoolcache /usr/share/swift /usr/local/lib/android /opt/az 2>/dev/null || true
+          sudo docker system prune -af 2>/dev/null || true
+          sudo apt-get clean 2>/dev/null || true
+          df -h
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -66,5 +80,9 @@ jobs:
         run: |
           git config user.name "cloudpc"
           git config user.email "cloudpc@local"
-          git add cloud-pc/outbox cloud-pc/inbox cloud-pc/storage
+          # NEVER commit APKs (2026-11-24: every TV/phone test run saved a
+          # 63MB copy into storage/emu/ and the repo passed GitHub's 1GB
+          # line — 1.2GB in storage/ alone, 11 copies = 696MB. APKs live
+          # in /tmp during a run or as release assets, never in git).
+          git add cloud-pc/outbox cloud-pc/inbox cloud-pc/storage ':!*.apk'
           git diff --cached --quiet || (git commit -m "cloudpc: job results" && git push)
